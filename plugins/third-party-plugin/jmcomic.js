@@ -11,7 +11,7 @@ const saveDir = path.join(process.cwd(), 'data', 'jmcomic');
 
 const baseUrl = 'http://127.0.0.1:12315'
 
-const whitelist = [571436194,824725200]
+const whitelist = [571436194,824725200,781047800]
 const usewhitelist = true
 
 export class example extends plugin {

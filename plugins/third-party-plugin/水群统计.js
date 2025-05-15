@@ -2,13 +2,14 @@ import fs from 'fs'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dayjs from 'dayjs';
-import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
+//import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
+import QuickChart from 'quickchart-js';
 import pkg from 'lodash';
 const {get} = pkg;
 
 const width = 800;
 const height = 600;
-const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height });
+//const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height });
 
 /**
  * 作者：千奈千祁(2632139786)
@@ -365,7 +366,8 @@ async function getUserChart(groupId, userId, username, days = 30) {
   }
   
   async function renderChart(labels, data, name) {
-    const config = {
+    const qc = new QuickChart();
+    qc.setConfig({
       type: 'line',
       data: {
         labels,
@@ -382,29 +384,30 @@ async function getUserChart(groupId, userId, username, days = 30) {
         plugins: {
           title: {
             display: true,
-            text: name
-          }
+            text: name,
+          },
         },
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: '发言数' }
+            title: { display: true, text: '发言数' },
           },
           x: {
-            title: { display: true, text: '日期' }
-          }
-        }
+            title: { display: true, text: '日期' },
+          },
+        },
       }
-    };
+    });
+    qc.setWidth(800);
+    qc.setHeight(600);
+    qc.setBackgroundColor('white');
   
-    const buffer = await chartJSNodeCanvas.renderToBuffer(config);
-  
-    // 临时保存路径
+    // 获取 buffer 并保存为文件
+    const buffer = await qc.toBinary();
     const tempDir = './data/temp';
     if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir);
     const filename = `${name}-${Date.now()}.png`;
     const fullPath = path.join(tempDir, filename);
-  
     fs.writeFileSync(fullPath, buffer);
     return fullPath;
   }
