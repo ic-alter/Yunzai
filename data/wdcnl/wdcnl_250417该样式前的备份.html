@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        width: 530px;
+        /*height: 1500px;*/
+    }
+    #title {
+        text-align: center;
+        color:rgb(55, 0, 255);
+        font-size:40px;
+    }
+    .sub_title {
+        text-align: center;
+        color:red;
+        font-size:35px;
+    }
+    .main_text {
+        text-align: center;
+        font-size:35px;
+    }
+    .nickname_text {
+        text-align: center;
+        font-size:25px;
+    }
+    .camp {
+        text-align: center;
+        font-size:25px;
+    }
+</style>
+
+<div class="container">
+    <h1 id="title">超能力档案</h1>
+    <div class = "main_text"><img width="260px" src="{{头像}}" alt="头像加载失败"></div>
+    <p class = "nickname_text">{{昵称}}</p>
+    <p class = "camp"><span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>·<span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span> {{data.阵营}}阵营</p>
+    <h2 class="sub_title">你的超能力是</h2>
+    <h2 class = "main_text">{{被动技能}}</h2>
+    <h2 class="sub_title">而且可以</h2>
+    <h2 class = "main_text">{{主动技能}}</h2>
+    <h2 class="sub_title">但是</h2>
+    <h2 class = "main_text">{{但是}}</h2>
+    <!--<div><img src="{{超能力}}" alt="超能力加载失败"></div>
+    <div><img src="{{但是}}" alt="但是加载失败"></div>-->
+    <div><img src="{{主义}}" alt="主义加载失败"></div>
+</div>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>孩子列表</title>
+  <style>
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      background-color: #f2f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    }
+
+    .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    }
+
+    /*原生孩子*/
+    .card1 {
+    flex: 0 0 calc(50% - 30px); /* 两个一行，减去 gap 空间 */
+    max-width: 400px;
+    background: rgb(213, 237, 241);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    }
+
+    /*领养孩子*/
+    .card2 {
+    flex: 0 0 calc(50% - 30px); /* 两个一行，减去 gap 空间 */
+    max-width: 400px;
+    background: rgb(234, 201, 240);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    }
+
+    .card1:hover  .card2:hover{
+      transform: translateY(-5px);
+    }
+
+    .info-line {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .info-line span {
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>孩子列表</h1>
+  <p class="subtitle">可使用"#改名{编号} {新名字}"进行重命名，例如"#改名12 谭某" 。
+    使用 "#遗弃{编号}"命令遗弃孩子，例如"#遗弃12"。可以使用"#领养"命令捡到被遗弃的孩子
+  </p>
+  <div class="container">
+    <!-- 卡片区域 -->
+    {{each childrenlist child}}
+    {{if child.mid === child.ownerid}}
+    <div class="card1">
+    {{else}}
+    <div class="card2">
+    {{/if}}
+      <div class="info-line"><span>姓名：</span>{{child.name}}</div>
+      <div class="info-line"><span>编号：</span>{{child.cid}} <span>性别：</span>{{child.gender}}</div>
+      <div class="info-line"><span>生物爹：</span>{{child.fname}}</div>
+      <div class="info-line"><span>生物妈：</span>{{child.mname}}</div>
+    </div>
+    {{/each}}
+    <!-- 可以继续添加更多 .card 块 -->
+  </div>
+</body>
+</html>

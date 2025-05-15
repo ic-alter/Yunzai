@@ -1,37 +1,172 @@
 # 默认设置
 default:
-  groupCD: 500   # 群聊中所有指令操作冷却时间，单位毫秒,0则无限制
-  singleCD: 2000 # 群聊中个人操作冷却时间，单位毫秒
+  groupGlobalCD: 0 # 群聊中所有指令操作冷却时间，单位毫秒,0则无限制
+  singleCD: 1000 # 群聊中个人操作冷却时间，单位毫秒
 
-  onlyReplyAt: 0 # 是否只仅关注主动提及Bot的消息 0-否 1-是 2-非主人
-  botAlias:      # 开启后则只回复提及Bot的消息及特定前缀的消息
+  onlyReplyAt: 0 # 是否只仅关注主动@机器人的消息， 0-否 1-是 2-触发用户非主人只回复@机器人的消息及特定前缀的消息，主人免前缀
+  botAlias:
     - 云崽
     - 云宝
 
-  addLimit: 0    # 是否限制添加消息 0-所有群员 1-群管理员 2-主人
-  addPrivate: 1  # 是否允许私聊添加
-  addReply: 1    # 是否回复触发消息
-  addAt: 0       # 是否提及触发用户
-  addRecall: 60  # 是否撤回回复消息
+  imgAddLimit: 0 #添加表情是否限制  0-所有群员都可以添加 1-群管理员才能添加 2-主人才能添加
+  imgMaxSize: 2 #添加表情图片大小限制，默认2m
+  addPrivate: 1 #是否允许私聊添加  1-允许 0-禁止
 
-  enable:        # 只启用功能，配置后只有该功能才响应
-  disable:       # 禁用功能，功能名称,例如：十连、角色查询、体力查询、用户绑定、抽卡记录、添加表情、欢迎新人、退群通知
-    - 禁用示例
-    - 支持多个
+  enable: []
 
-# Bot单独设置
-114514:default:
-  onlyReplyAt: 1
-  botAlias:
-    - 臭崽
-    - 臭宝
-
-# 群单独设置
-123456:
-  groupCD: 500
-  singleCD: 2000
-
-# [Bot:群]单独设置
-114514:123456:
-  enable:
+  #禁用功能，功能名称,例如：十连、角色查询、体力查询、用户绑定、抽卡记录、添加表情、欢迎新人、退群通知
+  #禁用功能，功能名称,例如：云崽帮助、角色素材、今日素材、养成计算、米游社公告
   disable:
+    - 星铁plugin-面板
+
+# 群单独设置，自动覆盖默认值
+123456:
+  groupGlobalCD: 0 # 群聊中所有指令操作冷却时间，单位毫秒,0则无限制
+  singleCD: 1000 # 群聊中个人操作冷却时间，单位毫秒
+546887365777:
+  # 由于暂时不需要配置了，所以修改。如果后续需要重新加入此配置，将最后的777去掉
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  imgAddLimit: 0
+  imgMaxSize: 2
+  enable: []
+  disable:
+    - 喵喵:角色查询
+    - 喵喵:戳一戳
+    - 喵喵:角色面板
+    - 喵喵:深渊统计
+    - 喵喵:角色资料
+    - 喵喵:抽卡统计
+    - 喵喵:喵喵设置
+    - 米游社攻略
+    - 喵喵:版本
+    - Atlas图鉴
+    - Atlas图鉴帮助
+    - 锅巴登录
+    - 锅巴更新
+    - 锅巴帮助
+    - 角色查询
+    - 充值记录
+    - 体力查询
+    - 用户管理
+    - 抽卡记录
+    - 札记查询
+    - 用户绑定
+    - 角色素材
+    - 别名设置
+    - 养成计算
+    - 配置
+    - 米游社功能
+    - "[鸢尾花插件]鸢尾花帮助"
+    - 兑换码
+    - 十连
+    - Atlas原魔属性计算
+    - "[鸢尾花插件]更新"
+    - "[鸢尾花插件]今日签到"
+    - "[鸢尾花插件]今日番剧"
+    - 留影叙佳期
+    - "[鸢尾花插件]今日运势"
+    - "[鸢尾花插件]今日老婆"
+    - "[鸢尾花插件]今日天气"
+    - "[鸢尾花插件]塔罗牌"
+    - "[鸢尾花插件]算一卦"
+    - "[鸢尾花插件]定时发图"
+    - "[鸢尾花插件]保存表情包"
+    - "[鸢尾花插件]今日新闻"
+    - "[鸢尾花插件]摸鱼日历"
+    - "[鸢尾花插件]小说订阅"
+    - "[鸢尾花插件]表情包仓库"
+    - "[鸢尾花插件]图片api"
+    - gptweb
+    - gpt
+    - dalle_mini
+    - dalle_v1
+    - emi
+    - llama2
+    - prodia_stablediffusion
+    - prodia_v1
+    - stablediffusion_v1
+    - py-plugin
+    - "[鸢尾花插件]每日问候"
+    - "[鸢尾花插件]进退群群通知"
+    - 欢迎新人
+    - 退群通知
+546887365:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  onlyReplyAt: 0
+  imgMaxSize: 2
+  addPrivate: 1
+  disable:
+    - "[鸢尾花插件]进退群群通知"
+    - 欢迎新人
+    - 退群通知
+    - 表情包meme
+571436194:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  imgAddLimit: 0
+  imgMaxSize: 2
+  addPrivate: 1
+  disable:
+    - bilitv-ll
+    - "[鸢尾花插件]进退群群通知"
+    - 欢迎新人
+    - 退群通知
+697922067:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  onlyReplyAt: 0
+  imgAddLimit: 2
+  imgMaxSize: 2
+  disable:
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
+    - 欢迎新人
+    - bilitv-ll
+781047800:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  onlyReplyAt: 0
+  imgAddLimit: 2
+  imgMaxSize: 2
+  disable:
+    - bilitv-ll
+946431041:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  onlyReplyAt: 0
+  imgAddLimit: 2
+  imgMaxSize: 2
+  addPrivate: 1
+  disable:
+    - ChatGPT-Plugin 娱乐小功能
+    - bilitv-ll
+    - ys-woc-Reborn
+    - jmcomic
+824725200:
+  __place__: 0
+  disable:
+    - ChatGPT-Plugin 娱乐小功能
+1031057419:
+  __place__: 0
+  imgAddLimit: 2
+  imgMaxSize: 2
+  disable:
+    - bilitv-ll
+  groupGlobalCD: 1000
+  singleCD: 1000
+327074629:
+  __place__: 0
+  groupGlobalCD: 1000
+  singleCD: 1000
+  disable:
+    - "[鸢尾花插件]今日运势"
+    - bilitv-ll
+    - ChatGPT-Plugin 娱乐小功能
