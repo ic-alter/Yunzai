@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 import schedule from "node-schedule";
 import moment from "moment";
 import plugin from '../../lib/plugins/plugin.js';
-import createQQ from "../../lib/config/qq.js";
 import fs from 'fs'
 
 export class jinyan extends plugin {

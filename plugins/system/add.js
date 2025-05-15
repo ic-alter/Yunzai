@@ -14,11 +14,11 @@ export class add extends plugin {
       priority: Infinity,
       rule: [
         {
-          reg: "^#(全局)?添加",
+          reg: "^#(全局)?(?:词条|关键词)添加",
           fnc: "add"
         },
         {
-          reg: "^#(全局)?删除",
+          reg: "^#(全局)?(?:词条|关键词)删除",
           fnc: "del"
         },
         {
@@ -27,7 +27,7 @@ export class add extends plugin {
           log: false
         },
         {
-          reg: "^#(全局)?(消息|词条)",
+          reg: "^#(全局)?(消息|词条|关键词)",
           fnc: "list"
         }
       ]
@@ -114,7 +114,7 @@ export class add extends plugin {
   /** 获取添加关键词 */
   getKeyWord() {
     this.e.isGlobal = Boolean(this.e.msg.match(/^#全局/))
-    this.keyWord = this.trimAlias(this.e.raw_message.replace(/#(全局)?(添加|删除)/, "").trim())
+    this.keyWord = this.trimAlias(this.e.raw_message.replace(/#(全局)?(关键词|词条)(添加|删除)/, "").trim())
   }
 
   /** 过滤别名 */
@@ -338,7 +338,7 @@ export class add extends plugin {
 
     await this.initMessageMap()
 
-    const search = this.e.msg.replace(/^#(全局)?(消息|词条)/, "").trim()
+    const search = this.e.msg.replace(/^#(全局)?(消息|词条|关键词)/, "").trim()
     if (search.match(/^列表/))
       page = search.replace(/^列表/, "") || 1
     else
@@ -393,5 +393,9 @@ export class add extends plugin {
   pagination(pageNo, pageSize, array) {
     let offset = (pageNo-1) * pageSize
     return offset+pageSize >= array.length ? array.slice(offset, array.length) : array.slice(offset, offset+pageSize)
+  }
+  async help(){
+    this.e.reply("关键词帮助\n1.使用\'#关键词添加xxx\'，然后在下一条消息发送此关键词要触发的回复，即可在后续群内聊天出现xxx时自动触发回复\n2.使用\'#关键词删除xxx\'即可删除此关键词（注意中间无空格）3.使用\'#关键词列表\'可查看本群已有关键词")
+    return
   }
 }
