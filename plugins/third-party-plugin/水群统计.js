@@ -188,7 +188,7 @@ export class example2 extends plugin {
         } else {
             let user_data = {
                 user_id: e.user_id,
-                nickname: e.nickname,
+                nickname: e.sender.nickname,
                 number: 1
             }
             data.push(user_data)
