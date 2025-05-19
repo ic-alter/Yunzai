@@ -69,7 +69,7 @@ export class example extends plugin {
             const marrydata = JSON.parse(await redis.get(`Yunzai:logier-plugin:g${e.group_id}:${e.user_id}_cp`));
          
             if (marrydata && marrydata.marry.nickname) {
-                let cleanNickname1 = e.nickname.replace(/[^\x00-\x7F\u4e00-\u9fa5\u3000-\u303F\uff00-\uffef]/g, '');
+                let cleanNickname1 = e.sender.nickname.replace(/[^\x00-\x7F\u4e00-\u9fa5\u3000-\u303F\uff00-\uffef]/g, '');
                 let cleanNickname2 = marrydata.marry.nickname.replace(/[^\x00-\x7F\u4e00-\u9fa5\u3000-\u303F\uff00-\uffef]/g, '');
             
                 // 如果名字为空，就用 "七娃" 来替代

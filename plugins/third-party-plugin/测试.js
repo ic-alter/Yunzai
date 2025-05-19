@@ -20,6 +20,12 @@ export class example extends plugin {
                     /** 执行方法 */
                     fnc: "test",
                 },
+                {
+                    /** 命令正则匹配 */
+                    reg: "^#功能测试2",
+                    /** 执行方法 */
+                    fnc: "test2",
+                },
             ],
         });
     }
@@ -27,5 +33,10 @@ export class example extends plugin {
     async test(e) {
         //logger.info(e.serialize())
         e.reply(e.img)
+    }
+    async test2(e){
+        e.reply({
+            "type": "rps"
+          })
     }
 }

@@ -76,12 +76,22 @@ export class example extends plugin {
             //机器人不会生孩子
             return false
         }
-        console.log(fname, mname)
+        console.log(fname, fid, mname, mid)
         try {
             let success = await tryBreed(fid, fname, mid, mname, rateadd);
         if(success){
             //Bot.sendPrivateMsg(mid, "恭喜你在被撅之后成功怀孕了!使用\'#孩子列表\'查看孩子信息,使用\'#改名{编号}{新名字}\'修改孩子名字，例如#改名123张三")
-            e.reply([segment.at(mid)," 恭喜你怀孕了!使用\'#孩子列表\'查看孩子信息"])
+            e.reply([{
+                "type": "at",
+                "data": {
+                  "qq": mid,
+                }
+              },{
+                "type": "text",
+                "data": {
+                  "text": " 恭喜你怀孕了!使用\'#孩子列表\'查看孩子信息"
+                }
+              }])
         }
         return false
           } catch (error) {
@@ -111,7 +121,17 @@ export class example extends plugin {
         let success = await tryBreed(fid, fname, mid, mname, rateadd);
         if(success){
             //Bot.sendPrivateMsg(mid, "恭喜你在被撅之后成功怀孕了!使用\'#孩子列表\'查看孩子信息，使用\'#改名{编号}{新名字}\'修改孩子名字，例如#改名123张三")
-            e.reply([segment.at(mid)," 恭喜你怀孕了!使用\'#孩子列表\'查看孩子信息"])
+            e.reply([{
+                "type": "at",
+                "data": {
+                  "qq": mid,
+                }
+              },{
+                "type": "text",
+                "data": {
+                  "text": " 恭喜你怀孕了!使用\'#孩子列表\'查看孩子信息"
+                }
+              }])
         }
         return false
     }

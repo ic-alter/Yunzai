@@ -17,7 +17,7 @@ export class example extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: '^#拉群$',
+          reg: '^#?拉群$',
           fnc: 'laqun'
         }
       ]
@@ -28,9 +28,15 @@ export class example extends plugin {
     let item = Bot[e.self_id].gl.get(571436194)
     //await Bot[e.self_id].pickGroup(571436194).sendMsg("test")
     //await e.reply(Bot[e.self_id].pickGroup(571436194).invite(e.from_id))
-    Bot[e.self_id].inviteFriend('571436194', e.from_id) 
+    //Bot[e.self_id].inviteFriend('571436194', e.from_id) 
     logger.mark(e.from_id)
-    await this.e.reply('拉群')
+    await this.e.reply({
+      "type": "contact",
+      "data": {
+        "type": "group", // [发] 推荐群聊
+        "id": "571436194" // [发] QQ号或群号
+      }
+    })
     return true 
   }
 }
