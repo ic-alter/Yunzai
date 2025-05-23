@@ -46,7 +46,7 @@ export class example extends plugin {
                     fnc: "release"
                 },
                 {
-                    reg: "^#?(剃须|收养|领养|捡孩子|收养孩子|领养孩子)$",
+                    reg: "^#?(剃须|领养|捡孩子|领养孩子)$",
                     fnc: "adopt"
                 },
             ],

@@ -40,7 +40,7 @@ export class example extends plugin {
           fnc: 'add_bdjn'
         },
         {
-          reg: "^#?(增加|添加)但是.*$",
+          reg: "^#?(增加|添加)(但是|代价).*$",
           fnc: 'add_ds'
         },
         {
@@ -55,7 +55,7 @@ export class example extends plugin {
     let file = zdjn
     if (!e.isMaster){
       await Bot.pickUser(cfg.masterQQ[0]).sendMsg(e.msg)
-      e.reply("已提交，等待主人审核通过后添加",true)
+      e.reply("已提交，等待主人审核后添加~",true)
       return true
     }
     let zdjn_json = JSON.parse(fs.readFileSync(file + "zdjn.json", "utf8"));//读取文件
@@ -74,7 +74,7 @@ export class example extends plugin {
     let file = bdjn
     if (!e.isMaster){
       await Bot.pickUser(cfg.masterQQ[0]).sendMsg(e.msg)
-      e.reply("已提交，等待主人审核通过后添加",true)
+      e.reply("已提交，等待主人审核后添加~",true)
       return true
     }
     let bdjn_json = JSON.parse(fs.readFileSync(file + "bdjn.json", "utf8"));//读取文件
@@ -97,18 +97,18 @@ export class example extends plugin {
     let file = ds
     if (!e.isMaster){
       await Bot.pickUser(cfg.masterQQ[0]).sendMsg(e.msg)
-      e.reply("已提交，等待主人审核通过后添加",true)
+      e.reply("已提交，等待主人审核后添加~",true)
       return true
     }
     let ds_json = JSON.parse(fs.readFileSync(file + "ds.json", "utf8"));//读取文件
-    let key = e.msg.replace(/#| |(增加|添加)但是/g, "")
+    let key = e.msg.replace(/#| |(增加|添加)(但是|代价)/g, "")
     if (key === ""){
       this.cnl_help(e)
       return true
     }
     ds_json.push(key)
     await fs.writeFileSync(file + "ds.json", JSON.stringify(ds_json, null, "\t"));//写入文件
-    e.reply("已经添加但是："+key)
+    e.reply("已经添加代价："+key)
     return true
   }
 
