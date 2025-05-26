@@ -55,11 +55,11 @@ export class example2 extends plugin {
             fnc: '上月发言次数统计'
           },
           {
-            reg: '^#?(发言次数|发言|发言数据|水群)可视化$',
+            reg: '^#?(群|群内)(发言次数|发言|发言数据|水群)可视化$',
             fnc: '发言次数可视化'
           },
           {
-            reg: '^#?个人(发言次数|发言|发言数据|水群)可视化$',
+            reg: '^#?(发言次数|发言|发言数据|水群)可视化$',
             fnc: '个人发言次数可视化'
           },
         ]
@@ -236,10 +236,12 @@ export class example2 extends plugin {
             if (msg.type == 'at'){
                 user_id = msg.qq;
                 昵称 = msg.text
+                //logger.info(user_id, Bot.uin)
                 break;
             }
         }
-        if(user_id === Bot.uin){
+
+        if(user_id === Bot.uin.toString()){
             e.reply("本人从未水过群，望周知")
             return true
         }
@@ -358,7 +360,7 @@ async function getUserChart(groupId, userId, username, days = 30) {
       const dateStr = dayjs().subtract(i, 'day').format('YYYY-MM-DD');
       labels.push(dateStr);
       const dayData = readDailyData(groupId, dateStr);
-      const user = dayData.find(u => u.user_id === userId);
+      const user = dayData.find(u => u.user_id == userId);
       data.push(user ? user.number : 0);
     }
   
@@ -385,6 +387,14 @@ async function getUserChart(groupId, userId, username, days = 30) {
           title: {
             display: true,
             text: name,
+            font: {
+              size: 24,
+            },
+            padding: {
+              top: 10,
+              bottom: 30,
+            },
+            align: 'center',
           },
         },
         scales: {

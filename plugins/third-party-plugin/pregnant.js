@@ -55,7 +55,7 @@ export class example extends plugin {
 
     async jue(e) {
         //e.reply(111)
-        let rateadd = 2;
+        let rateadd = 1;
         let ats = e.message.filter(m => m.type === 'at')
         let fid,fname,mid,mname
         //如果at名单为0直接return false继续走。如果为1和2，分别确定父母
@@ -102,7 +102,7 @@ export class example extends plugin {
     }
 
     async she(e) { 
-        let rateadd = 3;
+        let rateadd = 2;
         let ats = e.message.filter(m => m.type === 'at')
         let fid,fname,mid,mname
         //如果at名单为0直接return false继续走。如果为1确定父母
