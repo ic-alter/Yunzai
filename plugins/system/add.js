@@ -29,6 +29,10 @@ export class add extends plugin {
         {
           reg: "^#(全局)?(消息|词条|关键词)",
           fnc: "list"
+        },
+        {
+          reg: "^#?关键词帮助",
+          fnc: "help"
         }
       ]
     })
@@ -395,7 +399,7 @@ export class add extends plugin {
     return offset+pageSize >= array.length ? array.slice(offset, array.length) : array.slice(offset, offset+pageSize)
   }
   async help(){
-    this.e.reply("关键词帮助\n1.使用\'#关键词添加xxx\'，然后在下一条消息发送此关键词要触发的回复，即可在后续群内聊天出现xxx时自动触发回复\n2.使用\'#关键词删除xxx\'即可删除此关键词（注意中间无空格）3.使用\'#关键词列表\'可查看本群已有关键词")
+    this.e.reply("关键词帮助\n1.使用\'#关键词添加xxx\'，然后在下一条消息发送此关键词要触发的回复，然后输入\'#结束添加\'，即可在后续群内聊天出现xxx时自动触发回复\n2.使用\'#关键词删除xxx\'即可删除此关键词（注意中间无空格）\n3.使用\'#关键词列表\'可查看本群已有关键词")
     return
   }
 }

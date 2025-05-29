@@ -125,6 +125,6 @@ async function getRandomWife(e) {
 async function getWifeByQQ(e,qq){
     let mmap = await e.group.getMemberMap();
     let arrMember = Array.from(mmap.values());
-    const wifeMember = arrMember.find(member => member.user_id === qq)
+    const wifeMember = arrMember.find(member => member.user_id == qq)
     return wifeMember
 }

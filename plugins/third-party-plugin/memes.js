@@ -273,6 +273,9 @@ export class memes extends plugin {
     if (target === '一起' && msg.startsWith('一起圣诞')) {
       target = '一起圣诞'
     }
+    if (target === '锤' && msg.startsWith('捶你')) {
+      target = '捶你'
+    }
     let targetCode = keyMap[target]
     // let target = e.msg.replace(/^#?meme(s)?/, '')
     let text1 = _.trimStart(e.msg, '#').replace(target, '')

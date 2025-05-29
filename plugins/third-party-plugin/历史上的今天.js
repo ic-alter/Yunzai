@@ -82,8 +82,8 @@ export class history_today extends plugin {
         nickname:"虚构史学家"
       }
       let page = 1
-      for (let i = 0; i < infos.data.length; i += 90) {
-        let chunk = infos.data.slice(i, i + 90);
+      for (let i = 0; i < infos.data.length; i += 50) {
+        let chunk = infos.data.slice(i, i + 50);
         await this.send_one_chunk(e,userInfo,infos,chunk,page)
         page += 1
       }
