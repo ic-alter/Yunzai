@@ -50,7 +50,7 @@ export class history_today extends plugin {
         if(isNaN(month) || isNaN(day)){
           return true
         }
-        if(month==6&&day===4){
+        if(month == 6 && day === 4){
           e.reply("这是碰都不能碰的滑梯")
           return true
         }
@@ -66,6 +66,10 @@ export class history_today extends plugin {
 
 
     async history_today(e){
+      if (isJuneFourth()){
+        e.reply("这是不能碰的滑梯")
+        return true
+      }
       let infosRes = await fetch(`http://localhost:12315/history_day`,{
         method: 'GET'
       })
@@ -82,8 +86,8 @@ export class history_today extends plugin {
         nickname:"虚构史学家"
       }
       let page = 1
-      for (let i = 0; i < infos.data.length; i += 50) {
-        let chunk = infos.data.slice(i, i + 50);
+      for (let i = 0; i < infos.data.length; i += 30) {
+        let chunk = infos.data.slice(i, i + 30);
         await this.send_one_chunk(e,userInfo,infos,chunk,page)
         page += 1
       }
@@ -128,4 +132,9 @@ export class history_today extends plugin {
       this.reply(forwardMsg)
     }
     
+}
+
+function isJuneFourth() {
+  const today = new Date();
+  return today.getMonth() === 5 && today.getDate() === 4;
 }

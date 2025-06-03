@@ -113,24 +113,35 @@ export class example extends plugin {
   }
 
   async kkcnl() {
+    let accountId = this.e.user_id
+    // 获取当前日期字符串
+    const date = new Date().toString(); // YYYY-MM-DD
+    // 组合日期和账号ID生成种子字符串
+    const seed = date + accountId;
+    // 使用 seedrandom 库初始化随机数生成器
+    const rng = seedrandom(seed);
+    function randomFloat() {
+      return rng();
+    }
+  
     //主动技能随机抽取
     let file = zdjn
     let zdjn_json = JSON.parse(fs.readFileSync(file + "zdjn.json", "utf8"));//读取文件
-    let random_index = Math.floor(Math.random() * zdjn_json.length)
+    let random_index = Math.floor(randomFloat() * zdjn_json.length)
     let zdjn_text = zdjn_json[random_index]
     //被动技能随机抽取
     let file0 = bdjn
     let bdjn_json = JSON.parse(fs.readFileSync(file0 + "bdjn.json", "utf8"));//读取文件
-    let random_index0 = Math.floor(Math.random() * bdjn_json.length)
+    let random_index0 = Math.floor(randomFloat() * bdjn_json.length)
     let bdjn_text = bdjn_json[random_index0]
     //副作用随机抽取
     let file1 = ds
     let ds_json = JSON.parse(fs.readFileSync(file1 + "ds.json", "utf8"));//读取文件
-    let random_index1 = Math.floor(Math.random() * ds_json.length)
+    let random_index1 = Math.floor(randomFloat() * ds_json.length)
     let ds_text = ds_json[random_index1]
     //主义随机抽取
     let file2 = zy
-    let number2 = Math.floor(Math.random() * (24 - 1) + 1)
+    let number2 = Math.floor(randomFloat() * (24 - 1) + 1)
     let zy_URL = file2 + number2.toString() + '.png'
     let 头像 = await getAvatar(this.e.user_id)
     let 昵称 = this.e.sender.nickname
@@ -210,8 +221,10 @@ async function getCamp(e) {
 }
 
 async function getBaseinfo(e){
-    let levelOptions = ["卓越", "优秀", "良好", "标准", "普通", "缺陷", "未知"]
-    let otherGenderOptions = [/*"男", "女", */"无性", "未知", "不可知", "其他","双性", "流动","直升机","第三性","男娘","拟雌"]
+    let levelOptions = ["顶级","卓越", "优秀", "良好", "标准", "普通", "缺陷", "未知"]
+    let otherGenderOptions = [/*"男", "女", */"无性", "未知", "不可知", "其他","双性", "流动","直升机","第三性","男娘","拟雌","拟雄","傅首尔","麻辣仙人","龟仙人","去势","胖猫","秀吉","冰红茶","杨笠","雌雄同体","麦琳","Null","未定义","随机","未亡人"]
+    let otherRaceOptions = [/*人类,*/"狼兽人","蜥蜴人","机器人","矮人","天使","恶魔","地精","半身人","精灵","人鱼","吸血种","月球人","领域外生命","奇美拉","半人马","幽灵","巨人","伪人","寄生兽","喰种","妖怪","龙族","鬣狗","棘皮动物","裸鼹鼠","克苏鲁","树精","地缚灵","数字生命","仿生人","复制人","高维生物","三体人","人工智能","神灵","尼安德特人","海绵","大象","猫兽人","犬兽人","史莱姆","骷髅","鸟人","熔岩人","水精灵","儒艮","蛇妖","雪女","莴苣","海嗣","源石虫","邦布","猪兽人","犀牛兽人","南方古猿","未知","英灵","泰坦","变异人","虎兽人","僵尸","死灵","蜗牛","蜘蛛精","短脖兔","鼠兽人","熊兽人","单眼族","血魔","纸人","稻草人","律者","记忆体","貘兽人","猫","大型岛屿","石块","异兽","哥布林","夜叉","皮皮西人","生骸","恐龙","西蓝花","堕天使","味真族","屎壳郎"]
+    let thinkOptions = ["胃袋","赤石","愉悦","偷税"]
     let rankOptions = [{
       value: 'F',
       style: "color: #000000;"
@@ -276,22 +289,47 @@ async function getBaseinfo(e){
     return arr[idx];
   }
 
-  // 性别：34% 男，34% 女，其余 32% 从剩余选项里随机
+  // 性别：30% 男，30% 女，其余 40% 从剩余选项里随机
   function getGender() {
     const r = randomFloat();
-    if (r < 0.34) {
-      return "男";
-    } else if (r < 0.68) {
-      return "女";
+    if (r <= 0.3) {
+      return "男性";
+    } else if (r <= 0.6) {
+      return "女性";
     } else {
-      // 剩下的 30%
+      // 剩下的
       return getRandomItem(otherGenderOptions);
+    }
+  }
+
+  function getRace() {
+    const r = randomFloat();
+    if (r <= 0.5) {
+      return "人类";
+    } else {
+      // 剩下的
+      return getRandomItem(otherRaceOptions);
     }
   }
 
   // 推理力/创造力：等概率从 levelOptions 中取
   function getLevel() {
     return getRandomItem(levelOptions);
+  }
+
+  //大头小头兔头
+  function getTou(){
+    const r = randomFloat();
+    if (r <= 0.25) {
+      return "大头";
+    } else if (r <= 0.55) {
+      return "小头";
+    } else if (r <= 0.9) {
+      return "兔头";
+    } else {
+      // 剩下的
+      return getRandomItem(thinkOptions);
+    }
   }
 
   // 等级评定：对 rankOptions 随机抽取
@@ -308,10 +346,14 @@ async function getBaseinfo(e){
   }
   // —— 工具函数区结束 —— //
   const baseinfo = {
-    gender: getGender(),
-    爆发力: getLevel(),   
-    耐久力: getLevel(),  
+    gender: getGender(),  
     颜值: getLevel(),
+    种族: getRace(),
+    筋力: getLevel(),   
+    敏捷: getLevel(),
+    耐久: getLevel(),
+    幸运: getLevel(),
+    主导思维:getTou(),
     推理力: getLevel(),
     计算力: getLevel(),
     空间力: getLevel(),

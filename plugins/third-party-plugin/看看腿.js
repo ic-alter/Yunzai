@@ -16,9 +16,7 @@ export class example extends plugin {
             priority: 5000,
             rule: [
                 {
-                    /** 命令正则匹配 */
-                    reg: "^#?看看(腿|脚|玉足|玉足|大腿|美腿)$",
-                    /** 执行方法 */
+                    reg: "^#?看看(腿|大腿|美腿)$",
                     fnc: "kkleg",
                 },
             ],
@@ -26,8 +24,23 @@ export class example extends plugin {
     }
 
     async kkleg(e) {
-        const response = await fetch('https://api.lolimi.cn/API/meizi/api.php');
-        const data = await response.json();
-        e.reply(segment.image(data.text))
+        await kkapi(e, "https://api.lolimi.cn/API/meizi/api.php", 3)
+        return true
     }
+}
+
+async function kkapi(e, url, num){
+    let fakeMsgArr = []
+        for (let i=0; i<num; i++){
+            const response = await fetch(url);
+            const data = await response.json();
+            fakeMsgArr.push({
+                user_id: e.member.user_id,
+                nickname: e.member.nickname,
+                message: segment.image(data.text)
+              })
+        }
+        let makeForwardMsg = e.group.makeForwardMsg(fakeMsgArr)
+        await e.reply(makeForwardMsg)
+        return true
 }

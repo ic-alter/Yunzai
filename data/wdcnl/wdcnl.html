@@ -40,8 +40,8 @@
  margin-bottom:35px; /*增加下边距 */
  }
  .avatar-box {
- width:180px; /*改为正方形 */
- height:180px;
+ width:200px; /*改为正方形 */
+ height:200px;
  border:1px solid #999;
  padding:3px;
  background:white;
@@ -60,7 +60,7 @@
  display: flex;
  flex-direction: column;
  justify-content: space-between;
- height:160px; /*与头像等高 */
+ height:180px; /*与头像等高 */
  }
  .nickname {
  font-size:20px;
@@ -89,7 +89,7 @@
 }
 .info-pair .info-item {
  flex:1; /*使四个项目等宽分布 */
- min-width:22%; /*防止内容过长换行 */
+ min-width:24%; /*防止内容过长换行 */
 }
  .camp-row {
 margin-top:8px;
@@ -138,16 +138,33 @@ margin-top:8px;
  <span>性别</span><span>{{baseinfo.gender}}</span>
  </div>
  <div class="info-item">
-    <span>颜值</span><span>{{baseinfo.颜值}}</span>
+   <span>种族</span><span>{{baseinfo.种族}}</span>
+   </div>
+ <div class="info-item">
+    <span>外貌</span><span>{{baseinfo.颜值}}</span>
     </div>
  <div class="info-item">
- <span>爆发力</span><span>{{baseinfo.爆发力}}</span>
- </div>
- <div class="info-item">
-    <span>耐久力</span><span>{{baseinfo.耐久力}}</span>
+    <span>主导思维</span><span>{{baseinfo.主导思维}}</span>
     </div>
     </div>
     </div>
+
+    <div class="info-row">
+      <div class="info-pair">
+      <div class="info-item">
+      <span>筋力</span><span>{{baseinfo.筋力}}</span>
+      </div>
+      <div class="info-item">
+      <span>敏捷</span><span>{{baseinfo.敏捷}}</span>
+      </div>
+      <div class="info-item">
+      <span>耐久</span><span>{{baseinfo.耐久}}</span>
+      </div>
+      <div class="info-item">
+      <span>幸运</span><span>{{baseinfo.幸运}}</span>
+      </div>
+      </div>
+      </div>
    
     <div class="info-row">
         <div class="info-pair">
