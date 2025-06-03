@@ -184,7 +184,7 @@ export class example2 extends plugin {
         }
         if (temp_data.length > 0) {
             await deljson(temp_data[0], `./data/${e.group_id}_snots/${date}.json`)
-            await autochuli(temp_data, `./data/${e.group_id}_snots/${date}.json`)
+            await autochuli(temp_data, `./data/${e.group_id}_snots/${date}.json`, e.sender.nickname)
         } else {
             let user_data = {
                 user_id: e.user_id,
@@ -208,11 +208,11 @@ export class example2 extends plugin {
         }
         if(temp_data.length > 0) { 
             await deljson(temp_data[0], `./data/${e.group_id}_snots/${month}.json`)
-            await autochuli(temp_data, `./data/${e.group_id}_snots/${month}.json`)
+            await autochuli(temp_data, `./data/${e.group_id}_snots/${month}.json`, e.sender.nickname)
         } else {
             let user_data = {
                 user_id: e.user_id,
-                nickname: e.nickname,
+                nickname: e.sender.nickname,
                 number: 1
             }
             data.push(user_data)
@@ -254,8 +254,9 @@ export class example2 extends plugin {
     }
 }
 
-async function autochuli(data, filePath) {
+async function autochuli(data, filePath, nickname) {
     data[0].number++
+    data[0]['nickname'] = nickname
     let new_data = fs.readFileSync(filePath, `utf-8`)
     new_data = JSON.parse(new_data)
     new_data.push(data[0])
@@ -274,12 +275,8 @@ async function deljson(deldata, filePath) {
         if (!Array.isArray(data)) return false;
         let filteredData = []
         for (let item of data) {
-            item = JSON.stringify(item)
-            deldata = JSON.stringify(deldata)
-            if(item != deldata) {
-                item = JSON.parse(item)
+            if(!(item.user_id == deldata.user_id)) {
                 filteredData.push(item)
-                deldata = JSON.parse(deldata)
             }
         }
 
