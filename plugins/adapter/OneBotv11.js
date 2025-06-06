@@ -681,7 +681,7 @@ Bot.adapter.push(new class OneBotv11Adapter {
       getAvatarUrl() { return this.avatar || `https://q.qlogo.cn/g?b=qq&s=0&nk=${user_id}` },
       poke: this.sendGroupMsg.bind(this, i, { type: "poke", qq: user_id }),
       mute: this.setGroupBan.bind(this, i, user_id),
-      kick: this.setGroupKick.bind(i, user_id),
+      kick: this.setGroupKick.bind(this, i, user_id),
       get is_friend() { return data.bot.fl.has(user_id) },
       get is_owner() { return this.role === "owner" },
       get is_admin() { return this.role === "admin" || this.is_owner },
