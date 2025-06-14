@@ -35,29 +35,53 @@
     .card1 {
     flex: 0 0 calc(50% - 30px); /* 两个一行，减去 gap 空间 */
     max-width: 400px;
-    background: rgb(213, 237, 241);
+    background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.2s ease;
+    border: 3px solid transparent; /* 默认无色 */
     }
 
     /*领养孩子*/
     .card2 {
     flex: 0 0 calc(50% - 30px); /* 两个一行，减去 gap 空间 */
     max-width: 400px;
-    background: rgb(234, 201, 240);
+    background: rgb(225, 225, 225);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.2s ease;
+    border: 3px solid transparent; /* 默认无色 */
     }
 
     .card1:hover  .card2:hover{
       transform: translateY(-5px);
     }
+
+    /* 稀有度边框颜色 */
+.rarity-1 {
+  border-color: rgb(2, 183, 2);
+}
+
+.rarity-2 {
+  border-color: #3399ff; /* 蓝色 */
+}
+
+.rarity-3 {
+  border-color: purple;
+}
+
+.rarity-4 {
+  border-color: gold;
+}
+
+.rarity-5 {
+  /*border: 3px solid;*/
+  border-image: linear-gradient(45deg, red, rgb(245, 145, 3), rgb(249, 212, 4), rgb(245, 145, 3), red) 1;
+}
 
     .info-line {
       margin: 10px 0;
@@ -80,9 +104,9 @@
     <!-- 卡片区域 -->
     {{each childrenlist child}}
     {{if child.mid === child.ownerid}}
-    <div class="card1">
+    <div class="card1 rarity-{{child.rarity}}">
     {{else}}
-    <div class="card2">
+    <div class="card2 rarity-{{child.rarity}}">
     {{/if}}
       <div class="info-line"><span>姓名：</span>{{child.name}}</div>
       <div class="info-line"><span>编号：</span>{{child.cid}} <span>性别：</span>{{child.gender}}</div>
