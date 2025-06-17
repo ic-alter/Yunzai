@@ -21,7 +21,7 @@ export class example extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅)",
+                    reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅)",
                     /** 执行方法 */
                     fnc: "jue",
                 },
@@ -136,11 +136,13 @@ export class example extends plugin {
         return false
     }
     async hukou(e){
-        let childrenlist = await fetchChildren(e.sender.user_id)
+        let page = parsePage(e.msg)
+        let childrenlist = await fetchChildren(e.sender.user_id, page)
         let _path = process.cwd() + '/data/pregnant'
         let data = {
             tplFile: `${_path}/hukou.html`,
-            childrenlist:childrenlist["children"]
+            childrenlist:childrenlist["children"],
+            page_info:childrenlist["page_info"]
         }
     
         let img = await puppeteer.screenshot('pregnant', data)
@@ -217,8 +219,8 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
   }
 
 
-  async function fetchChildren(ownerid) {
-    const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}`);
+  async function fetchChildren(ownerid,page) {
+    const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}&page=${page}`);
     const data = await response.json();
     return data.children;
   }
@@ -263,3 +265,14 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const data = await response.json();
     return data.success
   }
+
+  function parsePage(command) {
+    const reg = /^#?孩子列表\s*(\d*)$/;
+    const match = command.trim().match(reg);
+    if (match) {
+        const pageStr = match[1];
+        const page = parseInt(pageStr, 10);
+        return (Number.isInteger(page) && page > 0) ? page : 1;
+    }
+    return 1; // 不匹配
+}
