@@ -51,6 +51,12 @@ export class example extends plugin {
                     /** 执行方法 */
                     fnc: "maodie",
                 },
+                {
+                    /** 命令正则匹配 */
+                    reg: "^#?(doro|Doro)$",
+                    /** 执行方法 */
+                    fnc: "doro",
+                },
             ],
         });
     }
@@ -116,6 +122,9 @@ export class example extends plugin {
     }
     async maodie(e) {
         e.reply(segment.image(baseUrl+'/maodie'))
+    }
+    async doro(e) {
+        e.reply(segment.image(baseUrl+'/doro'))
     }
 }
 

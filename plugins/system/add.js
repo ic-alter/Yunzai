@@ -42,6 +42,7 @@ export class add extends plugin {
 
   async init() {
     await Bot.mkdir(this.path)
+    
   }
 
   /** 群号key */

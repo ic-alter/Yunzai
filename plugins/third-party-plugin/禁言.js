@@ -48,6 +48,18 @@ export class jinyan extends plugin {
             /** 执行方法 */
             fnc: 'not_sexy'
           },
+          {
+            /** 命令正则匹配 */
+            reg: '^(闭嘴)(.*)$',
+            /** 执行方法 */
+            fnc: 'bizui'
+          },
+          {
+            /** 命令正则匹配 */
+            reg: '^(说话)(.*)$',
+            /** 执行方法 */
+            fnc: 'shuohua'
+          },
         ]
       })
     }
@@ -104,5 +116,26 @@ export class jinyan extends plugin {
         e.group.muteMember(sleeper_qq, 0)
         return true
     }
+
+    async bizui(e){
+      for (let msg of e.message){
+        if (msg.type == 'at'){
+            e.group.muteMember(msg.qq, 600)
+            return true
+        }
+      }
+    }
+
+    async shuohua(e){
+      let sleeper_qq = e.user_id
+      for (let msg of e.message){
+          if (msg.type == 'at'){
+              sleeper_qq = msg.qq;
+              break;
+          }
+      }
+      e.group.muteMember(sleeper_qq, 0)
+      return true
+  }
     
 }
