@@ -118,6 +118,7 @@ export class example extends plugin {
             //机器人不会生孩子
             return false
         }
+        try {
         let success = await tryBreed(fid, fname, mid, mname, rateadd);
         if(success){
             //Bot.sendPrivateMsg(mid, "恭喜你在被撅之后成功怀孕了!使用\'#孩子列表\'查看孩子信息，使用\'#改名{编号}{新名字}\'修改孩子名字，例如#改名123张三")
@@ -134,10 +135,21 @@ export class example extends plugin {
               }])
         }
         return false
+      } catch (error) {
+        // 错误处理逻辑
+        console.error('发生错误:', error);
+        return false
+      }
     }
     async hukou(e){
         let page = parsePage(e.msg)
-        let childrenlist = await fetchChildren(e.sender.user_id, page)
+        let search_id = e.sender.user_id
+        for (let msg of this.e.message){
+          if (msg.type == 'at'){
+            search_id = msg.qq
+          }
+        }
+        let childrenlist = await fetchChildren(search_id, page)
         let _path = process.cwd() + '/data/pregnant'
         let data = {
             tplFile: `${_path}/hukou.html`,
@@ -224,7 +236,7 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const data = await response.json();
     return data.children;
   }
-
+  
   async function renameChild(cid, name, ownerid) {
     try {
       const response = await fetch(`${API_PREFIX}/rename_child`, {
