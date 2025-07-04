@@ -21,7 +21,7 @@ export class example extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅)",
+                    reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅|龟龟撅)",
                     /** 执行方法 */
                     fnc: "jue",
                 },
@@ -229,7 +229,6 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const result = await response.json();
     return result.success;
   }
-
 
   async function fetchChildren(ownerid,page) {
     const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}&page=${page}`);
