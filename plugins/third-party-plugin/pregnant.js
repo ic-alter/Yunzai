@@ -229,7 +229,7 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const result = await response.json();
     return result.success;
   }
-
+  
   async function fetchChildren(ownerid,page) {
     const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}&page=${page}`);
     const data = await response.json();
