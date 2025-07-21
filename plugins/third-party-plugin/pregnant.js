@@ -225,13 +225,13 @@ async function tryBreed(fid, fname, mid, mname, rateAdd) {
         rate_add: rateAdd
       })
     });
-  
+   
     const result = await response.json();
     return result.success;
   }
-  
+  /*　　以前在循环里的时候, 这种把手机放在桌子下面盲打都能发出这条消息的肌肉记忆，帮他化解了不少麻烦事，所以越用越熟练。*/
   async function fetchChildren(ownerid,page) {
-    const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}&page=${page}`);
+    const response = await fetch(`${API_PREFIX}/childrenlist?ownerid=${ownerid}&page=${page}`);  
     const data = await response.json();
     return data.children;
   }

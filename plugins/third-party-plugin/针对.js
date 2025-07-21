@@ -4,6 +4,7 @@ import schedule from "node-schedule";
 import moment from "moment";
 import plugin from '../../lib/plugins/plugin.js';
 import fs from 'fs'
+import { log } from "console";
 
 const _path = process.cwd() + '/data/zhendui/zhendui.json'
 let zhendui_json = JSON.parse(fs.readFileSync(_path, "utf8"));//读取文件
@@ -44,7 +45,7 @@ export class zhendui extends plugin {
             for (let msg of e.message){
                 if (msg.type == 'at'){
                     zhendui_json = JSON.parse(fs.readFileSync(_path, "utf8"));//读取文件
-                    let zhendui_qq = msg.qq;
+                    let zhendui_qq = parseInt(msg.qq);
                     zhendui_json.push(zhendui_qq)
                     await fs.writeFileSync(_path, JSON.stringify(zhendui_json, null, "\t"));//写入文件
                     e.reply("收到")
@@ -62,7 +63,7 @@ export class zhendui extends plugin {
             for (let msg of e.message){
                 if (msg.type == 'at'){
                     zhendui_json = JSON.parse(fs.readFileSync(_path, "utf8"));//读取文件
-                    let zhendui_qq = msg.qq;
+                    let zhendui_qq = parseInt(msg.qq);
                     zhendui_json = zhendui_json.filter(item => item !== zhendui_qq);
                     //zhendui_json.push(zhendui_qq)
                     await fs.writeFileSync(_path, JSON.stringify(zhendui_json, null, "\t"));//写入文件
@@ -77,7 +78,7 @@ export class zhendui extends plugin {
     }
 
     async mute(e){
-        let sleeper_qq = e.user_id
+        let sleeper_qq = e.sender.user_id
         if(zhendui_json.includes(sleeper_qq)){
             await e.group.recallMsg(e.message_id)
             e.group.muteMember(sleeper_qq, 180)
