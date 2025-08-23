@@ -18,10 +18,10 @@
   "dependencies": {
     "art-template": "4.13.2",
     "canvas": "^3.1.2",
-    "chalk": "^5.4.1",
     "chart.js": "^4.5.0",
     "chartjs-node-canvas": "^5.0.0",
     "cheerio": "^1.1.0",
+    "chalk": "^5.6.0",
     "chokidar": "^4.0.3",
     "dayjs": "^1.11.13",
     "express": "^4.21.2",
@@ -52,7 +52,10 @@
     "strip-ansi": "^7.1.0",
     "ulid": "^3.0.1",
     "ws": "^8.18.3",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   },
   "imports": {
     "#miao": "./plugins/miao-plugin/components/index.js",
@@ -67,10 +70,8 @@
       "sharp"
     ],
     "patchedDependencies": {
-      "log4js@6.9.1": "lib/modules/log4js.patch"
+      "log4js": "lib/modules/log4js.patch",
+      "streamroller": "lib/modules/streamroller.patch"
     }
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2"
   }
 }
