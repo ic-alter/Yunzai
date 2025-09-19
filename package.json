@@ -49,7 +49,7 @@
     "request": "^2.88.2",
     "seedrandom": "^3.0.5",
     "sequelize": "^6.37.7",
-    "sqlite3": "npm:@karinjs/sqlite3@0.1.3",
+    "sqlite3": "npm:@karinjs/sqlite3-cjs@0.1.0",
     "strip-ansi": "^7.1.2",
     "ulid": "^3.0.1",
     "ws": "^8.18.3",
@@ -64,7 +64,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@karinjs/sqlite3",
+      "@karinjs/sqlite3-cjs",
       "classic-level",
       "log4js",
       "puppeteer",
@@ -73,7 +73,7 @@
     "patchedDependencies": {
       "log4js": "lib/modules/log4js.patch",
       "streamroller": "lib/modules/streamroller.patch",
-      "@karinjs/sqlite3": "lib/modules/@karinjs-sqlite3.patch"
+      "@karinjs/sqlite3-cjs": "lib/modules/sqlite3.patch"
     }
   }
 }
