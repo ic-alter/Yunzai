@@ -159,7 +159,7 @@ export class example extends plugin {
     
         let img = await puppeteer.screenshot('pregnant', data)
         if (img) await this.e.reply(_.concat(img))
-        return true //返回true 阻挡消息不再往下
+        return true 
     }
     async gaiming(e){
         const pattern = /^#?改名(\d+)\s*([\u4e00-\u9fa5a-zA-Z]+)$/;
@@ -209,7 +209,7 @@ export class example extends plugin {
         }
     }
 }
-
+/*“我们又不会打猎，不必往前，在后方坐观就好。”*/
 async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const url = `${API_PREFIX}/try_pregnant`;
     const response = await fetch(url, {

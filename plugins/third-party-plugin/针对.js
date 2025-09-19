@@ -81,7 +81,7 @@ export class zhendui extends plugin {
         let sleeper_qq = e.sender.user_id
         if(zhendui_json.includes(sleeper_qq)){
             await e.group.recallMsg(e.message_id)
-            e.group.muteMember(sleeper_qq, 180)
+            e.group.muteMember(sleeper_qq, 60)
         }
         return false
     }
