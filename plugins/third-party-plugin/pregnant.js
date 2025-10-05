@@ -209,7 +209,7 @@ export class example extends plugin {
         }
     }
 }
-/*“我们又不会打猎，不必往前，在后方坐观就好。”*/
+/*undefined*/
 async function tryBreed(fid, fname, mid, mname, rateAdd) {
     const url = `${API_PREFIX}/try_pregnant`;
     const response = await fetch(url, {
