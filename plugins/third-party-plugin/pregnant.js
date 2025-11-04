@@ -27,7 +27,7 @@ export class example extends plugin {
                 },
                 {
                     /** 命令正则匹配 这个的概率更高*/
-                    reg: "^#?(射|🐍|飞机杯|大撅)",
+                    reg: "^#?(射|🐍|飞机杯|大撅|坐撅|躺撅)",
                     /** 执行方法 */
                     fnc: "she",
                 },

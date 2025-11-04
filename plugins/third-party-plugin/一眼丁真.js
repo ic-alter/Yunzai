@@ -46,6 +46,12 @@ export class example extends plugin {
                     fnc: "linggan",
                 },
                 {
+                    /** 命令正则匹配：今日灵感143 / 灵感88 / 睡前故事125（可带#，数字前允许空格） */
+                    reg: "^#?(?:今日灵感|灵感|睡前故事)\\s*(\\d+)$",
+                    /** 复用原处理方法 */
+                    fnc: "linggan_index",
+                },
+                {
                     /** 命令正则匹配 */
                     reg: "^#?(耄耋|猫爹|哈气|哈基米|键帽|略猫|圆头耄耋|老吴)$",
                     /** 执行方法 */
@@ -119,6 +125,16 @@ export class example extends plugin {
     }
     async linggan(e) {
         e.reply(segment.image(baseUrl+'/linggan'))
+    }
+    async linggan_index(e) {
+        const m = e.msg.match(/^#?(?:今日灵感|灵感|睡前故事)\s*(\d+)$/);
+        const index = m ? parseInt(m[1], 10) : null;
+
+        const url = index
+            ? `${baseUrl}/linggan/${index}`   // 指定序号
+            : `${baseUrl}/linggan`;          // 随机
+
+        return e.reply(segment.image(url));
     }
     async maodie(e) {
         e.reply(segment.image(baseUrl+'/maodie'))

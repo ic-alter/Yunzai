@@ -17,7 +17,7 @@ export class twqh extends plugin {
         /** 功能名称 */
         name: '土味情话',
         /** 功能描述 */
-        dsc: '攻击我',
+        dsc: '土味情话',
         /** https://oicqjs.github.io/oicq/#events */
         /** https://github.com/huzwu/hithim-plugin.git */
         event: 'message',
@@ -36,9 +36,10 @@ export class twqh extends plugin {
 
     async twqh(e){
         let infosRes = await fetch(`${baseUrl}/get_twqh`)
+        console.log(infosRes)
         if (infosRes.status === 200) {
             let infos = await infosRes.json()
-            e.reply(infos.text,true) //这里的true是引用原命令
+            e.reply(infos.text) //这里的true是引用原命令
           }
     }
     
