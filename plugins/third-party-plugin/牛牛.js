@@ -350,7 +350,7 @@ async function applyAndDescribe(id) {
 
   await updateUser(id, newLen, newRad, hardness)
 
-  return `${prefix}长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}`
+  return `${prefix}牛牛长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}`
 }
 
 //击剑对抗
@@ -370,8 +370,8 @@ async function duel(idA, idB, nameA, nameB) {
     throw e
   }
 
-  const scoreA = A.length * A.radius * A.radius * Math.pow(1.05, A.hardness)
-  const scoreB = B.length * B.radius * B.radius * Math.pow(1.05, B.hardness)
+  const scoreA = A.length * A.radius * Math.pow(1.1, A.hardness)
+  const scoreB = B.length * B.radius * Math.pow(1.1, B.hardness)
 
   const high = Math.max(scoreA, scoreB)
   const low = Math.min(scoreA, scoreB)
