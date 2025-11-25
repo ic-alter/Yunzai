@@ -70,6 +70,7 @@ export class example extends plugin {
         // 新增：牛牛帮助
         { reg: '^#*牛牛帮助$', fnc: 'helpNiuNiu' },
         { reg: '^#*升级硬度$', fnc: 'upgradeHardness' },
+        { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
       ],
       task: [] // 明确无定时任务，防 loader 误判
@@ -163,6 +164,35 @@ export class example extends plugin {
     }
   }
 
+   async resetNiuNiu(e) {
+    const id = e.user_id
+    const name = this.e.sender.nickname
+
+    let user
+    try {
+      user = await getRawUserOrThrow(id)
+    } catch (err) {
+      if (err.code === 'ID_NOT_FOUND') {
+        e.reply(`${name}还没有长出牛牛，无需重置`)
+        return true
+      }
+      throw err
+    }
+
+    const now = Date.now()
+    const newLen = randFloat(8, 16)
+    const newRad = randFloat(1.27, 2.23)
+    const hard = user.hardness
+
+    // 重置 length/radius，硬度不变；并更新时间
+    await updateUser(id, newLen, newRad, hard)
+
+    e.reply(
+      `已重置牛牛！当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hard}`
+    )
+    return true
+  }
+
   async helpNiuNiu(e) {
     const id = e.user_id
 
@@ -174,6 +204,7 @@ export class example extends plugin {
     } catch (_) {}
 
     const { needLen, needRad } = upgradeCost(hardness)
+    //0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣
     const msg = [
       "【牛牛帮助】",
       "",
@@ -191,7 +222,10 @@ export class example extends plugin {
       "献祭长度和半径来提高硬度等级。",
       `当前升级硬度需要献祭的长度为：${fmtLen(needLen)}cm，半径为：${fmtRad(needRad)}cm`,
       "",
-      "5️⃣ #牛牛帮助",
+      "5️⃣ #重置牛牛",
+        "重新随机生成你的长度和半径（范围同初始），硬度等级不变。",
+        "",
+      "6️⃣ #牛牛帮助",
       "查看本帮助。"
     ].join("\n")
 
