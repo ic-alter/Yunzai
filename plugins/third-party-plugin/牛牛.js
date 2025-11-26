@@ -62,16 +62,17 @@ export class example extends plugin {
       dsc: '牛牛战斗',
       priority: 0,
       rule: [
-        { reg: '^#*(.)*(立了|打胶|硬了|力了)$', fnc: 'lile' },
+        { reg: '^#*(.)*(立了|打胶|硬了|力了|玩几把)$', fnc: 'lile' },
         { reg: '^#*(.)*击剑$', fnc: 'jijian' },
         // 新增：看看牛牛
-        { reg: '^#*看看牛牛$', fnc: 'seeNiuNiu' },
+        { reg: '^#*(看看牛牛|查看牛牛|牛牛状态)$', fnc: 'seeNiuNiu' },
 
         // 新增：牛牛帮助
         { reg: '^#*牛牛帮助$', fnc: 'helpNiuNiu' },
-        { reg: '^#*升级硬度$', fnc: 'upgradeHardness' },
+        { reg: '^#*(升级硬度|升级牛牛|牛牛升级|硬度升级|牛牛进化)$', fnc: 'upgradeHardness' },
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
+        { reg: '^#*(贤者模式|贤者时刻|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
       ],
       task: [] // 明确无定时任务，防 loader 误判
     })
@@ -225,13 +226,24 @@ export class example extends plugin {
       "5️⃣ #重置牛牛",
         "重新随机生成你的长度和半径（范围同初始），硬度等级不变。",
         "",
-      "6️⃣ #牛牛帮助",
+      "6️⃣ #贤者模式",
+      "进入贤者模式（触发微妙的随机事件）",
+      "",
+      "7️⃣ #牛牛帮助",
       "查看本帮助。"
     ].join("\n")
 
     e.reply(msg)
     return true
   }
+
+    async sageMode(e) {
+      const id = e.user_id
+      const name = this.e.sender.nickname
+      const msg = await doSageMode(id, name)
+      e.reply(msg)
+      return true
+    }
 }
 
 // ========================
@@ -260,7 +272,7 @@ function fmtRad(x) {
 
 function upgradeCost(hardness) {
   // 需要献祭的长度、半径
-  const pow = Math.pow(2, hardness - 2)
+  const pow = Math.pow(1.5, hardness - 2)
   return {
     needLen: 6 * pow,
     needRad: 0.875 * pow
@@ -366,11 +378,11 @@ async function applyAndDescribe(id) {
   let lenIncMin, lenIncMax, radIncMin, radIncMax, prefix = ''
 
   if (level === 2) {
-    lenIncMin = 0.4;  lenIncMax = 0.8
-    radIncMin = 0.0635; radIncMax = 0.1115
+    lenIncMin = 2.0;  lenIncMax = 4.0
+    radIncMin = 0.318; radIncMax = 0.555
   } else if (level === 1) {
-    lenIncMin = 0.08; lenIncMax = 0.16
-    radIncMin = 0.0127; radIncMax = 0.0223
+    lenIncMin = 0.4; lenIncMax = 0.8
+    radIncMin = 0.127; radIncMax = 0.223
     prefix = '还没完全恢复，效果量降低！'
   } else {
     return '间隔时间太短，休息一下吧！'
@@ -404,37 +416,62 @@ async function duel(idA, idB, nameA, nameB) {
     throw e
   }
 
-  const scoreA = A.length * A.radius * Math.pow(1.1, A.hardness)
-  const scoreB = B.length * B.radius * Math.pow(1.1, B.hardness)
+  const scoreA = Math.sqrt(A.length * A.radius) * Math.pow(1.15, A.hardness)
+  const scoreB = Math.sqrt(B.length * B.radius) * Math.pow(1.15, B.hardness)
 
   const high = Math.max(scoreA, scoreB)
   const low = Math.min(scoreA, scoreB)
   const ratio = low <= 0 ? Infinity : high / low
-
-  const pDraw = 0.10
-
+  //平局概率-无事发生
+  const pDraw = 0.08
+  //两败俱伤概率-双方全都长度宽度-50%
   let pBothHurt = 0.10 - (ratio / 100)
   if (pBothHurt < 0.02) pBothHurt = 0.02
+  //苦命鸳鸯概率- 双方全都+30%
+  let pKmyy = 0.10
 
-  let pRemain = 1 - pDraw - pBothHurt
+  // 所有事件的概率总和。如果添加新事件，记得在这里增加。
+  let event_sum = pDraw + pBothHurt + pKmyy
+
+  let pRemain = 1 - event_sum
   if (pRemain < 0) pRemain = 0
+
 
   const sumScore = scoreA + scoreB || 1
   const pAWin = pRemain * (scoreA / sumScore)
 
+  //初始化概率
   const r = Math.random()
+  const r2 = r -  event_sum//进入轮盘赌的概率
 
-  // ---- 平局 ----
-  if (r < pDraw) return '平局，无事发生'
+  // -----------------
+  // -----特殊事件-----
+  // ----------------- 
+  //  判定平局 
+  const drawMessages = [
+  "平局，无事发生",
+  "你来我往，势均力敌，最终平局！",
+  "战至天昏地暗，仍未分出胜负。",
+  `${nameA}忘记了如何脱裤子，击剑取消。`,
+  "刚脱下裤子就遇到警察叔叔，被带到所里批评教育。无事发生"
+]
+  if (r < pDraw) return drawMessages[Math.floor(Math.random() * arr.length)]
 
-  // ---- 两败俱伤 ----
+  //  判定两败俱伤 
   if (r < pDraw + pBothHurt) {
-    await updateUserNoTime(idA, A.length / 2, A.radius / 2, A.hardness)
-    await updateUserNoTime(idB, B.length / 2, B.radius / 2, B.hardness)
+    await updateUserNoTime(idA, A.length *0.7, A.radius *0.7, A.hardness)
+    await updateUserNoTime(idB, B.length *0.7, B.radius *0.7, B.hardness)
     return '两败俱伤！双方的都折断了'
   }
 
-  // ---- 下克上（在常规胜负判定前）----
+  //  判定苦命鸳鸯
+  if (r < pDraw + pBothHurt+pKmyy) {
+    await updateUserNoTime(idA, A.length * 1.3, A.radius * 1.3, A.hardness)
+    await updateUserNoTime(idB, B.length * 1.3, B.radius * 1.3, B.hardness)
+    return `\"往日种种……再无话说！\"${nameA}和${nameB}真是一对苦命鸳鸯啊😭……（双方的牛牛获得强化）`
+  }
+
+  // ---- 下克上（在事件后常规胜负判定前独立概率）----
   if (ratio >= 20 && Math.random() < 0.30) {
     // 高分者是谁？
     const highIsA = scoreA >= scoreB
@@ -460,11 +497,10 @@ async function duel(idA, idB, nameA, nameB) {
     await updateUserNoTime(lowSide.id, winnerNewLen, winnerNewRad, lowSide.data.hardness)
     await updateUserNoTime(highSide.id, loserNewLen, loserNewRad, highSide.data.hardness)
 
-    return `${highSide.name}看到${lowSide.name}的太小了，因此轻敌了被下克上，${lowSide.name}胜利，从${highSide.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`
+    return `${highSide.name}看到${lowSide.name}的太小了，不禁嘲笑起来，因此轻敌了被下克上，${lowSide.name}胜利，从${highSide.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`
   }
 
   // ---- 常规胜负判定 ----
-  const r2 = r - pDraw - pBothHurt
   const aWins = r2 < pAWin
 
   const winner = aWins
@@ -487,4 +523,326 @@ async function duel(idA, idB, nameA, nameB) {
   await updateUserNoTime(loser.id, loserNewLen, loserNewRad, loser.data.hardness)
 
   return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`
+}
+
+
+// ========================
+// 贤者模式事件系统
+// ========================
+
+// 事件定义：彼此独立、无耦合
+// apply: 输入 raw user，返回 { length, radius, hardness } 的新值（不要动 lastUpdate）
+// message: 输入事件前后、昵称等上下文，返回一句话
+// weight: 权重（可选，默认1），未来想调概率直接改这里
+const sageEvents = [
+  {
+    id: "1",
+    name: "长度暴涨半径缩水",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.30,
+        radius: u.radius * 0.90,
+        hardness: u.hardness
+      }
+    },
+    message: ({ before, after }) =>
+      `想到可以对牛牛使用擀面杖增加长度：长度增加30%，半径减少10%。`
+  },
+  {
+    id: "2",
+    name: "硬度下降但超强恢复",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 3.0,   // +150% => *2.5
+        radius: u.radius * 3.0,
+        hardness: Math.max(0, u.hardness - 1)
+      }
+    },
+    message: ({ before, after }) =>
+      `想到可以降低牛牛的密度以增加体积：硬度-1，长度和半径增加200%。`
+  },
+  {
+    id: "3",
+    name: "长度下降半径增加",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.9,
+        radius: u.radius * 1.3,
+        hardness: u.hardness
+      }
+    },
+    message: ({ before, after }) =>
+      `用力在竖直方向按压牛牛：长度降低10%，但半径增加30%。`
+  },
+  {
+    id: "4",
+    name: "时间像一头野驴",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.9,
+        radius: u.radius * 0.9,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `时间就像一头野驴呀，就好比${nickname}的前列腺经常造反一样：长度降低10%，半径降低10%。`
+  },
+  {
+    id: "5",
+    name: "肾宝",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.2,
+        radius: u.radius * 1.2,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `在思维空间找到一瓶肾宝，比刘翔快比姚明高：长度和半径增加20%。`
+  },
+  {
+    id: "6",
+    name: "雨姐",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.3,
+        radius: u.radius * 1.3,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `想到了东北雨姐，作为一个正常男性，${nickname}完全按捺不住了：长度和半径增加30%`
+  },
+  {
+    id: "7",
+    name: "脊椎移植-失败",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.75,
+        radius: u.radius * 0.75,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `想要将脊椎移植到牛牛上以增加硬度，但是失败了，而且未能及时抢救：长度和半径减少25%`
+  },
+  {
+    id: "8",
+    name: "脊椎移植-失败2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.85,
+        radius: u.radius * 0.85,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `想要将脊椎移植到牛牛上以增加硬度，但是失败了，好在抢救及时：长度和半径减少15%`
+  },
+  {
+    id: "9",
+    name: "脊椎移植-成功",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1,
+        radius: u.radius * 1,
+        hardness: u.hardness + 1
+      }
+    },
+    message: ({ nickname, after }) =>
+      `想要将脊椎移植到牛牛上以增加硬度，手术非常成功：硬度等级+1`
+  },
+  {
+    id: "10",
+    name: "抢走小男孩",
+    weight: 1,
+    apply: (u) => {
+      const lenInc = randFloat(4, 8);
+      const radInc = randFloat(0.635, 1.115);
+      return {
+        length: u.length + lenInc,
+        radius: u.radius + radInc,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `突发奇想和幼儿园门口遇到的小男孩比大小，但是被小男孩狠狠比下去了，很生气于是抢走了小男孩的并接到了自己的牛牛上：长度和半径增加随机值`
+  },
+  {
+    id: "11",
+    name: "小若汁吃",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.9,
+        radius: u.radius,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧咬住拔不下来只得截断：长度降低10%`
+  },
+  {
+    id: "12",
+    name: "老头撞树",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length ,
+        radius: u.radius * 0.9,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `躺在草地上休息，结果牛牛被500个大爷当成了一棵树，开始轮流疯狂撞树，牛牛被磨掉了一层：半径降低10%`
+  },
+  {
+    id: "13",
+    name: "斗牛大赛1",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length ,
+        radius: u.radius ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `在路边看到斗牛比赛的广告，于是去参加，结果刚进去就被公牛撞晕。`
+  },
+  {
+    id: "14",
+    name: "斗牛大赛2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length ,
+        radius: u.radius ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `在路边看到斗牛比赛的广告，于是去参加，用自己的牛牛捅死了5头壮年公牛。`
+  },
+  {
+    id: "15",
+    name: "斗牛大赛3",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.7,
+        radius: u.radius * 0.7,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `在路边看到斗牛比赛的广告，于是去参加，结果被10头公牛围攻，牛牛严重受伤。长度和半径减少30%`
+  },
+  {
+    id: "16",
+    name: "斗牛大赛4",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.9,
+        radius: u.radius * 0.9,
+        hardness: u.hardness +1
+      }
+    },
+    message: ({ nickname, after }) =>
+      `在路边看到斗牛比赛的广告，于是去参加，在比赛过程中受到启发，觉得可以把牛角套在牛牛顶部增加硬度：长度和半径减少10%，硬度等级+1`
+  },
+  {
+    id: "17",
+    name: "不低小男孩",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.95,
+        radius: u.radius * 0.95,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `突发奇想和幼儿园门口遇到的小男孩比大小，但是被小男孩狠狠比下去了，非常玉玉。长度和半径降低5%`
+  },
+  {
+    id: "18",
+    name: "小男孩与奶奶",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.8,
+        radius: u.radius ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `突发奇想和幼儿园门口遇到的小男孩比大小，小男孩输了于是嚎啕大哭，小男孩的奶奶看到了以为你在欺负小男孩，于是猛猛攻击你的牛牛以至于被折断：长度降低20%`
+  },
+  {
+    id: "19",
+    name: "小男孩与警察",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length ,
+        radius: u.radius * 0.8,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `突发奇想和幼儿园门口遇到的小男孩比大小，警察叔叔看到了以为你在对小男孩实施猥亵，于是把手铐套在你的牛牛上并把你拘留了7天：半径减少20%`
+  },
+]
+
+// 按权重随机抽事件（可扩展）
+function pickWeightedEvent(events) {
+  const total = events.reduce((s, e) => s + (e.weight ?? 1), 0)
+  let r = Math.random() * total
+  for (const e of events) {
+    r -= (e.weight ?? 1)
+    if (r <= 0) return e
+  }
+  return events[events.length - 1]
+}
+
+async function doSageMode(id, nickname) {
+  let before
+  try {
+    before = await getRawUserOrThrow(id)
+  } catch (e) {
+    if (e.code === 'ID_NOT_FOUND') {
+      return `${nickname}还没有长出牛牛，无法进入贤者模式`
+    }
+    throw e
+  }
+
+  // ✅ CD 机制：必须 level=2 才能触发
+  const level = timeLevel(before.lastUpdate, Date.now())
+  if (level !== 2) {
+    return "间隔时间太短，休息一下吧！"
+  }
+
+  const event = pickWeightedEvent(sageEvents)
+  const afterCore = event.apply(before)
+
+  // 允许触发时才写库，并更新 lastUpdate
+  const after = await updateUser(id, afterCore.length, afterCore.radius, afterCore.hardness)
+
+  return event.message({
+    event,
+    before,
+    after,
+    nickname
+  })
 }
