@@ -72,7 +72,7 @@ export class example extends plugin {
         { reg: '^#*(升级硬度|升级牛牛|牛牛升级|硬度升级|牛牛进化)$', fnc: 'upgradeHardness' },
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
-        { reg: '^#*(贤者模式|贤者时刻|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
+        { reg: '^#*(贤者模式|贤者时刻|贤者时间|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
       ],
       task: [] // 明确无定时任务，防 loader 误判
     })
@@ -127,43 +127,118 @@ export class example extends plugin {
     return true
   }
 
-  async upgradeHardness(e) {
-    const id = e.user_id
-    const name = this.e.sender.nickname
 
-    let user
-    try {
-      user = await getRawUserOrThrow(id)
-    } catch (err) {
-      if (err.code === 'ID_NOT_FOUND') {
-        e.reply(`${name}还没有长出牛牛，无法升级硬度`)
-        return true
-      }
-      throw err
-    }
+async upgradeHardness(e) {
+  const UNITS_PER_LEVEL = 100  // 每一级固定需要 100 份（1%）
+  const id = e.user_id
+  const name = this.e.sender.nickname
 
-    const { length, radius, hardness } = user
-    const { needLen, needRad } = upgradeCost(hardness)
-
-    if (length >= needLen && radius >= needRad) {
-      const newLen = length - needLen
-      const newRad = radius - needRad
-      const newHard = hardness + 1
-
-      await updateUserNoTime(id, newLen, newRad, newHard)
-
-      e.reply(
-        `献祭${fmtLen(needLen)}cm的长度和${fmtRad(needRad)}cm的半径，硬度等级+1，当前硬度等级为${newHard}`
-      )
-      return true
-    } else {
-      e.reply(
-        `升级失败！当前升级硬度需要献祭长度${fmtLen(needLen)}cm、半径${fmtRad(needRad)}cm，` +
-        `但你目前长度${fmtLen(length)}cm、半径${fmtRad(radius)}cm不足。`
-      )
+  let user
+  try {
+    user = await getRawUserOrThrow(id)
+  } catch (err) {
+    // 没有牛牛：沿用你原来的文案
+    if (err.code === 'ID_NOT_FOUND') {
+      e.reply(`${name}还没有长出牛牛，无法升级硬度`)
       return true
     }
+    throw err
   }
+
+  let { length, radius, hardness } = user
+
+  // 当前所在整数等级
+  const baseLevel = Math.floor(hardness)
+
+  // 从 baseLevel 升到 baseLevel+1 的总需求
+  const { needLen, needRad } = upgradeCost(baseLevel)
+
+  if (needLen <= 0 || needRad <= 0) {
+    e.reply('升级配置异常：需求为 0，请联系管理员检查 upgradeCost 配置')
+    return true
+  }
+
+  // 当前等级已经消耗的份数（0~100）
+  const usedUnitsRaw = (hardness - baseLevel) * UNITS_PER_LEVEL
+  const usedUnits = Math.round(usedUnitsRaw)
+  const remainingUnits = UNITS_PER_LEVEL - usedUnits
+
+  if (remainingUnits <= 0) {
+    e.reply(`当前硬度 ${hardness.toFixed(2)} 已经达到该等级上限，请联系管理员检查数据`)
+    return true
+  }
+
+  // 一份对应的长度/半径
+  const unitLen = needLen / UNITS_PER_LEVEL
+  const unitRad = needRad / UNITS_PER_LEVEL
+
+  // 本次最多能消耗当前长度/半径的 80%
+  const maxLenCanUse = length * 0.8
+  const maxRadCanUse = radius * 0.8
+
+  // 80% 最多能买多少份
+  const maxUnitsByLen = Math.floor(maxLenCanUse / unitLen)
+  const maxUnitsByRad = Math.floor(maxRadCanUse / unitRad)
+  let maxUnitsWeCanPay = Math.min(maxUnitsByLen, maxUnitsByRad)
+
+  // 连 1% 都提供不了：用你指定的失败文案
+  if (maxUnitsWeCanPay <= 0) {
+    e.reply(
+      `升级失败！当前升级硬度需要献祭长度${fmtLen(needLen)}cm、半径${fmtRad(needRad)}cm，` +
+      `但你目前长度${fmtLen(length)}cm、半径${fmtRad(radius)}cm不足。`
+    )
+    return true
+  }
+
+  // 不得跨等级：本次最多只能补完这一等级剩余的份数
+  const unitsToUpgrade = Math.min(maxUnitsWeCanPay, remainingUnits)
+
+  // 实际消耗
+  const useLen = unitLen * unitsToUpgrade
+  const useRad = unitRad * unitsToUpgrade
+
+  // 再检查一次 80% 限制
+  if (useLen > maxLenCanUse + 1e-8 || useRad > maxRadCanUse + 1e-8) {
+    e.reply('内部计算错误：本次消耗超过 80% 限制，请联系管理员检查逻辑')
+    return true
+  }
+
+  const newLen = length - useLen
+  const newRad = radius - useRad
+
+  // 新硬度：增加 unitsToUpgrade / 100
+  let newHard = hardness + unitsToUpgrade / UNITS_PER_LEVEL
+  const nextLevel = baseLevel + 1
+  if (newHard > nextLevel) newHard = nextLevel
+  newHard = Number(newHard.toFixed(2)) // 防止 5.599999 这种
+
+  await updateUserNoTime(id, newLen, newRad, newHard)
+
+  // 文案相关：计算前后进度（相对于本等级）
+  const beforeUnits = usedUnits
+  const afterUnits = beforeUnits + unitsToUpgrade
+  const beforePercent = beforeUnits  // 0~100
+  const afterPercent = afterUnits    // 0~100
+
+  const isFullLevelUp = Math.abs(newHard - nextLevel) < 1e-8
+
+  if (isFullLevelUp) {
+    // 升级到下一个整数：献祭长度x cm，半径x cm，硬度等级提升，当前硬度等级 xx
+    e.reply(
+      `献祭长度${fmtLen(useLen)}cm，半径${fmtRad(useRad)}cm，` +
+      `硬度等级提升，当前硬度等级 ${nextLevel}`
+    )
+  } else {
+    // 进度有提升但没有升级到下一个整数：
+    // 献祭长度x cm，半径x cm，当前硬度升级进度xx% → xx%
+    e.reply(
+      `献祭长度${fmtLen(useLen)}cm，半径${fmtRad(useRad)}cm，` +
+      `当前硬度升级进度 ${beforePercent}% → ${afterPercent}%`
+    )
+  }
+
+  return true
+}
 
    async resetNiuNiu(e) {
     const id = e.user_id
@@ -270,6 +345,11 @@ function fmtRad(x) {
   return Number(x).toFixed(4)
 }
 
+function randPick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
+
 function upgradeCost(hardness) {
   // 需要献祭的长度、半径
   const pow = Math.pow(1.5, hardness - 2)
@@ -328,7 +408,7 @@ async function updateUser(id, length, radius, hardness) {
     all[id] = {
       length: Number(length),
       radius: Number(radius),
-      hardness: parseInt(hardness, 10) || 0,
+      hardness: Number(parseFloat(hardness).toFixed(2)) || 0,
       lastUpdate: now
     }
     await saveAll(all)
@@ -350,7 +430,7 @@ async function updateUserNoTime(id, length, radius, hardness) {
     all[id] = {
       length: Number(length),
       radius: Number(radius),
-      hardness: parseInt(hardness, 10) || 0,
+      hardness: Number(parseFloat(hardness).toFixed(2)) || 0,
       lastUpdate: prev.lastUpdate
     }
     await saveAll(all)
@@ -416,8 +496,11 @@ async function duel(idA, idB, nameA, nameB) {
     throw e
   }
 
-  const scoreA = Math.sqrt(A.length * A.radius) * Math.pow(1.15, A.hardness)
-  const scoreB = Math.sqrt(B.length * B.radius) * Math.pow(1.15, B.hardness)
+  const effHardA = Math.floor(A.hardness)  // 有效硬度：只看整数等级
+  const effHardB = Math.floor(B.hardness)
+
+  const scoreA = Math.sqrt(A.length * A.radius) * Math.pow(1.15, effHardA)
+  const scoreB = Math.sqrt(B.length * B.radius) * Math.pow(1.15, effHardB)
 
   const high = Math.max(scoreA, scoreB)
   const low = Math.min(scoreA, scoreB)
@@ -455,20 +538,37 @@ async function duel(idA, idB, nameA, nameB) {
   `${nameA}忘记了如何脱裤子，击剑取消。`,
   "刚脱下裤子就遇到警察叔叔，被带到所里批评教育。无事发生"
 ]
-  if (r < pDraw) return drawMessages[Math.floor(Math.random() * arr.length)]
+  if (r < pDraw) return drawMessages[Math.floor(Math.random() * drawMessages.length)]
 
   //  判定两败俱伤 
   if (r < pDraw + pBothHurt) {
-    await updateUserNoTime(idA, A.length *0.7, A.radius *0.7, A.hardness)
-    await updateUserNoTime(idB, B.length *0.7, B.radius *0.7, B.hardness)
-    return '两败俱伤！双方的都折断了'
+    let bothHurt_rate = randFloat(0.6, 0.7)
+    await updateUserNoTime(idA, A.length *bothHurt_rate, A.radius *bothHurt_rate, A.hardness)
+    await updateUserNoTime(idB, B.length *bothHurt_rate, B.radius *bothHurt_rate, B.hardness)
+    const bothHurtMessage= [
+      `两败俱伤，双方的都折断了`,
+      `极限一换一，双方都损失惨重……`,
+      `${nameB}在即将输掉的时刻，引爆了藏在牛牛中的核弹……双方的牛牛都被炸断了`,
+      `拼到最后一刻，双方都精疲力尽，损失惨重……`,
+      `${nameA}在即将落败的瞬间发动了同生共死，拉着${nameB}一起倒下`,
+      `两千年后，人们从地层中找到了${nameA}和${nameB}的尸体，以及他们折成了好多段的牛牛`,
+      `望着${nameA}断掉的牛牛，${nameB}突然悟了，一直这样互相攻击岂不是毫无意义吗？于是${nameB}毅然决然主动折断了自己的牛牛`
+    ]
+    return randPick(bothHurtMessage)
   }
 
   //  判定苦命鸳鸯
   if (r < pDraw + pBothHurt+pKmyy) {
-    await updateUserNoTime(idA, A.length * 1.3, A.radius * 1.3, A.hardness)
-    await updateUserNoTime(idB, B.length * 1.3, B.radius * 1.3, B.hardness)
-    return `\"往日种种……再无话说！\"${nameA}和${nameB}真是一对苦命鸳鸯啊😭……（双方的牛牛获得强化）`
+    let kmyy_rate = randFloat(1.16, 1.31)
+    await updateUserNoTime(idA, A.length * kmyy_rate, A.radius * kmyy_rate, A.hardness)
+    await updateUserNoTime(idB, B.length * kmyy_rate, B.radius * kmyy_rate, B.hardness)
+    const kmyyMessages = [
+      `\"往日种种……再无话说！\"${nameA}和${nameB}真是一对苦命鸳鸯啊😭……（双方的牛牛获得强化）`,
+      `${nameA}和${nameB}颠鸾倒凤，不知天地为何物，${nameA}的赤色鸳鸯肚兜竟还挂在${nameB}这狂徒的腰上（双方的牛牛获得强化）`,
+      `二人击剑时因剧烈撞击流下的血，竟在地上融为一体。${nameA}这才发现，${nameB}竟是自己失散多年的亲弟弟（双方的牛牛获得强化）`,
+      `\"最、最讨厌你了！\"${nameA}气鼓鼓地朝${nameB}吼道，\"才不是因为喜欢你的大橘瓣呢\"（双方的牛牛获得强化）`
+    ]
+    return kmyyMessages[Math.floor(Math.random() * kmyyMessages.length)]
   }
 
   // ---- 下克上（在事件后常规胜负判定前独立概率）----
@@ -616,8 +716,10 @@ const sageEvents = [
         hardness: u.hardness
       }
     },
-    message: ({ nickname, after }) =>
-      `想到了东北雨姐，作为一个正常男性，${nickname}完全按捺不住了：长度和半径增加30%`
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["东北雨姐","那艺娜","完颜慧德","傅首尔","三梦奇缘","杨笠","雨姐","高市早苗","常小雨"])
+      return `看到了${wife}色图，${nickname}完全按捺不住了：长度和半径增加30%`
+    }
   },
   {
     id: "7",
@@ -763,7 +865,7 @@ const sageEvents = [
   },
   {
     id: "17",
-    name: "不低小男孩",
+    name: "不敌小男孩",
     weight: 1,
     apply: (u) => {
       return {
