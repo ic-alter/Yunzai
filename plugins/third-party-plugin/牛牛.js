@@ -352,7 +352,7 @@ function randPick(arr) {
 
 function upgradeCost(hardness) {
   // 需要献祭的长度、半径
-  const pow = Math.pow(1.5, hardness - 2)
+  const pow = Math.pow(1.2, hardness - 2)
   return {
     needLen: 6 * pow,
     needRad: 0.875 * pow
@@ -597,7 +597,12 @@ async function duel(idA, idB, nameA, nameB) {
     await updateUserNoTime(lowSide.id, winnerNewLen, winnerNewRad, lowSide.data.hardness)
     await updateUserNoTime(highSide.id, loserNewLen, loserNewRad, highSide.data.hardness)
 
-    return `${highSide.name}看到${lowSide.name}的太小了，不禁嘲笑起来，因此轻敌了被下克上，${lowSide.name}胜利，从${highSide.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`
+    const xiakeshangMessage = [
+      `${highSide.name}看到${lowSide.name}的太小了，不禁嘲笑起来，因此轻敌了被下克上，${lowSide.name}胜利，从${highSide.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`,
+      `${highSide.name}看到${lowSide.name}那小小的很可爱的牛牛，心生怜爱，于是直接把自己${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径无偿赠送给了${lowSide.name}`
+    ]
+
+    return randPick(xiakeshangMessage)
   }
 
   // ---- 常规胜负判定 ----
@@ -708,7 +713,7 @@ const sageEvents = [
   {
     id: "6",
     name: "雨姐",
-    weight: 1,
+    weight: 3,
     apply: (u) => {
       return {
         length: u.length * 1.3,
@@ -904,6 +909,148 @@ const sageEvents = [
     },
     message: ({ nickname, after }) =>
       `突发奇想和幼儿园门口遇到的小男孩比大小，警察叔叔看到了以为你在对小男孩实施猥亵，于是把手铐套在你的牛牛上并把你拘留了7天：半径减少20%`
+  },
+  {
+    id: "20",
+    name: "面条机",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length *2 ,
+        radius: u.radius * 0.5,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `把牛牛塞进了面条机，变得又细又长。长度增加100%，半径减少50%`
+  },
+  {
+    id: "21",
+    name: "男角色",
+    weight: 3,
+    apply: (u) => {
+      return {
+        length: u.length *1.3 ,
+        radius: u.radius * 1.3,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["马嘉祺","丁程鑫","宋亚轩","刘耀文","张真源","严浩翔","贺峻霖","肖战","王一博","梓瑜"])
+      return `晚上睡觉时梦到${wife}成为了你的学长教你学习，早上起来发现牛牛肿了：长度和半径增加30%`
+    }
+  },
+  {
+    id: "22",
+    name: "真龙之气",
+    weight: 3,
+    apply: (u) => {
+      return {
+        length: u.length *1.4 ,
+        radius: u.radius * 1.4,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const king = randPick(["嬴政","隋炀帝","汉武帝","崇祯皇帝","唐玄宗","朱元璋","袁世凯","姬发","皇太极"])
+      return `在放空自己时看到了${king}，他说你有天子之相，于是将真龙之气注入你的牛牛：长度和半径增加40%`
+    }
+  },
+  {
+    id: "23",
+    name: "爱国人士",
+    weight: 3,
+    apply: (u) => {
+      return {
+        length: u.length *1.25 ,
+        radius: u.radius * 1.25,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const av = randPick(["日本女同被抓获","日本男性鞭打日本女性","捆绑并审讯日本女特务","日本军国主义下服务业女性所受的压迫","小男孩在731实验室内飞行并色诱日本女军官"])
+      return `严肃观看爱国主义抗战影片${av}，牛牛深受鼓舞：长度和半径增加25%`
+    }
+  },
+  {
+    id: "24",
+    name: "神神兔兔",
+    weight: 3,
+    apply: (u) => {
+      return {
+        length: u.length *1.2 ,
+        radius: u.radius * 1.1,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `严肃学习${av}吧吧友的见证，牛牛从中收获了许多见证小知识：长度增加20%，半径增加10%`
+    }
+  },
+  {
+    id: "25",
+    name: "汪峰在",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length *1.0 ,
+        radius: u.radius * 1.0,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `你的牛牛被汪峰在吧评选为灭星级战力，你感到非常自豪。牛牛长度的半径变为原本的100%`
+    }
+  },
+  {
+    id: "26",
+    name: "汪峰在2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length *1.0 ,
+        radius: u.radius * 1.0,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `你的牛牛被汪峰在吧评选为路边级战力，你感到非常沮丧。牛牛长度的半径变为原本的100%`
+    }
+  },
+  {
+    id: "27",
+    name: "计算机科学技术",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 2.0 ,
+        radius: u.radius * 1.0,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `潜心研究Adobe Photoshop的使用，将自己的牛牛贴图复制了一份在顶端。长度增加100%`
+    }
+  },
+  {
+    id: "28",
+    name: "计算机科学技术2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.25 ,
+        radius: u.radius * 1.25,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `潜心研究Adobe Photoshop的使用，将自己的牛牛进行了拉伸变换。长度和半径增加25%`
+    }
   },
 ]
 
