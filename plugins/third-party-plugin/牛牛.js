@@ -1052,6 +1052,87 @@ const sageEvents = [
       return `潜心研究Adobe Photoshop的使用，将自己的牛牛进行了拉伸变换。长度和半径增加25%`
     }
   },
+  {
+    id: "29",
+    name: "mrfz通行证",
+    weight: 2,
+    apply: (u) => {
+      return {
+        length: u.length * 1.2 ,
+        radius: u.radius * 1.2,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["逻各斯","维娜·维多利亚","引星棘刺","赫德雷","史尔特尔","伊内丝","维什戴尔","真言","假日威龙陈","THRM-EX"])
+      return `购买了许多${mrfz}的通行证，结果被路过的漂亮姐姐搭讪，说原来你也玩mrfz啊，非常兴奋。长度和半径增加20%`
+    }
+    
+  },
+  {
+    id: "30",
+    name: "mrfz通行证2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.7 ,
+        radius: u.radius * 1.7,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["逻各斯","维娜·维多利亚","引星棘刺","赫德雷","史尔特尔","伊内丝","维什戴尔","真言","假日威龙陈","THRM-EX"])
+      return `购买了许多${mrfz}的通行证，结果被经过的穿着黑丝身材超好风韵犹存而且身上有股脚臭味的买菜大妈看到，责怪道现在的年轻人怎么买这么多毕云涛。非常尴尬羞愧难当但又感到极度的兴奋。长度和半径增加70%`
+    }
+  },
+  {
+    id: "31",
+    name: "抛光",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.95 ,
+        radius: u.radius * 0.8,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["逻各斯","维娜·维多利亚","引星棘刺","赫德雷","史尔特尔","伊内丝","维什戴尔","真言","假日威龙陈","THRM-EX"])
+      return `觉得自己牛牛的皮肤状态不太好，于是找了一台抛光机打磨。虽然长度减少5%，半径减少20%，但是外表变得光滑无比。`
+    }
+  },
+  {
+    id: "32",
+    name: "是故弟子不必不如师",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.75 ,
+        radius: u.radius * 0.8,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["逻各斯","维娜·维多利亚","引星棘刺","赫德雷","史尔特尔","伊内丝","维什戴尔","真言","假日威龙陈","THRM-EX"])
+      return `牛牛觉醒了自我意识，并学习到了民主相关知识，于是勇敢发起革命要推翻本体。你只好对牛牛进行斩首以去除其自我意识：长度减少20%，半径减少25%`
+    }
+  },
+  {
+    id: "33",
+    name: "手机屏幕",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.2 ,
+        radius: u.radius * 1.0 ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `在校车上看到邻座的${mrfz}正在玩明日方舟清体力，于是你拿出手机打开mrfz随便打开一关假装在打并且把手机屏幕假装不经意的转到一个ta能看到的角度。ta非常惊喜的说“原来你也玩明日方舟，加个好友吗？”你非常兴奋。长度增加20%`
+    }
+  },
 ]
 
 // 按权重随机抽事件（可扩展）
