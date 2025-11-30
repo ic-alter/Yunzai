@@ -362,8 +362,8 @@ function upgradeCost(hardness) {
 // 函数1：更新时间等级
 function timeLevel(lastUpdate, now = Date.now()) {
   const diffMs = now - lastUpdate
-  const tenMin = 1 * 60 * 1000
-  const thirtyMin = 3 * 60 * 1000
+  const tenMin = 1 * 60 * 500
+  const thirtyMin = 1 * 60 * 1000
   if (diffMs > thirtyMin) return 2
   if (diffMs >= tenMin) return 1
   return 0
@@ -797,6 +797,68 @@ const sageEvents = [
     },
     message: ({ nickname, after }) =>
       `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧咬住拔不下来只得截断：长度降低10%`
+  },
+  {
+    id: "11",
+    name: "小若汁吃2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.25,
+        radius: u.radius * 1.25,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧含住并吮吸，觉得非常的舒服：长度和半径增加25%`
+  },
+  {
+    id: "11",
+    name: "小若汁吃3",
+    weight: 2,
+    apply: (u) => {
+      return {
+        length: u.length * 0.85,
+        radius: u.radius * 0.85,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["风度翩翩的美少年","身娇体弱的可爱小男孩","八块腹肌的霸道总裁","杂鱼的雌小鬼","妖艳的龟娘","冰山美人","仙风道骨的老头","元气少女"])
+      return `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧含住并吮吸，结果小若汁吞下了500ml津液之后修为大涨，开了灵智，化形成为一个${wife}。与小若汁翻云覆雨了七七四十九天，筋疲力尽，长度和半径减少15%。`
+    }
+  },
+  {
+    id: "11",
+    name: "小若汁吃4",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.65,
+        radius: u.radius * 0.65,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["风度翩翩的美少年","身娇体弱的可爱小男孩","八块腹肌的霸道总裁","杂鱼的雌小鬼","妖艳的龟娘","冰山美人","仙风道骨的老头","元气少女"])
+      return `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧含住并吮吸，结果小若汁吞下了500ml津液之后修为大涨，开了灵智，化形成为一个${wife}。与小若汁翻云覆雨的时候，突然发现这byd小若汁是宙斯变的，你被吓得养胃了。长度和半径减少35%。`
+    }
+  },
+  {
+    id: "11",
+    name: "小若汁吃5",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.0,
+        radius: u.radius * 1.0,
+        hardness: u.hardness + 1
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["风度翩翩的美少年","身娇体弱的可爱小男孩","八块腹肌的霸道总裁","杂鱼的雌小鬼","妖艳的龟娘","冰山美人","仙风道骨的老头","元气少女"])
+      return `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧含住并吮吸，结果小若汁吞下了500ml津液之后修为大涨，开了灵智，化形成为一个${wife}。与小若汁翻云覆雨了九九八十一天，功力大成，修得合欢宗秘法：硬度等级+1。`
+    }
   },
   {
     id: "12",
