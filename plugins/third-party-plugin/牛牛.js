@@ -1323,7 +1323,471 @@ const sageEvents = [
       return `去参加面试，却被有特殊癖好的HR下了利尿剂。你憋不住了于是直接脱下裤子尿到HR嘴里。HR觉得找到了自己的灵魂伴侣，于是你和HR过上了幸福快乐的生活：长度和半径增加40％`
     }
   },
-  
+  {
+    id: "34",
+    name: "图书馆",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.7 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在图书馆学习，牛牛突然痒了，于是你挠了一下，然后被对面的女性指控强碱。作案工具被斩首，长度降低30%`
+     }
+ },
+{
+     id: "34",
+    name: "反转",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.radius ,
+            radius: u.length,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `早晨起来，因为太困，忘记了牛牛的安装方法。长度和半径数值互换。`
+     }
+ },
+{
+     id: "34",
+    name: "触手怪",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.0 ,
+            radius: u.radius * 1.2,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `被触手怪绑架，触手怪从牛牛向体内塞入了3亿颗卵。半径增加20%`
+     }
+ },
+{
+     id: "34",
+    name: "触手怪",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.3 ,
+            radius: u.radius * 1.3,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `被触手怪绑架，触手持续刺激牛牛导致牛牛肿胀∶长度和半径增加30%`
+     }
+ },
+{
+     id: "34",
+    name: "毛衣",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.0 ,
+            radius: u.radius + 0.3,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `亲手给牛牛织了一件毛衣∶半径增加0.3cm`
+     }
+ },
+{
+     id: "34",
+    name: "触手怪",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length + 1.0 ,
+            radius: u.radius ,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `给牛牛做了一顶毛线帽∶长度增加1cm`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.95,
+            radius: u.radius * 0.95,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱小故事，但无人在意，很玉玉∶长度和半径减少5%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.0 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，但无人在意∶无事发生`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.85 ,
+            radius: u.radius * 0.85,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，但其他人在高强度见证，自己多次试图改变话题无果，有些养胃∶长度和半径减少15%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.8 ,
+            radius: u.radius * 0.8,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，但被人询问为什么分手时，你想起了自己的下头行径支支吾吾不敢说∶长度和半径减少20%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.75 ,
+            radius: u.radius * 0.75,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，但自己的下头郭楠行为被所有人围攻，你破大防∶长度和半径减少25%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.9 ,
+            radius: u.radius * 0.9,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，但群里完全无人说话，看着上面完全由自己发出的几百条消息，你觉得自己像个啥比∶长度和半径减少10%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.1 ,
+            radius: u.radius * 1.1,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，情到深处，你忍不住掏出自己珍藏已久的从她那里偷来的贴身衣物并打了一剿∶长度和半径增加10%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.2 ,
+            radius: u.radius * 1.2,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，没想到她也在这个群里，而且多年也对你念念不忘∶长度和半径增加20%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.3 ,
+            radius: u.radius * 1.3,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，没想到她也在这个群里，而且多年也对你念念不忘，甚至还是同城，于是你和她马上去了一趟酒店∶长度和半径增加30%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.7 ,
+            radius: u.radius * 0.7,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，没想到她也在这个群里。她说她已经和一个比你帅得多有钱的多的本科同学结婚了。你被动欲绝∶长度和半径减少30%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.3 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，结果发现她也在这个群里。她说她已经和一个55岁三婚带俩娃身高162的大资本家结婚了。为了补偿你她给你转账33550336元，你于是去做了一个牛牛加长手术∶长度增加30%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.4 ,
+            radius: u.radius * 1.4,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，结果发现她也在这个群里。她说她已经和一个55岁三婚带俩娃身高162的大资本家结婚了。根据她的描述，你发现她原来是你那富可敌国的父亲在外边养的12138房姨太太，于是你向自己的父亲撒娇让父亲把白月光送给自己，然后干了个爽∶长度和半径增加40%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.65 ,
+            radius: u.radius * 0.65,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，结果发现她也在这个群里。她说她已经和一个55岁三婚带俩娃身高162的大资本家结婚了，但那个资本家因为违法行为进去了，她现在一个人抚养三个孩子压力很大，想要找个好人帮助她。但她又说自己已经伤透了心不想再和别的人发生关系。你为了及时挽回她立刻去对自己做了化学和物理阉割∶尽管牛牛长度和半径减少了35%，但你和白月光以及三个视如己出的三个孩子幸福快乐的生活在了一起`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.85 ,
+            radius: u.radius * 0.85,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，结果发现她也在这个群里。她说她已经和一个欠债几百万还有犯罪记录现在只能路边摆摊卖炸串的男人结婚了。你想不通为什么白月光不选择你，于是去找她，结果发现她现任老公做的炸串世界第一超级无敌好吃。你一口气吃了500斤炸串，胃袋超大幅度增大。由于胃袋过大，牛牛退化成小蚕蛹∶长度和半径减少15%`
+     }
+ },
+{
+     id: "34",
+    name: "白月光",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.5 ,
+            radius: u.radius * 1.5,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在群里回忆当年自己和清纯白月光的恋爱故事，结果发现她也在这个群里。她说她已经和一个欠债几百万还有犯罪记录现在只能路边摆摊卖炸串的男人结婚了。你想不通为什么白月光不选择你，于是去找她，结果发现她现任老公是个长得比魅魔更有魅惑力的超级妖艳的小男娘。你完全把持不住自己，在白月光眼前和她老公翻云覆雨，然后她的老公毅然决定抛下她和你在一起∶长度和半径增加50%`
+     }
+ },
+{
+     id: "34",
+    name: "河边",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 2 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在学校湖边散步时，突然发现有一位${mrfz}掉进了湖里，而且离岸越来越远。你救人心切，爆发潜力让牛牛变长100%，让ta抓住`
+     }
+ },
+{
+     id: "34",
+    name: "河边",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.5 ,
+            radius: u.radius * 1.5,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在学校湖边散步时，突然发现有一位${mrfz}掉进了湖里，而且离岸越来越远。你见旁边没人，于是捡起一块砖头砸向ta的头，并最终导致了ta的死亡。你感受到了杀人会带来奇异的快感∶长度和半径增加50%`
+     }
+ },
+{
+     id: "34",
+    name: "河边",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.3 ,
+            radius: u.radius * 1.3,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `在学校湖边散步时，突然发现有一位${mrfz}掉进了湖里，而且离岸越来越远。你见旁边没人，于是捡起一块砖头砸向ta的头，并最终导致了ta的死亡。但你还是被警察抓住。警车上你发现押送自己的警察超级帅，忍不住起生理反应了∶长度和半径增加30%`
+     }
+ },
+{
+     id: "34",
+    name: "美术",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.9 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `为了让牛牛全面发展你送牛牛去学美术，但是牛牛被画室里顽皮的小男孩当成了笔∶长度磨损10%`
+     }
+ },
+{
+     id: "34",
+    name: "美术",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.0 ,
+            radius: u.radius * 0.9,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `为了让牛牛全面发展你送牛牛去学美术，牛牛废寝忘食的练习，一段时间下来瘦了不少∶半径减少10%`
+     }
+ },
+{
+     id: "34",
+    name: "美术",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.2 ,
+            radius: u.radius * 1.2,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `为了让牛牛全面发展你送牛牛去学美术，但是牛牛在画室遇到了非常有气质的美术生学姐，起生理反应了∶长度和半径增加20%`
+     }
+ },
+{
+     id: "34",
+    name: "美术",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.0 ,
+            radius: u.radius * 1.0,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `为了让牛牛全面发展你送牛牛去学美术，画室的老师是一个留着小胡子的外国人。他说自己是考美院落榜了，为了维持生计来这里教美术。牛牛和老师在政治上相谈甚欢，并一起决定做大事。`
+     }
+ },
+{
+     id: "34",
+    name: "美术",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 0.7 ,
+            radius: u.radius * 0.7,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `为了让牛牛全面发展你送牛牛去学美术，画室的老师是一个留着小胡子的外国人。他说自己是考美院落榜了，为了维持生计来这里教美术。牛牛和老师在政治上相谈甚欢，并一起决定做大事。后来你听说你的牛牛不知道为什么变成了战犯，遭受了凌迟∶长度和半径减少30%`
+     }
+ },
+
 ]
 
 // 按权重随机抽事件（可扩展）
