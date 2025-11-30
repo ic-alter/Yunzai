@@ -846,6 +846,22 @@ const sageEvents = [
   },
   {
     id: "11",
+    name: "小若汁吃6",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.5,
+        radius: u.radius * 1.5,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const wife = randPick(["风度翩翩的美少年","身娇体弱的可爱小男孩","八块腹肌的霸道总裁","杂鱼的雌小鬼","妖艳的龟娘","冰山美人","仙风道骨的老头","元气少女"])
+      return `用牛牛去逗弄小若汁，结果惹怒了小若汁，牛牛被紧紧含住并吮吸，结果小若汁吞下了500ml津液之后修为大涨，开了灵智，化形成为一个${wife}。与小若汁翻云覆雨的时候，突然发现这byd小若汁是宙斯变的，你更兴奋了。长度和半径增加50％。`
+    }
+  },
+  {
+    id: "11",
     name: "小若汁吃5",
     weight: 1,
     apply: (u) => {
@@ -1195,6 +1211,119 @@ const sageEvents = [
       return `在校车上看到邻座的${mrfz}正在玩明日方舟清体力，于是你拿出手机打开mrfz随便打开一关假装在打并且把手机屏幕假装不经意的转到一个ta能看到的角度。ta非常惊喜的说“原来你也玩明日方舟，加个好友吗？”你非常兴奋。长度增加20%`
     }
   },
+  {
+    id: "34",
+    name: "米哈游转模",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.0 ,
+        radius: u.radius + u.hardness * 0.3 ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `用牛牛玩米哈游，结果牛牛学会了米哈游的传统属性转模：半径增加，增加值相当于硬度等级的30％`
+    }
+  },
+  {
+    id: "34",
+    name: "米哈游转模",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.0 ,
+        radius: u.radius + u.length * 0.01 ,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `用牛牛玩米哈游，结果牛牛学会了米哈游的传统属性转模：半径增加，增加值相当于牛牛长度的1％`
+    }
+  },
+  {
+    id: "34",
+    name: "米哈游转模",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length + u.radius * 2.0 ,
+        radius: u.radius,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `用牛牛玩米哈游，结果牛牛学会了米哈游的传统属性转模：长度增加，增加值相当于牛牛半径的200％`
+    }
+  },
+  {
+    id: "34",
+    name: "HR利尿",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.95 ,
+        radius: u.radius * 0.95,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `去参加面试，却被有特殊癖好的HR下了利尿剂。当众失禁的你羞愧难当：长度和半径降低5％`
+    }
+  },
+  {
+    id: "34",
+    name: "HR利尿2",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1 ,
+        radius: u.radius * 1,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `去参加面试，却被有特殊癖好的HR下了利尿剂。但你的牛牛凭借超强的能力抵御住了利尿剂的效果：无事发生`
+    }
+  },
+  {
+    id: "34",
+    name: "HR利尿",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.2 ,
+        radius: u.radius * 1.2,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `去参加面试，却被有特殊癖好的HR下了利尿剂。当众失禁的你感受到了一种当众暴露的快感：长度和半径增加20％`
+    }
+  },
+  {
+    id: "34",
+    name: "HR利尿",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.4 ,
+        radius: u.radius * 1.4,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      const mrfz = randPick(["小萝莉","小正太","青春学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","可爱舍友","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+      return `去参加面试，却被有特殊癖好的HR下了利尿剂。你憋不住了于是直接脱下裤子尿到HR嘴里。HR觉得找到了自己的灵魂伴侣，于是你和HR过上了幸福快乐的生活：长度和半径增加40％`
+    }
+  },
+  
 ]
 
 // 按权重随机抽事件（可扩展）
