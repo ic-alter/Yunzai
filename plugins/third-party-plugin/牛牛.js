@@ -305,7 +305,9 @@ async upgradeHardness(e) {
       "进入贤者模式（触发微妙的随机事件）",
       "",
       "7️⃣ #牛牛帮助",
-      "查看本帮助。"
+      "查看本帮助。",
+      "",
+      "为防止刷等级时刷屏影响正常群聊，可以加入击剑群用于刷经验：点击链接加入群聊【🐄击剑运动交流群】：https://qm.qq.com/q/y4iAWplC00"
     ].join("\n")
 
     e.reply(msg)
@@ -572,7 +574,7 @@ async function duel(idA, idB, nameA, nameB) {
   }
 
   // ---- 下克上（在事件后常规胜负判定前独立概率）----
-  if (ratio >= 20 && Math.random() < 0.30) {
+  if (ratio >= 40 && Math.random() < 0.30) {
     // 高分者是谁？
     const highIsA = scoreA >= scoreB
 
@@ -603,6 +605,33 @@ async function duel(idA, idB, nameA, nameB) {
     ]
 
     return randPick(xiakeshangMessage)
+  } 
+  // ---- 狭路相逢（在事件后常规胜负判定前独立概率）----
+  // ---- 狭路相逢（战力相近时才会触发，仅根据分数决定，而且有更严厉的失败惩罚）----
+  else if (ratio <= 1.5 && Math.random() < 0.20){
+    // 高分者是谁？
+    const highIsA = scoreA >= scoreB
+
+    const highSide = highIsA
+      ? { id: idA, name: nameA, data: A, score: scoreA }
+      : { id: idB, name: nameB, data: B, score: scoreB }
+
+    const lowSide = highIsA
+      ? { id: idB, name: nameB, data: B, score: scoreB }
+      : { id: idA, name: nameA, data: A, score: scoreA }
+
+    // 高分者抢低分者 随机60到75%
+    const stealRate = randFloat(0.6,0.75)
+    const stealLen = lowSide.data.length * stealRate
+    const stealRad = lowSide.data.radius * stealRate
+
+    const winnerNewLen = lowSide.data.length + stealLen
+    const winnerNewRad = lowSide.data.radius + stealRad
+    const loserNewLen  = highSide.data.length - stealLen
+    const loserNewRad  = highSide.data.radius - stealRad
+
+    await updateUserNoTime(highSide.id, winnerNewLen, winnerNewRad, highSide.data.hardness)
+    await updateUserNoTime(lowSide.id, loserNewLen, loserNewRad, lowSide.data.hardness)
   }
 
   // ---- 常规胜负判定 ----
@@ -1112,6 +1141,22 @@ const sageEvents = [
     message: ({ nickname, after }) =>{
       //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
       return `潜心研究Adobe Photoshop的使用，将自己的牛牛贴图复制了一份在顶端。长度增加100%`
+    }
+  },
+  {
+    id: "27",
+    name: "计算机科学技术",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.0 ,
+        radius: u.radius * 2.0,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>{
+      //const av = randPick(["孙笑川","航空母舰","中国人口","朴正熙","武汉大学","威资","2ch"])
+      return `潜心研究Adobe Photoshop的使用，将自己的牛牛进行拉伸操作。半径增加100%`
     }
   },
   {
@@ -1787,7 +1832,121 @@ const sageEvents = [
         return `为了让牛牛全面发展你送牛牛去学美术，画室的老师是一个留着小胡子的外国人。他说自己是考美院落榜了，为了维持生计来这里教美术。牛牛和老师在政治上相谈甚欢，并一起决定做大事。后来你听说你的牛牛不知道为什么变成了战犯，遭受了凌迟∶长度和半径减少30%`
      }
  },
+ {
+     id: "34",
+    name: "莱茵科技",
+    weight: 1,
+    apply: (u) => {
+        return {
+            length: u.length * 1.05 ,
+            radius: u.radius * 1.05,
+            hardness: u.hardness
+         }
+     },
+    message: ({ nickname, after }) =>{
+        const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+        return `从mrfz著名攻略组莱茵攻略组那里学会了开挂的方法。理论上能做到只不过需要凹，所以小调不算开挂。长度和半径增加5%`
+     }
+ },
+ {
+  id: "34",
+ name: "中庸之道",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: Math.sqrt(u.length * u.radius) ,
+         radius: Math.sqrt(u.length * u.radius),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `修得中庸之道，长度和半径的值得到平衡（值相当于原长度和半径乘积的0.5次幂）`
+  }
+},
+{
+  id: "34",
+ name: "阮梅",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: u.length + randFloat(800,1600)          ,
+         radius: u.radius + randFloat(127,223),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `在模拟宇宙中遇到了阮梅。阮梅赠送你一个超级巨大的牛牛：长度和半径增加大额固定值`
+  }
+},
+{
+  id: "4",
+  name: "侯府小世子",
+  weight: 1,
+  apply: (u) => {
+    if (u.length > 120 || u.radius > 17.5) {
+      return {
+        length: u.length * 0.6,
+        radius: u.radius * 0.6,
+        hardness: u.hardness,
+        tag: "too_big"
+      }
+    } else if (u.length < 4 && u.radius < 1) {
+      return {
+        length: u.length,
+        radius: u.radius,
+        hardness: u.hardness + 1,
+        tag: "too_small_levelup"
+      }
+    } else {
+      return {
+        length: u.length,
+        radius: u.radius,
+        hardness: u.hardness,
+        tag: "nothing"
+      }
+    }
+  },
+  message: ({ nickname, after, tag }) => {
+    if (tag === "too_big") return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。但侯府小世子喜欢小小的很可爱，而你的牛牛却巨大无比。小世子看到之后震怒，下令砍掉你那丑陋的大牛牛：长度和半径减少40%`
+    if (tag === "too_small_levelup") return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。侯府小世子喜欢小小的很可爱，你的牛牛恰好完全符合他的喜好。从此全城都知道小世子新得了一位宠到心尖上的夫人：硬度等级+1`
+    return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。但侯府小世子喜欢小小的很可爱，为你脱下裤子之后他直接失去兴趣了，把你赶出了府：无事发生`
+  }
+},
+{
+  id: "shoulder_check",
+  name: "肩宽判定事件",
+  weight: 1,
 
+  apply: (u) => {
+    // 分支A：极端巨大 -> 衰减30%
+    if ((u.length > 190 && u.radius > 41)||(u.length > 5000)||(u.radius > 800)) {
+      return {
+        length: u.length * 0.70,
+        radius: u.radius * 0.70,
+        hardness: u.hardness,
+        tag: "too_huge_decay"
+      }
+    }
+
+    // 分支B：否则 -> 增加20%
+    return {
+      length: u.length * 1.20,
+      radius: u.radius * 1.20,
+      hardness: u.hardness,
+      tag: "normal_boost"
+    }
+  },
+
+  message: ({ nickname, after, tag }) => {
+    if (tag === "too_huge_decay") {
+      return `太久没有鹿关，牛牛压抑过度于是化形在半夜去草本体，结果因为牛牛太大，把本体压到全身粉末性骨折：牛牛长度与半径减少30%。`
+    }
+    // normal_boost
+    return `太久没有鹿关，牛牛压抑过度于是化形在半夜去草本体，本体和牛牛都非常舒服：长度与半径增加20%。`
+  }
+}
 ]
 
 // 按权重随机抽事件（可扩展）
@@ -1828,6 +1987,7 @@ async function doSageMode(id, nickname) {
     event,
     before,
     after,
-    nickname
+    nickname,
+    tag: afterCore.tag   // 旧事件这里就是 undefined
   })
 }
