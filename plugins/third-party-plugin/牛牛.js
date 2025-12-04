@@ -128,7 +128,7 @@ export class example extends plugin {
   }
 
 
-async upgradeHardness(e) {
+  async upgradeHardness(e) {
   const UNITS_PER_LEVEL = 100  // 每一级固定需要 100 份（1%）
   const id = e.user_id
   const name = this.e.sender.nickname
@@ -137,7 +137,6 @@ async upgradeHardness(e) {
   try {
     user = await getRawUserOrThrow(id)
   } catch (err) {
-    // 没有牛牛：沿用你原来的文案
     if (err.code === 'ID_NOT_FOUND') {
       e.reply(`${name}还没有长出牛牛，无法升级硬度`)
       return true
@@ -147,10 +146,10 @@ async upgradeHardness(e) {
 
   let { length, radius, hardness } = user
 
-  // 当前所在整数等级
+  const beforeHard = hardness
   const baseLevel = Math.floor(hardness)
 
-  // 从 baseLevel 升到 baseLevel+1 的总需求
+  // 当前整数等级 -> 下一整数等级 的总需求
   const { needLen, needRad } = upgradeCost(baseLevel)
 
   if (needLen <= 0 || needRad <= 0) {
@@ -158,7 +157,7 @@ async upgradeHardness(e) {
     return true
   }
 
-  // 当前等级已经消耗的份数（0~100）
+  // 当前等级已消耗份数（0~100）
   const usedUnitsRaw = (hardness - baseLevel) * UNITS_PER_LEVEL
   const usedUnits = Math.round(usedUnitsRaw)
   const remainingUnits = UNITS_PER_LEVEL - usedUnits
@@ -168,20 +167,21 @@ async upgradeHardness(e) {
     return true
   }
 
-  // 一份对应的长度/半径
+  // 每 1% 对应的消耗
   const unitLen = needLen / UNITS_PER_LEVEL
   const unitRad = needRad / UNITS_PER_LEVEL
 
-  // 本次最多能消耗当前长度/半径的 80%
+  // 本次最多能消耗当前长度/半径的 80%（按本次开始值计算）
   const maxLenCanUse = length * 0.8
   const maxRadCanUse = radius * 0.8
+  let budgetLen = maxLenCanUse
+  let budgetRad = maxRadCanUse
 
   // 80% 最多能买多少份
-  const maxUnitsByLen = Math.floor(maxLenCanUse / unitLen)
-  const maxUnitsByRad = Math.floor(maxRadCanUse / unitRad)
+  const maxUnitsByLen = Math.floor(budgetLen / unitLen)
+  const maxUnitsByRad = Math.floor(budgetRad / unitRad)
   let maxUnitsWeCanPay = Math.min(maxUnitsByLen, maxUnitsByRad)
 
-  // 连 1% 都提供不了：用你指定的失败文案
   if (maxUnitsWeCanPay <= 0) {
     e.reply(
       `升级失败！当前升级硬度需要献祭长度${fmtLen(needLen)}cm、半径${fmtRad(needRad)}cm，` +
@@ -190,55 +190,94 @@ async upgradeHardness(e) {
     return true
   }
 
-  // 不得跨等级：本次最多只能补完这一等级剩余的份数
+  // 不能跨等级：本次最多只能补完这一等级剩余份数
   const unitsToUpgrade = Math.min(maxUnitsWeCanPay, remainingUnits)
 
-  // 实际消耗
-  const useLen = unitLen * unitsToUpgrade
-  const useRad = unitRad * unitsToUpgrade
+  const useLen1 = unitLen * unitsToUpgrade
+  const useRad1 = unitRad * unitsToUpgrade
 
-  // 再检查一次 80% 限制
-  if (useLen > maxLenCanUse + 1e-8 || useRad > maxRadCanUse + 1e-8) {
-    e.reply('内部计算错误：本次消耗超过 80% 限制，请联系管理员检查逻辑')
-    return true
-  }
+  // 扣本次预算
+  budgetLen -= useLen1
+  budgetRad -= useRad1
 
-  const newLen = length - useLen
-  const newRad = radius - useRad
+  let newLen = length - useLen1
+  let newRad = radius - useRad1
 
-  // 新硬度：增加 unitsToUpgrade / 100
+  // 新硬度：先把当前等级进度补上
   let newHard = hardness + unitsToUpgrade / UNITS_PER_LEVEL
   const nextLevel = baseLevel + 1
   if (newHard > nextLevel) newHard = nextLevel
-  newHard = Number(newHard.toFixed(2)) // 防止 5.599999 这种
+  newHard = Number(newHard.toFixed(2))
+
+  // ====== 情况 A：没补到整数，只是进度提升 ======
+  const isFullLevelUp = Math.abs(newHard - nextLevel) < 1e-8
+  if (!isFullLevelUp) {
+    await updateUserNoTime(id, newLen, newRad, newHard)
+
+    const beforePercent = usedUnits
+    const afterPercent = usedUnits + unitsToUpgrade
+
+    e.reply(
+      `献祭长度${fmtLen(useLen1)}cm，半径${fmtRad(useRad1)}cm，` +
+      `当前硬度升级进度 ${beforePercent}% → ${afterPercent}%`
+    )
+    return true
+  }
+
+  // ====== 到了整数 nextLevel，看看是否能连续升级 ======
+  // 连续升级最多 5 级（含本次刚到的整数）
+  let levelsGained = 1  // 已从 baseLevel.X 升到 nextLevel（算 1 级）
+  let curLevel = nextLevel  // 当前是整数
+  let totalUseLen = useLen1
+  let totalUseRad = useRad1
+
+  // 先判断：能不能“直接付清下一整级”
+  const canPayFullLevel = (level) => {
+    const { needLen: nl, needRad: nr } = upgradeCost(level)
+    return nl <= newLen && nr <= newRad && nl <= budgetLen && nr <= budgetRad
+  }
+
+  if (!canPayFullLevel(curLevel)) {
+    // 不能连续：只升到这个整数
+    await updateUserNoTime(id, newLen, newRad, curLevel)
+
+    e.reply(
+      `献祭长度${fmtLen(useLen1)}cm，半径${fmtRad(useRad1)}cm，` +
+      `硬度等级提升，当前硬度等级 ${curLevel}`
+    )
+    return true
+  }
+
+  // ====== 情况 B：进入连续整级升级 ======
+  while (levelsGained < 5 && canPayFullLevel(curLevel)) {
+    const { needLen: nl, needRad: nr } = upgradeCost(curLevel)
+
+    // 扣资源 & 预算
+    newLen -= nl
+    newRad -= nr
+    budgetLen -= nl
+    budgetRad -= nr
+
+    totalUseLen += nl
+    totalUseRad += nr
+
+    curLevel += 1
+    levelsGained += 1
+  }
+
+  // curLevel 是最终整数硬度
+  newHard = curLevel
 
   await updateUserNoTime(id, newLen, newRad, newHard)
 
-  // 文案相关：计算前后进度（相对于本等级）
-  const beforeUnits = usedUnits
-  const afterUnits = beforeUnits + unitsToUpgrade
-  const beforePercent = beforeUnits  // 0~100
-  const afterPercent = afterUnits    // 0~100
-
-  const isFullLevelUp = Math.abs(newHard - nextLevel) < 1e-8
-
-  if (isFullLevelUp) {
-    // 升级到下一个整数：献祭长度x cm，半径x cm，硬度等级提升，当前硬度等级 xx
-    e.reply(
-      `献祭长度${fmtLen(useLen)}cm，半径${fmtRad(useRad)}cm，` +
-      `硬度等级提升，当前硬度等级 ${nextLevel}`
-    )
-  } else {
-    // 进度有提升但没有升级到下一个整数：
-    // 献祭长度x cm，半径x cm，当前硬度升级进度xx% → xx%
-    e.reply(
-      `献祭长度${fmtLen(useLen)}cm，半径${fmtRad(useRad)}cm，` +
-      `当前硬度升级进度 ${beforePercent}% → ${afterPercent}%`
-    )
-  }
+  e.reply(
+    `献祭长度${fmtLen(totalUseLen)}cm，半径${fmtRad(totalUseRad)}cm，` +
+    `硬度等级连续提升，由${Number(beforeHard.toFixed(2))}提升到${newHard}`
+  )
 
   return true
 }
+
 
    async resetNiuNiu(e) {
     const id = e.user_id
@@ -339,12 +378,28 @@ function randFloat(min, max) {
   return Math.random() * (max - min) + min
 }
 
+function addCommasIfNeeded(intStr) {
+  // intStr 可能带负号
+  const sign = intStr.startsWith('-') ? '-' : '';
+  const digits = sign ? intStr.slice(1) : intStr;
+
+  if (digits.length <= 6) return intStr; // 不到7位不加
+
+  // 每三位加逗号
+  const withCommas = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return sign + withCommas;
+}
+
 function fmtLen(x) {
-  return Number(x).toFixed(2)
+  const s = Number(x).toFixed(2);      // "1234567.89"
+  const [intPart, decPart] = s.split('.');
+  return `${addCommasIfNeeded(intPart)}.${decPart}`;
 }
 
 function fmtRad(x) {
-  return Number(x).toFixed(4)
+  const s = Number(x).toFixed(4);      // "1234567.8901"
+  const [intPart, decPart] = s.split('.');
+  return `${addCommasIfNeeded(intPart)}.${decPart}`;
 }
 
 function randPick(arr) {
@@ -354,7 +409,7 @@ function randPick(arr) {
 
 function upgradeCost(hardness) {
   // 需要献祭的长度、半径
-  const pow = Math.pow(1.2, hardness - 2)
+  const pow = Math.pow(1.2, Math.floor(hardness) - 2)
   return {
     needLen: 6 * pow,
     needRad: 0.875 * pow
@@ -470,8 +525,8 @@ async function applyAndDescribe(id) {
     return '间隔时间太短，休息一下吧！'
   }
 
-  const lenInc = randFloat(lenIncMin, lenIncMax)
-  const radInc = randFloat(radIncMin, radIncMax)
+  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.15,Math.floor(hardness)-2)
+  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.15,Math.floor(hardness)-2)
 
   const newLen = length + lenInc
   const newRad = radius + radInc
@@ -501,9 +556,18 @@ async function duel(idA, idB, nameA, nameB) {
   const effHardA = Math.floor(A.hardness)  // 有效硬度：只看整数等级
   const effHardB = Math.floor(B.hardness)
 
-  const scoreA = Math.sqrt(A.length * A.radius) * Math.pow(1.15, effHardA)
-  const scoreB = Math.sqrt(B.length * B.radius) * Math.pow(1.15, effHardB)
+  const lrA = Math.sqrt(A.length * A.radius)
+  const lrB = Math.sqrt(B.length * B.radius)
 
+  const scoreA = lrA * Math.pow(1.10, effHardA)
+  const scoreB = lrB * Math.pow(1.10, effHardB)
+
+  //计算下克上时的high low
+  const xks_high = Math.max(lrA, lrB)
+  const xks_low = Math.min(lrA, lrB)
+  const xks_ratio = xks_low <= 0 ? Infinity : xks_high/xks_low
+
+  //计算最终得分的highlow
   const high = Math.max(scoreA, scoreB)
   const low = Math.min(scoreA, scoreB)
   const ratio = low <= 0 ? Infinity : high / low
@@ -544,7 +608,7 @@ async function duel(idA, idB, nameA, nameB) {
 
   //  判定两败俱伤 
   if (r < pDraw + pBothHurt) {
-    let bothHurt_rate = randFloat(0.6, 0.7)
+    let bothHurt_rate = randFloat(0.65, 0.7)
     await updateUserNoTime(idA, A.length *bothHurt_rate, A.radius *bothHurt_rate, A.hardness)
     await updateUserNoTime(idB, B.length *bothHurt_rate, B.radius *bothHurt_rate, B.hardness)
     const bothHurtMessage= [
@@ -574,9 +638,9 @@ async function duel(idA, idB, nameA, nameB) {
   }
 
   // ---- 下克上（在事件后常规胜负判定前独立概率）----
-  if (ratio >= 40 && Math.random() < 0.30) {
+  if (xks_ratio >= 40 && Math.random() < 0.30) {
     // 高分者是谁？
-    const highIsA = scoreA >= scoreB
+    const highIsA = lrA >= lrB
 
     const highSide = highIsA
       ? { id: idA, name: nameA, data: A, score: scoreA }
@@ -593,8 +657,8 @@ async function duel(idA, idB, nameA, nameB) {
 
     const winnerNewLen = lowSide.data.length + stealLen
     const winnerNewRad = lowSide.data.radius + stealRad
-    const loserNewLen  = highSide.data.length - stealLen
-    const loserNewRad  = highSide.data.radius - stealRad
+    const loserNewLen  = highSide.data.length - stealLen*0.5
+    const loserNewRad  = highSide.data.radius - stealRad*0.5
 
     await updateUserNoTime(lowSide.id, winnerNewLen, winnerNewRad, lowSide.data.hardness)
     await updateUserNoTime(highSide.id, loserNewLen, loserNewRad, highSide.data.hardness)
@@ -627,8 +691,8 @@ async function duel(idA, idB, nameA, nameB) {
 
     const winnerNewLen = lowSide.data.length + stealLen
     const winnerNewRad = lowSide.data.radius + stealRad
-    const loserNewLen  = highSide.data.length - stealLen
-    const loserNewRad  = highSide.data.radius - stealRad
+    const loserNewLen  = highSide.data.length - stealLen*0.6
+    const loserNewRad  = highSide.data.radius - stealRad*0.6
 
     await updateUserNoTime(highSide.id, winnerNewLen, winnerNewRad, highSide.data.hardness)
     await updateUserNoTime(lowSide.id, loserNewLen, loserNewRad, lowSide.data.hardness)
@@ -650,8 +714,8 @@ async function duel(idA, idB, nameA, nameB) {
 
   const winnerNewLen = winner.data.length + stealLen
   const winnerNewRad = winner.data.radius + stealRad
-  const loserNewLen  = loser.data.length - stealLen
-  const loserNewRad  = loser.data.radius - stealRad
+  const loserNewLen  = loser.data.length - stealLen*0.4 //败者损失长度减小
+  const loserNewRad  = loser.data.radius - stealRad*0.4
 
   await updateUserNoTime(winner.id, winnerNewLen, winnerNewRad, winner.data.hardness)
   await updateUserNoTime(loser.id, loserNewLen, loserNewRad, loser.data.hardness)
@@ -1866,18 +1930,108 @@ const sageEvents = [
 },
 {
   id: "34",
+ name: "医美",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: Math.sqrt(7 * u.length * u.radius) ,
+         radius: Math.sqrt(u.length * u.radius / 7),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `在路边看到医美广告，所以给牛牛做了医美重新塑形（长度和半径的比值发生变化。）`
+  }
+},
+{
+  id: "34",
+ name: "医美",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: Math.sqrt(9 * u.length * u.radius) ,
+         radius: Math.sqrt(u.length * u.radius / 9),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `在路边看到医美广告，所以给牛牛做了医美重新塑形（长度和半径的比值发生变化。）`
+  }
+},
+{
+  id: "34",
+ name: "医美",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: Math.sqrt(8 * u.length * u.radius) ,
+         radius: Math.sqrt(u.length * u.radius / 8),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `在路边看到医美广告，所以给牛牛做了医美重新塑形（长度和半径的比值发生变化。）`
+  }
+},
+{
+  id: "34",
+ name: "医美",
+ weight: 1,
+ apply: (u) => {
+     return {
+         length: Math.sqrt(6 * u.length * u.radius) ,
+         radius: Math.sqrt(u.length * u.radius / 6),
+         hardness: u.hardness
+      }
+  },
+ message: ({ nickname, after }) =>{
+     const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
+     return `在路边看到医美广告，所以给牛牛做了医美重新塑形（长度和半径的比值发生变化。）`
+  }
+},
+{
+  id: "34",
  name: "阮梅",
  weight: 1,
  apply: (u) => {
      return {
-         length: u.length + randFloat(800,1600)          ,
-         radius: u.radius + randFloat(127,223),
+         length: u.length + randFloat(80.0,160.0)*Math.pow(1.15,Math.floor(u.hardness)-2)      ,
+         radius: u.radius + randFloat(12.7,22.3)*Math.pow(1.15,Math.floor(u.hardness)-2),
          hardness: u.hardness
       }
   },
  message: ({ nickname, after }) =>{
      const mrfz = randPick(["小萝莉","小正太","清纯学妹","叛逆的辣妹风同班同学","美艳学姐","温柔助教","软糯学弟","同班同学","健气学长","冷淡疏离的年轻博后","潜心学术的老教授","校内著名院士"])
      return `在模拟宇宙中遇到了阮梅。阮梅赠送你一个超级巨大的牛牛：长度和半径增加大额固定值`
+  }
+},
+{
+  id: "4",
+  name: "大饼",
+  weight: 1,
+  apply: (u) => {
+    if (u.radius / u.length > 10) {
+      return {
+        length: u.length * 10,
+        radius: u.radius * 0.01,
+        hardness: u.hardness,
+        tag: "dabing"
+      }
+    } else {
+      return {
+        length: u.length,
+        radius: u.radius,
+        hardness: u.hardness,
+        tag: "nothing"
+      }
+    }
+  },
+  message: ({ nickname, after, tag }) => {
+    if (tag === "dabing") return `据说有一位长相丑陋的少爷，唯爱又短又粗的牛牛，而且他明天要来本地选妃。你看了自己的牛牛，非常害怕，连夜去把什么液压机压路机全都用上，以防止少爷盯上自己的牛牛。长度增加900%但是半径降低99%`
+    return `据说有一位长相丑陋的少爷，唯爱又短又粗的牛牛，而且他明天要来本地选妃。你看了自己的牛牛，放心自己不会被选上。无事发生。`
   }
 },
 {
