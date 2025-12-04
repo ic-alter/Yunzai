@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: radial-gradient(circle at top, #fff6fb 0%, #f6fff9 40%, #f7f7ff 100%);
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #2c2c2c;
+    }
+    .card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border: 2px solid #f0d7e6;
+      overflow: hidden;
+    }
+    .header {
+      text-align: center;
+      padding: 22px 20px 10px;
+      background: linear-gradient(90deg, #ffe6f1, #e6fff4);
+      border-bottom: 1px dashed #e7c8d7;
+    }
+    .nickname {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow: 0 1px 0 #fff;
+    }
+    .sub {
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: .7;
+    }
+
+    .img-wrap {
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+    .pig-img {
+      width: 340px;
+      height: 340px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: #fafafa;
+      border: 1px solid #eee;
+      box-shadow: inset 0 0 0 6px #fff;
+    }
+
+    .content {
+      padding: 8px 28px 26px;
+      text-align: center;
+    }
+    .pig-name {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 10px 0 6px;
+    }
+    .desc {
+      font-size: 18px;
+      margin: 8px auto 14px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .analysis {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #666;
+      background: #fbfbff;
+      border: 1px solid #edf;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      opacity: .55;
+      padding: 0 0 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="nickname">{{nickname}}</div>
+      <div class="sub">专属猪猪鉴定结果</div>
+    </div>
+
+    <div class="img-wrap">
+      <img class="pig-img" src="{{pigImage}}" />
+    </div>
+
+    <div class="content">
+      <div class="pig-name">{{pigName}}</div>
+      <div class="desc">{{description}}</div>
+      <div class="analysis">{{analysis}}</div>
+    </div>
+
+    <div class="footer">* 结果仅供娱乐，猪猪开心最重要</div>
+  </div>
+</body>
+</html>
