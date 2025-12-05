@@ -63,6 +63,7 @@ export class example extends plugin {
       priority: 0,
       rule: [
         { reg: '^#*(.)*(立了|打胶|硬了|力了|玩几把)$', fnc: 'lile' },
+        { reg: '^#*(.)*(嗦|锁|吃|🔒|咬)(.)*牛牛$', fnc: 'suoNiuNiu' },
         { reg: '^#*(.)*击剑$', fnc: 'jijian' },
         // 新增：看看牛牛
         { reg: '^#*(看看牛牛|查看牛牛|牛牛状态)$', fnc: 'seeNiuNiu' },
@@ -79,7 +80,17 @@ export class example extends plugin {
   }
 
   async lile(e) {
-    const msg = await applyAndDescribe(e.user_id)
+    const msg = await applyAndDescribe(e.user_id, e.sender.nickname)
+    e.reply(msg)
+    return true
+  }
+
+  async suoNiuNiu(e) {
+    const ats = e.message.filter(m => m.type === 'at')
+    if (ats.length === 0) return false
+    const mid = ats[0].qq
+    const mname = ats[0].text
+    const msg = await applyAndDescribe(mid,mname, 0.5)
     e.reply(msg)
     return true
   }
@@ -343,10 +354,13 @@ export class example extends plugin {
       "6️⃣ #贤者模式",
       "进入贤者模式（触发微妙的随机事件）",
       "",
-      "7️⃣ #牛牛帮助",
+      "7️⃣ #嗦牛牛 @某人",
+      "帮别人立（效果量减半且会使别人进CD）",
+      "",
+      "8️⃣ #牛牛帮助",
       "查看本帮助。",
       "",
-      "为防止刷等级时刷屏影响正常群聊，可以加入击剑群用于刷经验：点击链接加入群聊【🐄击剑运动交流群】：https://qm.qq.com/q/y4iAWplC00"
+      "为防止刷屏影响正常群聊，可以加入专用【🐄击剑运动交流群】：https://qm.qq.com/q/y4iAWplC00"
     ].join("\n")
 
     e.reply(msg)
@@ -396,42 +410,45 @@ function addCommas(intStr) {
   return sign + withCommas;
 }
 
-// 科学计数法：mantissa×10^exp（exp 用上标）
-// digits 为小数位数（不是有效位数）
+// 科学计数法：mantissa×10^(exp)，exp 用上标
 function toScientific(x, digits = 2) {
   const sign = x < 0 ? "-" : "";
   x = Math.abs(x);
-
   if (x === 0) return "0";
 
   const exp = Math.floor(Math.log10(x));
   const mantissa = x / Math.pow(10, exp);
 
-  // 保留 digits 位小数
-  const mStr = mantissa.toFixed(digits).replace(/\.?0+$/, ""); // 去掉多余 0
+  const mStr = mantissa.toFixed(digits).replace(/\.?0+$/, "");
   return `${sign}${mStr}×10${toSuperscript(exp)}`;
 }
 
-// 通用格式化：
-// - fixedDigits: 小数位数（len=2, rad=4）
-// - commaThreshold: 超过多少位开始加逗号（你现在是>6位）
-// - sciThreshold: 超过多少位用科学计数法（你现在要>11位）
+// 不靠 toFixed 估位数，直接用 log10
+function digitLength(num) {
+  num = Math.abs(num);
+  if (num < 1) return 1;
+  return Math.floor(Math.log10(num)) + 1;
+}
+
 function formatNumber(x, fixedDigits, commaThreshold = 6, sciThreshold = 11) {
   const num = Number(x);
-  if (!Number.isFinite(num)) return String(num); // NaN/Infinity 原样返回
+  if (!Number.isFinite(num)) return String(num);
 
-  const sFixed = num.toFixed(fixedDigits);
-  const [intPart, decPart] = sFixed.split(".");
-  const digitsLen = intPart.replace("-", "").length;
+  const digitsLen = digitLength(num);
 
+  // 超过 11 位直接科学计数法
   if (digitsLen > sciThreshold) {
     return toScientific(num, fixedDigits);
   }
 
+  // 7~11 位加逗号
+  const sFixed = num.toFixed(fixedDigits);
+  const [intPart, decPart] = sFixed.split(".");
   if (digitsLen > commaThreshold) {
     return `${addCommas(intPart)}.${decPart}`;
   }
 
+  // ≤6 位正常
   return sFixed;
 }
 
@@ -537,7 +554,7 @@ async function updateUserNoTime(id, length, radius, hardness) {
 }
 
 // 函数4：立了（应用增长逻辑并返回字符串）
-async function applyAndDescribe(id) {
+async function applyAndDescribe(id, name, rate = 1.0) {
   let user
   try {
     user = await getWithLevel(id)
@@ -546,7 +563,7 @@ async function applyAndDescribe(id) {
 
     const init = defaultUser(Date.now())
     await updateUser(id, init.length, init.radius, init.hardness)
-    return `当前长度${fmtLen(init.length)}cm，半径${fmtRad(init.radius)}cm，硬度等级${init.hardness}`
+    return `${name}的当前长度${fmtLen(init.length)}cm，半径${fmtRad(init.radius)}cm，硬度等级${init.hardness}`
   }
 
   const { length, radius, hardness, level } = user
@@ -566,15 +583,15 @@ async function applyAndDescribe(id) {
     return '间隔时间太短，休息一下吧！'
   }
 
-  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.15,Math.floor(hardness)-2)
-  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.15,Math.floor(hardness)-2)
+  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.15,Math.floor(hardness)-2) * rate
+  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.15,Math.floor(hardness)-2) * rate
 
   const newLen = length + lenInc
   const newRad = radius + radInc
 
   await updateUser(id, newLen, newRad, hardness)
 
-  return `${prefix}牛牛长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}`
+  return `${prefix}${name}的牛牛长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}`
 }
 
 //击剑对抗
@@ -2091,7 +2108,7 @@ const sageEvents = [
       return {
         length: u.length,
         radius: u.radius,
-        hardness: u.hardness + 1,
+        hardness: u.hardness + 2,
         tag: "too_small_levelup"
       }
     } else {
@@ -2105,7 +2122,7 @@ const sageEvents = [
   },
   message: ({ nickname, after, tag }) => {
     if (tag === "too_big") return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。但侯府小世子喜欢小小的很可爱，而你的牛牛却巨大无比。小世子看到之后震怒，下令砍掉你那丑陋的大牛牛：长度和半径减少40%`
-    if (tag === "too_small_levelup") return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。侯府小世子喜欢小小的很可爱，你的牛牛恰好完全符合他的喜好。从此全城都知道小世子新得了一位宠到心尖上的夫人：硬度等级+1`
+    if (tag === "too_small_levelup") return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。侯府小世子喜欢小小的很可爱，你的牛牛恰好完全符合他的喜好。从此全城都知道小世子新得了一位宠到心尖上的夫人：硬度等级+2`
     return `穿越到睡前刚看的一本古风耽美小说中，你因为长相俊美被京城第一纨绔的侯府小世子看上了，要接回府当娈童。但侯府小世子喜欢小小的很可爱，为你脱下裤子之后他直接失去兴趣了，把你赶出了府：无事发生`
   }
 },

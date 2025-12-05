@@ -80,15 +80,12 @@ export class example extends plugin {
         e.reply(segment.image(baseUrl+'/nailong'))
     }
     /*五个等级 极差 较差 一般 较强 极强，分别记01234.两个加起来，0是小杯，1是中杯下，2是中杯上，然后345是大杯上中下，678是超大杯上中下。8是命令所有玩家抽取，67是推荐所有玩家抽取，45是推荐有需要的玩家抽取，23是不推荐玩家抽取，1是不建议任何人以任何理由抽取*/
-    
+
     async shabei(e) {
         let fanyong = get_score()
         let duice = get_score()
         let score = fanyong + duice;
-        if((fanyong ==0 || duice ==0)&&score>4){
-            score -= 1
-        }
-        else if((fanyong ==4 || duice ==4)&&score<5){
+        if((fanyong == 4 || duice == 4)&&score<=5&&Math.random()<0.5){
             score += 1
         }
 
