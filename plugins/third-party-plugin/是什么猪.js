@@ -174,7 +174,7 @@ export class example extends plugin {
       rule: [
         {
           // 句尾匹配：是什么猪猪 / 是什么猪
-          reg: '.*(是什么猪猪|是什么猪)$',
+          reg: '.*(是什么猪猪|是什么猪|是啥猪)$',
           fnc: 'whatPig'
         }
       ]

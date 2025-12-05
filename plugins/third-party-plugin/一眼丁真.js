@@ -29,6 +29,12 @@ export class example extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
+                    reg: "^#?(猪|小猪|是猪|猪猪|🐷)$",
+                    /** 执行方法 */
+                    fnc: "pig",
+                },
+                {
+                    /** 命令正则匹配 */
                     reg: "是啥杯$",
                     /** 执行方法 */
                     fnc: "shabei",
@@ -141,6 +147,9 @@ export class example extends plugin {
     }
     async doro(e) {
         e.reply(segment.image(baseUrl+'/doro'))
+    }
+    async pig(e) {
+        e.reply(segment.image(baseUrl+'/pig'))
     }
 }
 

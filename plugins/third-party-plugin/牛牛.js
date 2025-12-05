@@ -378,28 +378,69 @@ function randFloat(min, max) {
   return Math.random() * (max - min) + min
 }
 
-function addCommasIfNeeded(intStr) {
-  // intStr 可能带负号
+// 上标数字映射
+const SUPER_MAP = {
+  "0":"⁰","1":"¹","2":"²","3":"³","4":"⁴",
+  "5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹",
+  "+":"⁺","-":"⁻"
+};
+
+function toSuperscript(n) {
+  return String(n).split("").map(ch => SUPER_MAP[ch] ?? ch).join("");
+}
+
+function addCommas(intStr) {
   const sign = intStr.startsWith('-') ? '-' : '';
   const digits = sign ? intStr.slice(1) : intStr;
-
-  if (digits.length <= 6) return intStr; // 不到7位不加
-
-  // 每三位加逗号
   const withCommas = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   return sign + withCommas;
 }
 
+// 科学计数法：mantissa×10^exp（exp 用上标）
+// digits 为小数位数（不是有效位数）
+function toScientific(x, digits = 2) {
+  const sign = x < 0 ? "-" : "";
+  x = Math.abs(x);
+
+  if (x === 0) return "0";
+
+  const exp = Math.floor(Math.log10(x));
+  const mantissa = x / Math.pow(10, exp);
+
+  // 保留 digits 位小数
+  const mStr = mantissa.toFixed(digits).replace(/\.?0+$/, ""); // 去掉多余 0
+  return `${sign}${mStr}×10${toSuperscript(exp)}`;
+}
+
+// 通用格式化：
+// - fixedDigits: 小数位数（len=2, rad=4）
+// - commaThreshold: 超过多少位开始加逗号（你现在是>6位）
+// - sciThreshold: 超过多少位用科学计数法（你现在要>11位）
+function formatNumber(x, fixedDigits, commaThreshold = 6, sciThreshold = 11) {
+  const num = Number(x);
+  if (!Number.isFinite(num)) return String(num); // NaN/Infinity 原样返回
+
+  const sFixed = num.toFixed(fixedDigits);
+  const [intPart, decPart] = sFixed.split(".");
+  const digitsLen = intPart.replace("-", "").length;
+
+  if (digitsLen > sciThreshold) {
+    return toScientific(num, fixedDigits);
+  }
+
+  if (digitsLen > commaThreshold) {
+    return `${addCommas(intPart)}.${decPart}`;
+  }
+
+  return sFixed;
+}
+
 function fmtLen(x) {
-  const s = Number(x).toFixed(2);      // "1234567.89"
-  const [intPart, decPart] = s.split('.');
-  return `${addCommasIfNeeded(intPart)}.${decPart}`;
+  return formatNumber(x, 2, 6, 11);
 }
 
 function fmtRad(x) {
-  const s = Number(x).toFixed(4);      // "1234567.8901"
-  const [intPart, decPart] = s.split('.');
-  return `${addCommasIfNeeded(intPart)}.${decPart}`;
+  return formatNumber(x, 4, 6, 11);
 }
 
 function randPick(arr) {
@@ -753,13 +794,13 @@ const sageEvents = [
     weight: 1,
     apply: (u) => {
       return {
-        length: u.length * 3.0,   // +150% => *2.5
-        radius: u.radius * 3.0,
+        length: u.length * 4.0,   // +150% => *2.5
+        radius: u.radius * 4.0,
         hardness: Math.max(0, u.hardness - 1)
       }
     },
     message: ({ before, after }) =>
-      `想到可以降低牛牛的密度以增加体积：硬度-1，长度和半径增加200%。`
+      `想到可以降低牛牛的密度以增加体积：硬度-1，长度和半径增加300%。`
   },
   {
     id: "3",
