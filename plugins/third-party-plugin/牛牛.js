@@ -106,6 +106,9 @@ export class example extends plugin {
 
     // 参数顺序：idA, idB, nameA, nameB
     const msg = await duel(fid, mid, fname, mname)
+    if (msg === "间隔时间太短，休息一下吧！") {
+      return true
+    }
     e.reply(msg)
     return false
   }
@@ -291,33 +294,40 @@ export class example extends plugin {
 
 
    async resetNiuNiu(e) {
-    const id = e.user_id
-    const name = this.e.sender.nickname
+  const id = e.user_id
+  const name = this.e.sender.nickname
 
-    let user
-    try {
-      user = await getRawUserOrThrow(id)
-    } catch (err) {
-      if (err.code === 'ID_NOT_FOUND') {
-        e.reply(`${name}还没有长出牛牛，无需重置`)
-        return true
-      }
-      throw err
+  let user
+  try {
+    user = await getRawUserOrThrow(id)
+  } catch (err) {
+    if (err.code === 'ID_NOT_FOUND') {
+      e.reply(`${name}还没有长出牛牛，无需重置`)
+      return true
     }
+    throw err
+  }
 
-    const now = Date.now()
-    const newLen = randFloat(8, 16)
-    const newRad = randFloat(1.27, 2.23)
-    const hard = user.hardness
-
-    // 重置 length/radius，硬度不变；并更新时间
-    await updateUser(id, newLen, newRad, hard)
-
-    e.reply(
-      `已重置牛牛！当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hard}`
-    )
+  // ✅ 必须 level=2（超过30分钟）才能重置
+  const level = timeLevel(user.lastUpdate, Date.now())
+  if (level !== 2) {
+    e.reply("间隔时间太短，休息一下吧！")
     return true
   }
+
+  const now = Date.now()
+  const newLen = randFloat(8, 16)
+  const newRad = randFloat(1.27, 2.23)
+  const hard = user.hardness
+
+  // 重置 length/radius，硬度不变；并更新时间
+  await updateUser(id, newLen, newRad, hard)
+
+  e.reply(
+    `已重置牛牛！当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hard}`
+  )
+  return true
+}
 
   async helpNiuNiu(e) {
     const id = e.user_id
@@ -477,8 +487,8 @@ function upgradeCost(hardness) {
 // 函数1：更新时间等级
 function timeLevel(lastUpdate, now = Date.now()) {
   const diffMs = now - lastUpdate
-  const tenMin = 1 * 60 * 500
-  const thirtyMin = 1 * 60 * 1000
+  const tenMin = 1 * 60 * 1000
+  const thirtyMin = 3 * 60 * 1000
   if (diffMs > thirtyMin) return 2
   if (diffMs >= tenMin) return 1
   return 0
@@ -583,8 +593,8 @@ async function applyAndDescribe(id, name, rate = 1.0) {
     return '间隔时间太短，休息一下吧！'
   }
 
-  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.15,Math.floor(hardness)-2) * rate
-  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.15,Math.floor(hardness)-2) * rate
+  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
+  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
 
   const newLen = length + lenInc
   const newRad = radius + radInc
@@ -603,6 +613,9 @@ async function duel(idA, idB, nameA, nameB) {
     if (e.code === 'ID_NOT_FOUND') return `${nameA}还没有长出牛牛，无法参与击剑`
     throw e
   }
+  if (timeLevel(A.lastUpdate, Date.now()) === 0 || timeLevel(A.lastUpdate, Date.now()) === 1) {
+    return "间隔时间太短，休息一下吧！" 
+  }
 
   try {
     B = await getRawUserOrThrow(idB)
@@ -610,6 +623,10 @@ async function duel(idA, idB, nameA, nameB) {
     if (e.code === 'ID_NOT_FOUND') return `${nameB}还没有长出牛牛，无法参与击剑`
     throw e
   }
+  if (timeLevel(B.lastUpdate, Date.now()) === 0 || timeLevel(B.lastUpdate, Date.now()) === 1) {
+    return "间隔时间太短，休息一下吧！" 
+  }
+
 
   const effHardA = Math.floor(A.hardness)  // 有效硬度：只看整数等级
   const effHardB = Math.floor(B.hardness)
@@ -667,8 +684,8 @@ async function duel(idA, idB, nameA, nameB) {
   //  判定两败俱伤 
   if (r < pDraw + pBothHurt) {
     let bothHurt_rate = randFloat(0.65, 0.7)
-    await updateUserNoTime(idA, A.length *bothHurt_rate, A.radius *bothHurt_rate, A.hardness)
-    await updateUserNoTime(idB, B.length *bothHurt_rate, B.radius *bothHurt_rate, B.hardness)
+    await updateUser(idA, A.length *bothHurt_rate, A.radius *bothHurt_rate, A.hardness)
+    await updateUser(idB, B.length *bothHurt_rate, B.radius *bothHurt_rate, B.hardness)
     const bothHurtMessage= [
       `两败俱伤，双方的都折断了`,
       `极限一换一，双方都损失惨重……`,
@@ -684,8 +701,8 @@ async function duel(idA, idB, nameA, nameB) {
   //  判定苦命鸳鸯
   if (r < pDraw + pBothHurt+pKmyy) {
     let kmyy_rate = randFloat(1.16, 1.31)
-    await updateUserNoTime(idA, A.length * kmyy_rate, A.radius * kmyy_rate, A.hardness)
-    await updateUserNoTime(idB, B.length * kmyy_rate, B.radius * kmyy_rate, B.hardness)
+    await updateUser(idA, A.length * kmyy_rate, A.radius * kmyy_rate, A.hardness)
+    await updateUser(idB, B.length * kmyy_rate, B.radius * kmyy_rate, B.hardness)
     const kmyyMessages = [
       `\"往日种种……再无话说！\"${nameA}和${nameB}真是一对苦命鸳鸯啊😭……（双方的牛牛获得强化）`,
       `${nameA}和${nameB}颠鸾倒凤，不知天地为何物，${nameA}的赤色鸳鸯肚兜竟还挂在${nameB}这狂徒的腰上（双方的牛牛获得强化）`,
@@ -718,8 +735,9 @@ async function duel(idA, idB, nameA, nameB) {
     const loserNewLen  = highSide.data.length - stealLen*0.5
     const loserNewRad  = highSide.data.radius - stealRad*0.5
 
-    await updateUserNoTime(lowSide.id, winnerNewLen, winnerNewRad, lowSide.data.hardness)
-    await updateUserNoTime(highSide.id, loserNewLen, loserNewRad, highSide.data.hardness)
+    //更改：这里改成更新时间
+    await updateUser(lowSide.id, winnerNewLen, winnerNewRad, lowSide.data.hardness)
+    await updateUser(highSide.id, loserNewLen, loserNewRad, highSide.data.hardness)
 
     const xiakeshangMessage = [
       `${highSide.name}看到${lowSide.name}的太小了，不禁嘲笑起来，因此轻敌了被下克上，${lowSide.name}胜利，从${highSide.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`,
@@ -924,8 +942,8 @@ const sageEvents = [
     name: "抢走小男孩",
     weight: 1,
     apply: (u) => {
-      const lenInc = randFloat(4, 8);
-      const radInc = randFloat(0.635, 1.115);
+      const lenInc = randFloat(4, 8)*Math.pow(1.2,Math.floor(u.hardness)-2);
+      const radInc = randFloat(0.635, 1.115)*Math.pow(1.2,Math.floor(u.hardness)-2);
       return {
         length: u.length + lenInc,
         radius: u.radius + radInc,
@@ -1124,6 +1142,90 @@ const sageEvents = [
     },
     message: ({ nickname, after }) =>
       `突发奇想和幼儿园门口遇到的小男孩比大小，小男孩输了于是嚎啕大哭，小男孩的奶奶看到了以为你在欺负小男孩，于是猛猛攻击你的牛牛以至于被折断：长度降低20%`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.2,
+        radius: u.radius * 1.2,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。但他太笨了无论如何也学不会，你气的牛牛大了：长度和半径增加20%`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.4,
+        radius: u.radius * 1.4,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。看着他笨拙地穿不上的样子你实在忍不住了强碱了他：长度和半径增加40%`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.0,
+        radius: u.radius * 1.0,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。教完他之后他礼貌的道谢然后走了`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.9,
+        radius: u.radius * 0.9,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。结果你在演示的时候他抢走你的内裤就跑，你想去追他结果摔了一跤牛牛崴到了：长度和半径减少10%`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 0.7,
+        radius: u.radius * 0.7,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。结果你在演示的时候他抢走你的内裤就跑，你想去追他，结果刚出门被路过的微胖女生看到，然后被她举报强碱。由于未检测到强碱证据，因此你被女法官判处强碱罪并化学阉割：长度和半径减少30%`
+  },
+  {
+    id: "18",
+    name: "教小男孩穿内裤",
+    weight: 1,
+    apply: (u) => {
+      return {
+        length: u.length * 1.3,
+        radius: u.radius * 1.3,
+        hardness: u.hardness
+      }
+    },
+    message: ({ nickname, after }) =>
+      `遇到一个可怜的小男孩，他说父母离异，没人管他，从小没有人教他怎么穿内裤，希望看看你怎么穿从而学一下。然后你就偷偷在他的内裤夹层里塞了自热包，结果小男孩穿上之后牛牛被烫熟了，疼的趴在你身上哭唧唧，你闻着熟牛牛的香味非常兴奋：长度和半径增加30%`
   },
   {
     id: "19",
@@ -2056,8 +2158,8 @@ const sageEvents = [
  weight: 1,
  apply: (u) => {
      return {
-         length: u.length + randFloat(80.0,160.0)*Math.pow(1.15,Math.floor(u.hardness)-2)      ,
-         radius: u.radius + randFloat(12.7,22.3)*Math.pow(1.15,Math.floor(u.hardness)-2),
+         length: u.length + randFloat(80.0,160.0)*Math.pow(1.2,Math.floor(u.hardness)-2),
+         radius: u.radius + randFloat(12.7,22.3)*Math.pow(1.2,Math.floor(u.hardness)-2),
          hardness: u.hardness
       }
   },
