@@ -1,0 +1,693 @@
+<!-- 维多利亚风格 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>荣誉纹章能力录</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 22px 16px;
+    font-family: "STSong", "SimSun", "Songti SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #120713;
+    background-image:
+      radial-gradient(circle at top, #3b1f3f 0, #120713 42%, #040106 100%),
+      repeating-linear-gradient(135deg, rgba(0,0,0,0.35) 0, rgba(0,0,0,0.35) 4px, rgba(24,16,32,0.85) 4px, rgba(24,16,32,0.85) 10px);
+    color: #262626;
+  }
+
+  .frame {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 6px;
+    position: relative;
+    background:
+      radial-gradient(circle at top, #3f1d33 0, #111827 100%);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 0 3px #3b1f3f,
+      0 0 0 6px #000,
+      0 18px 40px rgba(0,0,0,0.9);
+  }
+
+  /* 外金属框 */
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 10px;
+    border: 2px solid #facc6b;
+    box-shadow:
+      inset 0 0 0 1px rgba(133,77,26,0.7),
+      0 0 40px rgba(234,179,8,0.35);
+    pointer-events: none;
+  }
+
+  .page {
+    position: relative;
+    background: radial-gradient(circle at top, #fefaf0 0, #f5ecd9 40%, #f2e3c4 100%);
+    border-radius: 6px;
+    padding: 18px 20px 14px 20px;
+    box-shadow:
+      0 0 0 1px rgba(148,121,86,0.4),
+      inset 0 0 0 1px rgba(255,255,255,0.6);
+  }
+
+  .page::before {
+    /* 纸张纹理 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 100% 22px, 18px 100%;
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* 顶部标题 + 纹章 */
+
+  .header-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  #title {
+    font-size: 20px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #3b2f26;
+  }
+
+  #title span.cn {
+    font-size: 18px;
+    letter-spacing: 0.18em;
+  }
+
+  .serial-box {
+    text-align: right;
+    font-size: 11px;
+    color: #6b4b2a;
+  }
+
+  .serial-box span {
+    display: block;
+  }
+
+  .serial-code {
+    font-family: "Consolas", "Menlo", monospace;
+    letter-spacing: 0.12em;
+  }
+
+  /* 顶部盾徽 */
+
+  .crest-wrap {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .crest {
+    position: relative;
+    padding: 8px 18px;
+    background: radial-gradient(circle at top, #7c2d1b 0, #4b1c15 40%, #2b0f10 100%);
+    border-radius: 999px;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.8),
+      0 0 0 3px #facc6b,
+      0 8px 14px rgba(0,0,0,0.9);
+  }
+
+  .crest::before,
+  .crest::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #facc6b, transparent);
+    opacity: 0.9;
+  }
+
+  .crest::before {
+    left: -22px;
+  }
+
+  .crest::after {
+    right: -22px;
+  }
+
+  .crest-inside {
+    border-radius: 999px;
+    padding: 3px 10px;
+    border: 1px solid rgba(250,204,21,0.9);
+    color: #fef3c7;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* 顶部红绒 CONFIDENTIAL 带 */
+
+  .ribbon {
+    position: absolute;
+    top: 20px;
+    right: 48px;
+    transform: rotate(6deg);
+    padding: 4px 18px 5px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+    box-shadow:
+      0 0 0 1px #7f1d1d,
+      0 4px 10px rgba(127,29,29,0.75);
+  }
+
+  .ribbon span {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: #fef2f2;
+    text-transform: uppercase;
+  }
+
+  /* 头像 + 信息区域 */
+
+  .profile-row {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    z-index: 1;
+  }
+
+  .avatar-card {
+    flex-shrink: 0;
+    width: 180px;
+    padding: 6px;
+    border-radius: 14px;
+    background: radial-gradient(circle at top, #fef3c7 0, #f59e0b 32%, #7c2d12 100%);
+    box-shadow:
+      0 0 0 1px rgba(120,53,15,0.9),
+      0 9px 15px rgba(120,53,15,0.9);
+  }
+
+  .avatar-inner {
+    border-radius: 12px;
+    background: radial-gradient(circle at top, #fef9c3 0, #fefce8 50%, #fef3c7 100%);
+    padding: 6px 6px 4px 6px;
+    box-shadow: inset 0 0 0 1px rgba(252,211,77,0.6);
+  }
+
+  .avatar-frame {
+    position: relative;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #facc6b, #eab308, #b45309);
+    box-shadow:
+      0 0 0 1px rgba(120,53,15,0.7),
+      0 0 18px rgba(234,179,8,0.65);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-caption {
+    margin-top: 4px;
+    font-size: 11px;
+    text-align: center;
+    color: #6b4f2b;
+  }
+
+  .info-panel {
+    flex: 1;
+    border-radius: 10px;
+    background: radial-gradient(circle at top, #fefdf7 0, #fdf4e3 40%, #f4e1c5 100%);
+    box-shadow:
+      0 0 0 1px rgba(148,121,86,0.7),
+      inset 0 0 0 1px rgba(255,255,255,0.8);
+    padding: 10px 12px 8px 14px;
+    position: relative;
+  }
+
+  .info-panel::before {
+    content: "";
+    position: absolute;
+    inset: 6px 6px 4px 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(148,121,86,0.6);
+    pointer-events: none;
+  }
+
+  .name-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;   /* 原来是 6px，增大间距 */
+}
+
+.name-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b2f26;
+  word-break: break-all;
+  line-height: 1.8;      /* 加高这一行 */
+}
+
+
+  .name-label {
+    font-size: 12px;
+    color: #7c6142;
+    margin-right: 4px;
+  }
+
+  .rank-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid #b45309;
+    background: linear-gradient(135deg, #facc6b, #f97316);
+    color: #422006;
+    white-space: nowrap;
+  }
+
+  .rank-badge-label {
+    margin-right: 4px;
+  }
+
+  .attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 12px;        /* 行距从 4px 提到 10px，撑高整体 */
+  font-size: 12px;       /* 字体稍微大一点也有助于填充视觉高度 */
+  margin-top: 4px;
+}
+
+.attr-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.9;      /* 每一条属性行更“厚” */
+}
+
+  .attr-item span.label {
+    color: #7c6142;
+    margin-right: 4px;
+  }
+
+  .attr-item span.value {
+    color: #3b2f26;
+  }
+
+  .camp-line {
+  margin-top: 14px;      /* 和上面的属性区拉开一点距离 */
+  padding-top: 8px;
+  border-top: 1px dashed rgba(148,121,86,0.9);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 12px;
+  line-height: 1.9;      /* 阵营这一行本身也更高 */
+}
+
+
+  .camp-label {
+    color: #7c6142;
+  }
+
+  .camp-value {
+    color: #3b2f26;
+  }
+
+  /* 中央横向纹饰分割线 */
+
+  .ornament {
+    position: relative;
+    margin: 8px 0 10px 0;
+    text-align: center;
+  }
+
+  .ornament-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b45309, transparent);
+  }
+
+  .ornament-badge {
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    background: radial-gradient(circle at top, #fefaf4 0, #f4e1c5 100%);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #7c6142;
+  }
+
+  /* 内容区：三段技能 */
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-card {
+    position: relative;
+    border-radius: 8px;
+    background: radial-gradient(circle at top, #fefcf4 0, #f7ebd5 55%, #f1ddc0 100%);
+    box-shadow:
+      0 0 0 1px rgba(148,121,86,0.7),
+      inset 0 0 0 1px rgba(255,255,255,0.7);
+    padding: 8px 10px 8px 10px;
+  }
+
+  .section-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px 5px 4px 5px;
+    border-radius: 6px;
+    border: 1px dashed rgba(180,149,104,0.8);
+    pointer-events: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .section-main-title {
+    font-size: 14px;
+    color: #3b2f26;
+    font-weight: bold;
+  }
+
+  .section-subtitle {
+    font-size: 11px;
+    color: #7c6142;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    border: 1px solid #d4a017;
+    background: linear-gradient(135deg, #facc6b, #fbbf24);
+    color: #4b3108;
+    white-space: nowrap;
+  }
+
+  .section-body {
+    margin-top: 4px;
+    padding: 4px 4px 2px 4px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #3b2f26;
+    min-height: 52px;      /* 短文案有块感 */
+    word-break: break-word;
+  }
+
+  /* 代价板上的红色小章 */
+
+  .stamp-cost {
+    position: absolute;
+    right: 16px;
+    top: -6px;
+    padding: 2px 12px;
+    border-radius: 999px;
+    border: 1px solid #b91c1c;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #7f1d1d;
+    background: rgba(254,242,242,0.95);
+    transform: rotate(-4deg);
+    box-shadow: 0 0 0 1px rgba(127,29,29,0.6);
+  }
+
+  /* 底部脚注 */
+
+  .footer-note {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #684323;
+    text-align: center;
+  }
+
+  .footer-note span.key {
+    color: #b45309;
+    font-weight: 500;
+  }
+
+  /* 外部投稿提示（延续你原来的） */
+
+  .jieshoutougao {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #f9fafb;
+    text-align: left;
+  }
+
+  .jieshoutougao strong {
+    color: #fde68a;
+    font-weight: 500;
+  }
+
+  /* 响应式 */
+
+  @media (max-width: 720px) {
+    body {
+      padding: 14px 10px;
+    }
+
+    .profile-row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar-card {
+      width: 160px;
+    }
+
+    .info-panel {
+      width: 100%;
+    }
+
+    .attributes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="frame">
+  <div class="page">
+    <div class="crest-wrap">
+      <div class="crest">
+        <div class="crest-inside">HONORIS</div>
+      </div>
+    </div>
+
+    <div class="header-row">
+      <div id="title">
+        <span class="cn">超能力档案</span>
+      </div>
+      <div class="serial-box">
+        <span>REGISTRY NO.</span>
+        <span class="serial-code">CNL-{{baseinfo.No}}</span>
+      </div>
+    </div>
+
+    <div class="ribbon">
+      <span>CONFIDENTIAL</span>
+    </div>
+
+    <div class="profile-row">
+      <div class="avatar-card">
+        <div class="avatar-inner">
+          <div class="avatar-frame">
+            <img class="avatar" src="{{头像}}" alt="头像">
+          </div>
+          <div class="avatar-caption">PORTRAIT OF SUBJECT</div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="name-line">
+          <div>
+            <span class="name-label">姓名</span>
+            <span class="name-value">{{昵称}}</span>
+          </div>
+          <div class="rank-badge">
+            <span class="rank-badge-label">等级</span>
+            {{if baseinfo.rank.value === "EX"}}
+              <span style="background-image: linear-gradient(45deg, #FF0000, #FF7F00, #ff00d9, #00FF00, #0000FF, #4B0082, #8F00FF); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; display: inline-block;">
+            {{else if baseinfo.rank.value === "SSS+"}}
+              <span style="color: #FF0000; font-weight: bold;">
+            {{else if baseinfo.rank.value === "SSS"}}
+              <span style="background-image: linear-gradient(to right, #FF4500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "SS"}}
+              <span style="background-image: linear-gradient(to right, #FFA500, #FFD700); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "S"}}
+              <span style="color: #5b3412; font-weight: bold;"></span>
+            {{else if baseinfo.rank.value === "A"}}
+              <span style="color: #800080;">
+            {{else if baseinfo.rank.value === "B"}}
+              <span style="color: #3415ae;">
+            {{else if baseinfo.rank.value === "C"}}
+              <span style="color: #0000FF;">
+            {{else if baseinfo.rank.value === "D"}}
+              <span style="color: #20B2AA;">
+            {{else if baseinfo.rank.value === "E"}}
+              <span style="color: #008000;">
+            {{else if baseinfo.rank.value === "F"}}
+              <span style="color: #000000;">
+            {{/if}}
+            {{baseinfo.rank.value}}</span>
+          </div>
+        </div>
+
+        <div class="attributes-grid">
+          <div class="attr-item">
+            <span class="label">性别</span><span class="value">{{baseinfo.gender}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">种族</span><span class="value">{{baseinfo.种族}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">外貌</span><span class="value">{{baseinfo.颜值}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">主导思维</span><span class="value">{{baseinfo.主导思维}}</span>
+          </div>
+
+          <div class="attr-item">
+            <span class="label">筋力</span><span class="value">{{baseinfo.筋力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">敏捷</span><span class="value">{{baseinfo.敏捷}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">耐久</span><span class="value">{{baseinfo.耐久}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">幸运</span><span class="value">{{baseinfo.幸运}}</span>
+          </div>
+
+          <div class="attr-item">
+            <span class="label">推理力</span><span class="value">{{baseinfo.推理力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">计算力</span><span class="value">{{baseinfo.计算力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">空间力</span><span class="value">{{baseinfo.空间力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">创造力</span><span class="value">{{baseinfo.创造力}}</span>
+          </div>
+        </div>
+
+        <div class="camp-line">
+          <div>
+            <span class="camp-label">阵营</span>
+            <span class="camp-value">
+              <span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>·
+              <span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span>
+              {{data.阵营}}阵营
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-badge">ARCANA</div>
+    </div>
+
+    <div class="sections">
+      <!-- 被动技能 -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-main-title">被动技能</div>
+            <div class="section-subtitle">持续流动于血脉之中的赐福</div>
+          </div>
+          <div class="section-tag">PASSIVE</div>
+        </div>
+        <div class="section-body">{{被动技能}}</div>
+      </div>
+
+      <!-- 主动技能 -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-main-title">主动技能</div>
+            <div class="section-subtitle">唯意志允准之时方得显现</div>
+          </div>
+          <div class="section-tag">ACTIVE</div>
+        </div>
+        <div class="section-body">{{主动技能}}</div>
+      </div>
+
+      <!-- 代价 -->
+      <div class="section-card">
+        <div class="stamp-cost">COST</div>
+        <div class="section-header">
+          <div>
+            <div class="section-main-title">代价 / 代祸</div>
+            <div class="section-subtitle">高贵之力所需偿付之物</div>
+          </div>
+          <div class="section-tag">SIDE EFFECT</div>
+        </div>
+        <div class="section-body">{{但是}}</div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      以上记载，谨由荣誉纹章议会存档。
+    </div>
+  </div>
+</div>
+
+<span class="jieshoutougao">
+  *接受投稿，可以通过
+  「<strong>#增加主动技能xxx</strong>」
+  「<strong>#增加被动技能xxx</strong>」
+  「<strong>#增加代价xxx</strong>」进行投稿~
+</span>
+
+</body>
+</html>

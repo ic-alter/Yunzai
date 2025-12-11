@@ -1,0 +1,627 @@
+<!-- scp 风格-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>特异能力收容档案</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: "SimSun", "Songti SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #050608;
+    background-image:
+      radial-gradient(circle at top, rgba(148,163,184,0.18), transparent 60%),
+      linear-gradient(#020617 0, #020617 40%, #000 100%);
+    color: #111827;
+  }
+
+  .desk-bg {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 10px;
+    background:
+      repeating-linear-gradient(135deg, rgba(15,23,42,0.4) 0, rgba(15,23,42,0.4) 6px, rgba(3,7,18,0.95) 6px, rgba(3,7,18,0.95) 12px);
+    box-shadow:
+      0 0 0 1px #020617,
+      0 20px 40px rgba(0,0,0,0.9);
+    position: relative;
+  }
+
+  .desk-bg::before {
+    /* 桌面上的阴影投影 */
+    content: "";
+    position: absolute;
+    inset: -30px -40px;
+    background:
+      radial-gradient(circle at top left, rgba(15,23,42,0.7), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(0,0,0,0.7), transparent 60%);
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .file-wrapper {
+    position: relative;
+    background-color: #111827;
+    padding: 18px 0 18px 45px; /* 左边留装订区 */
+    z-index: 1;
+  }
+
+  /* 左侧装订孔区域 */
+  .binding-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(#111827, #020617);
+    box-shadow: inset -2px 0 0 rgba(15,23,42,0.9);
+  }
+
+  .binding-hole {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 2px solid #020617;
+    background: radial-gradient(circle at 30% 30%, #9ca3af, #4b5563 55%, #020617 100%);
+    margin: 12px auto;
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,0.4);
+  }
+
+  .page {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #fdf2e9;
+    border-radius: 4px;
+    padding: 14px 18px 14px 18px;
+    box-shadow:
+      0 0 0 1px rgba(55,65,81,0.8),
+      4px 4px 0 rgba(0,0,0,0.8);
+    background-image:
+      linear-gradient(rgba(148,163,184,0.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 100% 22px, 18px 100%;
+  }
+
+  .page::before {
+    /* 纸张旧化边缘 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background:
+      radial-gradient(circle at top, rgba(248,250,252,0.8), transparent 55%),
+      radial-gradient(circle at bottom, rgba(148,163,184,0.28), transparent 60%);
+    mix-blend-mode: multiply;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* 标题栏 */
+
+  .header-row {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  #title {
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #111827;
+  }
+
+  #title span.cn {
+    font-size: 17px;
+    letter-spacing: 0.22em;
+  }
+
+  .file-meta {
+    font-size: 11px;
+    text-align: right;
+    color: #374151;
+    white-space: nowrap;
+  }
+
+  .file-meta span {
+    display: block;
+  }
+
+  .file-meta-code {
+    font-family: "Consolas", "Menlo", monospace;
+    letter-spacing: 0.12em;
+  }
+
+  /* 红色机密章 */
+
+  .stamp-top {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-7deg);
+    padding: 2px 12px 3px 12px;
+    border: 2px solid #b91c1c;
+    color: #7f1d1d;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(254,242,242,0.92);
+    mix-blend-mode: multiply;
+    box-shadow:
+      0 0 0 1px rgba(127,29,29,0.6),
+      0 2px 0 rgba(127,29,29,0.8);
+  }
+
+  .basic-row {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+
+  .avatar-box {
+    width: 160px;
+    flex-shrink: 0;
+    border: 2px solid #111827;
+    padding: 3px;
+    background-color: #e5e7eb;
+    box-shadow:
+      2px 2px 0 rgba(0,0,0,0.7),
+      inset 0 0 0 1px rgba(17,24,39,0.9);
+  }
+
+  .avatar {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .avatar-caption {
+    margin-top: 3px;
+    font-size: 10px;
+    color: #374151;
+    text-align: center;
+  }
+
+  .info-box {
+    flex: 1;
+    border: 1px solid #9ca3af;
+    background-color: rgba(249,250,251,0.9);
+    padding: 6px 8px 6px 8px;
+    position: relative;
+  }
+
+  .info-box::before {
+    /* 上方打孔线 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    background-image: linear-gradient(90deg, #9ca3af 0, #9ca3af 6px, transparent 6px, transparent 10px);
+    opacity: 0.7;
+  }
+
+  .name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 10px;    /* 原来大概 6px，可以拉到 10px */
+}
+
+.name-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111827;
+  word-break: break-all;
+  line-height: 1.6;       /* 稍微高一点，让这一行本身更“厚” */
+}
+
+  .name-label {
+    font-size: 12px;
+    color: #4b5563;
+    margin-right: 4px;
+  }
+
+  .level-chip {
+    font-size: 11px;
+    color: #b91c1c;
+    padding: 2px 6px;
+    border: 1px solid #b91c1c;
+    background-color: rgba(254,226,226,0.85);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 12px;
+  row-gap: 6px;            /* 原来是 2px 左右，改大一点 */
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.info-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.8;        /* ⬅ 每一行的行高加大 */
+}
+
+.info-item span.label {
+  color: #6b7280;
+  margin-right: 4px;
+}
+
+.info-item span.value {
+  color: #111827;
+}
+
+  .camp-row {
+  margin-top: 10px;        /* 稍微拉开与上方数值的距离 */
+  padding-top: 6px;
+  margin-bottom: 0;
+  border-top: 1px dashed #9ca3af;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 11px;
+  line-height: 1.8;        /* 阵营文字本身也更高一点 */
+}
+
+.camp-part {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+.camp-part span.label {
+  color: #6b7280;
+}
+
+.camp-part span.value {
+  color: #111827;
+}
+
+
+
+  /* 等级评定中的等级值样式延续原逻辑 */
+
+  .divider {
+    margin: 10px 0 6px 0;
+    height: 1px;
+    background-image: linear-gradient(90deg, #6b7280 0, #6b7280 40%, transparent 40%, transparent 100%);
+    background-size: 8px 1px;
+  }
+
+  .section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #4b5563;
+    margin-bottom: 2px;
+  }
+
+  .section-title-row span.main {
+    font-weight: bold;
+    color: #111827;
+  }
+
+  .section-box {
+    border: 1px solid #9ca3af;
+    background-color: rgba(254,252,232,0.7);
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    position: relative;
+  }
+
+  .section-label {
+    position: absolute;
+    top: -9px;
+    left: 10px;
+    font-size: 10px;
+    padding: 0 4px;
+    background-color: #fdf2e9;
+    color: #6b7280;
+  }
+
+  .section-content {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #111827;
+    word-break: break-word;
+    padding-top: 4px;
+    min-height: 40px; /* 短文案时也有块状感 */
+  }
+
+  /* 红色“副作用”章 */
+
+  .stamp-side-effect {
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    padding: 2px 10px;
+    border: 2px solid #b91c1c;
+    color: #991b1b;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform: rotate(6deg);
+    background-color: rgba(254,242,242,0.95);
+    mix-blend-mode: multiply;
+  }
+
+  /* 底部条形码 */
+
+  .footer-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 10px;
+    color: #6b7280;
+  }
+
+  .footer-left span {
+    display: block;
+  }
+
+  .barcode-box {
+    text-align: right;
+  }
+
+  .barcode {
+    display: block;
+    font-family: "Consolas", "Menlo", monospace;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    color: #111827;
+  }
+
+  .barcode-bars {
+    margin-top: 2px;
+    height: 22px;
+    background-image: repeating-linear-gradient(90deg, #111827 0, #111827 2px, transparent 2px, transparent 4px);
+  }
+
+  /* 投稿提示 */
+
+  .jieshoutougao {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #e5e7eb;
+    text-align: left;
+  }
+
+  .jieshoutougao strong {
+    color: #facc15;
+    font-weight: 500;
+  }
+
+  /* 响应式 */
+
+  @media (max-width: 720px) {
+    body {
+      padding: 12px;
+    }
+
+    .desk-bg {
+      padding: 6px;
+    }
+
+    .file-wrapper {
+      padding-left: 40px;
+    }
+
+    .basic-row {
+      flex-direction: column;
+    }
+
+    .avatar-box {
+      margin: 0 auto;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="desk-bg">
+  <div class="file-wrapper">
+    <div class="binding-strip">
+      <div class="binding-hole"></div>
+      <div class="binding-hole"></div>
+      <div class="binding-hole"></div>
+      <div class="binding-hole"></div>
+    </div>
+
+    <div class="page">
+      <div class="stamp-top">CONFIDENTIAL</div>
+
+      <div class="header-row">
+        <div id="title">
+          <span class="cn">特异能力收容档案</span>
+        </div>
+        <div class="file-meta">
+          <span>FILE NO.</span>
+          <span class="file-meta-code">CNL-{{baseinfo.No}}</span>
+        </div>
+      </div>
+
+      <div class="basic-row">
+        <div class="avatar-box">
+          <img class="avatar" src="{{头像}}" alt="头像">
+          <div class="avatar-caption">SUBJECT PHOTO</div>
+        </div>
+
+        <div class="info-box">
+          <div class="name-row">
+            <div>
+              <span class="name-label">主体姓名</span>
+              <span class="name-value">{{昵称}}</span>
+            </div>
+            <div class="level-chip">
+              等级:
+              {{if baseinfo.rank.value === "EX"}}
+                <span style="background-image: linear-gradient(45deg, #FF0000, #FF7F00, #ff00d9, #00FF00, #0000FF, #4B0082, #8F00FF); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; display: inline-block;">
+              {{else if baseinfo.rank.value === "SSS+"}}
+                <span style="color: #FF0000; font-weight: bold;">
+              {{else if baseinfo.rank.value === "SSS"}}
+                <span style="background-image: linear-gradient(to right, #FF4500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+              {{else if baseinfo.rank.value === "SS"}}
+                <span style="background-image: linear-gradient(to right, #FFA500, #FFD700); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+              {{else if baseinfo.rank.value === "S"}}
+                <span style="background-image: linear-gradient(to right, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+              {{else if baseinfo.rank.value === "A"}}
+                <span style="color: #800080;">
+              {{else if baseinfo.rank.value === "B"}}
+                <span style="color: #3415ae;">
+              {{else if baseinfo.rank.value === "C"}}
+                <span style="color: #0000FF;">
+              {{else if baseinfo.rank.value === "D"}}
+                <span style="color: #20B2AA;">
+              {{else if baseinfo.rank.value === "E"}}
+                <span style="color: #008000;">
+              {{else if baseinfo.rank.value === "F"}}
+                <span style="color: #000000;">
+              {{/if}}
+              {{baseinfo.rank.value}}</span>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">性别</span><span class="value">{{baseinfo.gender}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">种族</span><span class="value">{{baseinfo.种族}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">外貌</span><span class="value">{{baseinfo.颜值}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">主导思维</span><span class="value">{{baseinfo.主导思维}}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">筋力</span><span class="value">{{baseinfo.筋力}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">敏捷</span><span class="value">{{baseinfo.敏捷}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">耐久</span><span class="value">{{baseinfo.耐久}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">幸运</span><span class="value">{{baseinfo.幸运}}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">推理力</span><span class="value">{{baseinfo.推理力}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">计算力</span><span class="value">{{baseinfo.计算力}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">空间力</span><span class="value">{{baseinfo.空间力}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">创造力</span><span class="value">{{baseinfo.创造力}}</span>
+            </div>
+          </div>
+
+          <div class="camp-row">
+            <div class="camp-part">
+              <span class="label">阵营</span>
+              <span class="value">
+                <span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>·
+                <span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span>
+                {{data.阵营}}阵营
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- 被动技能 -->
+      <div class="section-box">
+        <div class="section-label">SECTION A</div>
+        <div class="section-title-row">
+          <span class="main">被动技能</span>
+          <span>（自动持续的特异表现）</span>
+        </div>
+        <div class="section-content">
+          {{被动技能}}
+        </div>
+      </div>
+
+      <!-- 主动技能 -->
+      <div class="section-box">
+        <div class="section-label">SECTION B</div>
+        <div class="section-title-row">
+          <span class="main">主动技能</span>
+          <span>（需主体意志触发）</span>
+        </div>
+        <div class="section-content">
+          {{主动技能}}
+        </div>
+      </div>
+
+      <!-- 代价 / 副作用 -->
+      <div class="section-box" style="margin-bottom: 10px;">
+        <div class="section-label">SECTION C</div>
+        <div class="section-title-row">
+          <span class="main">代价 / 副作用</span>
+        </div>
+        <div class="stamp-side-effect">SIDE EFFECT</div>
+        <div class="section-content">
+          {{但是}}
+        </div>
+      </div>
+
+      <div class="footer-row">
+        <div class="footer-left">
+          <span>记录员签名：________________</span>
+          <span>审核日期：__________</span>
+        </div>
+        <div class="barcode-box">
+          <span class="barcode">|| | ||||| | ||| |</span>
+          <div class="barcode-bars"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<span class="jieshoutougao">
+  *接受投稿，可以通过
+  「<strong>#增加主动技能xxx</strong>」
+  「<strong>#增加被动技能xxx</strong>」
+  「<strong>#增加代价xxx</strong>」进行投稿~
+</span>
+
+</body>
+</html>

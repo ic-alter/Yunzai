@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SUPERPOWER.LOG</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 18px;
+    font-family: "Consolas", "Menlo", "Courier New", monospace;
+    background-color: #000000;
+    color: #00ff88;
+    /* 背景略带噪点 */
+    background-image:
+      radial-gradient(circle at top, rgba(0,255,136,0.12) 0, transparent 60%),
+      repeating-linear-gradient(135deg, rgba(0,0,0,0.9) 0, rgba(0,0,0,0.9) 3px, #020617 3px, #020617 6px);
+  }
+
+  .crt-frame {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #000000;
+    border: 3px solid #00aa55;
+    box-shadow:
+      0 0 16px rgba(0,255,136,0.4),
+      0 0 2px #00ff88,
+      0 18px 40px #000;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* CRT 扫描线效果 */
+  .crt-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      rgba(0,0,0,0) 0,
+      rgba(0,255,136,0.09) 1px,
+      rgba(0,0,0,0) 2px
+    );
+    background-size: 100% 3px;
+    mix-blend-mode: screen;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .crt-inner {
+    position: relative;
+    border: 1px solid #008844;
+    padding: 12px 14px 10px 14px;
+    background-color: #020b07;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.9);
+    overflow: hidden;
+  }
+
+  .crt-inner::before {
+    /* 轻微暗角 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top, rgba(0,0,0,0) 0, rgba(0,0,0,0.55) 60%);
+    pointer-events: none;
+  }
+
+  /* 顶部标题行 */
+
+  .header-line {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .header-line-left {
+    color: #00ff88;
+  }
+
+  .header-line-right {
+    text-align: right;
+    color: #00d070;
+  }
+
+  .header-line-right span {
+    display: block;
+  }
+
+  .header-title {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  .file-code {
+    letter-spacing: 0.12em;
+  }
+
+  .divider {
+    margin: 2px 0 8px 0;
+    font-size: 12px;
+    color: #008844;
+    white-space: nowrap;
+  }
+
+  .divider span {
+    opacity: 0.8;
+  }
+
+  /* 像终端一样的横线 */
+  .divider::after {
+    content: "===============================================";
+    margin-left: 1em;
+  }
+
+  /* 头像 + 信息区域 */
+
+  .profile-row {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .avatar-box {
+    flex-shrink: 0;
+    width: 160px;
+    border: 1px solid #00aa55;
+    padding: 3px;
+    background-color: #000000;
+    box-shadow:
+      0 0 0 1px #003322,
+      0 0 10px rgba(0,255,136,0.25);
+  }
+
+  .avatar {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.7) contrast(1.1);
+  }
+
+  .avatar-caption {
+    margin-top: 3px;
+    font-size: 11px;
+    color: #00bb66;
+    text-align: center;
+  }
+
+  .info-panel {
+    flex: 1;
+    border: 1px solid #008844;
+    padding: 6px 8px 4px 8px;
+    background-color: #000000;
+    position: relative;
+  }
+
+  .info-panel::before {
+    /* 终端边框 */
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border: 1px dashed #004422;
+    pointer-events: none;
+  }
+
+  .name-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .name-label {
+    font-size: 11px;
+    color: #00bb66;
+    margin-right: 4px;
+  }
+
+  .name-value {
+    font-size: 17px;
+    color: #00ff88;
+    word-break: break-all;
+  }
+
+  .rank-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    white-space: nowrap;
+  }
+
+  .rank-badge-label {
+    margin-right: 4px;
+    color: #00bb66;
+  }
+
+  .attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px 10px;
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  .attr-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.7;
+  }
+
+  .attr-item span.label {
+    color: #00bb66;
+    margin-right: 2px;
+  }
+
+  .attr-item span.value {
+    color: #00ff88;
+  }
+
+  .camp-line {
+    margin-top: 8px;
+    padding-top: 4px;
+    border-top: 1px dashed #004422;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 11px;
+  }
+
+  .camp-label {
+    color: #00bb66;
+  }
+
+  .camp-value {
+    color: #00ff88;
+  }
+
+  /* 中部提示行 */
+
+  .mid-divider {
+    margin: 6px 0 6px 0;
+    font-size: 12px;
+    color: #00aa55;
+    white-space: nowrap;
+  }
+
+  .mid-divider::before {
+    content: ">>";
+    margin-right: 4px;
+  }
+
+  /* 日志段落（技能/代价） */
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .log-block {
+    border: 1px solid #004422;
+    padding: 4px 6px 4px 6px;
+    background-color: #000000;
+  }
+
+  .log-header {
+    font-size: 11px;
+    color: #00bb66;
+    margin-bottom: 2px;
+  }
+
+  .log-header span.title {
+    text-transform: uppercase;
+  }
+
+  .log-header span.desc {
+    opacity: 0.85;
+    margin-left: 6px;
+  }
+
+  .log-body {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: bold;   
+    color: #00ff88;
+    white-space: pre-wrap;    /* 保留换行，但也允许自动换行 */
+    word-break: break-word;
+    min-height: 40px;         /* 短文案时保持块感 */
+  }
+
+  .log-body::before {
+    content: "> ";
+    opacity: 0.8;
+  }
+
+  /* 代价块的额外醒目标记 */
+
+  .log-block.cost-block {
+    border-color: #00ff88;
+  }
+
+  .log-block.cost-block .log-header {
+    color: #00ffcc;
+  }
+
+  .log-block.cost-block .log-header::before {
+    content: "[WARNING] ";
+    color: #00ffcc;
+  }
+
+  /* 底部系统提示 */
+
+  .footer-line {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #00aa55;
+  }
+
+  .footer-line::before {
+    content: "$ ";
+  }
+
+  .jieshoutougao {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #00ff88;
+  }
+
+  .jieshoutougao strong {
+    color: #00ffcc;
+    font-weight: 500;
+  }
+
+  @media (max-width: 720px) {
+    body {
+      padding: 10px;
+    }
+
+    .profile-row {
+      flex-direction: column;
+    }
+
+    .avatar-box {
+      margin: 0 auto;
+      width: 150px;
+    }
+
+    .attributes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="crt-frame">
+  <div class="crt-inner">
+    <div class="header-line">
+      <div class="header-line-left">
+        <span class="header-title">SUPERPOWER.LOG</span>
+      </div>
+      <div class="header-line-right">
+        <span>FILE ID</span>
+        <span class="file-code">CNL-{{baseinfo.No}}</span>
+      </div>
+    </div>
+
+    <div class="divider"><span>INIT SESSION</span></div>
+
+    <div class="profile-row">
+      <div class="avatar-box">
+        <img class="avatar" src="{{头像}}" alt="头像">
+        <div class="avatar-caption">[ SUBJECT SNAPSHOT ]</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="name-line">
+          <div>
+            <span class="name-label">SUBJECT</span>
+            <span class="name-value">{{昵称}}</span>
+          </div>
+          <div class="rank-badge">
+            <span class="rank-badge-label">RANK</span>
+            {{if baseinfo.rank.value === "EX"}}
+              <span style="color:#00ffcc; font-weight:bold;">
+            {{else if baseinfo.rank.value === "SSS+"}}
+              <span style="color:#00ff88; font-weight:bold;">
+            {{else if baseinfo.rank.value === "SSS"}}
+              <span style="color:#00ff88;">
+            {{else if baseinfo.rank.value === "SS"}}
+              <span style="color:#00e676;">
+            {{else if baseinfo.rank.value === "S"}}
+              <span style="color:#00d46a;">
+            {{else if baseinfo.rank.value === "A"}}
+              <span style="color:#00c261;">
+            {{else if baseinfo.rank.value === "B"}}
+              <span style="color:#00aa55;">
+            {{else if baseinfo.rank.value === "C"}}
+              <span style="color:#00994d;">
+            {{else if baseinfo.rank.value === "D"}}
+              <span style="color:#008844;">
+            {{else if baseinfo.rank.value === "E"}}
+              <span style="color:#00773b;">
+            {{else if baseinfo.rank.value === "F"}}
+              <span style="color:#006633;">
+            {{/if}}
+            {{baseinfo.rank.value}}</span>
+          </div>
+        </div>
+
+        <div class="attributes-grid">
+          <div class="attr-item">
+            <span class="label">GENDER</span><span class="value">{{baseinfo.gender}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">RACE</span><span class="value">{{baseinfo.种族}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">LOOKS</span><span class="value">{{baseinfo.颜值}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">THOUGHT</span><span class="value">{{baseinfo.主导思维}}</span>
+          </div>
+
+          <div class="attr-item">
+            <span class="label">STR</span><span class="value">{{baseinfo.筋力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">AGI</span><span class="value">{{baseinfo.敏捷}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">END</span><span class="value">{{baseinfo.耐久}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">LUK</span><span class="value">{{baseinfo.幸运}}</span>
+          </div>
+
+          <div class="attr-item">
+            <span class="label">LOGIC</span><span class="value">{{baseinfo.推理力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">CALC</span><span class="value">{{baseinfo.计算力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">SPACE</span><span class="value">{{baseinfo.空间力}}</span>
+          </div>
+          <div class="attr-item">
+            <span class="label">CREA</span><span class="value">{{baseinfo.创造力}}</span>
+          </div>
+        </div>
+
+        <div class="camp-line">
+          <div>
+            <span class="camp-label">FACTION</span>
+            <span class="camp-value">
+              <span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>/
+              <span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span>
+              {{data.阵营}}阵营
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mid-divider">LOGGING ABILITY SIGNATURES...</div>
+
+    <div class="sections">
+      <!-- 被动技能 -->
+      <div class="log-block">
+        <div class="log-header">
+          <span class="title">PASSIVE</span>
+          <span class="desc">[AUTO-RUNNING MODULE]</span>
+        </div>
+        <div class="log-body">{{被动技能}}</div>
+      </div>
+
+      <!-- 主动技能 -->
+      <div class="log-block">
+        <div class="log-header">
+          <span class="title">ACTIVE</span>
+          <span class="desc">[MANUAL TRIGGER REQUIRED]</span>
+        </div>
+        <div class="log-body">{{主动技能}}</div>
+      </div>
+
+      <!-- 代价 -->
+      <div class="log-block cost-block">
+        <div class="log-header">
+          <span class="title">COST</span>
+          <span class="desc">[SIDE EFFECT / RESOURCE DRAIN]</span>
+        </div>
+        <div class="log-body">{{但是}}</div>
+      </div>
+    </div>
+
+    <div class="footer-line">
+      echo "record saved to SUPERPOWER.LOG"
+    </div>
+  </div>
+</div>
+
+<span class="jieshoutougao">
+  *接受投稿，可以通过
+  「<strong>#增加主动技能xxx</strong>」
+  「<strong>#增加被动技能xxx</strong>」
+  「<strong>#增加代价xxx</strong>」进行投稿~
+</span>
+
+</body>
+</html>

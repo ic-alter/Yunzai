@@ -151,7 +151,7 @@ export class example extends plugin {
         昵称 = msg.text
       }
     }
-    let template = ["wdcnl.html","wdcnl1.html",]
+    let template = ["wdcnl.html","wdcnl1.html","wdcnl2.html","wdcnl3.html","wdcnl4.html","wdcnl5.html","wdcnl6.html","wdcnl7.html","wdcnl8.html"]
     let tplFile = `${_path}/${template[Math.floor(randomFloat() * template.length)]}`
     let data = {
       tplFile: tplFile,

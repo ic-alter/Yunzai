@@ -1,0 +1,473 @@
+<!-- 羊皮卷风格 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    margin: 0;
+    padding: 20px 0;
+    background: radial-gradient(circle at top, #5a4327 0%, #20140a 55%, #0a0503 100%);
+    font-family: "ZCOOL XiaoWei", "STKaiti", "KaiTi", "SimSun", serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .scroll-outer {
+    position: relative;
+    max-width: 760px;
+    width: 90%;
+    padding: 40px 18px;
+  }
+
+  /* 卷轴两端木棍效果 */
+  .scroll-outer::before,
+  .scroll-outer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 26px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 50% 50%, #c89b61 0%, #8b5a2b 40%, #4a2a10 100%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+  }
+  .scroll-outer::before {
+    top: 8px;
+  }
+  .scroll-outer::after {
+    bottom: 8px;
+  }
+
+  /* 羊皮卷主体 */
+  .scroll-inner {
+    position: relative;
+    background:
+      radial-gradient(circle at 2% 0, rgba(255,255,255,0.5), transparent 50%),
+      radial-gradient(circle at 100% 10%, rgba(255,255,255,0.45), transparent 55%),
+      repeating-linear-gradient(
+        180deg,
+        rgba(255,255,255,0.15) 0,
+        rgba(255,255,255,0.15) 3px,
+        transparent 4px,
+        transparent 7px
+      ),
+      linear-gradient(145deg, #f8e2b8, #e1c493 55%, #d7b883 100%);
+    padding: 34px 28px 32px 28px;
+    border-radius: 10px;
+    box-shadow:
+      0 0 0 2px rgba(92,62,29,0.6),
+      0 0 36px rgba(0,0,0,0.75);
+    color: #3d2611;
+    overflow: hidden;
+  }
+
+  /* 烧焦边缘效果 */
+  .scroll-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow:
+      inset 0 0 30px rgba(0,0,0,0.7),
+      inset 0 0 10px rgba(0,0,0,0.7);
+    mix-blend-mode: multiply;
+  }
+
+  /* 卷角效果 */
+  .scroll-inner::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    right: -12px;
+    bottom: -12px;
+    background:
+      radial-gradient(circle at 0 0, rgba(255,255,255,0.5) 0, transparent 65%),
+      linear-gradient(135deg, #e8d0a5 0%, #f7e7c1 35%, #fef8e0 60%, #f7dfaa 100%);
+    box-shadow: -4px -4px 10px rgba(0,0,0,0.4);
+    transform: rotate(-8deg);
+    border-radius: 0 0 0 75%;
+    z-index: 0;
+  }
+
+  /* 标题部分 */
+  #title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 6px;
+    margin: 0 0 18px 0;
+    color: #4a2c12;
+    text-shadow:
+      0 0 2px rgba(255,255,255,0.7),
+      2px 2px 0 #d3b687;
+  }
+
+  .serial-number {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 13px;
+    color: #5a4023;
+    font-family: "Times New Roman", serif;
+    letter-spacing: 1px;
+  }
+
+  /* 上半部信息区域：头像 + 基础信息 + 阵营 & 等级 */
+  .header-block {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "avatar basic"
+      "avatar camp";
+    column-gap: 20px;
+    row-gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .avatar-box {
+    grid-area: avatar;
+    justify-self: center;
+    align-self: start;
+    width: 180px;
+    height: 180px;
+    padding: 6px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 15%, #fef4d8 0, #f1ce7f 40%, #c78a3b 100%);
+    box-shadow:
+      0 0 0 2px #5a3a1c,
+      0 10px 18px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-box::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 12px rgba(0,0,0,0.5),
+      0 0 0 2px rgba(255,255,255,0.4);
+    pointer-events: none;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .info-box {
+    grid-area: basic;
+    background: rgba(255,248,220,0.6);
+    border-radius: 6px;
+    padding: 10px 14px 8px;
+    border: 1px solid rgba(110,75,38,0.7);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    font-size: 13px;
+  }
+
+  .nickname {
+    font-size: 19px;
+    margin-bottom: 4px;
+    border-bottom: 1px dashed rgba(90,60,30,0.6);
+    padding-bottom: 2px;
+    word-break: break-all;
+  }
+
+  .nickname span {
+    font-family: "KaiTi", "STKaiti", "SimSun", serif;
+  }
+
+  .info-lines {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px 8px;
+    margin: 6px 0 3px;
+  }
+
+  .info-item {
+    display: flex;
+    justify-content: flex-start;
+    gap: 4px;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .info-item span:first-child {
+    color: #7b2a13;
+    font-weight: 600;
+  }
+
+  .info-item span:last-child {
+    color: #3b240f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .info-rows {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 4px;
+    margin-top: 4px;
+  }
+
+  .attribute-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px 8px;
+  }
+
+  .camp-rank-box {
+    grid-area: camp;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: rgba(69,38,16,0.15);
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid rgba(54,32,16,0.5);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.2);
+    font-size: 13px;
+    gap: 6px 12px;
+  }
+
+  .camp-rank-box .info-item {
+    white-space: normal;
+    flex: 1 1 180px;
+  }
+
+  /* 等级评定特殊字体 */
+  .rank-label {
+    font-family: "Cinzel", "Times New Roman", serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+  /* 段落标题 */
+  .section-title {
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+    margin: 12px 0 6px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 32px;
+    color: #4d1c10;
+    text-shadow: 0 0 1px rgba(255,255,255,0.8);
+  }
+
+  .section-title::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 20%, #fff 0, #f5d78f 30%, #c8863c 70%, #7d3f18 100%);
+    box-shadow:
+      0 0 0 1px rgba(40,22,10,0.8),
+      0 3px 6px rgba(0,0,0,0.5);
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    bottom: -3px;
+    background: linear-gradient(to right,
+      rgba(52,27,10,0.0) 0%,
+      rgba(52,27,10,0.7) 15%,
+      rgba(52,27,10,0.7) 85%,
+      rgba(52,27,10,0.0) 100%);
+  }
+
+  /* 动态高度内容块：适配长短不同的文案 */
+  .section-content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    padding: 10px 12px 11px;
+    background:
+      radial-gradient(circle at 0 0, rgba(255,255,255,0.4), transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(255,255,255,0.25), transparent 55%),
+      repeating-linear-gradient(
+        180deg,
+        rgba(140,105,62,0.12) 0,
+        rgba(140,105,62,0.12) 18px,
+        rgba(222,192,141,0.3) 19px,
+        rgba(222,192,141,0.3) 21px
+      ),
+      linear-gradient(180deg, #f7e4bf 0%, #f0d6a5 50%, #e5c186 100%);
+    border-radius: 5px;
+    border: 1px solid rgba(95,61,27,0.7);
+    box-shadow:
+      inset 0 0 9px rgba(0,0,0,0.25),
+      0 2px 5px rgba(0,0,0,0.35);
+    min-height: 56px;          /* 太短时也不会显得空 */
+    max-height: 280px;         /* 超长时自动滚动 */
+    overflow: auto;
+    line-height: 1.6;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .section-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .section-content::-webkit-scrollbar-thumb {
+    background: rgba(87,56,23,0.6);
+    border-radius: 999px;
+  }
+
+  /* 页脚投稿说明 */
+  .jieshoutougao {
+    position: relative;
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #f3e0b6;
+    text-align: center;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+  <div class="scroll-outer">
+    <div class="scroll-inner">
+      <h1 id="title">超能力档案</h1>
+      <div class="serial-number">No.{{baseinfo.No}}</div>
+
+      <!-- 头像 + 基础信息 + 阵营与等级 -->
+      <div class="header-block">
+        <div class="avatar-box">
+          <img class="avatar" src="{{头像}}" alt="头像">
+        </div>
+
+        <div class="info-box">
+          <div class="nickname">姓名：<span>{{昵称}}</span></div>
+
+          <!-- 性别 / 种族 / 外貌 / 主导思维 -->
+          <div class="info-lines">
+            <div class="info-item">
+              <span>性别</span><span>{{baseinfo.gender}}</span>
+            </div>
+            <div class="info-item">
+              <span>种族</span><span>{{baseinfo.种族}}</span>
+            </div>
+            <div class="info-item">
+              <span>外貌</span><span>{{baseinfo.颜值}}</span>
+            </div>
+            <div class="info-item">
+              <span>主导思维</span><span>{{baseinfo.主导思维}}</span>
+            </div>
+          </div>
+
+          <!-- 三排数值属性 -->
+          <div class="info-rows">
+            <div class="attribute-row">
+              <div class="info-item">
+                <span>筋力</span><span>{{baseinfo.筋力}}</span>
+              </div>
+              <div class="info-item">
+                <span>敏捷</span><span>{{baseinfo.敏捷}}</span>
+              </div>
+              <div class="info-item">
+                <span>耐久</span><span>{{baseinfo.耐久}}</span>
+              </div>
+              <div class="info-item">
+                <span>幸运</span><span>{{baseinfo.幸运}}</span>
+              </div>
+            </div>
+
+            <div class="attribute-row">
+              <div class="info-item">
+                <span>推理力</span><span>{{baseinfo.推理力}}</span>
+              </div>
+              <div class="info-item">
+                <span>计算力</span><span>{{baseinfo.计算力}}</span>
+              </div>
+              <div class="info-item">
+                <span>空间力</span><span>{{baseinfo.空间力}}</span>
+              </div>
+              <div class="info-item">
+                <span>创造力</span><span>{{baseinfo.创造力}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阵营 + 等级评定 -->
+        <div class="camp-rank-box">
+          <div class="info-item">
+            <span>等级评定</span>
+            {{if baseinfo.rank.value === "EX"}}
+            <span class="rank-label" style="background-image: linear-gradient(45deg, #FF0000, #FF7F00, #ff00d9, #00FF00, #0000FF, #4B0082, #8F00FF); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; display: inline-block;">
+            {{else if baseinfo.rank.value === "SSS+"}}
+            <span class="rank-label" style="color: #FF0000; font-weight: bold;">
+            {{else if baseinfo.rank.value === "SSS"}}
+            <span class="rank-label" style="background-image: linear-gradient(to right, #FF4500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "SS"}}
+            <span class="rank-label" style="background-image: linear-gradient(to right, #FFA500, #FFD700); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "S"}}
+            <span class="rank-label" style="background-image: linear-gradient(to right, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "A"}}
+            <span class="rank-label" style="color: #800080;">
+            {{else if baseinfo.rank.value === "B"}}
+            <span class="rank-label" style="color: #3415ae;">
+            {{else if baseinfo.rank.value === "C"}}
+            <span class="rank-label" style="color: #0000FF;">
+            {{else if baseinfo.rank.value === "D"}}
+            <span class="rank-label" style="color: #20B2AA;">
+            {{else if baseinfo.rank.value === "E"}}
+            <span class="rank-label" style="color: #008000;">
+            {{else if baseinfo.rank.value === "F"}}
+            <span class="rank-label" style="color: #000000;">
+            {{/if}}
+              {{baseinfo.rank.value}}
+            </span>
+          </div>
+
+          <div class="info-item">
+            <span>阵营</span>
+            <span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>·
+            <span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span>
+            {{data.阵营}}阵营
+          </div>
+        </div>
+      </div>
+
+      <!-- 被动技能 -->
+      <div class="section-title">被动技能</div>
+      <div class="section-content">{{被动技能}}</div>
+
+      <!-- 主动技能 -->
+      <div class="section-title">主动技能</div>
+      <div class="section-content">{{主动技能}}</div>
+
+      <!-- 代价 -->
+      <div class="section-title">代价</div>
+      <div class="section-content">{{但是}}</div>
+    </div>
+
+    <span class="jieshoutougao">
+      *接受投稿，可以通过「#增加主动技能xxx」「#增加被动技能xxx」「#增加代价xxx」进行投稿~
+    </span>
+  </div>
+</body>
+</html>

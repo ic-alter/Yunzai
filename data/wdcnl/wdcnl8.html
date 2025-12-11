@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我的超能力 - 二次元卡牌风</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+      background: radial-gradient(circle at top, #fdfbff 0%, #e5ecff 40%, #c9d4ff 100%);
+      padding: 16px;
+    }
+
+    .card-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      background: radial-gradient(circle at top, #2b2345 0%, #141120 40%, #0c0913 100%);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(20, 12, 65, 0.7);
+      color: #fdf8ff;
+      overflow: hidden;
+    }
+
+    /* 金边卡框效果 */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top, #2b2345 0%, #171325 40%, #120f1d 100%);
+      z-index: 0;
+    }
+
+    .card-border {
+      position: relative;
+      z-index: 1;
+      border-radius: 14px;
+      padding: 16px 18px 18px;
+      background:
+        linear-gradient(145deg, rgba(255, 250, 212, 0.3), rgba(250, 200, 120, 0.1)) border-box;
+      border: 1px solid rgba(255, 230, 170, 0.8);
+    }
+
+    /* 四角花纹（简单线） */
+    .corner {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      border: 2px solid #f8dd9c;
+      opacity: 0.8;
+    }
+
+    .corner.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+    .corner.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+    .corner.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+    .corner.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+    /* 顶部信息区 */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #f9f1ff;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title::before,
+    .card-title::after {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #f5d89a);
+    }
+
+    .card-no {
+      font-size: 12px;
+      color: #f5dba2;
+      opacity: 0.9;
+    }
+
+    /* 名称 + 稀有度条 */
+    .name-rarity-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .nickname {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.28);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60%;
+    }
+
+    .rarity-bar {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .rarity-pill {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: radial-gradient(circle at top, #fffbeb 0%, #f5cc7a 40%, #f29274 100%);
+      color: #4a2600;
+      box-shadow:
+        0 0 12px rgba(255, 230, 160, 0.8),
+        inset 0 0 0 1px rgba(102, 52, 0, 0.4);
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
+      min-width: 72px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* 中间：头像 + 基本信息 + 属性 */
+    .middle-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 14px;
+      align-items: stretch;
+      margin-bottom: 14px;
+    }
+
+    /* 头像 */
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-circle {
+      position: relative;
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top, #fef6d4 0%, #e998ff 40%, #5525ce 100%);
+      padding: 4px;
+      box-shadow:
+        0 0 20px rgba(255, 244, 190, 0.8),
+        0 0 32px rgba(144, 98, 255, 0.8);
+    }
+
+    .avatar-mask {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #1b152b;
+      border: 2px solid rgba(250, 230, 170, 0.9);
+    }
+
+    .avatar-mask img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      inset: 16%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 0 18px rgba(255, 255, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+
+    /* 基本信息 */
+    .base-info-card {
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: linear-gradient(145deg, rgba(49, 38, 85, 0.8), rgba(22, 17, 45, 0.98));
+      box-shadow: 0 0 0 1px rgba(255, 230, 173, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(18, 11, 41, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .tag-label {
+      opacity: 0.7;
+      margin-right: 3px;
+    }
+
+    .tag-value {
+      font-weight: 500;
+    }
+
+    .camp-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .camp-label {
+      opacity: 0.7;
+    }
+
+    .camp-value {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: rgba(255, 248, 210, 0.08);
+      border: 1px solid rgba(255, 234, 186, 0.4);
+      font-size: 11px;
+    }
+
+    .camp-pill-1,
+    .camp-pill-2 {
+      font-weight: 600;
+    }
+
+    /* 属性区 */
+    .attr-card {
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: linear-gradient(145deg, rgba(35, 31, 71, 0.9), rgba(16, 16, 41, 0.98));
+      box-shadow: 0 0 0 1px rgba(255, 230, 173, 0.18);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .attr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 10px;
+    }
+
+    .attr-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .attr-name {
+      flex: 0 0 auto;
+      min-width: 42px;
+      opacity: 0.8;
+    }
+
+    .attr-bar-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .attr-bar {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .attr-bar-fill {
+  height: 100%;
+  width: 40%;                 /* 默认值，后面会被更高优先级的规则覆盖 */
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffe8a0, #ffb884, #ff7ca5);
+  box-shadow: 0 0 8px rgba(255, 205, 160, 0.7);
+}
+
+/* 顶级 -> 未知，按你给的评价档位控制宽度 */
+.attr-item[data-rating="顶级"]   .attr-bar-fill { width: 100%; }
+.attr-item[data-rating="卓越"]   .attr-bar-fill { width: 90%; }
+.attr-item[data-rating="优秀"]   .attr-bar-fill { width: 75%; }
+.attr-item[data-rating="良好"]   .attr-bar-fill { width: 65%; }
+.attr-item[data-rating="标准"]   .attr-bar-fill { width: 50%; }
+.attr-item[data-rating="普通"]   .attr-bar-fill { width: 25%; }
+.attr-item[data-rating="缺陷"]   .attr-bar-fill { width: 5%; }
+.attr-item[data-rating="未知"]   .attr-bar-fill { width: 2%; }
+
+    .attr-value {
+      font-weight: 600;
+      min-width: 26px;
+      text-align: right;
+    }
+
+    /* 底部技能区 */
+    .section-list {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 12px;
+      padding: 8px 10px 10px;
+      background: radial-gradient(circle at top left, rgba(255, 242, 210, 0.12), rgba(10, 6, 30, 0.95));
+      border: 1px solid rgba(255, 228, 173, 0.28);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .section-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 223, 186, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      background: rgba(255, 239, 205, 0.15);
+      box-shadow: 0 0 6px rgba(255, 219, 170, 0.9);
+    }
+
+    .section-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .section-title-text {
+      font-size: 13px;
+    }
+
+    .section-content {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #f3edf8;
+      word-break: break-word;
+      white-space: pre-wrap;
+      padding-top: 2px;
+    }
+
+    .section-block.passive {
+      background: radial-gradient(circle at top, rgba(208, 255, 216, 0.15), rgba(10, 6, 30, 0.96));
+      border-color: rgba(185, 255, 210, 0.38);
+    }
+
+    .section-block.active {
+      background: radial-gradient(circle at top, rgba(255, 238, 210, 0.2), rgba(10, 6, 30, 0.96));
+      border-color: rgba(255, 229, 186, 0.4);
+    }
+
+    .section-block.price {
+      background: radial-gradient(circle at top, rgba(255, 214, 214, 0.18), rgba(10, 6, 30, 0.96));
+      border-color: rgba(255, 190, 190, 0.45);
+    }
+
+    /* 底部说明文字 */
+    .footer-note {
+      display: block;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #4e486b;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* 基本响应：窄一点的时候把中间部分变两列/一列 */
+    @media (max-width: 640px) {
+      .middle-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .avatar-wrap {
+        grid-column: 1 / -1;
+      }
+      .nickname {
+        max-width: 55%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-border {
+        padding: 12px 12px 14px;
+      }
+      .name-rarity-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nickname {
+        max-width: 100%;
+      }
+      .rarity-bar {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .middle-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+
+      <div class="card-border">
+        <!-- 顶部标题与编号 -->
+        <div class="card-header">
+          <div class="card-title">
+            超能力档案
+          </div>
+          <div class="card-no">
+            NO. {{baseinfo.No}}
+          </div>
+        </div>
+
+        <!-- 名称 + 稀有度 -->
+        <div class="name-rarity-row">
+          <div class="nickname">{{昵称}}</div>
+          <div class="rarity-bar">
+            <div class="rarity-pill">
+              {{baseinfo.rank.value}}
+            </div>
+          </div>
+        </div>
+
+        <!-- 头像 + 基本信息 + 属性 -->
+        <div class="middle-row">
+          <!-- 头像区 -->
+          <div class="avatar-wrap">
+            <div class="avatar-circle">
+              <div class="avatar-mask">
+                <img src="{{头像}}" alt="avatar">
+                <div class="avatar-glow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 基本信息 -->
+          <div class="base-info-card">
+            <div class="info-row">
+              <span class="tag">
+                <span class="tag-label">性别</span>
+                <span class="tag-value">{{baseinfo.gender}}</span>
+              </span>
+              <span class="tag">
+                <span class="tag-label">种族</span>
+                <span class="tag-value">{{baseinfo.种族}}</span>
+              </span>
+            </div>
+            <div class="info-row">
+              <span class="tag">
+                <span class="tag-label">颜值</span>
+                <span class="tag-value">{{baseinfo.颜值}}</span>
+              </span>
+              <span class="tag">
+                <span class="tag-label">主导思维</span>
+                <span class="tag-value">{{baseinfo.主导思维}}</span>
+              </span>
+            </div>
+
+            <div class="camp-row">
+              <div>
+                <span class="camp-label">等级评定</span>
+                &nbsp;
+                <span class="camp-value">
+                  {{baseinfo.rank.value}}
+                </span>
+              </div>
+              <div>
+                <span class="camp-label">阵营</span>
+                &nbsp;
+                <span class="camp-value">
+                  <span class="camp-pill-1" style="color: {{data.属性1.color}};">
+                    {{data.属性1.name}}
+                  </span>
+                  <span class="camp-pill-2" style="color: {{data.属性2.color}};">
+                    {{data.属性2.name}}
+                  </span>
+                  <span>{{data.阵营}}阵营</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 属性卡片 -->
+          <div class="attr-card">
+            <div class="attr-grid">
+              <div class="attr-item" data-rating="{{baseinfo.筋力}}">
+                <span class="attr-name">筋力</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.筋力}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.敏捷}}">
+                <span class="attr-name">敏捷</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.敏捷}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.耐久}}">
+                <span class="attr-name">耐久</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.耐久}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.幸运}}">
+                <span class="attr-name">幸运</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.幸运}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.推理力}}">
+                <span class="attr-name">推理力</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.推理力}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.计算力}}">
+                <span class="attr-name">计算力</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.计算力}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.空间力}}">
+                <span class="attr-name">空间力</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.空间力}}</span>
+                </div>
+                </div>
+
+                <div class="attr-item" data-rating="{{baseinfo.创造力}}">
+                <span class="attr-name">创造力</span>
+                <div class="attr-bar-wrap">
+                    <div class="attr-bar">
+                    <div class="attr-bar-fill"></div>
+                    </div>
+                    <span class="attr-value">{{baseinfo.创造力}}</span>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 技能区：被动 / 主动 / 代价 -->
+        <div class="section-list">
+          <!-- 被动技能 -->
+          <div class="section-block passive">
+            <div class="section-header">
+              <div class="section-icon">P</div>
+              <span class="section-tag">Passive</span>
+              <span class="section-title-text">被动技能</span>
+            </div>
+            <div class="section-content">
+              {{被动技能}}
+            </div>
+          </div>
+
+          <!-- 主动技能 -->
+          <div class="section-block active">
+            <div class="section-header">
+              <div class="section-icon">A</div>
+              <span class="section-tag">Active</span>
+              <span class="section-title-text">主动技能</span>
+            </div>
+            <div class="section-content">
+              {{主动技能}}
+            </div>
+          </div>
+
+          <!-- 代价 -->
+          <div class="section-block price">
+            <div class="section-header">
+              <div class="section-icon">C</div>
+              <span class="section-tag">Price</span>
+              <span class="section-title-text">代价</span>
+            </div>
+            <div class="section-content">
+              {{但是}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 接受投稿说明 -->
+    <span class="footer-note">
+      *接受投稿，可以通过“#增加主动技能xxx”“#增加被动技能xxx”“#增加代价xxx”进行投稿~
+    </span>
+  </div>
+</body>
+</html>
