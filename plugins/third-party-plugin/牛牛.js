@@ -487,8 +487,8 @@ function upgradeCost(hardness) {
 // 函数1：更新时间等级
 function timeLevel(lastUpdate, now = Date.now()) {
   const diffMs = now - lastUpdate
-  const tenMin = 1 * 60 * 1000
-  const thirtyMin = 3 * 60 * 1000
+  const tenMin = 1 * 60 * 500
+  const thirtyMin = 1 * 60 * 1000
   if (diffMs > thirtyMin) return 2
   if (diffMs >= tenMin) return 1
   return 0

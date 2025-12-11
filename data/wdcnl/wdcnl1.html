@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>超能力档案</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 24px 16px 16px 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background:
+      radial-gradient(circle at top, #1f2937 0, #020617 55%, #000000 100%);
+    color: #e5f0ff;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    background: radial-gradient(circle at top left, rgba(56,189,248,0.09) 0, rgba(15,23,42,0.96) 40%, rgba(2,6,23,0.98) 100%);
+    border-radius: 18px;
+    padding: 22px 26px 20px 26px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(56,189,248,0.35),
+      0 20px 45px rgba(0,0,0,0.85),
+      0 0 80px rgba(59,130,246,0.35);
+  }
+
+  /* 背景装饰网格 */
+  .container::before {
+    content: "";
+    position: absolute;
+    inset: -120px;
+    background-image:
+      linear-gradient(rgba(148,163,184,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.55;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: -140px;
+    top: -140px;
+    background: radial-gradient(circle, rgba(56,189,248,0.35), transparent 65%);
+    filter: blur(4px);
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  #title {
+    position: relative;
+    text-align: left;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e5f0ff;
+    margin: 4px 0 14px 0;
+    padding-bottom: 6px;
+  }
+
+  #title span.main {
+    font-size: 30px;
+    letter-spacing: 0.28em;
+    text-shadow:
+      0 0 12px rgba(59,130,246,0.8),
+      0 0 22px rgba(56,189,248,0.9);
+  }
+
+  #title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 110px;
+    height: 2px;
+    background: linear-gradient(90deg, #38bdf8, #a855f7, transparent);
+  }
+
+  .serial-number {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: radial-gradient(circle at top, rgba(15,23,42,0.4), rgba(15,23,42,0.9));
+    border: 1px solid rgba(148,163,184,0.45);
+    box-shadow: 0 0 12px rgba(15,23,42,0.9);
+  }
+
+  .top-meta {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+  }
+
+  .top-meta-badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.5);
+    background: linear-gradient(90deg, rgba(15,23,42,0.9), rgba(15,23,42,0.6));
+  }
+
+  .top-meta-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(148,163,184,0.8), transparent);
+    opacity: 0.7;
+  }
+
+  .profile-section {
+    position: relative;
+    display: flex;
+    gap: 18px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+    z-index: 1;
+  }
+
+  .avatar-box {
+    width: 190px;
+    flex-shrink: 0;
+    position: relative;
+    padding: 2px;
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(56,189,248,0.8), rgba(37,99,235,0.1), rgba(236,72,153,0.7));
+    box-shadow:
+      0 0 18px rgba(59,130,246,0.7),
+      0 0 48px rgba(236,72,153,0.25);
+  }
+
+  .avatar-frame {
+    border-radius: 16px;
+    padding: 6px;
+    background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(15,23,42,1));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-box::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,0.35);
+    pointer-events: none;
+  }
+
+  .avatar {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at bottom, transparent, rgba(15,23,42,0.6));
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .avatar-chip {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    color: #e5e7eb;
+    background: linear-gradient(90deg, rgba(37,99,235,0.85), rgba(56,189,248,0.85));
+    box-shadow: 0 0 10px rgba(59,130,246,0.8);
+  }
+
+  .info-box {
+    flex: 1;
+    position: relative;
+    background: radial-gradient(circle at top left, rgba(15,23,42,0.95), rgba(15,23,42,0.98));
+    border-radius: 16px;
+    border: 1px solid rgba(148,163,184,0.5);
+    padding: 10px 12px 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 190px;
+    box-shadow:
+      0 0 35px rgba(15,23,42,0.9),
+      0 0 32px rgba(15,23,42,0.9);
+    overflow: hidden;
+  }
+
+  .info-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, rgba(56,189,248,0.18), transparent 35%, transparent 65%, rgba(236,72,153,0.18));
+    opacity: 0.45;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .nickname {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1.25;
+    word-break: break-all;
+    color: #e5f0ff;
+  }
+
+  .nickname span.label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #9ca3af;
+    margin-right: 6px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .info-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px 10px;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .info-item span:first-child {
+    font-size: 11px;
+    color: #a5b4fc;
+    opacity: 0.85;
+  }
+
+  .info-item span:last-child {
+    font-size: 12px;
+    color: #e5f0ff;
+    word-break: break-all;
+  }
+
+  .info-row {
+    position: relative;
+    margin-top: 4px;
+  }
+
+  .camp-row {
+    position: relative;
+    margin-top: 6px;
+    padding-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    border-top: 1px dashed rgba(148,163,184,0.5);
+  }
+
+  .rank-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .rank-chip-label {
+    color: #9ca3af;
+  }
+
+  .rank-value-wrapper span {
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  .camp-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-size: 12px;
+    color: #e5f0ff;
+  }
+
+  .camp-chip-label {
+    color: #9ca3af;
+  }
+
+  .camp-attrs {
+    font-size: 12px;
+  }
+
+  .camp-attrs span {
+    font-weight: 600;
+  }
+
+  .divider {
+    position: relative;
+    margin: 10px 0 14px 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(37,99,235,0.8), rgba(56,189,248,0.8), rgba(236,72,153,0.0));
+    opacity: 0.9;
+  }
+
+  .divider::before {
+    content: "ABILITY MATRIX ONLINE";
+    position: absolute;
+    left: 0;
+    top: -9px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: #6b7280;
+    padding: 0 6px;
+    background: radial-gradient(circle at top, rgba(15,23,42,1), rgba(15,23,42,0.95));
+  }
+
+  .sections-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    z-index: 1;
+  }
+
+  .section-block {
+    position: relative;
+    background: radial-gradient(circle at top left, rgba(15,23,42,0.97), rgba(15,23,42,1));
+    border-radius: 14px;
+    padding: 9px 11px 10px 11px;
+    border: 1px solid rgba(148,163,184,0.5);
+    box-shadow:
+      0 0 18px rgba(15,23,42,0.9),
+      0 0 30px rgba(15,23,42,1);
+    overflow: hidden;
+  }
+
+  .section-block::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+      conic-gradient(from 120deg, rgba(56,189,248,0.12), transparent, rgba(99,102,241,0.12), transparent);
+    opacity: 0.32;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .section-header {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e5f0ff;
+  }
+
+  .section-sub {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    opacity: 0.85;
+  }
+
+  .section-content {
+    position: relative;
+    margin-top: 4px;
+    padding: 8px 8px 7px 8px;
+    border-radius: 10px;
+    background:
+      linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
+    border: 1px solid rgba(31,41,55,0.9);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e5e7eb;
+    min-height: 56px;
+    max-height: none;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  .section-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(90deg, rgba(37,99,235,0.14), rgba(59,130,246,0.06), rgba(236,72,153,0.03));
+    opacity: 0.7;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .section-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px dashed rgba(55,65,81,0.9);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .jieshoutougao {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: left;
+    text-shadow: 0 0 6px rgba(15,23,42,1);
+  }
+
+  .jieshoutougao strong {
+    color: #e5f0ff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 720px) {
+    .container {
+      padding: 18px 16px 16px 16px;
+    }
+
+    .serial-number {
+      right: 16px;
+      top: 16px;
+    }
+
+    .profile-section {
+      flex-direction: column;
+    }
+
+    .avatar-box {
+      width: 180px;
+      margin: 0 auto;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 460px) {
+    .avatar-box {
+      width: 150px;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #title span.main {
+      font-size: 24px;
+    }
+
+    .section-content {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="serial-number">No.{{baseinfo.No}}</div>
+
+  <div id="title">
+    <span class="main">超能力档案</span>
+  </div>
+
+  <div class="top-meta">
+    <div class="top-meta-badge">NEURAL RECORD &nbsp;•&nbsp; V.1.0</div>
+    <div class="top-meta-line"></div>
+  </div>
+
+  <div class="profile-section">
+    <div class="avatar-box">
+      <div class="avatar-frame">
+        <img class="avatar" src="{{头像}}" alt="头像">
+        <div class="avatar-overlay"></div>
+        <div class="avatar-chip">IDENTITY VERIFIED</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="nickname">
+        <span class="label">NAME</span>{{昵称}}
+      </div>
+
+      <!-- 第一排：性别 / 种族 / 外貌 / 主导思维 -->
+      <div class="info-grid">
+        <div class="info-item">
+          <span>性别</span><span>{{baseinfo.gender}}</span>
+        </div>
+        <div class="info-item">
+          <span>种族</span><span>{{baseinfo.种族}}</span>
+        </div>
+        <div class="info-item">
+          <span>外貌</span><span>{{baseinfo.颜值}}</span>
+        </div>
+        <div class="info-item">
+          <span>主导思维</span><span>{{baseinfo.主导思维}}</span>
+        </div>
+      </div>
+
+      <!-- 第二排：筋力 / 敏捷 / 耐久 / 幸运 -->
+      <div class="info-row">
+        <div class="info-grid">
+          <div class="info-item">
+            <span>筋力</span><span>{{baseinfo.筋力}}</span>
+          </div>
+          <div class="info-item">
+            <span>敏捷</span><span>{{baseinfo.敏捷}}</span>
+          </div>
+          <div class="info-item">
+            <span>耐久</span><span>{{baseinfo.耐久}}</span>
+          </div>
+          <div class="info-item">
+            <span>幸运</span><span>{{baseinfo.幸运}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第三排：推理力 / 计算力 / 空间力 / 创造力 -->
+      <div class="info-row">
+        <div class="info-grid">
+          <div class="info-item">
+            <span>推理力</span><span>{{baseinfo.推理力}}</span>
+          </div>
+          <div class="info-item">
+            <span>计算力</span><span>{{baseinfo.计算力}}</span>
+          </div>
+          <div class="info-item">
+            <span>空间力</span><span>{{baseinfo.空间力}}</span>
+          </div>
+          <div class="info-item">
+            <span>创造力</span><span>{{baseinfo.创造力}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 等级 + 阵营 -->
+      <div class="camp-row">
+        <div class="rank-chip">
+          <span class="rank-chip-label">等级评定</span>
+          <span class="rank-value-wrapper">
+            {{if baseinfo.rank.value === "EX"}}
+              <span style="background-image: linear-gradient(45deg, #FF0000, #FF7F00, #ff00d9, #00FF00, #0000FF, #4B0082, #8F00FF); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; display: inline-block;">
+            {{else if baseinfo.rank.value === "SSS+"}}
+              <span style="color: #FF0000; font-weight: bold;">
+            {{else if baseinfo.rank.value === "SSS"}}
+              <span style="background-image: linear-gradient(to right, #FF4500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "SS"}}
+              <span style="background-image: linear-gradient(to right, #FFA500, #FFD700); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "S"}}
+              <span style="background-image: linear-gradient(to right, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;">
+            {{else if baseinfo.rank.value === "A"}}
+              <span style="color: #800080;">
+            {{else if baseinfo.rank.value === "B"}}
+              <span style="color: #3415ae;">
+            {{else if baseinfo.rank.value === "C"}}
+              <span style="color: #0000FF;">
+            {{else if baseinfo.rank.value === "D"}}
+              <span style="color: #20B2AA;">
+            {{else if baseinfo.rank.value === "E"}}
+              <span style="color: #008000;">
+            {{else if baseinfo.rank.value === "F"}}
+              <span style="color: #000000;">
+            {{/if}}
+            {{baseinfo.rank.value}}</span>
+          </span>
+        </div>
+
+        <div class="camp-chip">
+          <span class="camp-chip-label">阵营</span>
+          <span class="camp-attrs">
+            <span style="color: {{data.属性1.color}};">{{data.属性1.name}}</span>·
+            <span style="color: {{data.属性2.color}};">{{data.属性2.name}}</span>
+            {{data.阵营}}阵营
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sections-wrapper">
+    <!-- 被动技能 -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-title">被动技能</div>
+        <div class="section-sub">PASSIVE PROTOCOL</div>
+      </div>
+      <div class="section-content">{{被动技能}}</div>
+    </div>
+
+    <!-- 主动技能 -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-title">主动技能</div>
+        <div class="section-sub">ACTIVE MODULE</div>
+      </div>
+      <div class="section-content">{{主动技能}}</div>
+    </div>
+
+    <!-- 代价 -->
+    <div class="section-block">
+      <div class="section-header">
+        <div class="section-title">代价</div>
+        <div class="section-sub">SIDE EFFECT / COST</div>
+      </div>
+      <div class="section-content">{{但是}}</div>
+    </div>
+  </div>
+</div>
+
+<span class="jieshoutougao">
+  *接受投稿，可以通过
+  「<strong>#增加主动技能xxx</strong>」
+  「<strong>#增加被动技能xxx</strong>」
+  「<strong>#增加代价xxx</strong>」进行投稿~
+</span>
+
+</body>
+</html>
