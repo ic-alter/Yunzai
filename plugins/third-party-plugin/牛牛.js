@@ -9,48 +9,9 @@ import seedrandom from 'seedrandom'
 // ========================
 // JSON 文件存储设置
 // ========================
-const dirPath = path.join(process.cwd(), 'data', 'niuniu')
-const dataPath = path.join(dirPath, 'data.json')
-fs.mkdirSync(dirPath, { recursive: true })
-
-// 内存缓存（避免频繁读盘）
-let cache = null
-let cacheLoaded = false
-
-// 简单写入互斥（保证不会并发写坏 json）
-let writeQueue = Promise.resolve()
-
-function enqueueWrite(task) {
-  writeQueue = writeQueue.then(task, task)
-  return writeQueue
-}
-
-async function loadAll() {
-  if (cacheLoaded && cache) return cache
-  try {
-    const text = await fs.promises.readFile(dataPath, 'utf8')
-    cache = JSON.parse(text || '{}')
-  } catch (e) {
-    if (e.code === 'ENOENT') {
-      cache = {}
-      await fs.promises.writeFile(dataPath, '{}', 'utf8')
-    } else {
-      throw e
-    }
-  }
-  cacheLoaded = true
-  return cache
-}
-
-async function saveAll(newData) {
-  cache = newData
-  cacheLoaded = true
-  const tmpPath = dataPath + '.tmp'
-  const text = JSON.stringify(newData, null, 2)
-  // 原子写入：先写 tmp，再 rename 覆盖
-  await fs.promises.writeFile(tmpPath, text, 'utf8')
-  await fs.promises.rename(tmpPath, dataPath)
-}
+// 小文件存储根目录：data/users/<末两位>/<qq>.json
+const usersRoot = path.join(process.cwd(), "data","niuniu", "users")
+fs.mkdirSync(usersRoot, { recursive: true })
 
 // ========================
 // 插件主体
@@ -487,79 +448,134 @@ function upgradeCost(hardness) {
 // 函数1：更新时间等级
 function timeLevel(lastUpdate, now = Date.now()) {
   const diffMs = now - lastUpdate
-  const tenMin = 1 * 60 * 500
-  const thirtyMin = 1 * 60 * 1000
+  const tenMin = 1 * 60 * 250
+  const thirtyMin = 1 * 60 * 500
   if (diffMs > thirtyMin) return 2
   if (diffMs >= tenMin) return 1
   return 0
 }
 
-// 函数2：存在则读，不存在抛异常（不更新 lastUpdate）
-async function getWithLevel(id) {
-  const all = await loadAll()
-  const user = all[id]
-  if (!user || typeof user !== 'object') {
+// 读写相关
+// =======================
+// per-user 写入队列（防覆盖）
+// =======================
+const userWriteQueues = new Map()
+
+function enqueueWriteById(id, task) {
+  const key = String(id)
+  const prev = userWriteQueues.get(key) || Promise.resolve()
+  const next = prev.then(task, task)
+
+  userWriteQueues.set(
+    key,
+    next.finally(() => {
+      if (userWriteQueues.get(key) === next) userWriteQueues.delete(key)
+    })
+  )
+
+  return next
+}
+
+// =======================
+// 路径规则：按末两位分桶
+// =======================
+function getUserPath(id) {
+  const uid = String(id)
+  const sub = uid.length >= 2 ? uid.slice(-2) : "00"
+  return path.join(usersRoot, sub, `${uid}.json`)
+}
+
+async function ensureDirForFile(filePath) {
+  await fs.promises.mkdir(path.dirname(filePath), { recursive: true })
+}
+
+// =======================
+// 读写用户文档：{ niuniu: {...}, ... }
+// =======================
+async function loadUserDoc(id) {
+  const filePath = getUserPath(id)
+  try {
+    const txt = await fs.promises.readFile(filePath, "utf8")
+    const obj = JSON.parse(txt || "{}")
+    return obj && typeof obj === "object" ? obj : {}
+  } catch (e) {
+    if (e && e.code === "ENOENT") return null // 不存在
+    throw e
+  }
+}
+
+async function saveUserDoc(id, doc) {
+  const filePath = getUserPath(id)
+  await ensureDirForFile(filePath)
+
+  const tmpPath = filePath + ".tmp"
+  const text = JSON.stringify(doc, null, 2) + "\n"
+
+  await fs.promises.writeFile(tmpPath, text, "utf8")
+  await fs.promises.rename(tmpPath, filePath)
+}
+
+// =======================
+// 你要的 4 个函数：保持旧业务兼容
+// =======================
+
+export async function getRawUserOrThrow(id) {
+  const doc = await loadUserDoc(id)
+  const user = doc && doc.niuniu
+  if (!user || typeof user !== "object") {
     const err = new Error(`ID_NOT_FOUND: ${id}`)
-    err.code = 'ID_NOT_FOUND'
+    err.code = "ID_NOT_FOUND"
     throw err
   }
+  // 返回旧结构，业务代码不用改
+  return user
+}
+
+export async function getWithLevel(id) {
+  const user = await getRawUserOrThrow(id)
   const now = Date.now()
   return {
     length: user.length,
     radius: user.radius,
     hardness: user.hardness,
+    lastUpdate: user.lastUpdate,
     level: timeLevel(user.lastUpdate, now),
-    lastUpdate: user.lastUpdate
   }
 }
 
-// 读取原始对象（存在则返回 raw，不存在抛）
-async function getRawUserOrThrow(id) {
-  const all = await loadAll()
-  const user = all[id]
-  if (!user || typeof user !== 'object') {
-    const err = new Error(`ID_NOT_FOUND: ${id}`)
-    err.code = 'ID_NOT_FOUND'
-    throw err
-  }
-  return user
-}
-
-// 函数3：更新并更新 lastUpdate
-async function updateUser(id, length, radius, hardness) {
+export async function updateUser(id, length, radius, hardness) {
   const now = Date.now()
-  return enqueueWrite(async () => {
-    const all = await loadAll()
-    all[id] = {
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {} // 不存在就新建
+
+    doc.niuniu = {
       length: Number(length),
       radius: Number(radius),
       hardness: Number(parseFloat(hardness).toFixed(2)) || 0,
-      lastUpdate: now
+      lastUpdate: now,
     }
-    await saveAll(all)
-    return all[id]
+
+    await saveUserDoc(id, doc)
+    return doc.niuniu
   })
 }
 
-// 函数5：更新但不更新 lastUpdate
-async function updateUserNoTime(id, length, radius, hardness) {
-  return enqueueWrite(async () => {
-    const all = await loadAll()
-    const prev = all[id]
-    if (!prev || typeof prev !== 'object') {
-      const err = new Error(`ID_NOT_FOUND: ${id}`)
-      err.code = 'ID_NOT_FOUND'
-      throw err
-    }
+export async function updateUserNoTime(id, length, radius, hardness) {
+  const now = Date.now()
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {} // 不存在就新建
+    const prev = doc.niuniu
 
-    all[id] = {
+    doc.niuniu = {
       length: Number(length),
       radius: Number(radius),
       hardness: Number(parseFloat(hardness).toFixed(2)) || 0,
-      lastUpdate: prev.lastUpdate
+      // 有旧数据就继承时间；没有就当新建用 now
+      lastUpdate: prev && typeof prev.lastUpdate === "number" ? prev.lastUpdate : now,
     }
-    await saveAll(all)
-    return all[id]
+
+    await saveUserDoc(id, doc)
+    return doc.niuniu
   })
 }
 
@@ -622,9 +638,6 @@ async function duel(idA, idB, nameA, nameB) {
   } catch (e) {
     if (e.code === 'ID_NOT_FOUND') return `${nameB}还没有长出牛牛，无法参与击剑`
     throw e
-  }
-  if (timeLevel(B.lastUpdate, Date.now()) === 0 || timeLevel(B.lastUpdate, Date.now()) === 1) {
-    return "间隔时间太短，休息一下吧！" 
   }
 
 
