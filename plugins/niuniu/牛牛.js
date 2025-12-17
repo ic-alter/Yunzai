@@ -5,14 +5,14 @@ import fs from 'fs'
 import path from 'path'
 import cfg from '../../lib/config/config.js'
 import seedrandom from 'seedrandom'
-import { sageEvents, pickWeightedEvent } from './event.js'
-import { defaultUser, fmtLen, fmtRad, upgradeCost, timeLevel, randPick, randFloat } from "./tool.js"
+import { sageEvents, pickWeightedEvent } from './lib/event.js'
+import { defaultUser, fmtLen, fmtRad, upgradeCost, timeLevel, randPick, randFloat, fmt2 ,round2} from "./lib/tool.js"
 import {
   getRawUserOrThrow,
   getWithLevel,
   updateUser,
-  updateUserNoTime,
-} from "./fs.js"
+  updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy
+} from "./lib/fs.js"
 
 // ========================
 // 插件主体
@@ -36,6 +36,7 @@ export class example extends plugin {
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
         { reg: '^#*(贤者模式|贤者时刻|贤者时间|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
+        { reg: '^#*捐精.*$', fnc: 'donateJy' },
       ],
       task: [] // 明确无定时任务，防 loader 误判
     })
@@ -91,7 +92,9 @@ export class example extends plugin {
 
     try {
       const u = await getWithLevel(tid) 
-      const msg = `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}`
+      let my_jy = await getJy(String(tid))
+      let my_money = await getMoney(String(tid))
+      const msg = `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}。积累金叶量${fmt2(my_jy)}ml，拥有${fmt2(my_money)}牛币。`
       e.reply(ats.length > 0 ? `${tname}的牛牛：${msg}` : msg)
     } catch (err) {
       if (err.code === 'ID_NOT_FOUND') {
@@ -347,6 +350,57 @@ export class example extends plugin {
       e.reply(msg)
       return true
     }
+
+  async donateJy(e) {
+    const id = String(e.user_id)
+  const msg = String(e.msg ?? "")
+
+  // 提取 “捐精” 后面的第一个数字（允许小数）
+  const m = msg.match(/捐精\s*([0-9]+(?:\.[0-9]+)?)/)
+  const hasNumber = !!m?.[1]
+  const want = hasNumber ? Number(m[1]) : null
+
+  const curJy = await getJy(id)
+
+  let donate
+  if (!hasNumber) {
+    donate = round2(curJy * 0.5)
+  } else {
+    if (!Number.isFinite(want) || want < 0) {
+      e.reply("捐献数量必须是非负数字")
+      return true
+    }
+    donate = round2(want)
+  }
+
+  if (donate <= 0) {
+    e.reply("没有可以捐献的")
+    return true
+  }
+
+  // 指定数字：余额不足提示（并且不改库）
+  // 不带数字：按 50% 理论上永远不不足（因为基于余额算的）
+  try {
+    await subJy(id, donate)
+  } catch (err) {
+    if (err?.code === "NOT_ENOUGH") {
+      e.reply(`你没有${fmt2(donate)} ml金叶，无法捐献`)
+      return true
+    }
+  }
+
+  const gain = round2(donate * 100)
+  try {
+    await addMoney(id, gain)
+  } catch (err) {
+    // 极端情况下加钱失败，回滚 jy，保证“数据库中的值不变”
+    try { await addJy(id, donate) } catch (_) {}
+    throw err
+  }
+
+  e.reply(`捐献了${fmt2(donate)} ml的金叶，获得${fmt2(gain)} 牛币`)
+  return true
+  }
 }
 
 // 函数4：立了（应用增长逻辑并返回字符串）
@@ -359,7 +413,9 @@ async function applyAndDescribe(id, name, rate = 1.0) {
 
     const init = defaultUser(Date.now())
     await updateUser(id, init.length, init.radius, init.hardness)
-    return `${name}的当前长度${fmtLen(init.length)}cm，半径${fmtRad(init.radius)}cm，硬度等级${init.hardness}`
+    let add_ml = Math.max(init.hardness, 0)
+    await addJy(id, add_ml)
+    return `${name}的当前长度${fmtLen(init.length)}cm，半径${fmtRad(init.radius)}cm，硬度等级${init.hardness}。积累${add_ml}ml金叶。`
   }
 
   const { length, radius, hardness, level } = user
@@ -386,8 +442,9 @@ async function applyAndDescribe(id, name, rate = 1.0) {
   const newRad = radius + radInc
 
   await updateUser(id, newLen, newRad, hardness)
-
-  return `${prefix}${name}的牛牛长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}`
+  let add_ml = Math.max(hardness, 0)
+    await addJy(id, add_ml)
+  return `${prefix}${name}的牛牛长度增加了${fmtLen(lenInc)}cm，半径增加了${fmtRad(radInc)}cm，当前长度${fmtLen(newLen)}cm，半径${fmtRad(newRad)}cm，硬度等级${hardness}。积累${add_ml}ml金叶。`
 }
 
 //击剑对抗
@@ -548,13 +605,18 @@ async function duel(idA, idB, nameA, nameB) {
     const stealLen = lowSide.data.length * stealRate
     const stealRad = lowSide.data.radius * stealRate
 
-    const winnerNewLen = lowSide.data.length + stealLen
-    const winnerNewRad = lowSide.data.radius + stealRad
-    const loserNewLen  = highSide.data.length - stealLen*0.6
-    const loserNewRad  = highSide.data.radius - stealRad*0.6
+    const winnerNewLen = highSide.data.length + stealLen
+    const winnerNewRad = highSide.data.radius + stealRad
+    const loserNewLen  = lowSide.data.length - stealLen*0.6
+    const loserNewRad  = lowSide.data.radius - stealRad*0.6
 
     await updateUserNoTime(highSide.id, winnerNewLen, winnerNewRad, highSide.data.hardness)
     await updateUserNoTime(lowSide.id, loserNewLen, loserNewRad, lowSide.data.hardness)
+    let add_ml = Math.max(highSide.data.hardness, 0)
+    let add_money = Math.max(Math.floor(200000 - (highSide.data.hardness-lowSide.data.hardness)*2000), 20000)
+    await addJy(highSide.id, add_ml)
+    await addMoney(highSide.id, add_money)
+    return `触发狭路相逢，${highSide.name}在狭路相逢中击败了${lowSide.name}，抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，并获得${add_ml}ml金叶和${add_money}牛币奖励。`
   }
 
   // ---- 常规胜负判定 ----
@@ -579,12 +641,16 @@ async function duel(idA, idB, nameA, nameB) {
   await updateUserNoTime(winner.id, winnerNewLen, winnerNewRad, winner.data.hardness)
   await updateUserNoTime(loser.id, loserNewLen, loserNewRad, loser.data.hardness)
 
-  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径`
+  let add_ml = Math.max(winner.data.hardness, 0)
+  let add_money = Math.max(Math.floor(100000 - (winner.data.hardness-loser.data.hardness)*1000), 10000)
+  await addJy(winner.id, add_ml)
+  await addMoney(winner.id, add_money)
+  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}牛币奖励。`
 }
 
 
 // ========================
-// 贤者模式事件系统
+// 贤者模式事件系统。只支持牛牛长度变化相关
 // ========================
 
 // 事件定义：彼此独立、无耦合

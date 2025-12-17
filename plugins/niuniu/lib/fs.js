@@ -1,7 +1,7 @@
 // plugins/niuniu/fs.js
 import fs from "fs"
 import path from "path"
-import { timeLevel } from "./tool.js"
+import { timeLevel, toNonNegNumber, round2 } from "./tool.js"
 
 // ========================
 // JSON 文件存储设置
@@ -135,4 +135,111 @@ export async function updateUserNoTime(id, length, radius, hardness) {
     await saveUserDoc(id, doc)
     return doc.niuniu
   })
+}
+
+// =======================
+// 顶层数值 key：通用查看/增加/减少
+// 适用于 doc[<key>] 是 number 的场景（如 money、jy）
+// =======================
+
+/**
+ * 查看顶层数值字段：如果不存在则初始化为 0 并写回
+ */
+function ensureTopLevelNumber(doc, key) {
+  if (!doc || typeof doc !== "object") return 0
+  const v = doc[key]
+  if (typeof v === "number" && Number.isFinite(v) && v >= 0) {
+    return round2(v)
+  }
+  return 0
+}
+
+export async function getTopNumber(id, key) {
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {}
+    const cur = ensureTopLevelNumber(doc, key)
+
+    if (doc[key] !== cur) {
+      doc[key] = cur
+      await saveUserDoc(id, doc)
+    }
+    return cur
+  })
+}
+
+/**
+ * 增加顶层数值字段：字段不存在视为 0 + delta
+ */
+export async function addTopNumber(id, key, delta) {
+  const inc = toNonNegNumber(delta, "delta")
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {}
+    const cur = ensureTopLevelNumber(doc, key)
+
+    const next = round2(cur + inc)
+
+    if (next > Number.MAX_SAFE_INTEGER) {
+      const err = new Error(`${key} exceeds MAX_SAFE_INTEGER`)
+      err.code = "NUMBER_OVERFLOW"
+      throw err
+    }
+
+    doc[key] = next
+    await saveUserDoc(id, doc)
+    return next
+  })
+}
+
+/**
+ * 减少顶层数值字段：字段不存在先当 0；若不足则抛异常
+ */
+export async function subTopNumber(id, key, delta) {
+  const dec = toNonNegNumber(delta, "delta")
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {}
+    const cur = ensureTopLevelNumber(doc, key)
+
+    if (cur < dec) {
+      const err = new Error(`${key} not enough: have=${cur}, need=${dec}`)
+      err.code = "NOT_ENOUGH"
+      err.key = key
+      err.have = cur
+      err.need = dec
+      throw err
+    }
+
+    const next = round2(cur - dec)
+    doc[key] = next
+    await saveUserDoc(id, doc)
+    return next
+  })
+}
+// =======================
+// money 封装
+// =======================
+export function getMoney(id) {
+  return getTopNumber(id, "money")
+}
+
+export function addMoney(id, delta) {
+  return addTopNumber(id, "money", delta)
+}
+
+export function subMoney(id, delta) {
+  return subTopNumber(id, "money", delta)
+}
+
+// =======================
+// jy 封装
+// =======================
+export function getJy(id) {
+  return getTopNumber(id, "jy")
+}
+
+export function addJy(id, delta) {
+  return addTopNumber(id, "jy", delta)
+}
+
+export function subJy(id, delta) {
+  return subTopNumber(id, "jy", delta)
 }

@@ -92,6 +92,10 @@ export function fmtRad(x) {
   return formatNumber(x, 4, 6, 11)
 }
 
+export function fmt2(n){
+  return round2(n).toFixed(2)
+}
+
 // ========================
 // 成本/等级等纯计算
 // ========================
@@ -111,4 +115,24 @@ export function timeLevel(lastUpdate, now = Date.now()) {
   if (diffMs > tenSec) return 2
   if (diffMs >= fiveSec) return 1
   return 0
+}
+
+export function toNonNegNumber(n, name = "value") {
+  const num = Number(n)
+  if (!Number.isFinite(num)) {
+    const err = new Error(`${name} must be a finite number`)
+    err.code = "INVALID_NUMBER"
+    throw err
+  }
+  if (num < 0) {
+    const err = new Error(`${name} must be >= 0`)
+    err.code = "INVALID_NUMBER"
+    throw err
+  }
+  return num
+}
+
+export function round2(n) {
+  // 使用 EPSILON 避免 1.005 -> 1.00 这种经典浮点坑
+  return Math.round((n + Number.EPSILON) * 100) / 100
 }
