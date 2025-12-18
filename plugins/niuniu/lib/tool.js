@@ -136,3 +136,23 @@ export function round2(n) {
   // 使用 EPSILON 避免 1.005 -> 1.00 这种经典浮点坑
   return Math.round((n + Number.EPSILON) * 100) / 100
 }
+
+
+// ========================
+// 计算彩礼
+// ========================
+export function bridePriceByHardness(hardness) {
+  const h = toNonNegNumber(hardness, "hardness") // 允许传入字符串/小数，但必须是非负有限数
+  const lvl = Math.floor(Math.sqrt(h))           // hardness 可能带小数：先开方再向下取整
+  let price = lvl * 100000 + 88888
+  if (price < 188888) price = 188888
+  return price
+}
+
+
+// 获取QQ头像（统一放tool里）
+export function getAvatar(userId, size = 160) {
+  const uid = String(userId)
+  const s = Number(size) || 160
+  return `https://q1.qlogo.cn/g?b=qq&s=${s}&nk=${uid}`
+}

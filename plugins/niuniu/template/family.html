@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{title}}</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 100%; }
+      body {
+        margin: 0;
+        padding: 16px;              /* 更小的内边距，避免整体变宽 */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        background: #f5f7fb;
+        color: #1f2937;
+        overflow: hidden;           /* 关键：直接禁止任何方向溢出 */
+      }
+
+      .wrap {
+        width: 720px;               /* 关键：再缩窄，适配更小viewport */
+        max-width: 100%;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #e6eaf2;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 6px 14px rgba(31, 41, 55, 0.08); /* 不用大外扩阴影 */
+        overflow: hidden;           /* 关键：避免阴影/内部撑出 */
+      }
+
+      .header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .title {
+        font-size: 24px;
+        font-weight: 900;
+        color: #111827;
+      }
+      .sub {
+        font-size: 12px;
+        color: #6b7280;
+        white-space: nowrap;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;                  /* gap 也缩小 */
+      }
+
+      .card {
+        background: #ffffff;
+        border: 1px solid #e8edf5;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 4px 10px rgba(17, 24, 39, 0.05);
+        overflow: hidden;
+        min-width: 0;               /* 关键：grid子项允许缩小 */
+      }
+
+      .role {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .badge {
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid #dbe3f3;
+        background: #f3f6ff;
+        color: #1f3a8a;
+        font-weight: 800;
+      }
+      .hint {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .avatar {
+        width: 76px;
+        height: 76px;
+        border-radius: 14px;
+        border: 1px solid #e6eaf2;
+        background: #f3f4f6;
+        object-fit: cover;
+        flex: 0 0 auto;
+      }
+
+      .info { min-width: 0; }
+
+      .name {
+        font-size: 16px;
+        font-weight: 900;
+        margin-bottom: 6px;
+        max-width: 260px;           /* 再收一点，防止撑开 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #111827;
+      }
+
+      .id {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .empty {
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px dashed #d6dbe6;
+        background: #fafbff;
+        color: #6b7280;
+        text-align: center;
+      }
+
+      .concubineCard { margin-top: 10px; }
+
+      .concubineList {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .concubineItem {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid #e8edf5;
+        background: #fafbff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .concubineName {
+        font-size: 14px;
+        font-weight: 800;
+        max-width: 520px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #111827;
+        min-width: 0;
+      }
+
+      .concubineId {
+        font-size: 12px;
+        color: #6b7280;
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="title">{{title}}</div>
+        <div class="sub">家庭信息</div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="role"><span class="badge">丈夫</span></div>
+          <div class="row">
+            <img class="avatar" src="{{husband.avatar}}" alt="丈夫头像" />
+            <div class="info">
+              <div class="name">{{husband.username}}</div>
+              <div class="id">ID: {{husband.id}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="role"><span class="badge">妻子</span></div>
+          {{if wife}}
+          <div class="row">
+            <img class="avatar" src="{{wife.avatar}}" alt="妻子头像" />
+            <div class="info">
+              <div class="name">{{wife.username}}</div>
+              <div class="id">ID: {{wife.id}}</div>
+            </div>
+          </div>
+          {{else}}
+          <div class="empty">暂无妻子</div>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="card concubineCard">
+        <div class="role">
+          <span class="badge">侍妾</span>
+          <span class="hint"></span>
+        </div>
+
+        {{if concubines && concubines.length > 0}}
+        <div class="concubineList">
+          {{each concubines item}}
+          <div class="concubineItem">
+            <div class="concubineName">{{item.username}}</div>
+            <div class="concubineId">ID: {{item.id}}</div>
+          </div>
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="empty">暂无侍妾</div>
+        {{/if}}
+      </div>
+    </div>
+  </body>
+</html>

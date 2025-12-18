@@ -35,7 +35,7 @@ export class example extends plugin {
                 },
                 {
                     /** 命令正则匹配 */
-                    reg: "是啥杯$",
+                    reg: "(是啥杯|是什么杯|什么强度|强度怎么样)",
                     /** 执行方法 */
                     fnc: "shabei",
                 },

@@ -11,8 +11,8 @@ import {
   getRawUserOrThrow,
   getWithLevel,
   updateUser,
-  updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy
-} from "./lib/fs.js"
+  updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy,getUsername,setUsername
+} from "./lib/myfs.js"
 
 // ========================
 // 插件主体
@@ -406,6 +406,7 @@ export class example extends plugin {
 // 函数4：立了（应用增长逻辑并返回字符串）
 async function applyAndDescribe(id, name, rate = 1.0) {
   let user
+  await setUsername(id, name)
   try {
     user = await getWithLevel(id)
   } catch (e) {
@@ -450,6 +451,8 @@ async function applyAndDescribe(id, name, rate = 1.0) {
 //击剑对抗
 async function duel(idA, idB, nameA, nameB) {
   let A, B
+  await setUsername(idA, nameA)
+  await setUsername(idB, nameB)
   try {
     A = await getRawUserOrThrow(idA)
   } catch (e) {

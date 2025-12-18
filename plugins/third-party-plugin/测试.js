@@ -26,6 +26,13 @@ export class example extends plugin {
                     /** 执行方法 */
                     fnc: "test2",
                 },
+                {
+                    /** 命令正则匹配 */
+                    reg: "^#groupContext测试",
+                    /** 执行方法 */
+                    fnc: "groupContextTest",
+                },
+                
             ],
         });
     }
@@ -38,5 +45,24 @@ export class example extends plugin {
         e.reply({
             "type": "rps"
           })
+    }
+    async groupContextTest(e){
+        this.keyWord = "groupContext测试"
+        this.e.keyWord = this.keyWord
+        this.setContext("groupTestContext",true)
+    }
+    async groupTestContext(e){
+        const context = this.getContext("groupTestContext",true)
+        if (this.e.msg?.includes("#展示上下文测试")){
+            e.reply(`上下文内容：${context.keyWord}`)
+            return
+        }
+        if (this.e.msg?.includes("#结束上下文测试")){
+            this.finish("groupTestContext",true)
+            e.reply(`已结束上下文测试`)
+            return
+        }
+        e.reply(`这是群上下文测试，发送 #展示上下文测试 可查看上下文内容，发送 #结束上下文测试 可结束上下文`)
+
     }
 }
