@@ -35,6 +35,7 @@ export class 家庭 extends plugin {
           reg: "^(#|＃)?(家庭|查看家庭|的家庭|户口|户口本)",
           fnc: "showFamily",
         },
+        { reg: "^#?婚姻帮助$", fnc: "marriageHelp" },
       ],
     })
   }
@@ -89,4 +90,26 @@ export class 家庭 extends plugin {
       return true
     }
   }
+  async marriageHelp(e) {
+  const tplFile = path.join(__dirname, "template", "marriage_help.html")
+  const data = {
+    tplFile,
+    title: "婚姻帮助",
+    lines: [
+      { k: "结婚", v: "结婚 @对象（需要支付彩礼）" },
+      { k: "纳妾", v: "纳妾 @对象（需要支付彩礼）" },
+      { k: "撅", v: "宠幸并注入金叶。有概率使其怀孕" },
+      { k: "射", v: "宠幸并注入金叶。有概率使其怀孕" },
+      { k: "捐精", v: "捐献自己的金叶换取金币" },
+      { k: "子嗣列表", v: "查看自己的子嗣。可分页，例如子嗣列表2" },
+      { k: "子嗣详情", v: "查看特定cid的子嗣的详细信息（示例：子嗣详情12）" },
+      { k: "改名", v: "更改孩子姓名" }
+    ]
+  }
+  
+  const img = await puppeteer.screenshot("marriage_help", data)
+  if (img) await e.reply(img)
+  else await e.reply("渲染失败")
+  return true
+}
 }

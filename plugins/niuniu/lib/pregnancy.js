@@ -134,7 +134,7 @@ function initStatus(rank) {
 
 function initTalent(rank) {
   const range =
-    rank === "嫡" ? [65, 100] : rank === "庶" ? [50, 90] : [10, 100]
+    rank === "嫡" ? [65, 100] : rank === "庶" ? [50, 90] : [10, 80]
   const [mn, mx] = range
   return {
     face: randInt(mn, mx),
@@ -230,7 +230,7 @@ export async function processInjection({ fid, fname, mid, mname }) {
     const ok = rollPercent(curP)
 
     if (!ok) {
-      pst.p = Math.min(100, curP + 2)
+      pst.p = Math.min(100, curP + 3)
 
       await writeBack(F, fdoc, M, mdoc)
 

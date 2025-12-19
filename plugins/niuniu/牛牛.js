@@ -94,7 +94,7 @@ export class example extends plugin {
       const u = await getWithLevel(tid) 
       let my_jy = await getJy(String(tid))
       let my_money = await getMoney(String(tid))
-      const msg = `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}。积累金叶量${fmt2(my_jy)}ml，拥有${fmt2(my_money)}牛币。`
+      const msg = `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}。积累金叶量${fmt2(my_jy)}ml，拥有${fmt2(my_money)}金币。`
       e.reply(ats.length > 0 ? `${tname}的牛牛：${msg}` : msg)
     } catch (err) {
       if (err.code === 'ID_NOT_FOUND') {
@@ -398,7 +398,7 @@ export class example extends plugin {
     throw err
   }
 
-  e.reply(`捐献了${fmt2(donate)} ml的金叶，获得${fmt2(gain)} 牛币`)
+  e.reply(`捐献了${fmt2(donate)} ml的金叶，获得${fmt2(gain)} 金币`)
   return true
   }
 }
@@ -619,7 +619,7 @@ async function duel(idA, idB, nameA, nameB) {
     let add_money = Math.max(Math.floor(200000 - (highSide.data.hardness-lowSide.data.hardness)*2000), 20000)
     await addJy(highSide.id, add_ml)
     await addMoney(highSide.id, add_money)
-    return `触发狭路相逢，${highSide.name}在狭路相逢中击败了${lowSide.name}，抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，并获得${add_ml}ml金叶和${add_money}牛币奖励。`
+    return `触发狭路相逢，${highSide.name}在狭路相逢中击败了${lowSide.name}，抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，并获得${add_ml}ml金叶和${add_money}金币奖励。`
   }
 
   // ---- 常规胜负判定 ----
@@ -648,7 +648,7 @@ async function duel(idA, idB, nameA, nameB) {
   let add_money = Math.max(Math.floor(100000 - (winner.data.hardness-loser.data.hardness)*1000), 10000)
   await addJy(winner.id, add_ml)
   await addMoney(winner.id, add_money)
-  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}牛币奖励。`
+  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}金币奖励。`
 }
 
 
