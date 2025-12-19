@@ -86,7 +86,7 @@ export class example extends plugin {
     super({
       name: '结婚',
       dsc: '结婚/纳妾/离婚',
-      priority: 0,
+      priority: 3000,
       rule: [
         { reg: '^#*结婚.*$', fnc: 'marryCmd' },
         { reg: '^#*纳妾.*$', fnc: 'takeConcubineCmd' },

@@ -4,6 +4,7 @@ import puppeteer from "../../lib/puppeteer/puppeteer.js"
 
 // 你自己的库：从数据库拿“家庭结构”
 import { viewFamily } from "./lib/myfs.js"
+import { buildFamilyChildrenView } from "./lib/children.js"
 import { getAvatar } from "./lib/tool.js"
 
 const __filename = fileURLToPath(import.meta.url)
@@ -45,10 +46,10 @@ export class 家庭 extends plugin {
       const targetId = atId || String(this.e.user_id)
 
       // 用你封装好的viewFamily拿数据（不自己读json）
-      const fam = await viewFamily(targetId)
-
+      const view = await buildFamilyChildrenView(targetId)
       const tplFile = path.join(__dirname, "template", "family.html")
-
+      console.log("view for showFamily:", view)
+      const fam = view.family
       const data = {
         tplFile,
 
@@ -77,6 +78,7 @@ export class 家庭 extends plugin {
           id: x.id || "",
           username: x.username || "",
         })),
+        children: view.children
       }
 
       const img = await puppeteer.screenshot("family", data)

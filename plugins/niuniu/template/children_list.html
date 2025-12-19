@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+    <style>
+        html, body{
+            width: fit-content;
+            height: fit-content;
+            }
+            body{
+            display: inline-block;
+            }
+      *{box-sizing:border-box;}
+      body{
+        margin:0;
+        padding:16px;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+        background:#f5f7fb;
+        color:#111827;
+      }
+      .wrap{ width:520px; }
+      .head{
+        display:flex;
+        flex-direction:column;
+        gap:4px;
+        margin-bottom:12px;
+      }
+      .title{ font-size:18px; font-weight:800; }
+      .sub{ font-size:12px; color:#6b7280; }
+      .list{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:8px;
+}
+      .item{
+        background:#fff;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        padding:10px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+      }
+      .left{ display:flex; flex-direction:column; gap:2px; }
+      .name{ font-size:14px; font-weight:800; }
+      .meta{ font-size:12px; color:#6b7280; }
+      .bR_d{ border-color:#d4af37; }
+      .bR_s{ border-color:#7c3aed; }
+      .bR_p{ border-color:#10b981; }
+      .foot{
+        margin-top:10px;
+        font-size:12px;
+        color:#6b7280;
+        text-align:right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="head">
+        <div class="title">{{title}}</div>
+        {{if subtitle}}<div class="sub">{{subtitle}}</div>{{/if}}
+      </div>
+
+      {{if items && items.length>0}}
+      <div class="list">
+        {{each items c}}
+        <div class="item {{c.rankClass}}">
+          <div class="left">
+            <div class="name">{{c.name}}</div>
+            <div class="meta">CID: {{c.cid}} · {{c.sex}} · {{c.displayRank}}</div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <div class="sub">暂无子嗣</div>
+      {{/if}}
+
+      {{if pager}}
+      <div class="foot">第{{pager.page}}/{{pager.totalPages}}页</div>
+      <span class="hint">“子嗣详情 {cid}”查看具体情况；子嗣列表{页码}翻页</span>
+      {{/if}}
+    </div>
+  </body>
+</html>

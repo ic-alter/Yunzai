@@ -1,7 +1,7 @@
 // plugins/niuniu/fs.js
 import fs from "fs"
 import path from "path"
-import { timeLevel, toNonNegNumber, round2 } from "./tool.js"
+import { timeLevel, toNonNegNumber, round2, maxConcubinesByHardness } from "./tool.js"
 
 // ========================
 // JSON 文件存储设置
@@ -70,6 +70,21 @@ async function saveUserDoc(id, doc) {
 
   await fs.promises.writeFile(tmpPath, text, "utf8")
   await fs.promises.rename(tmpPath, filePath)
+}
+
+export async function readUserDoc(id) {
+  const uid = asIdStr(id)
+  return (await loadUserDoc(uid)) || {}
+}
+
+export async function updateUserDoc(id, mutator) {
+  const uid = asIdStr(id)
+  return enqueueWriteById(uid, async () => {
+    const doc = (await loadUserDoc(uid)) || {}
+    const res = await mutator(doc)
+    await saveUserDoc(uid, doc)
+    return res
+  })
 }
 
 // ======================================================
@@ -333,6 +348,31 @@ function enqueueWriteMany(ids, task) {
   }, Promise.resolve()).then(task)
 }
 
+export async function withLocks({ userIds = [], globalKeys = [] }, task) {
+  const uids = [...new Set((userIds || []).map(asIdStr))].filter(Boolean).sort()
+  const gkeys = [...new Set((globalKeys || []).map(String))].filter(Boolean).sort()
+
+  // 先占位所有 user 队列，避免并发写穿
+  const occupyUsers = () => enqueueWriteMany(uids, async () => {})
+  // 再占位所有 global 队列
+  const occupyGlobals = () =>
+    gkeys.reduce(
+      (p, k) => p.then(() => enqueueWriteByGlobalKey(k, async () => {})),
+      Promise.resolve()
+    )
+
+  await occupyUsers()
+  await occupyGlobals()
+
+  // 真正执行：再串起来一次，保证 task 在所有锁之后运行
+  return enqueueWriteMany(uids, async () => {
+    return gkeys.reduce(
+      (p, k) => p.then(() => enqueueWriteByGlobalKey(k, async () => {})),
+      Promise.resolve()
+    ).then(task)
+  })
+}
+
 // =======================
 // marry 约束检查（建议分角色）
 // =======================
@@ -459,7 +499,14 @@ export async function takeConcubine(husbandId, concubineId) {
     } else {
       const hf = ensureHusbandFamily(hdoc)
       if (hf.family.concubineIds.includes(cid)) {
-        throwCn(`ID=${cid} 已经在丈夫 ID=${hid} 的妾名单里。`)
+        throwCn(`ID=${cid} 已经在丈夫 ID=${hid} 的侍妾名单里。`)
+      }
+      // 妾数量上限：floor(log2(hardness))，最小2
+      const hardness = hdoc?.niuniu?.hardness ?? 0
+      const limit = maxConcubinesByHardness(hardness)
+      const cur = hf.family.concubineIds.length
+      if (cur >= limit) {
+        throwCn(`纳妾失败：你最多只能拥有${limit}个侍妾。`)
       }
       hf.family.concubineIds.push(cid)
     }
@@ -616,3 +663,54 @@ export async function divorce(idA, idB) {
     return true
   })
 }
+
+// data/niuniu/globals/<key>.json
+const globalsRoot = path.join(process.cwd(), "data", "niuniu", "globals")
+fs.mkdirSync(globalsRoot, { recursive: true })
+
+const globalWriteQueues = new Map()
+function enqueueWriteByGlobalKey(key, task) {
+  const k = String(key)
+  const prev = globalWriteQueues.get(k) || Promise.resolve()
+  const next = prev
+    .then(() => task())
+    .catch((e) => {
+      console.error("[niuniu][globalQueue]", k, e)
+      throw e
+    })
+  globalWriteQueues.set(k, next)
+  return next
+}
+
+function getGlobalPath(key) {
+  return path.join(globalsRoot, `${String(key)}.json`)
+}
+
+async function loadGlobalJson(key, fallback = {}) {
+  const fp = getGlobalPath(key)
+  try {
+    const raw = await fs.promises.readFile(fp, "utf-8")
+    return JSON.parse(raw)
+  } catch {
+    return fallback
+  }
+}
+
+async function saveGlobalJson(key, obj) {
+  const fp = getGlobalPath(key)
+  await fs.promises.mkdir(path.dirname(fp), { recursive: true })
+  await fs.promises.writeFile(fp, JSON.stringify(obj, null, 2), "utf-8")
+}
+
+export async function nextGlobalId(key) {
+  return enqueueWriteByGlobalKey(key, async () => {
+    const cur = await loadGlobalJson(key, { next: 1 })
+    let next = Number(cur?.next)
+    if (!Number.isFinite(next) || next < 1) next = 1
+    const out = next
+    cur.next = next + 1
+    await saveGlobalJson(key, cur)
+    return out
+  })
+}
+

@@ -149,6 +149,13 @@ export function bridePriceByHardness(hardness) {
   return price
 }
 
+// 最大妾数量：floor(log2(hardness))，但最小为2
+export function maxConcubinesByHardness(hardness) {
+  const h = toNonNegNumber(hardness, "hardness") // 复用你现有的参数校验
+  if (h <= 0) return 2
+  const max = Math.floor(Math.log2(h))
+  return Math.max(2, max)
+}
 
 // 获取QQ头像（统一放tool里）
 export function getAvatar(userId, size = 160) {

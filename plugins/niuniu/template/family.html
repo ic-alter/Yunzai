@@ -165,6 +165,26 @@
         flex: 0 0 auto;
         white-space: nowrap;
       }
+      .childGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:8px;
+}
+.childItem{
+  background:#fff;
+  border:2px solid #e5e7eb;
+  border-radius:12px;
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.childLeft{ display:flex; flex-direction:column; gap:2px; }
+.childName{ font-size:14px; font-weight:700; }
+.childMeta{ font-size:12px; color:#6b7280; }
+.bR_d{ border-color:#d4af37; }  /* 嫡 金色 */
+.bR_s{ border-color:#7c3aed; }  /* 庶 紫色 */
+.bR_p{ border-color:#10b981; }  /* 私生 绿色 */
     </style>
   </head>
 
@@ -222,6 +242,27 @@
         <div class="empty">暂无侍妾</div>
         {{/if}}
       </div>
+      <div class="card">
+  <div class="role">
+    <span class="badge">子嗣</span>
+    <span class="hint">通过“子嗣详情 {cid}”查看具体情况</span>
+  </div>
+
+  {{if children && children.length > 0}}
+  <div class="childGrid">
+    {{each children c}}
+    <div class="childItem {{c.rankClass}}">
+      <div class="childLeft">
+        <div class="childName">{{c.name}}</div>
+        <div class="childMeta">CID: {{c.cid}} · {{c.sex}} · {{c.displayRank}}</div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="empty">暂无子嗣</div>
+  {{/if}}
+</div>
     </div>
   </body>
 </html>

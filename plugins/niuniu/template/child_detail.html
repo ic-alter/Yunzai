@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+    <style>
+        html, body{
+        width: fit-content;
+        height: fit-content;
+        }
+        body{
+        display: inline-block;
+        }
+      *{box-sizing:border-box;}
+      body{
+        margin:0;
+        padding:16px;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+        background:#f5f7fb;
+        color:#111827;
+      }
+      .wrap{ width:520px; }
+      .card{
+        background:#fff;
+        border:2px solid #e5e7eb;
+        border-radius:14px;
+        padding:14px;
+      }
+      .bR_d{ border-color:#d4af37; }
+      .bR_s{ border-color:#7c3aed; }
+      .bR_p{ border-color:#10b981; }
+
+      .title{ font-size:18px; font-weight:900; margin-bottom:6px; }
+      .sub{ font-size:12px; color:#6b7280; margin-bottom:10px; }
+
+      .sec{ margin-top:10px; }
+      .secT{ font-size:13px; font-weight:800; margin-bottom:6px; }
+      .row{ font-size:12px; color:#374151; line-height:1.6; }
+      .muted{ color:#6b7280; }
+      .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card {{child.rankClass}}">
+        <div class="title">{{child.name}}</div>
+        <div class="sub">CID: {{child.cid}} · {{child.sex}} · {{child.displayRank}}</div>
+
+        <div class="sec">
+          <div class="secT">基本信息</div>
+          <div class="row">生父：<span class="muted">{{child.fatherName}}</span></div>
+          <div class="row">生母：<span class="muted">{{child.motherName}}</span></div>
+        </div>
+
+        <div class="sec">
+          <div class="secT">状态</div>
+          <div class="grid2">
+            <div class="row">健康：{{child.health}}</div>
+            <div class="row">心情：{{child.mood}}</div>
+            <div class="row">零花钱：{{child.pocket}}</div>
+            <div class="row">物品：{{child.items && child.items.length ? child.items.length : 0}}</div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="secT">天赋</div>
+          <div class="grid2">
+            <div class="row">颜值：{{child.talent.face}}</div>
+            <div class="row">智力：{{child.talent.iq}}</div>
+            <div class="row">体能：{{child.talent.str}}</div>
+            <div class="row">情商：{{child.talent.eq}}</div>
+          </div>
+        </div>
+
+        {{if child.bornAtText}}
+        <div class="sec">
+          <div class="secT">出生时间</div>
+          <div class="row">{{child.bornAtText}}</div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </body>
+</html>
