@@ -1,6 +1,6 @@
 // plugins/niuniu/lib/children.js
 import { readUserDoc, updateUserDoc, getUsername } from "./myfs.js"
-import { viewFamily } from "./myfs.js"
+import { viewFamily,addMoney } from "./myfs.js"
 
 function asIdStr(x) {
   return String(x ?? "").trim()
@@ -190,5 +190,99 @@ export async function renameChild(userId, cid, newName) {
     if (!one) throw new Error("未找到该CID的子嗣（只能改自己的）")
     one.name = nn
     return true
+  })
+}
+
+const DISCARD_REWARD = 10000
+
+/**
+ * 丢弃孩子：删除 children 中对应 cid，并固定获得 10000 金币
+ * 不保留任何记录
+ */
+export async function discardChild(userId, cid) {
+  const uid = String(userId ?? "").trim()
+  const c = Number(cid)
+  if (!uid) throw new Error("用户ID不合法")
+  if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
+
+  // 1) 先删孩子（也可以先加钱，顺序你无所谓；不考虑并发）
+  let removed = null
+  await updateUserDoc(uid, (doc) => {
+    if (!Array.isArray(doc.children)) doc.children = []
+    const idx = doc.children.findIndex((x) => Number(x?.cid) === c)
+    if (idx === -1) throw new Error("未找到该CID的子嗣（只能丢弃自己的）")
+    removed = doc.children[idx]
+    doc.children.splice(idx, 1)
+  })
+
+  // 2) 加钱（用 myfs 已有接口）
+  await addMoney(uid, DISCARD_REWARD)
+
+  return {
+    reward: DISCARD_REWARD,
+    child: removed
+      ? { cid: removed.cid, name: removed.name, sex: removed.sex, rank: removed.rank }
+      : { cid: c, name: "" },
+  }
+}
+
+function sexFactor(sex) {
+  return sex === "男" ? 1 : 0.5
+}
+
+function rankFactor(rank) {
+  if (rank === "嫡") return 0.8
+  if (rank === "庶") return 0.6
+  return 0.4
+}
+
+function rankCostFactor(rank) {
+  if (rank === "嫡") return 2.0
+  if (rank === "庶") return 1.0
+  return 0.7
+}
+
+/*计算炼化相关消耗和收益 */
+export async function calcRefine(userId, cid) {
+  const uid = String(userId ?? "").trim()
+  const c = Number(cid)
+  if (!uid) throw new Error("用户ID不合法")
+  if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
+
+  const doc = await readUserDoc(uid)
+  const arr = Array.isArray(doc.children) ? doc.children : []
+  const child = arr.find((x) => Number(x?.cid) === c)
+  if (!child) throw new Error("未找到该CID的子嗣（只能炼化自己的）")
+
+  const health = Number(child.health) || 0
+  const str = Number(child.talent?.str) || 0
+  const base = health + str
+  const rate = base * sexFactor(child.sex) * rankFactor(child.rank)
+
+  const name = String(child.name || "")
+  const rank = child.rank
+
+  return {
+    cid: c,
+    name,
+    rank,
+    rate,                 // 例如 64 表示 64%
+    costFactor: rankCostFactor(rank)
+  }
+}
+
+
+/*删除孩子 */
+export async function consumeChild(userId, cid) {
+  const uid = String(userId ?? "").trim()
+  const c = Number(cid)
+  if (!uid) throw new Error("用户ID不合法")
+  if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
+
+  await updateUserDoc(uid, (doc) => {
+    if (!Array.isArray(doc.children)) doc.children = []
+    const idx = doc.children.findIndex((x) => Number(x?.cid) === c)
+    if (idx === -1) throw new Error("未找到该CID的子嗣")
+    doc.children.splice(idx, 1)
   })
 }

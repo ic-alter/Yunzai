@@ -163,3 +163,46 @@ export function getAvatar(userId, size = 160) {
   const s = Number(size) || 160
   return `https://q1.qlogo.cn/g?b=qq&s=${s}&nk=${uid}`
 }
+
+// ========================
+// 时间/随机（通用）
+// ========================
+
+// 整数随机：包含两端
+export function randInt(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+// 获取某个时间戳在指定时区的“日期键”，用于判断是否同一天（如：2025-12-19）
+// 默认东八区：Asia/Shanghai
+export function dayKeyInTZ(ts = Date.now(), timeZone = "Asia/Shanghai") {
+  const d = new Date(ts)
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(d)
+
+  const get = (type) => parts.find((p) => p.type === type)?.value
+  return `${get("year")}-${get("month")}-${get("day")}`
+}
+
+export function isSameDayInTZ(aTs, bTs, timeZone = "Asia/Shanghai") {
+  return dayKeyInTZ(aTs, timeZone) === dayKeyInTZ(bTs, timeZone)
+}
+
+// 获取指定时区的“小时/分钟”
+export function hmInTZ(ts = Date.now(), timeZone = "Asia/Shanghai") {
+  const d = new Date(ts)
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(d)
+  const get = (type) => parts.find((p) => p.type === type)?.value
+  return { hour: Number(get("hour")), minute: Number(get("minute")) }
+}

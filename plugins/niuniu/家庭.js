@@ -26,7 +26,7 @@ function replyErr(e, err) {
 export class 家庭 extends plugin {
   constructor() {
     super({
-      name: "家庭",
+      name: "牛牛-家庭",
       dsc: "查看家庭（渲染图片）",
       event: "message",
       priority: 5000,

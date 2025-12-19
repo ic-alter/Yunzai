@@ -230,7 +230,7 @@ export async function processInjection({ fid, fname, mid, mname }) {
     const ok = rollPercent(curP)
 
     if (!ok) {
-      pst.p = Math.min(100, curP + 3)
+      pst.p = Math.min(100, curP + 5)
 
       await writeBack(F, fdoc, M, mdoc)
 
@@ -245,10 +245,10 @@ export async function processInjection({ fid, fname, mid, mname }) {
     }
 
     // 成功：p归1，生成孩子（写到父doc）
-    pst.p = 2
+    pst.p = 5
 
     const cid = await nextGlobalId("cid")
-    const sex = Math.random() < 0.6 ? "男" : "女"
+    const sex = Math.random() < 0.65 ? "男" : "女"
     const rank = judgeRankSnapshot(fdoc, mdoc, F, M)
     const name = await genChildName({ rank, sex, cid, fdoc })
 

@@ -84,11 +84,11 @@ function replyErr(e, err) {
 export class example extends plugin {
   constructor() {
     super({
-      name: '结婚',
+      name: '牛牛-结婚',
       dsc: '结婚/纳妾/离婚',
       priority: 3000,
       rule: [
-        { reg: '^#*结婚.*$', fnc: 'marryCmd' },
+        { reg: '^#*(结婚|求婚).*$', fnc: 'marryCmd' },
         { reg: '^#*纳妾.*$', fnc: 'takeConcubineCmd' },
         { reg: '^#*离婚.*$', fnc: 'divorceCmd' },
       ],
@@ -311,7 +311,7 @@ export class example extends plugin {
     ctx2.concName = String(ctx.concName)
     ctx2.bridePrice = Number(ctx.bridePrice)
 
-    e.reply([at(ctx2.concId), ` ${ctx2.husbandName}想纳您为妾，是否同意？发送“同意”同意，其他内容视为拒绝。`])
+    e.reply([at(ctx2.concId), ` ${ctx2.husbandName}想纳您为侍妾，是否同意？发送“同意”同意，其他内容视为拒绝。`])
     return true
   }
 

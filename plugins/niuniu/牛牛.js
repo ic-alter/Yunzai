@@ -20,7 +20,7 @@ import {
 export class example extends plugin {
   constructor() {
     super({
-      name: '牛牛',
+      name: '牛牛-击剑与事件',
       dsc: '牛牛战斗',
       priority: 0,
       rule: [
@@ -229,7 +229,7 @@ export class example extends plugin {
   }
 
   // ====== 情况 B：进入连续整级升级 ======
-  while (levelsGained < 5 && canPayFullLevel(curLevel)) {
+  while (levelsGained < 20 && canPayFullLevel(curLevel)) {
     const { needLen: nl, needRad: nr } = upgradeCost(curLevel)
 
     // 扣资源 & 预算
@@ -653,13 +653,87 @@ async function duel(idA, idB, nameA, nameB) {
 
 
 // ========================
-// 贤者模式事件系统。只支持牛牛长度变化相关
+// 贤者模式事件系统。
 // ========================
-
+//
 // 事件定义：彼此独立、无耦合
-// apply: 输入 raw user，返回 { length, radius, hardness } 的新值（不要动 lastUpdate）
-// message: 输入事件前后、昵称等上下文，返回一句话
-// weight: 权重（可选，默认1），未来想调概率直接改这里
+//
+// apply:
+//   输入 raw user，返回一个“变更描述对象”，用于描述本次事件的影响。
+//   - 可返回新的 length / radius / hardness（表示直接重新赋值）
+//   - 可返回 moneyDelta / jyDelta（表示通过 addMoney / addJy 进行增量变化）
+//   - 未返回的字段将保持不变
+//   - 不要修改 lastUpdate
+//
+//   apply 内可以包含任意复杂逻辑（如多分支判定），
+//   并通过 tag 字段标记本次事件命中的具体分支。
+//
+// message:
+//   输入事件前后数据、昵称等上下文，
+//   可根据 tag 判断触发了哪个分支，返回不同的描述文本。
+//
+// weight:
+//   权重（可选，默认 1），用于随机抽取事件
+//
+// ⚠️ 兼容性说明：
+//   旧事件只返回 { length, radius, hardness } 仍然完全可用，无需修改
+//
+// ========================
+// 示例 1：简单收益事件
+// ========================
+//
+// {
+//   id: "99",
+//   name: "捡到红包",
+//   apply: () => ({
+//     moneyDelta: 50,
+//     jyDelta: 3,
+//   }),
+//   message: ({ nickname }) =>
+//     `${nickname}捡到一个红包，获得 50 金币和 3 点经验！`,
+// }
+//
+// ========================
+// 示例 2：带 tag 的多分支复杂事件
+// ========================
+//
+// {
+//   id: "shoulder_check",
+//   name: "肩宽判定事件",
+//   weight: 1,
+//
+//   apply: (u) => {
+//     // 分支 A：极端巨大 → 衰减
+//     if (
+//       (u.length > 190 && u.radius > 41) ||
+//       u.length > 5000 ||
+//       u.radius > 800
+//     ) {
+//       return {
+//         length: u.length * 0.70,
+//         radius: u.radius * 0.70,
+//         hardness: u.hardness,
+//         tag: "too_huge_decay",
+//       }
+//     }
+//
+//     // 分支 B：正常情况 → 增强
+//     return {
+//       length: u.length * 1.20,
+//       radius: u.radius * 1.20,
+//       hardness: u.hardness,
+//       tag: "normal_boost",
+//     }
+//   },
+//
+//   message: ({ tag }) => {
+//     if (tag === "too_huge_decay") {
+//       return "牛牛过于巨大导致反噬，长度与半径减少 30%。"
+//     }
+//     // normal_boost
+//     return "状态良好，长度与半径增加 20%。"
+//   },
+// }
 
 async function doSageMode(id, nickname) {
   let before
@@ -679,16 +753,42 @@ async function doSageMode(id, nickname) {
   }
 
   const event = pickWeightedEvent(sageEvents)
-  const afterCore = event.apply(before)
 
-  // 允许触发时才写库，并更新 lastUpdate
-  const after = await updateUser(id, afterCore.length, afterCore.radius, afterCore.hardness)
+  // ✅ apply 现在允许返回 moneyDelta/jyDelta，也允许不返回 length/radius/hardness
+  const patch = event.apply(before) ?? {}
+
+  // --- 1) 三围：仍然用 updateUser 重新赋值（缺啥用 before 补齐）---
+  const nextLength = patch.length ?? before.length
+  const nextRadius = patch.radius ?? before.radius
+  const nextHardness = patch.hardness ?? before.hardness
+
+  // ✅ 只有触发成功才写库（你原来就在这里写，保持一致）
+  const afterCore = await updateUser(id, nextLength, nextRadius, nextHardness)
+
+  // --- 2) money/jy：只能增量，用 add 方法 ---
+  if (typeof patch.moneyDelta === 'number' && patch.moneyDelta !== 0) {
+    await addMoney(id, patch.moneyDelta)
+  }
+  if (typeof patch.jyDelta === 'number' && patch.jyDelta !== 0) {
+    await addJy(id, patch.jyDelta)
+  }
+
+  // --- 3) 给 message 一个“合并后的 after”（可选，但很实用）---
+  // updateUser 返回的 afterCore 里一般没有 money/jy，所以这里用 get + before 做一致展示
+  // 如果你不想多查两次，也可以只传 delta 给 message。
+  const [money, jy] = await Promise.all([getMoney(id), getJy(id)])
+
+  const after = {
+    ...afterCore,
+    money,
+    jy,
+  }
 
   return event.message({
     event,
     before,
     after,
     nickname,
-    tag: afterCore.tag   // 旧事件这里就是 undefined
+    tag: patch.tag, // 旧事件这里就是 undefined，兼容
   })
 }

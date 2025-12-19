@@ -1452,7 +1452,228 @@ export const sageEvents = [
     // normal_boost
     return `太久没有鹿关，牛牛压抑过度于是化形在半夜去草本体，本体和牛牛都非常舒服：长度与半径增加20%。`
   }
-}
+},
+{
+  id: "99",
+  name: "捡到红包",
+  weight: 1,
+  apply: (u) => {
+    return {
+      moneyDelta: 50000,
+      //jyDelta: 3,
+      // 不写 length/radius/hardness 也没问题，会用 before 兜底
+    }
+  },
+  message: ({ nickname, after }) => {
+    return `捡到一个红包并私吞，获得50000金币`
+  },
+},
+{
+  id: "99",
+  name: "捡到红包",
+  weight: 1,
+  apply: (u) => {
+    return {
+      moneyDelta: 10000,
+      //jyDelta: 3,
+      // 不写 length/radius/hardness 也没问题，会用 before 兜底
+    }
+  },
+  message: ({ nickname, after }) => {
+    return `捡到一个红包，但你是个品德高尚的好孩子，因此把红包交给了失主，失主感激地给了你10000金币作为酬谢`
+  },
+},
+{
+  id: "99",
+  name: "捡到红包",
+  weight: 1,
+  apply: (u) => {
+    return {
+      moneyDelta: 0,
+      //jyDelta: 3,
+      // 不写 length/radius/hardness 也没问题，会用 before 兜底
+    }
+  },
+  message: ({ nickname, after }) => {
+    return `捡到一个红包，但你是个品德高尚的好孩子，因此把红包交给了失主，失主说改天请你吃饭然后就跑了。`
+  },
+},
+{
+  id: "99",
+  name: "赔偿",
+  weight: 1,
+  apply: (u) => {
+    return {
+      length: u.length * 0.50,
+      radius: u.radius * 0.50,
+      hardness: u.hardness,
+      moneyDelta: 3000000,
+      //jyDelta: 3,
+      // 不写 length/radius/hardness 也没问题，会用 before 兜底
+    }
+  },
+  message: ({ nickname, after }) => {
+    return `绿灯过马路结果被闯红灯的跑车撞断了牛牛，长度和半径各减少50%。对方赔偿了你3000000金币。`
+  },
+},
+{
+  id: "99",
+  name: "赔偿",
+  weight: 1,
+  apply: (u) => {
+    return {
+      length: u.length,
+      radius: u.radius,
+      hardness: u.hardness,
+      moneyDelta: 3000000,
+      //jyDelta: 3,
+      // 不写 length/radius/hardness 也没问题，会用 before 兜底
+    }
+  },
+  message: ({ nickname, after }) => {
+    return `看到一个老太太绿灯过马路结果被闯红灯的跑车当场装死，于是自己马上假装老太太的孩子要求赔偿。对方赔偿了你3000000金币。`
+  },
+},
+{
+    id: "gold_coin_rain",
+    name: "幸运硬币雨",
+    weight: 1,
+    apply: () => ({ moneyDelta: 8000 }),
+    message: () => `天上突然下起硬币雨：获得8000金币。`,
+  },
+  {
+    id: "gold_mystery_red_packet",
+    name: "神秘红包",
+    weight: 1,
+    apply: () => ({ moneyDelta: 12000 }),
+    message: () => `捡到一只鼓鼓的神秘红包：获得12000金币。`,
+  },
+  {
+    id: "gold_street_magic_change",
+    name: "街头魔术找零",
+    weight: 1,
+    apply: () => ({ moneyDelta: 25000 }),
+    message: () => `看街头魔术入迷，找零越找越多：获得25000金币。`,
+  },
+  {
+    id: "gold_vending_machine_spit",
+    name: "贩卖机吐钱",
+    weight: 1,
+    apply: () => ({ moneyDelta: 48000 }),
+    message: () => `拍了拍贩卖机，它当场认错并吐钱：获得48000金币。`,
+  },
+  {
+    id: "gold_lost_and_found_reward",
+    name: "失物招领奖赏",
+    weight: 1,
+    apply: () => ({ moneyDelta: 88000 }),
+    message: () => `把路边的钥匙交给失物招领，失主重金答谢：获得88000金币。`,
+  },
+  {
+    id: "gold_system_compensation",
+    name: "服务器补偿",
+    weight: 1,
+    apply: () => ({ moneyDelta: 120000 }),
+    message: () => `系统公告：由于不可描述的波动，统一发放补偿：获得120000金币。`,
+  },
+  {
+    id: "gold_auction_misprice",
+    name: "拍卖行标错价",
+    weight: 1,
+    apply: () => ({ moneyDelta: 160000 }),
+    message: () => `拍卖行标错价被你捡漏成功：获得160000金币。`,
+  },
+  {
+    id: "gold_moonlight_toll_refund",
+    name: "月光收费站",
+    weight: 1,
+    apply: () => ({ moneyDelta: 210000 }),
+    message: () => `路过月光收费站，收费员反向给你找零：获得210000金币。`,
+  },
+  {
+    id: "gold_ancient_coin_jar",
+    name: "古币罐子",
+    weight: 1,
+    apply: () => ({ moneyDelta: 300000 }),
+    message: () => `在床底翻出尘封古币罐子，清点到手软：获得300000金币。`,
+  },
+  {
+    id: "gold_spacetime_dividend",
+    name: "时空分红",
+    weight: 1,
+    apply: () => ({ moneyDelta: 400000 }),
+    message: () => `时空管理局发来一笔“延迟到账的分红”：获得400000金币。`,
+  },
+    {
+    id: "gold_lottery_tail_number",
+    name: "尾号中奖",
+    weight: 1,
+    apply: () => ({ moneyDelta: 15000 }),
+    message: () => `手机尾号莫名其妙中了大奖：获得15000金币。`,
+  },
+  {
+    id: "gold_old_wallet_mezzanine",
+    name: "夹层旧钱包",
+    weight: 1,
+    apply: () => ({ moneyDelta: 32000 }),
+    message: () => `翻出多年没用的钱包，夹层里竟然藏着一沓：获得32000金币。`,
+  },
+  {
+    id: "gold_delivery_wrong_address",
+    name: "外卖送错附补偿",
+    weight: 1,
+    apply: () => ({ moneyDelta: 52000 }),
+    message: () => `外卖送错门还附带“封口费”补偿：获得52000金币。`,
+  },
+  {
+    id: "gold_gacha_refund",
+    name: "抽卡回滚退款",
+    weight: 1,
+    apply: () => ({ moneyDelta: 75000 }),
+    message: () => `抽卡系统回滚，官方把你花的全退还还多给：获得75000金币。`,
+  },
+  {
+    id: "gold_streamer_mistake_transfer",
+    name: "打赏转账手滑",
+    weight: 1,
+    apply: () => ({ moneyDelta: 90000 }),
+    message: () => `某主播转账手滑把“感谢名单”打到了你账上：获得90000金币。`,
+  },
+  {
+    id: "gold_found_treasure_map",
+    name: "小巷藏宝图",
+    weight: 1,
+    apply: () => ({ moneyDelta: 110000 }),
+    message: () => `小巷墙上贴着一张“藏宝图”，你照着走真挖到了：获得110000金币。`,
+  },
+  {
+    id: "gold_bank_interest_boom",
+    name: "利息暴击",
+    weight: 1,
+    apply: () => ({ moneyDelta: 135000 }),
+    message: () => `银行利息结算出现“暴击提示音”：获得135000金币。`,
+  },
+  {
+    id: "gold_mysterious_invoice_rebate",
+    name: "发票返利",
+    weight: 1,
+    apply: () => ({ moneyDelta: 180000 }),
+    message: () => `你随手扫了张发票参加活动，返利直接拉满：获得180000金币。`,
+  },
+  {
+    id: "gold_museum_guard_bonus",
+    name: "博物馆加班费",
+    weight: 1,
+    apply: () => ({ moneyDelta: 260000 }),
+    message: () => `博物馆夜班临时缺人，你站了一晚岗拿到巨额加班费：获得260000金币。`,
+  },
+  {
+    id: "gold_dragon_contract_dividend",
+    name: "巨龙合约分红",
+    weight: 1,
+    apply: () => ({ moneyDelta: 380000 }),
+    message: () => `你签了份看不懂的巨龙合约，第二天居然到账分红：获得380000金币。`,
+  },
 ]
 
 // 按权重随机抽事件（可扩展）

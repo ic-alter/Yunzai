@@ -88,7 +88,7 @@ export async function updateUserDoc(id, mutator) {
 }
 
 // ======================================================
-// 对外 API（⭐ 你业务层唯一应该使用的 4 个函数）
+// 对外 API（⭐ 对于牛牛相关功能，业务层唯一应该使用的 4 个函数）
 // ======================================================
 
 export async function getRawUserOrThrow(id) {
@@ -320,7 +320,7 @@ function asIdStr(id) {
 function cnRole(role) {
   if (role === MARRY_ROLES.HUSBAND) return "丈夫"
   if (role === MARRY_ROLES.WIFE) return "妻子"
-  if (role === MARRY_ROLES.CONCUBINE) return "妾"
+  if (role === MARRY_ROLES.CONCUBINE) return "侍妾"
   return "普通人"
 }
 
@@ -391,14 +391,14 @@ function checkCanBeHusband(doc, idStr) {
 function checkCanBeWife(doc, idStr) {
   const m = ensureMarry(doc)
   if (m.role !== MARRY_ROLES.SINGLE) {
-    throwCn(`ID=${idStr} 当前身份为【${cnRole(m.role)}】，无法成为妻子。`)
+    throwCn(`ID=${idStr} 当前身份为【${cnRole(m.role)}】，无法成为别人的妻子。`)
   }
 }
 
 function checkCanBeConcubine(doc, idStr) {
   const m = ensureMarry(doc)
   if (m.role !== MARRY_ROLES.SINGLE) {
-    throwCn(`ID=${idStr} 当前身份为【${cnRole(m.role)}】，无法成为妾。`)
+    throwCn(`ID=${idStr} 当前身份为【${cnRole(m.role)}】，无法成为别人的侍妾。`)
   }
 }
 
