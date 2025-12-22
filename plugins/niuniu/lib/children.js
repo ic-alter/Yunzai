@@ -182,7 +182,7 @@ export async function renameChild(userId, cid, newName) {
   const nn = String(newName ?? "").trim()
   if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
   if (!nn) throw new Error("新名字不能为空")
-  if (nn.length > 8) throw new Error("名字太长（建议<=8字）")
+  if (nn.length > 20) throw new Error("名字太长（建议<=15字）")
 
   return updateUserDoc(uid, (doc) => {
     if (!Array.isArray(doc.children)) doc.children = []

@@ -522,6 +522,68 @@ export async function takeConcubine(husbandId, concubineId) {
 }
 
 /**
+ * 扶正：丈夫选择一个侍妾变为妻子
+ * 约束：
+ * - husbandId 必须是丈夫
+ * - 丈夫必须没有妻子
+ * - 丈夫至少有1个侍妾
+ * - concubineId 必须在该丈夫的侍妾列表中
+ */
+export async function promoteConcubineToWife(husbandId, concubineId) {
+  const hid = asIdStr(husbandId)
+  const cid = asIdStr(concubineId)
+  if (hid === cid) throwCn("不能扶正自己。")
+
+  return enqueueWriteMany([hid, cid], async () => {
+    const hdoc = (await loadUserDoc(hid)) || {}
+    const cdoc = (await loadUserDoc(cid)) || {}
+
+    const hm = ensureMarry(hdoc)
+    if (hm.role !== MARRY_ROLES.HUSBAND) {
+      throwCn("你不是丈夫，无法扶正。")
+    }
+
+    const hf = ensureHusbandFamily(hdoc)
+
+    if (hf.family.wifeId) {
+      throwCn("你已经有妻子，无法扶正。")
+    }
+
+    const list = (hf.family.concubineIds || []).map(asIdStr)
+    if (list.length < 1) {
+      throwCn("你没有侍妾，无法扶正。")
+    }
+
+    if (!list.includes(cid)) {
+      throwCn("该玩家不是你的侍妾，无法扶正。")
+    }
+
+    // 被扶正者必须确实是“妾”，且丈夫是你
+    const cm = ensureMarry(cdoc)
+    if (cm.role !== MARRY_ROLES.CONCUBINE || asIdStr(cm.husbandId) !== hid) {
+      throwCn("婚姻数据异常：对方不是你的侍妾，无法扶正。")
+    }
+
+    // 更新丈夫侧：从妾列表移除，设为妻子
+    hf.family.concubineIds = list.filter(x => x !== cid)
+    hf.family.wifeId = cid
+
+    // 清理可能存在的离婚冷静期记录（可选但建议）
+    if (hm.cooling && typeof hm.cooling === "object") {
+      delete hm.cooling[cid]
+    }
+
+    // 更新对方：妾 -> 妻
+    cdoc.marry = { role: MARRY_ROLES.WIFE, husbandId: hid }
+
+    await saveUserDoc(hid, hdoc)
+    await saveUserDoc(cid, cdoc)
+    return true
+  })
+}
+
+
+/**
  * 查看家庭：输入自己id，返回 { husband: {id,username}, wife: {...}|null, concubines:[...] }
  * 若未结婚抛异常
  */
@@ -531,7 +593,7 @@ export async function viewFamily(selfId) {
   const sm = ensureMarry(sdoc)
 
   if (sm.role === MARRY_ROLES.SINGLE) {
-    throwCn("你还没有结婚。")
+    throwCn("户口本空无一人。")
   }
 
   let hid
@@ -714,3 +776,84 @@ export async function nextGlobalId(key) {
   })
 }
 
+// ====== myfs.js 新增：每日次数计数器（击剑/撅等分别计数）======
+// 说明：
+// - 每个玩家独立存储在自己的 JSON 顶层 key 下
+// - key 采用难以冲突的前缀 + name
+// - 调用该方法会自动更新计数器（同日 +1；跨日重置为1）
+// - 若更新后次数 > limit（默认50）则返回 true（已超限）；否则 false
+// - 日期以本地自然日计算（YYYY-MM-DD）
+
+function _todayKey() {
+  const d = new Date()
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, "0")
+  const dd = String(d.getDate()).padStart(2, "0")
+  return `${y}-${m}-${dd}`
+}
+
+function _makeDailyCounterKey(name) {
+  const n = String(name || "").trim()
+  if (!n) throw new Error("counter name is empty")
+  // 难以重复的前缀，避免顶层 key 撞车
+  return `__NY_DAILY_CNT__::${n}`
+}
+
+/**
+ * 每日计数器：调用即 +1，并判断是否超过上限
+ * @param {string|number} id 玩家ID
+ * @param {string} name 计数器名称，例如 "fencing" 或 "jue"
+ * @param {number} limit 上限，默认50
+ * @returns {Promise<boolean>} true=超限（>limit），false=未超限
+ */
+export async function bumpDailyCounterExceeded(id, name, limit = 50) {
+  const key = _makeDailyCounterKey(name)
+  const lim = Number(limit)
+  if (!Number.isFinite(lim) || lim < 1) throw new Error("limit invalid")
+
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {}
+    const today = _todayKey()
+
+    let state = doc[key]
+    // 允许 state 缺失/异常时自愈
+    if (!state || typeof state !== "object") {
+      state = { date: today, count: 0 }
+    }
+
+    const prevDate = String(state.date || "")
+    let count = Number(state.count)
+    if (!Number.isFinite(count) || count < 0) count = 0
+
+    if (prevDate !== today) {
+      // 跨日重置
+      state.date = today
+      state.count = 1
+    } else {
+      // 同日递增
+      state.count = count + 1
+    }
+
+    doc[key] = state
+    await saveUserDoc(id, doc)
+
+    return state.count > lim
+  })
+}
+
+/**
+ * 可选：查看当前计数器状态（不自增）
+ * @returns {Promise<{date:string, count:number}>}
+ */
+export async function getDailyCounterState(id, name) {
+  const key = _makeDailyCounterKey(name)
+  return enqueueWriteById(id, async () => {
+    const doc = (await loadUserDoc(id)) || {}
+    const state = doc[key]
+    if (!state || typeof state !== "object") return { date: "", count: 0 }
+    return {
+      date: String(state.date || ""),
+      count: Number(state.count) || 0,
+    }
+  })
+}

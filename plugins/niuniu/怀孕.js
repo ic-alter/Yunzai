@@ -7,7 +7,7 @@ import { fileURLToPath } from "url"
 import { processInjection } from "./lib/pregnancy.js"
 import { buildMyChildrenPage, getChildDetail, renameChild, discardChild } from "./lib/children.js"
 import { calcRefine, consumeChild } from "./lib/children.js"
-import { subMoney, updateUserNoTime, readUserDoc } from "./lib/myfs.js"
+import { subMoney, updateUserNoTime, readUserDoc, bumpDailyCounterExceeded } from "./lib/myfs.js"
 import { round2 } from "./lib/tool.js"
 
 
@@ -48,7 +48,7 @@ function pickSheParents(e) {
 }
 
 function parsePage(msg) {
-  const m = String(msg || "").trim().match(/^#?子嗣列表(\d+)?$/)
+  const m = String(msg || "").trim().match(/^#?(子嗣|孩子)列表(\d+)?$/)
   if (!m) return null
   const p = m[1] ? Number(m[1]) : 1
   return Number.isFinite(p) && p >= 1 ? p : 1
@@ -75,6 +75,10 @@ export class example extends plugin {
   }
 
   async jue(e) {
+    if (await bumpDailyCounterExceeded(e.user_id, "jue")) {
+      e.reply("你今天撅的次数已达到上限！")
+      return true
+    }
     const p = pickJueParents(e)
     if (!p) return true
 
@@ -86,6 +90,11 @@ export class example extends plugin {
   }
 
   async she(e) {
+    if (await bumpDailyCounterExceeded(e.user_id, "she")) {
+      e.reply("你今天射的次数已达到上限！")
+      return true
+    }
+    
     const p = pickSheParents(e)
     if (!p) return true
 
@@ -118,9 +127,9 @@ export class example extends plugin {
   }
 
   async childDetail(e) {
-    const m = String(e.msg || "").match(/^#?子嗣详情\s*\+?(\d+)$/)
+    const m = String(e.msg || "").match(/^#?(子嗣|孩子)详情\s*\+?(\d+)$/)
     if (!m) return false
-    const cid = Number(m[1])
+    const cid = Number(m[2])
     const uid = String(e.user_id)
 
     const child = await getChildDetail(uid, cid)
@@ -195,9 +204,13 @@ export class example extends plugin {
     if (String(this.e.user_id) !== String(ctx.uid)) return false
 
     const newName = String(this.e.msg || "").trim()
+    try {
+      await renameChild(ctx.uid, ctx.cid, newName)
+    } catch (err) {
+      await e.reply("改名失败：" + (err?.message || "未知错误"))
+      return true
+    }
     this.finish("renameChildName")
-
-    await renameChild(ctx.uid, ctx.cid, newName)
     await e.reply(`改名成功：CID:${ctx.cid} 「${ctx.oldName}」→「${newName}」`)
     return true
   }

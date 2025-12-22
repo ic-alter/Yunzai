@@ -11,7 +11,8 @@ import {
   getRawUserOrThrow,
   getWithLevel,
   updateUser,
-  updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy,getUsername,setUsername
+  updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy,getUsername,setUsername,
+  bumpDailyCounterExceeded
 } from "./lib/myfs.js"
 
 // ========================
@@ -61,7 +62,10 @@ export class example extends plugin {
   async jijian(e) {
     const ats = e.message.filter(m => m.type === 'at')
     if (ats.length === 0) return false
-
+    if (await bumpDailyCounterExceeded(e.user_id, "fencing")) {
+      e.reply("你今天击剑次数已达到上限！")
+      return true
+    }
     const fid = e.user_id
     const fname = this.e.sender.nickname
     const mid = ats[0].qq

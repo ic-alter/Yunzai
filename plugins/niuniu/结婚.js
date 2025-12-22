@@ -15,7 +15,8 @@ import {
   divorce as dbDivorce,
   viewFamily,
   getUsername,
-  setUsername
+  setUsername,
+  promoteConcubineToWife
 } from './lib/myfs.js'
 
 import { bridePriceByHardness } from './lib/tool.js'
@@ -91,6 +92,7 @@ export class example extends plugin {
         { reg: '^#*(结婚|求婚).*$', fnc: 'marryCmd' },
         { reg: '^#*纳妾.*$', fnc: 'takeConcubineCmd' },
         { reg: '^#*离婚.*$', fnc: 'divorceCmd' },
+        { reg: '^#*扶正.*$', fnc: 'promoteCmd' },
       ],
       task: [],
     })
@@ -420,4 +422,92 @@ export class example extends plugin {
       return true
     }
   }
+  // ========================
+// 4) 扶正（#?扶正 -> 选序号 -> 确认）
+// ========================
+async promoteCmd(e) {
+  const uid = String(this.e.user_id)
+
+  // 先判断是否丈夫 & 是否满足条件（用 viewFamily 就够）
+  let fam
+  try {
+    fam = await viewFamily(uid)
+  } catch (err) {
+    // viewFamily 未结婚会抛“还没有结婚”
+    e.reply(err?.message || "你还没有结婚。")
+    return true
+  }
+
+  if (String(fam.husband?.id) !== uid) {
+    e.reply("你不是丈夫，无法扶正。")
+    return true
+  }
+
+  if (fam.wife) {
+    e.reply("你已经有妻子，无法扶正。")
+    return true
+  }
+
+  const concs = fam.concubines || []
+  if (concs.length < 1) {
+    e.reply("你没有侍妾，无法扶正。")
+    return true
+  }
+
+  const show = concs.slice(0, 50)
+  const listText = show.map((x, idx) => `${idx + 1}. ${x.username} (ID:${x.id})`).join("\n")
+
+  const ctx = this.setContext("promoteChoose", true, 30, "操作超时已取消")
+  ctx.uid = uid
+  ctx.items = show
+
+  await e.reply(`请选择要扶正为妻子的侍妾序号（1-${show.length}）：\n${listText}`)
+  return true
+}
+
+async promoteChoose(e) {
+  const ctx = this.getContext("promoteChoose", true)
+  if (!ctx) return false
+  if (String(this.e.user_id) !== String(ctx.uid)) return false
+
+  const idx = Number(String(this.e.msg || "").trim())
+  if (!Number.isFinite(idx) || idx < 1 || idx > ctx.items.length) {
+    await e.reply("编号不合法，请重新输入。")
+    return true
+  }
+
+  const picked = ctx.items[idx - 1]
+  this.finish("promoteChoose", true)
+
+  const ctx2 = this.setContext("promoteConfirm", true, 30, "操作超时已取消")
+  ctx2.uid = String(ctx.uid)
+  ctx2.cid = String(picked.id)
+  ctx2.name = String(picked.username)
+
+  await e.reply(`是否确认将「${ctx2.name}」扶正为妻？\n需要发送：确认 | 是（否则取消）`)
+  return true
+}
+
+async promoteConfirm(e) {
+  const ctx = this.getContext("promoteConfirm", true)
+  if (!ctx) return false
+  if (String(this.e.user_id) !== String(ctx.uid)) return false
+
+  this.finish("promoteConfirm", true)
+
+  if (!hasConfirmWord(this.e.msg)) {
+    await e.reply("已取消扶正。")
+    return true
+  }
+
+  try {
+    await promoteConcubineToWife(ctx.uid, ctx.cid)
+    await e.reply(`扶正成功：已将「${ctx.name}」扶正为妻。`)
+    return true
+  } catch (err) {
+    replyErr(e, err)
+    return true
+  }
+}
+
 }
