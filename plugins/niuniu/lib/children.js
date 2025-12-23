@@ -51,7 +51,7 @@ function mapForRender(c) {
 }
 
 /**
- * 家庭聚合：最多10个
+ * 家庭聚合：最多100个
  * 优先级：丈夫孩子 > 妻子孩子 > 侍妾孩子
  * 同级：男 > 女；再同级：嫡 > 庶 > 私生
  */
@@ -108,9 +108,9 @@ export async function buildFamilyChildrenView(targetId) {
   for (const group of [sortWithinGroup(hChildren), sortWithinGroup(wChildren), sortWithinGroup(cChildren)]) {
     for (const c of group) {
       out.push(mapForRender(c))
-      if (out.length >= 10) break
+      if (out.length >= 100) break
     }
-    if (out.length >= 10) break
+    if (out.length >= 100) break
   }
 
   return {
@@ -227,13 +227,13 @@ export async function discardChild(userId, cid) {
 }
 
 function sexFactor(sex) {
-  return sex === "男" ? 1 : 0.5
+  return sex === "男" ? 10 : 5
 }
 
 function rankFactor(rank) {
-  if (rank === "嫡") return 0.8
-  if (rank === "庶") return 0.6
-  return 0.4
+  if (rank === "嫡") return 4.8
+  if (rank === "庶") return 3.6
+  return 2.4
 }
 
 function rankCostFactor(rank) {
