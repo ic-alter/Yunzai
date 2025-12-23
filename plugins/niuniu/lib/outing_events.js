@@ -3,6 +3,8 @@ import { getMoney, getJy, addMoney, subMoney, addJy, subJy, getRawUserOrThrow, u
 import { getFamilyChild } from "./children.js" // 你之前实现的
 import { patchChild, getOutingDailyInfo } from "./children.js"
 
+export const MAX_OUTING_TIMES = 10 //每个孩子每天最多外出10次
+
 
 function pickWeightedEvent(events) {
   const arr = Array.isArray(events) ? events : []
@@ -55,9 +57,8 @@ export const OUTING_EVENTS = {
     },
   ],
 }
-
   ],
-  医院: [
+  破旧的私立医院: [
     {
       id: "hospital_heal_1",
       name: "治疗",
@@ -91,8 +92,87 @@ export const OUTING_EVENTS = {
         },
       ],
     },
+    {
+  id: "steal_medicine_event",
+
+  name: "偷药",
+
+  weight: 1,
+
+  intro: "趁医生不注意偷别人的药吃",
+
+  requirement: {
+    text: "智力大于20",
+    test: (child) => {
+      return child.talent && child.talent.iq > 20
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        const r = Math.random()
+        let meta = { outcome: "" }
+        let patch = { meta }
+
+        if (r < 0.2) {
+          meta.outcome = "nothing"
+        } else if (r < 0.5) {
+          meta.outcome = "caught"
+          patch.player = {
+            moneyDelta: -20000,
+          }
+        } else if (r < 0.8) {
+          meta.outcome = "viagra"
+          patch.player = {
+            lengthMul: 1.3,
+            radiusMul: 1.3,
+          }
+        } else if (r < 0.9) {
+          meta.outcome = "strength"
+          patch.child = {
+            talentDelta: {
+              str: 20,
+            },
+          }
+        } else {
+          meta.outcome = "side_effect"
+          patch.child = {
+            healthSet: 10,
+          }
+        }
+
+        return patch
+      },
+
+      end: ({ meta, childBefore }) => {
+        if (meta.outcome === "nothing") {
+          return "偷吃了1斤药，无事发生"
+        }
+        if (meta.outcome === "caught") {
+          return "偷药被发现，被迫赔偿医院20000元"
+        }
+        if (meta.outcome === "viagra") {
+          return `${childBefore.name || "孩子"}偷到了伟哥，然后慷慨的分了你一半。牛牛长度和半径增加30%`
+        }
+        if (meta.outcome === "strength") {
+          return "偷吃药物之后觉醒怪力，体能大幅增加"
+        }
+        if (meta.outcome === "side_effect") {
+          return "偷吃的药物导致了严重的副作用，健康值变为10"
+        }
+        return ""
+      },
+    },
   ],
-  复旦大学: [
+}
+
+  ],
+  TOP2职业技术学院: [
     {
       id: "fudan_class_1",
       name: "听课",
@@ -115,7 +195,7 @@ export const OUTING_EVENTS = {
       ],
     },
   ],
-  体育场: [
+  废弃体育场: [
     {
       id: "stadium_train_1",
       name: "训练",
@@ -138,9 +218,330 @@ export const OUTING_EVENTS = {
       ],
     },
   ],
-  地铁站: [],
-  虹桥国际机场: [],
-  大兴国际机场: [],
+  长得像两根牛牛的楼: [
+    {
+      id: "jump_building_event",
+
+      name: "跳楼",
+
+      weight: 1,
+
+      intro: "站在楼的顶层，感觉如果跳下去会很好玩",
+
+      requirement: {
+        text: "无特殊条件",
+        test: (child) => {
+          return true
+        },
+      },
+
+      branches: [
+        {
+          when: ({ childBefore }) => {
+            return childBefore.talent && childBefore.talent.str < 80
+          },
+
+          effect: () => {
+            return {}
+          },
+
+          end: ({ childBefore }) => {
+            return `顶楼的窗户被锁死，${childBefore.name || "孩子"}体能太差打不开窗户，无奈放弃跳楼`
+          },
+        },
+        {
+          when: () => {
+            return true
+          },
+
+          effect: () => {
+            return {
+              child: {
+                healthSet: 1,
+                talentDelta: {
+                  iq: 2,
+                },
+              },
+            }
+          },
+
+          end: ({ childBefore }) => {
+            return `${childBefore.name || "孩子"}使用蛮力打开了窗户并跳下去，受到重伤，健康值变为1；但从中学到了跳楼会很疼，智力增加2`
+          },
+        },
+      ],
+    }
+  ],
+  工地: [
+    {
+      id: "move_bricks_event",
+
+      name: "搬砖",
+
+      weight: 1,
+
+      intro: "在工地帮忙搬砖",
+
+      requirement: {
+        text: "体能大于60",
+        test: (child) => {
+          return child.talent && child.talent.str > 60
+        },
+      },
+
+      branches: [
+        {
+          when: () => {
+            return true
+          },
+
+          effect: ({ childBefore }) => {
+            const str = childBefore.talent.str
+            const base = Math.random() < 0.3 ? str * 500 : str * 250
+            const sexBonus = childBefore.sex === "男" ? str * 300 : 0
+            const totalMoney = base + sexBonus
+
+            return {
+              player: {
+                moneyDelta: totalMoney,
+              },
+              child: {
+                healthDelta: -2,
+                moodDelta: -2,
+              },
+              meta: {
+                earnMoney: totalMoney,
+              },
+            }
+          },
+
+          end: ({ meta }) => {
+            return `搬砖赚到了${meta.earnMoney}金币。由于过于劳累健康和心情略微减少`
+          },
+        },
+      ],
+    }
+  ],
+  地下赌场: [
+    {
+  id: "slot_machine_event",
+
+  name: "玩老虎机",
+
+  weight: 1,
+
+  intro: "玩老虎机",
+
+  requirement: {
+    text: "智力大于50且情商大于50",
+    test: (child) => {
+      return (
+        child.talent &&
+        child.talent.iq > 50 &&
+        child.talent.eq > 50
+      )
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        const r = Math.random()
+        const meta = { result: "", amount: 0 }
+        const patch = { meta }
+
+        if (r < 0.1) {
+          meta.result = "lose_big"
+          meta.amount = -50000
+          patch.player = { moneyDelta: -50000 }
+        } else if (r < 0.3) {
+          meta.result = "lose"
+          meta.amount = -20000
+          patch.player = { moneyDelta: -20000 }
+        } else if (r < 0.5) {
+          meta.result = "nothing"
+          meta.amount = 0
+        } else if (r < 0.7) {
+          meta.result = "win"
+          meta.amount = 20000
+          patch.player = { moneyDelta: 20000 }
+        } else if (r < 0.9) {
+          meta.result = "win_big"
+          meta.amount = 80000
+          patch.player = { moneyDelta: 80000 }
+        } else {
+          meta.result = "win_super"
+          meta.amount = 200000
+          patch.player = { moneyDelta: 200000 }
+        }
+
+        return patch
+      },
+
+      end: ({ meta }) => {
+        if (meta.result === "lose_big") {
+          return "大失败！输掉50000金币"
+        }
+        if (meta.result === "lose") {
+          return "失败！输掉20000金币"
+        }
+        if (meta.result === "nothing") {
+          return "运气一般，没赢也没输。"
+        }
+        if (meta.result === "win") {
+          return "成功！获得20000金币"
+        }
+        if (meta.result === "win_big") {
+          return "大成功！获得80000金币"
+        }
+        if (meta.result === "win_super") {
+          return "超大成功！获得200000金币"
+        }
+        return ""
+      },
+    },
+  ],
+}
+
+  ],
+  京海市机场: [
+    {
+  id: "steal_luggage_event",
+
+  name: "偷别人行李",
+
+  weight: 1,
+
+  intro: "看到有人的行李箱放在那里没人看着，心生歹念",
+
+  requirement: {
+    text: "智力大于50且体能大于50",
+    test: (child) => {
+      return (
+        child.talent &&
+        child.talent.iq > 50 &&
+        child.talent.str > 50
+      )
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.iq < 70 &&
+          childBefore.talent.str < 70
+        )
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: -5,
+          },
+        }
+      },
+
+      end: ({ childBefore }) => {
+        return `偷到行李箱但是打不开，非常郁闷。心情减少5`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore }) => {
+        const r = Math.random()
+        const meta = { outcome: "" }
+        const patch = { meta }
+
+        if (r < 0.2) {
+          meta.outcome = "clothes"
+          patch.child = {
+            talentDelta: {
+              face: 10,
+            },
+          }
+        } else if (r < 0.4) {
+          meta.outcome = "meat"
+          patch.child = {
+            healthDelta: 15,
+            talentDelta: {
+              str: 5,
+            },
+          }
+        } else if (r < 0.6) {
+          meta.outcome = "cash"
+          patch.player = {
+            moneyDelta: 500000,
+          }
+        } else if (r < 0.8) {
+          meta.outcome = "police"
+          patch.child = {
+            talentDelta: {
+              eq: 10,
+            },
+          }
+        } else {
+          meta.outcome = "toys"
+          patch.child = {
+            healthDelta: -5,
+          }
+          patch.player = {
+            jyDelta: 1000,
+          }
+        }
+
+        return patch
+      },
+
+      end: ({ meta, childBefore }) => {
+        const name = childBefore.name || "孩子"
+        if (meta.outcome === "clothes") {
+          return `行李箱里装满了美艳的女装，${name}穿到身上，颜值增加10`
+        }
+        if (meta.outcome === "meat") {
+          return `行李箱里装满了小男孩的尸块，非常有营养。${name}将其全部吃掉后，健康值和体能增加。`
+        }
+        if (meta.outcome === "cash") {
+          return "行李箱里装满了钞票，全部占为己有。获得500000金币"
+        }
+        if (meta.outcome === "police") {
+          return `行李箱里装满了钞票，${name}想了想交给了警察叔叔。情商增加10`
+        }
+        if (meta.outcome === "toys") {
+          return `行李箱里装满了令人血脉喷张的玩具。获得了1000ml金叶，但${name}有点把持不住，健康值少量减少`
+        }
+        return ""
+      },
+    },
+  ],
+}
+
+  ],
+  新手村: [],
+  酒馆: [],
+  冒险家协会: [],
+  新手村郊外: [], //此处可以有打史莱姆之类的事件
+  疑似爆裂魔法留下的大坑: [], //巨大粘液青蛙
+  移动要塞: [],
+  阴湿森林: [],
+  阴湿森林的深处: [],
+  普通的小木屋:[], //糖果屋
+  小木屋的卧室: [],
+  充满瘴气的沼泽: [], //水怪啥的
+  古怪的教堂: [],
+  森林中的阴森建筑: [],
+  森林中的阴森建筑二楼: [],
+  哥布林巢穴: [], //哥布林强碱
+  潮湿温暖的洞口: [],
+  潮湿温暖的洞内: [], //触手怪
+  潮湿温暖的洞穴深处: [],
 }
 
 // ---------- 查询与选择 ----------

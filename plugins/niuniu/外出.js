@@ -6,7 +6,7 @@ import { listFamilyChildren } from "./lib/children.js"     // 你之前实现的
 import { canChildJoinOuting, getOutingDailyInfo } from "./lib/children.js"
 
 import { OUTING_MAP, getNeighbors, isValidLocation } from "./lib/outing_map.js"
-import { listEventsByLocation, getEventByLocationAndIndex, filterEligibleChildren, applyOutingEvent } from "./lib/outing_events.js"
+import { listEventsByLocation, getEventByLocationAndIndex, filterEligibleChildren, applyOutingEvent, MAX_OUTING_TIMES } from "./lib/outing_events.js"
 import { getLastOutingLocation, setLastOutingLocation } from "./lib/outing_state.js"
 
 function isYes(msg) {
@@ -20,15 +20,18 @@ export class example extends plugin {
       dsc: "外出地图与事件",
       event: "message",
       priority: 200,
-      rule: [{ reg: "^#?外出", fnc: "外出" }],
+      rule: [
+        { reg: "^#?外出", fnc: "外出" },
+        { reg: "^#?回家", fnc: "回家" }
+    ],
     })
   }
 
   async 外出(e) {
     const uid = String(this.e.user_id)
 
-    const last = await getLastOutingLocation(uid, "医院")
-    const startLoc = isValidLocation(last) ? last : "医院"
+    const last = await getLastOutingLocation(uid, "家")
+    const startLoc = isValidLocation(last) ? last : "家"
     if (!isValidLocation(startLoc)) {
       await e.reply("外出系统未配置起始地点。")
       return true
@@ -143,7 +146,7 @@ export class example extends plugin {
     const list = ctx3.items
       .map((c, i) => {
         const daily = getOutingDailyInfo(c)
-        const left = Math.max(0, 4 - (Number(daily.count) || 0))
+        const left = Math.max(0, MAX_OUTING_TIMES - (Number(daily.count) || 0))
         return `${i + 1}. ${String(c.name ?? "")} (CID:${c.cid}) 剩余次数:${left}`
       })
       .join("\n")
@@ -177,11 +180,11 @@ export class example extends plugin {
       return true
     }
 
-    // 次数上限：每天最多4次（count>=4 不可再参与）
-    if (!canChildJoinOuting(picked, 4)) {
+    // 次数上限：每天最多MAX_OUTING_TIMES次（count>=MAX_OUTING_TIMES 不可再参与）
+    if (!canChildJoinOuting(picked, MAX_OUTING_TIMES)) {
       this.finish("外出_选孩子")
       await setLastOutingLocation(ctx.uid, ctx.loc)
-      await e.reply("该孩子今日参与外出事件次数已达上限（4次），无法再次参与。")
+      await e.reply(`该孩子今日参与外出事件次数已达上限（${MAX_OUTING_TIMES}次），无法再次参与。`)
       return true
     }
 
@@ -229,5 +232,10 @@ export class example extends plugin {
 
     lines.push(`\n${base + neighbors.length + 1}. 退出`)
     return lines.join("\n")
+  }
+
+  async 回家(e){
+    await setLastOutingLocation(String(this.e.user_id), "家")
+    await e.reply("已回到家中。")
   }
 }
