@@ -1,9 +1,15 @@
 // plugins/niuniu/lib/children.js
 import { readUserDoc, updateUserDoc, getUsername } from "./myfs.js"
 import { viewFamily,addMoney } from "./myfs.js"
+import { dayKeyInTZ } from "./tool.js"
 
-function asIdStr(x) {
+export function asIdStr(x) {
   return String(x ?? "").trim()
+}
+
+// 小工具
+function arr(x) {
+  return Array.isArray(x) ? x : []
 }
 
 function rankClass(rank) {
@@ -57,44 +63,33 @@ function mapForRender(c) {
  */
 export async function buildFamilyChildrenView(targetId) {
   const tid = asIdStr(targetId)
-  // 先看自己是否有子嗣（用于“无婚姻但有子嗣也可渲染”）
-  const selfDoc = await readUserDoc(tid)
-  console.log("selfDoc for buildFamilyChildrenView:", selfDoc)
-  const selfChildren = Array.isArray(selfDoc.children) ? selfDoc.children : []
 
-  let fam = null
-  try {
-    fam = await viewFamily(tid)
-  } catch (e) {
-    // 没结婚：如果也没子嗣，则仍报错；否则构造一个“单人家庭视图”
-    if (!selfChildren || selfChildren.length === 0) {
-      throw e
-    }
-    fam = {
-      husband: { id: tid, username: selfDoc.username ?? "" },
-      wife: null,
-      concubines: [],
-    }
-  }
+  // 统一来源：从新接口取到家庭+全部孩子（孩子带 __ownerId）
+  const { family: fam, children: allChildren } = await listFamilyChildren(tid)
 
   const husbandId = fam?.husband?.id ? asIdStr(fam.husband.id) : ""
   const wifeId = fam?.wife?.id ? asIdStr(fam.wife.id) : ""
   const concubineIds = (fam?.concubines || []).map((x) => asIdStr(x?.id)).filter(Boolean)
+  const concubineSet = new Set(concubineIds)
 
-  const hdoc = husbandId ? await readUserDoc(husbandId) : {}
-  const wdoc = wifeId ? await readUserDoc(wifeId) : {}
+  // 分组：丈夫 / 妻子 / 侍妾（按“权威 owner”分组）
+  const hChildren = []
+  const wChildren = []
+  const cChildren = []
 
-  const hChildren = Array.isArray(hdoc.children) ? hdoc.children : []
-  const wChildren = Array.isArray(wdoc.children) ? wdoc.children : []
-
-  const cDocs = []
-  for (const cid of concubineIds) {
-    cDocs.push([cid, await readUserDoc(cid)])
+  for (const c of Array.isArray(allChildren) ? allChildren : []) {
+    const ownerId = asIdStr(c.__ownerId)
+    if (husbandId && ownerId === husbandId) hChildren.push(c)
+    else if (wifeId && ownerId === wifeId) wChildren.push(c)
+    else if (concubineSet.has(ownerId)) cChildren.push(c)
+    else {
+      // 理论上不会；但为了兼容“单人家庭/异常数据”，丢到最后一组
+      cChildren.push(c)
+    }
   }
-  const cChildren = cDocs.flatMap(([, d]) => (Array.isArray(d.children) ? d.children : []))
 
-  const sortWithinGroup = (arr) =>
-    arr
+  const sortWithinGroup = (arr0) =>
+    arr0
       .map(normChild)
       .sort((a, b) => {
         const ds = sexScore(b.sex) - sexScore(a.sex)
@@ -155,12 +150,21 @@ export async function getChildDetail(userId, cid) {
   const c = Number(cid)
   if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
 
-  const doc = await readUserDoc(uid)
-  const arr = Array.isArray(doc.children) ? doc.children : []
-  const one = arr.find((x) => Number(x?.cid) === c)
-  if (!one) throw new Error("未找到该CID的子嗣（只能查看自己的）")
-    const fatherName = await getUsername(String(one.fatherId || "")) || String(one.fatherId || "")
-const motherName = await getUsername(String(one.motherId || "")) || String(one.motherId || "")
+  // ✅ 改动点：从“只读自己doc.children” -> “读家庭内该cid的孩子”
+  // 若不在同一家庭，会抛 CHILD_NOT_FOUND（或你实现里对应的错误）
+  let one
+  try {
+    one = await getFamilyChild(uid, c)
+  } catch (e) {
+    // 保持你的原文案风格（更贴合业务）
+    throw new Error("未找到该CID的子嗣（只能查看家庭内的）")
+  }
+
+  const fatherId = String(one.fatherId || "")
+  const motherId = String(one.motherId || "")
+
+  const fatherName = (await getUsername(fatherId)) || fatherId
+  const motherName = (await getUsername(motherId)) || motherId
 
   const n = normChild(one)
   return {
@@ -227,7 +231,7 @@ export async function discardChild(userId, cid) {
 }
 
 function sexFactor(sex) {
-  return sex === "男" ? 10 : 5
+  return sex === "男" ? 1 : 0.5
 }
 
 function rankFactor(rank) {
@@ -284,5 +288,241 @@ export async function consumeChild(userId, cid) {
     const idx = doc.children.findIndex((x) => Number(x?.cid) === c)
     if (idx === -1) throw new Error("未找到该CID的子嗣")
     doc.children.splice(idx, 1)
+  })
+}
+
+/**
+ * 获取家庭上下文：
+ * - 已婚：viewFamily(actorId)
+ * - 未婚但自己有子嗣：单人家庭
+ * - 未婚且无子嗣：仍抛错（保持与原逻辑一致）
+ */
+async function getFamilyContext(actorId) {
+  const aid = asIdStr(actorId)
+  const selfDoc = (await readUserDoc(aid)) || {}
+  const selfChildren = arr(selfDoc.children)
+
+  let fam = null
+  try {
+    fam = await viewFamily(aid)
+  } catch (e) {
+    if (!selfChildren || selfChildren.length === 0) throw e
+    fam = {
+      husband: { id: aid, username: selfDoc.username ?? "" },
+      wife: null,
+      concubines: [],
+    }
+  }
+
+  const husbandId = fam?.husband?.id ? asIdStr(fam.husband.id) : ""
+  const wifeId = fam?.wife?.id ? asIdStr(fam.wife.id) : ""
+  const concubineIds = arr(fam?.concubines).map((x) => asIdStr(x?.id)).filter(Boolean)
+
+  // 成员列表（保证 actor 自己也在里面，防异常数据）
+  const set = new Set([husbandId, wifeId, ...concubineIds, aid].filter(Boolean))
+  const memberIds = Array.from(set)
+
+  // owner 选择优先级：丈夫 > 妻子 > 侍妾 > 其他
+  const priority = new Map()
+  if (husbandId) priority.set(husbandId, 0)
+  if (wifeId) priority.set(wifeId, 1)
+  concubineIds.forEach((id, i) => priority.set(id, 10 + i))
+  memberIds.forEach((id) => {
+    if (!priority.has(id)) priority.set(id, 1000)
+  })
+
+  return { fam, memberIds, priority }
+}
+
+/**
+ * 扫描家庭内所有孩子，去重后返回：
+ * - 每个孩子只保留“权威那份”（按 priority）
+ * - 附带 __ownerId，便于后续 mutate 精确写入
+ */
+export async function listFamilyChildren(actorId) {
+  const { fam, memberIds, priority } = await getFamilyContext(actorId)
+
+  // cid => [{ownerId, child}, ...]
+  const hitsByCid = new Map()
+
+  for (const mid of memberIds) {
+    const doc = (await readUserDoc(mid)) || {}
+    for (const c of arr(doc.children)) {
+      if (!c || typeof c !== "object") continue
+      const ccid = Number(c.cid)
+      if (!Number.isFinite(ccid)) continue
+      const list = hitsByCid.get(ccid) || []
+      list.push({ ownerId: mid, child: c })
+      hitsByCid.set(ccid, list)
+    }
+  }
+
+  const out = []
+  for (const [ccid, list] of hitsByCid.entries()) {
+    list.sort((a, b) => (priority.get(a.ownerId) ?? 9999) - (priority.get(b.ownerId) ?? 9999))
+    const picked = list[0]
+    out.push({ ...picked.child, __ownerId: picked.ownerId })
+  }
+
+  out.sort((a, b) => Number(a.cid ?? 0) - Number(b.cid ?? 0))
+  return { family: fam, children: out }
+}
+
+/**
+ * 根据 actorId + cid 取孩子完整信息（只能取家庭内的）
+ */
+export async function getFamilyChild(actorId, cid) {
+  const { children } = await listFamilyChildren(actorId)
+  const targetCid = Number(cid)
+  const hit = children.find((c) => Number(c.cid) === targetCid)
+  if (!hit) {
+    const err = new Error(`找不到孩子 cid=${cid}（不在你的家庭内，或不存在）`)
+    err.code = "CHILD_NOT_FOUND"
+    throw err
+  }
+  return hit
+}
+
+/**
+ * 修改孩子（actorId 不一定是 owner）
+ * - mutator(child) 原地改 或 返回新对象替换
+ * - 不允许改 cid（强制保留）
+ */
+export async function mutateFamilyChild(actorId, cid, mutator) {
+  const hit = await getFamilyChild(actorId, cid)
+  const ownerId = asIdStr(hit.__ownerId)
+  const targetCid = Number(cid)
+
+  return await updateUserDoc(ownerId, async (doc) => {
+    const children = arr(doc.children)
+    const idx = children.findIndex((c) => c && typeof c === "object" && Number(c.cid) === targetCid)
+    if (idx < 0) {
+      const err = new Error(`孩子 cid=${targetCid} 不在 owner=${ownerId} 的 children 中（可能数据已迁移/损坏）`)
+      err.code = "CHILD_MOVED_OR_MISSING"
+      err.meta = { ownerId, cid: targetCid }
+      throw err
+    }
+
+    const oldChild = children[idx] && typeof children[idx] === "object" ? children[idx] : {}
+    const draft = oldChild
+
+    const ret = await mutator(draft)
+    if (ret && typeof ret === "object") {
+      children[idx] = { ...ret, cid: oldChild.cid }
+    } else {
+      children[idx] = draft
+    }
+
+    doc.children = children
+    return { ...children[idx], __ownerId: ownerId }
+  })
+}
+
+function todayStr() {
+  // 你项目里如果已有统一的 date util 就改成用它
+  return dayKeyInTZ(Date.now())
+}
+
+const OUTING_DAILY_KEY = "__OUTING_DAILY_CNT__"
+
+export function getOutingDailyInfo(child) {
+  const info = child?.[OUTING_DAILY_KEY]
+  const t = todayStr()
+  if (!info || typeof info !== "object" || info.date !== t) {
+    return { date: t, count: 0 }
+  }
+  return { date: t, count: Number(info.count) || 0 }
+}
+
+export function canChildJoinOuting(child, limit = 4) {
+  const info = getOutingDailyInfo(child)
+  return info.count < limit
+}
+
+export async function getChildCore(actorId, cid) {
+  // 只给外出系统用的“核心可变字段”
+  const c = await getFamilyChild(actorId, cid)
+  return {
+    cid: Number(c.cid),
+    health: Number(c.health ?? 0),
+    mood: Number(c.mood ?? 0),
+    pocket: Number(c.pocket ?? 0),
+    talent: {
+      face: Number(c?.talent?.face ?? 0),
+      iq: Number(c?.talent?.iq ?? 0),
+      str: Number(c?.talent?.str ?? 0),
+      eq: Number(c?.talent?.eq ?? 0),
+    },
+    daily: getOutingDailyInfo(c),
+  }
+}
+
+function clamp(n, min, max) {
+  n = Number(n)
+  if (!Number.isFinite(n)) n = 0
+  if (n < min) return min
+  if (n > max) return max
+  return n
+}
+
+/**
+ * 对孩子可变字段做统一变更（增量或置值都支持）
+ * patch:
+ * {
+ *   healthDelta?, healthSet?,
+ *   moodDelta?, moodSet?,
+ *   pocketDelta?, pocketSet?,
+ *   talentDelta?: {face?,iq?,str?,eq?},
+ *   talentSet?: {face?,iq?,str?,eq?},
+ *   incOutingCount?: boolean
+ * }
+ */
+export async function patchChild(actorId, cid, patch) {
+  return mutateFamilyChild(actorId, cid, (child) => {
+    if (!child || typeof child !== "object") child = {}
+
+    // --- daily count ---
+    if (patch?.incOutingCount) {
+      const t = todayStr()
+      const cur = child[OUTING_DAILY_KEY]
+      if (!cur || typeof cur !== "object" || cur.date !== t) {
+        child[OUTING_DAILY_KEY] = { date: t, count: 1 }
+      } else {
+        child[OUTING_DAILY_KEY] = { date: t, count: (Number(cur.count) || 0) + 1 }
+      }
+    }
+
+    // --- scalar fields ---
+    if (typeof patch?.healthSet === "number") child.health = clamp(patch.healthSet, 0, 100)
+    if (typeof patch?.healthDelta === "number")
+      child.health = clamp(Number(child.health ?? 0) + patch.healthDelta, 0, 100)
+
+    if (typeof patch?.moodSet === "number") child.mood = clamp(patch.moodSet, 0, 100)
+    if (typeof patch?.moodDelta === "number")
+      child.mood = clamp(Number(child.mood ?? 0) + patch.moodDelta, 0, 100)
+
+    if (typeof patch?.pocketSet === "number") child.pocket = Math.max(0, Math.floor(patch.pocketSet))
+    if (typeof patch?.pocketDelta === "number")
+      child.pocket = Math.max(0, Math.floor(Number(child.pocket ?? 0) + patch.pocketDelta))
+
+    // --- talent ---
+    if (!child.talent || typeof child.talent !== "object") child.talent = {}
+    const keys = ["face", "iq", "str", "eq"]
+    if (patch?.talentSet && typeof patch.talentSet === "object") {
+      for (const k of keys) {
+        if (typeof patch.talentSet[k] === "number") {
+          child.talent[k] = clamp(patch.talentSet[k], 0, 100)
+        }
+      }
+    }
+    if (patch?.talentDelta && typeof patch.talentDelta === "object") {
+      for (const k of keys) {
+        if (typeof patch.talentDelta[k] === "number") {
+          child.talent[k] = clamp(Number(child.talent[k] ?? 0) + patch.talentDelta[k], 0, 100)
+        }
+      }
+    }
+
+    // 原地修改即可
   })
 }
