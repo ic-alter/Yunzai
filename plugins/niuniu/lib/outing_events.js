@@ -593,8 +593,106 @@ export const OUTING_EVENTS = {
 
   ],
   新手村: [],
-  酒馆: [],
-  冒险家协会: [],
+  酒馆: [
+    {
+  id: "out_kids_meal_001",
+
+  name: "儿童套餐",
+
+  weight: 1,
+
+  intro: "点一份儿童套餐，花费2000金币，少量恢复健康和心情",
+
+  requirement: {
+    text: "无准入条件",
+    test: (child) => {
+      return true
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        const healthGain = Math.floor(Math.random() * 3) + 5 // 5~7
+        const moodGain = Math.floor(Math.random() * 3) + 5   // 5~7
+
+        return {
+          player: {
+            moneyDelta: -2000,
+          },
+
+          child: {
+            healthDelta: healthGain,
+            moodDelta: moodGain,
+          },
+
+          meta: {
+            healthGain,
+            moodGain,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        return `${childAfter.name}的健康值恢复了${meta.healthGain}，心情恢复了${meta.moodGain}，当前健康值为${childAfter.health}，心情为${childAfter.mood}`
+      },
+    },
+  ],
+}
+
+  ],
+  冒险家协会: [
+    {
+  id: "out_training_str_001",
+
+  name: "体能训练",
+
+  weight: 1,
+
+  intro: "进行体能训练，体能获得提升",
+
+  requirement: {
+    text: "需要健康高于50，心情高于20",
+    test: (child) => {
+      return child.health > 50 && child.mood > 20
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore }) => {
+        const gain = Math.floor(Math.random() * 7) + 8 // 8~14
+        const newStr = childBefore.talent.str + gain
+
+        return {
+          child: {
+            talentDelta: {
+              str: gain,
+            },
+          },
+          meta: {
+            gain,
+            newStr,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        return `${childAfter.name}的体能提高了${meta.gain}点，当前体能为${childAfter.talent.str}`
+      },
+    },
+  ],
+}
+
+  ],
   新手村郊外: [
     {
   id: "outing_hunt_slime_001",
@@ -824,14 +922,491 @@ export const OUTING_EVENTS = {
 }
 
   ], //此处可以有打史莱姆之类的事件
-  疑似爆裂魔法留下的大坑: [], //巨大粘液青蛙
-  移动要塞: [],
+  疑似爆裂魔法留下的大坑: [
+    {
+  id: "out_hunt_giant_frog_001",
+
+  name: "狩猎超巨大青蛙",
+
+  weight: 1,
+
+  intro: "对超巨大青蛙进行狩猎，危险度较高，但成功有较高收益",
+
+  requirement: {
+    text: "需要健康>80，体能>80，智力>80",
+    test: (child) => {
+      return (
+        child.health > 80 &&
+        child.talent.str > 80 &&
+        child.talent.iq > 80
+      )
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        const roll = Math.random()
+        const success = roll < 0.2
+
+        if (success) {
+          return {
+            player: {
+              moneyDelta: 900000,
+              jyDelta: 10000,
+              lengthMul: 1.2,
+              radiusMul: 1.2,
+            },
+            child: {
+              healthDelta: -20,
+              moodDelta: 20,
+              talentDelta: {
+                str: 5,
+                iq: 5,
+                eq: 10,
+                face: 10,
+              },
+            },
+            meta: {
+              success: true,
+            },
+          }
+        }
+
+        return {
+          player: {
+            lengthMul: 1.3,
+            radiusMul: 1.3,
+          },
+          child: {
+            healthDelta: -30,
+            moodDelta: 20,
+          },
+          meta: {
+            success: false,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        if (meta.success) {
+          return `${childAfter.name}艰难地战胜超巨大青蛙，健康值降低，所有属性得到提升；获得大量金币。你看到${childAfter.name}满身粘液的样子不禁有想法了，牛牛的长度和半径增加20%，并产生了巨量金叶`
+        }
+        return `${childAfter.name}被超巨大青蛙打的毫无还手之力，然后被超巨大青蛙整只吞下，好不容易才从它的肛门爬出来。尽管健康值大幅降低，但${childAfter.name}觉得里面非常舒服，心情变好。你看到${childAfter.name}满身粘液的样子不禁有想法了，牛牛的长度和半径增加30%`
+      },
+    },
+  ],
+}
+
+  ], //巨大粘液青蛙
+  移动要塞: [
+    {
+  id: "press_red_button_console",
+
+  name: "按下控制台中间的红色按钮",
+
+  weight: 1,
+
+  intro: "移动要塞中央控制台上有个看起来很好按的按钮，按下之后不知道会发生什么。",
+
+  requirement: {
+    text: "需要智力大于40，心情大于30，健康值大于10",
+    test: (child) => {
+      return (
+        child.talent.iq > 40 &&
+        child.mood > 30 &&
+        child.health > 10
+      )
+    },
+  },
+
+  branches: [
+    {
+      // 分支1：25%
+      when: () => {
+        return Math.random() < 0.25
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: -10,
+            healthDelta: -10,
+            talentDelta: {
+              face: -60,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `按下按钮之后控制面板突然喷出了强腐蚀性液体，直接喷到了${childAfter.name}脸上，完全毁容了！颜值超大幅度降低，心情和健康值下降。`
+      },
+    },
+
+    {
+      // 分支2：25%
+      when: () => {
+        return Math.random() < 0.25
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 500000,
+          },
+          child: {
+            moodDelta: 10,
+          },
+        }
+      },
+
+      end: () => {
+        return "移动要塞发射了远距离高杀伤性导弹打向阴湿森林，打死大量魔物。获得500000金币。"
+      },
+    },
+
+    {
+      // 分支3：25%，内部按情商再分支
+      when: () => {
+        return Math.random() < 0.25
+      },
+
+      effect: ({ childBefore }) => {
+        if (childBefore.talent.eq < 50) {
+          return {
+            player: {
+              moneyDelta: 400000,
+              jyDelta: 2000,
+            },
+            child: {
+              healthDelta: 20,
+              moodDelta: 5,
+              talentDelta: {
+                iq: 10,
+                str: 10,
+              },
+            },
+            meta: {
+              subBranch: "lowEQ",
+            },
+          }
+        } else {
+          return {
+            child: {
+              moodDelta: -20,
+              talentDelta: {
+                eq: -10,
+              },
+            },
+            meta: {
+              subBranch: "highEQ",
+            },
+          }
+        }
+      },
+
+      end: ({ childAfter, meta }) => {
+        if (meta && meta.subBranch === "lowEQ") {
+          return `移动要塞发射了远距离高杀伤性导弹，打向附近的村子，直接导致全村所有人口全部当场死亡。好在${childAfter.name}的道德水平比较低，先搜刮了全村人身上的值钱物品，然后把好吃的小孩尸体吃掉，好看的女性尸体拿来当玩具：体能和智力和健康值增加，获得400000金币和2000ml金叶。`
+        }
+        return `移动要塞发射了远距离高杀伤性导弹，打向附近的村子，直接导致全村所有人口全部当场死亡。由于${childAfter.name}的道德水平过高，非常惊恐和自责：情商和心情大幅降低。`
+      },
+    },
+
+    {
+      // 分支4：25% 兜底
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "无事发生。"
+      },
+    },
+  ],
+}
+
+  ],
   阴湿森林: [],
   阴湿森林的深处: [],
   普通的小木屋:[], //糖果屋
   小木屋的卧室: [],
-  充满瘴气的沼泽: [], //水怪啥的
-  古怪的教堂: [],
+  充满瘴气的沼泽: [
+    {
+  id: "outing_swimming_swamp",
+
+  name: "游泳",
+
+  weight: 1,
+
+  intro: "沼泽的水看起来很脏，水里好像还有奇怪的生物，在这里游泳总感觉会有什么不妙的事情发生……",
+
+  requirement: {
+    text: "体能大于50，心情大于30，健康大于50",
+    test: (child) => {
+      return (
+        child.talent.str > 50 &&
+        child.mood > 30 &&
+        child.health > 50
+      )
+    },
+  },
+
+  branches: [
+    {
+      // 分支1：50%
+      when: () => {
+        return Math.random() < 0.5
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -15,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}游泳时瘴气入体，又感染了水体中的不明微生物。健康值减少15。`
+      },
+    },
+
+    {
+      // 分支2：20%
+      when: () => {
+        return Math.random() < 0.2
+      },
+
+      effect: ({ childBefore }) => {
+        if (childBefore.talent.str > 80) {
+          return {
+            player: {
+              moneyDelta: 100000,
+            },
+            child: {
+              healthDelta: -10,
+              moodDelta: 10,
+            },
+            meta: {
+              win: true,
+            },
+          }
+        } else {
+          return {
+            child: {
+              healthDelta: -30,
+            },
+            meta: {
+              win: false,
+            },
+          }
+        }
+      },
+
+      end: ({ childAfter, meta }) => {
+        if (meta.win) {
+          return `${childAfter.name}游泳时遇到了鳄鱼，但${childAfter.name}在水中与鳄鱼拼死搏斗，将鳄鱼打败而自己只受到轻伤，心情提升，获得100000金币。`
+        }
+        return `${childAfter.name}游泳时遇到了鳄鱼，被鳄鱼袭击受了严重外伤。健康值大幅降低。`
+      },
+    },
+
+    {
+      // 分支3：20%
+      when: () => {
+        return Math.random() < 0.2
+      },
+
+      effect: ({ childBefore }) => {
+        const roll = Math.floor(Math.random() * 4)
+        let talentDelta = {}
+        let healthDelta = 0
+        let gainText = ""
+
+        if (roll === 0) {
+          talentDelta.str = 10
+          gainText = "体能"
+        } else if (roll === 1) {
+          talentDelta.iq = 10
+          gainText = "智力"
+        } else if (roll === 2) {
+          talentDelta.eq = 10
+          gainText = "情商"
+        } else {
+          healthDelta = 10
+          gainText = "健康"
+        }
+
+        const result = {
+          child: {
+            moodDelta: 10,
+          },
+          meta: {
+            gainText,
+          },
+        }
+
+        if (Object.keys(talentDelta).length > 0) {
+          result.child.talentDelta = talentDelta
+        }
+
+        if (healthDelta !== 0) {
+          result.child.healthDelta = healthDelta
+        }
+
+        if (childBefore.sex === "男") {
+          result.player = {
+            jyDelta: 2000,
+          }
+        }
+
+        return result
+      },
+
+      end: ({ childAfter, meta, playerBefore }) => {
+        let text = `尽管水体看起来这么污浊，但${childAfter.name}待在里边却非常舒服，心情提升，${meta.gainText}提高10。`
+        if (playerBefore && childAfter.sex === "男") {
+          text += `还在沼泽中找到了2000ml的金叶。`
+        }
+        return text
+      },
+    },
+
+    {
+      // 分支4：10%（兜底）
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore }) => {
+        const isPretty = childBefore.talent.face > 85
+        const isMale = childBefore.sex === "男"
+
+        if (isPretty) {
+          return {
+            player: {
+              moneyDelta: 500000,
+              jyDelta: 500,
+            },
+            child: {
+              moodDelta: 20,
+            },
+            meta: {
+              isPretty: true,
+              title: isMale ? "鳄鱼公主" : "鳄鱼王子",
+            },
+          }
+        }
+
+        return {
+          player: {
+            jyDelta: 500,
+          },
+          child: {
+            healthDelta: -10,
+            moodDelta: -10,
+          },
+          meta: {
+            isPretty: false,
+            title: isMale ? "鳄鱼公主" : "鳄鱼王子",
+          },
+        }
+      },
+
+      end: ({ childAfter, meta }) => {
+        if (meta.isPretty) {
+          return `在沼泽中遇到了${meta.title}。${meta.title}很喜欢${childAfter.name}的脸，于是和${childAfter.name}颠鸾倒凤不知天地为何物，注入了500ml金叶。次日${meta.title}给了500000金币。${childAfter.name}也很喜欢被${meta.title}草的感觉，心情大幅提升。`
+        }
+        return `在沼泽中遇到了${meta.title}。${meta.title}毫不怜惜地草${childAfter.name}，注入了500ml金叶；${childAfter.name}很郁闷，健康和心情值减少。`
+      },
+    },
+  ],
+}
+
+  ], //除了游泳之外还可以有潜水
+  古怪的教堂: [
+    {
+  id: "rebuild_body_with_jy",
+
+  name: "用金叶重塑肉身",
+
+  weight: 1,
+
+  intro: "用禁忌的法术，消耗大量金叶为重伤的孩子恢复健康值（每1000ml恢复1健康值）",
+
+  requirement: {
+    text: "孩子健康值低于10",
+    test: (child) => {
+      return child.health < 10
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore, playerJy }) => {
+        const unitCost = 1000
+        const maxHealth = 90
+
+        const canUseUnits = Math.floor(playerJy / unitCost)
+        const needUnits = Math.max(0, maxHealth - childBefore.health)
+        const useUnits = Math.min(canUseUnits, needUnits)
+
+        if (useUnits <= 0) {
+          return {
+            meta: {
+              spentJy: 0,
+              reason: "not_enough_jy",
+            },
+          }
+        }
+
+        const spentJy = useUnits * unitCost
+
+        return {
+          player: {
+            jyDelta: -spentJy,
+          },
+
+          child: {
+            healthDelta: useUnits,
+            talentDelta: {
+              face: 10,
+            },
+          },
+
+          meta: {
+            spentJy,
+            healthAfter: childBefore.health + useUnits,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        if (!meta || meta.spentJy <= 0) {
+          return "当前金叶量不足以重塑肉身。"
+        }
+
+        return `使用禁忌的法术，消耗${meta.spentJy}ml金叶，${childAfter.name}的健康值恢复至${childAfter.health}。在禁忌法术的影响下，${childAfter.name}的颜值获得提升。`
+      },
+    },
+  ],
+}
+
+  ],
   森林中的阴森建筑: [],
   森林中的阴森建筑二楼: [],
   哥布林巢穴: [], //哥布林强碱

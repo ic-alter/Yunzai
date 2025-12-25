@@ -46,7 +46,7 @@ export class example extends plugin {
       event: "message",
       priority: 200,
       rule: [
-        { reg: "^#?牛牛打卡$", fnc: "niuniuCheckin" },
+        { reg: "^#?牛牛(打卡|签到)$", fnc: "niuniuCheckin" },
         { reg: "^#?乞讨$", fnc: "beg" },
         { reg: "^#?新牛牛礼包$", fnc: "newbiePack" },
         { reg: "^#?(如何|我想|怎样)(搞钱|赚钱)$", fnc: "howToEarn" },
