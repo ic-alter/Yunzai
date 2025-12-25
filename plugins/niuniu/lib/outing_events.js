@@ -169,7 +169,75 @@ export const OUTING_EVENTS = {
       },
     },
   ],
+},
+{
+  id: "goout_blood_donation",
+
+  name: "献血",
+
+  weight: 1,
+
+  intro: "让孩子献血，能够获得一定量金币但健康会降低。",
+
+  requirement: {
+    text: "健康值大于70才能献血",
+    test: (child) => {
+      return child.health > 70
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return Math.random() < 0.95
+      },
+
+      effect: ({ childBefore }) => {
+        const gain = Math.floor(childBefore.health * 500)
+        return {
+          player: {
+            moneyDelta: gain,
+          },
+          child: {
+            healthDelta: -10,
+          },
+          meta: {
+            gain,
+            healthAfter: childBefore.health - 10,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        return `${childAfter.name}献了800ml血，获得了${meta.gain}金币，但是健康值减少了10，当前健康值${childAfter.health}`
+      },
+    },
+    {
+      when: () => true,
+
+      effect: ({ childBefore }) => {
+        const gain = Math.floor(childBefore.health * 5000 + 100000)
+        return {
+          player: {
+            moneyDelta: gain,
+          },
+          child: {
+            healthDelta: -65,
+          },
+          meta: {
+            gain,
+            healthAfter: childBefore.health - 65,
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        return `${childAfter.name}的血液恰好是某位少爷需要的，医院狠狠地差点把${childAfter.name}的血抽干，健康值大幅下降，变为${childAfter.health}。获得了医院的${meta.gain}元赔偿`
+      },
+    },
+  ],
 }
+
 
   ],
   TOP2职业技术学院: [
@@ -527,7 +595,235 @@ export const OUTING_EVENTS = {
   新手村: [],
   酒馆: [],
   冒险家协会: [],
-  新手村郊外: [], //此处可以有打史莱姆之类的事件
+  新手村郊外: [
+    {
+  id: "outing_hunt_slime_001",
+
+  name: "狩猎史莱姆",
+
+  weight: 1,
+
+  intro: "发现新手村郊外有许多史莱姆，狩猎可能提高孩子的属性。",
+
+  requirement: {
+    text: "需要：智力>40，体能>40，健康>50",
+    test: (child) => {
+      return (
+        child &&
+        child.talent &&
+        typeof child.talent.iq === "number" &&
+        typeof child.talent.str === "number" &&
+        typeof child.health === "number" &&
+        child.talent.iq > 40 &&
+        child.talent.str > 40 &&
+        child.health > 50
+      )
+    },
+  },
+
+  branches: [
+    {
+      // 分支1：智力>80 且 体能>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.iq > 80 && childBefore.talent.str > 80
+      },
+
+      effect: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        const moneyGained = Math.max(0, Math.floor((iq + str) * 1000))
+
+        return {
+          player: {
+            moneyDelta: moneyGained,
+          },
+          child: {
+            moodDelta: 10,
+          },
+          meta: {
+            moneyGained,
+            branch: 1,
+          },
+        }
+      },
+
+      end: ({ meta, childBefore }) => {
+        return `智勇双全的${childBefore.name}轻松地猎杀了大量史莱姆，获得${meta.moneyGained}金币，非常有成就感，心情增加。`
+      },
+    },
+
+    {
+      // 分支2：智力 60~80（含）且 体能>80
+      when: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        return iq >= 60 && iq <= 80 && str > 80
+      },
+
+      effect: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        const moneyGained = Math.max(0, Math.floor((iq + str) * 300))
+
+        return {
+          player: {
+            moneyDelta: moneyGained,
+          },
+          child: {
+            moodDelta: -4,
+            talentDelta: { iq: 5 },
+          },
+          meta: {
+            moneyGained,
+            branch: 2,
+          },
+        }
+      },
+
+      end: ({ meta, childBefore }) => {
+        return `${childBefore.name}狩猎了一些史莱姆，但更多史莱姆逃跑了。获得${meta.moneyGained}金币。从史莱姆的逃跑路线中制定了新的狩猎方案，心情略微下降，智力增加。`
+      },
+    },
+
+    {
+      // 分支3：智力>80 且 体能 60~80（含）
+      when: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        return iq > 80 && str >= 60 && str <= 80
+      },
+
+      effect: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        const moneyGained = Math.max(0, Math.floor((iq + str) * 400))
+
+        return {
+          player: {
+            moneyDelta: moneyGained,
+          },
+          child: {
+            healthDelta: -3,
+          },
+          meta: {
+            moneyGained,
+            branch: 3,
+          },
+        }
+      },
+
+      end: ({ meta, childBefore }) => {
+        return `${childBefore.name}狩猎了一些史莱姆，获得${meta.moneyGained}金币。但${childBefore.name}在此过程中受到一些轻伤，健康略微减少。`
+      },
+    },
+
+    {
+      // 分支4+5：智力<60 且 体能<60 时，必定进入其中一个
+      // 用同一个 roll：<0.6 走分支4，否则走分支5
+      when: ({ childBefore }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+        return iq < 60 && str < 60
+      },
+
+      effect: ({ childBefore, cid, now }) => {
+        const iq = childBefore.talent.iq
+        const str = childBefore.talent.str
+
+        const seedStr = String(cid) + "|" + String(now)
+        let hash = 0
+        for (let i = 0; i < seedStr.length; i++) {
+          hash = (hash * 31 + seedStr.charCodeAt(i)) >>> 0
+        }
+        const roll = (hash % 10000) / 10000
+
+        // 分支4（60%）
+        if (roll < 0.6) {
+          const moneyGained = Math.max(0, Math.floor((iq + str) * 100))
+          const jyGained = 300
+
+          return {
+            player: {
+              moneyDelta: moneyGained,
+              jyDelta: jyGained,
+            },
+            child: {
+              talentDelta: { iq: 5, str: 5 },
+              moodDelta: 3,
+              healthDelta: -7,
+            },
+            meta: {
+              branch: 4,
+              roll,
+              moneyGained,
+              jyGained,
+            },
+          }
+        }
+
+        // 分支5（40%）
+        // 注意：原设定包含不适宜内容，这里改为“被史莱姆黏液困住并受腐蚀”，不涉及任何性相关描写。
+        const face = childBefore.talent.face
+        const extraEq = face >= 80 ? 10 : 0
+        const jyGained = 1500
+
+        return {
+          player: {
+            lengthMul: 1.5,
+            radiusMul: 1.5,
+            jyDelta: jyGained,
+          },
+          child: {
+            healthDelta: -15,
+            talentDelta: extraEq ? { eq: extraEq } : undefined,
+          },
+          meta: {
+            branch: 5,
+            roll,
+            jyGained,
+            extraEq,
+          },
+        }
+      },
+
+      end: ({ meta, childBefore }) => {
+        if (meta.branch === 4) {
+          return `${childBefore.name}笨手笨脚的只狩猎到了很少的史莱姆，还不小心受伤了，获得${meta.moneyGained}金币，健康值少量降低。但${childBefore.name}获得了锻炼，智力和体能增加。`
+        }
+
+        const pronoun = childBefore.sex === "男" ? "他" : "她"
+        const charmLine =
+          meta.extraEq && meta.extraEq > 0
+            ? childBefore.sex === "男"
+              ? `但${childBefore.name}因为长得很可爱被史莱姆公主注意到并放过，情商增加。`
+              : `但${childBefore.name}因为长得很可爱被史莱姆王子注意到并放过，情商增加。`
+            : ""
+
+        return `${childBefore.name}被史莱姆打的毫无还手之力，然后被史莱姆群掳走并凌辱，健康值降低。${charmLine}后来找到${childBefore.name}的时候，你看着${pronoun}全身的粘液，以及被腐蚀到只剩破片的衣服，非常心疼，牛牛都哭了，长度和半径增加50%，获得${meta.jyGained}ml金叶。`
+      },
+    },
+
+    {
+      // 兜底分支：不满足以上条件时
+      when: () => true,
+
+      effect: ({ childBefore }) => {
+        const moneyGained = Math.max(0, Math.floor((childBefore.talent.iq + childBefore.talent.str) * 200))
+        return {
+          player: { moneyDelta: moneyGained },
+          child: { moodDelta: 1 },
+          meta: { moneyGained, branch: 0 },
+        }
+      },
+
+      end: ({ meta, childBefore }) => {
+        return `${childBefore.name}小心翼翼地尝试狩猎，最终获得${meta.moneyGained}金币，心情稍微变好。`
+      },
+    },
+  ],
+}
+
+  ], //此处可以有打史莱姆之类的事件
   疑似爆裂魔法留下的大坑: [], //巨大粘液青蛙
   移动要塞: [],
   阴湿森林: [],

@@ -439,9 +439,14 @@ async function applyAndDescribe(id, name, rate = 1.0) {
   } else {
     return '间隔时间太短，休息一下吧！'
   }
-
-  const lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
-  const radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
+  let lenInc, radInc
+  if (hardness <= 100) {
+    lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate
+    radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate
+  } else{
+    lenInc = randFloat(lenIncMin, lenIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
+    radInc = randFloat(radIncMin, radIncMax) * Math.pow(1.2,Math.floor(hardness)-2) * rate * 0.25//最后这个0.25是平衡性调整
+  }
 
   const newLen = length + lenInc
   const newRad = radius + radInc
