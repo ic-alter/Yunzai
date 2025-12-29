@@ -31,13 +31,12 @@ export class example extends plugin {
         // 新增：看看牛牛
         { reg: '^#*(看看牛牛|查看牛牛|牛牛状态)$', fnc: 'seeNiuNiu' },
 
-        // 新增：牛牛帮助
-        { reg: '^#*牛牛帮助$', fnc: 'helpNiuNiu' },
         { reg: '^#*(升级硬度|升级牛牛|牛牛升级|硬度升级|牛牛进化)$', fnc: 'upgradeHardness' },
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
         { reg: '^#*(贤者模式|贤者时刻|贤者时间|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
         { reg: '^#*捐精.*$', fnc: 'donateJy' },
+        { reg: "^#?(如何|怎样|怎么)(获取|获得|长出)(牛牛|牛子)$", fnc: "howToNiuniu" },
       ],
       task: [] // 明确无定时任务，防 loader 误判
     })
@@ -344,6 +343,22 @@ export class example extends plugin {
     ].join("\n")
 
     e.reply(msg)
+    return true
+  }
+
+  async howToNiuniu(e) {
+    await e.reply(
+      [
+        "🐂 如何让牛牛变强？" ,
+        "1) #立了：长出牛牛或让牛牛变大。",
+        "2) #击剑 @对手：和对手进行牛牛对抗，胜者从败者处夺取牛牛",
+        "3) #升级硬度：献祭长度和半径来提高硬度等级。更高的等级有更强的战斗力和加成",
+        "4) #重置牛牛：重新随机生成你的长度和半径（范围同初始），硬度等级不变。",
+        "5) #贤者模式：进入贤者模式（触发微妙的随机事件）",
+        "6) #炼化：消耗金币将自己的孩子炼化，提升牛牛属性",
+        "7) #吃小孩：吃掉自己的孩子，可以让全家的牛牛属性获得提升"
+      ].join("\n")
+    )
     return true
   }
 

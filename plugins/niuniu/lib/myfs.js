@@ -586,6 +586,7 @@ export async function promoteConcubineToWife(husbandId, concubineId) {
 /**
  * 查看家庭：输入自己id，返回 { husband: {id,username}, wife: {...}|null, concubines:[...] }
  * 若未结婚抛异常
+ * 注意：仍有方法在用这个接口，不要删
  */
 export async function viewFamily(selfId) {
   const sid = asIdStr(selfId)

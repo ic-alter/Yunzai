@@ -50,8 +50,9 @@ export class example extends plugin {
         { reg: "^#?乞讨$", fnc: "beg" },
         { reg: "^#?新牛牛礼包$", fnc: "newbiePack" },
         { reg: "^#?(如何|我想|怎样)(搞钱|赚钱)$", fnc: "howToEarn" },
+        { reg: "^#?(如何|怎样|怎么)(获取|获得)(金币|钱)$", fnc: "howToEarn" },
         { reg: "^#?(金币|钱)(怎么|从哪|如何)", fnc: "howToEarn" },
-        { reg: "^#?(如何|怎样)获取(金叶|茎叶|精液|津液)$", fnc: "howToJy" },
+        { reg: "^#?(如何|怎样|怎么)(获取|获得)(金叶|茎叶|精液|津液)$", fnc: "howToJy" },
         { reg: "^#?(金叶|茎叶|精液|津液)(怎么|从哪|如何)$", fnc: "howToJy" },
       ],
     })

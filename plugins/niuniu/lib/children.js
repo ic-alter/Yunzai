@@ -275,6 +275,43 @@ export async function calcRefine(userId, cid) {
   }
 }
 
+function sexFactorEat(sex) {
+  return sex === "男" ? 0.9 : 1.0
+}
+
+function rankFactorEat(rank) {
+  if (rank === "嫡") return 0.5
+  if (rank === "庶") return 0.375
+  return 0.25
+}
+
+
+/* 计算吃小孩的收益 */
+export async function calcEatChild(userId, cid) {
+  const uid = String(userId ?? "").trim()
+  const c = Number(cid)
+  if (!uid) throw new Error("用户ID不合法")
+  if (!Number.isFinite(c) || c < 1) throw new Error("CID不合法")
+
+  const doc = await readUserDoc(uid)
+  const arr = Array.isArray(doc.children) ? doc.children : []
+  const child = arr.find((x) => Number(x?.cid) === c)
+  if (!child) throw new Error("未找到该CID的子嗣（只能吃自己的）")
+
+  const appearance = Number(child.talent?.face || 0)
+  const mood = Number(child.mood)
+
+  const base = appearance + mood
+  const rate = base * sexFactorEat(child.sex) * rankFactorEat(child.rank)
+
+  return {
+    cid: c,
+    name: String(child.name || ""),
+    rate        // 百分比
+  }
+}
+
+
 
 /*删除孩子 */
 export async function consumeChild(userId, cid) {

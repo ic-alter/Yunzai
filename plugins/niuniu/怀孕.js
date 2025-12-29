@@ -6,8 +6,8 @@ import { fileURLToPath } from "url"
 
 import { processInjection } from "./lib/pregnancy.js"
 import { buildMyChildrenPage, getChildDetail, renameChild, discardChild } from "./lib/children.js"
-import { calcRefine, consumeChild } from "./lib/children.js"
-import { subMoney, updateUserNoTime, readUserDoc, bumpDailyCounterExceeded } from "./lib/myfs.js"
+import { calcRefine, consumeChild ,calcEatChild} from "./lib/children.js"
+import { subMoney, updateUserNoTime, readUserDoc, bumpDailyCounterExceeded ,viewFamily} from "./lib/myfs.js"
 import { round2 } from "./lib/tool.js"
 
 
@@ -70,6 +70,7 @@ export class example extends plugin {
         { reg: "^#?改名", fnc: "renameStart" },
         { reg: "^#?(丢弃|遗弃|抛弃|弃养)(孩子|子嗣)?", fnc: "丢弃" },
         { reg: "^#?炼化", fnc: "炼化" },
+        { reg: "^#?(吃|食用|恰)(小孩|孩子|子嗣)", fnc: "吃小孩" },
       ],
     })
   }
@@ -395,4 +396,138 @@ async 炼化确认(e) {
 
   return true
 }
+async 吃小孩(e) {
+  const uid = String(this.e.user_id)
+  const page = await buildMyChildrenPage(uid, 1, 2000)
+
+  if (!page.items || page.items.length === 0) {
+    await e.reply("你还没有子嗣。")
+    return true
+  }
+
+  const show = page.items.slice(0, 50)
+  const list = show
+    .map((x, i) =>
+      `${i + 1}. ${x.name} (CID:${x.cid}) ${x.displayRank}`
+    )
+    .join("\n")
+
+  const ctx = this.setContext("吃小孩选择")
+  ctx.uid = uid
+  ctx.items = show
+
+  await e.reply(`请选择要吃掉的孩子序号（1-${show.length}）：\n${list}`)
+  return true
+}
+async 吃小孩选择(e) {
+  const ctx = this.getContext("吃小孩选择")
+  if (!ctx) return false
+  if (String(this.e.user_id) !== String(ctx.uid)) return false
+
+  const idx = Number(String(this.e.msg || "").trim())
+  if (!Number.isFinite(idx) || idx < 1 || idx > ctx.items.length) {
+    await e.reply("编号不合法，请重新输入。")
+    return true
+  }
+
+  const picked = ctx.items[idx - 1]
+  this.finish("吃小孩选择")
+
+  const info = await calcEatChild(ctx.uid, picked.cid)
+  const rateText = info.rate.toFixed(2)
+
+  const ctx2 = this.setContext("吃小孩确认")
+  ctx2.uid = ctx.uid
+  ctx2.cid = picked.cid
+  ctx2.name = info.name
+  ctx2.rate = info.rate
+
+  await e.reply(
+    `吃掉${info.name}将使全家人牛牛的长度和半径增加${rateText}%。\n` +
+    `⚠️ 子嗣将永久消失！\n` +
+    `需要发送：确认 | 是（否则取消）`
+  )
+  return true
+}
+async 吃小孩确认(e) {
+  const ctx = this.getContext("吃小孩确认")
+  if (!ctx) return false
+  if (String(this.e.user_id) !== String(ctx.uid)) return false
+
+  const msg = String(this.e.msg || "").trim()
+  if (!/^(确认|是)$/.test(msg)) {
+    this.finish("吃小孩确认")
+    await e.reply("已取消。")
+    return true
+  }
+
+  try {
+    // 1) 删除子嗣（始终只删发起者的）
+    await consumeChild(ctx.uid, ctx.cid)
+
+    const rate = Number(ctx.rate) || 0
+    const mul = 1 + rate / 100
+
+    let memberIds = []
+    let nameLines = []
+
+    // 2) 尝试读取家庭（可能失败）
+    try {
+      const family = await viewFamily(ctx.uid)
+
+      memberIds = [
+        family.husband?.id,
+        family.wife?.id,
+        ...(family.concubines || []).map(x => x.id)
+      ].filter(Boolean)
+
+      nameLines = [
+        family.husband?.username && `夫：${family.husband.username}`,
+        family.wife?.username && `妻：${family.wife.username}`,
+        ...(family.concubines || []).map(x => `妾：${x.username}`)
+      ].filter(Boolean)
+    } catch (err) {
+      // 无家庭 → 只给自己
+      memberIds = [ctx.uid]
+
+      const self = await readUserDoc(ctx.uid)
+      nameLines = [`自己：${self?.username || ctx.uid}`]
+    }
+
+    // 3) 给所有成员加成
+    for (const uid of memberIds) {
+      const user = await readUserDoc(uid)
+      const n = user?.niuniu
+      if (!n) continue
+
+      const oldLen = Number(n.length)
+      const oldRad = Number(n.radius)
+      const hardness = Number(n.hardness) || 0
+
+      if (!Number.isFinite(oldLen) || !Number.isFinite(oldRad)) {
+        continue
+      }
+
+      const newLen = round2(oldLen * mul)
+      const newRad = round2(oldRad * mul)
+
+      await updateUserNoTime(uid, newLen, newRad, hardness)
+    }
+
+    // 4) 提示
+    await e.reply(
+      `一家人其乐融融地吃掉了${ctx.name}！\n` +
+      `长度和半径提升了${rate.toFixed(2)}%。\n` +
+      `受益成员：\n${nameLines.join("\n")}`
+    )
+  } catch (err) {
+    await e.reply("吃小孩失败：" + (err?.message || "未知错误"))
+  } finally {
+    this.finish("吃小孩确认")
+  }
+
+  return true
+}
+
+
 }
