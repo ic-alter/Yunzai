@@ -80,7 +80,7 @@ export class example extends plugin {
       ctx2.loc = ctx.loc
       ctx2.event = ev
 
-      await e.reply(`${ev.intro || ""}\n是否要进行【${ev.name}】？需要发送：确认 | 是（否则取消）`)
+      await e.reply(`${ev.intro || ""}\n是否要【${ev.name}】？需要发送：确认 | 是（否则取消）`)
       return true
     }
 

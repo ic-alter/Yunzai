@@ -243,9 +243,9 @@ export const OUTING_EVENTS = {
   TOP2职业技术学院: [
     {
       id: "fudan_class_1",
-      name: "听课",
+      name: "听讲座",
       weight: 1,
-      intro: "带孩子去听一节公开课，小幅提升智力与心情。",
+      intro: "带孩子去听一节讲座，小幅提升智力与心情。",
       requirement: {
         text: "孩子心情不低于20",
         test: (child) => Number(child?.mood ?? 0) >= 20,
@@ -258,10 +258,50 @@ export const OUTING_EVENTS = {
             child: { moodDelta: +5, talentDelta: { iq: +2 } },
           },
           end: ({ childAfter }) =>
-            `课程结束！孩子心情变为${childAfter.mood}，智力变为${childAfter?.talent?.iq}。`,
+            `讲座结束！孩子心情变为${childAfter.mood}，智力变为${childAfter?.talent?.iq}。`,
         },
       ],
     },
+    {
+  id: "event_linear_algebra_zwd",
+
+  name: "去zwd老师的线性代数课",
+
+  weight: 1,
+
+  intro: "zwd老师在上线性代数课，教室看起来很空老师有点尴尬。",
+
+  requirement: {
+    text: "需要孩子当前心情大于 80",
+    test: (child) => {
+      return child.mood > 80
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: -30,
+            talentDelta: {
+              eq: 10,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `zwd老师讲的令人昏昏欲睡，虽然课一点都没讲明白但是还在不停的吹嘘自己，而且不允许提前离开。${childAfter.name}心情大幅度降低。zwd老师还问自己讲的这么好为什么没人来上课，${childAfter.name}只好费尽心思想一些体面的回答，情商增加。`
+      },
+    },
+  ],
+}
+
   ],
   废弃体育场: [
     {
@@ -389,6 +429,123 @@ export const OUTING_EVENTS = {
         },
       ],
     }
+  ],
+  互联网大厂: [
+    {
+  id: "outing_internship_001",
+
+  name: "实习",
+
+  weight: 1,
+
+  intro: "在互联网大厂实习，能够获得实习工资。",
+
+  requirement: {
+    text: "需求健康和智力和情商大于60，数值过低简历无法通过！",
+    test: (child) => {
+      return (
+        child.health > 60 &&
+        child.talent.iq > 60 &&
+        child.talent.eq > 60
+      )
+    },
+  },
+
+  branches: [
+    {
+      // 分支1：智力和情商都大于80
+      when: ({ childBefore }) => {
+        return childBefore.talent.iq > 80 && childBefore.talent.eq > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 100000,
+          },
+          child: {
+            moodDelta: -30,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `天天干一些非常无聊的活还被正式员工呼来喝去，${childAfter.name}的心情大幅度降低。好在工作干的还可以，被评为优秀实习生，获得100000金币的实习工资。`
+      },
+    },
+
+    {
+      // 分支2：智力大于80但情商小于80
+      when: ({ childBefore }) => {
+        return childBefore.talent.iq > 80 && childBefore.talent.eq < 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 30000,
+          },
+          child: {
+            moodDelta: -40,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `天天干一些非常无聊的活还被正式员工呼来喝去，而且自己干的工作却被绿茶同事抢功劳，${childAfter.name}的心情超大幅度降低。因为功劳全被绿茶同事抢走了，所以只获得了30000金币的实习工资。`
+      },
+    },
+
+    {
+      // 分支3：智力小于80但情商大于80
+      when: ({ childBefore }) => {
+        return childBefore.talent.iq < 80 && childBefore.talent.eq > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 100000,
+          },
+          child: {
+            healthDelta: -15,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}虽然工作能力比较一般，但很会搞办公室宫斗，抢同事功劳和背后举报什么的玩的非常熟练，把领导骗的还以为工作能力很强，被评为优秀实习生，获得100000金币实习工资。但因为干的坏事太多${childAfter.name}在下班路上被同事套了麻袋狠狠打了一顿，健康值减少。`
+      },
+    },
+
+    {
+      // 分支4：智力和情商都小于80（兜底）
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 30000,
+          },
+          child: {
+            healthDelta: -15,
+            moodDelta: -40,
+            talentDelta: {
+              str: -5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `天天干一些非常无聊的活还被正式员工呼来喝去，而且很努力的加班也不出成果，天天被领导喷，${childAfter.name}的心情超大幅度降低。因为长期加班体质下降，健康和体能下降。因为实习成果较差，只获得了30000金币的实习工资。`
+      },
+    },
+  ],
+}
+
   ],
   地下赌场: [
     {
@@ -1138,7 +1295,93 @@ export const OUTING_EVENTS = {
   ],
   阴湿森林: [],
   阴湿森林的深处: [],
-  普通的小木屋:[], //糖果屋
+  普通的小木屋:[
+    {
+  id: "out_event_eat_candy_cabin",
+
+  name: "吃小木屋",
+
+  weight: 1,
+
+  intro: "发现小木屋的墙壁和屋顶和窗户竟然都是用糖果和巧克力搭建的！看起来很好吃的样子。",
+
+  requirement: {
+    text: "需要健康大于50",
+    test: (child) => {
+      return child.health > 50
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.face > 80
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: 15,
+            healthDelta: -20,
+            talentDelta: {
+              str: -30,
+              iq: 15,
+              eq: 15,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}正在吃小屋的时候，被房子拥有者的巫婆发现了，但巫婆看着${childAfter.name}长得这么可爱，心生怜爱，于是宠溺地说这个小屋都给${childAfter.name}吃；心情、智力和情商中幅度增加。但${childAfter.name}因为吃掉了一整个小屋，胃袋变成超大胃袋，健康和体能大幅度降低。`
+      },
+    },
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.face < 80 && childBefore.talent.str > 80
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: 5,
+            talentDelta: {
+              str: -5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}正在吃小屋的时候，被房子拥有者的巫婆发现了，还好体能基础好，虽然胃袋已经满了但仍然成功溜走。心情略微增加，体能略微减少。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: -70000,
+          },
+          child: {
+            talentDelta: {
+              eq: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}正在吃小屋的时候，被房子拥有者的巫婆发现了，苦苦哀求下巫婆仍要求赔偿损失，只好赔偿她70000金币。`
+      },
+    },
+  ],
+}
+
+  ], //糖果屋
   小木屋的卧室: [],
   充满瘴气的沼泽: [
     {
@@ -1409,10 +1652,834 @@ export const OUTING_EVENTS = {
   ],
   森林中的阴森建筑: [],
   森林中的阴森建筑二楼: [],
-  哥布林巢穴: [], //哥布林强碱
+  哥布林巢穴: [
+    {
+  id: "event_rescue_princess_goblin_nest",
+
+  name: "解救巢穴中的公主",
+
+  weight: 1,
+
+  intro: "发现王国的公主被囚禁在哥布林巢穴中。",
+
+  requirement: {
+    text: "体能大于60，智力大于30，且健康值高于50。",
+    test: (child) => {
+      return (
+        child.talent.str > 60 &&
+        child.talent.iq > 30 &&
+        child.health > 50
+      )
+    },
+  },
+
+  branches: [
+    {
+      // 分支1：情商>70，外貌>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.eq > 70 && childBefore.talent.face > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 80000,
+            jyDelta: 5000,
+          },
+          child: {
+            moodDelta: 10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}能说会道而且长得也很符合哥布林喜好，于是哥布林们把${childAfter.name}变成了新的公共斐济杯，公主黯然失色。${childAfter.name}获得了哥布林赠送的80000金币，并收集了5000ml金叶。心情增加。`
+      },
+    },
+
+    {
+      // 分支2：情商>70，外貌50-80
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.eq > 70 &&
+          childBefore.talent.face >= 50 &&
+          childBefore.talent.face <= 80
+        )
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 40000,
+            jyDelta: 1000,
+          },
+          child: {
+            moodDelta: 5,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `哥布林看${childAfter.name}虽然长得一般但性格挺不错，也可以浅草一下。${childAfter.name}获得了哥布林赠送的40000金币并收集了1000ml金叶。心情增加。`
+      },
+    },
+
+    {
+      // 分支3：情商>70，外貌<50
+      when: ({ childBefore }) => {
+        return childBefore.talent.eq > 70 && childBefore.talent.face < 50
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "巧舌如簧地欺骗了哥布林然后把公主骗了出来。但公主看起来并没有很高兴，扭头就走。"
+      },
+    },
+
+    {
+      // 分支4：情商<=70，外貌>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.eq <= 70 && childBefore.talent.face > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            lengthMul: 1.2,
+            radiusMul: 1.2,
+          },
+          child: {
+            healthDelta: -10,
+            moodDelta: -10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `哥布林看这${childAfter.name}眉清目秀了，起反应了，但遭到了${childAfter.name}的强烈反抗，这反而让哥布林更兴奋了，猛烈强碱。健康和心情值下降。还好你在被强碱完成后不及时赶到，救出了${childAfter.name}，然后把boki的哥布林牛牛接到自己的牛牛上：长度和半径增加了20%。`
+      },
+    },
+
+    {
+      // 分支5：情商<=70，外貌50-80
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.eq <= 70 &&
+          childBefore.talent.face >= 50 &&
+          childBefore.talent.face <= 80
+        )
+      },
+
+      effect: ({ childBefore }) => {
+        if (childBefore.talent.str > 80) {
+          return {
+            player: {
+              moneyDelta: 200000,
+            },
+          }
+        } else {
+          return {
+            player: {
+              jyDelta: 1000,
+            },
+            child: {
+              healthDelta: -15,
+            },
+          }
+        }
+      },
+
+      end: ({ childBefore, childAfter }) => {
+        if (childBefore.talent.str > 80) {
+          return `${childAfter.name}一进去就被哥布林语言性骚扰，非常生气，于是把哥布林全砍了，获得了大量金币。`
+        } else {
+          return `${childAfter.name}一进去就被哥布林语言性骚扰，非常生气，想把哥布林全砍了，可惜体能不足战斗失败，受了伤，健康值降低，但还是找到了一些金叶。`
+        }
+      },
+    },
+
+    {
+      // 分支6：情商<=70，外貌<50（兜底）
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: 15,
+            talentDelta: {
+              str: 5,
+              eq: -3,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}因为外貌过于普通，被哥布林当成了同类，并且友好地邀请${childAfter.name}一起强碱公主。心情和体能提升，但情商略微降低。`
+      },
+    },
+  ],
+}
+
+  ], //哥布林强碱
   潮湿温暖的洞口: [],
-  潮湿温暖的洞内: [], //触手怪
-  潮湿温暖的洞穴深处: [],
+  潮湿温暖的洞内: [], 
+  潮湿温暖的洞穴深处: [
+    {
+  id: "out_event_vine_like_thing",
+
+  name: "触摸洞里疑似藤蔓的东西",
+
+  weight: 1,
+
+  intro: "从洞顶垂下来了一根很像藤蔓的东西。这种洞穴里为什么会有藤蔓？",
+
+  requirement: {
+    text: "需要健康、智力、体能均高于60",
+    test: (child) => {
+      return child.health > 60 && child.talent.iq > 60 && child.talent.str > 60
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 90 || childBefore.talent.iq > 90
+      },
+
+      effect: () => {
+        return {
+          child: {
+            talentDelta: {
+              face: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `什么藤蔓，那是在捕猎的触手怪！${childAfter.name}被紧紧缠绕住，还好凭借自己的能力及时脱身，没有受到很大的损伤`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          player: {
+            jyDelta: 3000,
+          },
+          child: {
+            moodDelta: 40,
+            talentDelta: {
+              iq: -25,
+              face: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `什么藤蔓，那是在捕猎的触手怪！${childAfter.name}被触手紧紧缠绕住，无力脱身，嘴被触手撬开并灌入了奇怪的液体，下面也有触手伸入并源源不断地注入触手怪的卵。${childAfter.name}变成了只会高嘲的苗床，智力大幅度降低，心情超大幅度提升，获得3000ml金叶。`
+      },
+    },
+  ],
+}
+
+  ],//触手怪
+
+  风化石桥: [
+    {
+  id: "event_stone_bridge_crossing",
+
+  name: "踏上摇摇欲坠的石桥",
+
+  weight: 1,
+
+  intro: "石桥在风中吱嘎作响，下面是看不见底的深渊，感觉桥比你的勇气还脆。",
+
+  requirement: {
+    text: "需要一定的体能，才能尝试通过这座石桥。",
+    test: (child) => {
+      return child.talent.str > 30
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 70
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: 10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}稳健地穿过石桥，甚至在中途摆了个胜利姿势，心情明显变好。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -15,
+            moodDelta: -10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `石块松动，${childAfter.name}狠狠摔了一下，虽然没掉下去，但心理阴影留下了。`
+      },
+    },
+  ],
+}
+
+  ],
+  荒原入口: [
+    {
+  id: "event_rest_in_sandstorm",
+
+  name: "暂时休息",
+
+  weight: 1,
+
+  intro: "狂风卷着沙子，像是在对你进行一场自然的群殴。",
+
+  requirement: {
+    text: "需要健康状况良好，才能在这种环境里停下来休息。",
+    test: (child) => {
+      return child.health > 40
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.iq > 60
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -5,
+            talentDelta: {
+              iq: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}学会了如何用衣物和路线规避风沙，虽然辛苦，但变聪明了。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -15,
+            moodDelta: -5,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `沙子钻进每一个缝隙，${childAfter.name}只想立刻离开这鬼地方。`
+      },
+    },
+  ],
+}
+
+  ],
+  风沙营地: [
+    {
+  id: "event_arm_wrestle_mercenary",
+
+  name: "与佣兵比腕力",
+
+  weight: 1,
+
+  intro: "营地里的佣兵拍着桌子，邀请你来一场纯力量的对决。",
+
+  requirement: {
+    text: "需要足够的体能与健康，才能与佣兵进行腕力对决。",
+    test: (child) => {
+      return child.talent.str > 50 && child.health > 60
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 120000,
+          },
+          child: {
+            moodDelta: 10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}胜过了全身肌肉的佣兵，赢得全场喝彩，顺便赢走了120000金币。`
+      },
+    },
+    {
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.str < 80 &&
+          childBefore.talent.eq + childBefore.talent.face > 150
+        )
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 60000,
+          },
+          child: {
+            healthDelta: -5,
+            moodDelta: 10,
+            talentDelta: {
+              str: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}虽然完全赢不了佣兵，但是佣兵们很喜欢${childAfter.name}，教了他一些掰手腕技巧。体能和心情增加，获得60000金币。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -15,
+            moodDelta: -5,
+          },
+        }
+      },
+
+      end: () => {
+        return "输得很惨，但至少学会了别随便跟肌肉怪较劲。"
+      },
+    },
+  ],
+}
+
+  ],
+  流浪商人的帐篷: [
+    {
+  id: "event_mysterious_bottled_jy",
+
+  name: "神秘瓶装的金叶",
+
+  weight: 1,
+
+  intro: "商人露出意味深长的笑容，说这瓶金叶“绝对没副作用”，就是有点小贵。",
+
+  requirement: {
+    text: "需要一定的情商和不错的心情，才能和商人周旋。",
+    test: (child) => {
+      return child.talent.eq > 40 && child.mood > 30
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.eq > 70
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: -10000,
+            jyDelta: 1200,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}成功砍价，还识破了其中一瓶是假货，使用10000金币购买1200ml金叶。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: -80000,
+            jyDelta: 400,
+          },
+          child: {
+            moodDelta: -5,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}花费80000金币，结果发现掺了大量的水，只获得400ml金叶。`
+      },
+    },
+  ],
+}
+
+  ],
+  破损的古代石碑: [
+    {
+  id: "event_decode_broken_runes",
+
+  name: "解读残缺符文",
+
+  weight: 1,
+
+  intro: "石碑上的文字像是被人啃过，怎么看都不完整。",
+
+  requirement: {
+    text: "需要智力 > 50 才能尝试解读残缺符文。",
+    test: (child) => {
+      return child.talent.iq > 50
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore }) => {
+        if (childBefore.talent.iq > 80) {
+          const roll = Math.random()
+          if (roll < 0.7) {
+            return {
+              player: {
+                moneyDelta: 500000,
+              },
+              meta: {
+                roll,
+                branch: "A",
+              },
+            }
+          }
+          return {
+            child: {
+              talentDelta: {
+                str: 10,
+              },
+            },
+            meta: {
+              roll,
+              branch: "B",
+            },
+          }
+        }
+
+        return {
+          child: {
+            moodDelta: -5,
+          },
+          meta: {
+            branch: "default",
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        if (meta && meta.branch === "A") {
+          return `${childAfter.name}成功解读碑文，发现了隐藏的藏宝位置，获得500000金币。`
+        }
+        if (meta && meta.branch === "B") {
+          return `${childAfter.name}成功解读碑文，从中学到了失传的发力方法，体能增加。`
+        }
+        return "看得头疼，只能确认这不是菜单。"
+      },
+    },
+  ],
+}
+
+  ],
+
+  沉眠遗迹的外庭: [],
+  沉眠遗迹的大厅: [{
+  id: "event_touch_hall_statue",
+
+  name: "触摸大厅的石像",
+
+  weight: 1,
+
+  intro: "你总感觉这些石像的视线在跟着你走。",
+
+  requirement: {
+    text: "需要健康 > 10 且心情 > 10 才敢靠近这些石像。",
+    test: (child) => {
+      return child.health > 10 && child.mood > 10
+    },
+  },
+
+  branches: [
+    {
+      // 分支A-1：体能>80，外貌>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 80 && childBefore.talent.face > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 50000,
+            jyDelta: 500,
+          },
+          child: {
+            moodDelta: 5,
+            healthDelta: 5,
+            talentDelta: {
+              iq: 5,
+              eq: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}手劲太大捏醒了石像，石像看${childAfter.name}长得赏心悦目的，就赠送了50000金币和500ml金叶，并使${childAfter.name}各项属性得到提升。`
+      },
+    },
+    {
+      // 分支A-2：体能>80，情商>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 80 && childBefore.talent.eq > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 50000,
+            jyDelta: 500,
+          },
+          child: {
+            moodDelta: 5,
+            healthDelta: 5,
+            talentDelta: {
+              face: 5,
+              iq: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}手劲太大捏醒了石像，面对生气的石像，${childAfter.name}苦苦哀求才让石像消气。石像赠送了50000金币和500ml金叶，并使${childAfter.name}各项属性得到提升。`
+      },
+    },
+    {
+      // 分支A-3：体能>80，智力>80
+      when: ({ childBefore }) => {
+        return childBefore.talent.str > 80 && childBefore.talent.iq > 80
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 50000,
+            jyDelta: 500,
+          },
+          child: {
+            moodDelta: 5,
+            healthDelta: 5,
+            talentDelta: {
+              face: 5,
+              eq: 5,
+            },
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}手劲太大捏醒了石像，石像非常生气，要求${childAfter.name}十分钟内做对20道圆锥曲线大题否则就要狠狠惩罚。但没想到${childAfter.name}还真能做出来。石像很不乐意地赠送了50000金币和500ml金叶，并使${childAfter.name}各项属性得到提升。`
+      },
+    },
+    {
+      // 分支B：体能>80，但其他三项天赋都<=80
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.str > 80 &&
+          childBefore.talent.face <= 80 &&
+          childBefore.talent.eq <= 80 &&
+          childBefore.talent.iq <= 80
+        )
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -20,
+            moodDelta: -10,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `${childAfter.name}手劲太大捏醒了石像，石像非常生气，要求${childAfter.name}十分钟内做对20道圆锥曲线大题否则就要狠狠惩罚。挑战失败，${childAfter.name}被石像狠狠揍了一顿，健康和心情值降低。`
+      },
+    },
+    {
+      // default 分支（含概率）
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        const roll = Math.random()
+        if (roll < 0.4) {
+          return {
+            child: {
+              healthDelta: -9,
+              moodDelta: -9,
+            },
+            meta: {
+              roll,
+              branch: "default-1",
+            },
+          }
+        }
+        return {
+          meta: {
+            roll,
+            branch: "default-2",
+          },
+        }
+      },
+
+      end: ({ meta, childAfter }) => {
+        if (meta && meta.branch === "default-1") {
+          return `石像突然出手，${childAfter.name}被扇了一个大逼斗。健康和心情值降低。`
+        }
+        return "什么也没发生，看来这只是普通的石像。"
+      },
+    },
+  ],
+}
+],
+  遗迹下沉的回廊: [],
+
+  遗迹最深处的王座: [
+    {
+  id: "event_follow_ancient_king_shadow",
+
+  name: "追随古王的虚影",
+
+  weight: 1,
+
+  intro: "王座上坐着一个半透明的身影，正在审视你的灵魂。",
+
+  requirement: {
+    text: "需要智力、情商、体能、外貌、心情、健康均大于 60，才能直面古王的审视。",
+    test: (child) => {
+      return (
+        child.talent.iq > 60 &&
+        child.talent.eq > 60 &&
+        child.talent.str > 60 &&
+        child.talent.face > 60 &&
+        child.mood > 60 &&
+        child.health > 60
+      )
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return (
+          childBefore.talent.iq +
+            childBefore.talent.eq +
+            childBefore.talent.str +
+            childBefore.talent.face >
+          300
+        )
+      },
+
+      effect: () => {
+        return {
+          player: {
+            moneyDelta: 480000,
+            lengthMul: 1.3,
+            radiusMul: 1.3,
+          },
+          child: {
+            moodDelta: -50,
+            healthDelta: -40,
+          },
+        }
+      },
+
+      end: ({ childAfter }) => {
+        return `通过艰辛的试炼，古王认可了${childAfter.name}，赐予财富，并使牛牛的长度和半径增加30%。`
+      },
+    },
+    {
+      when: () => {
+        return true
+      },
+
+      effect: () => {
+        return {
+          child: {
+            moodDelta: -5,
+            healthDelta: -5,
+          },
+        }
+      },
+
+      end: () => {
+        return "虚影冷哼一声，仿佛在说“不合格，下一个”。"
+      },
+    },
+  ],
+}
+
+  ],
+
+  薄雾湖畔: [],
+  湖中小岛: [],
+  沉没的祭坛: [],
+  断崖高地: [],
+  断崖边的旧哨塔: [],
 }
 
 // ---------- 查询与选择 ----------
