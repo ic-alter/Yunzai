@@ -9,6 +9,7 @@ import { buildMyChildrenPage, getChildDetail, renameChild, discardChild } from "
 import { calcRefine, consumeChild ,calcEatChild} from "./lib/children.js"
 import { subMoney, updateUserNoTime, readUserDoc, bumpDailyCounterExceeded ,viewFamily} from "./lib/myfs.js"
 import { round2 } from "./lib/tool.js"
+import { addCalendarCount, renderCalendarImage } from "./lib/myfs_log.js"
 
 
 const __filename = fileURLToPath(import.meta.url)
@@ -76,35 +77,77 @@ export class example extends plugin {
   }
 
   async jue(e) {
-    if (await bumpDailyCounterExceeded(e.user_id, "jue")) {
-      e.reply("你今天撅的次数已达到上限！")
-      return true
-    }
-    const p = pickJueParents(e)
-    if (!p) return true
-
-    const res = await processInjection(p)
-    if (res?.triggered && res?.message) {
-      await e.reply(res.message)
-    }
-    return false
+  if (await bumpDailyCounterExceeded(e.user_id, "jue")) {
+    e.reply("你今天撅的次数已达到上限！")
+    return true
   }
 
-  async she(e) {
-    if (await bumpDailyCounterExceeded(e.user_id, "she")) {
-      e.reply("你今天射的次数已达到上限！")
-      return true
-    }
-    
-    const p = pickSheParents(e)
-    if (!p) return true
+  const p = pickJueParents(e)
+  if (!p) return true
 
-    const res = await processInjection(p)
-    if (res?.triggered && res?.message) {
-      await e.reply(res.message)
+  const res = await processInjection(p)
+  if (res?.triggered && res?.message) {
+    // 原本回复
+    await e.reply(res.message)
+
+    // =========================
+    // 🐍 计数（jue / she 共用）
+    // =========================
+    const todayCount = addCalendarCount(e.user_id, "snake")
+
+    // =========================
+    // 今天第一次 → 自动显示蛇日历
+    // =========================
+    if (todayCount === 1) {
+      const img = await renderCalendarImage({
+        qq: e.user_id,
+        nickname: e.sender.nickname,
+        calendarId: "snake",
+        emoji: "🐍"
+      })
+      if (img) await e.reply(img)
     }
-    return false
   }
+
+  return false
+}
+
+async she(e) {
+  if (await bumpDailyCounterExceeded(e.user_id, "she")) {
+    e.reply("你今天射的次数已达到上限！")
+    return true
+  }
+
+  const p = pickSheParents(e)
+  if (!p) return true
+
+  const res = await processInjection(p)
+  if (res?.triggered && res?.message) {
+    // 原本回复
+    await e.reply(res.message)
+
+    // =========================
+    // 🐍 计数（与 jue 共用）
+    // =========================
+    const todayCount = addCalendarCount(e.user_id, "snake")
+
+    // =========================
+    // 今天第一次 → 自动显示蛇日历
+    // =========================
+    if (todayCount === 1) {
+      const img = await renderCalendarImage({
+        qq: e.user_id,
+        nickname: e.sender.nickname,
+        calendarId: "snake",
+        emoji: "🐍"
+      })
+      if (img) await e.reply(img)
+    }
+  }
+
+  return false
+}
+
 
   async childrenList(e) {
     const page = parsePage(e.msg)

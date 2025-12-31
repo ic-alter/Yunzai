@@ -14,6 +14,7 @@ import {
   updateUserNoTime,addMoney, subMoney, getMoney, addJy, subJy, getJy,getUsername,setUsername,
   bumpDailyCounterExceeded
 } from "./lib/myfs.js"
+import { addCalendarCount, renderCalendarImage } from "./lib/myfs_log.js"
 
 // ========================
 // 插件主体
@@ -25,7 +26,7 @@ export class example extends plugin {
       dsc: '牛牛战斗',
       priority: 0,
       rule: [
-        { reg: '^#*(.)*(立了|打胶|硬了|力了|玩几把)$', fnc: 'lile' },
+        { reg: '^#*(.)*(立了|打胶|硬了|力了|玩几把|撸管|鹿关|鹿管|🦌)$', fnc: 'lile' },
         { reg: '^#*(.)*(嗦|锁|吃|🔒|咬)(.)*牛牛$', fnc: 'suoNiuNiu' },
         { reg: '^#*(.)*击剑$', fnc: 'jijian' },
         // 新增：看看牛牛
@@ -44,8 +45,26 @@ export class example extends plugin {
 
   async lile(e) {
     const msg = await applyAndDescribe(e.user_id, e.sender.nickname)
+    // =========================
+  // ① 增加 🦌 计数（这里是唯一正确的位置）
+  // =========================
+  const todayCount = addCalendarCount(e.user_id, "deer")
+
+  // =========================
+  // ② 如果是今天第一次 🦌，自动画日历
+  // =========================
+  if (todayCount === 1) {
+    const img = await renderCalendarImage({
+      qq: e.user_id,
+      nickname: e.sender.nickname,
+      calendarId: "deer",
+      emoji: "🦌"
+    })
+    if (img) await e.reply(img)
+  }
+
     e.reply(msg)
-    return true
+    return false
   }
 
   async suoNiuNiu(e) {
@@ -54,6 +73,7 @@ export class example extends plugin {
     const mid = ats[0].qq
     const mname = ats[0].text
     const msg = await applyAndDescribe(mid,mname, 0.5)
+    const todayCount = addCalendarCount(mid, "deer")
     e.reply(msg)
     return true
   }
@@ -73,9 +93,28 @@ export class example extends plugin {
     // 参数顺序：idA, idB, nameA, nameB
     const msg = await duel(fid, mid, fname, mname)
     if (msg === "间隔时间太短，休息一下吧！") {
+      const todayCount = addCalendarCount(fid, "fencing")
       e.reply(msg)
       return true
     }
+    // =========================
+    // ①【这里】增加击剑计数
+    // =========================
+    const todayCount = addCalendarCount(fid, "fencing")
+
+    // =========================
+    // ②【这里】判断是否今天第一次
+    // =========================
+    if (todayCount === 1) {
+      const img = await renderCalendarImage({
+        qq: fid,
+        nickname: fname,
+        calendarId: "fencing",
+        emoji: "🤺"
+      })
+      if (img) await e.reply(img)
+    }
+
     e.reply(msg)
     return false
   }
