@@ -10,6 +10,7 @@ import {
 } from "./lib/myfs.js"
 
 import { randPick, randInt, isSameDayInTZ, hmInTZ } from "./lib/tool.js"
+import { addCalendarCount, renderCalendarImage } from "./lib/myfs_log.js"
 
 const TZ = "Asia/Shanghai"
 
@@ -104,6 +105,22 @@ export class example extends plugin {
           : "",
       ].filter(Boolean).join("\n")
     )
+    // =========================
+      // ① 增加 🦌 计数（这里是唯一正确的位置）
+      // =========================
+      const todayCount = addCalendarCount(e.user_id, "deer")
+    
+      // =========================
+      // ② 如果是今天第一次 🦌，自动画日历
+      // =========================
+      const img = await renderCalendarImage({
+        qq: e.user_id,
+        nickname: e.sender.nickname,
+        calendarId: "deer",
+        emoji: "🦌"
+      })
+      if (img) await e.reply(img)
+      
     return true
   }
 
