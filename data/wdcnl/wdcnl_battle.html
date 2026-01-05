@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>超能力对战记录</title>
+
+<style>
+body {
+  font-family: 'SimSun', serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #fffdf6;
+  border: 2px solid #555;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.vs-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.player {
+  width: 45%;
+  border: 1px solid #999;
+  padding: 12px;
+  background: #f8f8f8;
+}
+
+.player h2 {
+  font-size: 18px;
+  margin: 5px 0 10px 0;
+  text-align: center;
+}
+
+.avatar {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #aaa;
+  background: #fff;
+}
+
+.info {
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.vs {
+  font-size: 26px;
+  font-weight: bold;
+  color: #c00;
+}
+
+.section-title {
+  font-size: 22px;
+  color: #c00;
+  border-bottom: 2px solid #c00;
+  margin: 25px 0 10px 0;
+  padding-bottom: 5px;
+}
+
+.section-content {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.battle-log {
+  white-space: pre-line;
+}
+
+.result {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px dashed #900;
+  background: #fff5f5;
+  color: #900;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>超能力对战</h1>
+  <div class="subtitle">⚠ 本记录由未知叙事者观测并整理 ⚠</div>
+
+  <div class="vs-box">
+    <div class="player">
+      <h2>{{A.昵称}}</h2>
+      <img class="avatar" src="{{A.头像}}">
+      <div class="info">
+        种族：{{A.种族}}<br>
+        阵营：{{A.阵营}}<br>
+        等级：{{A.等级}}<br>
+        被动：{{A.被动技能}}<br>
+        主动：{{A.主动技能}}<br>
+        代价：{{A.代价}}
+      </div>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div class="player">
+      <h2>{{B.昵称}}</h2>
+      <img class="avatar" src="{{B.头像}}">
+      <div class="info">
+        种族：{{B.种族}}<br>
+        阵营：{{B.阵营}}<br>
+        等级：{{B.等级}}<br>
+        被动：{{B.被动技能}}<br>
+        主动：{{B.主动技能}}<br>
+        代价：{{B.代价}}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">战斗过程</div>
+  <div class="section-content battle-log">
+{{战斗过程}}
+  </div>
+
+  <div class="section-title">战斗结果</div>
+  <div class="result">
+    {{战斗结果}}
+  </div>
+
+</div>
+</body>
+</html>

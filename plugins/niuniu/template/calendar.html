@@ -49,6 +49,12 @@ body {
   background: #fff;
 }
 
+.day.blank {
+  border: 0;
+  background: transparent;
+}
+
+
 .date {
   position: absolute;
   top: 4px;
@@ -107,17 +113,20 @@ body {
   </div>
 
   <div class="calendar">
-    {{each days d}}
-    <div class="day">
-      <div class="date">{{d.day}}</div>
+    {{each cells c}}
+      {{if c.isBlank}}
+        <div class="day blank"></div>
+      {{else}}
+        <div class="day">
+          <div class="date">{{c.day}}</div>
+          <div class="emoji">{{emoji}}</div>
 
-      <div class="emoji">{{emoji}}</div>
-
-      {{if d.count > 0}}
-        <div class="check">✔</div>
-        <div class="count">x{{d.count}}</div>
+          {{if c.count > 0}}
+            <div class="check">✔</div>
+            <div class="count">x{{c.count}}</div>
+          {{/if}}
+        </div>
       {{/if}}
-    </div>
     {{/each}}
   </div>
 

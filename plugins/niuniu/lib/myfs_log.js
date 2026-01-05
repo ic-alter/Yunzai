@@ -73,10 +73,15 @@ export function getMonthCalendar(qq, calendarId) {
   const { now, month } = getTodayInfo()
 
   const year = now.getFullYear()
-  const mon = now.getMonth()
+  const mon = now.getMonth() // 0-11
   const daysInMonth = new Date(year, mon + 1, 0).getDate()
 
   const monthData = data?.[calendarId]?.[month] ?? {}
+
+  // 1号是星期几：JS getDay() => 周日0...周六6
+  // 我们要周一为0...周日6：
+  const firstDowMon0 = (new Date(year, mon, 1).getDay() + 6) % 7
+  const leadingBlanks = firstDowMon0 // 需要补的空格数（周一开头）
 
   const days = []
   let totalDays = 0
@@ -87,11 +92,22 @@ export function getMonthCalendar(qq, calendarId) {
     const count = monthData[d] || 0
     if (count > 0) totalDays++
     totalCount += count
-
     days.push({ day: d, count })
   }
 
-  return { month, days, totalDays, totalCount }
+  // ⭐ 给模板用的网格：先补空格，再放日期格子，最后补齐到整周
+  const cells = []
+  for (let i = 0; i < leadingBlanks; i++) {
+    cells.push({ isBlank: true })
+  }
+  for (const d of days) {
+    cells.push({ isBlank: false, day: d.day, count: d.count })
+  }
+  while (cells.length % 7 !== 0) {
+    cells.push({ isBlank: true })
+  }
+
+  return { month, days, cells, totalDays, totalCount }
 }
 
 // ========================
@@ -106,6 +122,7 @@ export async function renderCalendarImage({ qq, nickname, calendarId, emoji }) {
     nickname,
     emoji,
     days: calendar.days,
+    cells: calendar.cells, // ⭐关键：把网格数据传给模板
     totalDays: calendar.totalDays,
     totalCount: calendar.totalCount
   }

@@ -47,6 +47,11 @@ export class example extends plugin {
           reg: "^#?超能力帮助$",
           fnc: 'cnl_help'
         },
+        {
+          reg: '^#?超能力(对战|战斗|对决).*$',
+          fnc: 'cnl_battle'
+        },
+
       ]
     })
   }
@@ -169,6 +174,38 @@ export class example extends plugin {
     if (img) await this.e.reply(_.concat(img))
     return true //返回true 阻挡消息不再往下
   }
+
+  async cnl_battle(e) {
+    let at = e.message.find(m => m.type === 'at')
+    if (!at) {
+      e.reply('请 @ 一名对象进行超能力对战')
+      return true
+    }
+
+    let A_id = e.user_id
+    let B_id = at.qq
+
+    let A = await genPlayer(A_id, e.sender.nickname)
+    let B = await genPlayer(B_id, at.text)
+
+    // 调用大模型生成战斗文本
+    let battleText = await callLLMBattle(A, B)
+
+    let tplFile = `${_path}/wdcnl_battle.html`
+    let data = {
+      tplFile,
+      A,
+      B,
+      战斗过程: battleText.process,
+      战斗结果: battleText.result
+    }
+
+    let img = await puppeteer.screenshot('wdcnl_battle', data)
+    if (img) await e.reply(img)
+
+    return true
+  }
+
 }
 
 async function getAvatar (userId) {
@@ -370,4 +407,146 @@ async function getBaseinfo(e){
 
 function randPick(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
+}
+
+async function genPlayer(userId, nickname) {
+  let avatar = await getAvatar(userId)
+
+  let zdjn_json = JSON.parse(fs.readFileSync(zdjn + "zdjn.json"))
+  let bdjn_json = JSON.parse(fs.readFileSync(bdjn + "bdjn.json"))
+  let ds_json = JSON.parse(fs.readFileSync(ds + "ds.json"))
+
+  function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)]
+  }
+
+  let baseinfo = await getBaseinfo({ user_id: userId })
+  let camp = await getCamp({ user_id: userId })
+
+  return {
+    昵称: nickname,
+    头像: avatar,
+    主动技能: pick(zdjn_json),
+    被动技能: pick(bdjn_json),
+    代价: pick(ds_json),
+    种族: baseinfo.种族,
+    等级: baseinfo.rank.value,
+    阵营: `${camp.属性1.name}·${camp.属性2.name} ${camp.阵营}`
+  }
+}
+
+async function callLLMBattle(A, B) {
+  let cfgPath = `${_path}/llm.config.json`
+  let llmCfg = JSON.parse(fs.readFileSync(cfgPath, 'utf8')).llm
+
+  let prompt = `
+你是一名讲故事的人，负责把一场超能力对战讲给普通人听。
+你的语言应该清楚、好懂、有画面感，不要使用晦涩、抽象、哲学化的表达。
+
+这不是简单的打架，而是一场“能力对能力”的较量。
+如果能力偏向控制、规则、概念、心理、环境影响，那么战斗可以是暗中的、间接的，
+不要求正面硬碰硬。
+
+【能力与代价说明（重要）】
+
+以下说明用于理解角色属性的含义，必须严格遵守：
+
+1. 被动技能
+- 无需角色主动触发
+- 角色也无法主动关闭
+- 只要满足条件就会一直生效
+- 被动技能可能在角色不希望的情况下产生影响
+
+2. 主动技能
+- 必须由角色基于自身意识主动发起
+- 可以选择是否使用、何时使用
+- 主动技能通常是战斗中改变局势的关键手段
+
+3. 代价
+- 代价是能力的一部分，而不是事后惩罚
+- 代价可能表现为：
+  · 限制角色无法做出某些行为
+  · 在执行某些特定行为后必须承受负面后果
+- 代价必须在战斗过程中真实发生
+- 代价必须对战斗选择或最终胜负产生实际影响
+- 不允许忽略、弱化或“事后无影响”地处理代价
+
+
+【重要规则】
+1. 你必须给出明确的胜负结果
+2. 默认情况下必须有一方胜利，另一方失败
+3. “两败俱伤 / 中断 / 平局”只能在极少数情况下出现（不超过 10%）
+4. 胜负必须由能力、代价、性格、阵营或意外因素导致，而不是简单比谁更强
+5. 被动技能和代价必须在战斗中真实生效，并对胜负产生影响
+6. 【称呼规则（必须严格遵守）】
+- 在【战斗过程】的叙事中，禁止使用“A”“B”“角色A”“角色B”等任何字母或编号指代
+- 必须始终使用角色的“昵称”来指代行动者
+- 昵称不涉及能力的任何描述，仅作为身份标识，不能因为昵称而影响战斗
+- 每一个动作、判断、反应，都要明确写出是谁在做（用昵称）
+- 示例（正确）：
+  · “${A.昵称} 先发动能力，试图限制对手的行动。”
+  · “${B.昵称} 察觉到异常，选择暂时后退。”
+- 示例（错误）：
+  · “A 发动了能力。”
+  · “B 进行了反击。”
+
+
+【战斗描写要求】
+- 战斗过程分为 3～5 个自然段
+- 每一段都要推动局势变化
+- 可以出现误判、反转、利用规则、心理博弈
+- 如果一方的能力不适合直接战斗，请改用：
+  · 诱导
+  · 限制
+  · 消耗
+  · 规则利用
+  · 环境或时间影响
+
+【角色A】
+昵称：${A.昵称}
+种族：${A.种族}
+阵营：${A.阵营}
+主动技能：${A.主动技能}
+被动技能：${A.被动技能}
+代价：${A.代价}
+
+【角色B】
+昵称：${B.昵称}
+种族：${B.种族}
+阵营：${B.阵营}
+主动技能：${B.主动技能}
+被动技能：${B.被动技能}
+代价：${B.代价}
+
+【输出格式（必须严格遵守）】
+
+【战斗过程】
+（用通俗、叙事化的语言描述全过程）
+
+【战斗结果】
+胜者：XXX \n
+用一句话说明胜负原因
+`
+
+  let res = await fetch(llmCfg.base_url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${llmCfg.api_key}`
+    },
+    body: JSON.stringify({
+      model: llmCfg.model,
+      messages: [{ role: 'user', content: prompt }],
+      temperature: llmCfg.temperature,
+      max_tokens: llmCfg.max_tokens
+    })
+  })
+
+  let json = await res.json()
+  let content = json.choices[0].message.content
+
+  let process = content.match(/【战斗过程】([\s\S]*?)【战斗结果】/)?.[1]?.trim() || content
+  let result = content.match(/【战斗结果】([\s\S]*)/)?.[1]?.trim() || '结果未知'
+
+  return { process, result }
 }
