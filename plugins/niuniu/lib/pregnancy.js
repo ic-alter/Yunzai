@@ -1,12 +1,6 @@
 import { withLocks, readUserDoc, nextGlobalId } from "./myfs.js"
-import { round2 } from "./tool.js"
+import { round2, asIdStr } from "./tool.js"
 import { genNobleName } from "./llm.js"
-
-function asIdStr(x) {
-  const s = String(x ?? "").trim()
-  if (!s) throw new Error("ID不能为空")
-  return s
-}
 
 function ensurePregState(doc) {
   if (!doc["怀孕概率"] || typeof doc["怀孕概率"] !== "object") {

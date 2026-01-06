@@ -1,6 +1,6 @@
 // lib/outing_state.js
 import { readUserDoc, updateUserDoc } from "./myfs.js" // 改成你项目里真实路径：readUserDoc/updateUserDoc 所在文件
-import { asIdStr } from "./children.js" // 如果 asIdStr 不在这，改成你项目里实际位置
+import { asIdStr } from "./tool.js" // 如果 asIdStr 不在这，改成你项目里实际位置
 
 const OUTING_LAST_LOC_KEY = "__OUTING_LAST_LOC__"
 

@@ -1,7 +1,7 @@
 // plugins/niuniu/fs.js
 import fs from "fs"
 import path from "path"
-import { timeLevel, toNonNegNumber, round2, maxConcubinesByHardness } from "./tool.js"
+import { timeLevel, toNonNegNumber, round2, maxConcubinesByHardness, asIdStr } from "./tool.js"
 
 // ========================
 // JSON 文件存储设置
@@ -313,9 +313,7 @@ function ensureMarry(doc) {
   return m
 }
 
-function asIdStr(id) {
-  return String(id)
-}
+
 
 function cnRole(role) {
   if (role === MARRY_ROLES.HUSBAND) return "丈夫"

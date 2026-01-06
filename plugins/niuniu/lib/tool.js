@@ -20,6 +20,13 @@ export function randPick(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
+export function asIdStr(x) {
+  let s = String(x ?? "").trim()
+  if (!s) throw new Error("ID不能为空")
+  return s
+}
+
+
 // ========================
 // 数字格式化
 // ========================

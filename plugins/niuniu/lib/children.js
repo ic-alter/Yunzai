@@ -1,11 +1,8 @@
 // plugins/niuniu/lib/children.js
 import { readUserDoc, updateUserDoc, getUsername } from "./myfs.js"
 import { viewFamily,addMoney } from "./myfs.js"
-import { dayKeyInTZ } from "./tool.js"
+import { dayKeyInTZ,asIdStr } from "./tool.js"
 
-export function asIdStr(x) {
-  return String(x ?? "").trim()
-}
 
 // 小工具
 function arr(x) {

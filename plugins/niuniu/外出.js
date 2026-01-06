@@ -1,7 +1,7 @@
 // plugins/外出.js
 import plugin from "../../lib/plugins/plugin.js"
 
-import { asIdStr } from "./lib/children.js"  // 如果 asIdStr 是全局/别处导出，改成你的真实路径
+import { asIdStr } from "./lib/tool.js"  // 如果 asIdStr 是全局/别处导出，改成你的真实路径
 import { listFamilyChildren } from "./lib/children.js"     // 你之前实现的家庭孩子列表（带/不带 __ownerId 都行）
 import { canChildJoinOuting, getOutingDailyInfo } from "./lib/children.js"
 
