@@ -15,6 +15,7 @@ import {
   bumpDailyCounterExceeded
 } from "./lib/myfs.js"
 import { addCalendarCount, renderCalendarImage } from "./lib/myfs_log.js"
+import {getUserItemCount} from "./lib/items.js"
 
 // ========================
 // 插件主体
@@ -695,14 +696,20 @@ async function duel(idA, idB, nameA, nameB) {
     ? { id: idB, name: nameB, data: B }
     : { id: idA, name: nameA, data: A }
 
+  // ---- 道具判定：败者是否持有「牛牛保险」----
+  const hasInsurance = (await getUserItemCount(loser.id, "牛牛保险")) > 0
+
+  // 损失系数：有保险则减小，否则不减小
+  const lossMul = hasInsurance ? 0.5 : 1
+
   const stealRate = randFloat(0.15, 0.25)
   const stealLen = loser.data.length * stealRate
   const stealRad = loser.data.radius * stealRate
 
   const winnerNewLen = winner.data.length + stealLen
   const winnerNewRad = winner.data.radius + stealRad
-  const loserNewLen  = loser.data.length - stealLen*0.4 //败者损失长度减小
-  const loserNewRad  = loser.data.radius - stealRad*0.4
+  const loserNewLen  = loser.data.length - stealLen*lossMul //败者损失长度减小
+  const loserNewRad  = loser.data.radius - stealRad*lossMul
 
   await updateUserNoTime(winner.id, winnerNewLen, winnerNewRad, winner.data.hardness)
   await updateUserNoTime(loser.id, loserNewLen, loserNewRad, loser.data.hardness)
@@ -711,7 +718,8 @@ async function duel(idA, idB, nameA, nameB) {
   let add_money = Math.max(Math.floor(100000 - (winner.data.hardness-loser.data.hardness)*1000), 10000)
   await addJy(winner.id, add_ml)
   await addMoney(winner.id, add_money)
-  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}金币奖励。`
+  const insuranceText = hasInsurance ? `由于${loser.name}持有牛牛保险，牛牛损失量降低50%。` : ""
+  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}金币奖励。${insuranceText}`
 }
 
 

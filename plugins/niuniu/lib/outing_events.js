@@ -57,7 +57,117 @@ export const OUTING_EVENTS = {
       },
     },
   ],
+},
+{
+  id: "event_open_locked_cabinet",
+
+  name: "打开密码锁锁住的柜子",
+
+  weight: 1,
+
+  intro: "家中为什么会有一个用密码锁锁住的柜子？猜一下密码应该能打开",
+
+  requirement: {
+    text: "必须要智力体能外貌情商都大于等于90的小孩才被允许靠近这个柜子",
+    test: (child) => {
+      return (
+        child.talent.iq >= 90 &&
+        child.talent.str >= 90 &&
+        child.talent.face >= 90 &&
+        child.talent.eq >= 90
+      )
+    },
+  },
+
+  branches: [
+    {
+      when: ({ items }) => {
+        return items.has("牛牛保险")
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "柜子里空空如也。"
+      },
+    },
+
+    {
+      when: ({ items }) => {
+        return !items.has("牛牛保险") && !items.has("牛牛投保人资料")
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "密码完全猜不出来。。密码提示说赌场有一些资料可以协助打开柜子。可是赌场在哪里？"
+      },
+    },
+
+    {
+      when: ({ items }) => {
+        return !items.has("牛牛保险") && !items.has("牛牛被保险人资料")
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "密码还是猜不出来。密码提示说另一份资料在森林小木屋里，和一堆垃圾混在一起？"
+      },
+    },
+
+    {
+      when: ({ items }) => {
+        return !items.has("牛牛保险") && !items.has("牛牛受益人资料")
+      },
+
+      effect: () => {
+        return {}
+      },
+
+      end: () => {
+        return "密码提示说的是“荒漠中的湖畔，于湖心祈愿”。听说要去很远的地方才能找到。。"
+      },
+    },
+
+    {
+      when: ({ items }) => {
+        return (
+          !items.has("牛牛保险") &&
+          items.has("牛牛投保人资料") &&
+          items.has("牛牛被保险人资料") &&
+          items.has("牛牛受益人资料")
+        )
+      },
+
+      effect: () => {
+        return {
+          items: {
+            consume: {
+              "牛牛投保人资料": 1,
+              "牛牛被保险人资料": 1,
+              "牛牛受益人资料": 1,
+            },
+            gain: {
+              "牛牛保险": 1,
+            },
+          },
+        }
+      },
+
+      end: ({ childBefore }) => {
+        return `综合三份资料的提示，${childBefore.name}终于推理出了密码是350234。打开柜子，里面是一份“牛牛保险”。持有牛牛保险时，与他人堂堂正正击剑失败后牛牛的损失量降低50%`
+      },
+    },
+  ],
 }
+
   ],
   破旧的私立医院: [
     {
@@ -628,6 +738,123 @@ export const OUTING_EVENTS = {
           return "超大成功！获得200000金币"
         }
         return ""
+      },
+    },
+  ],
+}
+
+  ],
+  赌场VIP房: [
+    {
+  id: "event_safe_break_vip",
+
+  name: "偷偷撬开保险柜",
+
+  weight: 1,
+
+  intro: "VIP房的角落有一个保险柜，如果体能和智力够高或许能够撬开，但被发现也许会有严厉的惩罚……",
+
+  requirement: {
+    text: "需要体能和智力都较高，且身体状态良好",
+    test: (child) => {
+      return child.talent.str > 60 && child.talent.iq > 60 && child.health > 50
+    },
+  },
+
+  branches: [
+    {
+      when: () => {
+        return Math.random() < 0.2
+      },
+
+      effect: ({ childBefore }) => {
+        if (childBefore.talent.eq > 80) {
+          return {
+            player: {
+              moneyDelta: -50000,
+            },
+            child: {
+              moodDelta: -15,
+            },
+            meta: {
+              caught: true,
+              eqHigh: true,
+            },
+          }
+        }
+
+        return {
+          player: {
+            moneyDelta: -100000,
+          },
+          child: {
+            healthDelta: -40,
+            moodDelta: -30,
+          },
+          meta: {
+            caught: true,
+            eqHigh: false,
+          },
+        }
+      },
+
+      end: ({ meta }) => {
+        if (meta.eqHigh) {
+          return "很不幸的被发现了，苦苦哀求下赌场老板才同意放人。被收取罚款50000金币，心情-15"
+        }
+        return "很不幸的被发现了，被赌场老板暴揍了一顿，健康-40，心情-30，还被收取100000金币罚款"
+      },
+    },
+
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore, items }) => {
+        const successRate = (childBefore.talent.str + childBefore.talent.iq) / 3
+        const roll = Math.random() * 100
+        const success = roll < successRate
+
+        if (!success) {
+          return {
+            meta: {
+              success: false,
+              roll,
+              successRate,
+            },
+          }
+        }
+
+        const gainItems = {}
+        if (!items.has("牛牛投保人资料") && !items.has("牛牛保险")) {
+          gainItems["牛牛投保人资料"] = 1
+        }
+
+        return {
+          player: {
+            moneyDelta: 300000,
+          },
+          meta: {
+            success: true,
+            roll,
+            successRate,
+            gotDoc: !!gainItems["牛牛投保人资料"],
+          },
+          items: Object.keys(gainItems).length > 0 ? { gain: gainItems } : undefined,
+        }
+      },
+
+      end: ({ meta }) => {
+        if (!meta.success) {
+          return "撬锁失败，什么也没有获得"
+        }
+
+        let text = "撬锁成功，获得300000金币。"
+        if (meta.gotDoc) {
+          text += "在保险箱中还找到了“牛牛投保人资料”，或许与家中被密码锁锁住的柜子有关？"
+        }
+        return text
       },
     },
   ],
@@ -1383,7 +1610,124 @@ export const OUTING_EVENTS = {
 }
 
   ], //糖果屋
-  小木屋的卧室: [],
+  小木屋的卧室: [
+    {
+  id: "event_search_old_nightstand",
+
+  name: "翻找破旧的床头柜",
+
+  weight: 1,
+
+  intro: "卧室破旧的床头柜里有许多东西，或许能从里面找到什么好东西？",
+
+  requirement: {
+    text: "需要一定体能且身体状况尚可",
+    test: (child) => {
+      return child.talent.str > 20 && child.health > 40
+    },
+  },
+
+  branches: [
+    {
+      when: ({ childBefore }) => {
+        return childBefore.talent.str < 50 && Math.random() < 0.5
+      },
+
+      effect: () => {
+        return {
+          child: {
+            healthDelta: -5,
+            moodDelta: -10,
+          },
+        }
+      },
+
+      end: ({ childBefore }) => {
+        return `破旧的床头柜要用很大力气才能拉开，结果${childBefore.name}因为用力太大手指被夹住，非常疼。健康和心情值减少`
+      },
+    },
+
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ items }) => {
+        const pool = [
+          { type: "item", name: "崭新的白袜" },
+          { type: "item", name: "发黄的二手白袜" },
+          { type: "item", name: "用过的卫生纸" },
+          { type: "item", name: "腐烂的苹果核" },
+          { type: "item", name: "枯叶" },
+          { type: "money", value: 1000 },
+          { type: "money", value: 50000 },
+          { type: "money", value: 85000 },
+          { type: "jy", value: 100 },
+          { type: "jy", value: 250 },
+          { type: "jy", value: 799 },
+          { type: "item", name: "硅胶牛牛模型" },
+          { type: "item", name: "老太太的假牙" },
+        ]
+
+        if (!items.has("牛牛被保险人资料") && !items.has("牛牛保险")) {
+          pool.push({ type: "item", name: "牛牛被保险人资料" })
+        }
+
+        const pick = pool[Math.floor(Math.random() * pool.length)]
+
+        if (pick.type === "money") {
+          return {
+            player: {
+              moneyDelta: pick.value,
+            },
+            meta: {
+              found: pick,
+            },
+          }
+        }
+
+        if (pick.type === "jy") {
+          return {
+            player: {
+              jyDelta: pick.value,
+            },
+            meta: {
+              found: pick,
+            },
+          }
+        }
+
+        return {
+          meta: {
+            found: pick,
+          },
+          items: {
+            gain: {
+              [pick.name]: 1,
+            },
+          },
+        }
+      },
+
+      end: ({ childBefore, meta }) => {
+        let text = `${childBefore.name}随便翻了翻床头柜，从中找到了`
+        if (meta.found.type === "money") {
+          text += `${meta.found.value}金币。`
+        } else if (meta.found.type === "jy") {
+          text += `${meta.found.value}ml金叶。`
+        } else {
+          text += `${meta.found.name}。`
+          if (meta.found.name === "牛牛被保险人资料") {
+            text += "或许与家中被密码锁锁住的柜子有关？"
+          }
+        }
+        return text
+      },
+    },
+  ],
+}
+
+  ],
   充满瘴气的沼泽: [
     {
   id: "outing_swimming_swamp",
@@ -2478,7 +2822,136 @@ export const OUTING_EVENTS = {
 
   薄雾湖畔: [],
   湖中小岛: [],
-  沉没的祭坛: [],
+  沉没的祭坛: [{
+  id: "event_pray_unknown_god",
+
+  name: "祈愿",
+
+  weight: 1,
+
+  intro: "诚心向此处不知名甚至有些恐怖的神像祈愿",
+
+  requirement: {
+    text: "需要心情愉快且情商较高",
+    test: (child) => {
+      return child.mood > 60 && child.talent.eq > 50
+    },
+  },
+
+  branches: [
+    {
+      when: ({ items }) => {
+        return (
+          items.has("牛牛投保人资料") &&
+          items.has("牛牛被保险人资料") &&
+          !items.has("牛牛受益人资料") &&
+          !items.has("牛牛保险")
+        )
+      },
+
+      effect: () => {
+        return {
+          items: {
+            gain: {
+              "牛牛受益人资料": 1,
+            },
+          },
+        }
+      },
+
+      end: () => {
+        return "不知名的神明说这里有在梦中寄存的一份资料，可能是现在需要的。获得了牛牛受益人资料。或许与家中被密码锁锁住的柜子有关？"
+      },
+    },
+
+    {
+      when: () => {
+        return true
+      },
+
+      effect: ({ childBefore }) => {
+        const successRate = 30 + childBefore.talent.eq / 2
+        const roll = Math.random() * 100
+        const success = roll < successRate
+
+        if (!success) {
+          return {
+            child: {
+              moodDelta: -58,
+              talentDelta: {
+                iq: -5,
+                eq: -5,
+              },
+            },
+            meta: {
+              success: false,
+              roll,
+              successRate,
+            },
+          }
+        }
+
+        const rewards = [
+          { type: "talent", key: "face", value: 10, text: "外貌+10" },
+          { type: "talent", key: "iq", value: 10, text: "智力+10" },
+          { type: "talent", key: "eq", value: 10, text: "情商+10" },
+          { type: "talent", key: "str", value: 10, text: "体能+10" },
+          { type: "health", value: 20, text: "健康+20" },
+          { type: "mood", value: 20, text: "心情+20" },
+          { type: "money", value: 50000, text: "获得50000金币" },
+          { type: "money", value: 70000, text: "获得70000金币" },
+          { type: "money", value: 150000, text: "获得150000金币" },
+          { type: "jy", value: 325, text: "获得325ml金叶" },
+          { type: "jy", value: 900, text: "获得900ml金叶" },
+        ]
+
+        const pick = rewards[Math.floor(Math.random() * rewards.length)]
+        const result = {
+          meta: {
+            success: true,
+            roll,
+            successRate,
+            rewardText: pick.text,
+          },
+        }
+
+        if (pick.type === "talent") {
+          result.child = {
+            talentDelta: {
+              [pick.key]: pick.value,
+            },
+          }
+        } else if (pick.type === "health") {
+          result.child = {
+            healthDelta: pick.value,
+          }
+        } else if (pick.type === "mood") {
+          result.child = {
+            moodDelta: pick.value,
+          }
+        } else if (pick.type === "money") {
+          result.player = {
+            moneyDelta: pick.value,
+          }
+        } else if (pick.type === "jy") {
+          result.player = {
+            jyDelta: pick.value,
+          }
+        }
+
+        return result
+      },
+
+      end: ({ childBefore, meta }) => {
+        if (!meta.success) {
+          return `${childBefore.name}在祈愿时突发恶疾，极度惊恐好像看到了什么，但又语无伦次只会发出一些毫无含义的叫声，最后昏了过去。心情极大幅度降低。`
+        }
+        return `${childBefore.name}诚心祈愿，${meta.rewardText}`
+      },
+    },
+  ],
+}
+],
   断崖高地: [],
   断崖边的旧哨塔: [],
 }

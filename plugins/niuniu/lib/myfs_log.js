@@ -28,7 +28,7 @@ function getUserFilePath(qq) {
   const dir = path.join(usersRoot, tail)
   fs.mkdirSync(dir, { recursive: true })
   return path.join(dir, `${qq}.json`)
-}
+} 
 
 function loadUserData(qq) {
   const file = getUserFilePath(qq)

@@ -49,9 +49,9 @@ function pickSheParents(e) {
 }
 
 function parsePage(msg) {
-  const m = String(msg || "").trim().match(/^#?(子嗣|孩子)列表(\d+)?$/)
+  const m = String(msg || "").trim().match(/^#?(子嗣|孩子)列表\s*(\d+)?$/)
   if (!m) return null
-  const p = m[1] ? Number(m[1]) : 1
+  const p = m[2] ? Number(m[2]) : 1
   return Number.isFinite(p) && p >= 1 ? p : 1
 }
 
@@ -66,8 +66,8 @@ export class example extends plugin {
         { reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅|龟龟撅)", fnc: "jue" },
         { reg: "^#?(射|🐍|飞机杯|大撅|坐撅|躺撅)", fnc: "she" },
 
-        { reg: "^#?(子嗣|孩子)列表\\s*(\\d+)?$", fnc: "childrenList" },
-        { reg: "^#?(子嗣|孩子)详情\\s*\\+?(\\d+)$", fnc: "childDetail" },
+        { reg: "^#?(子嗣|孩子)列表", fnc: "childrenList" },
+        { reg: "^#?(子嗣|孩子)详情", fnc: "childDetail" },
         { reg: "^#?改名", fnc: "renameStart" },
         { reg: "^#?(丢弃|遗弃|抛弃|弃养)(孩子|子嗣)?", fnc: "丢弃" },
         { reg: "^#?炼化", fnc: "炼化" },
