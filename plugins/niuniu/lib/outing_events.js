@@ -2,6 +2,7 @@
 import { getMoney, getJy, addMoney, subMoney, addJy, subJy, getRawUserOrThrow, updateUserNoTime } from "./myfs.js"
 import { getFamilyChild } from "./children.js" // 你之前实现的
 import { patchChild, getOutingDailyInfo } from "./children.js"
+import {getUserItems,  getUserItemCount,  addUserItem,  consumeUserItem,} from "./items.js"
 
 export const MAX_OUTING_TIMES = 10 //每个孩子每天最多外出10次
 
@@ -2506,7 +2507,15 @@ function isNotEnough(err) {
 function keyName(key) {
   if (key === "money") return "金币"
   if (key === "jy") return "金叶"
-  return key || "资源"
+  return key
+}
+
+//辅助函数：从物品列表中获取指定物品的数量
+function getUserItemCountFromList(items, name) {
+  const it = Array.isArray(items)
+    ? items.find(i => i?.name === name)
+    : null
+  return Number.isInteger(it?.count) ? it.count : 0
 }
 
 // ---------- 应用事件：给插件 state4 调用 ----------
@@ -2532,26 +2541,49 @@ const now = Date.now()
 const playerBefore = await getRawUserOrThrow(uid)
 const [playerMoney, playerJy] = await Promise.all([getMoney(uid), getJy(uid)])
 
-// 选分支：when 也给到更多上下文
+// ---------- 道具上下文（只读） ----------
+const itemsList = await getUserItems(uid)
+
+const itemsCtx = {
+  has: (name) => getUserItemCountFromList(itemsList, name) > 0,
+  count: (name) => getUserItemCountFromList(itemsList, name),
+}
+
+// ---------- 统一上下文（when / effect 共用） ----------
+const ctx = {
+  actorId: uid,
+  cid: c,
+  now,
+  childBefore,
+  playerBefore,
+  playerMoney,
+  playerJy,
+  items: itemsCtx,
+}
+
+// ---------- 选分支 ----------
 const branches = Array.isArray(event.branches) ? event.branches : []
 const pickedBranch =
   branches.find((b) =>
-    typeof b?.when === "function"
-      ? b.when({ actorId: uid, cid: c, now, childBefore, playerBefore, playerMoney, playerJy })
-      : false
+    typeof b?.when === "function" ? b.when(ctx) : false
   ) || branches[0]
-if (!pickedBranch) throw new Error("事件配置异常：缺少分支")
 
-// ✅ 计算 effect：对象 or 函数
+if (!pickedBranch) {
+  throw new Error("事件配置异常：缺少分支")
+}
+
+// ---------- 计算 effect：对象 or 函数 ----------
 let effPack = null
 if (typeof pickedBranch.effect === "function") {
-  effPack = await pickedBranch.effect({ actorId: uid, cid: c, now, childBefore, playerBefore, playerMoney, playerJy })
+  effPack = await pickedBranch.effect(ctx)
 } else {
   effPack = pickedBranch.effect || {}
 }
+
 if (!effPack || typeof effPack !== "object") effPack = {}
 
-const meta = effPack.meta // 可选
+// ---------- 拆包 ----------
+const meta = effPack.meta
 const playerEff = effPack.player || {}
 const childEff = effPack.child || {}
 
@@ -2628,6 +2660,46 @@ const childEff = effPack.child || {}
 
     await updateUserNoTime(uid, nextLen, nextRad, nextHard)
   }
+  // ---------- 道具处理（新增） ----------
+const itemEff = effPack.items
+
+if (itemEff && typeof itemEff === "object") {
+  const gain = itemEff.gain || {}
+  const consume = itemEff.consume || {}
+
+  // 先校验消耗是否足够（体验更好）
+  for (const [name, cnt] of Object.entries(consume)) {
+    const need = Math.max(0, Number(cnt) || 0)
+    if (need > 0) {
+      const have = await getUserItemCount(uid, name)
+      if (have < need) {
+        const err = new Error(`道具不足：${name}`)
+        err.code = "NOT_ENOUGH"
+        err.key = "item"
+        err.item = name
+        err.have = have
+        err.need = need
+        throw err
+      }
+    }
+  }
+
+  // 再执行消耗
+  for (const [name, cnt] of Object.entries(consume)) {
+    const n = Number(cnt) || 0
+    if (n > 0) {
+      await consumeUserItem(uid, name, n)
+    }
+  }
+
+  // 再执行获得
+  for (const [name, cnt] of Object.entries(gain)) {
+    const n = Number(cnt) || 0
+    if (n > 0) {
+      await addUserItem(uid, name, n)
+    }
+  }
+}
 
   // ✅ 孩子变更 + 每日次数 +1
   const childAfter = await patchChild(uid, c, {

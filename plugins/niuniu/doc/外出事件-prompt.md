@@ -39,13 +39,13 @@
 
   branches: [
     {
-      when: ({ childBefore, playerBefore, playerMoney, playerJy, actorId, cid, now }) => {
+      when: ({ childBefore, playerBefore, playerMoney, playerJy, actorId, cid, now, items }) => {
         // 【这里填写分支触发条件】
         // 如果只有一个分支，可以直接 return true
         return true
       },
 
-      effect: ({ childBefore, playerBefore, playerMoney, playerJy, actorId, cid, now }) => {
+      effect: ({ childBefore, playerBefore, playerMoney, playerJy, actorId, cid, now, items }) => {
         // 【这里填写数值变化的计算逻辑】
         // 允许做复杂运算、随机数、条件判断
         // ⚠️ 注意：这里只返回“需要修改的字段”，不涉及的字段不要出现（Patch 语义）
@@ -89,6 +89,14 @@
           meta: {
             // 任意结构
           },
+          // ✅ 可选：道具变化（只描述，不做真实修改）
+          items?: {
+            // 获得道具（不会消耗）
+            gain?: { [道具名: string]: number }
+
+            // 消耗道具（仅在事件处理中统一扣除）
+            consume?: { [道具名: string]: number }
+          }
         }
       },
 
@@ -126,6 +134,34 @@
 ### playerMoney / playerJy
 - 玩家当前金币 / 金叶数值（number）
 
+### items（道具系统）
+
+#### 1️⃣ when / effect 参数中的 items（只读）
+
+items 是一个只读工具对象，用于判断玩家是否持有某些道具：
+
+- items.has("道具名") => boolean
+- items.count("道具名") => number
+
+⚠️ 注意：
+- 只能用于条件判断或计算
+- 不会消耗道具
+- 不允许直接修改道具数量
+
+#### 2️⃣ effect 返回值中的 items（描述性变化）
+
+在 effect 返回对象中，可以通过 items 字段描述道具变化：
+
+items?: {
+  gain?: { [道具名: string]: number }      // 获得道具
+  consume?: { [道具名: string]: number }   // 消耗道具
+}
+
+⚠️ 注意：
+- 这里只是“描述”，不会立即修改数据
+- 实际扣除与发放由事件处理器统一完成
+- 不写 items 表示本事件不涉及道具
+
 ---
 
 ## 四、业务规则（重要）
@@ -155,6 +191,10 @@
 5. **所有数值变化字段都是可选的**
    - 没写的字段表示“不发生变化”
    - talentSet / talentDelta 可以只写部分键（例如只写 iq 与 eq，face/str 不写则保持不变）
+
+6.- 事件结构体中【禁止】直接修改玩家数据或调用接口
+- 道具变化必须通过 effect.items 描述
+- 分支条件中只能检查道具是否存在，不会消耗
 
 ---
 
