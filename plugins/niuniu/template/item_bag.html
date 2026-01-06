@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  font-family: "SimSun", serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 12px;
+}
+
+.container {
+  width: 680px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item {
+  border-bottom: 1px dashed #ddd;
+  padding: 6px 0;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-count {
+  float: right;
+  color: #d97706;
+}
+
+.item-desc {
+  font-size: 13px;
+  color: #444;
+  margin-top: 2px;
+}
+
+.footer {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="title">{{nickname}}的仓库</div>
+
+  {{each items it}}
+    <div class="item">
+      <div class="item-name">
+        {{it.name}}
+        <span class="item-count">x{{it.count}}</span>
+      </div>
+      <div class="item-desc">{{it.desc}}</div>
+    </div>
+  {{/each}}
+
+  <div class="footer">
+    使用方式：道具使用 / 道具使用 道具名<br/>
+    丢弃方式：丢弃道具 道具名 数量
+  </div>
+</div>
+</body>
+</html>

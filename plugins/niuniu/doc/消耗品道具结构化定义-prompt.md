@@ -93,7 +93,23 @@ use: {
 5. 没写的字段表示“不发生变化”
 6. 同一字段不要同时使用 Set 和 Delta / Mul
 7. 所有数值必须是常量（不能写表达式）
+8. ⚠️ 关于 target = "any_player" 的重要说明：
 
+- 当 target 为 "any_player" 时：
+  - effect.player / effect.state 的“作用对象”
+    并不是固定的
+  - 实际作用的玩家由【使用时选择的目标玩家】决定
+- 在结构化定义中：
+  - 不需要
+  - 也不允许
+  描述“效果给谁”
+- 只需描述“效果是什么”
+9. - effect.player / effect.state 的作用对象：
+  - player      → 使用者
+  - any_player  → 使用时选择的目标玩家
+- effect.child 始终作用于使用者名下的孩子
+- effect.items 默认作用于使用者本身
+10. 约定当target为any_player的时候，不得出现effect.child，以防出现歧义。如果同时出现，你需要停止生成代码并给出错误信息
 ---
 
 ## 四、你接下来要做的事情

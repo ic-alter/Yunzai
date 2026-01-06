@@ -50,7 +50,7 @@ export const itemInfo = {
     "牛牛被保险人资料":{
         type:"特殊道具",
         desc:"一份资料，好像和家中密码锁锁住的柜子有关？"
-    }
+    },
     "牛牛受益人资料":{
         type:"特殊道具",
         desc:"一份资料，好像和家中密码锁锁住的柜子有关？"
@@ -77,10 +77,47 @@ export const itemInfo = {
     },
     "硅胶牛牛模型":{
         type:"消耗品-玩家",
-        desc:"一个用硅胶制作的牛牛模型"
+        desc:"一个用硅胶制作的牛牛模型,可以使牛牛长度和半径增加5%",
+        use: {
+            target: "player",
+            effect: {
+                player: {
+                lengthMul: 1.05,
+                radiusMul: 1.05,
+                },
+            },
+        },
     },
     "老太太的假牙":{
-        type:"消耗品-玩家",
-        desc:"被老太太使用过的假牙，假牙上还有一些牙垢和菜叶"
+        type:"消耗品-任意玩家",
+        desc:"被老太太使用过的假牙，假牙上还有一些牙垢和菜叶。可以使牛牛长度和半径增加5%，并获得3次击剑奖励翻倍状态",
+        use: {
+            target: "any_player",
+            effect: {
+                player: {
+                lengthMul: 1.05,
+                radiusMul: 1.05,
+                },
+                state: {
+                addCount: {
+                    key: "fencing_double_reward",
+                    count: 3,
+                },
+                },
+            },
+        },
+    },
+    "KFC全家桶":{
+        type:"消耗品-孩子",
+        desc:"包含5个原味鸡3组辣翅3杯可乐1份土豆泥的全家桶，小朋友很喜欢吃，但是吃多了会发胖哦！可以增加孩子15点心情，但是健康减少5",
+        use: {
+            target: "child",
+            effect: {
+                child: {
+                moodDelta: 15,
+                healthDelta: -5,
+                },
+            },
+        },
     }
 }
