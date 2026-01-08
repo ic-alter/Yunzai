@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body{
+      font-family: "SimSun", serif;
+      background:#0b0b0d;
+      margin:0;
+      padding:24px;
+      color:#e9e7e3;
+    }
+    .container{
+      max-width:680px; /* 必须 < 700px */
+      margin:0 auto;
+      background: radial-gradient(1200px 600px at 30% 0%, rgba(160,120,255,0.15), rgba(0,0,0,0)) ,
+                  linear-gradient(180deg, #121217, #0b0b0d);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.55);
+      border-radius:14px;
+      overflow:hidden;
+      position:relative;
+    }
+    .header{
+      padding:18px 20px 14px 20px;
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .title{
+      font-size:28px;
+      letter-spacing:2px;
+      margin:0 0 6px 0;
+      color:#f3efe8;
+    }
+    .sub{
+      font-size:13px;
+      opacity:0.85;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .profile{
+      display:flex;
+      gap:14px;
+      padding:18px 20px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      align-items:center;
+    }
+    .avatar{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.18);
+      object-fit:cover;
+      flex-shrink:0;
+      background:#111;
+    }
+    .who{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:0;
+    }
+    .nickname{
+      font-size:16px;
+      font-weight:700;
+      color:#f0ede6;
+      word-break:break-all;
+      line-height:1.2;
+    }
+    .meta{
+      font-size:12px;
+      opacity:0.8;
+    }
+
+    .section{
+      padding:18px 20px 6px 20px;
+    }
+    .label{
+      font-size:14px;
+      letter-spacing:1px;
+      color:#d9caa7;
+      margin:0 0 10px 0;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .label:before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:3px;
+      background:rgba(217,202,167,0.85);
+      box-shadow: 0 0 14px rgba(217,202,167,0.35);
+      display:inline-block;
+    }
+    .card{
+      white-space:pre-wrap;
+      line-height:1.7;
+      font-size:16px;
+      padding:14px 14px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.10);
+      margin:0 0 14px 0;
+      word-break:break-word;
+    }
+    .wish{
+      font-size:18px;
+      color:#fff7ea;
+    }
+    .scene{
+      color:#e8e5df;
+    }
+    .footer{
+      padding:14px 20px 18px 20px;
+      border-top:1px solid rgba(255,255,255,0.10);
+      font-size:12px;
+      opacity:0.85;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .seal{
+      color:#d7b7ff;
+      letter-spacing:1px;
+      font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">{{title}}</h1>
+      <div class="sub">
+        <div>记录时间：{{now}}</div>
+        <div>契约编号：{{userId}}</div>
+      </div>
+    </div>
+
+    <div class="profile">
+      <img class="avatar" src="{{avatar}}" alt="avatar" />
+      <div class="who">
+        <div class="nickname">许愿者：{{nickname}}</div>
+        <div class="meta">你已将愿望交付于黑圣杯——自此，代价随影而行。</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="label">所求之愿</div>
+      <div class="card wish">{{wish}}</div>
+
+      <div class="label">圣杯应允</div>
+      <div class="card scene">{{scene}}</div>
+    </div>
+
+    <div class="footer">
+      <div class="seal">{{seal}}</div>
+      <div>※ 以上为“万能许愿机”生成的命运回响</div>
+    </div>
+  </div>
+</body>
+</html>
