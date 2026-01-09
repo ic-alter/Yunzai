@@ -26,7 +26,12 @@ use: {
   // any_player：可以作用于自己或其他玩家
   // child：作用于某个孩子
   target: "player" | "any_player" | "child",
-
+  // 使用完成后附加的一句个性化描述（纯文本，可选）
+  // 该语句会被直接拼接在
+  // “xxx使用了xxx道具，” 之后
+  // ⚠️ 只能是纯文本，不允许占位符、不允许变量、不允许模板语法
+  afterText?: string,
+  //对玩家或其他玩家或孩子造成的影响
   effect: {
     // ---------- 玩家效果（可选） ----------
     player?: {
@@ -93,7 +98,8 @@ use: {
 5. 没写的字段表示“不发生变化”
 6. 同一字段不要同时使用 Set 和 Delta / Mul
 7. 所有数值必须是常量（不能写表达式）
-8. ⚠️ 关于 target = "any_player" 的重要说明：
+8. 对于state的key，即状态名称，就是事件描述中的中文名，不要擅自给其起一个英文的变量名
+9. ⚠️ 关于 target = "any_player" 的重要说明：
 
 - 当 target 为 "any_player" 时：
   - effect.player / effect.state 的“作用对象”
@@ -104,12 +110,19 @@ use: {
   - 也不允许
   描述“效果给谁”
 - 只需描述“效果是什么”
-9. - effect.player / effect.state 的作用对象：
+10. 各个量的作用对象
+- effect.player / effect.state 的作用对象：
   - player      → 使用者
   - any_player  → 使用时选择的目标玩家
 - effect.child 始终作用于使用者名下的孩子
-- effect.items 默认作用于使用者本身
-10. 约定当target为any_player的时候，不得出现effect.child，以防出现歧义。如果同时出现，你需要停止生成代码并给出错误信息
+- effect.items 作用于使用者本身
+11. 约定当target为any_player的时候，不得出现effect.child，以防出现歧义。如果同时出现，你需要停止生成代码并给出错误信息
+12. 【关于 afterText 的规则】
+- afterText 表示道具使用完成后的一句个性化描述
+- 必须是纯文本字符串
+- 不允许包含变量、占位符或模板语法
+- 不需要、也不允许描述“谁使用了谁”
+- 可以在 afterText 中重复具体数值或机制说明，或者根据接下来道具自然语言效果描述进行填写
 ---
 
 ## 四、你接下来要做的事情

@@ -17,6 +17,7 @@ import { patchChild } from "./children.js"
  * @param target 目标（可选）
  *   - { userId }   : any_player 时，效果目标玩家
  *   - { childId }  : child 时，目标孩子
+ * @returns {string | null} 使用后的个性化语句
  */
 export async function useConsumableItem(userId, itemName, target = {}) {
   const info = itemInfo[itemName]
@@ -87,6 +88,8 @@ export async function useConsumableItem(userId, itemName, target = {}) {
       eff.state.addTime.durationMs
     )
   }
+
+  return useDef.afterText ?? null
 }
 
 // =========================

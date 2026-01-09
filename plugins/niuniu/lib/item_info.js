@@ -37,7 +37,7 @@ use?: {
 }
 
 */
-//为了实现的简便，直接离婚卡，和重新冷静卡，都是离婚命令的时候触发，而不是主动使用。
+//为了实现的简便，直接离婚卡，之类是离婚命令的时候触发，而不是主动使用。
 export const itemInfo = {
     "牛牛保险":{
         type:"重要道具",
@@ -57,29 +57,36 @@ export const itemInfo = {
     },
     "崭新的白袜":{
         type:"交易物品",
-        desc:"完全全新的白袜，颜色是纯白，甚至还有一股淡淡的香味"
+        desc:"完全全新的白袜，颜色是纯白，甚至还有一股淡淡的香味",
+        default_price: 100
     },
     "发黄的二手白袜":{
         type:"交易物品",
-        desc:"已经发黄的白袜，硬的能立起来，散发出一股滂臭味"
+        desc:"已经发黄的白袜，硬的能立起来，散发出一股滂臭味",
+        default_price: 10
     },
     "腐烂的苹果核":{
         type:"交易物品",
-        desc:"被人吃完的苹果剩下的苹果核，放置了很久已经开始腐烂"
+        desc:"被人吃完的苹果剩下的苹果核，放置了很久已经开始腐烂",
+        default_price: 10
     },
     "枯叶":{
         type:"交易物品",
-        desc:"一片枯萎的叶子"
+        desc:"一片枯萎的叶子",
+        default_price: 10
     },
     "用过的卫生纸":{
         type:"交易物品",
-        desc:"一张已经被使用过的卫生纸"
+        desc:"一张已经被使用过的卫生纸",
+        default_price: 10
     },
     "硅胶牛牛模型":{
         type:"消耗品-玩家",
         desc:"一个用硅胶制作的牛牛模型,可以使牛牛长度和半径增加5%",
+        default_price: 1000,
         use: {
             target: "player",
+            afterText:"牛牛的长度和半径都增加了5%",
             effect: {
                 player: {
                 lengthMul: 1.05,
@@ -91,8 +98,10 @@ export const itemInfo = {
     "老太太的假牙":{
         type:"消耗品-任意玩家",
         desc:"被老太太使用过的假牙，假牙上还有一些牙垢和菜叶。可以使牛牛长度和半径增加5%，并获得3次击剑奖励翻倍状态",
+        default_price: 1000,
         use: {
             target: "any_player",
+            afterText:"其牛牛长度和半径都增加了5%，并获得了3次击剑奖励翻倍状态",    
             effect: {
                 player: {
                 lengthMul: 1.05,
@@ -100,7 +109,7 @@ export const itemInfo = {
                 },
                 state: {
                 addCount: {
-                    key: "fencing_double_reward",
+                    key: "击剑双倍奖励",
                     count: 3,
                 },
                 },
@@ -110,8 +119,10 @@ export const itemInfo = {
     "KFC全家桶":{
         type:"消耗品-孩子",
         desc:"包含5个原味鸡3组辣翅3杯可乐1份土豆泥的全家桶，小朋友很喜欢吃，但是吃多了会发胖哦！可以增加孩子15点心情，但是健康减少5",
+        default_price: 699,
         use: {
             target: "child",
+            afterText:"孩子的心情增加了15点，但是健康减少了5点",
             effect: {
                 child: {
                 moodDelta: 15,

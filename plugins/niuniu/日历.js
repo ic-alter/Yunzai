@@ -14,7 +14,7 @@ const MAP = {
 export class Calendar extends plugin {
   constructor() {
     super({
-      name: "日历查看",
+      name: "牛牛-日历查看",
       dsc: "鹿/击剑/蛇 日历图片",
       priority: 199,
       rule: [

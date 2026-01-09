@@ -116,8 +116,8 @@ export class NiuNiuItem extends plugin {
 
     // 消耗品-玩家
     if (targetType === "player") {
-      await useConsumableItem(e.user_id, itemName)
-      await e.reply(`你使用了【${itemName}】。`)
+      const afterText = await useConsumableItem(e.user_id, itemName)
+      await e.reply(`你使用了【${itemName}】。${afterText ? afterText : ""}`)
       return true
     }
 
@@ -174,13 +174,13 @@ export class NiuNiuItem extends plugin {
 
   this.finish("道具_选目标玩家")
 
-  await useConsumableItem(
+  const afterText = await useConsumableItem(
     this.e.user_id,
     ctx.itemName,
     { userId: mid }
   )
 
-  await e.reply(`你对【${mname}】使用了【${ctx.itemName}】。`)
+  await e.reply(`你对【${mname}】使用了【${ctx.itemName}】。${afterText ? afterText : ""}`)
   return true
 }
 
@@ -199,11 +199,11 @@ export class NiuNiuItem extends plugin {
     const child = ctx.children[idx - 1]
     this.finish("道具_选孩子")
 
-    await useConsumableItem(e.user_id, ctx.itemName, {
+    const afterText = await useConsumableItem(e.user_id, ctx.itemName, {
       childId: child.cid
     })
 
-    await e.reply(`已对【${child.name}】使用 ${ctx.itemName}`)
+    await e.reply(`已对【${child.name}】使用 【${ctx.itemName}】。${afterText ? afterText : ""}`)
     return true
   }
 
