@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  font-family: "SimSun", serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 14px;
+}
+
+.container {
+  width: 680px;              /* ★ 不得超过 700px */
+  background: #fff;
+  padding: 14px 16px 12px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.desc {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.trade {
+  border-top: 1px dashed #ddd;
+  padding: 10px 0;
+}
+
+.trade:first-child {
+  border-top: none;
+}
+
+.trade.ok .trade-line {
+  color: #146c2e;            /* 深绿：可交易 */
+}
+
+.trade.bad .trade-line {
+  color: #8a8a8a;            /* 灰：不可交易 */
+}
+
+.trade.ok .trade-title {
+  color: #146c2e;
+}
+
+.trade.bad .trade-title {
+  color: #8a8a8a;
+}
+
+.trade-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.trade-line {
+  font-size: 14px;
+}
+
+.item-desc {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="title">{{shopName}}</div>
+  <div class="desc">{{shopDesc}}</div>
+
+  {{each trades t}}
+    <div class="trade {{if t.canTrade}}ok{{else}}bad{{/if}}">
+      <div class="trade-title">{{t.index}}.</div>
+
+      <div class="trade-line">
+        {{t.costText}} → {{t.gainText}}
+      </div>
+
+      {{if t.itemDesc}}
+        <div class="item-desc">{{t.itemDesc}}</div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+</div>
+</body>
+</html>

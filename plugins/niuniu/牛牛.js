@@ -16,6 +16,7 @@ import {
 } from "./lib/myfs.js"
 import { addCalendarCount, renderCalendarImage } from "./lib/myfs_log.js"
 import {getUserItemCount} from "./lib/items.js"
+import { consumeStateIfExists, getPlayerStatesText} from "./lib/player_state.js"
 
 // ========================
 // 插件主体
@@ -137,7 +138,12 @@ export class example extends plugin {
       const u = await getWithLevel(tid) 
       let my_jy = await getJy(String(tid))
       let my_money = await getMoney(String(tid))
-      const msg = `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}。积累金叶量${fmt2(my_jy)}ml，拥有${fmt2(my_money)}金币。`
+      let statesText = await getPlayerStatesText(String(tid))
+      const msg = [
+        `当前长度${fmtLen(u.length)}cm，半径${fmtRad(u.radius)}cm，硬度等级${u.hardness}。`,
+        `积累金叶量${fmt2(my_jy)}ml，拥有${fmt2(my_money)}金币。`,
+        statesText
+      ].filter(Boolean).join("\n")
       e.reply(ats.length > 0 ? `${tname}的牛牛：${msg}` : msg)
     } catch (err) {
       if (err.code === 'ID_NOT_FOUND') {
@@ -655,7 +661,7 @@ async function duel(idA, idB, nameA, nameB) {
   } 
   // ---- 狭路相逢（在事件后常规胜负判定前独立概率）----
   // ---- 狭路相逢（战力相近时才会触发，仅根据分数决定，而且有更严厉的失败惩罚）----
-  else if (ratio <= 1.5 && Math.random() < 0.20){
+  else if (ratio <= 1.5 && Math.random() < 0.20) {
     // 高分者是谁？
     const highIsA = scoreA >= scoreB
 
@@ -667,23 +673,52 @@ async function duel(idA, idB, nameA, nameB) {
       ? { id: idB, name: nameB, data: B, score: scoreB }
       : { id: idA, name: nameA, data: A, score: scoreA }
 
-    // 高分者抢低分者 随机60到75%
-    const stealRate = randFloat(0.6,0.75)
-    const stealLen = lowSide.data.length * stealRate
-    const stealRad = lowSide.data.radius * stealRate
+    // 高分者抢低分者 随机60到75%（基础量，失败者只按这个扣）
+    const stealRate = randFloat(0.6, 0.75)
+    const baseStealLen = lowSide.data.length * stealRate
+    const baseStealRad = lowSide.data.radius * stealRate
 
-    const winnerNewLen = highSide.data.length + stealLen
-    const winnerNewRad = highSide.data.radius + stealRad
-    const loserNewLen  = lowSide.data.length - stealLen*0.6
-    const loserNewRad  = lowSide.data.radius - stealRad*0.6
+    // ===== 判断是否有【击剑胜利双倍奖励】 =====
+    const doubleState = await consumeStateIfExists(
+      highSide.id,
+      "击剑胜利双倍奖励"
+    )
+    const isDouble = doubleState.exists
+
+    // 胜利者实际获得量
+    const gainLen = isDouble ? baseStealLen * 2 : baseStealLen
+    const gainRad = isDouble ? baseStealRad * 2 : baseStealRad
+
+    // 双方新数值
+    const winnerNewLen = highSide.data.length + gainLen
+    const winnerNewRad = highSide.data.radius + gainRad
+    const loserNewLen  = lowSide.data.length - baseStealLen
+    const loserNewRad  = lowSide.data.radius - baseStealRad
 
     await updateUserNoTime(highSide.id, winnerNewLen, winnerNewRad, highSide.data.hardness)
     await updateUserNoTime(lowSide.id, loserNewLen, loserNewRad, lowSide.data.hardness)
+
+    // 奖励（基础）
     let add_ml = Math.max(highSide.data.hardness, 0)
-    let add_money = Math.max(Math.floor(200000 - (highSide.data.hardness-lowSide.data.hardness)*2000), 20000)
+    let add_money = Math.max(
+      Math.floor(200000 - (highSide.data.hardness - lowSide.data.hardness) * 2000),
+      20000
+    )
+
+    // 双倍奖励只翻胜利者收益
+    if (isDouble) {
+      add_ml *= 2
+      add_money *= 2
+    }
+
     await addJy(highSide.id, add_ml)
     await addMoney(highSide.id, add_money)
-    return `触发狭路相逢，${highSide.name}在狭路相逢中击败了${lowSide.name}，抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，并获得${add_ml}ml金叶和${add_money}金币奖励。`
+
+    return `触发狭路相逢，${highSide.name}在狭路相逢中击败了${lowSide.name}。` +
+      (isDouble ? `击剑胜利奖励翻倍，`:"") + 
+      `抢夺了${fmtLen(gainLen)}cm的长度和${fmtRad(gainRad)}cm的半径，` +
+      `并获得${add_ml}ml金叶和${add_money}金币奖励。` +
+      (isDouble ? `（击剑胜利双倍奖励${doubleState.remainText ? `剩余${doubleState.remainText}次` : ""}）` : "")
   }
 
   // ---- 常规胜负判定 ----
@@ -702,24 +737,60 @@ async function duel(idA, idB, nameA, nameB) {
   // 损失系数：有保险则减小，否则不减小
   const lossMul = hasInsurance ? 0.5 : 1
 
+  // ---- 基础抢夺量（失败者只按这个扣）----
   const stealRate = randFloat(0.15, 0.25)
-  const stealLen = loser.data.length * stealRate
-  const stealRad = loser.data.radius * stealRate
+  const baseStealLen = loser.data.length * stealRate
+  const baseStealRad = loser.data.radius * stealRate
 
-  const winnerNewLen = winner.data.length + stealLen
-  const winnerNewRad = winner.data.radius + stealRad
-  const loserNewLen  = loser.data.length - stealLen*lossMul //败者损失长度减小
-  const loserNewRad  = loser.data.radius - stealRad*lossMul
+  // ---- 状态判定：胜利者是否有「击剑胜利双倍奖励」----
+  const doubleState = await consumeStateIfExists(
+    winner.id,
+    "击剑胜利双倍奖励"
+  )
+  const isDouble = doubleState.exists
+
+  // ---- 胜利者实际获得量 ----
+  const gainLen = isDouble ? baseStealLen * 2 : baseStealLen
+  const gainRad = isDouble ? baseStealRad * 2 : baseStealRad
+
+  // ---- 新数值 ----
+  const winnerNewLen = winner.data.length + gainLen
+  const winnerNewRad = winner.data.radius + gainRad
+  const loserNewLen  = loser.data.length - baseStealLen * lossMul
+  const loserNewRad  = loser.data.radius - baseStealRad * lossMul
 
   await updateUserNoTime(winner.id, winnerNewLen, winnerNewRad, winner.data.hardness)
   await updateUserNoTime(loser.id, loserNewLen, loserNewRad, loser.data.hardness)
 
+  // ---- 奖励（基础）----
   let add_ml = Math.max(winner.data.hardness, 0)
-  let add_money = Math.max(Math.floor(100000 - (winner.data.hardness-loser.data.hardness)*1000), 10000)
+  let add_money = Math.max(
+    Math.floor(100000 - (winner.data.hardness - loser.data.hardness) * 1000),
+    10000
+  )
+
+  // ---- 双倍奖励只翻胜利者收益 ----
+  if (isDouble) {
+    add_ml *= 2
+    add_money *= 2
+  }
+
   await addJy(winner.id, add_ml)
   await addMoney(winner.id, add_money)
-  const insuranceText = hasInsurance ? `由于${loser.name}持有牛牛保险，牛牛损失量降低50%。` : ""
-  return `${winner.name}胜利，从${loser.name}处抢夺了${fmtLen(stealLen)}cm的长度和${fmtRad(stealRad)}cm的半径，获得${add_ml}ml金叶和${add_money}金币奖励。${insuranceText}`
+
+  // ---- 文本 ----
+  const insuranceText = hasInsurance
+    ? `由于${loser.name}持有牛牛保险，牛牛损失量降低50%。`
+    : ""
+
+  const doubleText = isDouble
+    ? `（击剑胜利双倍奖励${doubleState.remainText ? `剩余${doubleState.remainText}次` : ""}）`
+    : ""
+
+  return `${winner.name}胜利，` + 
+    (isDouble ? `击剑胜利奖励翻倍，`:"") + 
+    `从${loser.name}处抢夺了${fmtLen(gainLen)}cm的长度和${fmtRad(gainRad)}cm的半径，` +
+    `获得${add_ml}ml金叶和${add_money}金币奖励。` + doubleText + insuranceText
 }
 
 

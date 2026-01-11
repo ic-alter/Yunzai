@@ -32,6 +32,12 @@ export class example extends plugin {
                     /** 执行方法 */
                     fnc: "groupContextTest",
                 },
+                {
+                    /** 命令正则匹配 */
+                    reg: "^#跨文件context测试",
+                    /** 执行方法 */
+                    fnc: "mulFileContextTest",
+                },
                 
             ],
         });
@@ -64,5 +70,9 @@ export class example extends plugin {
         }
         e.reply(`这是群上下文测试，发送 #展示上下文测试 可查看上下文内容，发送 #结束上下文测试 可结束上下文`)
 
+    }
+    async mulFileContextTest(e){
+        const ctx = this.setContext("mulFileTestContext")
+        ctx.msg = "这是跨文件上下文测试"
     }
 }

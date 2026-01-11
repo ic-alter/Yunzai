@@ -76,10 +76,26 @@ export async function addTimeState(userId, stateKey, durationMs) {
 }
 
 /**
- * 3. 判定状态是否存在
- * - 次数状态：存在则 -1
- * - 时间状态：仅判断
- * - 归零 / 过期自动移除
+ * 3. 判定状态是否存在（并在需要时消耗）
+ *
+ * 返回值格式：
+ * {
+ *   exists: boolean,               // 状态是否存在（本次调用有效）
+ *   type?: "count" | "time",       // 状态类型
+ *   remainText?: string,           // 可读剩余（用于直接展示）
+ *
+ *   // 次数状态专用（本次调用会消耗 1 次）
+ *   before?: number,               // 调用前次数
+ *   after?: number,                // 调用后次数
+ *   expired?: boolean,             // 是否因本次调用而移除（after<=0）
+ *
+ *   // 时间状态专用（仅判断，不修改）
+ *   remainMs?: number              // 剩余毫秒（可选：供业务做排序/临期判断）
+ * }
+ *
+ * 注意：
+ * - 次数状态：存在则消耗 1 次
+ * - 时间状态：仅判断是否过期，不会修改数据
  */
 export async function consumeStateIfExists(userId, stateKey) {
   const uid = asIdStr(userId)
@@ -88,42 +104,62 @@ export async function consumeStateIfExists(userId, stateKey) {
   return updateUserDoc(uid, (doc) => {
     const ps = ensurePlayerState(doc)
     const state = ps[stateKey]
-    if (!state) return false
+
+    if (!state) {
+      return { exists: false }
+    }
 
     if (state.type === "count") {
-      if (state.count > 0) {
-        state.count -= 1
-        if (state.count <= 0) {
+      const before = Number(state.count) || 0
+
+      if (before > 0) {
+        const after = before - 1
+        state.count = after
+
+        if (after <= 0) {
           delete ps[stateKey]
         }
-        return true
+
+        return {
+          exists: true,
+          type: "count",
+          before,
+          after,
+          expired: after <= 0,
+          remainText: String(Math.max(0, after)) // 次数直接可读数字
+        }
       } else {
         delete ps[stateKey]
-        return false
+        return { exists: false }
       }
     }
 
     if (state.type === "time") {
-      if (state.expireAt > now) {
-        return true
+      const remainMs = (Number(state.expireAt) || 0) - now
+
+      if (remainMs > 0) {
+        return {
+          exists: true,
+          type: "time",
+          remainMs,
+          remainText: formatDuration(remainMs) // ✅ 可读时间
+        }
       } else {
         delete ps[stateKey]
-        return false
+        return { exists: false }
       }
     }
 
     // 未知类型，安全删除
     delete ps[stateKey]
-    return false
+    return { exists: false }
   })
 }
 
+
 /**
- * 4. 获取玩家当前所有状态（不消耗次数）
- * 返回：
- * {
- *   stateKey: { type, remain }
- * }
+ * 4. 获取玩家当前所有状态（不消耗、不修改）
+ * 返回原始结构数据，供逻辑层使用
  */
 export async function getPlayerStates(userId) {
   const uid = asIdStr(userId)
@@ -135,23 +171,45 @@ export async function getPlayerStates(userId) {
   for (const [key, state] of Object.entries(ps)) {
     if (!state || typeof state !== "object") continue
 
-    if (state.type === "count") {
-      if (state.count > 0) {
-        result[key] = {
-          type: "count",
-          remain: `${state.count}次`
-        }
+    if (state.type === "count" && state.count > 0) {
+      result[key] = {
+        type: "count",
+        count: state.count
       }
-    } else if (state.type === "time") {
+    }
+
+    if (state.type === "time") {
       const remainMs = state.expireAt - now
       if (remainMs > 0) {
         result[key] = {
           type: "time",
-          remain: formatDuration(remainMs)
+          remainMs
         }
       }
     }
   }
 
   return result
+}
+
+/**
+ * 5. 获取玩家当前状态的可读文本（用于展示）
+ */
+export async function getPlayerStatesText(userId) {
+  const states = await getPlayerStates(userId)
+  const lines = []
+
+  for (const [stateKey, state] of Object.entries(states)) {
+    if (state.type === "count") {
+      lines.push(`${stateKey}：剩余 ${state.count} 次`)
+    } else if (state.type === "time") {
+      lines.push(`${stateKey}：剩余 ${formatDuration(state.remainMs)}`)
+    }
+  }
+
+  if (lines.length === 0) {
+    return ""
+  }
+
+  return `当前状态：\n${lines.join("\n")}`
 }
