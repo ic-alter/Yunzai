@@ -41,8 +41,8 @@
 export const shops = [
   {
     id: "alchemy_shop",
-    name: "炼金商店",
-    desc: "使用素材交换炼金产物",
+    name: "无人售货商店",
+    desc: "一个24小时营业的无人售货商店，出售各种奇怪的物品",
     trades: [
       {
         cost: [{ item: "枯叶", count: 3 }],
@@ -51,6 +51,26 @@ export const shops = [
       {
         cost: [{ money: 100 }],
         gain: [{ item: "硅胶牛牛模型" }],
+      },
+    ],
+  },
+
+  {
+    id: "lihun_shop",
+    name: "民政局门口的黄牛",
+    desc: "一位倒卖民政局特殊资格的黄牛",
+    trades: [
+      {
+        cost: [{ money: 500000 }],
+        gain: [{ item: "名字空了一半的结婚证" }],
+      },
+      {
+        cost: [{ money: 799999 }],
+        gain: [{ item: "不得提出离婚的特定情形认定书" }],
+      },
+      {
+        cost: [{ money: 678987 }],
+        gain: [{ item: "准予强制离婚认定书" }],
       },
     ],
   },

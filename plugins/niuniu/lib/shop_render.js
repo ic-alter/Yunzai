@@ -11,7 +11,7 @@ import { itemInfo } from "./item_info.js"
 // 这里需要读取余额/库存来判断 canTrade：
 // money/jy 在 myfs.js，item 数量在 items.js
 import { getMoney, getJy } from "./myfs.js"
-import { getUserItemCount } from "./items.js"
+import { getUserItemCount, getUserItems } from "./items.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -52,36 +52,71 @@ export async function renderShopImage({ userId, shopId }) {
   const shop = shops.find(s => s.id === shopId)
   if (!shop) throw new Error("商店不存在")
 
+  // 1️⃣ 读取交易列表（普通商店 / 回收站）
   const trades = await getShopTrades(userId, shopId)
 
-  const viewTrades = []
-  for (let i = 0; i < trades.length; i++) {
-    const t = trades[i]
+  // 2️⃣ 一次性读取用户库存（并行）
+  const [money, jy, items] = await Promise.all([
+    getMoney(userId),
+    getJy(userId),
+    getUserItems(userId),
+  ])
 
-    // 是否可交易（至少 1 次）
-    const canTrade = await canAffordOnce(userId, t.cost)
+  const itemMap = new Map()
+  for (const it of items) {
+    itemMap.set(it.name, it.count)
+  }
 
-    // 如果 gain 是单个道具，则展示小字描述（item_info.desc）
+  const stock = { money, jy, itemMap }
+
+  // 3️⃣ 内存判断是否可交易（至少 1 次）
+  const viewTrades = trades.map((t, i) => {
+    let canTrade = true
+
+    for (const c of t.cost ?? []) {
+      if ("money" in c) {
+        if (stock.money < c.money) {
+          canTrade = false
+          break
+        }
+      } else if ("jy" in c) {
+        if (stock.jy < c.jy) {
+          canTrade = false
+          break
+        }
+      } else if ("item" in c) {
+        const need = c.count ?? 1
+        const have = stock.itemMap.get(c.item) ?? 0
+        if (have < need) {
+          canTrade = false
+          break
+        }
+      } else {
+        canTrade = false
+        break
+      }
+    }
+
+    // 商品描述（仅当 gain 为单个道具）
     let itemDesc = ""
     if (t.gain?.length === 1 && "item" in t.gain[0]) {
       itemDesc = itemInfo[t.gain[0].item]?.desc ?? ""
     }
 
-    viewTrades.push({
+    return {
       index: i + 1,
       costText: formatTradeItems(t.cost ?? []),
       gainText: formatTradeItems(t.gain ?? []),
       itemDesc,
       canTrade,
-    })
-  }
+    }
+  })
 
-  const data = {
+  // 4️⃣ 渲染图片
+  return await puppeteer.screenshot("niuniu-shop", {
     tplFile,
     shopName: shop.name,
     shopDesc: shop.desc ?? "",
     trades: viewTrades,
-  }
-
-  return await puppeteer.screenshot("niuniu-shop", data)
+  })
 }

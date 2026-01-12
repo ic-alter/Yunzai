@@ -631,8 +631,10 @@ export async function viewFamily(selfId) {
  * - 不存在婚姻关系：抛异常
  * - 第一次：记录冷静期并抛异常提示
  * - 超过30分钟：成功离婚
+ * - 扩展内容：因为加了强制离婚，所以加了个bool跳过冷静期，true是跳过
  */
-export async function divorce(idA, idB) {
+export async function divorce(idA, idB, force = false) {
+  force = !!force
   const a = asIdStr(idA)
   const b = asIdStr(idB)
   if (a === b) throwCn("不能和自己离婚。")
@@ -682,22 +684,24 @@ export async function divorce(idA, idB) {
     }
 
     // 冷静期
-    const now = Date.now()
-    if (!hm.cooling || typeof hm.cooling !== "object") hm.cooling = {}
-    const rec = hm.cooling[otherId]
+    if (!force){
+      const now = Date.now()
+      if (!hm.cooling || typeof hm.cooling !== "object") hm.cooling = {}
+      const rec = hm.cooling[otherId]
 
-    if (!rec || typeof rec.since !== "number") {
-      hm.cooling[otherId] = { since: now }
-      await saveUserDoc(hid, hdoc)
-      // 第一次提出：抛异常提示（按你的设定）
-      throwCn("已进入离婚冷静期，请30分钟后再次提出离婚。")
-    }
+      if (!rec || typeof rec.since !== "number") {
+        hm.cooling[otherId] = { since: now }
+        await saveUserDoc(hid, hdoc)
+        // 第一次提出：抛异常提示（按你的设定）
+        throwCn("已进入离婚冷静期，请30分钟后再次提出离婚。")
+      }
 
-    const passed = now - rec.since
-    if (passed < DIVORCE_COOLING_MS) {
-      const leftMs = DIVORCE_COOLING_MS - passed
-      const leftMin = Math.ceil(leftMs / 60000)
-      throwCn(`离婚冷静期未结束，还需等待约${leftMin}分钟。`)
+      const passed = now - rec.since
+      if (passed < DIVORCE_COOLING_MS) {
+        const leftMs = DIVORCE_COOLING_MS - passed
+        const leftMin = Math.ceil(leftMs / 60000)
+        throwCn(`离婚冷静期未结束，还需等待约${leftMin}分钟。`)
+      }
     }
 
     // 执行离婚：从丈夫家庭移除对方；对方变回普通人；清理 cooling 记录

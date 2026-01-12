@@ -20,6 +20,8 @@ import {
 } from './lib/myfs.js'
 
 import { bridePriceByHardness } from './lib/tool.js'
+import {consumeUserItem, getUserItemCount, addUserItem} from './lib/items.js'
+import {consumeStateIfExists } from './lib/player_state.js'
 
 // ========================
 // 小工具
@@ -158,8 +160,19 @@ export class example extends plugin {
       return true
     }
 
-    // 进入第二步：妻子确认
+    // ⭐ 判断是否有道具（这里只判断，不消耗）
+    const itemName = '名字空了一半的结婚证'
+    const itemCount = await getUserItemCount(ctx.husbandId, itemName)
+    const skipByItem = itemCount > 0
+
     this.finish('marryConfirmHusband', true)
+
+    // ⭐ 如果有道具，直接模拟“妻子已同意”
+    if (skipByItem) {
+      return await this._marryDirect(ctx, e, true)
+    }
+
+    // 进入第二步：妻子确认
     const ctx2 = this.setContext('marryConfirmWife', true, 30, '操作超时已取消')
     ctx2.husbandId = String(ctx.husbandId)
     ctx2.husbandName = String(ctx.husbandName)
@@ -214,6 +227,44 @@ export class example extends plugin {
       return true
     } catch (err) {
       // subMoney 不足时会抛 NOT_ENOUGH
+      if (err?.code === 'NOT_ENOUGH') {
+        e.reply(`娶${ctx.wifeName}需要${price}元彩礼，当前不足`)
+        return true
+      }
+      replyErr(e, err)
+      return true
+    }
+  }
+
+  async _marryDirect(ctx, e, usedItem = false) {
+    const hid = String(ctx.husbandId)
+    const wid = String(ctx.wifeId)
+    const price = Number(ctx.bridePrice)
+    const itemName = '名字空了一半的结婚证'
+
+    try {
+      await subMoney(hid, price)
+
+      try {
+        await dbMarry(hid, wid)
+      } catch (err) {
+        try { await addMoney(hid, price) } catch (_) {}
+        throw err
+      }
+
+      await addMoney(wid, price)
+
+      // ⭐ dbMarry 成功后再消耗道具
+      if (usedItem) {
+        await consumeUserItem(hid, itemName, 1)
+      }
+
+      e.reply(
+        `恭喜！${ctx.husbandName}与${ctx.wifeName}正式成婚，彩礼${price}已支付。` +
+        (usedItem ? `（使用了道具【${itemName}】，跳过对方确认）` : '')
+      )
+      return true
+    } catch (err) {
       if (err?.code === 'NOT_ENOUGH') {
         e.reply(`娶${ctx.wifeName}需要${price}元彩礼，当前不足`)
         return true
@@ -305,7 +356,16 @@ export class example extends plugin {
       return true
     }
 
+    const itemName = '名字空了一半的结婚证'
+    const itemCount = await getUserItemCount(ctx.husbandId, itemName)
+    const skipByItem = itemCount > 0
+
     this.finish('concConfirmHusband', true)
+
+    if (skipByItem) {
+      return await this._concubineDirect(ctx, e, true)
+    }
+
     const ctx2 = this.setContext('concConfirmConcubine', true, 30, '操作超时已取消')
     ctx2.husbandId = String(ctx.husbandId)
     ctx2.husbandName = String(ctx.husbandName)
@@ -357,6 +417,44 @@ export class example extends plugin {
       return true
     }
   }
+
+  async _concubineDirect(ctx, e, usedItem = false) {
+    const hid = String(ctx.husbandId)
+    const cid = String(ctx.concId)
+    const price = Number(ctx.bridePrice)
+    const itemName = '名字空了一半的结婚证'
+
+    try {
+      await subMoney(hid, price)
+
+      try {
+        await dbTakeConcubine(hid, cid)
+      } catch (err) {
+        try { await addMoney(hid, price) } catch (_) {}
+        throw err
+      }
+
+      await addMoney(cid, price)
+
+      if (usedItem) {
+        await consumeUserItem(hid, itemName, 1)
+      }
+
+      e.reply(
+        `已纳妾：${ctx.husbandName}将${ctx.concName}纳为妾，彩礼${price}已支付。` +
+        (usedItem ? `（使用了道具【${itemName}】，跳过对方确认）` : '')
+      )
+      return true
+    } catch (err) {
+      if (err?.code === 'NOT_ENOUGH') {
+        e.reply(`纳${ctx.concName}为妾需要${price}元彩礼，当前不足`)
+        return true
+      }
+      replyErr(e, err)
+      return true
+    }
+  }
+
 
   // ========================
   // 3) 离婚 @某人（一步确认）
@@ -412,16 +510,56 @@ export class example extends plugin {
       return true
     }
 
+    const fromId = String(ctx.fromId)
+    const otherId = String(ctx.otherId)
+
+    const FORCE_DIVORCE_ITEM = '准予强制离婚认定书'
+    const FORBID_DIVORCE_STATE = '不得提出离婚的特定情形'
     try {
-      await dbDivorce(String(ctx.fromId), String(ctx.otherId))
+      // =========================
+      // 1️⃣ 强制离婚道具（最高优先级）
+      // =========================
+      const itemCount = await getUserItemCount(fromId, FORCE_DIVORCE_ITEM)
+      if (itemCount > 0) {
+        // ⚠️ 注意：不管原本是否需要，都会消耗
+        await consumeUserItem(fromId, FORCE_DIVORCE_ITEM, 1)
+
+        await dbDivorce(fromId, otherId, true)
+
+        e.reply(
+          `离婚成功：${ctx.fromName}与${ctx.otherName}已解除关系。` +
+          `（使用了道具【${FORCE_DIVORCE_ITEM}】，无视冷静期与限制）`
+        )
+        return true
+      }
+
+      // =========================
+      // 2️⃣ 禁止离婚状态判定
+      // =========================
+      const forbid = await consumeStateIfExists(fromId, FORBID_DIVORCE_STATE)
+      if (forbid?.exists) {
+        // 时间状态：不会被消耗，只是判断
+        e.reply(
+          `当前无法提出离婚：处于不得提出离婚的特定情形，剩余时间${forbid.remainText}`
+        )
+        return true
+      }
+
+      // =========================
+      // 3️⃣ 原有离婚流程（冷静期）
+      // =========================
+      await dbDivorce(fromId, otherId)
       e.reply(`离婚成功：${ctx.fromName}与${ctx.otherName}已解除关系。`)
       return true
     } catch (err) {
-      // dbDivorce 按你的设定：第一次会抛“进入冷静期”提示；未到30分钟也会抛剩余时间
+      // dbDivorce 的原有行为：
+      // - 第一次：进入冷静期
+      // - 冷静期中：返回剩余时间
       replyErr(e, err)
       return true
     }
   }
+
   // ========================
 // 4) 扶正（#?扶正 -> 选序号 -> 确认）
 // ========================

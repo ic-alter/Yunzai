@@ -6,6 +6,11 @@ import { getUserItems, getUserItemCount, consumeUserItem } from "./lib/items.js"
 import { itemInfo } from "./lib/item_info.js"
 import { useConsumableItem } from "./lib/item_use.js"
 import { listFamilyChildren } from "./lib/children.js"
+import { renderShopImage } from "./lib/shop_render.js"
+import {
+  executeTrade,
+  recycleAllItems
+} from "./lib/shop_service.js"
 
 const BAG_TEMPLATE = path.join(
   process.cwd(),
@@ -20,8 +25,9 @@ export class NiuNiuItem extends plugin {
       priority: 200,
       rule: [
         { reg: "^#?(道具列表|牛牛仓库)$", fnc: "showBag" },
-        { reg: "^#?道具使用", fnc: "useItem" },
-        { reg: "^#?丢弃道具", fnc: "dropItem" }
+        { reg: "^#?(道具使用|使用道具)", fnc: "useItem" },
+        { reg: "^#?(丢弃道具|道具丢弃)", fnc: "dropItem" },
+        { reg: "^#?(回收道具|道具回收)$", fnc: "openRecycleShop" }
       ]
     })
   }
@@ -56,7 +62,7 @@ export class NiuNiuItem extends plugin {
    *  道具使用（入口）
    * ======================= */
   async useItem(e) {
-    const arg = e.msg.replace(/^#?道具使用/, "").trim()
+    const arg = e.msg.replace(/^#?(道具使用|使用道具)/, "").trim()
 
     // 直接指定道具名
     if (arg) {
@@ -211,7 +217,7 @@ export class NiuNiuItem extends plugin {
    *  丢弃道具
    * ======================= */
   async dropItem(e) {
-    const arg = e.msg.replace(/^#?丢弃道具/, "").trim()
+    const arg = e.msg.replace(/^#?(丢弃道具|道具丢弃)/, "").trim()
 
     // 未指定 → 列出可丢弃道具
     if (!arg) {
@@ -318,4 +324,179 @@ export class NiuNiuItem extends plugin {
     await e.reply(`已丢弃 ${ctx.name} x${n}`)
     return true
   }
+
+  async openRecycleShop(e) {
+    const img = await renderShopImage({
+      userId: e.user_id,
+      shopId: "recycle"
+    })
+
+    const ctx = this.setContext("道具_回收")
+    ctx.uid = String(e.user_id)
+    ctx.shopId = "recycle"
+
+    // 状态字段（全部是“普通属性”，不是方法）
+    ctx._step = null          // 当前等待阶段
+    ctx._tradeIndex = null   // 临时存交易 index
+
+    await e.reply(img)
+    await e.reply(
+      "请输入：\n" +
+      "回收 {序号}\n" +
+      "批量回收 {序号} {数量}\n" +
+      "全部回收\n" +
+      "商店详情\n" +
+      "退出"
+    )
+    return true
+  }
+
+  async 道具_回收(e) {
+    const ctx = this.getContext("道具_回收")
+    if (!ctx || ctx.uid !== String(this.e.user_id)) return false
+
+    const msg = String(this.e.msg || "").trim()
+
+    /* =====================
+    * 退出
+    * ===================== */
+    if (msg === "退出") {
+      this.finish("道具_回收")
+      await e.reply("已退出废品回收站。")
+      return true
+    }
+
+    /* =====================
+    * 商店详情
+    * ===================== */
+    if (msg === "商店详情") {
+      const img = await renderShopImage({
+        userId: e.user_id,
+        shopId: ctx.shopId
+      })
+      await e.reply(img)
+      return true
+    }
+
+    /* =====================
+    * 全部回收
+    * ===================== */
+    if (msg === "全部回收") {
+      const res = await recycleAllItems(e.user_id)
+
+      if (res.totalMoney <= 0) {
+        await e.reply("你没有可回收的道具。")
+        return true
+      }
+
+      await e.reply(`已成功回收全部道具，获得 ${res.totalMoney} 金币。`)
+      return true
+    }
+
+    /* =====================
+    * 等待补参流程
+    * ===================== */
+    if (ctx._step) {
+      return await this.handleRecycleStep(e, ctx, msg)
+    }
+
+    /* =====================
+    * 批量回收
+    * ===================== */
+    if (msg.startsWith("批量回收")) {
+      const [, idxStr, timesStr] = msg.split(/\s+/)
+
+      if (!idxStr) {
+        ctx._step = "batch_index"
+        await e.reply("请输入要批量回收的道具序号：")
+        return true
+      }
+
+      if (!timesStr) {
+        ctx._step = "batch_times"
+        ctx._tradeIndex = Number(idxStr) - 1
+        await e.reply("请输入要回收的数量：")
+        return true
+      }
+
+      return await this.doRecycle(e, Number(idxStr) - 1, Number(timesStr))
+    }
+
+    /* =====================
+    * 单次回收
+    * ===================== */
+    if (msg.startsWith("回收")) {
+      const [, idxStr] = msg.split(/\s+/)
+
+      if (!idxStr) {
+        ctx._step = "single_index"
+        await e.reply("请输入要回收的道具序号：")
+        return true
+      }
+
+      return await this.doRecycle(e, Number(idxStr) - 1, 1)
+    }
+
+    await e.reply("指令不正确，请重新输入。")
+    return true
+  }
+
+  async handleRecycleStep(e, ctx, msg) {
+    /* ===== 单次回收：等序号 ===== */
+    if (ctx._step === "single_index") {
+      ctx._step = null
+      return await this.doRecycle(e, Number(msg) - 1, 1)
+    }
+
+    /* ===== 批量回收：等序号 ===== */
+    if (ctx._step === "batch_index") {
+      ctx._step = "batch_times"
+      ctx._tradeIndex = Number(msg) - 1
+      await e.reply("请输入要回收的数量：")
+      return true
+    }
+
+    /* ===== 批量回收：等数量 ===== */
+    if (ctx._step === "batch_times") {
+      const idx = ctx._tradeIndex
+      ctx._step = null
+      ctx._tradeIndex = null
+      return await this.doRecycle(e, idx, Number(msg))
+    }
+
+    // 理论上不会到这里
+    ctx._step = null
+    await e.reply("状态异常，已重置，请重新输入指令。")
+    return true
+  }
+
+  async doRecycle(e, tradeIndex, times) {
+    try {
+      const res = await executeTrade(
+        e.user_id,
+        "recycle",
+        tradeIndex,
+        times
+      )
+
+      const cost = res.cost[0]
+      const gain = res.gain[0]
+
+      const itemName = cost.item
+      const itemCount = (cost.count ?? 1) * res.times
+      const money = gain.money * res.times
+
+      await e.reply(
+        `已成功回收 ${itemName} ×${itemCount}，获得 ${money} 金币。`
+      )
+    } catch (err) {
+      await e.reply(err.message || "回收失败，资源不足。")
+    }
+
+    return true
+  }
+
+
+
+
 }
