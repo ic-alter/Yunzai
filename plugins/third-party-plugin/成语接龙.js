@@ -9,9 +9,9 @@ const EXPLAIN_PATH = path.join(RES_DIR, "idioms_explain.json")
 
 /* ================= 启动时加载核心数据 ================= */
 let idiomList = []
-let idiomMap = new Map()     // word -> { word, first, last }
-let firstMap = new Map()     // first -> idiom[]
-let validStartList = []      // 起始成语候选（last 必须可接）
+let idiomMap = new Map()
+let firstMap = new Map()
+let validStartList = []
 
 function loadCoreOnce () {
   if (idiomList.length) return
@@ -21,7 +21,6 @@ function loadCoreOnce () {
 
   for (const it of idiomList) {
     idiomMap.set(it.word, it)
-
     if (!firstMap.has(it.first)) firstMap.set(it.first, [])
     firstMap.get(it.first).push(it)
   }
@@ -43,9 +42,7 @@ function loadExplainOnce () {
 
 /* ================= 工具函数 ================= */
 const rand = arr => arr[Math.floor(Math.random() * arr.length)]
-
-const getName = e =>
-  e?.member?.card || e?.sender?.nickname || String(e.user_id)
+const getName = e => e?.member?.card || e?.sender?.nickname || String(e.user_id)
 
 function pickStart (used) {
   const pool = validStartList.filter(it => !used.has(it.word))
@@ -56,6 +53,10 @@ function pickByFirst (first, used) {
   const pool = firstMap.get(first) || []
   const unused = pool.filter(it => !used.has(it.word))
   return rand(unused.length ? unused : pool)
+}
+
+function getAllByFirst (first, used) {
+  return (firstMap.get(first) || []).filter(it => !used.has(it.word))
 }
 
 function hasNext (last) {
@@ -80,11 +81,11 @@ export class IdiomChain extends plugin {
   constructor () {
     super({
       name: "成语接龙",
-      dsc: "群成语接龙",
+      dsc: "群成语接龙（支持人机）",
       priority: 200,
       rule: [
         {
-          reg: "^#?成语接龙(\\s+\\d+)?$",
+          reg: "^#?成语接龙.*$",
           fnc: "start"
         }
       ]
@@ -92,8 +93,15 @@ export class IdiomChain extends plugin {
   }
 
   async start (e) {
-    const m = String(e.msg).match(/^#?成语接龙(?:\s+(\d+))?$/)
-    const rounds = Math.max(1, Number(m?.[1] || 30))
+    const msg = String(e.msg).trim()
+    const m = msg.match(
+      /^#?成语接龙(?:\s*(人机|人机版))?(?:\s+(\d+))?$/
+    )
+
+    if (!m) return false
+
+    const aiMode = Boolean(m[1])
+    const rounds = Math.max(1, Number(m?.[2] || 30))
 
     const ctx = this.setContext("成语接龙_进行中", true, 3600)
 
@@ -108,41 +116,38 @@ export class IdiomChain extends plugin {
     ctx.cdUid = null
     ctx.cdUntil = 0
 
+    ctx.aiMode = aiMode
+
     const start = pickStart(ctx.used)
     ctx.current = start.word
     ctx.required = start.last
     ctx.used.add(start.word)
 
     await e.reply(
-      `🎮 成语接龙开始！\n` +
+      `🎮 成语接龙开始！${aiMode ? "（🤖 人机模式）" : ""}\n` +
       `轮数：${rounds}\n\n` +
       `起始成语：${start.word}\n` +
       `当前需要的开头拼音：${ctx.required}\n\n` +
-      `命令：\n` +
-      `- 任意文本：接龙\n` +
-      `- 提示：获取可行成语解释\n` +
-      `- 跳过：更换成语（消耗轮数）\n` +
-      `- 不玩了 / 结束游戏`
+      `命令：提示 / 跳过 / 不玩了`
     )
     return true
   }
 
-  /* ===== 上下文处理函数，名字必须与 key 相同 ===== */
+  /* ===== 上下文处理函数 ===== */
   async 成语接龙_进行中 (e) {
     const ctx = this.getContext("成语接龙_进行中", true)
     if (!ctx) return false
 
     const msg = String(this.e.msg).trim()
     const uid = String(this.e.user_id)
-
-    // ===== 5 秒冷却：只限制“最新成功者” =====
-    if (ctx.cdUid === uid && Date.now() < ctx.cdUntil) {
-        const left = Math.ceil((ctx.cdUntil - Date.now()) / 1000)
-        await this.reply(`⏳ 你刚接龙成功，请等待 ${left} 秒后再接龙~`)
-        return true
-    }
-
     ctx.names.set(uid, getName(this.e))
+
+    /* ===== 冷却限制 ===== */
+    if (ctx.cdUid === uid && Date.now() < ctx.cdUntil) {
+      const left = Math.ceil((ctx.cdUntil - Date.now()) / 1000)
+      await this.reply(`⏳ 你刚接龙成功，请等待 ${left} 秒后再接龙~`)
+      return true
+    }
 
     /* ===== 结束 ===== */
     if (msg === "不玩了" || msg === "结束游戏") {
@@ -150,7 +155,7 @@ export class IdiomChain extends plugin {
       return true
     }
 
-    /* ===== 提示（不消耗轮数） ===== */
+    /* ===== 提示 ===== */
     if (msg === "提示") {
       loadExplainOnce()
       const it = pickByFirst(ctx.required, ctx.used)
@@ -159,13 +164,13 @@ export class IdiomChain extends plugin {
         return true
       }
       await this.reply(
-        `💡 提示：某个以 ${it.first} 开头，以 ${it.last} 结尾的成语满足要求；\n` +
+        `💡 提示：这个成语以 ${it.first} 开头，以 ${it.last} 结尾；\n` +
         (explainMap[it.word] || "（暂无解释）")
       )
       return true
     }
 
-    /* ===== 跳过（消耗轮数，算失败） ===== */
+    /* ===== 跳过 ===== */
     if (msg === "跳过") {
       ctx.roundsLeft--
 
@@ -201,17 +206,16 @@ export class IdiomChain extends plugin {
       return true
     }
 
-    /* ===== 普通文本尝试接龙（失败不消耗轮数） ===== */
+    /* ===== 普通文本接龙 ===== */
     const it = idiomMap.get(msg)
     if (!it) {
       if (ctx.comboHolder === uid) {
         ctx.comboHolder = null
         ctx.comboCount = 0
       }
-      // 只有四个字才提示，避免群消息刷屏
-    if (msg.length === 4) {
+      if (msg.length === 4) {
         await this.reply(`❌ 这不是个成语哦~\n当前需要的开头拼音：${ctx.required}`)
-    }
+      }
       return true
     }
 
@@ -237,16 +241,15 @@ export class IdiomChain extends plugin {
       return true
     }
 
-    /* ===== 成功接龙（此处才消耗轮数） ===== */
+    /* ===== 玩家成功 ===== */
     ctx.roundsLeft--
     ctx.used.add(it.word)
 
     const prevHolder = ctx.comboHolder
     const prevCombo = ctx.comboCount
 
-    if (prevHolder === uid) {
-      ctx.comboCount++
-    } else {
+    if (prevHolder === uid) ctx.comboCount++
+    else {
       ctx.comboHolder = uid
       ctx.comboCount = 1
     }
@@ -256,19 +259,18 @@ export class IdiomChain extends plugin {
 
     const interrupted = prevHolder && prevHolder !== uid && prevCombo >= 3
     if (interrupted) {
-    add = 2
-    extra = "，打破连击！"
+      add = 2
+      extra = "，打破连击！"
     } else if (ctx.comboCount >= 15) {
-    add = 4
-    extra = `，连击${ctx.comboCount}次！`
+      add = 4
+      extra = `，连击${ctx.comboCount}次！`
     } else if (ctx.comboCount >= 7) {
-    add = 3
-    extra = `，连击${ctx.comboCount}次！`
+      add = 3
+      extra = `，连击${ctx.comboCount}次！`
     } else if (ctx.comboCount >= 3) {
-    add = 2
-    extra = `，连击${ctx.comboCount}次！`
+      add = 2
+      extra = `，连击${ctx.comboCount}次！`
     }
-
 
     const s = ctx.scores.get(uid) || { score: 0 }
     s.score += add
@@ -277,19 +279,42 @@ export class IdiomChain extends plugin {
     ctx.current = it.word
     ctx.required = it.last
 
-    // 本次成功者成为“最新成功者”，开启 5 秒冷却
     ctx.cdUid = uid
     ctx.cdUntil = Date.now() + 5000
 
     await this.reply(
-        `✅ 接龙成功：${it.word}${extra} +${add}分\n` +
-        `当前需要的开头拼音：${ctx.required}\n` +
-        `剩余轮数：${ctx.roundsLeft}`
+      `✅ 接龙成功：${it.word}${extra} +${add}分\n` +
+      `当前需要的开头拼音：${ctx.required}\n` +
+      `剩余轮数：${ctx.roundsLeft}`
     )
 
+    /* ===== 人机模式：机器人回合 ===== */
+    if (ctx.aiMode) {
+      const candidates = getAllByFirst(ctx.required, ctx.used)
 
-    if (!hasNext(ctx.required)) {
-      await this.reset(ctx, `出现死尾，已重新随机起点`)
+      // 玩家制造断头
+      if (!candidates.length) {
+        s.score += 10
+        await this.reply(`🤖 我接不上了，这是断头词！\n🎉 额外 +10 分！`)
+        await this.reset(ctx, "重新开始新一轮接龙")
+      } else {
+        const safe = candidates.filter(x => hasNext(x.last))
+        if (!safe.length) {
+          s.score += 10
+          await this.reply(`🤖 只有断头词可接，这是你制造的断头！\n🎉 额外 +10 分！`)
+          await this.reset(ctx, "重新开始新一轮接龙")
+        } else {
+          const bot = rand(safe)
+          ctx.used.add(bot.word)
+          ctx.current = bot.word
+          ctx.required = bot.last
+
+          await this.reply(
+            `🤖 我来接：${bot.word}\n` +
+            `现在需要以 ${ctx.required} 开头`
+          )
+        }
+      }
     }
 
     if (ctx.roundsLeft <= 0) {
@@ -313,8 +338,7 @@ export class IdiomChain extends plugin {
   async end (ctx, reason) {
     this.finish("成语接龙_进行中", true)
     await this.reply(
-      `🏁 ${reason}\n\n` +
-      `排行榜：\n${formatRank(ctx.scores, ctx.names)}`
+      `🏁 ${reason}\n\n排行榜：\n${formatRank(ctx.scores, ctx.names)}`
     )
   }
 }
