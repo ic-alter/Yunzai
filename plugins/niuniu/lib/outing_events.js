@@ -3174,6 +3174,20 @@ if (itemEff && typeof itemEff === "object") {
   }
 }
 
+    // ---------- 传送点解锁（新增） ----------
+    const teleportEff = effPack.teleport
+
+    if (teleportEff && teleportEff.unlock) {
+      const list = Array.isArray(teleportEff.unlock)
+        ? teleportEff.unlock
+        : [teleportEff.unlock]
+
+      for (const loc of list) {
+        await unlockTeleportLocation(uid, loc)
+      }
+    }
+
+
   // ✅ 孩子变更 + 每日次数 +1
   const childAfter = await patchChild(uid, c, {
     ...childEff,

@@ -49,7 +49,7 @@ export const shops = [
         gain: [{ item: "崭新的白袜" }],
       },
       {
-        cost: [{ money: 100 }],
+        cost: [{ money: 10000 }],
         gain: [{ item: "硅胶牛牛模型" }],
       },
     ],
