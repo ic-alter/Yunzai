@@ -160,7 +160,7 @@ export function bridePriceByHardness(hardness) {
 export function maxConcubinesByHardness(hardness) {
   const h = toNonNegNumber(hardness, "hardness") // 复用你现有的参数校验
   if (h <= 0) return 2
-  const max = Math.floor(2 * Math.log2(h)) + 2
+  const max = Math.floor(3 * Math.log2(h)) + 2
   return Math.max(2, max)
 }
 

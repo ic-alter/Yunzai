@@ -560,12 +560,12 @@ async function duel(idA, idB, nameA, nameB) {
   const low = Math.min(scoreA, scoreB)
   const ratio = low <= 0 ? Infinity : high / low
   //平局概率-无事发生
-  const pDraw = 0.08
-  //两败俱伤概率-双方全都长度宽度-50%
+  const pDraw = 0.04
+  //两败俱伤概率-双方全都长度宽度大幅降低
   let pBothHurt = 0.10 - (ratio / 100)
   if (pBothHurt < 0.02) pBothHurt = 0.02
   //苦命鸳鸯概率- 双方全都+30%
-  let pKmyy = 0.10
+  let pKmyy = 0.06
 
   // 所有事件的概率总和。如果添加新事件，记得在这里增加。
   let event_sum = pDraw + pBothHurt + pKmyy
