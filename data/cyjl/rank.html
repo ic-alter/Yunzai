@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<style>
+body {
+  font-family: "SimSun", serif;
+  background: #f2f2f2;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fffdf6;
+  border: 2px solid #666;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* ===== 标题 ===== */
+.title {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* ===== 领奖台 ===== */
+.podium {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.podium-item {
+  text-align: center;
+  width: 30%;
+}
+
+.podium-rank {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.rank-1 { color: #d4af37; }
+.rank-2 { color: #9e9e9e; }
+.rank-3 { color: #cd7f32; }
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background: #fff;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.podium-name {
+  font-size: 16px;
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.podium-score {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== 4 - 10 名列表（单行样式） ===== */
+.list {
+  margin-top: 10px;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #f8f8f8;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* 排名数字装饰 */
+.list-rank {
+  min-width: 36px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 14px;
+  background: #e0e0e0;
+  color: #333;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+/* 昵称 */
+.list-name {
+  flex: 1;
+  word-break: break-all;
+  color: #222;
+}
+
+/* 分数 */
+.list-score {
+  min-width: 80px;
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+}
+
+/* ===== 分割线 ===== */
+.divider {
+  border-top: 3px solid #333;
+  margin: 20px 0;
+}
+
+/* ===== 自己 ===== */
+.me {
+  background: #fff3cd;
+  border: 1px solid #e0c97f;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.me-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="title">成语接龙排行榜</div>
+
+  <!-- ===== 领奖台 1 / 2 / 3 ===== -->
+  <div class="podium">
+    {{each podium}}
+    <div class="podium-item">
+      <div class="podium-rank rank-{{$value.rank}}">
+        第 {{$value.rank}} 名
+      </div>
+      <img class="avatar" src="{{$value.avatar}}" />
+      <div class="podium-name">{{$value.name}}</div>
+      <div class="podium-score">{{$value.score}} 分</div>
+    </div>
+    {{/each}}
+  </div>
+
+  <!-- ===== 4 - 10 名 ===== -->
+  <!-- ===== 4 - 10 名（单行） ===== -->
+    <div class="list">
+    {{each list}}
+    <div class="list-row">
+        <div class="list-rank">{{$value.rank}}</div>
+        <div class="list-name">{{$value.name}}</div>
+        <div class="list-score">{{$value.score}}</div>
+    </div>
+    {{/each}}
+    </div>
+
+
+    <!-- ===== 分割线 ===== -->
+    <div class="divider"></div>
+
+    <!-- ===== 自己（复用 4-10 的单行样式） ===== -->
+    <div class="list">
+    <div class="list-row me-row">
+        <div class="list-rank">{{me.rank || ""}}</div>
+        <div class="list-name">{{me.name}}</div>
+        <div class="list-score">{{me.score}}</div>
+    </div>
+    </div>
+
+</div>
+</body>
+</html>

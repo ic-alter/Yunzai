@@ -1,11 +1,31 @@
 import fs from "fs"
 import path from "path"
 import plugin from "../../lib/plugins/plugin.js"
+import axios from "axios"
+import puppeteer from "../../lib/puppeteer/puppeteer.js"
 
 /* ================= 数据路径 ================= */
 const RES_DIR = path.join(process.cwd(), "data", "cyjl")
 const CORE_PATH = path.join(RES_DIR, "idioms_core.json")
 const EXPLAIN_PATH = path.join(RES_DIR, "idioms_explain.json")
+/* ================= 排行榜相关路径 ================= */
+const RANK_TOTAL_PATH = path.join(RES_DIR, "rank_total.json")
+const RANK_CHAMPION_PATH = path.join(RES_DIR, "rank_champion.json")
+const AVATAR_DIR = path.join(RES_DIR, "avatar")
+const AVATAR_INDEX = path.join(AVATAR_DIR, "avatar_index.json")
+
+function readJson (file, def = {}) {
+  if (!fs.existsSync(file)) return def
+  return JSON.parse(fs.readFileSync(file, "utf8"))
+}
+
+function writeJson (file, data) {
+  fs.writeFileSync(file, JSON.stringify(data, null, 2))
+}
+
+function todayStr () {
+  return new Date().toISOString().slice(0, 10)
+}
 
 /* ================= 启动时加载核心数据 ================= */
 let idiomList = []
@@ -87,7 +107,22 @@ export class IdiomChain extends plugin {
         {
           reg: "^#?成语接龙.*$",
           fnc: "start"
+        },
+        {
+          reg: "^(注册|上传|添加)成语\\s*([\\u4e00-\\u9fa5]{4})$",
+          fnc: "startRegister"
+        },
+        {
+          reg: "^(修改|更新)成语\\s*([\\u4e00-\\u9fa5]{4})$",
+          fnc: "startEdit"
+        },
+        {
+          reg: "^#?成语接龙(总分榜|冠军榜|排行榜)$",
+          fnc: "showRank"
         }
+
+        
+        
       ]
     })
   }
@@ -323,6 +358,8 @@ export class IdiomChain extends plugin {
     return true
   }
 
+
+
   async reset (ctx, reason) {
     const it = pickStart(ctx.used)
     ctx.used.add(it.word)
@@ -337,10 +374,343 @@ export class IdiomChain extends plugin {
 
   async end (ctx, reason) {
     this.finish("成语接龙_进行中", true)
+    updateTotalRank(ctx)
+    updateChampionRank(ctx)
     await this.reply(
       `🏁 ${reason}\n\n排行榜：\n${formatRank(ctx.scores, ctx.names)}`
     )
   }
+
+
+  async startRegister (e) {
+    const [, , word] = String(e.msg).match(
+      /^(注册|上传|添加)成语\s*([\u4e00-\u9fa5]{4})$/
+    )
+  
+    if (idiomMap.has(word)) {
+      await e.reply("❌ 该成语已存在，无需重复注册")
+      return true
+    }
+  
+    const ctx = this.setContext("成语注册_流程", false, 300)
+    ctx.word = word
+  
+    await e.reply(
+      `✅ 开始注册成语：${word}\n\n` +
+      `请发送【首拼音】\n` +
+      `示例：ai、shi、zhong（纯英文，不带声调）`
+    )
+    return true
+  }
+
+  async 成语注册_流程 (e) {
+    const ctx = this.getContext("成语注册_流程", false)
+    if (!ctx) return false
+  
+    const msg = String(this.e.msg).trim()
+  
+    // 首拼音
+    if (!ctx.first) {
+      if (!/^[a-z]+$/i.test(msg)) {
+        await this.reply("❌ 首拼音格式错误，只能是纯英文，例如：ai")
+        return true
+      }
+      ctx.first = msg.toLowerCase()
+      await this.reply(
+        "✅ 首拼音已记录\n\n" +
+        "请发送【末拼音】\n" +
+        "示例：e、hang、chai"
+      )
+      return true
+    }
+  
+    // 末拼音
+    if (!ctx.last) {
+      if (!/^[a-z]+$/i.test(msg)) {
+        await this.reply("❌ 末拼音格式错误，只能是纯英文字母，例如：she")
+        return true
+      }
+      ctx.last = msg.toLowerCase()
+      await this.reply("✅ 末拼音已记录\n\n请发送【成语解释】")
+      return true
+    }
+  
+    if (msg.length > 60) {
+      await this.reply(
+        `❌ 成语解释过长（${msg.length}/60）\n` +
+        `请重新发送`
+      )
+      return true
+    }
+    ctx.explain = msg
+    
+  
+    this.finish("成语注册_流程", false)
+  
+    await this.saveIdiom(ctx)
+  
+    await this.reply(
+      `🎉 成语注册成功！\n\n` +
+      `成语：${ctx.word}\n` +
+      `首拼音：${ctx.first}\n` +
+      `末拼音：${ctx.last}\n` +
+      `解释：${ctx.explain}`
+    )
+    return true
+  }
+
+  async saveIdiom (ctx) {
+    /* === core === */
+    const core = JSON.parse(fs.readFileSync(CORE_PATH, "utf-8"))
+    const newItem = {
+      word: ctx.word,
+      first: ctx.first,
+      last: ctx.last
+    }
+    core.push(newItem)
+    fs.writeFileSync(CORE_PATH, JSON.stringify(core, null, 2))
+  
+    /* === explain === */
+    loadExplainOnce()
+    explainMap[ctx.word] = ctx.explain
+    fs.writeFileSync(EXPLAIN_PATH, JSON.stringify(explainMap, null, 2))
+  
+    /* === 内存热更新 === */
+    idiomList.push(newItem)
+    idiomMap.set(ctx.word, newItem)
+    if (!firstMap.has(ctx.first)) firstMap.set(ctx.first, [])
+    firstMap.get(ctx.first).push(newItem)
+    validStartList.push(newItem)
+  }
+
+  async startEdit (e) {
+    const [, , word] = String(e.msg).match(
+      /^(修改|更新)成语\s*([\u4e00-\u9fa5]{4})$/
+    )
+  
+    const it = idiomMap.get(word)
+    if (!it) {
+      await e.reply("❌ 该成语不存在，无法修改")
+      return true
+    }
+  
+    loadExplainOnce()
+  
+    const ctx = this.setContext("成语修改_流程", true, 300)
+  
+    ctx.word = word
+    ctx.old = {
+      first: it.first,
+      last: it.last,
+      explain: explainMap[word] || ""
+    }
+  
+    await e.reply(
+      `✏️ 开始修改成语：${word}\n\n` +
+      `当前首拼音：${it.first}\n` +
+      `请发送修改后的【首拼音】\n` +
+      `（输入“跳过”则不修改）`
+    )
+    return true
+  }
+
+  async 成语修改_流程 (e) {
+    const ctx = this.getContext("成语修改_流程", true)
+    if (!ctx) return false
+  
+    const msg = String(this.e.msg).trim()
+  
+    /* ===== 首拼音 ===== */
+    if (!ctx.firstDone) {
+      if (msg !== "跳过") {
+        if (!/^[a-z]+$/i.test(msg)) {
+          await this.reply("❌ 首拼音格式错误，只能是纯英文")
+          return true
+        }
+        ctx.newFirst = msg.toLowerCase()
+      }
+      ctx.firstDone = true
+      await this.reply(
+        `当前末拼音：${ctx.old.last}\n` +
+        `请发送修改后的【末拼音】\n` +
+        `（输入“跳过”则不修改）`
+      )
+      return true
+    }
+  
+    /* ===== 末拼音 ===== */
+    if (!ctx.lastDone) {
+      if (msg !== "跳过") {
+        if (!/^[a-z]+$/i.test(msg)) {
+          await this.reply("❌ 末拼音格式错误，只能是纯英文")
+          return true
+        }
+        ctx.newLast = msg.toLowerCase()
+      }
+      ctx.lastDone = true
+      await this.reply(
+        `当前解释：${ctx.old.explain || "（暂无）"}\n` +
+        `请发送修改后的【成语解释】\n` +
+        `（不超过60字，输入“跳过”则不修改）`
+      )
+      return true
+    }
+  
+    /* ===== 解释 ===== */
+    if (msg !== "跳过") {
+      if (msg.length > 60) {
+        await this.reply(
+          `❌ 解释过长（${msg.length}/60）\n` +
+          `请重新发送`
+        )
+        return true
+      }
+      ctx.newExplain = msg
+    }
+  
+    this.finish("成语修改_流程", true)
+    await this.applyEdit(ctx)
+  
+    await this.reply(
+      `✅ 成语修改完成：${ctx.word}\n\n` +
+      `首拼音：${ctx.newFirst ?? ctx.old.first}\n` +
+      `末拼音：${ctx.newLast ?? ctx.old.last}\n` +
+      `解释：${ctx.newExplain ?? ctx.old.explain}`
+    )
+    return true
+  }
+  
+
+  async applyEdit (ctx) {
+    /* ===== core.json（保持顺序） ===== */
+    const core = JSON.parse(fs.readFileSync(CORE_PATH, "utf-8"))
+    const idx = core.findIndex(x => x.word === ctx.word)
+    if (idx !== -1) {
+      if (ctx.newFirst) core[idx].first = ctx.newFirst
+      if (ctx.newLast) core[idx].last = ctx.newLast
+    }
+    fs.writeFileSync(CORE_PATH, JSON.stringify(core, null, 2))
+  
+    /* ===== explain.json ===== */
+    loadExplainOnce()
+    if (ctx.newExplain !== undefined) {
+      explainMap[ctx.word] = ctx.newExplain
+      fs.writeFileSync(EXPLAIN_PATH, JSON.stringify(explainMap, null, 2))
+    }
+  
+    /* ===== 内存同步 ===== */
+    const it = idiomMap.get(ctx.word)
+  
+    // firstMap 需要重新挂载
+    if (ctx.newFirst && ctx.newFirst !== it.first) {
+      const arr = firstMap.get(it.first)
+      if (arr) firstMap.set(it.first, arr.filter(x => x.word !== it.word))
+  
+      it.first = ctx.newFirst
+      if (!firstMap.has(it.first)) firstMap.set(it.first, [])
+      firstMap.get(it.first).push(it)
+    }
+  
+    if (ctx.newLast) it.last = ctx.newLast
+  }
+  
+  async showRank (e) {
+    const type = e.msg.includes("冠军") ? "champion" : "total"
+    const file = type === "champion" ? RANK_CHAMPION_PATH : RANK_TOTAL_PATH
+    const raw = readJson(file)
+
+    const arr = Object.entries(raw).map(([uid, v]) => ({
+      uid,
+      name: v.name,
+      score: v.score ?? v.count
+    })).sort((a, b) => b.score - a.score)
+
+    const podium = []
+    for (let i = 0; i < 3 && arr[i]; i++) {
+      podium.push({
+        rank: i + 1,
+        name: arr[i].name,
+        score: arr[i].score,
+        avatar: await getAvatarLocalPath(arr[i].uid)
+      })
+    }
+
+    const list = arr.slice(3, 10).map((v, i) => ({
+      rank: i + 4,
+      name: v.name,
+      score: v.score
+    }))
+
+    const meIdx = arr.findIndex(v => v.uid === String(e.user_id))
+    const me = meIdx === -1
+      ? { rank: "", name: e.sender.nickname, score: 0 }
+      : { rank: meIdx + 1, name: arr[meIdx].name, score: arr[meIdx].score }
+
+    const data = {
+      tplFile: path.join(RES_DIR, "rank.html"),
+      podium,
+      list,
+      me
+    }
+
+    const img = await puppeteer.screenshot("cyjl-rank", data)
+    if (img) await e.reply(img)
+    return true
+  }
+  
 }
 
-export default IdiomChain
+async function getAvatarLocalPath (qq) {
+  const index = readJson(AVATAR_INDEX)
+  const today = todayStr()
+  const imgPath = path.join(AVATAR_DIR, `${qq}.png`)
+
+  // 已缓存且是今天
+  if (index[qq] === today && fs.existsSync(imgPath)) {
+    return "file://" + imgPath
+  }
+
+  // 否则重新拉取
+  const url = `https://q1.qlogo.cn/g?b=qq&s=160&nk=${qq}`
+  const res = await axios.get(url, { responseType: "arraybuffer" })
+  fs.writeFileSync(imgPath, res.data)
+
+  index[qq] = today
+  writeJson(AVATAR_INDEX, index)
+
+  return "file://" + imgPath
+}
+
+function updateTotalRank (ctx) {
+  const data = readJson(RANK_TOTAL_PATH)
+
+  for (const [uid, v] of ctx.scores.entries()) {
+    if (!data[uid]) {
+      data[uid] = { score: 0, name: ctx.names.get(uid) }
+    }
+    data[uid].score += v.score
+    data[uid].name = ctx.names.get(uid)
+  }
+
+  writeJson(RANK_TOTAL_PATH, data)
+}
+
+
+function updateChampionRank (ctx) {
+  const data = readJson(RANK_CHAMPION_PATH)
+
+  const sorted = [...ctx.scores.entries()]
+    .map(([uid, v]) => ({ uid, score: v.score }))
+    .sort((a, b) => b.score - a.score)
+
+  if (!sorted.length) return
+
+  const uid = sorted[0].uid
+  if (!data[uid]) {
+    data[uid] = { count: 0, name: ctx.names.get(uid) }
+  }
+  data[uid].count++
+  data[uid].name = ctx.names.get(uid)
+
+  writeJson(RANK_CHAMPION_PATH, data)
+}
