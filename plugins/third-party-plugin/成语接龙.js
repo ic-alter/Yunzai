@@ -648,6 +648,7 @@ export class IdiomChain extends plugin {
 
     const data = {
       tplFile: path.join(RES_DIR, "rank.html"),
+      title: type === "champion" ? "成语接龙冠军榜" : "成语接龙总分榜",
       podium,
       list,
       me

@@ -71,6 +71,17 @@ body {
   font-size: 14px;
   color: #555;
 }
+/* 中间第一名更突出 */
+.podium-item.center {
+  transform: translateY(-10px);
+}
+
+.avatar.big {
+  width: 112px;
+  height: 112px;
+  border-width: 3px;
+}
+
 
 /* ===== 4 - 10 名列表（单行样式） ===== */
 .list {
@@ -140,21 +151,38 @@ body {
 <body>
 <div class="container">
 
-  <div class="title">成语接龙排行榜</div>
+  <div class="title">{{title}}</div>
 
-  <!-- ===== 领奖台 1 / 2 / 3 ===== -->
+  <!-- ===== 领奖台：第二 / 第一 / 第三 ===== -->
   <div class="podium">
-    {{each podium}}
+    {{if podium[1]}}
     <div class="podium-item">
-      <div class="podium-rank rank-{{$value.rank}}">
-        第 {{$value.rank}} 名
-      </div>
-      <img class="avatar" src="{{$value.avatar}}" />
-      <div class="podium-name">{{$value.name}}</div>
-      <div class="podium-score">{{$value.score}} 分</div>
+      <div class="podium-rank rank-2">第 2 名</div>
+      <img class="avatar" src="{{podium[1].avatar}}">
+      <div class="podium-name">{{podium[1].name}}</div>
+      <div class="podium-score">{{podium[1].score}}</div>
     </div>
-    {{/each}}
+    {{/if}}
+
+    {{if podium[0]}}
+    <div class="podium-item center">
+      <div class="podium-rank rank-1">第 1 名</div>
+      <img class="avatar big" src="{{podium[0].avatar}}">
+      <div class="podium-name">{{podium[0].name}}</div>
+      <div class="podium-score">{{podium[0].score}}</div>
+    </div>
+    {{/if}}
+
+    {{if podium[2]}}
+    <div class="podium-item">
+      <div class="podium-rank rank-3">第 3 名</div>
+      <img class="avatar" src="{{podium[2].avatar}}">
+      <div class="podium-name">{{podium[2].name}}</div>
+      <div class="podium-score">{{podium[2].score}}</div>
+    </div>
+    {{/if}}
   </div>
+
 
   <!-- ===== 4 - 10 名 ===== -->
   <!-- ===== 4 - 10 名（单行） ===== -->
