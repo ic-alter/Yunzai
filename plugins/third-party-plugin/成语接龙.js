@@ -96,6 +96,12 @@ function formatRank (scores, names) {
   ).join("\n")
 }
 
+function resetHint (ctx) {
+  ctx.hintWord = null
+  ctx.hintLevel = 0
+  ctx.hintForRequired = null
+}
+
 /* ================= 插件主体 ================= */
 export class IdiomChain extends plugin {
   constructor () {
@@ -153,6 +159,9 @@ export class IdiomChain extends plugin {
 
     ctx.aiMode = aiMode
 
+    // 提示状态
+    resetHint(ctx)
+
     const start = pickStart(ctx.used)
     ctx.current = start.word
     ctx.required = start.last
@@ -190,17 +199,68 @@ export class IdiomChain extends plugin {
       return true
     }
 
-    /* ===== 提示 ===== */
+        /* ===== 提示 ===== */
     if (msg === "提示") {
       loadExplainOnce()
-      const it = pickByFirst(ctx.required, ctx.used)
+
+      // 如果还没锁定提示目标 / 局面变了 / 提示目标被用掉了，则重新挑一个
+      if (
+        !ctx.hintWord ||
+        ctx.hintForRequired !== ctx.required ||
+        ctx.used.has(ctx.hintWord)
+      ) {
+        const picked = pickByFirst(ctx.required, ctx.used)
+        if (!picked) {
+          await this.reply(`当前拼音 ${ctx.required} 无可接成语`)
+          return true
+        }
+        ctx.hintWord = picked.word
+        ctx.hintForRequired = ctx.required
+        ctx.hintLevel = 0
+      }
+
+      const it = idiomMap.get(ctx.hintWord)
       if (!it) {
-        await this.reply(`当前拼音 ${ctx.required} 无可接成语`)
+        // 理论上不会发生：防御性处理
+        resetHint(ctx)
+        await this.reply(`提示数据异常，请再试一次`)
         return true
       }
+
+      ctx.hintLevel++
+
+      const word = it.word
+      const firstChar = word[0]
+      const lastChar = (typeof word.at === "function") ? word.at(-1) : word.slice(-1)
+      const secondChar = word[1] || "（无）"
+
+      // 分阶段提示
+      if (ctx.hintLevel === 1) {
+        await this.reply(
+          `💡 提示：这个成语以 ${it.first} 开头，以 ${it.last} 结尾；\n` +
+          (explainMap[word] || "（暂无解释）")
+        )
+        return true
+      }
+
+      if (ctx.hintLevel === 2) {
+        await this.reply(
+          `💡 提示：这个成语以 [${firstChar}] 开头，以 [${lastChar}] 结尾`
+        )
+        return true
+      }
+
+      if (ctx.hintLevel === 3) {
+        await this.reply(
+          `💡 提示：这个成语的第二个字是[${secondChar}]`
+        )
+        return true
+      }
+
+      // 第4次及以后：完整成语 + 解释
       await this.reply(
-        `💡 提示：这个成语以 ${it.first} 开头，以 ${it.last} 结尾；\n` +
-        (explainMap[it.word] || "（暂无解释）")
+        `💡 提示：这个成语是[${word}]；\n` +
+        (explainMap[word] || "（暂无解释）")
       )
       return true
     }
@@ -223,6 +283,7 @@ export class IdiomChain extends plugin {
       ctx.used.add(it.word)
       ctx.current = it.word
       ctx.required = it.last
+      resetHint(ctx)
 
       await this.reply(
         `⏭ 已跳过\n` +
@@ -313,6 +374,7 @@ export class IdiomChain extends plugin {
 
     ctx.current = it.word
     ctx.required = it.last
+    resetHint(ctx)
 
     ctx.cdUid = uid
     ctx.cdUntil = Date.now() + 5000
@@ -343,6 +405,7 @@ export class IdiomChain extends plugin {
           ctx.used.add(bot.word)
           ctx.current = bot.word
           ctx.required = bot.last
+          resetHint(ctx)
 
           await this.reply(
             `🤖 我来接：${bot.word}\n` +
@@ -365,6 +428,7 @@ export class IdiomChain extends plugin {
     ctx.used.add(it.word)
     ctx.current = it.word
     ctx.required = it.last
+    resetHint(ctx)
     await this.reply(
       `${reason}\n` +
       `新起始成语：${it.word}\n` +

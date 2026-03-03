@@ -21,6 +21,7 @@ function at(qq) {
 
 function pickJueParents(e) {
   const ats = (e.message || []).filter((m) => m.type === "at")
+  console.log("pickJueParents e:", e.message)
   let fid, fname, mid, mname
   if (ats.length === 0) return null
   if (ats.length === 1) {
