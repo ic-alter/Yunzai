@@ -32,7 +32,7 @@ export class example extends plugin {
         { reg: '^#*(.)*(嗦|锁|吃|🔒|咬)(.)*牛牛$', fnc: 'suoNiuNiu' },
         { reg: '^#*(.)*击剑$', fnc: 'jijian' },
         // 新增：看看牛牛
-        { reg: '^#*(看看牛牛|查看牛牛|牛牛状态)$', fnc: 'seeNiuNiu' },
+        { reg: '^#*(看看牛牛|查看牛牛|牛牛状态|看看清波)$', fnc: 'seeNiuNiu' },
 
         { reg: '^#*(升级硬度|升级牛牛|牛牛升级|硬度升级|牛牛进化)$', fnc: 'upgradeHardness' },
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },

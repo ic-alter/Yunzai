@@ -125,7 +125,11 @@ export class IdiomChain extends plugin {
         {
           reg: "^#?成语接龙(总分榜|冠军榜|排行榜)$",
           fnc: "showRank"
-        }
+        },
+        {
+          reg: "^删除成语\\s*([\\u4e00-\\u9fa5]{4})$",
+          fnc: "deleteIdiom"
+        },
 
         
         
@@ -720,6 +724,62 @@ export class IdiomChain extends plugin {
 
     const img = await puppeteer.screenshot("cyjl-rank", data)
     if (img) await e.reply(img)
+    return true
+  }
+
+    async deleteIdiom(e) {
+    if (!e.isMaster) return true
+
+    const word = e.msg.match(/^删除成语\s*([\u4e00-\u9fa5]{4})$/)?.[1]
+    if (!word) return true
+
+    const idx = idiomList.findIndex(v => v.word === word)
+    if (idx === -1) {
+      await e.reply("未找到该成语")
+      return true
+    }
+
+    /* ===== 1) 内存：core 数据删除 + 重建索引 ===== */
+    idiomList.splice(idx, 1)
+
+    idiomMap.clear()
+    firstMap.clear()
+
+    for (const it of idiomList) {
+      idiomMap.set(it.word, it)
+      if (!firstMap.has(it.first)) firstMap.set(it.first, [])
+      firstMap.get(it.first).push(it)
+    }
+
+    validStartList = idiomList.filter(it => firstMap.has(it.last))
+
+    /* ===== 2) 落盘：core.json ===== */
+    fs.writeFileSync(CORE_PATH, JSON.stringify(idiomList, null, 2))
+
+    /* ===== 3) 同步删除 explain.json（无论是否曾经加载过提示） ===== */
+    // 解释数据是懒加载的：这里强制加载并删除对应键
+    loadExplainOnce()
+    if (explainMap && Object.prototype.hasOwnProperty.call(explainMap, word)) {
+      delete explainMap[word]
+      fs.writeFileSync(EXPLAIN_PATH, JSON.stringify(explainMap, null, 2))
+    } else {
+      // 如果内存里没有，也尝试直接读文件删一次，保证一致性（防御）
+      try {
+        const raw = fs.existsSync(EXPLAIN_PATH)
+          ? fs.readFileSync(EXPLAIN_PATH, "utf-8")
+          : "{}"
+        const obj = JSON.parse(raw || "{}")
+        if (obj && Object.prototype.hasOwnProperty.call(obj, word)) {
+          delete obj[word]
+          fs.writeFileSync(EXPLAIN_PATH, JSON.stringify(obj, null, 2))
+          explainMap = obj
+        }
+      } catch {
+        // explain 文件损坏/不可读就不阻塞删除 core 的流程
+      }
+    }
+
+    await e.reply(`已删除成语：${word}`)
     return true
   }
   
