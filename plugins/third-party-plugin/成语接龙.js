@@ -72,7 +72,7 @@ function pickStart (used) {
 function pickByFirst (first, used) {
   const pool = firstMap.get(first) || []
   const unused = pool.filter(it => !used.has(it.word))
-  return rand(unused.length ? unused : pool)
+  return unused.length ? rand(unused) : null
 }
 
 function getAllByFirst (first, used) {
@@ -388,6 +388,15 @@ export class IdiomChain extends plugin {
       `当前需要的开头拼音：${ctx.required}\n` +
       `剩余轮数：${ctx.roundsLeft}`
     )
+
+    /* ===== 普通模式：检查是否已经无可接成语 ===== */
+  if (!ctx.aiMode) {
+    const next = pickByFirst(ctx.required, ctx.used)
+
+    if (!next) {
+      await this.reset(ctx, "当前无可接成语，已重置起点")
+    }
+  }
 
     /* ===== 人机模式：机器人回合 ===== */
     if (ctx.aiMode) {
