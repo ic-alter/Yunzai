@@ -65,7 +65,7 @@ export class example extends plugin {
       priority: 200,
       rule: [
         { reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅|龟龟撅)", fnc: "jue" },
-        { reg: "^#?(射|🐍|飞机杯|大撅|坐撅|躺撅)", fnc: "she" },
+        { reg: "^#?(射|🐍|飞机杯|大撅|坐撅|躺撅|奶龙撅)", fnc: "she" },
 
         { reg: "^#?(子嗣|孩子)列表", fnc: "childrenList" },
         { reg: "^#?(子嗣|孩子)详情", fnc: "childDetail" },
