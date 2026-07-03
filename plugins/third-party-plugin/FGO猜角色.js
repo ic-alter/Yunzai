@@ -58,6 +58,31 @@ const CLASS_NAME_MAP = {
   loreGrandCaster: "冠位术阶"
 }
 
+const SERVANT_CLASS_DISPLAY_MAP = {
+  saber: "剑士",
+  archer: "弓兵",
+  lancer: "枪兵",
+  rider: "骑兵",
+  caster: "魔术师",
+  assassin: "暗杀者",
+  berserker: "狂战士",
+  shielder: "盾兵",
+  ruler: "裁定者",
+  avenger: "复仇者",
+  moonCancer: "月之癌",
+  alterEgo: "他人格",
+  foreigner: "降临者",
+  pretender: "身披角色者",
+  beast: "兽",
+  beastI: "兽I",
+  beastII: "兽II",
+  beastIIIL: "兽IIIL",
+  beastIIIR: "兽IIIR",
+  beastIV: "兽IV",
+  beastEresh: "兽",
+  loreGrandCaster: "冠位魔术师"
+}
+
 const GENDER_MAP = {
   male: "男性",
   female: "女性",
@@ -236,6 +261,52 @@ function mergeCatalogAliases (catalog, oldCatalog) {
   catalog.stats.aliasCount = catalog.items.reduce((sum, item) => sum + (item.aliases?.length || 0), 0)
   catalog.stats.preservedAliasCount = preservedAliasCount
   return catalog
+}
+
+function saveCatalogAlias (servantId, alias) {
+  const catalog = loadCatalog()
+  const item = catalog.items.find(v => String(v.id) === String(servantId))
+  if (!item) throw new Error("从者不存在")
+
+  const before = item.aliases?.length || 0
+  item.aliases = uniqNames([...(item.aliases || []), alias])
+  if (item.aliases.length === before) return { catalog, item, added: false }
+
+  catalog.builtAt = Date.now()
+  catalog.stats.aliasCount = catalog.items.reduce((sum, v) => sum + (v.aliases?.length || 0), 0)
+  writeJson(CATALOG_PATH, catalog)
+  return { catalog, item, added: true }
+}
+
+function servantMatchValues (item) {
+  return uniqNames([item.name, ...(item.aliases || [])])
+}
+
+function findAliasTargetCandidates (catalog, query) {
+  const key = normalizeCompact(query)
+  if (!key) return []
+
+  const exact = []
+  const similar = []
+  for (const item of catalog.items || []) {
+    const values = servantMatchValues(item)
+    if (values.some(v => normalizeCompact(v) === key)) {
+      exact.push(item)
+      continue
+    }
+    if (values.some(v => normalizeCompact(v).includes(key))) similar.push(item)
+  }
+  return [...exact, ...similar]
+}
+
+function formatServantPickLine (item, index) {
+  const rarity = Number.isFinite(Number(item.rarity)) ? `${item.rarity}星` : ""
+  const className = SERVANT_CLASS_DISPLAY_MAP[item.className] || CLASS_NAME_MAP[item.className] || item.className || "未知职介"
+  return `${index + 1}. ${item.name} ${rarity}${className}`
+}
+
+function isExactDisplayNameMatch (item, query) {
+  return normalizeCompact(item?.name) === normalizeCompact(query)
 }
 
 function collectAlignments (servant) {
@@ -690,6 +761,10 @@ export class FgoGuessRole extends plugin {
           fnc: "updateData"
         },
         {
+          reg: "^#?[fF][gG][oO]添加别名\\s+\\S+\\s+\\S+.*$",
+          fnc: "addAlias"
+        },
+        {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}$`,
           fnc: "start"
         }
@@ -710,6 +785,90 @@ export class FgoGuessRole extends plugin {
       await e.reply(`FGO 猜角色数据更新失败，已记录到 ${ERROR_LOG_PATH}`)
     }
     return true
+  }
+
+  async addAlias (e) {
+    const msg = String(e.msg || "").trim()
+    const match = msg.match(/^#?fgo添加别名\s+(\S+)\s+(.+)$/i)
+    if (!match) {
+      await e.reply("格式：fgo添加别名 原名 别名")
+      return true
+    }
+
+    const sourceName = match[1].trim()
+    const alias = match[2].trim()
+    if (!sourceName || !alias || !normalizeCompact(sourceName) || !normalizeCompact(alias)) {
+      await e.reply("格式：fgo添加别名 原名 别名")
+      return true
+    }
+
+    let catalog
+    try {
+      catalog = loadCatalog()
+    } catch (err) {
+      appendErrorLog("添加别名时加载数据失败", err)
+      await e.reply("FGO 猜角色数据不可用，请先发送 FGO猜从者更新")
+      return true
+    }
+
+    const candidates = findAliasTargetCandidates(catalog, sourceName)
+    if (!candidates.length) {
+      await e.reply(`未找到名称完整匹配或包含「${sourceName}」的从者`)
+      return true
+    }
+
+    if (candidates.length === 1 && isExactDisplayNameMatch(candidates[0], sourceName)) {
+      return this.addAliasToItem(candidates[0], alias)
+    }
+
+    const ctx = this.setContext("FGO添加别名_选择从者", true, 60, "添加别名超时已取消")
+    ctx.uid = String(e.user_id)
+    ctx.alias = alias
+    ctx.items = candidates
+
+    const list = candidates.map(formatServantPickLine).join("\n")
+    await e.reply(`请选择要添加别名的从者\n${list}`)
+    return true
+  }
+
+  async FGO添加别名_选择从者 () {
+    const ctx = this.getContext("FGO添加别名_选择从者", true)
+    if (!ctx) return false
+    if (String(this.e.user_id) !== String(ctx.uid)) return false
+
+    const msg = String(this.e.msg || "").trim()
+    if (msg === "取消") {
+      this.finish("FGO添加别名_选择从者", true)
+      await this.reply("已取消添加别名")
+      return true
+    }
+
+    const idx = Number(msg)
+    if (!Number.isInteger(idx) || idx < 1 || idx > ctx.items.length) {
+      await this.reply("请输入列表中的数字序号，或发送取消")
+      return true
+    }
+
+    const item = ctx.items[idx - 1]
+    const alias = ctx.alias
+    this.finish("FGO添加别名_选择从者", true)
+    return this.addAliasToItem(item, alias)
+  }
+
+  async addAliasToItem (item, alias) {
+    try {
+      const ret = saveCatalogAlias(item.id, alias)
+      if (!ret.added) {
+        await this.reply(`「${ret.item.name}」已存在别名「${alias}」`)
+        return true
+      }
+      await this.reply(`已为「${ret.item.name}」添加别名「${alias}」`)
+      return true
+    } catch (err) {
+      appendErrorLog(`添加别名失败：${item?.id || "unknown"} ${alias}`, err)
+      await this.reply(err?.message || "添加别名失败，已记录错误日志")
+      return true
+    }
   }
 
   async start (e) {
