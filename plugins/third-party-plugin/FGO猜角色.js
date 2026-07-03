@@ -207,6 +207,37 @@ function collectImageUrls (servant) {
   return [...new Set(urls.filter(Boolean))]
 }
 
+function getServantKey (item) {
+  if (!item) return ""
+  if (item.id) return `id:${item.id}`
+  if (item.collectionNo) return `collectionNo:${item.collectionNo}`
+  return item.name ? `name:${item.name}` : ""
+}
+
+function mergeCatalogAliases (catalog, oldCatalog) {
+  if (!catalog?.items?.length || !oldCatalog?.items?.length) return catalog
+
+  const oldItems = new Map()
+  for (const item of oldCatalog.items) {
+    const key = getServantKey(item)
+    if (key) oldItems.set(key, item)
+  }
+
+  let preservedAliasCount = 0
+  for (const item of catalog.items) {
+    const oldItem = oldItems.get(getServantKey(item))
+    if (!oldItem?.aliases?.length) continue
+
+    const before = item.aliases?.length || 0
+    item.aliases = uniqNames([...(item.aliases || []), ...oldItem.aliases])
+    preservedAliasCount += item.aliases.length - before
+  }
+
+  catalog.stats.aliasCount = catalog.items.reduce((sum, item) => sum + (item.aliases?.length || 0), 0)
+  catalog.stats.preservedAliasCount = preservedAliasCount
+  return catalog
+}
+
 function collectAlignments (servant) {
   const seen = new Set()
   const ret = []
@@ -226,6 +257,7 @@ function preprocessCatalogFromRaw () {
   ensureDir(DATA_DIR)
   const raw = readJson(RAW_PATH)
   if (!Array.isArray(raw)) throw new Error(`原始数据不可用：${RAW_PATH}`)
+  const oldCatalog = readJson(CATALOG_PATH)
 
   const items = []
   const stats = {
@@ -279,6 +311,7 @@ function preprocessCatalogFromRaw () {
     stats,
     items
   }
+  mergeCatalogAliases(catalog, oldCatalog)
   writeJson(CATALOG_PATH, catalog)
   return catalog
 }
