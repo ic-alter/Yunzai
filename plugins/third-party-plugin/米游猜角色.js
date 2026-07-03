@@ -9,7 +9,7 @@ const execFileAsync = promisify(execFile)
 const DATA_DIR = path.join(process.cwd(), "data", "mihoyo-guess-role")
 const CROP_DIR = path.join(DATA_DIR, "crops")
 const CATALOG_PATH = path.join(DATA_DIR, "catalog.json")
-const CATALOG_VERSION = 2
+const CATALOG_VERSION = 4
 const CATALOG_TTL = 6 * 60 * 60 * 1000
 const TOTAL_QUESTIONS = 20
 const MAX_ATTEMPTS = 5
@@ -17,6 +17,8 @@ const BASE_SCORE = 100
 const MIN_SCORE = 10
 const INITIAL_CROP_RATIO = 0.1
 const HINT_CROP_STEP = 0.1
+const MAX_TRANSPARENT_RATIO = 0.5
+const MAX_DOMINANT_COLOR_RATIO = 0.8
 
 const BRAND_PATTERN = "(米游|米哈游|米桑|[mM][iI][hH][oO][yY][oO]|[mM][hH][yY])"
 const TARGET_PATTERN = "(角色|干员)"
@@ -25,6 +27,7 @@ const MIAO_SKIP_DIRS = new Set(["common"])
 const GS_DIR = path.join(process.cwd(), "plugins", "miao-plugin", "resources", "meta-gs", "character")
 const SR_DIR = path.join(process.cwd(), "plugins", "miao-plugin", "resources", "meta-sr", "character")
 const ZZZ_ROLE_DIR = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "images", "role")
+const ZZZ_NANOKA_ROLE_DIR = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "images", "nanoka", "role")
 const ZZZ_MAP_PATH = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "map", "PartnerId2Data.json")
 
 const rand = arr => arr[Math.floor(Math.random() * arr.length)]
@@ -93,48 +96,81 @@ function uniqNames (names) {
 
 function scanMiaoCharacters (baseDir, game) {
   if (!fs.existsSync(baseDir)) return []
-  return fs.readdirSync(baseDir, { withFileTypes: true })
+  const items = []
+  for (const v of fs.readdirSync(baseDir, { withFileTypes: true })
     .filter(v => v.isDirectory())
     .filter(v => !MIAO_SKIP_DIRS.has(v.name))
-    .filter(v => game !== "星穹铁道" || !v.name.endsWith("Pro"))
-    .map(v => {
-      const img = path.join(baseDir, v.name, "imgs", "splash.webp")
-      if (!fs.existsSync(img)) return null
-      return {
-        id: `${game}:${v.name}`,
+    .filter(v => game !== "星穹铁道" || !v.name.endsWith("Pro"))) {
+    const imgsDir = path.join(baseDir, v.name, "imgs")
+    const img = path.join(imgsDir, "splash.webp")
+    if (!fs.existsSync(img)) continue
+
+    items.push({
+      id: `${game}:${v.name}`,
+      game,
+      name: v.name,
+      answers: [v.name],
+      image: img
+    })
+
+    if (game !== "原神" || !fs.existsSync(imgsDir)) continue
+    for (const file of fs.readdirSync(imgsDir, { withFileTypes: true })) {
+      if (!file.isFile() || !/^splash\d+\.webp$/i.test(file.name)) continue
+      items.push({
+        id: `${game}:${v.name}:${path.parse(file.name).name}`,
         game,
         name: v.name,
         answers: [v.name],
-        image: img
-      }
-    })
-    .filter(Boolean)
+        image: path.join(imgsDir, file.name)
+      })
+    }
+  }
+  return items
 }
 
 function scanZzzCharacters () {
   const map = readJson(ZZZ_MAP_PATH, {})
   const items = []
   const seen = new Set()
+  const bySpriteId = new Map()
 
-  for (const data of Object.values(map || {})) {
-    const spriteId = String(data?.sprite_id || "").padStart(2, "0")
+  function addItem (data, spriteId, image, imageKey = "") {
     const name = data?.name
-    if (!spriteId || !name) continue
+    if (!spriteId || !name || !fs.existsSync(image)) return
 
-    const img = path.join(ZZZ_ROLE_DIR, `IconRole${spriteId}.png`)
-    if (!fs.existsSync(img)) continue
-
-    const key = `${spriteId}:${name}`
-    if (seen.has(key)) continue
+    const key = `${spriteId}:${name}:${imageKey || image}`
+    if (seen.has(key)) return
     seen.add(key)
 
     items.push({
-      id: `zzz:${spriteId}:${name}`,
+      id: `zzz:${spriteId}:${name}${imageKey ? `:${imageKey}` : ""}`,
       game: "绝区零",
       name,
       answers: uniqNames([name, data.full_name]),
-      image: img
+      image
     })
+  }
+
+  for (const data of Object.values(map || {})) {
+    const spriteId = String(data?.sprite_id || "").padStart(2, "0")
+    if (!spriteId || !data?.name) continue
+    bySpriteId.set(spriteId, data)
+
+    const img = path.join(ZZZ_ROLE_DIR, `IconRole${spriteId}.png`)
+    addItem(data, spriteId, img)
+  }
+
+  if (fs.existsSync(ZZZ_NANOKA_ROLE_DIR)) {
+    for (const file of fs.readdirSync(ZZZ_NANOKA_ROLE_DIR, { withFileTypes: true })) {
+      if (!file.isFile()) continue
+      const match = /^IconRole(\d+)_\d+\.(?:png|webp|jpg|jpeg)$/i.exec(file.name)
+      if (!match) continue
+
+      const spriteId = match[1].padStart(2, "0")
+      const data = bySpriteId.get(spriteId)
+      if (!data) continue
+      addItem(data, spriteId, path.join(ZZZ_NANOKA_ROLE_DIR, file.name), path.parse(file.name).name)
+    }
   }
   return items
 }
@@ -193,14 +229,33 @@ async function cropRawRgba (file, crop) {
   return stdout
 }
 
-async function transparentRatio (file, crop) {
+async function analyzeCrop (file, crop) {
   const buf = await cropRawRgba(file, crop)
-  if (!buf.length) return 0
+  if (!buf.length) return { transparentRatio: 0, dominantColorRatio: 0 }
+
   let transparent = 0
+  let opaque = 0
+  let maxBucket = 0
+  const buckets = new Map()
+
   for (let i = 3; i < buf.length; i += 4) {
-    if (buf[i] <= 8) transparent++
+    if (buf[i] <= 8) {
+      transparent++
+      continue
+    }
+
+    opaque++
+    const key = `${buf[i - 3] >> 4},${buf[i - 2] >> 4},${buf[i - 1] >> 4}`
+    const count = (buckets.get(key) || 0) + 1
+    buckets.set(key, count)
+    if (count > maxBucket) maxBucket = count
   }
-  return transparent / (buf.length / 4)
+
+  const total = buf.length / 4
+  return {
+    transparentRatio: transparent / total,
+    dominantColorRatio: opaque ? maxBucket / opaque : 1
+  }
 }
 
 async function writeCropPng (file, crop, out) {
@@ -245,7 +300,11 @@ async function makeInitialCrop (item, meta) {
     }
     chosen = crop
     try {
-      if (await transparentRatio(item.image, crop) <= 0.5) return crop
+      const analysis = await analyzeCrop(item.image, crop)
+      if (
+        analysis.transparentRatio <= MAX_TRANSPARENT_RATIO &&
+        analysis.dominantColorRatio <= MAX_DOMINANT_COLOR_RATIO
+      ) return crop
     } catch {
       return crop
     }
@@ -307,7 +366,8 @@ async function prepareQuestion (ctx) {
     baseScore: BASE_SCORE,
     hints: 0,
     fullShown: false,
-    hintedChars: []
+    hintedChars: [],
+    resolved: false
   }
   await renderCurrentCrop(ctx)
 }
@@ -333,6 +393,12 @@ async function replyQuestion (e, ctx, prefix = "", quote = false) {
     `第 ${ctx.index + 1}/${TOTAL_QUESTIONS} 题，请回答角色的完整名称\n`,
     segment.image(`file://${img}`)
   ].filter(Boolean), quote)
+}
+
+function tryResolveCurrent (ctx) {
+  if (ctx.current?.resolved) return false
+  ctx.current.resolved = true
+  return true
 }
 
 export class MihoyoGuessRole extends plugin {
@@ -405,11 +471,13 @@ export class MihoyoGuessRole extends plugin {
     }
 
     if (msg === "提示" || msg === "不知道") {
+      if (ctx.current?.resolved) return true
       await this.hint(ctx)
       return true
     }
 
     if (msg === "跳过") {
+      if (!tryResolveCurrent(ctx)) return true
       addScore(ctx, uid, -100)
       ctx.comboHolder = null
       ctx.comboCount = 0
@@ -432,6 +500,7 @@ export class MihoyoGuessRole extends plugin {
       }
       ctx.current.attempts++
       if (ctx.current.attempts >= MAX_ATTEMPTS) {
+        if (!tryResolveCurrent(ctx)) return true
         await this.nextQuestion(ctx, `已答错 ${MAX_ATTEMPTS} 次，本题跳过。\n答案：${ctx.current.item.name}`, true)
       } else {
         await this.reply(`回答错误，剩余 ${MAX_ATTEMPTS - ctx.current.attempts} 次机会`, true)
@@ -472,6 +541,8 @@ export class MihoyoGuessRole extends plugin {
   }
 
   async correct (ctx, uid) {
+    if (!tryResolveCurrent(ctx)) return true
+
     const prevHolder = ctx.comboHolder
     const prevCombo = ctx.comboCount
     const interrupted = prevHolder && prevHolder !== uid && prevCombo >= 3
