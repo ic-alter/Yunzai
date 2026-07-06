@@ -417,14 +417,10 @@ export class MihoyoGuessRole extends plugin {
   }
 
   async start (e) {
-    if (!e.isGroup) {
-      await e.reply("请在群聊中开始游戏")
-      return true
-    }
-
-    const old = this.getContext("米游猜角色_进行中", true)
+    const isGroupContext = e.isGroup
+    const old = this.getContext("米游猜角色_进行中", isGroupContext)
     if (old) {
-      await e.reply("本群已有一局米游猜角色正在进行")
+      await e.reply("当前会话已有一局米游猜角色正在进行")
       return true
     }
 
@@ -434,7 +430,8 @@ export class MihoyoGuessRole extends plugin {
       return true
     }
 
-    const ctx = this.setContext("米游猜角色_进行中", true, 3600)
+    const ctx = this.setContext("米游猜角色_进行中", isGroupContext, 3600)
+    ctx.isGroupContext = isGroupContext
     ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
     ctx.questions = shuffle(catalog.items).slice(0, TOTAL_QUESTIONS)
     ctx.answerSet = new Set(catalog.items.flatMap(v => v.answers || [v.name]).map(normalizeName))
@@ -447,7 +444,7 @@ export class MihoyoGuessRole extends plugin {
     try {
       await prepareQuestion(ctx)
     } catch (err) {
-      this.finish("米游猜角色_进行中", true)
+      this.finish("米游猜角色_进行中", ctx.isGroupContext)
       globalThis.logger?.error?.(`[米游猜角色] 生成题目失败：${err.stack || err}`)
       await e.reply("生成题目失败，请确认 ffmpeg/ffprobe 可用且角色图片可读取")
       return true
@@ -458,7 +455,7 @@ export class MihoyoGuessRole extends plugin {
   }
 
   async 米游猜角色_进行中 (e) {
-    const ctx = this.getContext("米游猜角色_进行中", true)
+    const ctx = this.getContext("米游猜角色_进行中", e.isGroup)
     if (!ctx) return false
 
     const msg = String(this.e.msg || "").trim()
@@ -595,7 +592,7 @@ export class MihoyoGuessRole extends plugin {
   }
 
   async end (ctx, reason, quote = false) {
-    this.finish("米游猜角色_进行中", true)
+    this.finish("米游猜角色_进行中", ctx.isGroupContext)
     await this.reply(`🏁 ${reason}\n\n最终排行：\n${rankText(ctx)}`, quote)
     return true
   }
