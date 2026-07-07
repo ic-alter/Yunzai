@@ -18,5 +18,6 @@ export class eatWhat extends plugin {
 
   async eatWhat(e) {
     await e.reply('是啊，吃什么')
+    return true
   }
 }
