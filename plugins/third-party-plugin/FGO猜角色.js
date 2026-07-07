@@ -757,6 +757,10 @@ export class FgoGuessRole extends plugin {
       priority: 200,
       rule: [
         {
+          reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}帮助$`,
+          fnc: "help"
+        },
+        {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}更新$|^#?更新${FGO_PATTERN}猜${TARGET_PATTERN}数据$`,
           fnc: "updateData"
         },
@@ -770,6 +774,16 @@ export class FgoGuessRole extends plugin {
         }
       ]
     })
+  }
+
+  async help (e) {
+    await e.reply([
+      "FGO猜角色帮助",
+      "开局：#FGO猜角色 / #FGO猜从者",
+      "局内：提示、不知道、跳过、结束、不玩了",
+      "规则：共 20 题，看从者立绘局部猜完整名称；答对得分，提示会降低本题分数，跳过扣 100 分。"
+    ].join("\n"))
+    return true
   }
 
   async updateData (e) {

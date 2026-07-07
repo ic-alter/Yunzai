@@ -409,11 +409,25 @@ export class MihoyoGuessRole extends plugin {
       priority: 200,
       rule: [
         {
+          reg: `^#?${BRAND_PATTERN}猜${TARGET_PATTERN}帮助$`,
+          fnc: "help"
+        },
+        {
           reg: `^#?(${BRAND_PATTERN}猜${TARGET_PATTERN}|猜${BRAND_PATTERN}${TARGET_PATTERN})$`,
           fnc: "start"
         }
       ]
     })
+  }
+
+  async help (e) {
+    await e.reply([
+      "米游猜角色帮助",
+      "开局：#米游猜角色 / #米游猜干员",
+      "局内：提示、不知道、跳过、结束、不玩了",
+      "规则：共 20 题，看角色立绘局部猜完整角色名；答对得分，提示会降低本题分数，跳过扣 100 分。"
+    ].join("\n"))
+    return true
   }
 
   async start (e) {
