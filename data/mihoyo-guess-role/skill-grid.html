@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>米游技能方格</title>
+  <link rel="stylesheet" href="{{cssFile}}">
+</head>
+<body>
+  <div id="container" class="sheet size-{{size}}">
+    <div class="header">
+      <div>
+        <div class="title">{{game}}技能方格</div>
+        <div class="subtitle">{{size}}x{{size}} · 剩余 {{remaining}} / {{total}} · {{mode}}</div>
+      </div>
+      <div class="badge">SKILL GRID</div>
+    </div>
+
+    <div class="grid" style="--size: {{size}};">
+      {{each cells row}}
+        {{each row cell}}
+          <div class="cell {{cell.state}}">
+            <span>{{cell.text}}</span>
+          </div>
+        {{/each}}
+      {{/each}}
+    </div>
+
+    <div class="footer">
+      <span>回复角色名作答</span>
+      <span>提示 / 结束 / 不玩了</span>
+    </div>
+  </div>
+</body>
+</html>
