@@ -16,7 +16,7 @@ const ERROR_LOG_PATH = path.join(DATA_DIR, "preprocess_errors.log")
 const IMAGE_CACHE_DIR = path.join(DATA_DIR, "image_cache")
 const CROP_DIR = path.join(DATA_DIR, "crops")
 const RAW_URL = "https://api.atlasacademy.io/export/CN/nice_servant.json"
-const CATALOG_VERSION = 1
+const CATALOG_VERSION = 2
 
 const TOTAL_QUESTIONS = 20
 const QUESTION_SERVANT_ATTEMPTS = 3
@@ -55,7 +55,7 @@ const CLASS_NAME_MAP = {
   beastIIIR: "兽IIIR",
   beastIV: "兽IV",
   beastEresh: "兽阶",
-  loreGrandCaster: "冠位术阶"
+  loreGrandCaster: "冠位术阶",
 }
 
 const SERVANT_CLASS_DISPLAY_MAP = {
@@ -80,13 +80,13 @@ const SERVANT_CLASS_DISPLAY_MAP = {
   beastIIIR: "兽IIIR",
   beastIV: "兽IV",
   beastEresh: "兽",
-  loreGrandCaster: "冠位魔术师"
+  loreGrandCaster: "冠位魔术师",
 }
 
 const GENDER_MAP = {
   male: "男性",
   female: "女性",
-  unknown: "不明"
+  unknown: "不明",
 }
 
 const ATTRIBUTE_MAP = {
@@ -94,13 +94,13 @@ const ATTRIBUTE_MAP = {
   earth: "地",
   human: "人",
   star: "星",
-  beast: "兽"
+  beast: "兽",
 }
 
 const POLICY_MAP = {
   lawful: "秩序",
   neutral: "中立",
-  chaotic: "混沌"
+  chaotic: "混沌",
 }
 
 const PERSONALITY_MAP = {
@@ -110,17 +110,17 @@ const PERSONALITY_MAP = {
   goodAndEvil: "善/恶",
   summer: "夏",
   bride: "新娘",
-  madness: "狂"
+  madness: "狂",
 }
 
 const rand = arr => arr[Math.floor(Math.random() * arr.length)]
 const clamp = (n, min, max) => Math.max(min, Math.min(max, n))
 
-function ensureDir (dir) {
+function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true })
 }
 
-function readJson (file, def = null) {
+function readJson(file, def = null) {
   try {
     if (!fs.existsSync(file)) return def
     return JSON.parse(fs.readFileSync(file, "utf8"))
@@ -129,22 +129,22 @@ function readJson (file, def = null) {
   }
 }
 
-function writeJson (file, data) {
+function writeJson(file, data) {
   ensureDir(path.dirname(file))
   fs.writeFileSync(file, JSON.stringify(data, null, 2))
 }
 
-function appendErrorLog (message, err = null) {
+function appendErrorLog(message, err = null) {
   ensureDir(DATA_DIR)
   const detail = err ? `\n${err.stack || err}` : ""
   fs.appendFileSync(ERROR_LOG_PATH, `[${new Date().toISOString()}] ${message}${detail}\n`)
 }
 
-function displayName (e) {
+function displayName(e) {
   return e?.member?.card || e?.sender?.nickname || String(e.user_id)
 }
 
-function shuffle (arr) {
+function shuffle(arr) {
   const copy = [...arr]
   for (let i = copy.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -153,21 +153,24 @@ function shuffle (arr) {
   return copy
 }
 
-function formatScore (score) {
+function formatScore(score) {
   return Number.isInteger(score) ? String(score) : score.toFixed(1)
 }
 
-function comboCoeff (combo) {
+function comboCoeff(combo) {
   if (combo >= 9) return 1.3
   if (combo >= 6) return 1.2
   if (combo >= 3) return 1.1
   return 1
 }
 
-function uniqNames (names) {
+function uniqNames(names) {
   const seen = new Set()
   const ret = []
-  for (const name of names.filter(Boolean).map(v => String(v).trim()).filter(Boolean)) {
+  for (const name of names
+    .filter(Boolean)
+    .map(v => String(v).trim())
+    .filter(Boolean)) {
     const key = normalizeCompact(name)
     if (!key || seen.has(key)) continue
     seen.add(key)
@@ -176,39 +179,41 @@ function uniqNames (names) {
   return ret
 }
 
-function normalizeCompact (name) {
+function normalizeCompact(name) {
   return normalizeSegments(name).join("")
 }
 
-function normalizeSegments (text) {
-  return String(text || "")
-    .toLowerCase()
-    .match(/[\u4e00-\u9fa5]+|[a-z]+/g) || []
+function normalizeSegments(text) {
+  return (
+    String(text || "")
+      .toLowerCase()
+      .match(/[\u4e00-\u9fa5]+|[a-z]+/g) || []
+  )
 }
 
-function isLatin (text) {
+function isLatin(text) {
   return /^[a-z]+$/.test(text)
 }
 
-function isUsablePartialAnswer (text) {
+function isUsablePartialAnswer(text) {
   if (!text || BANNED_ANSWER_KEYS.has(text)) return false
   return isLatin(text) ? text.length >= 3 : text.length >= 2
 }
 
-function collectNameValues (target, values) {
+function collectNameValues(target, values) {
   if (!target || typeof target !== "object") return
   for (const group of ["ascension", "costume"]) {
     for (const value of Object.values(target[group] || {})) values.push(value)
   }
 }
 
-function collectServantAliases (servant) {
+function collectServantAliases(servant) {
   const names = [
     servant.name,
     servant.originalName,
     servant.ruby,
     servant.battleName,
-    servant.originalBattleName
+    servant.originalBattleName,
   ]
 
   const add = servant.ascensionAdd || {}
@@ -216,7 +221,7 @@ function collectServantAliases (servant) {
     "overWriteServantName",
     "originalOverWriteServantName",
     "overWriteServantBattleName",
-    "originalOverWriteServantBattleName"
+    "originalOverWriteServantBattleName",
   ]) {
     collectNameValues(add[key], names)
   }
@@ -224,7 +229,7 @@ function collectServantAliases (servant) {
   return uniqNames(names)
 }
 
-function collectImageUrls (servant) {
+function collectImageUrls(servant) {
   const urls = []
   const graph = servant.extraAssets?.charaGraph || {}
   for (const value of Object.values(graph.ascension || {})) urls.push(value)
@@ -232,14 +237,14 @@ function collectImageUrls (servant) {
   return [...new Set(urls.filter(Boolean))]
 }
 
-function getServantKey (item) {
+function getServantKey(item) {
   if (!item) return ""
   if (item.id) return `id:${item.id}`
   if (item.collectionNo) return `collectionNo:${item.collectionNo}`
   return item.name ? `name:${item.name}` : ""
 }
 
-function mergeCatalogAliases (catalog, oldCatalog) {
+function mergeCatalogAliases(catalog, oldCatalog) {
   if (!catalog?.items?.length || !oldCatalog?.items?.length) return catalog
 
   const oldItems = new Map()
@@ -258,12 +263,15 @@ function mergeCatalogAliases (catalog, oldCatalog) {
     preservedAliasCount += item.aliases.length - before
   }
 
-  catalog.stats.aliasCount = catalog.items.reduce((sum, item) => sum + (item.aliases?.length || 0), 0)
+  catalog.stats.aliasCount = catalog.items.reduce(
+    (sum, item) => sum + (item.aliases?.length || 0),
+    0,
+  )
   catalog.stats.preservedAliasCount = preservedAliasCount
   return catalog
 }
 
-function saveCatalogAlias (servantId, alias) {
+function saveCatalogAlias(servantId, alias) {
   const catalog = loadCatalog()
   const item = catalog.items.find(v => String(v.id) === String(servantId))
   if (!item) throw new Error("从者不存在")
@@ -278,11 +286,11 @@ function saveCatalogAlias (servantId, alias) {
   return { catalog, item, added: true }
 }
 
-function servantMatchValues (item) {
+function servantMatchValues(item) {
   return uniqNames([item.name, ...(item.aliases || [])])
 }
 
-function findAliasTargetCandidates (catalog, query) {
+function findAliasTargetCandidates(catalog, query) {
   const key = normalizeCompact(query)
   if (!key) return []
 
@@ -299,17 +307,21 @@ function findAliasTargetCandidates (catalog, query) {
   return [...exact, ...similar]
 }
 
-function formatServantPickLine (item, index) {
+function formatServantPickLine(item, index) {
   const rarity = Number.isFinite(Number(item.rarity)) ? `${item.rarity}星` : ""
-  const className = SERVANT_CLASS_DISPLAY_MAP[item.className] || CLASS_NAME_MAP[item.className] || item.className || "未知职介"
+  const className =
+    SERVANT_CLASS_DISPLAY_MAP[item.className] ||
+    CLASS_NAME_MAP[item.className] ||
+    item.className ||
+    "未知职介"
   return `${index + 1}. ${item.name} ${rarity}${className}`
 }
 
-function isExactDisplayNameMatch (item, query) {
+function isExactDisplayNameMatch(item, query) {
   return normalizeCompact(item?.name) === normalizeCompact(query)
 }
 
-function collectAlignments (servant) {
+function collectAlignments(servant) {
   const seen = new Set()
   const ret = []
   for (const limit of servant.limits || []) {
@@ -324,7 +336,136 @@ function collectAlignments (servant) {
   return ret
 }
 
-function preprocessCatalogFromRaw () {
+function stripSkillRank(name) {
+  let text = String(name || "")
+    .replace(/<[^>]*>/g, "")
+    .trim()
+  if (!text) return ""
+
+  for (let i = 0; i < 3; i++) {
+    const next = text
+      .replace(
+        /\s+(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?)(?:\s*[/／]\s*(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?))*$/iu,
+        "",
+      )
+      .trim()
+    if (next === text) break
+    text = next
+  }
+  return text
+}
+
+function displaySkillName(name) {
+  return stripSkillRank(name)
+    .replace(/[\p{P}\p{Z}\s]/gu, "")
+    .trim()
+}
+
+function normalizeSkillKey(name) {
+  return displaySkillName(name).toLowerCase()
+}
+
+function collectSkillGridRawNames(servant, source) {
+  const field = {
+    skill: "skills",
+    classPassive: "classPassive",
+    noblePhantasm: "noblePhantasms",
+  }[source]
+  return (servant[field] || []).map(item => item?.name).filter(Boolean)
+}
+
+function commonAnswerNames(items) {
+  if (!items.length) return []
+
+  const keyMaps = items.map(item => {
+    const map = new Map()
+    for (const name of servantMatchValues(item)) {
+      const key = normalizeCompact(name)
+      if (key && !map.has(key)) map.set(key, name)
+    }
+    return map
+  })
+
+  let common = new Set(keyMaps[0].keys())
+  for (const map of keyMaps.slice(1)) {
+    common = new Set([...common].filter(key => map.has(key)))
+  }
+
+  return [...common].map(key => keyMaps[0].get(key)).filter(Boolean)
+}
+
+function buildSkillGridItemsBySource(raw, catalogItems, source) {
+  const itemById = new Map(catalogItems.map(item => [String(item.id), item]))
+  const skillMap = new Map()
+
+  for (const servant of raw) {
+    const item = itemById.get(String(servant?.id))
+    if (!item) continue
+
+    for (const rawName of collectSkillGridRawNames(servant, source)) {
+      const skill = displaySkillName(rawName)
+      const key = normalizeSkillKey(rawName)
+      if (skill.length < 2 || skill.length > 16 || !key) continue
+
+      const group = skillMap.get(key) || {
+        key,
+        skill,
+        owners: new Map(),
+      }
+      if (!group.owners.has(String(item.id))) group.owners.set(String(item.id), item)
+      skillMap.set(key, group)
+    }
+  }
+
+  const ret = []
+  for (const group of skillMap.values()) {
+    const owners = [...group.owners.values()]
+    if (owners.length === 1) {
+      const item = owners[0]
+      ret.push({
+        id: `fgo:${source}:${group.key}:${item.id}`,
+        source,
+        name: item.name,
+        answers: servantMatchValues(item),
+        skill: group.skill,
+        ownerIds: [item.id],
+      })
+      continue
+    }
+
+    const answers = commonAnswerNames(owners)
+    if (!answers.length) continue
+    ret.push({
+      id: `fgo:${source}:${group.key}:shared`,
+      source,
+      name: answers[0],
+      answers,
+      skill: group.skill,
+      ownerIds: owners.map(item => item.id),
+    })
+  }
+
+  return ret.sort((a, b) => a.skill.localeCompare(b.skill, "zh-CN"))
+}
+
+function buildSkillGridCatalog(raw, catalogItems) {
+  const skills = buildSkillGridItemsBySource(raw, catalogItems, "skill")
+  const classPassives = buildSkillGridItemsBySource(raw, catalogItems, "classPassive")
+  const noblePhantasms = buildSkillGridItemsBySource(raw, catalogItems, "noblePhantasm")
+  return {
+    skills,
+    classPassives,
+    noblePhantasms,
+    stats: {
+      skillCount: skills.length,
+      classPassiveCount: classPassives.length,
+      noblePhantasmCount: noblePhantasms.length,
+      totalCount: skills.length + classPassives.length + noblePhantasms.length,
+    },
+  }
+}
+
+function preprocessCatalogFromRaw() {
   ensureDir(DATA_DIR)
   const raw = readJson(RAW_PATH)
   if (!Array.isArray(raw)) throw new Error(`原始数据不可用：${RAW_PATH}`)
@@ -339,7 +480,7 @@ function preprocessCatalogFromRaw () {
     costumeImageCount: 0,
     aliasCount: 0,
     skippedCount: 0,
-    errorCount: 0
+    errorCount: 0,
   }
 
   for (const servant of raw) {
@@ -367,7 +508,7 @@ function preprocessCatalogFromRaw () {
         gender: servant.gender || "unknown",
         attribute: servant.attribute,
         alignments: collectAlignments(servant),
-        imageUrls
+        imageUrls,
       })
     } catch (err) {
       stats.errorCount++
@@ -380,33 +521,35 @@ function preprocessCatalogFromRaw () {
     version: CATALOG_VERSION,
     builtAt: Date.now(),
     stats,
-    items
+    items,
   }
   mergeCatalogAliases(catalog, oldCatalog)
+  catalog.skillGrid = buildSkillGridCatalog(raw, catalog.items)
+  catalog.stats.skillGridItemCount = catalog.skillGrid.stats.totalCount
   writeJson(CATALOG_PATH, catalog)
   return catalog
 }
 
-async function downloadRawData () {
+async function downloadRawData() {
   ensureDir(DATA_DIR)
   await execFileAsync("wget", ["-O", RAW_TMP_PATH, RAW_URL], {
-    maxBuffer: 10 * 1024 * 1024
+    maxBuffer: 10 * 1024 * 1024,
   })
   fs.renameSync(RAW_TMP_PATH, RAW_PATH)
 }
 
-export async function rebuildFgoGuessCatalog () {
+export async function rebuildFgoGuessCatalog() {
   return preprocessCatalogFromRaw()
 }
 
-function loadCatalog () {
+function loadCatalog() {
   const old = readJson(CATALOG_PATH)
   if (old?.version === CATALOG_VERSION && old?.items?.length) return old
   if (!fs.existsSync(RAW_PATH)) throw new Error(`缺少预处理数据和原始数据：${CATALOG_PATH}`)
   return preprocessCatalogFromRaw()
 }
 
-function makeAnswerKeys (items) {
+function makeAnswerKeys(items) {
   const keys = new Set()
   for (const item of items) {
     for (const alias of item.aliases || [item.name]) {
@@ -426,7 +569,7 @@ function makeAnswerKeys (items) {
   return keys
 }
 
-function isCorrectAnswer (item, msg) {
+function isCorrectAnswer(item, msg) {
   const compact = normalizeCompact(msg)
   const aliases = item.aliases || [item.name]
   if (!compact) return false
@@ -442,16 +585,20 @@ function isCorrectAnswer (item, msg) {
   return answerSegments.some(answer => aliasSegments.some(alias => alias.includes(answer)))
 }
 
-function imageCachePath (item, url) {
+function imageCachePath(item, url) {
   const filename = path.basename(new URL(url).pathname) || "image.png"
   return path.join(IMAGE_CACHE_DIR, String(item.id), filename)
 }
 
-function requestFile (url, redirects = 3) {
+function requestFile(url, redirects = 3) {
   return new Promise((resolve, reject) => {
     const client = url.startsWith("https:") ? https : http
     const req = client.get(url, { family: 4 }, res => {
-      if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location && redirects > 0) {
+      if (
+        [301, 302, 303, 307, 308].includes(res.statusCode) &&
+        res.headers.location &&
+        redirects > 0
+      ) {
         res.resume()
         resolve(requestFile(new URL(res.headers.location, url).toString(), redirects - 1))
         return
@@ -468,7 +615,7 @@ function requestFile (url, redirects = 3) {
   })
 }
 
-async function downloadImageToCache (item, url) {
+async function downloadImageToCache(item, url) {
   const out = imageCachePath(item, url)
   ensureDir(path.dirname(out))
   if (fs.existsSync(out) && fs.statSync(out).size > 0) return out
@@ -491,7 +638,7 @@ async function downloadImageToCache (item, url) {
   return out
 }
 
-async function pickQuestionImage (item) {
+async function pickQuestionImage(item) {
   const urls = shuffle(item.imageUrls || [])
   let lastErr = null
   for (const url of urls.slice(0, 5)) {
@@ -505,13 +652,17 @@ async function pickQuestionImage (item) {
   throw lastErr || new Error(`没有可用图片：${item.name}`)
 }
 
-async function probeImage (file) {
+async function probeImage(file) {
   const { stdout } = await execFileAsync("ffprobe", [
-    "-v", "error",
-    "-select_streams", "v:0",
-    "-show_entries", "stream=width,height",
-    "-of", "json",
-    file
+    "-v",
+    "error",
+    "-select_streams",
+    "v:0",
+    "-show_entries",
+    "stream=width,height",
+    "-of",
+    "json",
+    file,
   ])
   const info = JSON.parse(stdout)
   const stream = info.streams?.[0]
@@ -519,22 +670,31 @@ async function probeImage (file) {
   return { width: Number(stream.width), height: Number(stream.height) }
 }
 
-async function cropRawRgba (file, crop) {
-  const { stdout } = await execFileAsync("ffmpeg", [
-    "-v", "error",
-    "-i", file,
-    "-vf", `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y},format=rgba`,
-    "-frames:v", "1",
-    "-f", "rawvideo",
-    "pipe:1"
-  ], {
-    encoding: "buffer",
-    maxBuffer: 100 * 1024 * 1024
-  })
+async function cropRawRgba(file, crop) {
+  const { stdout } = await execFileAsync(
+    "ffmpeg",
+    [
+      "-v",
+      "error",
+      "-i",
+      file,
+      "-vf",
+      `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y},format=rgba`,
+      "-frames:v",
+      "1",
+      "-f",
+      "rawvideo",
+      "pipe:1",
+    ],
+    {
+      encoding: "buffer",
+      maxBuffer: 100 * 1024 * 1024,
+    },
+  )
   return stdout
 }
 
-async function analyzeCrop (file, crop) {
+async function analyzeCrop(file, crop) {
   const buf = await cropRawRgba(file, crop)
   if (!buf.length) return { transparentRatio: 0, dominantColorRatio: 0 }
 
@@ -559,23 +719,31 @@ async function analyzeCrop (file, crop) {
   const total = buf.length / 4
   return {
     transparentRatio: transparent / total,
-    dominantColorRatio: opaque ? maxBucket / opaque : 1
+    dominantColorRatio: opaque ? maxBucket / opaque : 1,
   }
 }
 
-async function writeCropPng (file, crop, out) {
+async function writeCropPng(file, crop, out) {
   ensureDir(path.dirname(out))
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-v", "error",
-    "-i", file,
-    "-vf", `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y}`,
-    "-frames:v", "1",
-    out
-  ], { maxBuffer: 20 * 1024 * 1024 })
+  await execFileAsync(
+    "ffmpeg",
+    [
+      "-y",
+      "-v",
+      "error",
+      "-i",
+      file,
+      "-vf",
+      `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y}`,
+      "-frames:v",
+      "1",
+      out,
+    ],
+    { maxBuffer: 20 * 1024 * 1024 },
+  )
 }
 
-function squareCropFromCenter (centerX, centerY, ratio, width, height) {
+function squareCropFromCenter(centerX, centerY, ratio, width, height) {
   const minSide = Math.min(width, height)
   const side = Math.max(1, Math.round(minSide * ratio))
   const w = Math.min(width, side)
@@ -585,7 +753,7 @@ function squareCropFromCenter (centerX, centerY, ratio, width, height) {
   return { x, y, w, h }
 }
 
-async function makeInitialCrop (item, image, meta) {
+async function makeInitialCrop(item, image, meta) {
   const minSide = Math.min(meta.width, meta.height)
   const side = Math.max(1, Math.round(minSide * INITIAL_CROP_RATIO))
   let chosen = null
@@ -595,7 +763,7 @@ async function makeInitialCrop (item, image, meta) {
       x: Math.floor(Math.random() * Math.max(1, meta.width - side + 1)),
       y: Math.floor(Math.random() * Math.max(1, meta.height - side + 1)),
       w: side,
-      h: side
+      h: side,
     }
     chosen = crop
     try {
@@ -603,7 +771,8 @@ async function makeInitialCrop (item, image, meta) {
       if (
         analysis.transparentRatio <= MAX_TRANSPARENT_RATIO &&
         analysis.dominantColorRatio <= MAX_DOMINANT_COLOR_RATIO
-      ) return crop
+      )
+        return crop
     } catch (err) {
       appendErrorLog(`分析裁剪失败：${item.id} ${item.name}`, err)
       return crop
@@ -612,30 +781,34 @@ async function makeInitialCrop (item, image, meta) {
   return chosen
 }
 
-function isFullImage (crop, meta) {
+function isFullImage(crop, meta) {
   return crop.x === 0 && crop.y === 0 && crop.w >= meta.width && crop.h >= meta.height
 }
 
-function questionCropPath (ctx) {
+function questionCropPath(ctx) {
   return path.join(CROP_DIR, `${ctx.gameId}_${ctx.index + 1}_${ctx.current.hints}.png`)
 }
 
-function makeHintCrop (state) {
-  return squareCropFromCenter(state.centerX, state.centerY, imageCropRatio(state), state.meta.width, state.meta.height)
+function makeHintCrop(state) {
+  return squareCropFromCenter(
+    state.centerX,
+    state.centerY,
+    imageCropRatio(state),
+    state.meta.width,
+    state.meta.height,
+  )
 }
 
-function imageCropRatio (state) {
+function imageCropRatio(state) {
   return Math.min(1, INITIAL_CROP_RATIO + state.imageHints * HINT_CROP_STEP)
 }
 
-function canExpandImageHint (state) {
+function canExpandImageHint(state) {
   return imageCropRatio(state) < 1
 }
 
-async function renderCurrentCrop (ctx) {
-  const crop = ctx.current.hints === 0
-    ? ctx.current.crop
-    : makeHintCrop(ctx.current)
+async function renderCurrentCrop(ctx) {
+  const crop = ctx.current.hints === 0 ? ctx.current.crop : makeHintCrop(ctx.current)
   ctx.current.crop = crop
   ctx.current.fullShown = isFullImage(crop, ctx.current.meta)
 
@@ -644,7 +817,7 @@ async function renderCurrentCrop (ctx) {
   return out
 }
 
-function takeQuestionCandidate (ctx, offset) {
+function takeQuestionCandidate(ctx, offset) {
   if (offset === 0) return ctx.questions[ctx.index]
   if (!ctx.questionPool || ctx.nextQuestionCandidate >= ctx.questionPool.length) return null
   const item = ctx.questionPool[ctx.nextQuestionCandidate++]
@@ -652,7 +825,7 @@ function takeQuestionCandidate (ctx, offset) {
   return item
 }
 
-async function prepareQuestion (ctx) {
+async function prepareQuestion(ctx) {
   let lastErr = null
 
   for (let i = 0; i < QUESTION_SERVANT_ATTEMPTS; i++) {
@@ -677,7 +850,7 @@ async function prepareQuestion (ctx) {
         fullShown: false,
         textHintsUsed: [],
         hintedChars: [],
-        resolved: false
+        resolved: false,
       }
       await renderCurrentCrop(ctx)
       return
@@ -690,36 +863,41 @@ async function prepareQuestion (ctx) {
   throw lastErr || new Error("没有可用的题目候选")
 }
 
-function addScore (ctx, uid, delta) {
+function addScore(ctx, uid, delta) {
   const now = ctx.scores.get(uid) || 0
   ctx.scores.set(uid, Math.round((now + delta) * 10) / 10)
 }
 
-function rankText (ctx) {
+function rankText(ctx) {
   const arr = [...ctx.scores.entries()]
     .map(([uid, score]) => ({ uid, score }))
     .sort((a, b) => b.score - a.score)
 
   if (!arr.length) return "暂无得分"
-  return arr.map((v, i) => `${i + 1}. ${ctx.names.get(v.uid) || v.uid}：${formatScore(v.score)}分`).join("\n")
+  return arr
+    .map((v, i) => `${i + 1}. ${ctx.names.get(v.uid) || v.uid}：${formatScore(v.score)}分`)
+    .join("\n")
 }
 
-async function replyQuestion (e, ctx, prefix = "", quote = false) {
+async function replyQuestion(e, ctx, prefix = "", quote = false) {
   const img = questionCropPath(ctx)
-  await e.reply([
-    prefix,
-    `第 ${ctx.index + 1}/${TOTAL_QUESTIONS} 题，请回答从者名称\n`,
-    segment.image(`file://${img}`)
-  ].filter(Boolean), quote)
+  await e.reply(
+    [
+      prefix,
+      `第 ${ctx.index + 1}/${TOTAL_QUESTIONS} 题，请回答从者名称\n`,
+      segment.image(`file://${img}`),
+    ].filter(Boolean),
+    quote,
+  )
 }
 
-function tryResolveCurrent (ctx) {
+function tryResolveCurrent(ctx) {
   if (ctx.current?.resolved) return false
   ctx.current.resolved = true
   return true
 }
 
-function pickHintChars (item, count, old = []) {
+function pickHintChars(item, count, old = []) {
   const answer = item.aliases?.[0] || item.name
   const chars = [...answer].filter(v => /[\u4e00-\u9fa5a-zA-Z]/.test(v))
   const unique = [...new Set(chars)]
@@ -733,24 +911,29 @@ function pickHintChars (item, count, old = []) {
   return selected
 }
 
-function textHintOptions (item) {
+function textHintOptions(item) {
   const hints = []
-  hints.push(`提示：ta的稀有度是 ${item.rarity} 星，性别是 ${GENDER_MAP[item.gender] || item.gender || "不明"}`)
+  hints.push(
+    `提示：ta的稀有度是 ${item.rarity} 星，性别是 ${GENDER_MAP[item.gender] || item.gender || "不明"}`,
+  )
   hints.push(`提示：ta的职介是 ${CLASS_NAME_MAP[item.className] || item.className || "未知"}`)
   if (item.alignments?.length) {
     const alignment = rand(item.alignments)
-    hints.push(`提示：ta是 ${POLICY_MAP[alignment.policy] || alignment.policy}·${PERSONALITY_MAP[alignment.personality] || alignment.personality}`)
+    hints.push(
+      `提示：ta是 ${POLICY_MAP[alignment.policy] || alignment.policy}·${PERSONALITY_MAP[alignment.personality] || alignment.personality}`,
+    )
   }
-  if (item.attribute) hints.push(`提示：ta的副属性是 ${ATTRIBUTE_MAP[item.attribute] || item.attribute}`)
+  if (item.attribute)
+    hints.push(`提示：ta的副属性是 ${ATTRIBUTE_MAP[item.attribute] || item.attribute}`)
   return hints
 }
 
-function currentCropRatio (ctx) {
+function currentCropRatio(ctx) {
   return imageCropRatio(ctx.current)
 }
 
 export class FgoGuessRole extends plugin {
-  constructor () {
+  constructor() {
     super({
       name: "FGO猜角色",
       dsc: "从 FGO 从者立绘局部猜从者名",
@@ -758,40 +941,44 @@ export class FgoGuessRole extends plugin {
       rule: [
         {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}帮助$`,
-          fnc: "help"
+          fnc: "help",
         },
         {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}更新$|^#?更新${FGO_PATTERN}猜${TARGET_PATTERN}数据$`,
-          fnc: "updateData"
+          fnc: "updateData",
         },
         {
           reg: "^#?[fF][gG][oO]添加别名\\s+\\S+\\s+\\S+.*$",
-          fnc: "addAlias"
+          fnc: "addAlias",
         },
         {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}$`,
-          fnc: "start"
-        }
-      ]
+          fnc: "start",
+        },
+      ],
     })
   }
 
-  async help (e) {
-    await e.reply([
-      "FGO猜角色帮助",
-      "开局：#FGO猜角色 / #FGO猜从者",
-      "局内：提示、不知道、跳过、结束、不玩了",
-      "规则：共 20 题，看从者立绘局部猜完整名称；答对得分，提示会降低本题分数，跳过扣 100 分。"
-    ].join("\n"))
+  async help(e) {
+    await e.reply(
+      [
+        "FGO猜角色帮助",
+        "开局：#FGO猜角色 / #FGO猜从者",
+        "局内：提示、不知道、跳过、结束、不玩了",
+        "规则：共 20 题，看从者立绘局部猜完整名称；答对得分，提示会降低本题分数，跳过扣 100 分。",
+      ].join("\n"),
+    )
     return true
   }
 
-  async updateData (e) {
+  async updateData(e) {
     try {
       await e.reply("开始更新 FGO 猜角色数据，原始文件较大，请稍等")
       await downloadRawData()
       const catalog = preprocessCatalogFromRaw()
-      await e.reply(`FGO 猜角色数据更新完成：${catalog.stats.servantCount} 名从者，${catalog.stats.imageCount} 张图片，${catalog.stats.aliasCount} 个名称/别名`)
+      await e.reply(
+        `FGO 猜角色数据更新完成：${catalog.stats.servantCount} 名从者，${catalog.stats.imageCount} 张图片，${catalog.stats.aliasCount} 个名称/别名`,
+      )
     } catch (err) {
       appendErrorLog("手动更新失败", err)
       if (fs.existsSync(RAW_TMP_PATH)) fs.rmSync(RAW_TMP_PATH, { force: true })
@@ -801,7 +988,7 @@ export class FgoGuessRole extends plugin {
     return true
   }
 
-  async addAlias (e) {
+  async addAlias(e) {
     const msg = String(e.msg || "").trim()
     const match = msg.match(/^#?fgo添加别名\s+(\S+)\s+(.+)$/i)
     if (!match) {
@@ -845,7 +1032,7 @@ export class FgoGuessRole extends plugin {
     return true
   }
 
-  async FGO添加别名_选择从者 () {
+  async FGO添加别名_选择从者() {
     const ctx = this.getContext("FGO添加别名_选择从者", true)
     if (!ctx) return false
     if (String(this.e.user_id) !== String(ctx.uid)) return false
@@ -869,7 +1056,7 @@ export class FgoGuessRole extends plugin {
     return this.addAliasToItem(item, alias)
   }
 
-  async addAliasToItem (item, alias) {
+  async addAliasToItem(item, alias) {
     try {
       const ret = saveCatalogAlias(item.id, alias)
       if (!ret.added) {
@@ -885,7 +1072,7 @@ export class FgoGuessRole extends plugin {
     }
   }
 
-  async start (e) {
+  async start(e) {
     const isGroupContext = e.isGroup
     const old = this.getContext("FGO猜角色_进行中", isGroupContext)
     if (old) {
@@ -934,7 +1121,7 @@ export class FgoGuessRole extends plugin {
     return true
   }
 
-  async FGO猜角色_进行中 (e) {
+  async FGO猜角色_进行中(e) {
     const ctx = this.getContext("FGO猜角色_进行中", e.isGroup)
     if (!ctx) return false
 
@@ -958,7 +1145,10 @@ export class FgoGuessRole extends plugin {
       addScore(ctx, uid, -100)
       ctx.comboHolder = null
       ctx.comboCount = 0
-      await this.nextQuestion(ctx, `${displayName(this.e)} 跳过本题，扣 100 分。\n答案：${ctx.current.item.name}`)
+      await this.nextQuestion(
+        ctx,
+        `${displayName(this.e)} 跳过本题，扣 100 分。\n答案：${ctx.current.item.name}`,
+      )
       return true
     }
 
@@ -976,7 +1166,11 @@ export class FgoGuessRole extends plugin {
       ctx.current.attempts++
       if (ctx.current.attempts >= MAX_ATTEMPTS) {
         if (!tryResolveCurrent(ctx)) return true
-        await this.nextQuestion(ctx, `已答错 ${MAX_ATTEMPTS} 次，本题跳过。\n答案：${ctx.current.item.name}`, true)
+        await this.nextQuestion(
+          ctx,
+          `已答错 ${MAX_ATTEMPTS} 次，本题跳过。\n答案：${ctx.current.item.name}`,
+          true,
+        )
       } else {
         await this.reply(`回答错误，剩余 ${MAX_ATTEMPTS - ctx.current.attempts} 次机会`, true)
       }
@@ -986,14 +1180,16 @@ export class FgoGuessRole extends plugin {
     return true
   }
 
-  async hint (ctx) {
+  async hint(ctx) {
     ctx.current.baseScore = Math.max(MIN_SCORE, ctx.current.baseScore - 5)
 
     const canExpand = canExpandImageHint(ctx.current)
     const shouldForceExpand = canExpand && currentCropRatio(ctx) < TEXT_HINT_CROP_RATIO
-    const unusedTextHints = textHintOptions(ctx.current.item)
-      .filter((_, idx) => !ctx.current.textHintsUsed.includes(idx))
-    const shouldTextHint = !shouldForceExpand && unusedTextHints.length && (!canExpand || Math.random() < 0.5)
+    const unusedTextHints = textHintOptions(ctx.current.item).filter(
+      (_, idx) => !ctx.current.textHintsUsed.includes(idx),
+    )
+    const shouldTextHint =
+      !shouldForceExpand && unusedTextHints.length && (!canExpand || Math.random() < 0.5)
 
     if (shouldTextHint) {
       const options = textHintOptions(ctx.current.item)
@@ -1023,12 +1219,12 @@ export class FgoGuessRole extends plugin {
     const count = ctx.current.hintedChars.length + 1
     ctx.current.hintedChars = pickHintChars(ctx.current.item, count, ctx.current.hintedChars)
     await this.reply(
-      `提示：该从者的名字中有 ${ctx.current.hintedChars.length} 个字是「${ctx.current.hintedChars.join("」和「")}」`
+      `提示：该从者的名字中有 ${ctx.current.hintedChars.length} 个字是「${ctx.current.hintedChars.join("」和「")}」`,
     )
     return true
   }
 
-  async correct (ctx, uid) {
+  async correct(ctx, uid) {
     if (!tryResolveCurrent(ctx)) return true
 
     const prevHolder = ctx.comboHolder
@@ -1058,12 +1254,12 @@ export class FgoGuessRole extends plugin {
 
     await this.reply(
       `恭喜 ${ctx.names.get(uid) || uid} 答对：${ctx.current.item.name}${extra}，获得 ${formatScore(add)} 分，当前总分 ${formatScore(total)} 分`,
-      true
+      true,
     )
     await this.nextQuestion(ctx)
   }
 
-  async nextQuestion (ctx, msg, quote = false) {
+  async nextQuestion(ctx, msg, quote = false) {
     ctx.index++
     if (ctx.index >= TOTAL_QUESTIONS) {
       await this.end(ctx, msg ? `${msg}\n\n20 题已结束` : "20 题已结束", quote)
@@ -1075,7 +1271,11 @@ export class FgoGuessRole extends plugin {
     } catch (err) {
       appendErrorLog("生成下一题失败", err)
       globalThis.logger?.error?.(`[FGO猜角色] 生成下一题失败：${err.stack || err}`)
-      await this.end(ctx, msg ? `${msg}\n\n生成下一题失败，提前结算` : "生成下一题失败，提前结算", quote)
+      await this.end(
+        ctx,
+        msg ? `${msg}\n\n生成下一题失败，提前结算` : "生成下一题失败，提前结算",
+        quote,
+      )
       return true
     }
 
@@ -1083,7 +1283,7 @@ export class FgoGuessRole extends plugin {
     return true
   }
 
-  async end (ctx, reason, quote = false) {
+  async end(ctx, reason, quote = false) {
     this.finish("FGO猜角色_进行中", ctx.isGroupContext)
     await this.reply(`🏁 ${reason}\n\n最终排行：\n${rankText(ctx)}`, quote)
     return true
