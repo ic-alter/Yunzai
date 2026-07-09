@@ -15,6 +15,7 @@ const DEFAULT_SIZE = 7
 const BUILD_ATTEMPTS = 180
 const BASE_SCORE = 50
 const BANNED_ANSWER_KEYS = new Set(["alter"])
+const BUCKET_ORDER = ["short", "medium", "long", "ultra"]
 
 const SOURCE_LABEL = {
   skill: "主动技能",
@@ -348,21 +349,79 @@ function placeWord(grid, word) {
   return null
 }
 
+function skillBucket(item) {
+  const len = item.chars.length
+  if (len <= 4) return "short"
+  if (len <= 7) return "medium"
+  if (len <= 10) return "long"
+  return "ultra"
+}
+
+function bucketQuotas(size, sampleSize) {
+  const maxUltra = size <= 7 ? 1 : size <= 9 ? 2 : 3
+  return {
+    short: Math.ceil(sampleSize * 0.34),
+    medium: Math.ceil(sampleSize * 0.4),
+    long: Math.ceil(sampleSize * 0.21),
+    ultra: Math.min(maxUltra, Math.ceil(sampleSize * 0.05)),
+  }
+}
+
+function takeRandom(pool, count) {
+  return shuffle(pool).slice(0, Math.max(0, count))
+}
+
+function buildCandidateSample(candidates, size) {
+  const sampleSize = clamp(size * size, 24, 70)
+  const buckets = {
+    short: [],
+    medium: [],
+    long: [],
+    ultra: [],
+  }
+
+  for (const item of candidates) buckets[skillBucket(item)].push(item)
+
+  const quotas = bucketQuotas(size, sampleSize)
+  const selected = []
+  const selectedIds = new Set()
+  for (const bucket of BUCKET_ORDER) {
+    for (const item of takeRandom(buckets[bucket], quotas[bucket])) {
+      selected.push(item)
+      selectedIds.add(item.id)
+    }
+  }
+
+  const leftovers = candidates.filter(item => !selectedIds.has(item.id))
+  for (const item of takeRandom(leftovers, sampleSize - selected.length)) selected.push(item)
+
+  return shuffle(selected).sort((a, b) => b.chars.length - a.chars.length)
+}
+
+function puzzleScore(size, filled, answers) {
+  const ultraCount = answers.filter(v => skillBucket(v) === "ultra").length
+  const longCharPenalty = answers.reduce((sum, v) => sum + Math.max(0, v.chars.length - 10), 0)
+  const targetAnswers = Math.max(3, Math.floor(size / 2))
+  return (
+    filled * 100 +
+    Math.min(answers.length, targetAnswers + 3) * 18 -
+    ultraCount * 80 -
+    longCharPenalty * 8
+  )
+}
+
 function buildPuzzle(size, candidates) {
   const cellCount = size * size
-  const sorted = shuffle(candidates)
-    .filter(v => v.chars.length <= Math.min(16, Math.max(4, Math.floor(cellCount / 2))))
-    .sort((a, b) => b.chars.length - a.chars.length)
+  const usable = shuffle(candidates).filter(
+    v => v.chars.length <= Math.min(16, Math.max(4, Math.floor(cellCount / 2))),
+  )
 
   let best = null
   for (let attempt = 0; attempt < BUILD_ATTEMPTS; attempt++) {
     const grid = makeEmptyGrid(size)
     const answers = []
     const usedNames = new Set()
-    const pool = shuffle(sorted).sort((a, b) => {
-      if (Math.random() < 0.35) return Math.random() - 0.5
-      return b.chars.length - a.chars.length
-    })
+    const pool = buildCandidateSample(usable, size)
 
     for (const item of pool) {
       const nameKey = normalizeCompact(item.name)
@@ -377,10 +436,16 @@ function buildPuzzle(size, candidates) {
     }
 
     const filled = grid.flat().filter(Boolean).length
-    if (!best || filled > best.filled || answers.length > best.answers.length) {
-      best = { grid, answers, filled }
+    const score = puzzleScore(size, filled, answers)
+    if (!best || score > best.score || (score === best.score && filled > best.filled)) {
+      best = { grid, answers, filled, score }
     }
-    if (filled >= cellCount * 0.82 && answers.length >= Math.max(3, Math.floor(size / 2))) break
+    if (
+      filled === cellCount &&
+      answers.length >= Math.max(3, Math.floor(size / 2)) &&
+      answers.every(v => skillBucket(v) !== "ultra")
+    )
+      break
   }
 
   if (!best || best.answers.length === 0) return null

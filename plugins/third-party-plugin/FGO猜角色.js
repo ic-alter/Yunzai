@@ -345,7 +345,7 @@ function stripSkillRank(name) {
   for (let i = 0; i < 3; i++) {
     const next = text
       .replace(
-        /\s+(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?)(?:\s*[/／]\s*(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?))*$/iu,
+        /\s+(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?)(?:\s*[/／~～〜]\s*(?:EX|[A-EＡ-Ｅ][+＋\-－]*|\?))*$/iu,
         "",
       )
       .trim()
