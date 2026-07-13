@@ -30,12 +30,15 @@ export class 万能许愿机 extends plugin {
     })
 
     /** ====== 可配置项（按需改） ====== */
+    const llmCfg = loadWDCNLLLMConfig()
     this.cfg = {
       // OpenAI 兼容 / 任意兼容 ChatCompletions 的网关都可以
-      baseURL: process.env.WISH_LLM_URL || 'https://gapi-proxy.fduer.com/v1',
-      apiKey: process.env.WISH_LLM_KEY || 'ifdu',
-      model: process.env.WISH_LLM_MODEL || 'qwen/qwen3-32b',
+      baseURL: process.env.WISH_LLM_URL || llmCfg.base_url || 'https://open.bigmodel.cn/api/paas/v4',
+      apiKey: process.env.WISH_LLM_KEY || llmCfg.api_key || '',
+      model: process.env.WISH_LLM_MODEL || llmCfg.model || 'glm-4.7-flash',
       timeoutMs: Number(process.env.WISH_LLM_TIMEOUT || 45000),
+      temperature: Number(process.env.WISH_LLM_TEMPERATURE || llmCfg.temperature || 0.95),
+      maxTokens: Number(process.env.WISH_LLM_MAX_TOKENS || llmCfg.max_tokens || 600),
 
       // 模板文件（建议把下面的 wnxyj.html 放到这里）
       tplFile: path.join(process.cwd(), 'data', 'wnxyj', 'wnxyj.html'),
@@ -180,11 +183,15 @@ ${wish}
         { role: 'system', content: '你只负责按要求生成文本，不要输出其他内容。' },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.95,
-      max_tokens: 600
+      temperature: this.cfg.temperature,
+      max_tokens: this.cfg.maxTokens,
+      thinking: {
+        type: 'disabled'
+      }
     }
 
-    const url = this.cfg.baseURL.replace(/\/$/, '') + '/chat/completions'
+    const baseURL = this.cfg.baseURL.replace(/\/$/, '')
+    const url = baseURL.endsWith('/chat/completions') ? baseURL : baseURL + '/chat/completions'
 
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), this.cfg.timeoutMs)
@@ -208,6 +215,7 @@ ${wish}
 
       const json = await resp.json()
       let text = json?.choices?.[0]?.message?.content?.trim() || ''
+      console.log('[万能许愿机] LLM 返回：', json?.choices?.[0]?.message)
 
       // 兜底：限制长度，避免把图撑爆
       if (text.length > this.cfg.maxChars) {
@@ -232,6 +240,16 @@ function getAvatar (userId) {
 
 async function safeReadText (resp) {
   try { return await resp.text() } catch { return '' }
+}
+
+function loadWDCNLLLMConfig () {
+  const cfgPath = path.join(process.cwd(), 'data', 'wdcnl', 'llm.config.json')
+  try {
+    return JSON.parse(fs.readFileSync(cfgPath, 'utf8'))?.llm || {}
+  } catch (err) {
+    logger?.warn?.('[万能许愿机] 读取 LLM 配置失败：', err)
+    return {}
+  }
 }
 
 /** Node18+ 原生 fetch；旧环境尝试 node-fetch */

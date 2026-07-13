@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+import zlib from "zlib"
 import { execFile } from "child_process"
 import { promisify } from "util"
 import plugin from "../../lib/plugins/plugin.js"
@@ -19,25 +20,64 @@ const INITIAL_CROP_RATIO = 0.15
 const HINT_CROP_STEP = 0.15
 const MAX_TRANSPARENT_RATIO = 0.5
 const MAX_DOMINANT_COLOR_RATIO = 0.8
+const PIXEL_LEVELS = [8, 16, 32, 64, 128]
+const PIXEL_OUTPUT_SHORT_SIDE = 512
+const PIXEL_ALPHA_THRESHOLD = 8
 
 const BRAND_PATTERN = "(米游|米哈游|米桑|[mM][iI][hH][oO][yY][oO]|[mM][hH][yY])"
 const TARGET_PATTERN = "(角色|干员)"
 const MIAO_SKIP_DIRS = new Set(["common"])
 
-const GS_DIR = path.join(process.cwd(), "plugins", "miao-plugin", "resources", "meta-gs", "character")
-const SR_DIR = path.join(process.cwd(), "plugins", "miao-plugin", "resources", "meta-sr", "character")
-const ZZZ_ROLE_DIR = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "images", "role")
-const ZZZ_NANOKA_ROLE_DIR = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "images", "nanoka", "role")
-const ZZZ_MAP_PATH = path.join(process.cwd(), "plugins", "ZZZ-Plugin", "resources", "map", "PartnerId2Data.json")
+const GS_DIR = path.join(
+  process.cwd(),
+  "plugins",
+  "miao-plugin",
+  "resources",
+  "meta-gs",
+  "character",
+)
+const SR_DIR = path.join(
+  process.cwd(),
+  "plugins",
+  "miao-plugin",
+  "resources",
+  "meta-sr",
+  "character",
+)
+const ZZZ_ROLE_DIR = path.join(
+  process.cwd(),
+  "plugins",
+  "ZZZ-Plugin",
+  "resources",
+  "images",
+  "role",
+)
+const ZZZ_NANOKA_ROLE_DIR = path.join(
+  process.cwd(),
+  "plugins",
+  "ZZZ-Plugin",
+  "resources",
+  "images",
+  "nanoka",
+  "role",
+)
+const ZZZ_MAP_PATH = path.join(
+  process.cwd(),
+  "plugins",
+  "ZZZ-Plugin",
+  "resources",
+  "map",
+  "PartnerId2Data.json",
+)
 
 const rand = arr => arr[Math.floor(Math.random() * arr.length)]
 const clamp = (n, min, max) => Math.max(min, Math.min(max, n))
 
-function ensureDir (dir) {
+function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true })
 }
 
-function readJson (file, def = null) {
+function readJson(file, def = null) {
   try {
     if (!fs.existsSync(file)) return def
     return JSON.parse(fs.readFileSync(file, "utf8"))
@@ -46,23 +86,23 @@ function readJson (file, def = null) {
   }
 }
 
-function writeJson (file, data) {
+function writeJson(file, data) {
   ensureDir(path.dirname(file))
   fs.writeFileSync(file, JSON.stringify(data, null, 2))
 }
 
-function normalizeName (name) {
+function normalizeName(name) {
   return String(name || "")
     .trim()
     .replace(/[·•・.。,\s_\-「」『』《》]/g, "")
     .toLowerCase()
 }
 
-function displayName (e) {
+function displayName(e) {
   return e?.member?.card || e?.sender?.nickname || String(e.user_id)
 }
 
-function shuffle (arr) {
+function shuffle(arr) {
   const copy = [...arr]
   for (let i = copy.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -71,18 +111,18 @@ function shuffle (arr) {
   return copy
 }
 
-function formatScore (score) {
+function formatScore(score) {
   return Number.isInteger(score) ? String(score) : score.toFixed(1)
 }
 
-function comboCoeff (combo) {
+function comboCoeff(combo) {
   if (combo >= 9) return 1.3
   if (combo >= 6) return 1.2
   if (combo >= 3) return 1.1
   return 1
 }
 
-function uniqNames (names) {
+function uniqNames(names) {
   const seen = new Set()
   const ret = []
   for (const name of names.filter(Boolean)) {
@@ -94,10 +134,11 @@ function uniqNames (names) {
   return ret
 }
 
-function scanMiaoCharacters (baseDir, game) {
+function scanMiaoCharacters(baseDir, game) {
   if (!fs.existsSync(baseDir)) return []
   const items = []
-  for (const v of fs.readdirSync(baseDir, { withFileTypes: true })
+  for (const v of fs
+    .readdirSync(baseDir, { withFileTypes: true })
     .filter(v => v.isDirectory())
     .filter(v => !MIAO_SKIP_DIRS.has(v.name))
     .filter(v => game !== "星穹铁道" || !v.name.endsWith("Pro"))) {
@@ -110,7 +151,7 @@ function scanMiaoCharacters (baseDir, game) {
       game,
       name: v.name,
       answers: [v.name],
-      image: img
+      image: img,
     })
 
     if (game !== "原神" || !fs.existsSync(imgsDir)) continue
@@ -121,20 +162,20 @@ function scanMiaoCharacters (baseDir, game) {
         game,
         name: v.name,
         answers: [v.name],
-        image: path.join(imgsDir, file.name)
+        image: path.join(imgsDir, file.name),
       })
     }
   }
   return items
 }
 
-function scanZzzCharacters () {
+function scanZzzCharacters() {
   const map = readJson(ZZZ_MAP_PATH, {})
   const items = []
   const seen = new Set()
   const bySpriteId = new Map()
 
-  function addItem (data, spriteId, image, imageKey = "") {
+  function addItem(data, spriteId, image, imageKey = "") {
     const name = data?.name
     if (!spriteId || !name || !fs.existsSync(image)) return
 
@@ -147,7 +188,7 @@ function scanZzzCharacters () {
       game: "绝区零",
       name,
       answers: uniqNames([name, data.full_name]),
-      image
+      image,
     })
   }
 
@@ -175,38 +216,43 @@ function scanZzzCharacters () {
   return items
 }
 
-function rebuildCatalog () {
+function rebuildCatalog() {
   const items = [
     ...scanMiaoCharacters(GS_DIR, "原神"),
     ...scanMiaoCharacters(SR_DIR, "星穹铁道"),
-    ...scanZzzCharacters()
+    ...scanZzzCharacters(),
   ]
 
   const catalog = {
     version: CATALOG_VERSION,
     builtAt: Date.now(),
-    items
+    items,
   }
   writeJson(CATALOG_PATH, catalog)
   return catalog
 }
 
-function loadCatalog () {
+function loadCatalog() {
   const old = readJson(CATALOG_PATH)
-  const stale = old?.version !== CATALOG_VERSION || !old?.builtAt || Date.now() - old.builtAt > CATALOG_TTL
+  const stale =
+    old?.version !== CATALOG_VERSION || !old?.builtAt || Date.now() - old.builtAt > CATALOG_TTL
   if (!old?.items?.length || stale) return rebuildCatalog()
   old.items = old.items.filter(v => fs.existsSync(v.image))
   if (!old.items.length) return rebuildCatalog()
   return old
 }
 
-async function probeImage (file) {
+async function probeImage(file) {
   const { stdout } = await execFileAsync("ffprobe", [
-    "-v", "error",
-    "-select_streams", "v:0",
-    "-show_entries", "stream=width,height",
-    "-of", "json",
-    file
+    "-v",
+    "error",
+    "-select_streams",
+    "v:0",
+    "-show_entries",
+    "stream=width,height",
+    "-of",
+    "json",
+    file,
   ])
   const info = JSON.parse(stdout)
   const stream = info.streams?.[0]
@@ -214,22 +260,31 @@ async function probeImage (file) {
   return { width: Number(stream.width), height: Number(stream.height) }
 }
 
-async function cropRawRgba (file, crop) {
-  const { stdout } = await execFileAsync("ffmpeg", [
-    "-v", "error",
-    "-i", file,
-    "-vf", `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y},format=rgba`,
-    "-frames:v", "1",
-    "-f", "rawvideo",
-    "pipe:1"
-  ], {
-    encoding: "buffer",
-    maxBuffer: 100 * 1024 * 1024
-  })
+async function cropRawRgba(file, crop) {
+  const { stdout } = await execFileAsync(
+    "ffmpeg",
+    [
+      "-v",
+      "error",
+      "-i",
+      file,
+      "-vf",
+      `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y},format=rgba`,
+      "-frames:v",
+      "1",
+      "-f",
+      "rawvideo",
+      "pipe:1",
+    ],
+    {
+      encoding: "buffer",
+      maxBuffer: 100 * 1024 * 1024,
+    },
+  )
   return stdout
 }
 
-async function analyzeCrop (file, crop) {
+async function analyzeCrop(file, crop) {
   const buf = await cropRawRgba(file, crop)
   if (!buf.length) return { transparentRatio: 0, dominantColorRatio: 0 }
 
@@ -254,23 +309,31 @@ async function analyzeCrop (file, crop) {
   const total = buf.length / 4
   return {
     transparentRatio: transparent / total,
-    dominantColorRatio: opaque ? maxBucket / opaque : 1
+    dominantColorRatio: opaque ? maxBucket / opaque : 1,
   }
 }
 
-async function writeCropPng (file, crop, out) {
+async function writeCropPng(file, crop, out) {
   ensureDir(path.dirname(out))
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-v", "error",
-    "-i", file,
-    "-vf", `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y}`,
-    "-frames:v", "1",
-    out
-  ], { maxBuffer: 20 * 1024 * 1024 })
+  await execFileAsync(
+    "ffmpeg",
+    [
+      "-y",
+      "-v",
+      "error",
+      "-i",
+      file,
+      "-vf",
+      `crop=${crop.w}:${crop.h}:${crop.x}:${crop.y}`,
+      "-frames:v",
+      "1",
+      out,
+    ],
+    { maxBuffer: 20 * 1024 * 1024 },
+  )
 }
 
-function squareCropFromCenter (centerX, centerY, size, width, height) {
+function squareCropFromCenter(centerX, centerY, size, width, height) {
   const side = Math.max(1, Math.round(size))
 
   if (side < Math.min(width, height)) {
@@ -286,7 +349,7 @@ function squareCropFromCenter (centerX, centerY, size, width, height) {
   return { x, y, w, h }
 }
 
-async function makeInitialCrop (item, meta) {
+async function makeInitialCrop(item, meta) {
   const minSide = Math.min(meta.width, meta.height)
   const side = Math.max(1, Math.round(minSide * INITIAL_CROP_RATIO))
   let chosen = null
@@ -296,7 +359,7 @@ async function makeInitialCrop (item, meta) {
       x: Math.floor(Math.random() * Math.max(1, meta.width - side + 1)),
       y: Math.floor(Math.random() * Math.max(1, meta.height - side + 1)),
       w: side,
-      h: side
+      h: side,
     }
     chosen = crop
     try {
@@ -304,7 +367,8 @@ async function makeInitialCrop (item, meta) {
       if (
         analysis.transparentRatio <= MAX_TRANSPARENT_RATIO &&
         analysis.dominantColorRatio <= MAX_DOMINANT_COLOR_RATIO
-      ) return crop
+      )
+        return crop
     } catch {
       return crop
     }
@@ -312,22 +376,241 @@ async function makeInitialCrop (item, meta) {
   return chosen
 }
 
-function makeHintCrop (state) {
+function makeHintCrop(state) {
   const meta = state.meta
   const minSide = Math.min(meta.width, meta.height)
   const size = minSide * (INITIAL_CROP_RATIO + state.hints * HINT_CROP_STEP)
   return squareCropFromCenter(state.centerX, state.centerY, size, meta.width, meta.height)
 }
 
-function isFullImage (crop, meta) {
+function isFullImage(crop, meta) {
   return crop.x === 0 && crop.y === 0 && crop.w >= meta.width && crop.h >= meta.height
 }
 
-function questionCropPath (ctx) {
+function questionCropPath(ctx) {
   return path.join(CROP_DIR, `${ctx.gameId}_${ctx.index + 1}_${ctx.current.hints}.png`)
 }
 
-function pickHintChars (answer, count, old = []) {
+async function readFullRawRgba(file) {
+  const { stdout } = await execFileAsync(
+    "ffmpeg",
+    ["-v", "error", "-i", file, "-vf", "format=rgba", "-frames:v", "1", "-f", "rawvideo", "pipe:1"],
+    {
+      encoding: "buffer",
+      maxBuffer: 400 * 1024 * 1024,
+    },
+  )
+  return stdout
+}
+
+let pngCrcTable = null
+
+function crc32(buf) {
+  if (!pngCrcTable) {
+    pngCrcTable = new Uint32Array(256)
+    for (let i = 0; i < 256; i++) {
+      let c = i
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1
+      pngCrcTable[i] = c >>> 0
+    }
+  }
+
+  let crc = 0xffffffff
+  for (const byte of buf) crc = pngCrcTable[(crc ^ byte) & 0xff] ^ (crc >>> 8)
+  return (crc ^ 0xffffffff) >>> 0
+}
+
+function pngChunk(type, data = Buffer.alloc(0)) {
+  const typeBuf = Buffer.from(type)
+  const len = Buffer.alloc(4)
+  const crc = Buffer.alloc(4)
+  len.writeUInt32BE(data.length, 0)
+  crc.writeUInt32BE(crc32(Buffer.concat([typeBuf, data])), 0)
+  return Buffer.concat([len, typeBuf, data, crc])
+}
+
+function writeRgbaPng(file, width, height, rgba) {
+  const ihdr = Buffer.alloc(13)
+  ihdr.writeUInt32BE(width, 0)
+  ihdr.writeUInt32BE(height, 4)
+  ihdr[8] = 8
+  ihdr[9] = 6
+  ihdr[10] = 0
+  ihdr[11] = 0
+  ihdr[12] = 0
+
+  const stride = width * 4
+  const raw = Buffer.alloc((stride + 1) * height)
+  for (let y = 0; y < height; y++) {
+    const rowOut = y * (stride + 1)
+    raw[rowOut] = 0
+    rgba.copy(raw, rowOut + 1, y * stride, (y + 1) * stride)
+  }
+
+  ensureDir(path.dirname(file))
+  fs.writeFileSync(
+    file,
+    Buffer.concat([
+      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+      pngChunk("IHDR", ihdr),
+      pngChunk("IDAT", zlib.deflateSync(raw)),
+      pngChunk("IEND"),
+    ]),
+  )
+}
+
+function pixelGridSize(meta, level) {
+  if (meta.width <= meta.height) {
+    return {
+      gridWidth: Math.max(1, level),
+      gridHeight: Math.max(1, Math.round((meta.height / meta.width) * level)),
+    }
+  }
+
+  return {
+    gridWidth: Math.max(1, Math.round((meta.width / meta.height) * level)),
+    gridHeight: Math.max(1, level),
+  }
+}
+
+function findOpaqueBounds(raw, meta) {
+  let minX = meta.width
+  let minY = meta.height
+  let maxX = -1
+  let maxY = -1
+
+  for (let y = 0; y < meta.height; y++) {
+    for (let x = 0; x < meta.width; x++) {
+      const alpha = raw[(y * meta.width + x) * 4 + 3]
+      if (alpha <= PIXEL_ALPHA_THRESHOLD) continue
+      if (x < minX) minX = x
+      if (x > maxX) maxX = x
+      if (y < minY) minY = y
+      if (y > maxY) maxY = y
+    }
+  }
+
+  if (maxX < minX || maxY < minY) {
+    return { x: 0, y: 0, w: meta.width, h: meta.height }
+  }
+
+  return {
+    x: minX,
+    y: minY,
+    w: maxX - minX + 1,
+    h: maxY - minY + 1,
+  }
+}
+
+function quantizedColorKey(r, g, b) {
+  return `${r >> 6},${g >> 6},${b >> 6}`
+}
+
+function dominantQuantizedColor(raw, meta, x0, x1, y0, y1) {
+  const buckets = new Map()
+  let bestKey = ""
+  let bestCount = 0
+
+  for (let y = y0; y < y1; y++) {
+    for (let x = x0; x < x1; x++) {
+      const idx = (y * meta.width + x) * 4
+      const a = raw[idx + 3]
+      if (a <= PIXEL_ALPHA_THRESHOLD) continue
+
+      const r = raw[idx]
+      const g = raw[idx + 1]
+      const b = raw[idx + 2]
+      const key = quantizedColorKey(r, g, b)
+      const bucket = buckets.get(key) || { count: 0, r: 0, g: 0, b: 0 }
+      bucket.count++
+      bucket.r += r
+      bucket.g += g
+      bucket.b += b
+      buckets.set(key, bucket)
+
+      if (bucket.count > bestCount) {
+        bestKey = key
+        bestCount = bucket.count
+      }
+    }
+  }
+
+  if (!bestKey) return [0, 0, 0, 0]
+
+  const bucket = buckets.get(bestKey)
+  return [
+    Math.round(bucket.r / bucket.count),
+    Math.round(bucket.g / bucket.count),
+    Math.round(bucket.b / bucket.count),
+    255,
+  ]
+}
+
+function proportionalBounds(total, index, parts) {
+  let start = Math.round((index * total) / parts)
+  let end = Math.round(((index + 1) * total) / parts)
+  if (end > start) return [start, end]
+
+  start = clamp(start, 0, Math.max(0, total - 1))
+  return [start, Math.min(total, start + 1)]
+}
+
+async function renderPixelatedImage(state, out) {
+  if (state.pixelOriginalShown) {
+    state.fullShown = true
+    return out
+  }
+
+  const raw = state.rawRgba || (state.rawRgba = await readFullRawRgba(state.item.image))
+  const bounds = state.pixelBounds || (state.pixelBounds = findOpaqueBounds(raw, state.meta))
+  const effectiveMeta = { width: bounds.w, height: bounds.h }
+
+  if (state.hints >= PIXEL_LEVELS.length) {
+    await writeCropPng(
+      state.item.image,
+      { x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h },
+      out,
+    )
+    state.pixelOriginalShown = true
+    state.fullShown = false
+    return out
+  }
+
+  const level = PIXEL_LEVELS[state.hints]
+  const { gridWidth, gridHeight } = pixelGridSize(effectiveMeta, level)
+  const blockSize = Math.max(1, Math.floor(PIXEL_OUTPUT_SHORT_SIDE / level))
+  const outWidth = gridWidth * blockSize
+  const outHeight = gridHeight * blockSize
+  const rgba = Buffer.alloc(outWidth * outHeight * 4)
+
+  for (let row = 0; row < gridHeight; row++) {
+    const [relY0, relY1] = proportionalBounds(bounds.h, row, gridHeight)
+    const y0 = bounds.y + relY0
+    const y1 = bounds.y + relY1
+    for (let col = 0; col < gridWidth; col++) {
+      const [relX0, relX1] = proportionalBounds(bounds.w, col, gridWidth)
+      const x0 = bounds.x + relX0
+      const x1 = bounds.x + relX1
+      const color = dominantQuantizedColor(raw, state.meta, x0, x1, y0, y1)
+
+      for (let py = row * blockSize; py < (row + 1) * blockSize; py++) {
+        for (let px = col * blockSize; px < (col + 1) * blockSize; px++) {
+          const idx = (py * outWidth + px) * 4
+          rgba[idx] = color[0]
+          rgba[idx + 1] = color[1]
+          rgba[idx + 2] = color[2]
+          rgba[idx + 3] = color[3]
+        }
+      }
+    }
+  }
+
+  writeRgbaPng(out, outWidth, outHeight, rgba)
+  state.fullShown = false
+  return out
+}
+
+function pickHintChars(answer, count, old = []) {
   const chars = [...answer]
   const unique = [...new Set(chars)]
   const selected = [...old].filter(v => unique.includes(v))
@@ -340,10 +623,10 @@ function pickHintChars (answer, count, old = []) {
   return selected
 }
 
-async function renderCurrentCrop (ctx) {
-  const crop = ctx.current.hints === 0
-    ? ctx.current.crop
-    : makeHintCrop(ctx.current)
+async function renderCurrentCrop(ctx) {
+  if (ctx.current.mode === "pixel") return renderPixelatedImage(ctx.current, questionCropPath(ctx))
+
+  const crop = ctx.current.hints === 0 ? ctx.current.crop : makeHintCrop(ctx.current)
   ctx.current.crop = crop
   ctx.current.fullShown = isFullImage(crop, ctx.current.meta)
 
@@ -352,12 +635,13 @@ async function renderCurrentCrop (ctx) {
   return out
 }
 
-async function prepareQuestion (ctx) {
+async function prepareQuestion(ctx) {
   const item = ctx.questions[ctx.index]
   const meta = await probeImage(item.image)
   const crop = await makeInitialCrop(item, meta)
   ctx.current = {
     item,
+    mode: ctx.mode || "crop",
     meta,
     crop,
     centerX: crop.x + crop.w / 2,
@@ -366,43 +650,49 @@ async function prepareQuestion (ctx) {
     baseScore: BASE_SCORE,
     hints: 0,
     fullShown: false,
+    pixelOriginalShown: false,
     hintedChars: [],
-    resolved: false
+    resolved: false,
   }
   await renderCurrentCrop(ctx)
 }
 
-function addScore (ctx, uid, delta) {
+function addScore(ctx, uid, delta) {
   const now = ctx.scores.get(uid) || 0
   ctx.scores.set(uid, Math.round((now + delta) * 10) / 10)
 }
 
-function rankText (ctx) {
+function rankText(ctx) {
   const arr = [...ctx.scores.entries()]
     .map(([uid, score]) => ({ uid, score }))
     .sort((a, b) => b.score - a.score)
 
   if (!arr.length) return "暂无得分"
-  return arr.map((v, i) => `${i + 1}. ${ctx.names.get(v.uid) || v.uid}：${formatScore(v.score)}分`).join("\n")
+  return arr
+    .map((v, i) => `${i + 1}. ${ctx.names.get(v.uid) || v.uid}：${formatScore(v.score)}分`)
+    .join("\n")
 }
 
-async function replyQuestion (e, ctx, prefix = "", quote = false) {
+async function replyQuestion(e, ctx, prefix = "", quote = false) {
   const img = questionCropPath(ctx)
-  await e.reply([
-    prefix,
-    `第 ${ctx.index + 1}/${TOTAL_QUESTIONS} 题，请回答角色的完整名称\n`,
-    segment.image(`file://${img}`)
-  ].filter(Boolean), quote)
+  await e.reply(
+    [
+      prefix,
+      `第 ${ctx.index + 1}/${TOTAL_QUESTIONS} 题，请回答角色的完整名称\n`,
+      segment.image(`file://${img}`),
+    ].filter(Boolean),
+    quote,
+  )
 }
 
-function tryResolveCurrent (ctx) {
+function tryResolveCurrent(ctx) {
   if (ctx.current?.resolved) return false
   ctx.current.resolved = true
   return true
 }
 
 export class MihoyoGuessRole extends plugin {
-  constructor () {
+  constructor() {
     super({
       name: "米游猜角色",
       dsc: "从米游角色立绘局部猜角色名",
@@ -410,27 +700,34 @@ export class MihoyoGuessRole extends plugin {
       rule: [
         {
           reg: `^#?${BRAND_PATTERN}猜${TARGET_PATTERN}帮助$`,
-          fnc: "help"
+          fnc: "help",
         },
         {
           reg: `^#?(${BRAND_PATTERN}猜${TARGET_PATTERN}|猜${BRAND_PATTERN}${TARGET_PATTERN})$`,
-          fnc: "start"
-        }
-      ]
+          fnc: "start",
+        },
+        {
+          reg: `^#?(${BRAND_PATTERN}像素猜${TARGET_PATTERN}|像素猜${BRAND_PATTERN}${TARGET_PATTERN})$`,
+          fnc: "startPixel",
+        },
+      ],
     })
   }
 
-  async help (e) {
-    await e.reply([
-      "米游猜角色帮助",
-      "开局：#米游猜角色 / #米游猜干员",
-      "局内：提示、不知道、跳过、结束、不玩了",
-      "规则：共 20 题，看角色立绘局部猜完整角色名；答对得分，提示会降低本题分数，跳过扣 100 分。"
-    ].join("\n"))
+  async help(e) {
+    await e.reply(
+      [
+        "米游猜角色帮助",
+        "开局：#米游猜角色 / #米游猜干员",
+        "像素模式：#米游像素猜角色 / #米游像素猜干员",
+        "局内：提示、不知道、跳过、结束、不玩了",
+        "规则：共 20 题，看角色立绘局部猜完整角色名；答对得分，提示会降低本题分数，跳过扣 100 分。",
+      ].join("\n"),
+    )
     return true
   }
 
-  async start (e) {
+  async start(e, mode = "crop") {
     const isGroupContext = e.isGroup
     const old = this.getContext("米游猜角色_进行中", isGroupContext)
     if (old) {
@@ -446,6 +743,7 @@ export class MihoyoGuessRole extends plugin {
 
     const ctx = this.setContext("米游猜角色_进行中", isGroupContext, 3600)
     ctx.isGroupContext = isGroupContext
+    ctx.mode = mode
     ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
     ctx.questions = shuffle(catalog.items).slice(0, TOTAL_QUESTIONS)
     ctx.answerSet = new Set(catalog.items.flatMap(v => v.answers || [v.name]).map(normalizeName))
@@ -464,11 +762,16 @@ export class MihoyoGuessRole extends plugin {
       return true
     }
 
-    await replyQuestion(e, ctx, "米游猜角色开始，共 20 题。\n命令：提示/不知道、跳过、结束/不玩了\n")
+    const title = mode === "pixel" ? "米游像素猜角色" : "米游猜角色"
+    await replyQuestion(e, ctx, `${title}开始，共 20 题。\n命令：提示/不知道、跳过、结束/不玩了\n`)
     return true
   }
 
-  async 米游猜角色_进行中 (e) {
+  async startPixel(e) {
+    return this.start(e, "pixel")
+  }
+
+  async 米游猜角色_进行中(e) {
     const ctx = this.getContext("米游猜角色_进行中", e.isGroup)
     if (!ctx) return false
 
@@ -492,12 +795,17 @@ export class MihoyoGuessRole extends plugin {
       addScore(ctx, uid, -100)
       ctx.comboHolder = null
       ctx.comboCount = 0
-      await this.nextQuestion(ctx, `${displayName(this.e)} 跳过本题，扣 100 分。\n答案：${ctx.current.item.name}`)
+      await this.nextQuestion(
+        ctx,
+        `${displayName(this.e)} 跳过本题，扣 100 分。\n答案：${ctx.current.item.name}`,
+      )
       return true
     }
 
     const norm = normalizeName(msg)
-    const answers = new Set((ctx.current.item.answers || [ctx.current.item.name]).map(normalizeName))
+    const answers = new Set(
+      (ctx.current.item.answers || [ctx.current.item.name]).map(normalizeName),
+    )
 
     if (answers.has(norm)) {
       await this.correct(ctx, uid)
@@ -512,7 +820,11 @@ export class MihoyoGuessRole extends plugin {
       ctx.current.attempts++
       if (ctx.current.attempts >= MAX_ATTEMPTS) {
         if (!tryResolveCurrent(ctx)) return true
-        await this.nextQuestion(ctx, `已答错 ${MAX_ATTEMPTS} 次，本题跳过。\n答案：${ctx.current.item.name}`, true)
+        await this.nextQuestion(
+          ctx,
+          `已答错 ${MAX_ATTEMPTS} 次，本题跳过。\n答案：${ctx.current.item.name}`,
+          true,
+        )
       } else {
         await this.reply(`回答错误，剩余 ${MAX_ATTEMPTS - ctx.current.attempts} 次机会`, true)
       }
@@ -522,7 +834,7 @@ export class MihoyoGuessRole extends plugin {
     return true
   }
 
-  async hint (ctx) {
+  async hint(ctx) {
     ctx.current.baseScore = Math.max(MIN_SCORE, ctx.current.baseScore - 5)
 
     if (!ctx.current.fullShown) {
@@ -537,21 +849,19 @@ export class MihoyoGuessRole extends plugin {
     }
 
     if (!ctx.current.fullShown) {
-      await this.reply([
-        segment.image(`file://${questionCropPath(ctx)}`)
-      ])
+      await this.reply([segment.image(`file://${questionCropPath(ctx)}`)])
       return true
     }
 
     const count = ctx.current.hintedChars.length + 1
     ctx.current.hintedChars = pickHintChars(ctx.current.item.name, count, ctx.current.hintedChars)
     await this.reply(
-      `提示：该角色的名字中有 ${ctx.current.hintedChars.length} 个字是「${ctx.current.hintedChars.join("」和「")}」`
+      `提示：该角色的名字中有 ${ctx.current.hintedChars.length} 个字是「${ctx.current.hintedChars.join("」和「")}」`,
     )
     return true
   }
 
-  async correct (ctx, uid) {
+  async correct(ctx, uid) {
     if (!tryResolveCurrent(ctx)) return true
 
     const prevHolder = ctx.comboHolder
@@ -581,12 +891,12 @@ export class MihoyoGuessRole extends plugin {
 
     await this.reply(
       `恭喜 ${ctx.names.get(uid) || uid} 答对：${ctx.current.item.name}${extra}，获得 ${formatScore(add)} 分，当前总分 ${formatScore(total)} 分`,
-      true
+      true,
     )
     await this.nextQuestion(ctx)
   }
 
-  async nextQuestion (ctx, msg, quote = false) {
+  async nextQuestion(ctx, msg, quote = false) {
     ctx.index++
     if (ctx.index >= TOTAL_QUESTIONS) {
       await this.end(ctx, msg ? `${msg}\n\n20 题已结束` : "20 题已结束", quote)
@@ -597,7 +907,11 @@ export class MihoyoGuessRole extends plugin {
       await prepareQuestion(ctx)
     } catch (err) {
       globalThis.logger?.error?.(`[米游猜角色] 生成下一题失败：${err.stack || err}`)
-      await this.end(ctx, msg ? `${msg}\n\n生成下一题失败，提前结算` : "生成下一题失败，提前结算", quote)
+      await this.end(
+        ctx,
+        msg ? `${msg}\n\n生成下一题失败，提前结算` : "生成下一题失败，提前结算",
+        quote,
+      )
       return true
     }
 
@@ -605,7 +919,7 @@ export class MihoyoGuessRole extends plugin {
     return true
   }
 
-  async end (ctx, reason, quote = false) {
+  async end(ctx, reason, quote = false) {
     this.finish("米游猜角色_进行中", ctx.isGroupContext)
     await this.reply(`🏁 ${reason}\n\n最终排行：\n${rankText(ctx)}`, quote)
     return true

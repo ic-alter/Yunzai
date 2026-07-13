@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import http from "http"
 import https from "https"
+import zlib from "zlib"
 import { execFile } from "child_process"
 import { promisify } from "util"
 import plugin from "../../lib/plugins/plugin.js"
@@ -28,6 +29,9 @@ const HINT_CROP_STEP = 0.15
 const TEXT_HINT_CROP_RATIO = 0.5
 const MAX_TRANSPARENT_RATIO = 0.5
 const MAX_DOMINANT_COLOR_RATIO = 0.8
+const PIXEL_LEVELS = [8, 16, 32, 64, 128]
+const PIXEL_TEXT_HINT_MIN_INDEX = 3
+const PIXEL_OUTPUT_SHORT_SIDE = 512
 
 const FGO_PATTERN = "([fF][gG][oO]|命运冠位指定|命运·冠位指定)"
 const TARGET_PATTERN = "(从者|干员|英灵|角色)"
@@ -790,6 +794,167 @@ function questionCropPath(ctx) {
   return path.join(CROP_DIR, `${ctx.gameId}_${ctx.index + 1}_${ctx.current.hints}.png`)
 }
 
+async function readFullRawRgba(file) {
+  const { stdout } = await execFileAsync(
+    "ffmpeg",
+    ["-v", "error", "-i", file, "-vf", "format=rgba", "-frames:v", "1", "-f", "rawvideo", "pipe:1"],
+    {
+      encoding: "buffer",
+      maxBuffer: 400 * 1024 * 1024,
+    },
+  )
+  return stdout
+}
+
+let pngCrcTable = null
+
+function crc32(buf) {
+  if (!pngCrcTable) {
+    pngCrcTable = new Uint32Array(256)
+    for (let i = 0; i < 256; i++) {
+      let c = i
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1
+      pngCrcTable[i] = c >>> 0
+    }
+  }
+
+  let crc = 0xffffffff
+  for (const byte of buf) crc = pngCrcTable[(crc ^ byte) & 0xff] ^ (crc >>> 8)
+  return (crc ^ 0xffffffff) >>> 0
+}
+
+function pngChunk(type, data = Buffer.alloc(0)) {
+  const typeBuf = Buffer.from(type)
+  const len = Buffer.alloc(4)
+  const crc = Buffer.alloc(4)
+  len.writeUInt32BE(data.length, 0)
+  crc.writeUInt32BE(crc32(Buffer.concat([typeBuf, data])), 0)
+  return Buffer.concat([len, typeBuf, data, crc])
+}
+
+function writeRgbaPng(file, width, height, rgba) {
+  const ihdr = Buffer.alloc(13)
+  ihdr.writeUInt32BE(width, 0)
+  ihdr.writeUInt32BE(height, 4)
+  ihdr[8] = 8
+  ihdr[9] = 6
+  ihdr[10] = 0
+  ihdr[11] = 0
+  ihdr[12] = 0
+
+  const stride = width * 4
+  const raw = Buffer.alloc((stride + 1) * height)
+  for (let y = 0; y < height; y++) {
+    const rowOut = y * (stride + 1)
+    raw[rowOut] = 0
+    rgba.copy(raw, rowOut + 1, y * stride, (y + 1) * stride)
+  }
+
+  ensureDir(path.dirname(file))
+  fs.writeFileSync(
+    file,
+    Buffer.concat([
+      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+      pngChunk("IHDR", ihdr),
+      pngChunk("IDAT", zlib.deflateSync(raw)),
+      pngChunk("IEND"),
+    ]),
+  )
+}
+
+function pixelGridSize(meta, level) {
+  if (meta.width <= meta.height) {
+    return {
+      gridWidth: Math.max(1, level),
+      gridHeight: Math.max(1, Math.round((meta.height / meta.width) * level)),
+    }
+  }
+
+  return {
+    gridWidth: Math.max(1, Math.round((meta.width / meta.height) * level)),
+    gridHeight: Math.max(1, level),
+  }
+}
+
+function quantizedColorKey(r, g, b, a) {
+  if (a <= 8) return "t"
+  return `${r >> 6},${g >> 6},${b >> 6}`
+}
+
+function colorFromQuantizedKey(key) {
+  if (key === "t") return [0, 0, 0, 0]
+  const [r, g, b] = key.split(",").map(Number)
+  return [r * 64 + 32, g * 64 + 32, b * 64 + 32, 255]
+}
+
+function dominantQuantizedColor(raw, meta, x0, x1, y0, y1) {
+  const buckets = new Map()
+  let bestKey = "t"
+  let bestCount = 0
+
+  for (let y = y0; y < y1; y++) {
+    for (let x = x0; x < x1; x++) {
+      const idx = (y * meta.width + x) * 4
+      const key = quantizedColorKey(raw[idx], raw[idx + 1], raw[idx + 2], raw[idx + 3])
+      const count = (buckets.get(key) || 0) + 1
+      buckets.set(key, count)
+      if (count > bestCount) {
+        bestKey = key
+        bestCount = count
+      }
+    }
+  }
+
+  return colorFromQuantizedKey(bestKey)
+}
+
+function proportionalBounds(total, index, parts) {
+  let start = Math.round((index * total) / parts)
+  let end = Math.round(((index + 1) * total) / parts)
+  if (end > start) return [start, end]
+
+  start = clamp(start, 0, Math.max(0, total - 1))
+  return [start, Math.min(total, start + 1)]
+}
+
+async function renderPixelatedImage(state, out) {
+  if (state.imageHints >= PIXEL_LEVELS.length) {
+    await writeCropPng(state.image, { x: 0, y: 0, w: state.meta.width, h: state.meta.height }, out)
+    state.fullShown = true
+    return out
+  }
+
+  const level = PIXEL_LEVELS[state.imageHints]
+  const { gridWidth, gridHeight } = pixelGridSize(state.meta, level)
+  const blockSize = Math.max(1, Math.floor(PIXEL_OUTPUT_SHORT_SIDE / level))
+  const outWidth = gridWidth * blockSize
+  const outHeight = gridHeight * blockSize
+  const raw = state.rawRgba || (state.rawRgba = await readFullRawRgba(state.image))
+  const rgba = Buffer.alloc(outWidth * outHeight * 4)
+
+  for (let row = 0; row < gridHeight; row++) {
+    const [y0, y1] = proportionalBounds(state.meta.height, row, gridHeight)
+    for (let col = 0; col < gridWidth; col++) {
+      const [x0, x1] = proportionalBounds(state.meta.width, col, gridWidth)
+      const color = dominantQuantizedColor(raw, state.meta, x0, x1, y0, y1)
+
+      for (let py = row * blockSize; py < (row + 1) * blockSize; py++) {
+        for (let px = col * blockSize; px < (col + 1) * blockSize; px++) {
+          const idx = (py * outWidth + px) * 4
+          rgba[idx] = color[0]
+          rgba[idx + 1] = color[1]
+          rgba[idx + 2] = color[2]
+          rgba[idx + 3] = color[3]
+        }
+      }
+    }
+  }
+
+  writeRgbaPng(out, outWidth, outHeight, rgba)
+  state.fullShown = false
+  return out
+}
+
 function makeHintCrop(state) {
   return squareCropFromCenter(
     state.centerX,
@@ -805,10 +970,18 @@ function imageCropRatio(state) {
 }
 
 function canExpandImageHint(state) {
+  if (state.mode === "pixel") return state.imageHints < PIXEL_LEVELS.length
   return imageCropRatio(state) < 1
 }
 
+function shouldForceImageHint(state) {
+  if (state.mode === "pixel") return state.imageHints < PIXEL_TEXT_HINT_MIN_INDEX
+  return currentCropRatio({ current: state }) < TEXT_HINT_CROP_RATIO
+}
+
 async function renderCurrentCrop(ctx) {
+  if (ctx.current.mode === "pixel") return renderPixelatedImage(ctx.current, questionCropPath(ctx))
+
   const crop = ctx.current.hints === 0 ? ctx.current.crop : makeHintCrop(ctx.current)
   ctx.current.crop = crop
   ctx.current.fullShown = isFullImage(crop, ctx.current.meta)
@@ -839,6 +1012,7 @@ async function prepareQuestion(ctx) {
       const crop = await makeInitialCrop(item, image, meta)
       ctx.current = {
         item,
+        mode: ctx.mode || "crop",
         image,
         meta,
         crop,
@@ -956,6 +1130,10 @@ export class FgoGuessRole extends plugin {
           reg: `^#?${FGO_PATTERN}猜${TARGET_PATTERN}$`,
           fnc: "start",
         },
+        {
+          reg: `^#?${FGO_PATTERN}像素猜${TARGET_PATTERN}$`,
+          fnc: "startPixel",
+        },
       ],
     })
   }
@@ -965,6 +1143,7 @@ export class FgoGuessRole extends plugin {
       [
         "FGO猜角色帮助",
         "开局：#FGO猜角色 / #FGO猜从者",
+        "像素模式：#FGO像素猜角色 / #FGO像素猜从者",
         "局内：提示、不知道、跳过、结束、不玩了",
         "规则：共 20 题，看从者立绘局部猜完整名称；答对得分，提示会降低本题分数，跳过扣 100 分。",
       ].join("\n"),
@@ -1073,7 +1252,7 @@ export class FgoGuessRole extends plugin {
     }
   }
 
-  async start(e) {
+  async start(e, mode = "crop") {
     const isGroupContext = e.isGroup
     const old = this.getContext("FGO猜角色_进行中", isGroupContext)
     if (old) {
@@ -1097,6 +1276,7 @@ export class FgoGuessRole extends plugin {
 
     const ctx = this.setContext("FGO猜角色_进行中", isGroupContext, 3600)
     ctx.isGroupContext = isGroupContext
+    ctx.mode = mode
     ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
     ctx.questionPool = shuffle(catalog.items)
     ctx.questions = ctx.questionPool.slice(0, TOTAL_QUESTIONS)
@@ -1118,8 +1298,13 @@ export class FgoGuessRole extends plugin {
       return true
     }
 
-    await replyQuestion(e, ctx, "FGO猜角色开始，共 20 题。\n命令：提示/不知道、跳过、结束/不玩了\n")
+    const title = mode === "pixel" ? "FGO像素猜角色" : "FGO猜角色"
+    await replyQuestion(e, ctx, `${title}开始，共 20 题。\n命令：提示/不知道、跳过、结束/不玩了\n`)
     return true
+  }
+
+  async startPixel(e) {
+    return this.start(e, "pixel")
   }
 
   async FGO猜角色_进行中(e) {
@@ -1185,7 +1370,7 @@ export class FgoGuessRole extends plugin {
     ctx.current.baseScore = Math.max(MIN_SCORE, ctx.current.baseScore - 5)
 
     const canExpand = canExpandImageHint(ctx.current)
-    const shouldForceExpand = canExpand && currentCropRatio(ctx) < TEXT_HINT_CROP_RATIO
+    const shouldForceExpand = canExpand && shouldForceImageHint(ctx.current)
     const unusedTextHints = textHintOptions(ctx.current.item).filter(
       (_, idx) => !ctx.current.textHintsUsed.includes(idx),
     )
