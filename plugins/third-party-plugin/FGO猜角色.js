@@ -5,6 +5,7 @@ import https from "https"
 import zlib from "zlib"
 import { execFile } from "child_process"
 import { promisify } from "util"
+import puppeteer from "../../lib/puppeteer/puppeteer.js"
 import plugin from "../../lib/plugins/plugin.js"
 
 const execFileAsync = promisify(execFile)
@@ -16,10 +17,13 @@ const CATALOG_PATH = path.join(DATA_DIR, "servant_catalog.json")
 const ERROR_LOG_PATH = path.join(DATA_DIR, "preprocess_errors.log")
 const IMAGE_CACHE_DIR = path.join(DATA_DIR, "image_cache")
 const CROP_DIR = path.join(DATA_DIR, "crops")
+const WORDLE_TPL_PATH = path.join(DATA_DIR, "wordle.html")
+const WORDLE_CSS_PATH = path.join(DATA_DIR, "wordle.css")
 const RAW_URL = "https://api.atlasacademy.io/export/CN/nice_servant.json"
-const CATALOG_VERSION = 2
+const CATALOG_VERSION = 3
 
 const TOTAL_QUESTIONS = 20
+const WORDLE_MAX_GUESSES = 15
 const QUESTION_SERVANT_ATTEMPTS = 3
 const MAX_ATTEMPTS = 5
 const BASE_SCORE = 100
@@ -36,6 +40,206 @@ const PIXEL_OUTPUT_SHORT_SIDE = 512
 const FGO_PATTERN = "([fF][gG][oO]|命运冠位指定|命运·冠位指定)"
 const TARGET_PATTERN = "(从者|干员|英灵|角色)"
 const BANNED_ANSWER_KEYS = new Set(["alter"])
+
+const WORDLE_HTML = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FGO Wordle</title>
+  <link rel="stylesheet" href="{{cssFile}}">
+</head>
+<body>
+  <div id="container" class="sheet">
+    <div class="header">
+      <div>
+        <div class="title">FGO Wordle</div>
+        <div class="subtitle">{{round}} / {{maxRound}}</div>
+      </div>
+      <div class="badge">SERVANT</div>
+    </div>
+
+    <div class="table">
+      <div class="head">
+        <div></div>
+        <div>从者</div>
+        <div>星级</div>
+        <div>性别</div>
+        <div>职介</div>
+        <div>属性</div>
+        <div>副属性</div>
+        <div>宝具</div>
+        <div>HP</div>
+        <div>ATK</div>
+      </div>
+      {{each rows row}}
+        <div class="row">
+          <div class="face"><img src="{{row.faceUrl}}"></div>
+          <div class="cell name {{row.nameState}}">{{row.name}}</div>
+          <div class="cell {{row.rarityState}}">{{row.rarity}}</div>
+          <div class="cell {{row.genderState}}">{{row.gender}}</div>
+          <div class="cell {{row.classState}}">{{row.className}}</div>
+          <div class="cell {{row.alignmentState}}">{{row.alignments}}</div>
+          <div class="cell {{row.attributeState}}">{{row.attributes}}</div>
+          <div class="cell {{row.npState}}">{{row.noblePhantasms}}</div>
+          <div class="cell {{row.hpState}}">{{row.hp}}</div>
+          <div class="cell {{row.atkState}}">{{row.atk}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{if resultText}}
+      <div class="result">{{resultText}}</div>
+    {{/if}}
+  </div>
+</body>
+</html>
+`
+
+const WORDLE_CSS = `* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  background: #f3f5f7;
+  color: #161a1f;
+}
+
+.sheet {
+  width: 680px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #d9e0e7;
+  box-shadow: 0 16px 38px rgba(30, 45, 60, 0.15);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #66727f;
+}
+
+.badge {
+  padding: 5px 8px;
+  border: 1px solid #8fb1d4;
+  background: #eef5ff;
+  color: #235084;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.table {
+  display: grid;
+  gap: 4px;
+}
+
+.head,
+.row {
+  display: grid;
+  grid-template-columns: 40px 100px 64px 36px 48px 62px 46px 62px 66px 66px;
+  gap: 4px;
+  align-items: stretch;
+}
+
+.head > div {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5d6875;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.face {
+  width: 42px;
+  height: 48px;
+  background: #eef2f5;
+  border: 1px solid #d5dde5;
+  overflow: hidden;
+}
+
+.face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cell {
+  min-height: 48px;
+  padding: 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.18;
+  font-size: 11px;
+  font-weight: 750;
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.row .cell:nth-child(3),
+.row .cell:nth-child(9),
+.row .cell:nth-child(10) {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.name {
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 11px;
+}
+
+.ok {
+  background: #3fa25f;
+  color: #ffffff;
+}
+
+.bad {
+  background: #c94b4b;
+  color: #ffffff;
+}
+
+.partial {
+  background: #df8d2f;
+  color: #ffffff;
+}
+
+.result {
+  margin-top: 10px;
+  padding: 9px 10px;
+  background: #f7fafc;
+  border: 1px solid #d9e0e7;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #17202a;
+}
+`
 
 const CLASS_NAME_MAP = {
   saber: "剑阶",
@@ -99,6 +303,12 @@ const ATTRIBUTE_MAP = {
   human: "人",
   star: "星",
   beast: "兽",
+}
+
+const NOBLE_PHANTASM_CARD_MAP = {
+  1: "Arts",
+  2: "Buster",
+  3: "Quick",
 }
 
 const POLICY_MAP = {
@@ -239,6 +449,31 @@ function collectImageUrls(servant) {
   for (const value of Object.values(graph.ascension || {})) urls.push(value)
   for (const value of Object.values(graph.costume || {})) urls.push(value)
   return [...new Set(urls.filter(Boolean))]
+}
+
+function collectFaceUrls(servant) {
+  const urls = []
+  const faces = servant.extraAssets?.faces || {}
+  for (const value of Object.values(faces.ascension || {})) urls.push(value)
+  for (const value of Object.values(faces.costume || {})) urls.push(value)
+  return [...new Set(urls.filter(Boolean))]
+}
+
+function collectAttributes(servant) {
+  const values = [servant.attribute]
+  const add = servant.ascensionAdd?.attribute || {}
+  for (const value of Object.values(add.ascension || {})) values.push(value)
+  for (const value of Object.values(add.costume || {})) values.push(value)
+  return [...new Set(values.filter(Boolean))]
+}
+
+function collectNoblePhantasmCards(servant) {
+  const cards = []
+  for (const np of servant.noblePhantasms || []) {
+    const card = NOBLE_PHANTASM_CARD_MAP[String(np?.card)]
+    if (card) cards.push(card)
+  }
+  return [...new Set(cards)]
 }
 
 function getServantKey(item) {
@@ -492,6 +727,7 @@ function preprocessCatalogFromRaw() {
     try {
       const aliases = collectServantAliases(servant)
       const imageUrls = collectImageUrls(servant)
+      const faceUrls = collectFaceUrls(servant)
       if (!servant?.id || !servant?.name || !aliases.length || !imageUrls.length) {
         stats.skippedCount++
         continue
@@ -512,7 +748,13 @@ function preprocessCatalogFromRaw() {
         rarity: servant.rarity,
         gender: servant.gender || "unknown",
         attribute: servant.attribute,
+        attributes: collectAttributes(servant),
         alignments: collectAlignments(servant),
+        noblePhantasmCards: collectNoblePhantasmCards(servant),
+        atkMax: Number.isFinite(Number(servant.atkMax)) ? Number(servant.atkMax) : null,
+        hpMax: Number.isFinite(Number(servant.hpMax)) ? Number(servant.hpMax) : null,
+        faceUrls,
+        faceUrl: faceUrls[0] || null,
         imageUrls,
       })
     } catch (err) {
@@ -1107,6 +1349,139 @@ function currentCropRatio(ctx) {
   return imageCropRatio(ctx.current)
 }
 
+function ensureWordleTemplateFiles() {
+  ensureDir(DATA_DIR)
+  if (!fs.existsSync(WORDLE_TPL_PATH)) fs.writeFileSync(WORDLE_TPL_PATH, WORDLE_HTML)
+  if (!fs.existsSync(WORDLE_CSS_PATH)) fs.writeFileSync(WORDLE_CSS_PATH, WORDLE_CSS)
+}
+
+function isWordleReadyItem(item) {
+  return (
+    item?.id &&
+    item?.name &&
+    Number.isFinite(Number(item.rarity)) &&
+    item.className &&
+    item.alignments?.length &&
+    (item.attributes?.length || item.attribute) &&
+    item.noblePhantasmCards?.length &&
+    Number.isFinite(Number(item.hpMax)) &&
+    Number.isFinite(Number(item.atkMax)) &&
+    item.faceUrl
+  )
+}
+
+function wordleItems(catalog) {
+  return (catalog.items || []).filter(isWordleReadyItem)
+}
+
+function starText(rarity) {
+  const n = Number(rarity)
+  if (!Number.isFinite(n) || n <= 0) return ""
+  return "⭐".repeat(n)
+}
+
+function displayClassName(className) {
+  return SERVANT_CLASS_DISPLAY_MAP[className] || CLASS_NAME_MAP[className] || className || "未知"
+}
+
+function alignmentText(alignment) {
+  if (!alignment) return ""
+  return `${POLICY_MAP[alignment.policy] || alignment.policy || ""}${PERSONALITY_MAP[alignment.personality] || alignment.personality || ""}`
+}
+
+function displayAlignments(item) {
+  return (item.alignments || []).map(alignmentText).filter(Boolean).join("/")
+}
+
+function displayAttributes(item) {
+  return (item.attributes?.length ? item.attributes : [item.attribute])
+    .map(v => ATTRIBUTE_MAP[v] || v)
+    .filter(Boolean)
+    .join("/")
+}
+
+function displayNoblePhantasmCards(item) {
+  return (item.noblePhantasmCards || []).join("/")
+}
+
+function normalizedSet(values) {
+  return new Set((values || []).filter(Boolean).map(v => String(v)))
+}
+
+function alignmentKeys(item) {
+  return (item.alignments || []).map(v => `${v.policy}:${v.personality}`).filter(v => v !== ":")
+}
+
+function attributeKeys(item) {
+  return item.attributes?.length ? item.attributes : [item.attribute].filter(Boolean)
+}
+
+function sameSet(a, b) {
+  if (a.size !== b.size) return false
+  for (const value of a) if (!b.has(value)) return false
+  return true
+}
+
+function isSubset(a, b) {
+  for (const value of a) if (!b.has(value)) return false
+  return true
+}
+
+function compareSetField(guessValues, targetValues) {
+  const guess = normalizedSet(guessValues)
+  const target = normalizedSet(targetValues)
+  if (sameSet(guess, target)) return "ok"
+  if (guess.size > 0 && guess.size < target.size && isSubset(guess, target)) return "partial"
+  return "bad"
+}
+
+function arrowNumber(value, target) {
+  const n = Number(value)
+  const t = Number(target)
+  if (n === t) return String(n)
+  return `${n} ${n > t ? "↓" : "↑"}`
+}
+
+function wordleGuessRow(guess, target) {
+  const isTarget = String(guess.id) === String(target.id)
+  return {
+    faceUrl: guess.faceUrl,
+    name: guess.name,
+    nameState: isTarget ? "ok" : "bad",
+    rarity: starText(guess.rarity),
+    rarityState: Number(guess.rarity) === Number(target.rarity) ? "ok" : "bad",
+    gender: GENDER_MAP[guess.gender] || "不明",
+    genderState: guess.gender === target.gender ? "ok" : "bad",
+    className: displayClassName(guess.className),
+    classState: guess.className === target.className ? "ok" : "bad",
+    alignments: displayAlignments(guess),
+    alignmentState: compareSetField(alignmentKeys(guess), alignmentKeys(target)),
+    attributes: displayAttributes(guess),
+    attributeState: compareSetField(attributeKeys(guess), attributeKeys(target)),
+    noblePhantasms: displayNoblePhantasmCards(guess),
+    npState: compareSetField(guess.noblePhantasmCards, target.noblePhantasmCards),
+    hp: arrowNumber(guess.hpMax, target.hpMax),
+    hpState: Number(guess.hpMax) === Number(target.hpMax) ? "ok" : "bad",
+    atk: arrowNumber(guess.atkMax, target.atkMax),
+    atkState: Number(guess.atkMax) === Number(target.atkMax) ? "ok" : "bad",
+  }
+}
+
+function findWordleCandidates(catalog, query) {
+  const readyIds = new Set(wordleItems(catalog).map(item => String(item.id)))
+  return findAliasTargetCandidates(catalog, query).filter(item => readyIds.has(String(item.id)))
+}
+
+function formatWordlePickLine(item, index) {
+  return formatServantPickLine(item, index)
+}
+
+function isPickNumber(text, ctx) {
+  if (!ctx?.pendingPick) return false
+  const idx = Number(text)
+  return Number.isInteger(idx) && idx >= 1 && idx <= ctx.pendingPick.items.length
+}
+
 export class FgoGuessRole extends plugin {
   constructor() {
     super({
@@ -1131,6 +1506,10 @@ export class FgoGuessRole extends plugin {
           fnc: "start",
         },
         {
+          reg: "^#?[fF][gG][oO]\\s*[wW][oO][rR][dD][lL][eE]$",
+          fnc: "startWordle",
+        },
+        {
           reg: `^#?${FGO_PATTERN}像素猜${TARGET_PATTERN}$`,
           fnc: "startPixel",
         },
@@ -1144,6 +1523,7 @@ export class FgoGuessRole extends plugin {
         "FGO猜角色帮助",
         "开局：#FGO猜角色 / #FGO猜从者",
         "像素模式：#FGO像素猜角色 / #FGO像素猜从者",
+        "Wordle：#FGOWordle / #FGO Wordle",
         "局内：提示、不知道、跳过、结束、不玩了",
         "规则：共 20 题，看从者立绘局部猜完整名称；答对得分，提示会降低本题分数，跳过扣 100 分。",
       ].join("\n"),
@@ -1305,6 +1685,154 @@ export class FgoGuessRole extends plugin {
 
   async startPixel(e) {
     return this.start(e, "pixel")
+  }
+
+  async startWordle(e) {
+    const isGroupContext = e.isGroup
+    const old = this.getContext("FGOWordle_进行中", isGroupContext)
+    if (old) {
+      await e.reply("当前会话已有一局 FGO Wordle 正在进行")
+      return true
+    }
+
+    let catalog
+    try {
+      catalog = loadCatalog()
+    } catch (err) {
+      appendErrorLog("加载 Wordle 预处理数据失败", err)
+      await e.reply("FGO Wordle 数据不可用，请先发送 FGO猜从者更新")
+      return true
+    }
+
+    const items = wordleItems(catalog)
+    if (!items.length) {
+      await e.reply("FGO Wordle 数据缺少必要字段，请先发送 FGO猜从者更新")
+      return true
+    }
+
+    ensureWordleTemplateFiles()
+    const ctx = this.setContext("FGOWordle_进行中", isGroupContext, 3600)
+    ctx.isGroupContext = isGroupContext
+    ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
+    ctx.catalog = catalog
+    ctx.target = rand(items)
+    ctx.guesses = []
+    ctx.guessedIds = new Set()
+    ctx.pendingPick = null
+    ctx.renderIndex = 0
+    ctx.finished = false
+
+    await e.reply(
+      [
+        "FGO Wordle 开始，请直接回复从者名。",
+        `目标是在 ${WORDLE_MAX_GUESSES} 轮内猜出目标从者。`,
+        "输入“不玩了”可直接结束。",
+      ].join("\n"),
+    )
+    return true
+  }
+
+  async FGOWordle_进行中(e) {
+    const ctx = this.getContext("FGOWordle_进行中", e.isGroup)
+    if (!ctx || ctx.finished) return false
+
+    const msg = String(this.e.msg || "").trim()
+    if (!msg) return false
+
+    if (msg === "不玩了") {
+      await this.endWordle(ctx, false)
+      return true
+    }
+
+    if (isPickNumber(msg, ctx)) {
+      const item = ctx.pendingPick.items[Number(msg) - 1]
+      ctx.pendingPick = null
+      await this.applyWordleGuess(ctx, item)
+      return true
+    }
+
+    const candidates = findWordleCandidates(ctx.catalog, msg)
+    if (!candidates.length) return false
+
+    const key = normalizeCompact(msg)
+    if (candidates.length > 1) {
+      if (ctx.pendingPick?.key === key) return true
+      ctx.pendingPick = { key, items: candidates }
+      const list = candidates.map(formatWordlePickLine).join("\n")
+      await this.reply(`请选择要回答的从者\n${list}`)
+      return true
+    }
+
+    ctx.pendingPick = null
+    await this.applyWordleGuess(ctx, candidates[0])
+    return true
+  }
+
+  async applyWordleGuess(ctx, item) {
+    if (ctx.guessedIds.has(String(item.id))) {
+      await this.reply(`已经猜过「${item.name}」了，本轮不重复计数`)
+      return true
+    }
+
+    ctx.guesses.push(item)
+    ctx.guessedIds.add(String(item.id))
+
+    const correct = String(item.id) === String(ctx.target.id)
+    const exhausted = ctx.guesses.length >= WORDLE_MAX_GUESSES
+    if (correct) {
+      await this.endWordle(ctx, true)
+      return true
+    }
+    if (exhausted) {
+      await this.endWordle(ctx, false)
+      return true
+    }
+
+    const img = await this.renderWordle(ctx)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(`已记录：${item.name}（${ctx.guesses.length}/${WORDLE_MAX_GUESSES}）`, true)
+    return true
+  }
+
+  async renderWordle(ctx, resultText = "") {
+    try {
+      ensureWordleTemplateFiles()
+      return await puppeteer.screenshot("fgo-wordle", {
+        tplFile: WORDLE_TPL_PATH,
+        cssFile: `file://${WORDLE_CSS_PATH}`,
+        saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
+        round: ctx.guesses.length,
+        maxRound: WORDLE_MAX_GUESSES,
+        rows: ctx.guesses.map(item => wordleGuessRow(item, ctx.target)),
+        resultText,
+        imgType: "png",
+      })
+    } catch (err) {
+      appendErrorLog("渲染 Wordle 图片失败", err)
+      globalThis.logger?.error?.(`[FGOWordle] 渲染图片失败：${err.stack || err}`)
+      return false
+    }
+  }
+
+  async endWordle(ctx, success) {
+    ctx.finished = true
+    this.finish("FGOWordle_进行中", ctx.isGroupContext)
+
+    const resultText = success
+      ? `恭喜！正确答案是${ctx.target.name}`
+      : `正确答案是${ctx.target.name}`
+    const img = await this.renderWordle(ctx, resultText)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(resultText, true)
+    return true
   }
 
   async FGO猜角色_进行中(e) {

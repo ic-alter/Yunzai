@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FGO Wordle</title>
+  <link rel="stylesheet" href="{{cssFile}}">
+</head>
+<body>
+  <div id="container" class="sheet">
+    <div class="header">
+      <div>
+        <div class="title">FGO Wordle</div>
+        <div class="subtitle">{{round}} / {{maxRound}}</div>
+      </div>
+      <div class="badge">SERVANT</div>
+    </div>
+
+    <div class="table">
+      <div class="head">
+        <div></div>
+        <div>从者</div>
+        <div>星级</div>
+        <div>性别</div>
+        <div>职介</div>
+        <div>属性</div>
+        <div>副属性</div>
+        <div>宝具</div>
+        <div>HP</div>
+        <div>ATK</div>
+      </div>
+      {{each rows row}}
+        <div class="row">
+          <div class="face"><img src="{{row.faceUrl}}"></div>
+          <div class="cell name {{row.nameState}}">{{row.name}}</div>
+          <div class="cell {{row.rarityState}}">{{row.rarity}}</div>
+          <div class="cell {{row.genderState}}">{{row.gender}}</div>
+          <div class="cell {{row.classState}}">{{row.className}}</div>
+          <div class="cell {{row.alignmentState}}">{{row.alignments}}</div>
+          <div class="cell {{row.attributeState}}">{{row.attributes}}</div>
+          <div class="cell {{row.npState}}">{{row.noblePhantasms}}</div>
+          <div class="cell {{row.hpState}}">{{row.hp}}</div>
+          <div class="cell {{row.atkState}}">{{row.atk}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{if resultText}}
+      <div class="result">{{resultText}}</div>
+    {{/if}}
+  </div>
+</body>
+</html>
