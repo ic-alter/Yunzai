@@ -278,7 +278,10 @@ function saveCatalogAlias(servantId, alias) {
 
   const before = item.aliases?.length || 0
   item.aliases = uniqNames([...(item.aliases || []), alias])
-  if (item.aliases.length === before) return { catalog, item, added: false }
+  if (item.aliases.length === before) {
+    writeJson(CATALOG_PATH, catalog)
+    return { catalog, item, added: false }
+  }
 
   catalog.builtAt = Date.now()
   catalog.stats.aliasCount = catalog.items.reduce((sum, v) => sum + (v.aliases?.length || 0), 0)
@@ -426,7 +429,6 @@ function buildSkillGridItemsBySource(raw, catalogItems, source) {
         id: `fgo:${source}:${group.key}:${item.id}`,
         source,
         name: item.name,
-        answers: servantMatchValues(item),
         skill: group.skill,
         ownerIds: [item.id],
       })
@@ -439,7 +441,6 @@ function buildSkillGridItemsBySource(raw, catalogItems, source) {
       id: `fgo:${source}:${group.key}:shared`,
       source,
       name: answers[0],
-      answers,
       skill: group.skill,
       ownerIds: owners.map(item => item.id),
     })

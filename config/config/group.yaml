@@ -16,7 +16,9 @@ default:
 
   #禁用功能，功能名称,例如：十连、角色查询、体力查询、用户绑定、抽卡记录、添加表情、欢迎新人、退群通知
   #禁用功能，功能名称,例如：云崽帮助、角色素材、今日素材、养成计算、米游社公告
-  disable: []
+  disable:
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
   groupCD: 100
   addLimit: 0
 
@@ -24,76 +26,6 @@ default:
 123456:
   groupGlobalCD: 0 # 群聊中所有指令操作冷却时间，单位毫秒,0则无限制
   singleCD: 1000 # 群聊中个人操作冷却时间，单位毫秒
-  groupCD: 1000
-546887365777:
-  # 由于暂时不需要配置了，所以修改。如果后续需要重新加入此配置，将最后的777去掉
-  __place__: 0
-  groupGlobalCD: 1000
-  singleCD: 1000
-  imgAddLimit: 0
-  imgMaxSize: 2
-  enable: []
-  disable:
-    - 喵喵:角色查询
-    - 喵喵:戳一戳
-    - 喵喵:角色面板
-    - 喵喵:深渊统计
-    - 喵喵:角色资料
-    - 喵喵:抽卡统计
-    - 喵喵:喵喵设置
-    - 米游社攻略
-    - 喵喵:版本
-    - Atlas图鉴
-    - Atlas图鉴帮助
-    - 锅巴登录
-    - 锅巴更新
-    - 锅巴帮助
-    - 角色查询
-    - 充值记录
-    - 体力查询
-    - 用户管理
-    - 抽卡记录
-    - 札记查询
-    - 用户绑定
-    - 角色素材
-    - 别名设置
-    - 养成计算
-    - 配置
-    - 米游社功能
-    - "[鸢尾花插件]鸢尾花帮助"
-    - 兑换码
-    - 十连
-    - Atlas原魔属性计算
-    - "[鸢尾花插件]更新"
-    - "[鸢尾花插件]今日签到"
-    - "[鸢尾花插件]今日番剧"
-    - 留影叙佳期
-    - "[鸢尾花插件]今日运势"
-    - "[鸢尾花插件]今日老婆"
-    - "[鸢尾花插件]今日天气"
-    - "[鸢尾花插件]塔罗牌"
-    - "[鸢尾花插件]算一卦"
-    - "[鸢尾花插件]定时发图"
-    - "[鸢尾花插件]保存表情包"
-    - "[鸢尾花插件]今日新闻"
-    - "[鸢尾花插件]摸鱼日历"
-    - "[鸢尾花插件]小说订阅"
-    - "[鸢尾花插件]表情包仓库"
-    - "[鸢尾花插件]图片api"
-    - gptweb
-    - gpt
-    - dalle_mini
-    - dalle_v1
-    - emi
-    - llama2
-    - prodia_stablediffusion
-    - prodia_v1
-    - stablediffusion_v1
-    - py-plugin
-    - "[鸢尾花插件]每日问候"
-    - "[鸢尾花插件]进退群群通知"
-    - 欢迎新人
-    - 退群通知
   groupCD: 1000
 546887365:
   __place__: 0
@@ -125,7 +57,7 @@ default:
 697922067:
   __place__: 0
   groupGlobalCD: 1000
-  singleCD: 1000
+  singleCD: 100
   onlyReplyAt: 0
   imgAddLimit: 2
   imgMaxSize: 2
@@ -134,16 +66,18 @@ default:
     - 退群通知
     - 欢迎新人
     - bilitv-ll
-  groupCD: 1000
+  groupCD: 100
 781047800:
   __place__: 0
   groupGlobalCD: 1000
-  singleCD: 1000
+  singleCD: 100
   onlyReplyAt: 0
   imgAddLimit: 2
   imgMaxSize: 2
   disable:
     - bilitv-ll
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
   groupCD: 100
 946431041:
   __place__: 0
@@ -159,6 +93,8 @@ default:
     - ys-woc-Reborn
     - jmcomic
     - JMComic
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
   groupCD: 100
 824725200:
   __place__: 0
@@ -172,6 +108,8 @@ default:
   disable:
     - bilitv-ll
     - bilitv
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
   groupGlobalCD: 1000
   singleCD: 1000
   groupCD: 100
@@ -183,6 +121,8 @@ default:
     - "[鸢尾花插件]今日运势"
     - bilitv-ll
     - ChatGPT-Plugin 娱乐小功能
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
   groupCD: 1000
 671549425:
   __place__: 0
@@ -198,6 +138,8 @@ default:
     - 牛牛-搞钱
     - 牛牛-结婚
     - 牛牛-外出
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
 223296599:
   __place__: 0
   groupCD: 100
@@ -209,18 +151,14 @@ default:
     - bilitv-ll
     - ys-woc-Reborn
     - 牛牛-击剑与事件
-953639673:
-  __place__: 0
-  groupCD: 100
-  singleCD: 1000
-  addLimit: 0
-  addPrivate: 1
-  disable:
-    - memes制作
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知
 892470787:
   __place__: 0
-  groupCD: 1000
-  singleCD: 1000
+  groupCD: 100
+  singleCD: 100
   disable:
     - jmcomic
     - JMComic
+    - "[鸢尾花插件]进退群群通知"
+    - 退群通知

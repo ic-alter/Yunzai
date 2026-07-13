@@ -25,8 +25,8 @@ export class example extends plugin {
       event: "message",
       priority: 200,
       rule: [
-        { reg: "^#?外出", fnc: "外出" },
-        { reg: "^#?回家", fnc: "回家" },
+        { reg: "^#?外出$", fnc: "外出" },
+        { reg: "^#?回家$", fnc: "回家" },
         { reg: "^#?传送$", fnc: "openTeleport" }
     ],
     })

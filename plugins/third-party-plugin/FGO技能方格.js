@@ -238,23 +238,71 @@ function isUsablePartialAnswer(text) {
   return isLatin(text) ? text.length >= 3 : text.length >= 2
 }
 
+function uniqNames(names) {
+  const seen = new Set()
+  const ret = []
+  for (const name of names
+    .filter(Boolean)
+    .map(v => String(v).trim())
+    .filter(Boolean)) {
+    const key = normalizeCompact(name)
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    ret.push(name)
+  }
+  return ret
+}
+
+function servantMatchValues(item) {
+  return uniqNames([item.name, ...(item.aliases || [])])
+}
+
+function commonAnswerNames(items) {
+  if (!items.length) return []
+
+  const keyMaps = items.map(item => {
+    const map = new Map()
+    for (const name of servantMatchValues(item)) {
+      const key = normalizeCompact(name)
+      if (key && !map.has(key)) map.set(key, name)
+    }
+    return map
+  })
+
+  let common = new Set(keyMaps[0].keys())
+  for (const map of keyMaps.slice(1)) {
+    common = new Set([...common].filter(key => map.has(key)))
+  }
+
+  return [...common].map(key => keyMaps[0].get(key)).filter(Boolean)
+}
+
 function loadCatalog() {
   return readJson(CATALOG_PATH)
 }
 
 function collectCandidates(catalog) {
   const skillGrid = catalog?.skillGrid || {}
+  const itemById = new Map((catalog?.items || []).map(item => [String(item.id), item]))
   return [
     ...(skillGrid.skills || []),
     ...(skillGrid.classPassives || []),
     ...(skillGrid.noblePhantasms || []),
   ]
-    .map(item => ({
-      ...item,
-      sourceLabel: SOURCE_LABEL[item.source] || "技能",
-      chars: [...item.skill],
-    }))
-    .filter(v => v.chars.length >= 2)
+    .map(item => {
+      const owners = (item.ownerIds || []).map(id => itemById.get(String(id))).filter(Boolean)
+      const answers =
+        owners.length === 1 ? servantMatchValues(owners[0]) : commonAnswerNames(owners)
+      if (!owners.length || !answers.length) return null
+      return {
+        ...item,
+        name: owners.length === 1 ? owners[0].name : item.name || answers[0],
+        answers,
+        sourceLabel: SOURCE_LABEL[item.source] || "技能",
+        chars: [...item.skill],
+      }
+    })
+    .filter(v => v?.chars.length >= 2)
 }
 
 function makeAnswerSet(catalog) {
