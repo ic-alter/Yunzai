@@ -20,7 +20,7 @@ const CROP_DIR = path.join(DATA_DIR, "crops")
 const WORDLE_TPL_PATH = path.join(DATA_DIR, "wordle.html")
 const WORDLE_CSS_PATH = path.join(DATA_DIR, "wordle.css")
 const RAW_URL = "https://api.atlasacademy.io/export/CN/nice_servant.json"
-const CATALOG_VERSION = 3
+const CATALOG_VERSION = 5
 
 const TOTAL_QUESTIONS = 20
 const WORDLE_MAX_GUESSES = 15
@@ -443,6 +443,15 @@ function collectServantAliases(servant) {
   return uniqNames(names)
 }
 
+function displayServantName(servant) {
+  if (String(servant?.id) === "2501500" && servant?.battleName) return servant.battleName
+  return servant?.name
+}
+
+function isPlayableServant(servant) {
+  return servant?.type === "normal" || servant?.type === "heroine"
+}
+
 function collectImageUrls(servant) {
   const urls = []
   const graph = servant.extraAssets?.charaGraph || {}
@@ -725,6 +734,11 @@ function preprocessCatalogFromRaw() {
 
   for (const servant of raw) {
     try {
+      if (!isPlayableServant(servant)) {
+        stats.skippedCount++
+        continue
+      }
+
       const aliases = collectServantAliases(servant)
       const imageUrls = collectImageUrls(servant)
       const faceUrls = collectFaceUrls(servant)
@@ -742,7 +756,7 @@ function preprocessCatalogFromRaw() {
       items.push({
         id: servant.id,
         collectionNo: servant.collectionNo,
-        name: servant.name,
+        name: displayServantName(servant),
         aliases,
         className: servant.className,
         rarity: servant.rarity,
