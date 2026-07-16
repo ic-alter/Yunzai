@@ -3,6 +3,7 @@ import path from "path"
 import zlib from "zlib"
 import { execFile } from "child_process"
 import { promisify } from "util"
+import puppeteer from "../../lib/puppeteer/puppeteer.js"
 import plugin from "../../lib/plugins/plugin.js"
 
 const execFileAsync = promisify(execFile)
@@ -10,9 +11,18 @@ const execFileAsync = promisify(execFile)
 const DATA_DIR = path.join(process.cwd(), "data", "mihoyo-guess-role")
 const CROP_DIR = path.join(DATA_DIR, "crops")
 const CATALOG_PATH = path.join(DATA_DIR, "catalog.json")
-const CATALOG_VERSION = 4
+const WORDLE_TPL_PATH = path.join(DATA_DIR, "wordle.html")
+const WORDLE_CSS_PATH = path.join(DATA_DIR, "wordle.css")
+const SR_WORDLE_TPL_PATH = path.join(DATA_DIR, "sr_wordle.html")
+const SR_WORDLE_CSS_PATH = path.join(DATA_DIR, "sr_wordle.css")
+const ZZZ_WORDLE_TPL_PATH = path.join(DATA_DIR, "zzz_wordle.html")
+const ZZZ_WORDLE_CSS_PATH = path.join(DATA_DIR, "zzz_wordle.css")
+const CATALOG_VERSION = 11
 const CATALOG_TTL = 6 * 60 * 60 * 1000
 const TOTAL_QUESTIONS = 20
+const GENSHIN_WORDLE_MAX_GUESSES = 10
+const SR_WORDLE_MAX_GUESSES = 10
+const ZZZ_WORDLE_MAX_GUESSES = 10
 const MAX_ATTEMPTS = 5
 const BASE_SCORE = 100
 const MIN_SCORE = 10
@@ -27,6 +37,66 @@ const PIXEL_ALPHA_THRESHOLD = 8
 const BRAND_PATTERN = "(米游|米哈游|米桑|[mM][iI][hH][oO][yY][oO]|[mM][hH][yY])"
 const TARGET_PATTERN = "(角色|干员)"
 const MIAO_SKIP_DIRS = new Set(["common"])
+const GENSHIN_WORDLE_BANNED_NAMES = new Set(["空", "荧", "旅行者", "奇偶·男性", "奇偶·女性"])
+const SR_WORDLE_BANNED_NAMES = new Set([
+  "星·毁灭",
+  "星·存护",
+  "星·同谐",
+  "星·记忆",
+  "星·欢愉",
+  "穹·毁灭",
+  "穹·存护",
+  "穹·同谐",
+  "穹·记忆",
+  "穹·欢愉",
+])
+const TALENT_REGION_FALLBACK = {
+  自由: "蒙德",
+  抗争: "蒙德",
+  诗文: "蒙德",
+  繁荣: "璃月",
+  勤劳: "璃月",
+  黄金: "璃月",
+  浮世: "稻妻",
+  风雅: "稻妻",
+  天光: "稻妻",
+  诤言: "须弥",
+  巧思: "须弥",
+  笃行: "须弥",
+  公平: "枫丹",
+  正义: "枫丹",
+  秩序: "枫丹",
+  角逐: "纳塔",
+  焚燔: "纳塔",
+  纷争: "纳塔",
+  月光: "挪德卡莱",
+  乐园: "挪德卡莱",
+  浪迹: "挪德卡莱",
+}
+
+const ELEMENT_DISPLAY = {
+  pyro: "火",
+  hydro: "水",
+  electro: "雷",
+  cryo: "冰",
+  anemo: "风",
+  geo: "岩",
+  dendro: "草",
+  multi: "多",
+}
+
+const WEAPON_DISPLAY = {
+  sword: "单手剑",
+  claymore: "双手剑",
+  polearm: "长柄",
+  catalyst: "法器",
+  bow: "弓",
+}
+
+const ZZZ_VARIANT_PROFILE_FALLBACK = {
+  "零号·安比": "安比",
+  "星徽·比利": "比利",
+}
 
 const GS_DIR = path.join(
   process.cwd(),
@@ -35,6 +105,24 @@ const GS_DIR = path.join(
   "resources",
   "meta-gs",
   "character",
+)
+const GS_MATERIAL_DAILY_PATH = path.join(
+  process.cwd(),
+  "plugins",
+  "miao-plugin",
+  "resources",
+  "meta-gs",
+  "material",
+  "daily.js",
+)
+const GS_MATERIAL_INDEX_PATH = path.join(
+  process.cwd(),
+  "plugins",
+  "miao-plugin",
+  "resources",
+  "meta-gs",
+  "material",
+  "index.js",
 )
 const SR_DIR = path.join(
   process.cwd(),
@@ -60,6 +148,15 @@ const ZZZ_NANOKA_ROLE_DIR = path.join(
   "images",
   "nanoka",
   "role",
+)
+const ZZZ_NANOKA_CHARACTER_DIR = path.join(
+  process.cwd(),
+  "plugins",
+  "ZZZ-Plugin",
+  "resources",
+  "data",
+  "nanoka",
+  "character",
 )
 const ZZZ_MAP_PATH = path.join(
   process.cwd(),
@@ -91,10 +188,148 @@ function writeJson(file, data) {
   fs.writeFileSync(file, JSON.stringify(data, null, 2))
 }
 
+function extractSingleQuotedArray(text, key) {
+  const match = new RegExp(`${key}\\s*[:=]\\s*\\[([^\\]]+)\\]`).exec(text)
+  if (!match) return []
+  return [...match[1].matchAll(/'([^']+)'|"([^"]+)"/g)].map(v => v[1] || v[2]).filter(Boolean)
+}
+
+function loadTalentRegionMap() {
+  const ret = { ...TALENT_REGION_FALLBACK }
+
+  try {
+    if (!fs.existsSync(GS_MATERIAL_DAILY_PATH) || !fs.existsSync(GS_MATERIAL_INDEX_PATH))
+      return ret
+
+    const dailyText = fs.readFileSync(GS_MATERIAL_DAILY_PATH, "utf8")
+    const indexText = fs.readFileSync(GS_MATERIAL_INDEX_PATH, "utf8")
+    const citys = extractSingleQuotedArray(indexText, "citys")
+    if (!citys.length) return ret
+
+    for (const week of [1, 2, 3]) {
+      const talents = extractSingleQuotedArray(dailyText, week)
+      talents.forEach((talent, idx) => {
+        if (talent && citys[idx]) ret[talent] = citys[idx]
+      })
+    }
+  } catch (err) {
+    globalThis.logger?.warn?.(`[米游猜角色] 读取原神天赋书地区映射失败：${err.message || err}`)
+  }
+
+  return ret
+}
+
+function talentShortName(talent) {
+  const match = /「(.+?)」/.exec(String(talent || ""))
+  return match?.[1] || String(talent || "").replace(/的哲学$/, "").trim()
+}
+
+function readGenshinWordleMeta(charDir, fallbackName) {
+  const data = readJson(path.join(charDir, "data.json"), {})
+  const name = data.name || fallbackName
+  const face = path.join(charDir, "imgs", "face.webp")
+  const talentName = talentShortName(data.materials?.talent)
+  const talentRegions = loadTalentRegionMap()
+
+  return {
+    gsWordle: {
+      name,
+      elem: data.elem || "",
+      weapon: data.weapon || "",
+      birth: data.birth || "",
+      allegiance: data.allegiance || "",
+      talent: talentName,
+      talentRegion: talentRegions[talentName] || "",
+      hp: Math.round(Number(data.baseAttr?.hp)),
+      atk: Math.round(Number(data.baseAttr?.atk)),
+      def: Math.round(Number(data.baseAttr?.def)),
+      face: fs.existsSync(face) ? face : "",
+    },
+  }
+}
+
+function readSrWordleMeta(charDir, fallbackName) {
+  const data = readJson(path.join(charDir, "data.json"), {})
+  const name = data.name || fallbackName
+  const face = path.join(charDir, "imgs", "face.webp")
+
+  return {
+    srWordle: {
+      name,
+      elem: data.elem || "",
+      weapon: data.weapon || "",
+      allegiance: data.allegiance || "",
+      sp: Math.round(Number(data.sp)),
+      hp: Math.round(Number(data.baseAttr?.hp)),
+      atk: Math.round(Number(data.baseAttr?.atk)),
+      def: Math.round(Number(data.baseAttr?.def)),
+      speed: Math.round(Number(data.baseAttr?.speed)),
+      face: fs.existsSync(face) ? face : "",
+    },
+  }
+}
+
+function firstObjectValue(obj) {
+  if (!obj || typeof obj !== "object") return ""
+  const value = Object.values(obj).find(Boolean)
+  return value ? String(value) : ""
+}
+
+function normalizeZzzBirth(birth) {
+  const match = /^(\d{1,2})\/(\d{1,2})$/.exec(String(birth || "").trim())
+  if (!match) return ""
+  return `${match[1].padStart(2, "0")}/${match[2].padStart(2, "0")}`
+}
+
+function normalizeZzzHeight(height) {
+  const text = String(height || "").trim()
+  return /\d/.test(text) ? text : ""
+}
+
+function zzzHeightOrder(height) {
+  const nums = [...String(height || "").matchAll(/\d+(?:\.\d+)?/g)].map(v => Number(v[0]))
+  if (!nums.length) return null
+  return Math.max(...nums)
+}
+
+function readZzzProfileFallback(data) {
+  const sourceName = ZZZ_VARIANT_PROFILE_FALLBACK[data?.name]
+  if (!sourceName) return {}
+  const map = readJson(ZZZ_MAP_PATH, {})
+  const entry = Object.entries(map || {}).find(([, item]) => item?.name === sourceName)
+  if (!entry) return {}
+  return readJson(path.join(ZZZ_NANOKA_CHARACTER_DIR, `${entry[0]}.json`), {})
+}
+
+function readZzzWordleMeta(data, detail, image) {
+  const stats = detail?.stats || {}
+  const profileFallback = readZzzProfileFallback(data)
+  const profile = detail?.partner_info || {}
+  const fallbackProfile = profileFallback?.partner_info || {}
+  const elemBase = firstObjectValue(detail?.element_type)
+  const elem = detail?.special_element_type?.name || elemBase
+
+  return {
+    zzzWordle: {
+      name: detail?.name || data?.name || "",
+      elem: elem || String(data?.ElementType || ""),
+      elemBase: elemBase || elem || String(data?.ElementType || ""),
+      weapon: firstObjectValue(detail?.weapon_type) || String(data?.WeaponType || ""),
+      birth: normalizeZzzBirth(profile.birthday) || normalizeZzzBirth(fallbackProfile.birthday),
+      height: normalizeZzzHeight(profile.stature) || normalizeZzzHeight(fallbackProfile.stature),
+      camp: firstObjectValue(detail?.camp) || data?.Camp || "",
+      breakStun: Math.round(Number(stats.break_stun ?? data?.BreakStun)),
+      mastery: Math.round(Number(stats.element_mystery ?? data?.ElementMystery)),
+      control: Math.round(Number(stats.element_abnormal_power ?? data?.ElementAbnormalPower)),
+      face: fs.existsSync(image) ? image : "",
+    },
+  }
+}
+
 function normalizeName(name) {
   return String(name || "")
     .trim()
-    .replace(/[·•・.。,\s_\-「」『』《》]/g, "")
+    .replace(/[·•・.。,\s_\-&＆「」『』《》（）()【】\[\]{}]/g, "")
     .toLowerCase()
 }
 
@@ -134,6 +369,17 @@ function uniqNames(names) {
   return ret
 }
 
+function zzzAnswerNames(data) {
+  const names = [data?.name, data?.full_name, data?.en_name]
+  for (const name of [data?.name, data?.full_name]) {
+    const text = String(name || "")
+    if (!text) continue
+    names.push(text.replace(/[「」『』《》（）()【】\[\]]/g, ""))
+    names.push(text.replace(/[「『《（(【\[].*?[」』》）)】\]]/g, ""))
+  }
+  return uniqNames(names)
+}
+
 function scanMiaoCharacters(baseDir, game) {
   if (!fs.existsSync(baseDir)) return []
   const items = []
@@ -145,6 +391,13 @@ function scanMiaoCharacters(baseDir, game) {
     const imgsDir = path.join(baseDir, v.name, "imgs")
     const img = path.join(imgsDir, "splash.webp")
     if (!fs.existsSync(img)) continue
+    const charDir = path.join(baseDir, v.name)
+    const wordleMeta =
+      game === "原神"
+        ? readGenshinWordleMeta(charDir, v.name)
+        : game === "星穹铁道"
+          ? readSrWordleMeta(charDir, v.name)
+          : {}
 
     items.push({
       id: `${game}:${v.name}`,
@@ -152,6 +405,7 @@ function scanMiaoCharacters(baseDir, game) {
       name: v.name,
       answers: [v.name],
       image: img,
+      ...wordleMeta,
     })
 
     if (game !== "原神" || !fs.existsSync(imgsDir)) continue
@@ -175,7 +429,7 @@ function scanZzzCharacters() {
   const seen = new Set()
   const bySpriteId = new Map()
 
-  function addItem(data, spriteId, image, imageKey = "") {
+  function addItem(data, spriteId, image, imageKey = "", partnerId = "") {
     const name = data?.name
     if (!spriteId || !name || !fs.existsSync(image)) return
 
@@ -183,22 +437,27 @@ function scanZzzCharacters() {
     if (seen.has(key)) return
     seen.add(key)
 
-    items.push({
+    const item = {
       id: `zzz:${spriteId}:${name}${imageKey ? `:${imageKey}` : ""}`,
       game: "绝区零",
       name,
-      answers: uniqNames([name, data.full_name]),
+      answers: zzzAnswerNames(data),
       image,
-    })
+    }
+    if (!imageKey) {
+      const detail = readJson(path.join(ZZZ_NANOKA_CHARACTER_DIR, `${partnerId}.json`), {})
+      Object.assign(item, readZzzWordleMeta(data, detail, image))
+    }
+    items.push(item)
   }
 
-  for (const data of Object.values(map || {})) {
+  for (const [partnerId, data] of Object.entries(map || {})) {
     const spriteId = String(data?.sprite_id || "").padStart(2, "0")
     if (!spriteId || !data?.name) continue
-    bySpriteId.set(spriteId, data)
+    bySpriteId.set(spriteId, { data, partnerId })
 
     const img = path.join(ZZZ_ROLE_DIR, `IconRole${spriteId}.png`)
-    addItem(data, spriteId, img)
+    addItem(data, spriteId, img, "", partnerId)
   }
 
   if (fs.existsSync(ZZZ_NANOKA_ROLE_DIR)) {
@@ -208,9 +467,15 @@ function scanZzzCharacters() {
       if (!match) continue
 
       const spriteId = match[1].padStart(2, "0")
-      const data = bySpriteId.get(spriteId)
-      if (!data) continue
-      addItem(data, spriteId, path.join(ZZZ_NANOKA_ROLE_DIR, file.name), path.parse(file.name).name)
+      const entry = bySpriteId.get(spriteId)
+      if (!entry) continue
+      addItem(
+        entry.data,
+        spriteId,
+        path.join(ZZZ_NANOKA_ROLE_DIR, file.name),
+        path.parse(file.name).name,
+        entry.partnerId,
+      )
     }
   }
   return items
@@ -691,6 +956,299 @@ function tryResolveCurrent(ctx) {
   return true
 }
 
+function ensureWordleTemplateFiles() {
+  if (!fs.existsSync(WORDLE_TPL_PATH)) throw new Error(`缺少 Wordle 模板：${WORDLE_TPL_PATH}`)
+  if (!fs.existsSync(WORDLE_CSS_PATH)) throw new Error(`缺少 Wordle 样式：${WORDLE_CSS_PATH}`)
+}
+
+function ensureSrWordleTemplateFiles() {
+  if (!fs.existsSync(SR_WORDLE_TPL_PATH)) throw new Error(`缺少星铁 Wordle 模板：${SR_WORDLE_TPL_PATH}`)
+  if (!fs.existsSync(SR_WORDLE_CSS_PATH)) throw new Error(`缺少星铁 Wordle 样式：${SR_WORDLE_CSS_PATH}`)
+}
+
+function ensureZzzWordleTemplateFiles() {
+  if (!fs.existsSync(ZZZ_WORDLE_TPL_PATH))
+    throw new Error(`缺少绝区零 Wordle 模板：${ZZZ_WORDLE_TPL_PATH}`)
+  if (!fs.existsSync(ZZZ_WORDLE_CSS_PATH))
+    throw new Error(`缺少绝区零 Wordle 样式：${ZZZ_WORDLE_CSS_PATH}`)
+}
+
+function isKnownBirth(birth) {
+  return /^\d{1,2}-\d{1,2}$/.test(String(birth || "")) && birth !== "0-0"
+}
+
+function birthOrder(birth) {
+  if (!isKnownBirth(birth)) return null
+  const [month, day] = String(birth).split("-").map(Number)
+  if (!month || !day) return null
+  return month * 100 + day
+}
+
+function arrowNumber(value, target) {
+  const n = Number(value)
+  const t = Number(target)
+  if (!Number.isFinite(n) || !Number.isFinite(t)) return String(value || "未知")
+  if (n === t) return String(n)
+  return `${n} ${n > t ? "↓" : "↑"}`
+}
+
+function arrowBirth(value, target) {
+  if (!isKnownBirth(value)) return "未知"
+  const n = birthOrder(value)
+  const t = birthOrder(target)
+  if (!Number.isFinite(n) || !Number.isFinite(t)) return value
+  if (n === t) return value
+  return `${value} ${n > t ? "↓" : "↑"}`
+}
+
+function zzzDateOrder(value) {
+  const match = /^(\d{1,2})\/(\d{1,2})$/.exec(String(value || ""))
+  if (!match) return null
+  return Number(match[1]) * 100 + Number(match[2])
+}
+
+function zzzComparableArrow(value, target, orderFn = Number) {
+  const valueKnown = Boolean(value)
+  const targetKnown = Boolean(target)
+  if (!targetKnown) return { text: valueKnown ? String(value) : "未知", state: valueKnown ? "bad" : "ok" }
+  if (!valueKnown) return { text: "未知", state: "bad" }
+
+  const n = orderFn(value)
+  const t = orderFn(target)
+  if (!Number.isFinite(n) || !Number.isFinite(t))
+    return { text: String(value), state: value === target ? "ok" : "bad" }
+  if (n === t) return { text: String(value), state: "ok" }
+  return { text: `${value} ${n > t ? "↓" : "↑"}`, state: "bad" }
+}
+
+function fieldState(value, target) {
+  return value && target && value === target ? "ok" : "bad"
+}
+
+function zzzElementState(guess, target) {
+  if (!guess.elem || !target.elem) return "bad"
+  if (guess.elem === target.elem) return "ok"
+  if (guess.elemBase && target.elemBase && guess.elemBase === target.elemBase) return "partial"
+  return "bad"
+}
+
+function talentState(guess, target) {
+  if (!guess.talent || !target.talent) return "bad"
+  if (guess.talent === target.talent) return "ok"
+  if (guess.talentRegion && guess.talentRegion === target.talentRegion) return "partial"
+  return "bad"
+}
+
+function gsWordleItems(catalog) {
+  return (catalog.items || []).filter(item => {
+    const meta = item.gsWordle
+    return (
+      item.game === "原神" &&
+      item.id === `原神:${item.name}` &&
+      !GENSHIN_WORDLE_BANNED_NAMES.has(item.name) &&
+      meta?.name &&
+      meta.elem &&
+      meta.weapon &&
+      meta.allegiance &&
+      meta.talent &&
+      Number.isFinite(Number(meta.hp)) &&
+      Number.isFinite(Number(meta.atk)) &&
+      Number.isFinite(Number(meta.def)) &&
+      meta.face &&
+      fs.existsSync(meta.face)
+    )
+  })
+}
+
+function findGsWordleCandidates(catalog, query) {
+  const readyIds = new Set(gsWordleItems(catalog).map(item => String(item.id)))
+  const norm = normalizeName(query)
+  if (!norm) return []
+
+  return (catalog.items || [])
+    .filter(item => readyIds.has(String(item.id)))
+    .filter(item => (item.answers || [item.name]).some(name => normalizeName(name) === norm))
+}
+
+function formatGsWordlePickLine(item, index) {
+  return `${index + 1}. ${item.name}`
+}
+
+function gsWordleGuessRow(guess, target) {
+  const g = guess.gsWordle
+  const t = target.gsWordle
+  const isTarget = String(guess.id) === String(target.id)
+
+  return {
+    faceUrl: `file://${g.face}`,
+    name: guess.name,
+    nameState: isTarget ? "ok" : "bad",
+    elem: ELEMENT_DISPLAY[g.elem] || g.elem || "未知",
+    elemState: fieldState(g.elem, t.elem),
+    weapon: WEAPON_DISPLAY[g.weapon] || g.weapon || "未知",
+    weaponState: fieldState(g.weapon, t.weapon),
+    birth: arrowBirth(g.birth, t.birth),
+    birthState: g.birth && t.birth && isKnownBirth(g.birth) && isKnownBirth(t.birth) && g.birth === t.birth ? "ok" : "bad",
+    allegiance: g.allegiance || "未知",
+    allegianceState: fieldState(g.allegiance, t.allegiance),
+    talent: g.talent || "未知",
+    talentState: talentState(g, t),
+    hp: arrowNumber(g.hp, t.hp),
+    hpState: Number(g.hp) === Number(t.hp) ? "ok" : "bad",
+    atk: arrowNumber(g.atk, t.atk),
+    atkState: Number(g.atk) === Number(t.atk) ? "ok" : "bad",
+    def: arrowNumber(g.def, t.def),
+    defState: Number(g.def) === Number(t.def) ? "ok" : "bad",
+  }
+}
+
+function gsWordleGuessRows(guesses, target) {
+  return guesses.map(item => gsWordleGuessRow(item, target))
+}
+
+function srWordleItems(catalog) {
+  return (catalog.items || []).filter(item => {
+    const meta = item.srWordle
+    return (
+      item.game === "星穹铁道" &&
+      item.id === `星穹铁道:${item.name}` &&
+      !SR_WORDLE_BANNED_NAMES.has(item.name) &&
+      meta?.name &&
+      meta.elem &&
+      meta.weapon &&
+      meta.allegiance &&
+      Number.isFinite(Number(meta.sp)) &&
+      Number.isFinite(Number(meta.hp)) &&
+      Number.isFinite(Number(meta.atk)) &&
+      Number.isFinite(Number(meta.def)) &&
+      Number.isFinite(Number(meta.speed)) &&
+      meta.face &&
+      fs.existsSync(meta.face)
+    )
+  })
+}
+
+function findSrWordleCandidates(catalog, query) {
+  const readyIds = new Set(srWordleItems(catalog).map(item => String(item.id)))
+  const norm = normalizeName(query)
+  if (!norm) return []
+
+  return (catalog.items || [])
+    .filter(item => readyIds.has(String(item.id)))
+    .filter(item => (item.answers || [item.name]).some(name => normalizeName(name) === norm))
+}
+
+function formatSrWordlePickLine(item, index) {
+  return `${index + 1}. ${item.name}`
+}
+
+function srWordleGuessRow(guess, target) {
+  const g = guess.srWordle
+  const t = target.srWordle
+  const isTarget = String(guess.id) === String(target.id)
+
+  return {
+    faceUrl: `file://${g.face}`,
+    name: guess.name,
+    nameState: isTarget ? "ok" : "bad",
+    elem: g.elem || "未知",
+    elemState: zzzElementState(g, t),
+    weapon: g.weapon || "未知",
+    weaponState: fieldState(g.weapon, t.weapon),
+    allegiance: g.allegiance || "未知",
+    allegianceState: fieldState(g.allegiance, t.allegiance),
+    sp: arrowNumber(g.sp, t.sp),
+    spState: Number(g.sp) === Number(t.sp) ? "ok" : "bad",
+    hp: arrowNumber(g.hp, t.hp),
+    hpState: Number(g.hp) === Number(t.hp) ? "ok" : "bad",
+    atk: arrowNumber(g.atk, t.atk),
+    atkState: Number(g.atk) === Number(t.atk) ? "ok" : "bad",
+    def: arrowNumber(g.def, t.def),
+    defState: Number(g.def) === Number(t.def) ? "ok" : "bad",
+    speed: arrowNumber(g.speed, t.speed),
+    speedState: Number(g.speed) === Number(t.speed) ? "ok" : "bad",
+  }
+}
+
+function srWordleGuessRows(guesses, target) {
+  return guesses.map(item => srWordleGuessRow(item, target))
+}
+
+function zzzWordleItems(catalog) {
+  return (catalog.items || []).filter(item => {
+    const meta = item.zzzWordle
+    return (
+      item.game === "绝区零" &&
+      meta?.name &&
+      meta.elem &&
+      meta.weapon &&
+      meta.camp &&
+      Number.isFinite(Number(meta.breakStun)) &&
+      Number.isFinite(Number(meta.mastery)) &&
+      Number.isFinite(Number(meta.control)) &&
+      Number(meta.breakStun) > 0 &&
+      Number(meta.mastery) > 0 &&
+      Number(meta.control) > 0 &&
+      meta.face &&
+      fs.existsSync(meta.face)
+    )
+  })
+}
+
+function findZzzWordleCandidates(catalog, query) {
+  const readyIds = new Set(zzzWordleItems(catalog).map(item => String(item.id)))
+  const norm = normalizeName(query)
+  if (!norm) return []
+
+  return (catalog.items || [])
+    .filter(item => readyIds.has(String(item.id)))
+    .filter(item => (item.answers || [item.name]).some(name => normalizeName(name) === norm))
+}
+
+function formatZzzWordlePickLine(item, index) {
+  return `${index + 1}. ${item.name}`
+}
+
+function zzzWordleGuessRow(guess, target) {
+  const g = guess.zzzWordle
+  const t = target.zzzWordle
+  const isTarget = String(guess.id) === String(target.id)
+  const birth = zzzComparableArrow(g.birth, t.birth, zzzDateOrder)
+  const height = zzzComparableArrow(g.height, t.height, zzzHeightOrder)
+
+  return {
+    faceUrl: `file://${g.face}`,
+    name: guess.name,
+    nameState: isTarget ? "ok" : "bad",
+    elem: g.elem || "未知",
+    elemState: zzzElementState(g, t),
+    weapon: g.weapon || "未知",
+    weaponState: fieldState(g.weapon, t.weapon),
+    birth: birth.text,
+    birthState: birth.state,
+    height: height.text,
+    heightState: height.state,
+    camp: g.camp || "未知",
+    campState: fieldState(g.camp, t.camp),
+    breakStun: arrowNumber(g.breakStun, t.breakStun),
+    breakStunState: Number(g.breakStun) === Number(t.breakStun) ? "ok" : "bad",
+    mastery: arrowNumber(g.mastery, t.mastery),
+    masteryState: Number(g.mastery) === Number(t.mastery) ? "ok" : "bad",
+    control: arrowNumber(g.control, t.control),
+    controlState: Number(g.control) === Number(t.control) ? "ok" : "bad",
+  }
+}
+
+function zzzWordleGuessRows(guesses, target) {
+  return guesses.map(item => zzzWordleGuessRow(item, target))
+}
+
+function isPickNumber(text, ctx) {
+  if (!ctx?.pendingPick) return false
+  const idx = Number(text)
+  return Number.isInteger(idx) && idx >= 1 && idx <= ctx.pendingPick.items.length
+}
+
 export class MihoyoGuessRole extends plugin {
   constructor() {
     super({
@@ -710,6 +1268,18 @@ export class MihoyoGuessRole extends plugin {
           reg: `^#?(${BRAND_PATTERN}像素猜${TARGET_PATTERN}|像素猜${BRAND_PATTERN}${TARGET_PATTERN})$`,
           fnc: "startPixel",
         },
+        {
+          reg: "^#?原神\\s*[wW][oO][rR][dD][lL][eE]$",
+          fnc: "startGenshinWordle",
+        },
+        {
+          reg: "^#?(星铁|星穹铁道)\\s*[wW][oO][rR][dD][lL][eE]$",
+          fnc: "startSrWordle",
+        },
+        {
+          reg: "^#?(绝区零|[zZ][zZ][zZ])\\s*[wW][oO][rR][dD][lL][eE]$",
+          fnc: "startZzzWordle",
+        },
       ],
     })
   }
@@ -720,6 +1290,9 @@ export class MihoyoGuessRole extends plugin {
         "米游猜角色帮助",
         "开局：#米游猜角色 / #米游猜干员",
         "像素模式：#米游像素猜角色 / #米游像素猜干员",
+        "原神 Wordle：#原神Wordle / #原神 Wordle",
+        "星铁 Wordle：#星铁Wordle / #星穹铁道 Wordle",
+        "绝区零 Wordle：#绝区零Wordle / #ZZZ Wordle",
         "局内：提示、不知道、跳过、结束、不玩了",
         "规则：共 20 题，看角色立绘局部猜完整角色名；答对得分，提示会降低本题分数，跳过扣 100 分。",
       ].join("\n"),
@@ -769,6 +1342,429 @@ export class MihoyoGuessRole extends plugin {
 
   async startPixel(e) {
     return this.start(e, "pixel")
+  }
+
+  async startGenshinWordle(e) {
+    const isGroupContext = e.isGroup
+    const old = this.getContext("原神Wordle_进行中", isGroupContext)
+    if (old) {
+      await e.reply("当前会话已有一局原神 Wordle 正在进行")
+      return true
+    }
+
+    const catalog = loadCatalog()
+    const items = gsWordleItems(catalog)
+    if (!items.length) {
+      await e.reply("原神 Wordle 数据缺少必要字段，请确认 miao-plugin 原神角色数据可用")
+      return true
+    }
+
+    ensureWordleTemplateFiles()
+    const ctx = this.setContext("原神Wordle_进行中", isGroupContext, 3600)
+    ctx.isGroupContext = isGroupContext
+    ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
+    ctx.catalog = catalog
+    ctx.target = rand(items)
+    ctx.guesses = []
+    ctx.guessedIds = new Set()
+    ctx.pendingPick = null
+    ctx.renderIndex = 0
+    ctx.finished = false
+
+    await e.reply(
+      [
+        "原神 Wordle 开始，请直接回复角色名。",
+        `目标是在 ${GENSHIN_WORDLE_MAX_GUESSES} 轮内猜出目标角色。`,
+        "输入“不玩了”可直接结束。",
+      ].join("\n"),
+    )
+    return true
+  }
+
+  async startSrWordle(e) {
+    const isGroupContext = e.isGroup
+    const old = this.getContext("星铁Wordle_进行中", isGroupContext)
+    if (old) {
+      await e.reply("当前会话已有一局星铁 Wordle 正在进行")
+      return true
+    }
+
+    const catalog = loadCatalog()
+    const items = srWordleItems(catalog)
+    if (!items.length) {
+      await e.reply("星铁 Wordle 数据缺少必要字段，请确认 miao-plugin 星铁角色数据可用")
+      return true
+    }
+
+    ensureSrWordleTemplateFiles()
+    const ctx = this.setContext("星铁Wordle_进行中", isGroupContext, 3600)
+    ctx.isGroupContext = isGroupContext
+    ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
+    ctx.catalog = catalog
+    ctx.target = rand(items)
+    ctx.guesses = []
+    ctx.guessedIds = new Set()
+    ctx.pendingPick = null
+    ctx.renderIndex = 0
+    ctx.finished = false
+
+    await e.reply(
+      [
+        "星铁 Wordle 开始，请直接回复角色名。",
+        `目标是在 ${SR_WORDLE_MAX_GUESSES} 轮内猜出目标角色。`,
+        "输入“不玩了”可直接结束。",
+      ].join("\n"),
+    )
+    return true
+  }
+
+  async startZzzWordle(e) {
+    const isGroupContext = e.isGroup
+    const old = this.getContext("绝区零Wordle_进行中", isGroupContext)
+    if (old) {
+      await e.reply("当前会话已有一局绝区零 Wordle 正在进行")
+      return true
+    }
+
+    const catalog = loadCatalog()
+    const items = zzzWordleItems(catalog)
+    if (!items.length) {
+      await e.reply("绝区零 Wordle 数据缺少必要字段，请确认 ZZZ-Plugin 角色数据可用")
+      return true
+    }
+
+    ensureZzzWordleTemplateFiles()
+    const ctx = this.setContext("绝区零Wordle_进行中", isGroupContext, 3600)
+    ctx.isGroupContext = isGroupContext
+    ctx.gameId = `${Date.now()}_${Math.floor(Math.random() * 10000)}`
+    ctx.catalog = catalog
+    ctx.target = rand(items)
+    ctx.guesses = []
+    ctx.guessedIds = new Set()
+    ctx.pendingPick = null
+    ctx.renderIndex = 0
+    ctx.finished = false
+
+    await e.reply(
+      [
+        "绝区零 Wordle 开始，请直接回复代理人名。",
+        `目标是在 ${ZZZ_WORDLE_MAX_GUESSES} 轮内猜出目标代理人。`,
+        "输入“不玩了”可直接结束。",
+      ].join("\n"),
+    )
+    return true
+  }
+
+  async 原神Wordle_进行中(e) {
+    const ctx = this.getContext("原神Wordle_进行中", e.isGroup)
+    if (!ctx || ctx.finished) return false
+
+    const msg = String(this.e.msg || "").trim()
+    if (!msg) return false
+
+    if (msg === "不玩了") {
+      await this.endGenshinWordle(ctx, false)
+      return true
+    }
+
+    if (isPickNumber(msg, ctx)) {
+      const item = ctx.pendingPick.items[Number(msg) - 1]
+      ctx.pendingPick = null
+      await this.applyGenshinWordleGuess(ctx, item)
+      return true
+    }
+
+    const candidates = findGsWordleCandidates(ctx.catalog, msg)
+    if (!candidates.length) return false
+
+    const key = normalizeName(msg)
+    if (candidates.length > 1) {
+      if (ctx.pendingPick?.key === key) return true
+      ctx.pendingPick = { key, items: candidates }
+      const list = candidates.map(formatGsWordlePickLine).join("\n")
+      await this.reply(`请选择要回答的角色\n${list}`)
+      return true
+    }
+
+    ctx.pendingPick = null
+    await this.applyGenshinWordleGuess(ctx, candidates[0])
+    return true
+  }
+
+  async 星铁Wordle_进行中(e) {
+    const ctx = this.getContext("星铁Wordle_进行中", e.isGroup)
+    if (!ctx || ctx.finished) return false
+
+    const msg = String(this.e.msg || "").trim()
+    if (!msg) return false
+
+    if (msg === "不玩了") {
+      await this.endSrWordle(ctx, false)
+      return true
+    }
+
+    if (isPickNumber(msg, ctx)) {
+      const item = ctx.pendingPick.items[Number(msg) - 1]
+      ctx.pendingPick = null
+      await this.applySrWordleGuess(ctx, item)
+      return true
+    }
+
+    const candidates = findSrWordleCandidates(ctx.catalog, msg)
+    if (!candidates.length) return false
+
+    const key = normalizeName(msg)
+    if (candidates.length > 1) {
+      if (ctx.pendingPick?.key === key) return true
+      ctx.pendingPick = { key, items: candidates }
+      const list = candidates.map(formatSrWordlePickLine).join("\n")
+      await this.reply(`请选择要回答的角色\n${list}`)
+      return true
+    }
+
+    ctx.pendingPick = null
+    await this.applySrWordleGuess(ctx, candidates[0])
+    return true
+  }
+
+  async 绝区零Wordle_进行中(e) {
+    const ctx = this.getContext("绝区零Wordle_进行中", e.isGroup)
+    if (!ctx || ctx.finished) return false
+
+    const msg = String(this.e.msg || "").trim()
+    if (!msg) return false
+
+    if (msg === "不玩了") {
+      await this.endZzzWordle(ctx, false)
+      return true
+    }
+
+    if (isPickNumber(msg, ctx)) {
+      const item = ctx.pendingPick.items[Number(msg) - 1]
+      ctx.pendingPick = null
+      await this.applyZzzWordleGuess(ctx, item)
+      return true
+    }
+
+    const candidates = findZzzWordleCandidates(ctx.catalog, msg)
+    if (!candidates.length) return false
+
+    const key = normalizeName(msg)
+    if (candidates.length > 1) {
+      if (ctx.pendingPick?.key === key) return true
+      ctx.pendingPick = { key, items: candidates }
+      const list = candidates.map(formatZzzWordlePickLine).join("\n")
+      await this.reply(`请选择要回答的代理人\n${list}`)
+      return true
+    }
+
+    ctx.pendingPick = null
+    await this.applyZzzWordleGuess(ctx, candidates[0])
+    return true
+  }
+
+  async applyGenshinWordleGuess(ctx, item) {
+    if (ctx.guessedIds.has(String(item.id))) {
+      await this.reply(`已经猜过「${item.name}」了，本轮不重复计数`)
+      return true
+    }
+
+    ctx.guesses.push(item)
+    ctx.guessedIds.add(String(item.id))
+
+    const correct = String(item.id) === String(ctx.target.id)
+    const exhausted = ctx.guesses.length >= GENSHIN_WORDLE_MAX_GUESSES
+    if (correct) {
+      await this.endGenshinWordle(ctx, true)
+      return true
+    }
+    if (exhausted) {
+      await this.endGenshinWordle(ctx, false)
+      return true
+    }
+
+    const img = await this.renderGenshinWordle(ctx)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(
+      `已记录：${item.name}（${ctx.guesses.length}/${GENSHIN_WORDLE_MAX_GUESSES}）`,
+      true,
+    )
+    return true
+  }
+
+  async renderGenshinWordle(ctx, resultText = "") {
+    try {
+      ensureWordleTemplateFiles()
+      const rows = gsWordleGuessRows(ctx.guesses, ctx.target)
+      return await puppeteer.screenshot("genshin-wordle", {
+        tplFile: WORDLE_TPL_PATH,
+        cssFile: `file://${WORDLE_CSS_PATH}`,
+        saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
+        round: ctx.guesses.length,
+        maxRound: GENSHIN_WORDLE_MAX_GUESSES,
+        rows,
+        resultText,
+        imgType: "png",
+      })
+    } catch (err) {
+      globalThis.logger?.error?.(`[原神Wordle] 渲染图片失败：${err.stack || err}`)
+      return false
+    }
+  }
+
+  async endGenshinWordle(ctx, success) {
+    ctx.finished = true
+    this.finish("原神Wordle_进行中", ctx.isGroupContext)
+
+    const resultText = success
+      ? `恭喜！正确答案是${ctx.target.name}`
+      : `正确答案是${ctx.target.name}`
+    const img = await this.renderGenshinWordle(ctx, resultText)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(resultText, true)
+    return true
+  }
+
+  async applySrWordleGuess(ctx, item) {
+    if (ctx.guessedIds.has(String(item.id))) {
+      await this.reply(`已经猜过「${item.name}」了，本轮不重复计数`)
+      return true
+    }
+
+    ctx.guesses.push(item)
+    ctx.guessedIds.add(String(item.id))
+
+    const correct = String(item.id) === String(ctx.target.id)
+    const exhausted = ctx.guesses.length >= SR_WORDLE_MAX_GUESSES
+    if (correct) {
+      await this.endSrWordle(ctx, true)
+      return true
+    }
+    if (exhausted) {
+      await this.endSrWordle(ctx, false)
+      return true
+    }
+
+    const img = await this.renderSrWordle(ctx)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(`已记录：${item.name}（${ctx.guesses.length}/${SR_WORDLE_MAX_GUESSES}）`, true)
+    return true
+  }
+
+  async renderSrWordle(ctx, resultText = "") {
+    try {
+      ensureSrWordleTemplateFiles()
+      const rows = srWordleGuessRows(ctx.guesses, ctx.target)
+      return await puppeteer.screenshot("sr-wordle", {
+        tplFile: SR_WORDLE_TPL_PATH,
+        cssFile: `file://${SR_WORDLE_CSS_PATH}`,
+        saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
+        round: ctx.guesses.length,
+        maxRound: SR_WORDLE_MAX_GUESSES,
+        rows,
+        resultText,
+        imgType: "png",
+      })
+    } catch (err) {
+      globalThis.logger?.error?.(`[星铁Wordle] 渲染图片失败：${err.stack || err}`)
+      return false
+    }
+  }
+
+  async endSrWordle(ctx, success) {
+    ctx.finished = true
+    this.finish("星铁Wordle_进行中", ctx.isGroupContext)
+
+    const resultText = success
+      ? `恭喜！正确答案是${ctx.target.name}`
+      : `正确答案是${ctx.target.name}`
+    const img = await this.renderSrWordle(ctx, resultText)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(resultText, true)
+    return true
+  }
+
+  async applyZzzWordleGuess(ctx, item) {
+    if (ctx.guessedIds.has(String(item.id))) {
+      await this.reply(`已经猜过「${item.name}」了，本轮不重复计数`)
+      return true
+    }
+
+    ctx.guesses.push(item)
+    ctx.guessedIds.add(String(item.id))
+
+    const correct = String(item.id) === String(ctx.target.id)
+    const exhausted = ctx.guesses.length >= ZZZ_WORDLE_MAX_GUESSES
+    if (correct) {
+      await this.endZzzWordle(ctx, true)
+      return true
+    }
+    if (exhausted) {
+      await this.endZzzWordle(ctx, false)
+      return true
+    }
+
+    const img = await this.renderZzzWordle(ctx)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(`已记录：${item.name}（${ctx.guesses.length}/${ZZZ_WORDLE_MAX_GUESSES}）`, true)
+    return true
+  }
+
+  async renderZzzWordle(ctx, resultText = "") {
+    try {
+      ensureZzzWordleTemplateFiles()
+      const rows = zzzWordleGuessRows(ctx.guesses, ctx.target)
+      return await puppeteer.screenshot("zzz-wordle", {
+        tplFile: ZZZ_WORDLE_TPL_PATH,
+        cssFile: `file://${ZZZ_WORDLE_CSS_PATH}`,
+        saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
+        round: ctx.guesses.length,
+        maxRound: ZZZ_WORDLE_MAX_GUESSES,
+        rows,
+        resultText,
+        imgType: "png",
+      })
+    } catch (err) {
+      globalThis.logger?.error?.(`[绝区零Wordle] 渲染图片失败：${err.stack || err}`)
+      return false
+    }
+  }
+
+  async endZzzWordle(ctx, success) {
+    ctx.finished = true
+    this.finish("绝区零Wordle_进行中", ctx.isGroupContext)
+
+    const resultText = success
+      ? `恭喜！正确答案是${ctx.target.name}`
+      : `正确答案是${ctx.target.name}`
+    const img = await this.renderZzzWordle(ctx, resultText)
+    if (img) {
+      await this.reply(img, true)
+      return true
+    }
+
+    await this.reply(resultText, true)
+    return true
   }
 
   async 米游猜角色_进行中(e) {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>绝区零 Wordle</title>
+  <link rel="stylesheet" href="{{cssFile}}">
+</head>
+<body>
+  <div id="container" class="sheet">
+    <div class="header">
+      <div>
+        <div class="title">绝区零 Wordle</div>
+        <div class="subtitle">{{round}} / {{maxRound}}</div>
+      </div>
+      <div class="badge">ZZZ</div>
+    </div>
+
+    <div class="table">
+      <div class="head">
+        <div></div>
+        <div>代理人</div>
+        <div>属性</div>
+        <div>职责</div>
+        <div>生日</div>
+        <div>身高</div>
+        <div>阵营</div>
+        <div>冲击力</div>
+        <div>异常精通</div>
+        <div>异常掌控</div>
+      </div>
+      {{each rows row}}
+        <div class="row">
+          <div class="face"><img src="{{row.faceUrl}}"></div>
+          <div class="cell name {{row.nameState}}">{{row.name}}</div>
+          <div class="cell {{row.elemState}}">{{row.elem}}</div>
+          <div class="cell {{row.weaponState}}">{{row.weapon}}</div>
+          <div class="cell {{row.birthState}}">{{row.birth}}</div>
+          <div class="cell {{row.heightState}}">{{row.height}}</div>
+          <div class="cell {{row.campState}}">{{row.camp}}</div>
+          <div class="cell {{row.breakStunState}}">{{row.breakStun}}</div>
+          <div class="cell {{row.masteryState}}">{{row.mastery}}</div>
+          <div class="cell {{row.controlState}}">{{row.control}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{if resultText}}
+      <div class="result">{{resultText}}</div>
+    {{/if}}
+  </div>
+</body>
+</html>
