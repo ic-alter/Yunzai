@@ -5,6 +5,7 @@ import https from "https"
 import zlib from "zlib"
 import { execFile } from "child_process"
 import { promisify } from "util"
+import { pathToFileURL } from "url"
 import puppeteer from "../../lib/puppeteer/puppeteer.js"
 import plugin from "../../lib/plugins/plugin.js"
 
@@ -16,6 +17,7 @@ const RAW_TMP_PATH = path.join(DATA_DIR, "nice_servant.tmp.json")
 const CATALOG_PATH = path.join(DATA_DIR, "servant_catalog.json")
 const ERROR_LOG_PATH = path.join(DATA_DIR, "preprocess_errors.log")
 const IMAGE_CACHE_DIR = path.join(DATA_DIR, "image_cache")
+const FACE_CACHE_DIR = path.join(DATA_DIR, "face_cache")
 const CROP_DIR = path.join(DATA_DIR, "crops")
 const WORDLE_TPL_PATH = path.join(DATA_DIR, "wordle.html")
 const WORDLE_CSS_PATH = path.join(DATA_DIR, "wordle.css")
@@ -851,6 +853,11 @@ function imageCachePath(item, url) {
   return path.join(IMAGE_CACHE_DIR, String(item.id), filename)
 }
 
+function faceCachePath(item, url) {
+  const filename = path.basename(new URL(url).pathname) || "face.png"
+  return path.join(FACE_CACHE_DIR, String(item.id), filename)
+}
+
 function requestFile(url, redirects = 3) {
   return new Promise((resolve, reject) => {
     const client = url.startsWith("https:") ? https : http
@@ -897,6 +904,43 @@ async function downloadImageToCache(item, url) {
     throw err
   }
   return out
+}
+
+async function downloadFaceToCache(item) {
+  const url = item?.faceUrl
+  if (!url) return ""
+
+  const out = faceCachePath(item, url)
+  ensureDir(path.dirname(out))
+  if (fs.existsSync(out) && fs.statSync(out).size > 0) return out
+
+  const tmp = `${out}.tmp`
+  try {
+    const res = await requestFile(url)
+    await new Promise((resolve, reject) => {
+      const ws = fs.createWriteStream(tmp)
+      res.pipe(ws)
+      res.on("error", reject)
+      ws.on("error", reject)
+      ws.on("finish", resolve)
+    })
+    fs.renameSync(tmp, out)
+  } catch (err) {
+    if (fs.existsSync(tmp)) fs.rmSync(tmp, { force: true })
+    throw err
+  }
+  return out
+}
+
+async function cachedFaceUrl(item) {
+  if (!item?.faceUrl) return ""
+  try {
+    const file = await downloadFaceToCache(item)
+    return file ? pathToFileURL(file).toString() : item.faceUrl
+  } catch (err) {
+    appendErrorLog(`下载头像失败：${item.id} ${item.name} ${item.faceUrl}`, err)
+    return item.faceUrl
+  }
 }
 
 async function pickQuestionImage(item) {
@@ -1456,10 +1500,10 @@ function arrowNumber(value, target) {
   return `${n} ${n > t ? "↓" : "↑"}`
 }
 
-function wordleGuessRow(guess, target) {
+function wordleGuessRow(guess, target, faceUrl = guess.faceUrl) {
   const isTarget = String(guess.id) === String(target.id)
   return {
-    faceUrl: guess.faceUrl,
+    faceUrl,
     name: guess.name,
     nameState: isTarget ? "ok" : "bad",
     rarity: starText(guess.rarity),
@@ -1479,6 +1523,12 @@ function wordleGuessRow(guess, target) {
     atk: arrowNumber(guess.atkMax, target.atkMax),
     atkState: Number(guess.atkMax) === Number(target.atkMax) ? "ok" : "bad",
   }
+}
+
+async function wordleGuessRows(guesses, target) {
+  return Promise.all(
+    guesses.map(async item => wordleGuessRow(item, target, await cachedFaceUrl(item))),
+  )
 }
 
 function findWordleCandidates(catalog, query) {
@@ -1815,13 +1865,14 @@ export class FgoGuessRole extends plugin {
   async renderWordle(ctx, resultText = "") {
     try {
       ensureWordleTemplateFiles()
+      const rows = await wordleGuessRows(ctx.guesses, ctx.target)
       return await puppeteer.screenshot("fgo-wordle", {
         tplFile: WORDLE_TPL_PATH,
         cssFile: `file://${WORDLE_CSS_PATH}`,
         saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
         round: ctx.guesses.length,
         maxRound: WORDLE_MAX_GUESSES,
-        rows: ctx.guesses.map(item => wordleGuessRow(item, ctx.target)),
+        rows,
         resultText,
         imgType: "png",
       })

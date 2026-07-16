@@ -67,12 +67,12 @@ export class example extends plugin {
         { reg: "^#?(撅|狠狠地撅|小撅|轻撅|狠撅|快撅|狠狠的撅|狂撅|龟龟撅)", fnc: "jue" },
         { reg: "^#?(射|🐍|飞机杯|大撅|坐撅|躺撅|奶龙撅)", fnc: "she" },
 
-        { reg: "^#?(子嗣|孩子)列表", fnc: "childrenList" },
-        { reg: "^#?(子嗣|孩子)详情", fnc: "childDetail" },
-        { reg: "^#?改名", fnc: "renameStart" },
-        { reg: "^#?(丢弃|遗弃|抛弃|弃养)(孩子|子嗣)?", fnc: "丢弃" },
-        { reg: "^#?炼化", fnc: "炼化" },
-        { reg: "^#?(吃|食用|恰)(小孩|孩子|子嗣)", fnc: "吃小孩" },
+        { reg: "^#?(子嗣|孩子)列表$", fnc: "childrenList" },
+        { reg: "^#?(子嗣|孩子)详情$", fnc: "childDetail" },
+        { reg: "^#?改名$", fnc: "renameStart" },
+        { reg: "^#?(丢弃|遗弃|抛弃|弃养)(孩子|子嗣)?$", fnc: "丢弃" },
+        { reg: "^#?炼化$", fnc: "炼化" },
+        { reg: "^#?(吃|食用|恰)(小孩|孩子|子嗣)$", fnc: "吃小孩" },
       ],
     })
   }

@@ -28,9 +28,9 @@ export class example extends plugin {
       dsc: '牛牛战斗',
       priority: 0,
       rule: [
-        { reg: '^#*(.)*(立了|打胶|硬了|玩几把|撸管|鹿关|鹿管|🦌)$', fnc: 'lile' },
-        { reg: '^#*(.)*(嗦|锁|吃|🔒|咬)(.)*牛牛$', fnc: 'suoNiuNiu' },
-        { reg: '^#*(.)*击剑$', fnc: 'jijian' },
+        { reg: '^#*(立了|打胶|硬了|玩几把|撸管|鹿关|鹿管|🦌)$', fnc: 'lile' },
+        { reg: '^#*(嗦|锁|吃|🔒|咬)(.)*牛牛$', fnc: 'suoNiuNiu' },
+        { reg: '^#*击剑$', fnc: 'jijian' },
         // 新增：看看牛牛
         { reg: '^#*(看看牛牛|查看牛牛|牛牛状态|看看清波)$', fnc: 'seeNiuNiu' },
 

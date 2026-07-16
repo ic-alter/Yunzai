@@ -4,6 +4,11 @@ import { StringDecoder } from 'string_decoder'
 
 const scriptPath = '/sdb/icalter/bot/icalter_startnapcat.sh'
 
+function getReviveQQ(e) {
+  if (e.at) return String(e.at)
+  return e.msg.replace(/^#复活\s*/, '').trim()
+}
+
 function runNapCatRestart(qq) {
   return new Promise((resolve) => {
     const child = spawn('bash', [scriptPath, '-q', qq])
@@ -25,7 +30,7 @@ export class ReviveNapCat extends plugin {
   constructor() {
     super({
       name: '复活NapCat',
-      dsc: '#复活 <QQ号>',
+      dsc: '#复活 <QQ号|@某人>',
       event: 'message',
       priority: 5000,
       rule: [
@@ -39,7 +44,7 @@ export class ReviveNapCat extends plugin {
   }
 
   async revive(e) {
-    const qq = e.msg.replace(/^#复活\s*/, '').trim()
+    const qq = getReviveQQ(e)
 
     if (!qq) {
       await e.reply('请提供要复活的QQ号，例如：#复活 2059536719')
@@ -53,6 +58,7 @@ export class ReviveNapCat extends plugin {
 
     const output = await runNapCatRestart(qq)
 
+    await Bot.sendFriendMsg(Number(qq), e.user_id, '早上好。')
     await e.reply(output)
     return true
   }
