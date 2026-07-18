@@ -34,6 +34,38 @@ export class update extends plugin {
     return /^#(全部)?(安?静)/.test(this.e.msg)
   }
 
+  gitEnv(remoteUrl = "") {
+    const env = { ...process.env, GIT_TERMINAL_PROMPT: "0" }
+    if (!/github\.com/i.test(remoteUrl)) return env
+
+    const httpProxy =
+      process.env.CLASH_HTTP_PROXY ||
+      process.env.https_proxy ||
+      process.env.HTTPS_PROXY ||
+      "http://127.0.0.1:7890"
+    const socksProxy =
+      process.env.CLASH_SOCKS_PROXY ||
+      process.env.all_proxy ||
+      process.env.ALL_PROXY ||
+      "socks5://127.0.0.1:7890"
+
+    return {
+      ...env,
+      http_proxy: httpProxy,
+      https_proxy: httpProxy,
+      all_proxy: socksProxy,
+      HTTP_PROXY: httpProxy,
+      HTTPS_PROXY: httpProxy,
+      ALL_PROXY: socksProxy,
+    }
+  }
+
+  async gitOpts(plugin = "") {
+    const { remote } = await this.getRemoteBranch(false, plugin)
+    const remoteUrl = remote ? await this.getRemoteUrl(remote, false, plugin) : ""
+    return { env: this.gitEnv(remoteUrl) }
+  }
+
   exec(cmd, plugin, opts = {}) {
     if (plugin) opts.cwd = `plugins/${plugin}`
     return Bot.exec(cmd, opts)
@@ -106,12 +138,13 @@ export class update extends plugin {
       cm = `git reset --hard ${await this.getRemoteBranch(true, plugin)} && git pull --rebase`
     }
     this.oldCommitId = await this.getCommitId(plugin)
+    const gitOpts = await this.gitOpts(plugin)
 
     logger.mark(`${this.e.logFnc} 开始${type} ${this.typeName}`)
     if (!this.quiet) await this.reply(`开始${type} ${this.typeName}`)
-    const ret = await this.exec(cm, plugin)
+    const ret = await this.exec(cm, plugin, gitOpts)
 
-    if (ret.error && !(await this.gitErr(plugin, ret.stdout, ret.error.message))) {
+    if (ret.error && !(await this.gitErr(plugin, ret.stdout, ret.error.message, gitOpts))) {
       logger.mark(`${this.e.logFnc} 更新失败 ${this.typeName}`)
       return false
     }
@@ -171,10 +204,15 @@ export class update extends plugin {
   }
 
   gitErrUrl(error) {
-    return error.match(/'(.+?)'/g)[0].replace(/'(.+?)'/, "$1")
+    return error.match(/'(.+?)'/g)?.[0]?.replace(/'(.+?)'/, "$1") || error
   }
 
-  async gitErr(plugin, stdout, error) {
+  async gitErr(plugin, stdout, error, gitOpts = {}) {
+    if (this.quiet) {
+      logger.mark(`${this.e.logFnc} 更新失败 ${this.typeName}\n${error}${stdout ? `\n${stdout}` : ""}`)
+      return false
+    }
+
     if (/unable to access|无法访问/.test(error))
       await this.reply(`远程仓库连接错误：${this.gitErrUrl(error)}`)
     else if (
@@ -187,7 +225,7 @@ export class update extends plugin {
     )
       await this.reply(`${error}\n${stdout}\n若修改过文件请手动更新，否则发送 #强制更新${plugin}`)
     else if (/divergent branches|偏离的分支/.test(error)) {
-      const ret = await this.exec("git pull --rebase", plugin)
+      const ret = await this.exec("git pull --rebase", plugin, gitOpts)
       if (!ret.error && /Successfully rebased|成功变基/.test(ret.stdout + ret.stderr)) return true
       await this.reply(`${error}\n${stdout}\n若修改过文件请手动更新，否则发送 #强制更新${plugin}`)
     } else await this.reply(`${error}\n${stdout}\n未知错误，可尝试发送 #强制更新${plugin}`)

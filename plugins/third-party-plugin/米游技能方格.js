@@ -8,7 +8,7 @@ const DATA_DIR = path.join(process.cwd(), "data", "mihoyo-guess-role")
 const CATALOG_PATH = path.join(DATA_DIR, "skill-grid-catalog.json")
 const GRID_TPL_PATH = path.join(DATA_DIR, "skill-grid.html")
 const GRID_CSS_PATH = path.join(DATA_DIR, "skill-grid.css")
-const CATALOG_VERSION = 4
+const CATALOG_VERSION = 6
 const CATALOG_TTL = 6 * 60 * 60 * 1000
 
 const GS_DIR = path.join(
@@ -162,11 +162,14 @@ function uniqByNormalize(names) {
   return ret
 }
 
-function normalizeSkillName(name) {
+function normalizeSkillName(name, { stripTrailingNote = false } = {}) {
   let text = stripTestMarker(name)
     .replace(/<[^>]*>/g, "")
     .trim()
   if (!text) return ""
+
+  if (stripTrailingNote)
+    text = text.replace(/\s*(?:[（(][^）)]{1,40}[）)]|[【\[][^】\]]{1,40}[】\]])\s*$/gu, "")
 
   const escaped = SORTED_COMMON_PREFIXES.map(v => v.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join(
     "|",
@@ -183,12 +186,12 @@ function normalizeSkillName(name) {
   return text
 }
 
-function addSkillName(list, value) {
+function addSkillName(list, value, opts = {}) {
   if (Array.isArray(value)) {
-    for (const item of value) addSkillName(list, item)
+    for (const item of value) addSkillName(list, item, opts)
     return
   }
-  const name = normalizeSkillName(value)
+  const name = normalizeSkillName(value, opts)
   if (name.length >= 2 && name.length <= 14) list.push(name)
 }
 
@@ -226,7 +229,9 @@ function extractZzzCharacter(file) {
   if (!data?.name) return null
 
   const skills = []
-  for (const skill of Object.values(data.skill_list || {})) addSkillName(skills, skill?.name)
+  const zzzSkillOpts = { stripTrailingNote: true }
+  for (const skill of Object.values(data.skill_list || {}))
+    addSkillName(skills, skill?.name, zzzSkillOpts)
   for (const talent of Object.values(data.talent || {})) addSkillName(skills, talent?.name)
   for (const passive of Object.values(data.passive?.level || {}))
     addSkillName(skills, passive?.name)
