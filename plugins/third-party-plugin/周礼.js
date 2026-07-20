@@ -45,7 +45,7 @@ export class ZhouLi extends plugin {
       reply = await callZhouLiLLM(content)
     } catch (err) {
       logger?.error?.('[周礼] LLM 调用失败：', err)
-      await e.reply('礼官暂时退朝了：请稍后再试，或联系管理员检查 data/zhouli/llm.config.json。', true)
+      await e.reply('礼官暂时退朝了：请稍后再试，或联系管理员检查。', true)
       return true
     }
 
