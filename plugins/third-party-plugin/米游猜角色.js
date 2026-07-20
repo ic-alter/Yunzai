@@ -1243,6 +1243,110 @@ function zzzWordleGuessRows(guesses, target) {
   return guesses.map(item => zzzWordleGuessRow(item, target))
 }
 
+const GENSHIN_WORDLE_COLUMNS = [
+  { key: "elem", label: "元素", type: "match" },
+  { key: "weapon", label: "武器", type: "match" },
+  { key: "birth", label: "生日", type: "arrow" },
+  { key: "allegiance", label: "所属", type: "match" },
+  { key: "talent", label: "天赋书", type: "match" },
+  { key: "hp", label: "HP", type: "arrow" },
+  { key: "atk", label: "ATK", type: "arrow" },
+  { key: "def", label: "DEF", type: "arrow" },
+]
+
+const SR_WORDLE_COLUMNS = [
+  { key: "elem", label: "属性", type: "match" },
+  { key: "weapon", label: "命途", type: "match" },
+  { key: "allegiance", label: "所属", type: "match" },
+  { key: "sp", label: "能量", type: "arrow" },
+  { key: "hp", label: "HP", type: "arrow" },
+  { key: "atk", label: "ATK", type: "arrow" },
+  { key: "def", label: "DEF", type: "arrow" },
+  { key: "speed", label: "速度", type: "arrow" },
+]
+
+const ZZZ_WORDLE_COLUMNS = [
+  { key: "elem", label: "属性", type: "match" },
+  { key: "weapon", label: "职责", type: "match" },
+  { key: "birth", label: "生日", type: "arrow" },
+  { key: "height", label: "身高", type: "arrow" },
+  { key: "camp", label: "阵营", type: "match" },
+  { key: "breakStun", label: "冲击力", type: "arrow" },
+  { key: "mastery", label: "异常精通", type: "arrow" },
+  { key: "control", label: "异常掌控", type: "arrow" },
+]
+
+const WORDLE_GRID_STYLE = {
+  genshinNormal: "grid-template-columns: 40px 84px 38px 48px 58px 84px 58px 58px 58px 58px;",
+  srNormal: "grid-template-columns: 40px 78px 42px 48px 76px 48px 58px 58px 58px 48px;",
+  zzzNormal: "grid-template-columns: 40px 76px 44px 44px 64px 88px 98px 58px 62px 62px;",
+  genshinHard: "grid-template-columns: 40px 84px repeat(8, 1fr);",
+  srHard: "grid-template-columns: 40px 78px repeat(8, 1fr);",
+  zzzHard: "grid-template-columns: 40px 76px repeat(8, 1fr);",
+}
+
+function normalizeWordleDifficulty(text) {
+  if (/^(普通|普通模式|normal)$/i.test(text)) return "normal"
+  if (/^(困难|困难模式|hard)$/i.test(text)) return "hard"
+  return ""
+}
+
+function wordleDifficultyName(difficulty) {
+  return difficulty === "hard" ? "困难" : "普通"
+}
+
+function initWordleDifficulty(ctx, difficulty, columns) {
+  ctx.difficulty = difficulty
+  ctx.awaitingDifficulty = false
+  ctx.wordleColumnOrder = difficulty === "hard" ? shuffle(columns.map(v => v.key)) : columns.map(v => v.key)
+}
+
+function hardWordleCellText(row, column) {
+  const state = row[`${column.key}State`]
+  if (state === "ok") return "√"
+  if (state === "partial") return "⍻"
+  if (column.type === "arrow") {
+    const arrow = String(row[column.key] || "").match(/[↑↓]/)
+    return arrow?.[0] || "×"
+  }
+  return "×"
+}
+
+function buildWordleView(ctx, rows, columns, nameLabel, normalGridStyle, hardGridStyle) {
+  const hard = ctx.difficulty === "hard"
+  const orderedKeys = ctx.wordleColumnOrder?.length ? ctx.wordleColumnOrder : columns.map(v => v.key)
+  const byKey = new Map(columns.map(v => [v.key, v]))
+  const orderedColumns = orderedKeys.map(key => byKey.get(key)).filter(Boolean)
+  const revealed = new Set()
+
+  if (hard) {
+    for (const row of rows) {
+      for (const column of orderedColumns) {
+        if (row[`${column.key}State`] === "ok") revealed.add(column.key)
+      }
+    }
+  }
+
+  return {
+    difficultyText: hard ? "困难" : "",
+    tableGridStyle: hard ? hardGridStyle : normalGridStyle,
+    columns: orderedColumns.map(column => ({
+      ...column,
+      labelText: hard && !revealed.has(column.key) ? "???" : column.label,
+    })),
+    rows: rows.map(row => ({
+      faceUrl: row.faceUrl,
+      name: row.name,
+      nameState: row.nameState,
+      cells: orderedColumns.map(column => ({
+        state: row[`${column.key}State`],
+        text: hard ? hardWordleCellText(row, column) : row[column.key],
+      })),
+    })),
+    nameLabel,
+  }
+}
+
 function isPickNumber(text, ctx) {
   if (!ctx?.pendingPick) return false
   const idx = Number(text)
@@ -1368,15 +1472,14 @@ export class MihoyoGuessRole extends plugin {
     ctx.guesses = []
     ctx.guessedIds = new Set()
     ctx.pendingPick = null
+    ctx.awaitingDifficulty = true
+    ctx.difficulty = ""
+    ctx.wordleColumnOrder = []
     ctx.renderIndex = 0
     ctx.finished = false
 
     await e.reply(
-      [
-        "原神 Wordle 开始，请直接回复角色名。",
-        `目标是在 ${GENSHIN_WORDLE_MAX_GUESSES} 轮内猜出目标角色。`,
-        "输入“不玩了”可直接结束。",
-      ].join("\n"),
+      "原神 Wordle 开始，请选择难度：普通 or 困难。",
     )
     return true
   }
@@ -1405,15 +1508,14 @@ export class MihoyoGuessRole extends plugin {
     ctx.guesses = []
     ctx.guessedIds = new Set()
     ctx.pendingPick = null
+    ctx.awaitingDifficulty = true
+    ctx.difficulty = ""
+    ctx.wordleColumnOrder = []
     ctx.renderIndex = 0
     ctx.finished = false
 
     await e.reply(
-      [
-        "星铁 Wordle 开始，请直接回复角色名。",
-        `目标是在 ${SR_WORDLE_MAX_GUESSES} 轮内猜出目标角色。`,
-        "输入“不玩了”可直接结束。",
-      ].join("\n"),
+      "星铁 Wordle 开始，请选择难度：普通 or 困难。",
     )
     return true
   }
@@ -1442,15 +1544,14 @@ export class MihoyoGuessRole extends plugin {
     ctx.guesses = []
     ctx.guessedIds = new Set()
     ctx.pendingPick = null
+    ctx.awaitingDifficulty = true
+    ctx.difficulty = ""
+    ctx.wordleColumnOrder = []
     ctx.renderIndex = 0
     ctx.finished = false
 
     await e.reply(
-      [
-        "绝区零 Wordle 开始，请直接回复代理人名。",
-        `目标是在 ${ZZZ_WORDLE_MAX_GUESSES} 轮内猜出目标代理人。`,
-        "输入“不玩了”可直接结束。",
-      ].join("\n"),
+      "绝区零 Wordle 开始，请选择难度：普通 or 困难。",
     )
     return true
   }
@@ -1464,6 +1565,22 @@ export class MihoyoGuessRole extends plugin {
 
     if (msg === "不玩了") {
       await this.endGenshinWordle(ctx, false)
+      return true
+    }
+
+    if (ctx.awaitingDifficulty) {
+      const difficulty = normalizeWordleDifficulty(msg)
+      if (!difficulty) {
+        await this.reply("请先选择难度：普通 or 困难")
+        return true
+      }
+      initWordleDifficulty(ctx, difficulty, GENSHIN_WORDLE_COLUMNS)
+      await this.reply(
+        [
+          `已选择${wordleDifficultyName(difficulty)}模式；目标是在 ${GENSHIN_WORDLE_MAX_GUESSES} 轮内猜出目标角色。请直接回复角色名。`,
+          "输入“不玩了”可直接结束。",
+        ].join("\n"),
+      )
       return true
     }
 
@@ -1503,6 +1620,22 @@ export class MihoyoGuessRole extends plugin {
       return true
     }
 
+    if (ctx.awaitingDifficulty) {
+      const difficulty = normalizeWordleDifficulty(msg)
+      if (!difficulty) {
+        await this.reply("请先选择难度：普通 or 困难")
+        return true
+      }
+      initWordleDifficulty(ctx, difficulty, SR_WORDLE_COLUMNS)
+      await this.reply(
+        [
+          `已选择${wordleDifficultyName(difficulty)}模式；目标是在 ${SR_WORDLE_MAX_GUESSES} 轮内猜出目标角色。请直接回复角色名。`,
+          "输入“不玩了”可直接结束。",
+        ].join("\n"),
+      )
+      return true
+    }
+
     if (isPickNumber(msg, ctx)) {
       const item = ctx.pendingPick.items[Number(msg) - 1]
       ctx.pendingPick = null
@@ -1536,6 +1669,22 @@ export class MihoyoGuessRole extends plugin {
 
     if (msg === "不玩了") {
       await this.endZzzWordle(ctx, false)
+      return true
+    }
+
+    if (ctx.awaitingDifficulty) {
+      const difficulty = normalizeWordleDifficulty(msg)
+      if (!difficulty) {
+        await this.reply("请先选择难度：普通 or 困难")
+        return true
+      }
+      initWordleDifficulty(ctx, difficulty, ZZZ_WORDLE_COLUMNS)
+      await this.reply(
+        [
+          `已选择${wordleDifficultyName(difficulty)}模式；目标是在 ${ZZZ_WORDLE_MAX_GUESSES} 轮内猜出目标代理人。请直接回复代理人名。`,
+          "输入“不玩了”可直接结束。",
+        ].join("\n"),
+      )
       return true
     }
 
@@ -1599,14 +1748,21 @@ export class MihoyoGuessRole extends plugin {
   async renderGenshinWordle(ctx, resultText = "") {
     try {
       ensureWordleTemplateFiles()
-      const rows = gsWordleGuessRows(ctx.guesses, ctx.target)
+      const view = buildWordleView(
+        ctx,
+        gsWordleGuessRows(ctx.guesses, ctx.target),
+        GENSHIN_WORDLE_COLUMNS,
+        "角色",
+        WORDLE_GRID_STYLE.genshinNormal,
+        WORDLE_GRID_STYLE.genshinHard,
+      )
       return await puppeteer.screenshot("genshin-wordle", {
         tplFile: WORDLE_TPL_PATH,
         cssFile: `file://${WORDLE_CSS_PATH}`,
         saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
         round: ctx.guesses.length,
         maxRound: GENSHIN_WORDLE_MAX_GUESSES,
-        rows,
+        ...view,
         resultText,
         imgType: "png",
       })
@@ -1666,14 +1822,21 @@ export class MihoyoGuessRole extends plugin {
   async renderSrWordle(ctx, resultText = "") {
     try {
       ensureSrWordleTemplateFiles()
-      const rows = srWordleGuessRows(ctx.guesses, ctx.target)
+      const view = buildWordleView(
+        ctx,
+        srWordleGuessRows(ctx.guesses, ctx.target),
+        SR_WORDLE_COLUMNS,
+        "角色",
+        WORDLE_GRID_STYLE.srNormal,
+        WORDLE_GRID_STYLE.srHard,
+      )
       return await puppeteer.screenshot("sr-wordle", {
         tplFile: SR_WORDLE_TPL_PATH,
         cssFile: `file://${SR_WORDLE_CSS_PATH}`,
         saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
         round: ctx.guesses.length,
         maxRound: SR_WORDLE_MAX_GUESSES,
-        rows,
+        ...view,
         resultText,
         imgType: "png",
       })
@@ -1733,14 +1896,21 @@ export class MihoyoGuessRole extends plugin {
   async renderZzzWordle(ctx, resultText = "") {
     try {
       ensureZzzWordleTemplateFiles()
-      const rows = zzzWordleGuessRows(ctx.guesses, ctx.target)
+      const view = buildWordleView(
+        ctx,
+        zzzWordleGuessRows(ctx.guesses, ctx.target),
+        ZZZ_WORDLE_COLUMNS,
+        "代理人",
+        WORDLE_GRID_STYLE.zzzNormal,
+        WORDLE_GRID_STYLE.zzzHard,
+      )
       return await puppeteer.screenshot("zzz-wordle", {
         tplFile: ZZZ_WORDLE_TPL_PATH,
         cssFile: `file://${ZZZ_WORDLE_CSS_PATH}`,
         saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
         round: ctx.guesses.length,
         maxRound: ZZZ_WORDLE_MAX_GUESSES,
-        rows,
+        ...view,
         resultText,
         imgType: "png",
       })

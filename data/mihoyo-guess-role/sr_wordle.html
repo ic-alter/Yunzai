@@ -10,36 +10,26 @@
     <div class="header">
       <div>
         <div class="title">星铁 Wordle</div>
-        <div class="subtitle">{{round}} / {{maxRound}}</div>
+        <div class="subtitle">{{round}} / {{maxRound}}{{if difficultyText}} · {{difficultyText}}{{/if}}</div>
       </div>
       <div class="badge">STARRAIL</div>
     </div>
 
     <div class="table">
-      <div class="head">
+      <div class="head" style="{{tableGridStyle}}">
         <div></div>
-        <div>角色</div>
-        <div>属性</div>
-        <div>命途</div>
-        <div>所属</div>
-        <div>能量</div>
-        <div>HP</div>
-        <div>ATK</div>
-        <div>DEF</div>
-        <div>速度</div>
+        <div>{{nameLabel}}</div>
+        {{each columns column}}
+          <div>{{column.labelText}}</div>
+        {{/each}}
       </div>
       {{each rows row}}
-        <div class="row">
+        <div class="row" style="{{tableGridStyle}}">
           <div class="face"><img src="{{row.faceUrl}}"></div>
           <div class="cell name {{row.nameState}}">{{row.name}}</div>
-          <div class="cell {{row.elemState}}">{{row.elem}}</div>
-          <div class="cell {{row.weaponState}}">{{row.weapon}}</div>
-          <div class="cell {{row.allegianceState}}">{{row.allegiance}}</div>
-          <div class="cell {{row.spState}}">{{row.sp}}</div>
-          <div class="cell {{row.hpState}}">{{row.hp}}</div>
-          <div class="cell {{row.atkState}}">{{row.atk}}</div>
-          <div class="cell {{row.defState}}">{{row.def}}</div>
-          <div class="cell {{row.speedState}}">{{row.speed}}</div>
+          {{each row.cells cell}}
+            <div class="cell {{cell.state}}">{{cell.text}}</div>
+          {{/each}}
         </div>
       {{/each}}
     </div>

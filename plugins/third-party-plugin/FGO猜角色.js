@@ -55,36 +55,26 @@ const WORDLE_HTML = `<!DOCTYPE html>
     <div class="header">
       <div>
         <div class="title">FGO Wordle</div>
-        <div class="subtitle">{{round}} / {{maxRound}}</div>
+        <div class="subtitle">{{round}} / {{maxRound}}{{if difficultyText}} · {{difficultyText}}{{/if}}</div>
       </div>
       <div class="badge">SERVANT</div>
     </div>
 
     <div class="table">
-      <div class="head">
+      <div class="head" style="{{tableGridStyle}}">
         <div></div>
-        <div>从者</div>
-        <div>星级</div>
-        <div>性别</div>
-        <div>职介</div>
-        <div>属性</div>
-        <div>副属性</div>
-        <div>宝具</div>
-        <div>HP</div>
-        <div>ATK</div>
+        <div>{{nameLabel}}</div>
+        {{each columns column}}
+          <div>{{column.labelText}}</div>
+        {{/each}}
       </div>
       {{each rows row}}
-        <div class="row">
+        <div class="row" style="{{tableGridStyle}}">
           <div class="face"><img src="{{row.faceUrl}}"></div>
           <div class="cell name {{row.nameState}}">{{row.name}}</div>
-          <div class="cell {{row.rarityState}}">{{row.rarity}}</div>
-          <div class="cell {{row.genderState}}">{{row.gender}}</div>
-          <div class="cell {{row.classState}}">{{row.className}}</div>
-          <div class="cell {{row.alignmentState}}">{{row.alignments}}</div>
-          <div class="cell {{row.attributeState}}">{{row.attributes}}</div>
-          <div class="cell {{row.npState}}">{{row.noblePhantasms}}</div>
-          <div class="cell {{row.hpState}}">{{row.hp}}</div>
-          <div class="cell {{row.atkState}}">{{row.atk}}</div>
+          {{each row.cells cell}}
+            <div class="cell {{cell.state}}">{{cell.text}}</div>
+          {{/each}}
         </div>
       {{/each}}
     </div>
@@ -1531,6 +1521,86 @@ async function wordleGuessRows(guesses, target) {
   )
 }
 
+const WORDLE_COLUMNS = [
+  { key: "rarity", stateKey: "rarityState", label: "星级", type: "match" },
+  { key: "gender", stateKey: "genderState", label: "性别", type: "match" },
+  { key: "className", stateKey: "classState", label: "职介", type: "match" },
+  { key: "alignments", stateKey: "alignmentState", label: "属性", type: "match" },
+  { key: "attributes", stateKey: "attributeState", label: "副属性", type: "match" },
+  { key: "noblePhantasms", stateKey: "npState", label: "宝具", type: "match" },
+  { key: "hp", stateKey: "hpState", label: "HP", type: "arrow" },
+  { key: "atk", stateKey: "atkState", label: "ATK", type: "arrow" },
+]
+
+const WORDLE_NORMAL_GRID_STYLE =
+  "grid-template-columns: 40px 100px 64px 36px 48px 62px 46px 62px 66px 66px;"
+const WORDLE_HARD_GRID_STYLE = "grid-template-columns: 40px 100px repeat(8, 1fr);"
+
+function normalizeWordleDifficulty(text) {
+  if (/^(普通|普通模式|normal)$/i.test(text)) return "normal"
+  if (/^(困难|困难模式|hard)$/i.test(text)) return "hard"
+  return ""
+}
+
+function wordleDifficultyName(difficulty) {
+  return difficulty === "hard" ? "困难" : "普通"
+}
+
+function initWordleDifficulty(ctx, difficulty) {
+  ctx.difficulty = difficulty
+  ctx.awaitingDifficulty = false
+  ctx.wordleColumnOrder =
+    difficulty === "hard" ? shuffle(WORDLE_COLUMNS.map(v => v.key)) : WORDLE_COLUMNS.map(v => v.key)
+}
+
+function hardWordleCellText(row, column) {
+  const state = row[column.stateKey]
+  if (state === "ok") return "√"
+  if (state === "partial") return "⍻"
+  if (column.type === "arrow") {
+    const arrow = String(row[column.key] || "").match(/[↑↓]/)
+    return arrow?.[0] || "×"
+  }
+  return "×"
+}
+
+function buildWordleView(ctx, rows) {
+  const hard = ctx.difficulty === "hard"
+  const orderedKeys = ctx.wordleColumnOrder?.length
+    ? ctx.wordleColumnOrder
+    : WORDLE_COLUMNS.map(v => v.key)
+  const byKey = new Map(WORDLE_COLUMNS.map(v => [v.key, v]))
+  const orderedColumns = orderedKeys.map(key => byKey.get(key)).filter(Boolean)
+  const revealed = new Set()
+
+  if (hard) {
+    for (const row of rows) {
+      for (const column of orderedColumns) {
+        if (row[column.stateKey] === "ok") revealed.add(column.key)
+      }
+    }
+  }
+
+  return {
+    difficultyText: hard ? "困难" : "",
+    tableGridStyle: hard ? WORDLE_HARD_GRID_STYLE : WORDLE_NORMAL_GRID_STYLE,
+    nameLabel: "从者",
+    columns: orderedColumns.map(column => ({
+      ...column,
+      labelText: hard && !revealed.has(column.key) ? "???" : column.label,
+    })),
+    rows: rows.map(row => ({
+      faceUrl: row.faceUrl,
+      name: row.name,
+      nameState: row.nameState,
+      cells: orderedColumns.map(column => ({
+        state: row[column.stateKey],
+        text: hard ? hardWordleCellText(row, column) : row[column.key],
+      })),
+    })),
+  }
+}
+
 function findWordleCandidates(catalog, query) {
   const readyIds = new Set(wordleItems(catalog).map(item => String(item.id)))
   return findAliasTargetCandidates(catalog, query).filter(item => readyIds.has(String(item.id)))
@@ -1783,16 +1853,13 @@ export class FgoGuessRole extends plugin {
     ctx.guesses = []
     ctx.guessedIds = new Set()
     ctx.pendingPick = null
+    ctx.awaitingDifficulty = true
+    ctx.difficulty = ""
+    ctx.wordleColumnOrder = []
     ctx.renderIndex = 0
     ctx.finished = false
 
-    await e.reply(
-      [
-        "FGO Wordle 开始，请直接回复从者名。",
-        `目标是在 ${WORDLE_MAX_GUESSES} 轮内猜出目标从者。`,
-        "输入“不玩了”可直接结束。",
-      ].join("\n"),
-    )
+    await e.reply("FGO Wordle 开始，请选择难度：普通 or 困难。")
     return true
   }
 
@@ -1805,6 +1872,22 @@ export class FgoGuessRole extends plugin {
 
     if (msg === "不玩了") {
       await this.endWordle(ctx, false)
+      return true
+    }
+
+    if (ctx.awaitingDifficulty) {
+      const difficulty = normalizeWordleDifficulty(msg)
+      if (!difficulty) {
+        await this.reply("请先选择难度：普通 or 困难")
+        return true
+      }
+      initWordleDifficulty(ctx, difficulty)
+      await this.reply(
+        [
+          `已选择${wordleDifficultyName(difficulty)}模式；目标是在 ${WORDLE_MAX_GUESSES} 轮内猜出目标从者。请直接回复从者名。`,
+          "输入“不玩了”可直接结束。",
+        ].join("\n"),
+      )
       return true
     }
 
@@ -1865,14 +1948,14 @@ export class FgoGuessRole extends plugin {
   async renderWordle(ctx, resultText = "") {
     try {
       ensureWordleTemplateFiles()
-      const rows = await wordleGuessRows(ctx.guesses, ctx.target)
+      const view = buildWordleView(ctx, await wordleGuessRows(ctx.guesses, ctx.target))
       return await puppeteer.screenshot("fgo-wordle", {
         tplFile: WORDLE_TPL_PATH,
         cssFile: `file://${WORDLE_CSS_PATH}`,
         saveId: `${ctx.gameId}_${ctx.renderIndex++}`,
         round: ctx.guesses.length,
         maxRound: WORDLE_MAX_GUESSES,
-        rows,
+        ...view,
         resultText,
         imgType: "png",
       })
