@@ -5,6 +5,7 @@ import cfg from '../../lib/config/config.js'//可用于获取masterqq
 import fs from 'fs';
 import path from 'path';
 import { Gfs } from 'icqq';
+import muhammara from 'muhammara';
 
 // 构造保存路径：process.cwd() + '/data/jmcomic'
 const saveDir = path.join(process.cwd(), 'data', 'jmcomic');
@@ -74,6 +75,7 @@ export class example extends plugin {
             let gid = e.group_id
             let gfs = e.group.fs
             await gfs.upload(filePath)
+            await e.reply(`PDF已生成。密码${comicId}`)
             //e.reply([segment.file(filePath)]);
         } catch (error) {
             if(error.message === 'group space not enough'){
@@ -135,8 +137,12 @@ async function downloadComicPdf(comicId) {
     fs.mkdirSync(saveDir, { recursive: true });
     const savePath = path.join(saveDir, `${comicId}.pdf`);
     if (fs.existsSync(savePath)) {
-        console.log(`文件 ${comicId}.pdf 已存在，跳过下载。`);
-        return;
+        if (isEncryptedPdf(savePath)) {
+            console.log(`文件 ${comicId}.pdf 已存在且已加密，跳过下载。`);
+            return;
+        }
+        fs.unlinkSync(savePath);
+        console.log(`文件 ${comicId}.pdf 未加密，已删除并重新下载。`);
     }
     // 根据你的实际情况修改服务端地址和端口
     const url = `${baseUrl}/comic/${comicId}`;
@@ -149,12 +155,47 @@ async function downloadComicPdf(comicId) {
     // 获取返回的 pdf 数据
     const buffer = await response.arrayBuffer();
     const pdfBuffer = Buffer.from(buffer);
+    const tempPath = `${savePath}.${process.pid}.${Date.now()}.tmp`;
+    const encryptedTempPath = `${savePath}.${process.pid}.${Date.now()}.encrypted.tmp`;
     
-    
-    fs.writeFileSync(savePath, pdfBuffer);
-    
-    console.log(`PDF 文件已保存至: ${savePath}`);
+    try {
+        fs.writeFileSync(tempPath, pdfBuffer);
+        encryptPdf(tempPath, encryptedTempPath, comicId);
+        fs.renameSync(encryptedTempPath, savePath);
+    } finally {
+        removeFileIfExists(tempPath);
+        removeFileIfExists(encryptedTempPath);
+    }
+
+    console.log(`PDF 文件已加密保存至: ${savePath}`);
   }
+
+function encryptPdf(inputPath, outputPath, password) {
+    muhammara.recrypt(inputPath, outputPath, {
+        userPassword: password,
+        ownerPassword: password,
+        userProtectionFlag: 4,
+    });
+
+    if (!isEncryptedPdf(outputPath)) {
+        throw new Error(`PDF 加密失败: ${outputPath}`);
+    }
+}
+
+function isEncryptedPdf(filePath) {
+    try {
+        return muhammara.createReader(filePath).isEncrypted();
+    } catch (error) {
+        console.error(`检测 PDF 加密状态失败: ${filePath}`, error);
+        return false;
+    }
+}
+
+function removeFileIfExists(filePath) {
+    if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+    }
+}
 
 
   async function downloadComicZip(comicId) {
