@@ -4,11 +4,11 @@
   "pet": {
     "level": 2,
     "experience": 20,
-    "satiety": 90,
+    "satiety": 86,
     "mood": 95,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784725814822,
+    "satiety_decay_at": 1784727254822,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -16,7 +16,8 @@
       "wink_turtle",
       "nervous_turtle",
       "cactus_turtle",
-      "astonished_turtle"
+      "astonished_turtle",
+      "frowning_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -51,6 +52,14 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "frowning_turtle",
+        "reason": "shop",
+        "time": 1784727536468,
+        "buyer_id": "2818259462",
+        "buyer_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "price": 5000
+      },
       {
         "skin_id": "astonished_turtle",
         "reason": "achievement",
@@ -94,9 +103,9 @@
     "favorability": 20,
     "weekly_contribution": 20,
     "total_contribution": 20,
-    "last_display_name": "你我曾是不是icalter因想玩不玩原降临落凡间",
+    "last_display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
     "first_joined_at": 1784722630639,
-    "last_active_at": 1784725924094,
+    "last_active_at": 1784727536468,
     "daily": {
       "date": "2026-07-22",
       "event_count": 13,
@@ -110,10 +119,22 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 35068,
+      "balance": 30068,
       "total_earned": 65068,
-      "total_spent": 30000,
+      "total_spent": 35000,
       "ledger": [
+        {
+          "time": 1784727536468,
+          "type": "expense",
+          "reason": "buy_skin",
+          "amount": 5000,
+          "before": 35068,
+          "after": 30068,
+          "meta": {
+            "skin_id": "frowning_turtle",
+            "skin_name": "愁眉小若汁"
+          }
+        },
         {
           "time": 1784725924095,
           "type": "income",
@@ -479,5 +500,5 @@
     "migrated_at": 1784722630639
   },
   "created_at": 1784722630639,
-  "updated_at": 1784725924095
+  "updated_at": 1784727536469
 }
