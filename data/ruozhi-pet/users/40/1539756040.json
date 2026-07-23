@@ -4,11 +4,11 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 56,
+    "satiety": 50,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784796807616,
+    "satiety_decay_at": 1784798967616,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -17,11 +17,13 @@
       "nervous_turtle",
       "kiss_marks_turtle",
       "volcano_turtle",
-      "grasshopper_turtle"
+      "grasshopper_turtle",
+      "bouquet_turtle",
+      "wide_eyed_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 3,
+      "counter:gacha_draws": 6,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -44,6 +46,16 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "wide_eyed_turtle",
+        "reason": "gacha",
+        "time": 1784799028455
+      },
+      {
+        "skin_id": "bouquet_turtle",
+        "reason": "gacha",
+        "time": 1784799028455
+      },
       {
         "skin_id": "grasshopper_turtle",
         "reason": "gacha",
@@ -92,7 +104,7 @@
     "total_contribution": 0,
     "last_display_name": "【IGN】《鸣潮》共鸣者「清宵」演示",
     "first_joined_at": 1784791767616,
-    "last_active_at": 1784796905872,
+    "last_active_at": 1784799028453,
     "daily": {
       "date": "2026-07-23",
       "event_count": 0,
@@ -103,10 +115,35 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 8428,
-      "total_earned": 8428,
+      "balance": 8813,
+      "total_earned": 8813,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784799028454,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8513,
+          "after": 8813,
+          "meta": {
+            "skin_id": "grasshopper_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1784798937194,
+          "type": "income",
+          "reason": "idiom_chain",
+          "amount": 85,
+          "before": 8428,
+          "after": 8513,
+          "meta": {
+            "mode": "normal",
+            "rounds": 30,
+            "score": 1
+          }
+        },
         {
           "time": 1784796905869,
           "type": "income",
@@ -216,38 +253,6 @@
             "score": 100,
             "total_score": 332
           }
-        },
-        {
-          "time": 1784793808333,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 1419,
-          "before": 3955,
-          "after": 5374,
-          "meta": {
-            "size": 10,
-            "solved": 14,
-            "total": 14,
-            "hints": 1,
-            "score": 480,
-            "total_score": 812
-          }
-        },
-        {
-          "time": 1784793341817,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 409,
-          "before": 3546,
-          "after": 3955,
-          "meta": {
-            "size": 6,
-            "solved": 6,
-            "total": 6,
-            "hints": 3,
-            "score": 162,
-            "total_score": 314
-          }
         }
       ],
       "sign": {
@@ -259,10 +264,22 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 1,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784799028454,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 10,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
       {
         "time": 1784796905872,
         "type": "income",
@@ -461,11 +478,11 @@
     "migrated_at": 1784791767616
   },
   "created_at": 1784791767616,
-  "updated_at": 1784796905872,
+  "updated_at": 1784799028456,
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 3,
-    "total_draws": 3,
+    "since_four_plus": 4,
+    "since_five": 6,
+    "total_draws": 6,
     "total_four": 1,
     "total_five": 0,
     "five_history": [],
