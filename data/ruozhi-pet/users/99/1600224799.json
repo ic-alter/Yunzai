@@ -4,11 +4,11 @@
   "pet": {
     "level": 1,
     "experience": 26,
-    "satiety": 82,
+    "satiety": 5,
     "mood": 78,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784723510419,
+    "satiety_decay_at": 1784788578624,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -53,14 +53,11 @@
     "total_contribution": 6,
     "last_display_name": "爆炸撕裂下坠",
     "first_joined_at": 1784723481074,
-    "last_active_at": 1784723510418,
+    "last_active_at": 1784788578624,
     "daily": {
-      "date": "2026-07-22",
-      "event_count": 2,
-      "same_event_counts": {
-        "petting": 1,
-        "feed": 1
-      },
+      "date": "2026-07-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
@@ -97,9 +94,35 @@
       "sign": {
         "last_date": "2026-07-22",
         "total_count": 1,
-        "first_reward_claimed": true
+        "first_reward_claimed": true,
+        "first_fate_reward_claimed": true
       },
       "first_interaction_reward_date": "2026-07-22"
+    },
+    "items": {
+      "ruozhi_fate": 60,
+      "nameless_ruozhi": 0
+    },
+    "item_ledger": [
+      {
+        "time": 1784788578624,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 60,
+        "before": 0,
+        "after": 60,
+        "reason": "first_sign_fate_backfill",
+        "meta": {
+          "migration": "first_sign_fate_v1"
+        }
+      }
+    ],
+    "item_daily": {},
+    "item_migrations": {
+      "first_sign_fate_v1": {
+        "time": 1784788578624,
+        "amount": 60
+      }
     }
   },
   "recent_events": [
@@ -171,5 +194,5 @@
     "migrated_at": 1784723481074
   },
   "created_at": 1784723481074,
-  "updated_at": 1784723510420
+  "updated_at": 1784788578624
 }
