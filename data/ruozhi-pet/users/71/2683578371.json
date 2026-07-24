@@ -4,22 +4,61 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 60,
+    "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784795367626,
+    "satiety_decay_at": 1784887563456,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "fruit_hat_turtle",
+      "antler_turtle",
+      "headphones_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 3,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1784887563457,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "stat_key": "counter:gacha_draws",
+        "count": 3,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "headphones_turtle",
+        "reason": "gacha",
+        "time": 1784887563456
+      },
+      {
+        "skin_id": "antler_turtle",
+        "reason": "gacha",
+        "time": 1784887563456
+      },
+      {
+        "skin_id": "fruit_hat_turtle",
+        "reason": "gacha",
+        "time": 1784887563456
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -53,9 +92,9 @@
     "total_contribution": 0,
     "last_display_name": "宝宝我们不拯救世界了我们回家😭",
     "first_joined_at": 1784791767626,
-    "last_active_at": 1784795708253,
+    "last_active_at": 1784887563456,
     "daily": {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -208,10 +247,34 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 11,
+      "ruozhi_fate": 5,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784887563457,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1784887563456,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 11,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
       {
         "time": 1784795708253,
         "type": "income",
@@ -333,5 +396,22 @@
     "migrated_at": 1784791767626
   },
   "created_at": 1784791767626,
-  "updated_at": 1784795708253
+  "updated_at": 1784887563457,
+  "production": {
+    "started_at": 1784887563456,
+    "last_settled_at": 1784887563456,
+    "accumulated_ms": 0,
+    "progress": 0,
+    "total_produced": 0
+  },
+  "gacha": {
+    "since_four_plus": 3,
+    "since_five": 3,
+    "total_draws": 3,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
+  }
 }

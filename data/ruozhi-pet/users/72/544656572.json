@@ -8,18 +8,57 @@
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784819895507,
+    "satiety_decay_at": 1784866750548,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "headphones_turtle",
+      "grasshopper_turtle",
+      "volleyball_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 3,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1784866750548,
+        "actor_name": "浪漫南瓜106399789",
+        "stat_key": "counter:gacha_draws",
+        "count": 3,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "volleyball_turtle",
+        "reason": "gacha",
+        "time": 1784866750548
+      },
+      {
+        "skin_id": "grasshopper_turtle",
+        "reason": "gacha",
+        "time": 1784866750548
+      },
+      {
+        "skin_id": "headphones_turtle",
+        "reason": "gacha",
+        "time": 1784866750548
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -51,11 +90,11 @@
     "favorability": 0,
     "weekly_contribution": 0,
     "total_contribution": 0,
-    "last_display_name": "浪漫南瓜bgo100,100,633,782",
+    "last_display_name": "浪漫南瓜106399789",
     "first_joined_at": 1784791767629,
-    "last_active_at": 1784819895507,
+    "last_active_at": 1784866750548,
     "daily": {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -64,10 +103,40 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 2791,
-      "total_earned": 2791,
+      "balance": 3376,
+      "total_earned": 3376,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784866674181,
+          "type": "income",
+          "reason": "mihoyo_skill_grid_settlement",
+          "amount": 150,
+          "before": 3226,
+          "after": 3376,
+          "meta": {
+            "size": 6,
+            "solved": 1,
+            "total": 6,
+            "hints": 0,
+            "score": 58,
+            "total_score": 58
+          }
+        },
+        {
+          "time": 1784861205306,
+          "type": "income",
+          "reason": "ww_guess_role_settlement",
+          "amount": 435,
+          "before": 2791,
+          "after": 3226,
+          "meta": {
+            "mode": "pixel",
+            "rounds": 20,
+            "score": 290,
+            "total_score": 1764
+          }
+        },
         {
           "time": 1784819895507,
           "type": "income",
@@ -148,10 +217,61 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 7,
+      "ruozhi_fate": 4,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784866750548,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 1,
+        "after": 4,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1784866750548,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 10,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1784866674183,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 9,
+        "after": 10,
+        "reason": "mihoyo_skill_grid_settlement_fate",
+        "meta": {
+          "size": 6,
+          "solved": 1,
+          "total": 6
+        }
+      },
+      {
+        "time": 1784861205319,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 7,
+        "after": 9,
+        "reason": "ww_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "pixel"
+        }
+      },
       {
         "time": 1784811172964,
         "type": "income",
@@ -220,5 +340,15 @@
     "migrated_at": 1784791767629
   },
   "created_at": 1784791767629,
-  "updated_at": 1784819895507
+  "updated_at": 1784866750548,
+  "gacha": {
+    "since_four_plus": 3,
+    "since_five": 3,
+    "total_draws": 3,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
+  }
 }

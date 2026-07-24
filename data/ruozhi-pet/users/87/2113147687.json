@@ -4,22 +4,49 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 66,
+    "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784795248338,
+    "satiety_decay_at": 1784876695886,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "frog_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 1,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1784863908249,
+        "actor_name": "【IGN独家】《鸣潮》4.0版本10分钟实机演示",
+        "stat_key": "counter:gacha_draws",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "frog_turtle",
+        "reason": "gacha",
+        "time": 1784863908249
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -51,11 +78,11 @@
     "favorability": 0,
     "weekly_contribution": 0,
     "total_contribution": 0,
-    "last_display_name": "【IGN】《鸣潮》共鸣者「锁暝」演示",
+    "last_display_name": "【IGN独家】《鸣潮》4.0版本10分钟实机演示",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1784795261128,
+    "last_active_at": 1784876695887,
     "daily": {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -64,10 +91,26 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 1520,
-      "total_earned": 1520,
+      "balance": 1835,
+      "total_earned": 1835,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784876695881,
+          "type": "income",
+          "reason": "ww_skill_grid_settlement",
+          "amount": 315,
+          "before": 1520,
+          "after": 1835,
+          "meta": {
+            "size": 6,
+            "solved": 3,
+            "total": 6,
+            "hints": 0,
+            "score": 126,
+            "total_score": 180
+          }
+        },
         {
           "time": 1784795261128,
           "type": "income",
@@ -174,10 +217,48 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 3,
+      "ruozhi_fate": 4,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784876695887,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "ww_skill_grid_settlement_fate",
+        "meta": {
+          "size": 6,
+          "solved": 3,
+          "total": 6
+        }
+      },
+      {
+        "time": 1784863908249,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1784863908249,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
       {
         "time": 1784794204522,
         "type": "income",
@@ -235,5 +316,22 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1784795261128
+  "updated_at": 1784876695887,
+  "gacha": {
+    "since_four_plus": 1,
+    "since_five": 1,
+    "total_draws": 1,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
+  },
+  "production": {
+    "started_at": 1784876695881,
+    "last_settled_at": 1784876695886,
+    "accumulated_ms": 5,
+    "progress": 2.7482269503546104e-7,
+    "total_produced": 0
+  }
 }

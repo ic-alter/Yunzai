@@ -4,22 +4,49 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 48,
+    "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784811093103,
+    "satiety_decay_at": 1784888918189,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "heart_shower_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 1,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1784866735286,
+        "actor_name": "散樗",
+        "stat_key": "counter:gacha_draws",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "heart_shower_turtle",
+        "reason": "gacha",
+        "time": 1784866735285
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -53,9 +80,9 @@
     "total_contribution": 0,
     "last_display_name": "散樗",
     "first_joined_at": 1784803173103,
-    "last_active_at": 1784811172967,
+    "last_active_at": 1784888918189,
     "daily": {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -64,10 +91,102 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 1073,
-      "total_earned": 1073,
+      "balance": 4558,
+      "total_earned": 4558,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784888918176,
+          "type": "income",
+          "reason": "ww_guess_role_settlement",
+          "amount": 757,
+          "before": 3801,
+          "after": 4558,
+          "meta": {
+            "mode": "pixel",
+            "rounds": 20,
+            "score": 504.5,
+            "total_score": 1969.5
+          }
+        },
+        {
+          "time": 1784888649147,
+          "type": "income",
+          "reason": "ww_guess_role_settlement",
+          "amount": 593,
+          "before": 3208,
+          "after": 3801,
+          "meta": {
+            "mode": "pixel",
+            "rounds": 20,
+            "score": 395,
+            "total_score": 1825
+          }
+        },
+        {
+          "time": 1784876695884,
+          "type": "income",
+          "reason": "ww_skill_grid_settlement",
+          "amount": 135,
+          "before": 3073,
+          "after": 3208,
+          "meta": {
+            "size": 6,
+            "solved": 3,
+            "total": 6,
+            "hints": 0,
+            "score": 54,
+            "total_score": 180
+          }
+        },
+        {
+          "time": 1784869544652,
+          "type": "income",
+          "reason": "ww_wordle_win",
+          "amount": 500,
+          "before": 2573,
+          "after": 3073,
+          "meta": {
+            "guesses": 3,
+            "difficulty": "hard"
+          }
+        },
+        {
+          "time": 1784869110260,
+          "type": "income",
+          "reason": "ww_wordle_win",
+          "amount": 500,
+          "before": 2073,
+          "after": 2573,
+          "meta": {
+            "guesses": 3,
+            "difficulty": "hard"
+          }
+        },
+        {
+          "time": 1784869054017,
+          "type": "income",
+          "reason": "ww_wordle_win",
+          "amount": 500,
+          "before": 1573,
+          "after": 2073,
+          "meta": {
+            "guesses": 7,
+            "difficulty": "hard"
+          }
+        },
+        {
+          "time": 1784868926481,
+          "type": "income",
+          "reason": "ww_wordle_win",
+          "amount": 500,
+          "before": 1073,
+          "after": 1573,
+          "meta": {
+            "guesses": 4,
+            "difficulty": "hard"
+          }
+        },
         {
           "time": 1784811172958,
           "type": "income",
@@ -108,10 +227,112 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 3,
+      "ruozhi_fate": 12,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784888918189,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 8,
+        "after": 12,
+        "reason": "ww_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "pixel"
+        }
+      },
+      {
+        "time": 1784888649157,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 7,
+        "after": 8,
+        "reason": "ww_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "pixel"
+        }
+      },
+      {
+        "time": 1784869544654,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 6,
+        "after": 7,
+        "reason": "ww_wordle_win_fate",
+        "meta": {
+          "guesses": 3,
+          "difficulty": "hard"
+        }
+      },
+      {
+        "time": 1784869110262,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 5,
+        "after": 6,
+        "reason": "ww_wordle_win_fate",
+        "meta": {
+          "guesses": 3,
+          "difficulty": "hard"
+        }
+      },
+      {
+        "time": 1784869054019,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 4,
+        "after": 5,
+        "reason": "ww_wordle_win_fate",
+        "meta": {
+          "guesses": 7,
+          "difficulty": "hard"
+        }
+      },
+      {
+        "time": 1784868926483,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "ww_wordle_win_fate",
+        "meta": {
+          "guesses": 4,
+          "difficulty": "hard"
+        }
+      },
+      {
+        "time": 1784866735286,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1784866735284,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
       {
         "time": 1784811172967,
         "type": "income",
@@ -168,5 +389,22 @@
     "migrated_at": 1784803173103
   },
   "created_at": 1784803173103,
-  "updated_at": 1784811172967
+  "updated_at": 1784888918189,
+  "gacha": {
+    "since_four_plus": 1,
+    "since_five": 1,
+    "total_draws": 1,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
+  },
+  "production": {
+    "started_at": 1784876695884,
+    "last_settled_at": 1784888918189,
+    "accumulated_ms": 12222305,
+    "progress": 0.6717933599290781,
+    "total_produced": 0
+  }
 }

@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2818259462",
   "pet": {
-    "level": 2,
-    "experience": 52,
-    "satiety": 5,
-    "mood": 87,
-    "health": 80,
+    "level": 3,
+    "experience": 63,
+    "satiety": 80,
+    "mood": 90,
+    "health": 86,
     "current_skin_id": "shidai_turtle",
-    "satiety_decay_at": 1784858897226,
+    "satiety_decay_at": 1784887617961,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -41,7 +41,8 @@
       "antler_turtle",
       "volleyball_turtle",
       "thumbs_up_turtle",
-      "ufo_turtle"
+      "ufo_turtle",
+      "beam_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -49,6 +50,13 @@
         "skin_id": "cactus_turtle",
         "level": 2,
         "time": 1784723258564,
+        "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1784871602787,
         "applied": true
       }
     },
@@ -112,6 +120,12 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1784871602787,
+        "level": 3
+      },
       {
         "skin_id": "ufo_turtle",
         "reason": "gacha",
@@ -282,26 +296,78 @@
     ]
   },
   "profile": {
-    "favorability": 12,
-    "weekly_contribution": 22,
-    "total_contribution": 22,
+    "favorability": 32,
+    "weekly_contribution": 53,
+    "total_contribution": 53,
     "last_display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
     "first_joined_at": 1784722630639,
-    "last_active_at": 1784858897226,
+    "last_active_at": 1784887955840,
     "daily": {
       "date": "2026-07-24",
-      "event_count": 0,
-      "same_event_counts": {},
-      "negative_shared_impact": 0
+      "event_count": 10,
+      "same_event_counts": {
+        "mention_only": 1,
+        "feed": 8,
+        "insult": 1
+      },
+      "negative_shared_impact": 10
     },
     "weekly": {
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 22178,
-      "total_earned": 97178,
+      "balance": 26633,
+      "total_earned": 101633,
       "total_spent": 75000,
       "ledger": [
+        {
+          "time": 1784874763341,
+          "type": "income",
+          "reason": "idiom_chain",
+          "amount": 1615,
+          "before": 25018,
+          "after": 26633,
+          "meta": {
+            "mode": "normal",
+            "rounds": 30,
+            "score": 19
+          }
+        },
+        {
+          "time": 1784871602785,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 24718,
+          "after": 25018,
+          "meta": {
+            "level": 3
+          }
+        },
+        {
+          "time": 1784860899621,
+          "type": "income",
+          "reason": "idiom_chain",
+          "amount": 2040,
+          "before": 22678,
+          "after": 24718,
+          "meta": {
+            "mode": "normal",
+            "rounds": 30,
+            "score": 24
+          }
+        },
+        {
+          "time": 1784859884064,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 22178,
+          "after": 22678,
+          "meta": {
+            "date": "2026-07-24"
+          }
+        },
         {
           "time": 1784858897228,
           "type": "income",
@@ -376,62 +442,6 @@
             "skin_id": "ribbon_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1784810406512,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19234,
-          "after": 19534,
-          "meta": {
-            "skin_id": "heart_shower_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1784810388905,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 18934,
-          "after": 19234,
-          "meta": {
-            "skin_id": "love_letter_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1784810360582,
-          "type": "income",
-          "reason": "mihoyo_skill_grid_settlement",
-          "amount": 1199,
-          "before": 17735,
-          "after": 18934,
-          "meta": {
-            "size": 10,
-            "solved": 17,
-            "total": 17,
-            "hints": 6,
-            "score": 506,
-            "total_score": 802
-          }
-        },
-        {
-          "time": 1784803173098,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 1054,
-          "before": 16681,
-          "after": 17735,
-          "meta": {
-            "size": 10,
-            "solved": 12,
-            "total": 12,
-            "hints": 9,
-            "score": 394,
-            "total_score": 598
-          }
         }
       ],
       "sign": {
@@ -440,13 +450,51 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-07-23"
+      "first_interaction_reward_date": "2026-07-24"
     },
     "items": {
-      "ruozhi_fate": 2,
+      "ruozhi_fate": 11,
       "nameless_ruozhi": 3
     },
     "item_ledger": [
+      {
+        "time": 1784874763354,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "idiom_chain_fate",
+        "meta": {
+          "rounds": 30,
+          "mode": "normal"
+        }
+      },
+      {
+        "time": 1784871602785,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 3
+        }
+      },
+      {
+        "time": 1784860899637,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "idiom_chain_fate",
+        "meta": {
+          "rounds": 30,
+          "mode": "normal"
+        }
+      },
       {
         "time": 1784858897227,
         "type": "expense",
@@ -661,48 +709,11 @@
         "meta": {
           "achievement_id": "gacha_draw_10"
         }
-      },
-      {
-        "time": 1784788846716,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 68,
-        "after": 38,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1784788578623,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 60,
-        "before": 8,
-        "after": 68,
-        "reason": "first_sign_fate_backfill",
-        "meta": {
-          "migration": "first_sign_fate_v1"
-        }
-      },
-      {
-        "time": 1784786792138,
-        "type": "expense",
-        "item_id": "nameless_ruozhi",
-        "amount": 1,
-        "before": 4,
-        "after": 3,
-        "reason": "gacha_skin_selector",
-        "meta": {
-          "skin_id": "sparkling_turtle",
-          "rarity": 3
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-07-23",
-      "fate_exchange_count": 5
+      "date": "2026-07-24",
+      "fate_exchange_count": 0
     },
     "item_migrations": {
       "fate_v1": {
@@ -726,7 +737,7 @@
   },
   "recent_events": [
     {
-      "time": 1784810023523,
+      "time": 1784887637901,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
       "event_id": "insult",
@@ -745,177 +756,112 @@
       "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
-      "achievements": []
+      "achievements": [],
+      "auto_production_collect": 0
     },
     {
-      "time": 1784809667203,
+      "time": 1784887617962,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "mention_only",
-      "branch_id": "crawl_close",
-      "summary": "小若汁慢慢爬到嗯呐大爆炸⌖ic·alter哈哈哈身边，安静地待了一小会儿。",
-      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
       "effects": {
-        "satiety": 0,
-        "mood": 1,
+        "satiety": 12,
+        "mood": 3,
         "health": 0,
-        "favorability": 2,
-        "contribution": 1,
-        "experience": 11
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
       },
       "level_ups": [],
       "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
-      "achievements": []
+      "achievements": [],
+      "auto_production_collect": 0
     },
     {
-      "time": 1784787434028,
-      "user_id": "2818259462",
-      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "mention_only",
-      "branch_id": "crawl_close",
-      "summary": "小若汁慢慢爬到嗯呐大爆炸⌖ic·alter哈哈哈身边，安静地待了一小会儿。",
-      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 34458
-      },
-      "level_rewards": [],
-      "achievements": []
-    },
-    {
-      "time": 1784723309150,
+      "time": 1784871639066,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
       "event_id": "feed",
-      "branch_id": "full",
-      "summary": "小若汁已经完全吃不下了，推开食物并拍了拍圆滚滚的肚子。",
-      "effects_text": "心情-1",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
       "effects": {
-        "satiety": 0,
-        "mood": -1,
+        "satiety": 12,
+        "mood": 3,
         "health": 0,
-        "favorability": 0,
-        "contribution": 0,
-        "experience": 0
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": []
-    },
-    {
-      "time": 1784723304704,
-      "user_id": "2818259462",
-      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "feed",
-      "branch_id": "full",
-      "summary": "小若汁已经完全吃不下了，推开食物并拍了拍圆滚滚的肚子。",
-      "effects_text": "心情-1",
-      "effects": {
-        "satiety": 0,
-        "mood": -1,
-        "health": 0,
-        "favorability": 0,
-        "contribution": 0,
-        "experience": 0
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": []
-    },
-    {
-      "time": 1784723299297,
-      "user_id": "2818259462",
-      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "feed",
-      "branch_id": "full",
-      "summary": "小若汁已经完全吃不下了，推开食物并拍了拍圆滚滚的肚子。",
-      "effects_text": "心情-1",
-      "effects": {
-        "satiety": 0,
-        "mood": -1,
-        "health": 0,
-        "favorability": 0,
-        "contribution": 0,
-        "experience": 0
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [
-        {
-          "id": "feed_full_once",
-          "name": "真的吃不下",
-          "description": "触发 1 次投喂事件的吃饱分支",
-          "unlocked": true,
-          "unlocked_at": 1784723299296,
-          "current_count": 1,
-          "target_count": 1,
-          "progress_text": "1 / 1",
-          "rarity": 3,
-          "rarity_stars": "⭐⭐⭐",
-          "rarity_class": "rarity-3",
-          "rewards": [
-            {
-              "type": "unlock_skin",
-              "skin_id": "astonished_turtle",
-              "skin_name": "吃惊小若汁",
-              "message": "解锁三星皮肤「吃惊小若汁」。"
-            }
-          ],
-          "message": "达成成就「真的吃不下」 ⭐⭐⭐"
-        }
-      ]
-    },
-    {
-      "time": 1784723294824,
-      "user_id": "2818259462",
-      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
       },
       "level_ups": [],
       "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
-      "achievements": []
+      "achievements": [],
+      "auto_production_collect": 0
     },
     {
-      "time": 1784723258564,
+      "time": 1784871633993,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "event_id": "petting",
-      "branch_id": "normal_comfortable",
-      "summary": "嗯呐大爆炸⌖ic·alter哈哈哈轻轻摸了摸小若汁，小若汁舒服地眯起了眼睛。",
-      "effects_text": "心情+5，好感+3，贡献+3，经验+13，升级到 Lv.2",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
       "effects": {
-        "satiety": 0,
-        "mood": 5,
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784871609465,
+      "user_id": "2818259462",
+      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784871602787,
+      "user_id": "2818259462",
+      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.3",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
         "health": 0,
         "favorability": 3,
         "contribution": 3,
@@ -923,15 +869,15 @@
       },
       "level_ups": [
         {
-          "level": 2,
-          "need": 100
+          "level": 3,
+          "need": 120
         }
       ],
       "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [
         {
-          "level": 2,
+          "level": 3,
           "reward": 300,
           "receiver": {
             "user_id": "2818259462",
@@ -940,31 +886,55 @@
           "special_rewards": [
             {
               "type": "unlock_skin",
-              "level": 2,
-              "skin_id": "cactus_turtle",
-              "skin_name": "仙人掌小若汁",
+              "level": 3,
+              "skin_id": "beam_turtle",
+              "skin_name": "咧嘴小若汁",
               "applied": true
             }
           ]
         }
       ],
-      "achievements": []
+      "achievements": [],
+      "auto_production_collect": 0
     },
     {
-      "time": 1784723254439,
+      "time": 1784871569672,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
       "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "branch_id": "hungry",
+      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
+      "effects_text": "饱食+18，心情+5，健康+2，好感+5，贡献+5，经验+15",
       "effects": {
-        "satiety": 4,
-        "mood": 1,
+        "satiety": 18,
+        "mood": 5,
+        "health": 2,
+        "favorability": 5,
+        "contribution": 5,
+        "experience": 15
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784860021148,
+      "user_id": "2818259462",
+      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
         "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
       },
       "level_ups": [],
       "bonus_experience": 10,
@@ -973,15 +943,37 @@
       "achievements": []
     },
     {
-      "time": 1784723250201,
+      "time": 1784860014222,
       "user_id": "2818259462",
       "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
       "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，嗯呐大爆炸⌖ic·alter哈哈哈及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
       "effects": {
-        "satiety": 4,
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": []
+    },
+    {
+      "time": 1784859884064,
+      "user_id": "2818259462",
+      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向嗯呐大爆炸⌖ic·alter哈哈哈，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
         "mood": 1,
         "health": 0,
         "favorability": 1,
@@ -990,15 +982,18 @@
       },
       "level_ups": [],
       "bonus_experience": 10,
-      "first_interaction_reward": null,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 22678
+      },
       "level_rewards": [],
       "achievements": []
     }
   ],
   "daily": {
-    "date": "2026-07-23",
-    "event_count": 3,
-    "bonus_event_count": 3
+    "date": "2026-07-24",
+    "event_count": 10,
+    "bonus_event_count": 10
   },
   "processed_messages": {
     "event:1770705371": 1784722630642,
@@ -1016,7 +1011,17 @@
     "event:1011449130": 1784723309150,
     "event:445931986": 1784787434020,
     "event:949202790": 1784809667201,
-    "event:441294771": 1784810023523
+    "event:441294771": 1784810023523,
+    "event:1152047195": 1784859884062,
+    "event:1451039841": 1784860014221,
+    "event:1871775586": 1784860021147,
+    "event:1499707012": 1784871569667,
+    "event:242188509": 1784871602783,
+    "event:1902265477": 1784871609464,
+    "event:581973501": 1784871633991,
+    "event:786630633": 1784871639066,
+    "event:444556667": 1784887617960,
+    "event:1079234339": 1784887637900
   },
   "skin_sessions": {
     "active": null
@@ -1029,15 +1034,22 @@
     "migrated_at": 1784722630639
   },
   "created_at": 1784722630639,
-  "updated_at": 1784858897229,
+  "updated_at": 1784887955841,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 44,
     "total_draws": 44,
     "total_five": 0,
     "route_misses": 0,
-    "route_skin_id": "qiqiu_turtle",
+    "route_skin_id": "maodie_turtle",
     "total_four": 6,
     "five_history": []
+  },
+  "production": {
+    "started_at": 1784871541125,
+    "last_settled_at": 1784887955840,
+    "accumulated_ms": 16414715,
+    "progress": 1.3427063468782154,
+    "total_produced": 0
   }
 }

@@ -4,11 +4,11 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 62,
+    "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784794941225,
+    "satiety_decay_at": 1784880852567,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -53,9 +53,9 @@
     "total_contribution": 0,
     "last_display_name": "穗穗一时性起",
     "first_joined_at": 1784792061225,
-    "last_active_at": 1784795261126,
+    "last_active_at": 1784880852568,
     "daily": {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -64,10 +64,23 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 546,
-      "total_earned": 546,
+      "balance": 971,
+      "total_earned": 971,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784874763347,
+          "type": "income",
+          "reason": "idiom_chain",
+          "amount": 425,
+          "before": 546,
+          "after": 971,
+          "meta": {
+            "mode": "normal",
+            "rounds": 30,
+            "score": 5
+          }
+        },
         {
           "time": 1784795261126,
           "type": "income",
@@ -120,6 +133,34 @@
         "first_fate_reward_claimed": false
       },
       "first_interaction_reward_date": ""
+    },
+    "items": {
+      "ruozhi_fate": 1,
+      "nameless_ruozhi": 0
+    },
+    "item_ledger": [
+      {
+        "time": 1784874763357,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "idiom_chain_fate",
+        "meta": {
+          "rounds": 30,
+          "mode": "normal"
+        }
+      }
+    ],
+    "item_daily": {},
+    "item_migrations": {
+      "fate_v1": {
+        "time": 1784863634515,
+        "achievement_count": 0,
+        "completed_levels": 0,
+        "amount": 0
+      }
     }
   },
   "recent_events": [],
@@ -140,5 +181,22 @@
     "migrated_at": 1784792061225
   },
   "created_at": 1784792061225,
-  "updated_at": 1784795261126
+  "updated_at": 1784880852568,
+  "gacha": {
+    "since_four_plus": 0,
+    "since_five": 0,
+    "total_draws": 0,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
+  },
+  "production": {
+    "started_at": 1784874763347,
+    "last_settled_at": 1784880852567,
+    "accumulated_ms": 6089220,
+    "progress": 0.3326191166989039,
+    "total_produced": 0
+  }
 }
