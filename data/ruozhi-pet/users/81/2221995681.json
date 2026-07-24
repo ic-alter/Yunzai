@@ -4,22 +4,24 @@
   "pet": {
     "level": 1,
     "experience": 0,
-    "satiety": 66,
+    "satiety": 17,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1784793501217,
+    "satiety_decay_at": 1784811141217,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
       "nervous_turtle",
-      "tear_turtle"
+      "tear_turtle",
+      "watermelon_turtle",
+      "disco_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 1,
+      "counter:gacha_draws": 3,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -42,6 +44,16 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "disco_turtle",
+        "reason": "gacha",
+        "time": 1784811349758
+      },
+      {
+        "skin_id": "watermelon_turtle",
+        "reason": "gacha",
+        "time": 1784811349757
+      },
       {
         "skin_id": "tear_turtle",
         "reason": "gacha",
@@ -80,7 +92,7 @@
     "total_contribution": 0,
     "last_display_name": "私募kl",
     "first_joined_at": 1784792061217,
-    "last_active_at": 1784793808348,
+    "last_active_at": 1784811349757,
     "daily": {
       "date": "2026-07-23",
       "event_count": 0,
@@ -91,10 +103,24 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 2103,
-      "total_earned": 2103,
+      "balance": 2988,
+      "total_earned": 2988,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1784811172952,
+          "type": "income",
+          "reason": "ww_guess_role_settlement",
+          "amount": 885,
+          "before": 2103,
+          "after": 2988,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 590,
+            "total_score": 1904.5
+          }
+        },
         {
           "time": 1784793808343,
           "type": "income",
@@ -193,10 +219,35 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 5,
+      "ruozhi_fate": 1,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1784811349757,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 7,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
+      {
+        "time": 1784811172966,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 5,
+        "after": 7,
+        "reason": "ww_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop"
+        }
+      },
       {
         "time": 1784793808348,
         "type": "income",
@@ -303,12 +354,12 @@
     "migrated_at": 1784792061217
   },
   "created_at": 1784792061217,
-  "updated_at": 1784793808348,
+  "updated_at": 1784811349759,
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 1,
-    "total_draws": 1,
-    "total_four": 0,
+    "since_four_plus": 0,
+    "since_five": 3,
+    "total_draws": 3,
+    "total_four": 2,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,
