@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2221995681",
   "pet": {
-    "level": 1,
-    "experience": 13,
-    "satiety": 5,
-    "mood": 75,
-    "health": 80,
+    "level": 3,
+    "experience": 9,
+    "satiety": 18,
+    "mood": 100,
+    "health": 92,
     "current_skin_id": "qiqiu_turtle",
-    "satiety_decay_at": 1784888918186,
+    "satiety_decay_at": 1785059595603,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -36,12 +36,40 @@
       "bee_turtle",
       "starry_turtle",
       "qiqiu_turtle",
-      "thumbs_up_turtle"
+      "thumbs_up_turtle",
+      "love_letter_turtle",
+      "antler_turtle",
+      "heart_shower_turtle",
+      "downcast_sweat_turtle",
+      "cactus_turtle",
+      "astonished_turtle",
+      "mushroom_shell_turtle",
+      "beam_turtle",
+      "coffee_turtle"
     ],
-    "level_reward_records": {},
+    "level_reward_records": {
+      "2:unlock_skin:cactus_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "cactus_turtle",
+        "level": 2,
+        "time": 1784912788663,
+        "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1784996269635,
+        "applied": true
+      }
+    },
     "achievement_stats": {
-      "counter:gacha_draws": 29,
-      "counter:gacha_five": 1
+      "counter:gacha_draws": 65,
+      "counter:gacha_five": 1,
+      "event_branch_count:sleep:good_night": 1,
+      "event_branch_count:sleep:good_night:last_at": 1784912741250,
+      "event_branch_count:feed:full": 1,
+      "event_branch_count:feed:full:last_at": 1784912834479
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -94,9 +122,104 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "sleep_good_night": {
+        "id": "sleep_good_night",
+        "name": "好好睡觉",
+        "rarity": 3,
+        "time": 1784912741251,
+        "actor_name": "私募kl",
+        "stat_key": "event_branch_count:sleep:good_night",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "downcast_sweat_turtle",
+            "skin_name": "冒汗小若汁",
+            "message": "解锁三星皮肤「冒汗小若汁」。"
+          }
+        ]
+      },
+      "feed_full_once": {
+        "id": "feed_full_once",
+        "name": "真的吃不下",
+        "rarity": 3,
+        "time": 1784912834480,
+        "actor_name": "私募kl",
+        "stat_key": "event_branch_count:feed:full",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "astonished_turtle",
+            "skin_name": "吃惊小若汁",
+            "message": "解锁三星皮肤「吃惊小若汁」。"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "coffee_turtle",
+        "reason": "gacha",
+        "time": 1785060580077
+      },
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1784996269635,
+        "level": 3
+      },
+      {
+        "skin_id": "mushroom_shell_turtle",
+        "reason": "gacha",
+        "time": 1784912878326
+      },
+      {
+        "skin_id": "astonished_turtle",
+        "reason": "achievement",
+        "time": 1784912834480,
+        "achievement_id": "feed_full_once"
+      },
+      {
+        "skin_id": "cactus_turtle",
+        "reason": "level_reward",
+        "time": 1784912788663,
+        "level": 2
+      },
+      {
+        "skin_id": "downcast_sweat_turtle",
+        "reason": "achievement",
+        "time": 1784912741251,
+        "achievement_id": "sleep_good_night"
+      },
+      {
+        "skin_id": "heart_shower_turtle",
+        "reason": "gacha",
+        "time": 1784911208019
+      },
+      {
+        "skin_id": "antler_turtle",
+        "reason": "gacha",
+        "time": 1784911208019
+      },
+      {
+        "skin_id": "love_letter_turtle",
+        "reason": "gacha",
+        "time": 1784889387944
+      },
       {
         "skin_id": "thumbs_up_turtle",
         "reason": "gacha",
@@ -235,17 +358,21 @@
     ]
   },
   "profile": {
-    "favorability": 3,
-    "weekly_contribution": 3,
-    "total_contribution": 3,
+    "favorability": 69,
+    "weekly_contribution": 69,
+    "total_contribution": 69,
     "last_display_name": "私募kl",
     "first_joined_at": 1784792061217,
-    "last_active_at": 1784888918186,
+    "last_active_at": 1785060580075,
     "daily": {
-      "date": "2026-07-24",
-      "event_count": 1,
+      "date": "2026-07-26",
+      "event_count": 5,
       "same_event_counts": {
-        "petting": 1
+        "feed": 1,
+        "petting": 1,
+        "sunbathe": 1,
+        "sleep": 1,
+        "kiss": 1
       },
       "negative_shared_impact": 0
     },
@@ -253,199 +380,144 @@
       "week": "2026-W30"
     },
     "currency": {
-      "balance": 23128,
-      "total_earned": 23128,
-      "total_spent": 0,
+      "balance": 48441,
+      "total_earned": 56441,
+      "total_spent": 8000,
       "ledger": [
         {
-          "time": 1784888918170,
+          "time": 1785060580077,
           "type": "income",
-          "reason": "ww_guess_role_settlement",
-          "amount": 1312,
-          "before": 21816,
-          "after": 23128,
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 43441,
+          "after": 48441,
           "meta": {
-            "mode": "pixel",
-            "rounds": 20,
-            "score": 875,
-            "total_score": 1969.5
+            "skin_id": "bee_turtle",
+            "rarity": 4
           }
         },
         {
-          "time": 1784888426149,
-          "type": "income",
-          "reason": "ww_guess_role_settlement",
-          "amount": 728,
-          "before": 21088,
-          "after": 21816,
-          "meta": {
-            "mode": "pixel",
-            "rounds": 20,
-            "score": 485,
-            "total_score": 1745
-          }
-        },
-        {
-          "time": 1784887751589,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 20588,
-          "after": 21088,
-          "meta": {
-            "date": "2026-07-24"
-          }
-        },
-        {
-          "time": 1784887522648,
+          "time": 1785060580077,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 20288,
-          "after": 20588,
-          "meta": {
-            "skin_id": "headphones_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1784887522648,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19988,
-          "after": 20288,
-          "meta": {
-            "skin_id": "sparkling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1784887522648,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19688,
-          "after": 19988,
-          "meta": {
-            "skin_id": "sneaker_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1784887522648,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19388,
-          "after": 19688,
+          "before": 43141,
+          "after": 43441,
           "meta": {
             "skin_id": "tear_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784887508460,
+          "time": 1785060580077,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 19088,
-          "after": 19388,
+          "before": 42841,
+          "after": 43141,
           "meta": {
-            "skin_id": "headphones_turtle",
+            "skin_id": "heart_shower_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784887508460,
+          "time": 1785060580076,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 18788,
-          "after": 19088,
+          "before": 42541,
+          "after": 42841,
           "meta": {
             "skin_id": "fruit_hat_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784887508460,
+          "time": 1784996269634,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 42241,
+          "after": 42541,
+          "meta": {
+            "level": 3
+          }
+        },
+        {
+          "time": 1784996213413,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 41741,
+          "after": 42241,
+          "meta": {
+            "date": "2026-07-26"
+          }
+        },
+        {
+          "time": 1784996187590,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 18488,
-          "after": 18788,
+          "before": 41441,
+          "after": 41741,
           "meta": {
-            "skin_id": "ribbon_turtle",
+            "skin_id": "music_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1784996187590,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 41141,
+          "after": 41441,
+          "meta": {
+            "skin_id": "music_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1784996187590,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 40841,
+          "after": 41141,
+          "meta": {
+            "skin_id": "fruit_hat_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1784996187590,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 40541,
+          "after": 40841,
+          "meta": {
+            "skin_id": "love_letter_turtle",
             "rarity": 3
           }
         }
       ],
       "sign": {
-        "last_date": "2026-07-24",
-        "total_count": 1,
+        "last_date": "2026-07-26",
+        "total_count": 3,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-07-24"
+      "first_interaction_reward_date": "2026-07-26"
     },
     "items": {
-      "ruozhi_fate": 9,
+      "ruozhi_fate": 1,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
       {
-        "time": 1784888918187,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 3,
-        "after": 9,
-        "reason": "ww_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "pixel"
-        }
-      },
-      {
-        "time": 1784888426160,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 1,
-        "after": 3,
-        "reason": "ww_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "pixel"
-        }
-      },
-      {
-        "time": 1784887898162,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784887522649,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 1,
-        "after": 4,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_five_1"
-        }
-      },
-      {
-        "time": 1784887522648,
+        "time": 1785060580076,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 15,
@@ -457,121 +529,194 @@
         }
       },
       {
-        "time": 1784887508460,
-        "type": "expense",
+        "time": 1785060516704,
+        "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 46,
+        "amount": 10,
+        "before": 6,
         "after": 16,
-        "reason": "gacha_draw",
+        "reason": "pet_production_collect",
         "meta": {
-          "count": 10
+          "accumulated_hours": 17.871
         }
       },
       {
-        "time": 1784887489134,
+        "time": 1784996269634,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 3,
-        "before": 43,
-        "after": 46,
-        "reason": "achievement_unlock",
+        "before": 3,
+        "after": 6,
+        "reason": "level_up_reward",
         "meta": {
-          "achievement_id": "gacha_draw_10"
+          "level": 3
         }
       },
       {
-        "time": 1784887489133,
+        "time": 1784996187589,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 30,
-        "before": 73,
-        "after": 43,
+        "before": 33,
+        "after": 3,
         "reason": "gacha_draw",
         "meta": {
           "count": 10
         }
       },
       {
-        "time": 1784887469155,
+        "time": 1784996180239,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 71,
-        "before": 2,
-        "after": 73,
+        "amount": 4,
+        "before": 29,
+        "after": 33,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 6.72
+        }
+      },
+      {
+        "time": 1784996173526,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 29,
+        "before": 0,
+        "after": 29,
         "reason": "daily_sign",
         "meta": {
-          "date": "2026-07-24",
-          "month_count": 1,
-          "first_sign_bonus": 60
+          "date": "2026-07-26",
+          "month_count": 3,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
         }
       },
       {
-        "time": 1784866517763,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "ww_wordle_win_fate",
-        "meta": {
-          "guesses": 4,
-          "difficulty": "hard"
-        }
-      },
-      {
-        "time": 1784811349757,
+        "time": 1784972001833,
         "type": "expense",
         "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 7,
-        "after": 1,
+        "amount": 12,
+        "before": 12,
+        "after": 0,
         "reason": "gacha_draw",
         "meta": {
-          "count": 2
+          "count": 4
         }
       },
       {
-        "time": 1784811172966,
+        "time": 1784971987068,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 10,
+        "before": 2,
+        "after": 12,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 16.581
+        }
+      },
+      {
+        "time": 1784912878326,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 11,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1784912834479,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "feed_full_once"
+        }
+      },
+      {
+        "time": 1784912788661,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 2
+        }
+      },
+      {
+        "time": 1784912741250,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "sleep_good_night"
+        }
+      },
+      {
+        "time": 1784912294544,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 2,
-        "before": 5,
-        "after": 7,
-        "reason": "ww_guess_role_settlement_fate",
+        "before": 0,
+        "after": 2,
+        "reason": "pet_production_collect",
         "meta": {
-          "rounds": 20,
-          "mode": "crop"
+          "accumulated_hours": 6.924
         }
       },
       {
-        "time": 1784793808348,
+        "time": 1784911208019,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 30,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1784911195802,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "ww_skill_grid_settlement_fate",
+        "before": 29,
+        "after": 30,
+        "reason": "exchange_fate",
         "meta": {
-          "size": 10,
-          "solved": 14,
-          "total": 14
+          "count": 1,
+          "cost": 8000
         }
       },
       {
-        "time": 1784793165896,
+        "time": 1784911162717,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 3,
+        "amount": 28,
         "before": 1,
-        "after": 4,
-        "reason": "achievement_unlock",
+        "after": 29,
+        "reason": "daily_sign",
         "meta": {
-          "achievement_id": "gacha_draw_1"
+          "date": "2026-07-25",
+          "month_count": 2,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
         }
       },
       {
-        "time": 1784793165895,
+        "time": 1784890090823,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 3,
@@ -583,48 +728,48 @@
         }
       },
       {
-        "time": 1784793040754,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "mihoyo_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "pixel"
-        }
-      },
-      {
-        "time": 1784792274585,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "ww_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "pixel"
-        }
-      },
-      {
-        "time": 1784792061230,
+        "time": 1784889978243,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 2,
-        "before": 0,
+        "before": 2,
+        "after": 4,
+        "reason": "ww_wordle_win_fate",
+        "meta": {
+          "guesses": 5,
+          "difficulty": "hard"
+        }
+      },
+      {
+        "time": 1784889387943,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 11,
         "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1784889151497,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 9,
+        "after": 11,
         "reason": "ww_guess_role_settlement_fate",
         "meta": {
           "rounds": 20,
-          "mode": "crop"
+          "mode": "pixel"
         }
       }
     ],
     "item_daily": {
-      "date": "2026-07-24",
-      "fate_exchange_count": 0
+      "date": "2026-07-26",
+      "fate_exchange_count": 0,
+      "game_fate_reward_count": 0
     },
     "item_migrations": {
       "fate_v1": {
@@ -637,13 +782,107 @@
     "item_sign": {
       "month": "2026-07",
       "dates": [
-        "2026-07-24"
+        "2026-07-24",
+        "2026-07-25",
+        "2026-07-26"
       ]
     }
   },
   "recent_events": [
     {
-      "time": 1784887751589,
+      "time": 1784996269636,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "kiss",
+      "branch_id": "happy",
+      "summary": "小若汁开心地接受了亲亲，还轻轻蹭了蹭私募kl。",
+      "effects_text": "心情+6，好感+4，贡献+4，经验+14，升级到 Lv.3",
+      "effects": {
+        "satiety": 0,
+        "mood": 6,
+        "health": 0,
+        "favorability": 4,
+        "contribution": 4,
+        "experience": 14
+      },
+      "level_ups": [
+        {
+          "level": 3,
+          "need": 120
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 3,
+          "reward": 300,
+          "receiver": {
+            "user_id": "2221995681",
+            "display_name": "私募kl"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 3,
+              "skin_id": "beam_turtle",
+              "skin_name": "咧嘴小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784996235603,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "sleep",
+      "branch_id": "good_night",
+      "summary": "小若汁听见私募kl说晚安，慢慢把脑袋缩进了龟壳。",
+      "effects_text": "饱食-1，心情+3，健康+2，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": -1,
+        "mood": 3,
+        "health": 2,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784996229221,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "sunbathe",
+      "branch_id": "lazy",
+      "summary": "小若汁趴在阳光下，把四肢都舒展开了。",
+      "effects_text": "心情+4，健康+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 0,
+        "mood": 4,
+        "health": 2,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784996222257,
       "user_id": "2221995681",
       "display_name": "私募kl",
       "event_id": "petting",
@@ -660,22 +899,187 @@
       },
       "level_ups": [],
       "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784996213413,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 21088
+        "balance": 42241
       },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784972096911,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "petting",
+      "branch_id": "normal_comfortable",
+      "summary": "私募kl轻轻摸了摸小若汁，小若汁舒服地眯起了眼睛。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+3",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 3
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784972053471,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "kiss",
+      "branch_id": "accept",
+      "summary": "小若汁有点不好意思，但没有躲开这次亲亲。",
+      "effects_text": "心情+4，好感+3，贡献+3，经验+3",
+      "effects": {
+        "satiety": 0,
+        "mood": 4,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 3
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784972046307,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+6，心情+1，好感+1，贡献+1，经验+1",
+      "effects": {
+        "satiety": 6,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784972040041,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+6，心情+1，好感+1，贡献+1，经验+1",
+      "effects": {
+        "satiety": 6,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1784912867431,
+      "user_id": "2221995681",
+      "display_name": "私募kl",
+      "event_id": "kiss",
+      "branch_id": "accept",
+      "summary": "小若汁有点不好意思，但没有躲开这次亲亲。",
+      "effects_text": "心情+4，好感+3，贡献+3，经验+3",
+      "effects": {
+        "satiety": 0,
+        "mood": 4,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 3
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-07-24",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "date": "2026-07-26",
+    "event_count": 5,
+    "bonus_event_count": 5
   },
   "processed_messages": {
-    "event:1781649402": 1784887751588
+    "event:1781649402": 1784887751588,
+    "event:990629879": 1784912288650,
+    "event:153359482": 1784912701007,
+    "event:69145933": 1784912709839,
+    "event:1287872116": 1784912720731,
+    "event:1387470441": 1784912741248,
+    "event:207065868": 1784912781536,
+    "event:730348139": 1784912788660,
+    "event:1539772680": 1784912801408,
+    "event:1119233705": 1784912805431,
+    "event:1695378977": 1784912809487,
+    "event:1990859923": 1784912818763,
+    "event:322577705": 1784912824325,
+    "event:798703429": 1784912830234,
+    "event:2005604578": 1784912834479,
+    "event:2082974171": 1784912852320,
+    "event:1436058357": 1784912855137,
+    "event:2020413435": 1784912862371,
+    "event:1732558171": 1784912867431,
+    "event:582905012": 1784972040040,
+    "event:54956662": 1784972046306,
+    "event:186240180": 1784972053470,
+    "event:1756777806": 1784972096911,
+    "event:1276790484": 1784996213412,
+    "event:955907057": 1784996222255,
+    "event:1084257699": 1784996229221,
+    "event:1906011672": 1784996235602,
+    "event:91817377": 1784996269632
   },
   "skin_sessions": {
     "active": null
@@ -688,12 +1092,12 @@
     "migrated_at": 1784792061217
   },
   "created_at": 1784792061217,
-  "updated_at": 1784888918187,
+  "updated_at": 1785060580078,
   "gacha": {
-    "since_four_plus": 5,
-    "since_five": 5,
-    "total_draws": 29,
-    "total_four": 5,
+    "since_four_plus": 0,
+    "since_five": 41,
+    "total_draws": 65,
+    "total_four": 10,
     "total_five": 1,
     "five_history": [
       {
@@ -709,9 +1113,10 @@
   },
   "production": {
     "started_at": 1784887367582,
-    "last_settled_at": 1784888918186,
-    "accumulated_ms": 1550604,
-    "progress": 0.09352672164697748,
-    "total_produced": 0
+    "last_settled_at": 1785060580075,
+    "accumulated_ms": 63371,
+    "progress": 0.10367299302421232,
+    "total_produced": 26,
+    "last_collected_at": 1785060516704
   }
 }
