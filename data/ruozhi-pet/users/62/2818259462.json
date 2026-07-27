@@ -3,7 +3,7 @@
   "user_id": "2818259462",
   "pet": {
     "level": 3,
-    "experience": 115,
+    "experience": 122,
     "satiety": 32,
     "mood": 100,
     "health": 94,
@@ -202,6 +202,36 @@
         "name": "发现潮汐自由港",
         "rarity": 3,
         "time": 1785142421626,
+        "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785143170338,
+        "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_botanical_dome": {
+        "id": "ach_rtc_botanical_dome",
+        "name": "发现玻璃穹顶植物园",
+        "rarity": 3,
+        "time": 1785143461412,
         "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
         "rewards": [
           {
@@ -470,7 +500,7 @@
     "total_contribution": 70,
     "last_display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
     "first_joined_at": 1784722630639,
-    "last_active_at": 1785142701460,
+    "last_active_at": 1785143461954,
     "daily": {
       "date": "2026-07-27",
       "event_count": 2,
@@ -483,10 +513,36 @@
       "week": "2026-W31"
     },
     "currency": {
-      "balance": 39886,
-      "total_earned": 154886,
+      "balance": 43367,
+      "total_earned": 158367,
       "total_spent": 115000,
       "ledger": [
+        {
+          "time": 1785143461408,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 500,
+          "before": 42867,
+          "after": 43367,
+          "meta": {
+            "travel_id": "ms30ag1n-er8xcjte",
+            "location_id": "rtc_botanical_dome",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785143170337,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2981,
+          "before": 39886,
+          "after": 42867,
+          "meta": {
+            "travel_id": "ms2zt3hv-mkwx6a8j",
+            "location_id": "eld_silver_capital",
+            "forced_by": "pager"
+          }
+        },
         {
           "time": 1785142421625,
           "type": "income",
@@ -584,30 +640,6 @@
             "skin_id": "thumbs_up_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785140892095,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 75407,
-          "after": 75707,
-          "meta": {
-            "skin_id": "coffee_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785140892095,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 75107,
-          "after": 75407,
-          "meta": {
-            "skin_id": "fruit_hat_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -619,13 +651,75 @@
       "first_interaction_reward_date": "2026-07-27"
     },
     "items": {
-      "ruozhi_fate": 15,
+      "ruozhi_fate": 28,
       "nameless_ruozhi": 3,
       "travel_checklist": 8,
-      "travel_pager": 8,
+      "travel_pager": 7,
       "souvenir_tidal_blue_shell": 1
     },
     "item_ledger": [
+      {
+        "time": 1785143461412,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 25,
+        "after": 28,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785143461409,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 24,
+        "after": 25,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "ms30ag1n-er8xcjte",
+          "location_id": "rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785143170338,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 21,
+        "after": 24,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_silver_capital"
+        }
+      },
+      {
+        "time": 1785143170337,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 15,
+        "after": 21,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "ms2zt3hv-mkwx6a8j",
+          "location_id": "eld_silver_capital"
+        }
+      },
+      {
+        "time": 1785143170332,
+        "type": "expense",
+        "item_id": "travel_pager",
+        "amount": 1,
+        "before": 8,
+        "after": 7,
+        "reason": "use_pager",
+        "meta": {
+          "travel_id": "ms2zt3hv-mkwx6a8j"
+        }
+      },
       {
         "time": 1785142591980,
         "type": "expense",
@@ -809,80 +903,6 @@
         "meta": {
           "achievement_id": "gacha_draw_100"
         }
-      },
-      {
-        "time": 1785140892095,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 19,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 6
-        }
-      },
-      {
-        "time": 1785140886907,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 13,
-        "after": 19,
-        "reason": "idiom_chain_fate",
-        "meta": {
-          "rounds": 30,
-          "mode": "normal",
-          "planned_amount": 6,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785139126768,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 9,
-        "after": 13,
-        "reason": "ww_skill_grid_settlement_fate",
-        "meta": {
-          "size": 10,
-          "solved": 14,
-          "total": 14,
-          "planned_amount": 4,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785137684437,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 7,
-        "after": 9,
-        "reason": "ww_skill_grid_settlement_fate",
-        "meta": {
-          "size": 10,
-          "solved": 14,
-          "total": 15,
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785116262411,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 5,
-        "after": 7,
-        "reason": "zzz_wordle_win_fate",
-        "meta": {
-          "guesses": 6,
-          "difficulty": "normal",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
@@ -894,7 +914,7 @@
         "travel_pager": 10
       },
       "use_counts": {
-        "travel_pager": 2
+        "travel_pager": 3
       }
     },
     "item_migrations": {
@@ -1228,7 +1248,7 @@
     "migrated_at": 1784722630639
   },
   "created_at": 1784722630639,
-  "updated_at": 1785142701460,
+  "updated_at": 1785143461954,
   "gacha": {
     "since_four_plus": 5,
     "since_five": 27,
@@ -1249,16 +1269,18 @@
   },
   "production": {
     "started_at": 1784871541125,
-    "last_settled_at": 1785142701459,
-    "accumulated_ms": 1798727,
-    "progress": 0.3134558827403173,
+    "last_settled_at": 1785143461954,
+    "accumulated_ms": 2559222,
+    "progress": 0.42610937342253696,
     "total_produced": 37,
     "last_collected_at": 1785140902732
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_central_station",
-      "eld_free_port"
+      "eld_free_port",
+      "eld_silver_capital",
+      "rtc_botanical_dome"
     ],
     "location_records": {
       "rtc_central_station": {
@@ -1276,6 +1298,22 @@
         "travel_id": "ms2znghj-ui6d9yt9",
         "time": 1785142421625,
         "carried_item_id": "travel_checklist"
+      },
+      "eld_silver_capital": {
+        "id": "eld_silver_capital",
+        "map_id": "eldoran_continent",
+        "name": "银冠王城",
+        "travel_id": "ms2zt3hv-mkwx6a8j",
+        "time": 1785143170337,
+        "carried_item_id": "travel_checklist"
+      },
+      "rtc_botanical_dome": {
+        "id": "rtc_botanical_dome",
+        "map_id": "retro_tomorrow_city",
+        "name": "玻璃穹顶植物园",
+        "travel_id": "ms30ag1n-er8xcjte",
+        "time": 1785143461410,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1332,6 +1370,36 @@
         "name": "发现潮汐自由港",
         "rarity": 3,
         "time": 1785142421626,
+        "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785143170338,
+        "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_botanical_dome": {
+        "id": "ach_rtc_botanical_dome",
+        "name": "发现玻璃穹顶植物园",
+        "rarity": 3,
+        "time": 1785143461412,
         "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
         "rewards": [
           {
@@ -1473,9 +1541,125 @@
         "settled_at": 1785142421626,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：47分钟\n获得：866若汁币，若汁之缘×1，经验+1\n携带道具：旅行清单\n旅行事件：贝壳市场\n小若汁用一个普通贝壳换到另一个更蓝的贝壳。\n纪念品：🐚潮汐蓝贝壳×1\n新地点已解锁：潮汐自由港\n达成旅行成就「发现潮汐自由港」 ★★★"
+      },
+      "ms2zt3hv-mkwx6a8j": {
+        "id": "ms2zt3hv-mkwx6a8j",
+        "user_id": "2818259462",
+        "group_id": "1054409426",
+        "self_id": "3874871823",
+        "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_silver_capital",
+        "location_name": "银冠王城",
+        "duration_ms": 10732779,
+        "rewards": {
+          "coin": 2981,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "银冠王城",
+        "achievements": [
+          {
+            "id": "ach_eld_silver_capital",
+            "name": "发现银冠王城",
+            "rarity": 3,
+            "time": 1785143170338,
+            "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现银冠王城」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1785143170338,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时59分钟\n获得：2981若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★"
+      },
+      "ms30ag1n-er8xcjte": {
+        "id": "ms30ag1n-er8xcjte",
+        "user_id": "2818259462",
+        "group_id": "1054409426",
+        "self_id": "3874871823",
+        "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_botanical_dome",
+        "location_name": "玻璃穹顶植物园",
+        "duration_ms": 60000,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "玻璃穹顶植物园",
+        "achievements": [
+          {
+            "id": "ach_rtc_botanical_dome",
+            "name": "发现玻璃穹顶植物园",
+            "rarity": 3,
+            "time": 1785143461412,
+            "actor_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现玻璃穹顶植物园」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785143461413,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：玻璃穹顶植物园\n达成旅行成就「发现玻璃穹顶植物园」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "ms30ag1n-er8xcjte",
+        "group_id": "1054409426",
+        "self_id": "3874871823",
+        "user_id": "2818259462",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：玻璃穹顶植物园\n达成旅行成就「发现玻璃穹顶植物园」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785143461413,
+        "created_at": 1785143461413,
+        "sent_at": 1785143461954,
+        "last_error": ""
+      },
+      {
+        "travel_id": "ms2zt3hv-mkwx6a8j",
+        "group_id": "1054409426",
+        "self_id": "3874871823",
+        "user_id": "2818259462",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时59分钟\n获得：2981若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1785143170338,
+        "created_at": 1785143170338,
+        "sent_at": 0,
+        "last_error": ""
+      },
       {
         "travel_id": "ms2znghj-ui6d9yt9",
         "group_id": "1054409426",
@@ -1504,11 +1688,11 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 4,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 1,
-        "eldoran_continent": 1
+        "retro_tomorrow_city": 2,
+        "eldoran_continent": 2
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -1519,29 +1703,7 @@
         "eld_event_shell_market": 1
       }
     },
-    "active": {
-      "id": "ms2zt3hv-mkwx6a8j",
-      "user_id": "2818259462",
-      "display_name": "嗯呐大爆炸⌖ic·alter哈哈哈",
-      "group_id": "1054409426",
-      "self_id": "3874871823",
-      "started_at": 1785142591987,
-      "ends_at": 1785153324766,
-      "duration_ms": 10732779,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_silver_capital",
-      "location_name": "银冠王城",
-      "was_unlocked": false,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": null,
-      "rewards": {
-        "coin": 2981,
-        "fate": 6,
-        "experience": 6
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }
