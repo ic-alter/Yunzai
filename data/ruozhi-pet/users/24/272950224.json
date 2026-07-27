@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "272950224",
   "pet": {
-    "level": 2,
-    "experience": 38,
-    "satiety": 45,
+    "level": 3,
+    "experience": 20,
+    "satiety": 67,
     "mood": 100,
     "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785061666593,
+    "satiety_decay_at": 1785141484342,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -45,7 +45,9 @@
       "headphones_turtle",
       "tear_turtle",
       "paint_splash_turtle",
-      "mushroom_shell_turtle"
+      "mushroom_shell_turtle",
+      "watermelon_turtle",
+      "beam_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -54,10 +56,17 @@
         "level": 2,
         "time": 1784974553900,
         "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1785115557206,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 63,
+      "counter:gacha_draws": 76,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -97,6 +106,17 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1785115557206,
+        "level": 3
+      },
+      {
+        "skin_id": "watermelon_turtle",
+        "reason": "gacha",
+        "time": 1785082538246
+      },
       {
         "skin_id": "mushroom_shell_turtle",
         "reason": "gacha",
@@ -281,162 +301,272 @@
     ]
   },
   "profile": {
-    "favorability": 30,
-    "weekly_contribution": 28,
-    "total_contribution": 28,
+    "favorability": 52,
+    "weekly_contribution": 19,
+    "total_contribution": 50,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1785061669231,
+    "last_active_at": 1785142701422,
     "daily": {
-      "date": "2026-07-26",
-      "event_count": 2,
+      "date": "2026-07-27",
+      "event_count": 8,
       "same_event_counts": {
-        "mention_only": 1,
-        "feed": 1
+        "feed": 7,
+        "kiss": 1
       },
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W30"
+      "week": "2026-W31"
     },
     "currency": {
-      "balance": 25258,
-      "total_earned": 49258,
-      "total_spent": 24000,
+      "balance": 6921,
+      "total_earned": 54921,
+      "total_spent": 48000,
       "ledger": [
         {
-          "time": 1785061669231,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 20258,
-          "after": 25258,
-          "meta": {
-            "skin_id": "oni_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1785061669231,
+          "time": 1785115674424,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 19958,
-          "after": 20258,
+          "before": 6621,
+          "after": 6921,
           "meta": {
-            "skin_id": "bouquet_turtle",
+            "skin_id": "starry_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785061669231,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19658,
-          "after": 19958,
+          "time": 1785115670449,
+          "type": "expense",
+          "reason": "exchange_fate",
+          "amount": 24000,
+          "before": 30621,
+          "after": 6621,
           "meta": {
-            "skin_id": "heart_shower_turtle",
-            "rarity": 3
+            "count": 3
           }
         },
         {
-          "time": 1785061669231,
+          "time": 1785115566923,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 19358,
-          "after": 19658,
+          "before": 30321,
+          "after": 30621,
           "meta": {
             "skin_id": "frog_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785061669231,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 14358,
-          "after": 19358,
-          "meta": {
-            "skin_id": "gift_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1784995899539,
+          "time": 1785115566923,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 14058,
-          "after": 14358,
+          "before": 30021,
+          "after": 30321,
+          "meta": {
+            "skin_id": "coffee_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785115557204,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 29721,
+          "after": 30021,
+          "meta": {
+            "level": 3
+          }
+        },
+        {
+          "time": 1785082520345,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 29221,
+          "after": 29721,
+          "meta": {
+            "date": "2026-07-27"
+          }
+        },
+        {
+          "time": 1785082462793,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 28921,
+          "after": 29221,
           "meta": {
             "skin_id": "fruit_hat_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784995899539,
+          "time": 1785082462793,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 13758,
-          "after": 14058,
+          "before": 28621,
+          "after": 28921,
           "meta": {
             "skin_id": "birthday_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784995899539,
+          "time": 1785082462793,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 13458,
-          "after": 13758,
+          "before": 28321,
+          "after": 28621,
           "meta": {
-            "skin_id": "volleyball_turtle",
+            "skin_id": "puppy_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1784995899539,
+          "time": 1785082462793,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 13158,
-          "after": 13458,
+          "before": 28021,
+          "after": 28321,
           "meta": {
-            "skin_id": "love_letter_turtle",
+            "skin_id": "tear_turtle",
             "rarity": 3
-          }
-        },
-        {
-          "time": 1784995883416,
-          "type": "income",
-          "reason": "daily_sign",
-          "amount": 1417,
-          "before": 11741,
-          "after": 13158,
-          "meta": {
-            "date": "2026-07-26"
           }
         }
       ],
       "sign": {
-        "last_date": "2026-07-26",
-        "total_count": 3,
+        "last_date": "2026-07-27",
+        "total_count": 4,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-07-26"
+      "first_interaction_reward_date": "2026-07-27"
     },
     "items": {
-      "ruozhi_fate": 1,
+      "ruozhi_fate": 2,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785115674423,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
+      {
+        "time": 1785115670449,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "exchange_fate",
+        "meta": {
+          "count": 3,
+          "cost": 24000
+        }
+      },
+      {
+        "time": 1785115566923,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 8,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
+      {
+        "time": 1785115557204,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 3
+        }
+      },
+      {
+        "time": 1785115528237,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 0,
+        "after": 5,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 9.165
+        }
+      },
+      {
+        "time": 1785082538246,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
+      {
+        "time": 1785082535732,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 5.798
+        }
+      },
+      {
+        "time": 1785082462793,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 27,
+        "before": 27,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 9
+        }
+      },
+      {
+        "time": 1785082458802,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 26,
+        "before": 1,
+        "after": 27,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-07-27",
+          "month_count": 4,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
       {
         "time": 1785061669231,
         "type": "expense",
@@ -574,128 +704,11 @@
         "meta": {
           "count": 1
         }
-      },
-      {
-        "time": 1784951244790,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 2,
-        "after": 4,
-        "reason": "ww_wordle_win_fate",
-        "meta": {
-          "guesses": 2,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1784951219467,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "ww_wordle_win_fate",
-        "meta": {
-          "guesses": 8,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1784950825220,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 6,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 2
-        }
-      },
-      {
-        "time": 1784950811262,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 1,
-        "after": 6,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 10.695
-        }
-      },
-      {
-        "time": 1784912492575,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784912309164,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 1,
-        "after": 4,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 10.202
-        }
-      },
-      {
-        "time": 1784911676229,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784911663428,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 2,
-        "after": 4,
-        "reason": "ww_wordle_win_fate",
-        "meta": {
-          "guesses": 5,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1784909377638,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 27,
-        "before": 29,
-        "after": 2,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 9
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-07-26",
-      "fate_exchange_count": 0,
+      "date": "2026-07-27",
+      "fate_exchange_count": 3,
       "game_fate_reward_count": 0
     },
     "item_migrations": {
@@ -711,11 +724,222 @@
       "dates": [
         "2026-07-24",
         "2026-07-25",
-        "2026-07-26"
+        "2026-07-26",
+        "2026-07-27"
       ]
     }
   },
   "recent_events": [
+    {
+      "time": 1785115564342,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁只吃了一小口。",
+      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 4,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115557206,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.3",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [
+        {
+          "level": 3,
+          "need": 120
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 3,
+          "reward": 300,
+          "receiver": {
+            "user_id": "272950224",
+            "display_name": "北游的主人"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 3,
+              "skin_id": "beam_turtle",
+              "skin_name": "咧嘴小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115553378,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115548733,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115544398,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115539785,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "kiss",
+      "branch_id": "accept",
+      "summary": "小若汁有点不好意思，但没有躲开这次亲亲。",
+      "effects_text": "心情+4，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 4,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785115532833,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785082520345,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 29721
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785061666595,
       "user_id": "272950224",
@@ -764,219 +988,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1784974559956,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974553900,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11，升级到 Lv.2",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [
-        {
-          "level": 2,
-          "need": 100
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [
-        {
-          "level": 2,
-          "reward": 300,
-          "receiver": {
-            "user_id": "272950224",
-            "display_name": "北游的主人"
-          },
-          "special_rewards": [
-            {
-              "type": "unlock_skin",
-              "level": 2,
-              "skin_id": "cactus_turtle",
-              "skin_name": "仙人掌小若汁",
-              "applied": true
-            }
-          ]
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974547636,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974537068,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
-      "effects_text": "心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 0,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974529934,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974496731,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974490219,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1784974485447,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-07-26",
-    "event_count": 2,
-    "bonus_event_count": 2
+    "date": "2026-07-27",
+    "event_count": 8,
+    "bonus_event_count": 8
   },
   "processed_messages": {
     "event:2094525768": 1784974461548,
@@ -989,7 +1006,15 @@
     "event:90032883": 1784974553898,
     "event:1026097666": 1784974559954,
     "event:1445579553": 1784995879596,
-    "event:1421842590": 1785061666591
+    "event:1421842590": 1785061666591,
+    "event:1361091606": 1785082520345,
+    "event:2107503836": 1785115532831,
+    "event:1535874960": 1785115539785,
+    "event:1792021107": 1785115544398,
+    "event:1157573337": 1785115548733,
+    "event:925609909": 1785115553378,
+    "event:1642227599": 1785115557204,
+    "event:616227393": 1785115564341
   },
   "skin_sessions": {
     "active": null
@@ -1002,12 +1027,12 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1785061669231,
+  "updated_at": 1785142701422,
   "gacha": {
-    "since_four_plus": 0,
-    "since_five": 63,
-    "total_draws": 63,
-    "total_four": 9,
+    "since_four_plus": 3,
+    "since_five": 76,
+    "total_draws": 76,
+    "total_four": 10,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,
@@ -1015,10 +1040,26 @@
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1785061669231,
-    "accumulated_ms": 7011,
-    "progress": 0.2537204975489184,
-    "total_produced": 25,
-    "last_collected_at": 1785061662220
+    "last_settled_at": 1785142701422,
+    "accumulated_ms": 27173185,
+    "progress": 4.5596231241058085,
+    "total_produced": 33,
+    "last_collected_at": 1785115528237
+  },
+  "travel": {
+    "unlocked_location_ids": [],
+    "location_records": {},
+    "event_records": {},
+    "souvenir_records": {},
+    "achievement_records": {},
+    "settlements": {},
+    "notifications": [],
+    "stats": {
+      "total_trips": 0,
+      "key_item_discoveries": {},
+      "map_location_counts": {},
+      "map_event_ids": {},
+      "event_ids": {}
+    }
   }
 }
