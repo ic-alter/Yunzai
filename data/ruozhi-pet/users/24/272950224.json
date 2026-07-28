@@ -4,11 +4,11 @@
   "pet": {
     "level": 3,
     "experience": 20,
-    "satiety": 66,
+    "satiety": 12,
     "mood": 100,
     "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785142924342,
+    "satiety_decay_at": 1785220684342,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -47,7 +47,12 @@
       "paint_splash_turtle",
       "mushroom_shell_turtle",
       "watermelon_turtle",
-      "beam_turtle"
+      "beam_turtle",
+      "faceless_turtle",
+      "hearts_turtle",
+      "lying_turtle",
+      "sei_shonagon_turtle",
+      "parachute_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -66,8 +71,8 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 76,
-      "counter:gacha_five": 0
+      "counter:gacha_draws": 89,
+      "counter:gacha_five": 2
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -103,9 +108,51 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_five_1": {
+        "id": "gacha_five_1",
+        "name": "金光初现",
+        "rarity": 3,
+        "time": 1785183001754,
+        "actor_name": "北游的主人",
+        "stat_key": "counter:gacha_five",
+        "count": 2,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "parachute_turtle",
+        "reason": "gacha",
+        "time": 1785183001753
+      },
+      {
+        "skin_id": "sei_shonagon_turtle",
+        "reason": "gacha",
+        "time": 1785183001753
+      },
+      {
+        "skin_id": "lying_turtle",
+        "reason": "gacha",
+        "time": 1785183001753
+      },
+      {
+        "skin_id": "hearts_turtle",
+        "reason": "gacha",
+        "time": 1785183001753
+      },
+      {
+        "skin_id": "faceless_turtle",
+        "reason": "gacha",
+        "time": 1785183001753
+      },
       {
         "skin_id": "beam_turtle",
         "reason": "level_reward",
@@ -306,24 +353,128 @@
     "total_contribution": 50,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1785143368373,
+    "last_active_at": 1785221795863,
     "daily": {
-      "date": "2026-07-27",
-      "event_count": 8,
-      "same_event_counts": {
-        "feed": 7,
-        "kiss": 1
-      },
+      "date": "2026-07-28",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W31"
     },
     "currency": {
-      "balance": 6921,
-      "total_earned": 54921,
+      "balance": 10570,
+      "total_earned": 58570,
       "total_spent": 48000,
       "ledger": [
+        {
+          "time": 1785183054093,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 10270,
+          "after": 10570,
+          "meta": {
+            "skin_id": "crown_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183054093,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 9970,
+          "after": 10270,
+          "meta": {
+            "skin_id": "bouquet_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183054093,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 9670,
+          "after": 9970,
+          "meta": {
+            "skin_id": "grasshopper_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183001753,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 9370,
+          "after": 9670,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183001753,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 9070,
+          "after": 9370,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183001753,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8770,
+          "after": 9070,
+          "meta": {
+            "skin_id": "hearts_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183001753,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8470,
+          "after": 8770,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785183001753,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8170,
+          "after": 8470,
+          "meta": {
+            "skin_id": "headphones_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785182987153,
+          "type": "income",
+          "reason": "daily_sign",
+          "amount": 1249,
+          "before": 6921,
+          "after": 8170,
+          "meta": {
+            "date": "2026-07-28"
+          }
+        },
         {
           "time": 1785115674424,
           "type": "income",
@@ -335,116 +486,11 @@
             "skin_id": "starry_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785115670449,
-          "type": "expense",
-          "reason": "exchange_fate",
-          "amount": 24000,
-          "before": 30621,
-          "after": 6621,
-          "meta": {
-            "count": 3
-          }
-        },
-        {
-          "time": 1785115566923,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 30321,
-          "after": 30621,
-          "meta": {
-            "skin_id": "frog_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785115566923,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 30021,
-          "after": 30321,
-          "meta": {
-            "skin_id": "coffee_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785115557204,
-          "type": "income",
-          "reason": "level_up_reward",
-          "amount": 300,
-          "before": 29721,
-          "after": 30021,
-          "meta": {
-            "level": 3
-          }
-        },
-        {
-          "time": 1785082520345,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 29221,
-          "after": 29721,
-          "meta": {
-            "date": "2026-07-27"
-          }
-        },
-        {
-          "time": 1785082462793,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 28921,
-          "after": 29221,
-          "meta": {
-            "skin_id": "fruit_hat_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785082462793,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 28621,
-          "after": 28921,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785082462793,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 28321,
-          "after": 28621,
-          "meta": {
-            "skin_id": "puppy_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785082462793,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 28021,
-          "after": 28321,
-          "meta": {
-            "skin_id": "tear_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
-        "last_date": "2026-07-27",
-        "total_count": 4,
+        "last_date": "2026-07-28",
+        "total_count": 5,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
@@ -455,6 +501,69 @@
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785183054093,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 11,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1785183001754,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_1"
+        }
+      },
+      {
+        "time": 1785183001753,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 38,
+        "after": 8,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1785182996008,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 10,
+        "before": 28,
+        "after": 38,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 18.741
+        }
+      },
+      {
+        "time": 1785182987153,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 26,
+        "before": 2,
+        "after": 28,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-07-28",
+          "month_count": 5,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
       {
         "time": 1785115674423,
         "type": "expense",
@@ -644,72 +753,14 @@
           "planned_amount": 2,
           "daily_limit": 60
         }
-      },
-      {
-        "time": 1784974565636,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784974553899,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 1,
-        "after": 4,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 2
-        }
-      },
-      {
-        "time": 1784971974544,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784971969014,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 1,
-        "after": 4,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 5.877
-        }
-      },
-      {
-        "time": 1784951255224,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-07-27",
-      "fate_exchange_count": 3,
-      "game_fate_reward_count": 0
+      "date": "2026-07-28",
+      "fate_exchange_count": 0,
+      "game_fate_reward_count": 0,
+      "shop_buy_counts": {},
+      "use_counts": {}
     },
     "item_migrations": {
       "fate_v1": {
@@ -725,7 +776,8 @@
         "2026-07-24",
         "2026-07-25",
         "2026-07-26",
-        "2026-07-27"
+        "2026-07-27",
+        "2026-07-28"
       ]
     }
   },
@@ -1027,24 +1079,39 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1785143368373,
+  "updated_at": 1785221795863,
   "gacha": {
-    "since_four_plus": 3,
-    "since_five": 76,
-    "total_draws": 76,
+    "since_four_plus": 6,
+    "since_five": 6,
+    "total_draws": 89,
     "total_four": 10,
-    "total_five": 0,
-    "five_history": [],
+    "total_five": 2,
+    "five_history": [
+      {
+        "time": 1785183001753,
+        "skin_id": "sei_shonagon_turtle",
+        "skin_name": "清少纳言小若汁",
+        "pulls": 4,
+        "draw_index": 83
+      },
+      {
+        "time": 1785183001753,
+        "skin_id": "faceless_turtle",
+        "skin_name": "无脸小若汁",
+        "pulls": 79,
+        "draw_index": 79
+      }
+    ],
     "route_misses": 0,
     "route_skin_id": ""
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1785143368373,
-    "accumulated_ms": 27840136,
-    "progress": 4.670598285916085,
-    "total_produced": 33,
-    "last_collected_at": 1785115528237
+    "last_settled_at": 1785221795863,
+    "accumulated_ms": 38799855,
+    "progress": 6.481440277616784,
+    "total_produced": 43,
+    "last_collected_at": 1785182996008
   },
   "travel": {
     "unlocked_location_ids": [],
