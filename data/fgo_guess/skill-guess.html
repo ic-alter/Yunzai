@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>FGO猜技能</title><link rel="stylesheet" href="{{cssFile}}"></head>
+<body><main id="container" class="sheet stage-{{stage}}">
+  <header><div><h1>FGO 猜技能</h1><p>{{subtitle}}</p></div><span>SKILL GUESS</span></header>
+  <section class="skills">
+    {{each skills skill}}
+      <article class="skill">
+        <img src="{{skill.icon}}">
+        {{if skill.showName}}<h2>{{skill.name}}</h2>{{/if}}
+        {{if skill.showDetail}}<p>{{skill.detail}}</p>{{/if}}
+      </article>
+    {{/each}}
+  </section>
+  <footer>回复从者名作答　·　提示 / 不知道　·　结束 / 不玩了</footer>
+</main></body></html>

@@ -3,12 +3,12 @@
   "user_id": "980711945",
   "pet": {
     "level": 2,
-    "experience": 53,
+    "experience": 56,
     "satiety": 5,
     "mood": 78,
     "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785718712912,
+    "satiety_decay_at": 1785725854358,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -551,6 +551,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_galaxy_motel": {
+        "id": "ach_rtc_galaxy_motel",
+        "name": "发现银河汽车旅馆",
+        "rarity": 3,
+        "time": 1785725265238,
+        "actor_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -833,7 +848,7 @@
     "total_contribution": 7,
     "last_display_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
     "first_joined_at": 1784860899630,
-    "last_active_at": 1785718712912,
+    "last_active_at": 1785725854358,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -844,10 +859,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 58711,
-      "total_earned": 144711,
+      "balance": 60537,
+      "total_earned": 146537,
       "total_spent": 86000,
       "ledger": [
+        {
+          "time": 1785725265237,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1826,
+          "before": 58711,
+          "after": 60537,
+          "meta": {
+            "travel_id": "mscisxqb-e850pd6q",
+            "location_id": "rtc_galaxy_motel",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785718712912,
           "type": "income",
@@ -955,19 +983,6 @@
             "skin_id": "parachute_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785696910237,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 590,
-          "before": 55421,
-          "after": 56011,
-          "meta": {
-            "travel_id": "msc4tapj-u4leatxs",
-            "location_id": "rtc_capsule_homes",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -979,7 +994,7 @@
       "first_interaction_reward_date": "2026-07-31"
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 17,
       "nameless_ruozhi": 0,
       "travel_pager": 7,
       "souvenir_clockwork_leaf": 1,
@@ -995,6 +1010,31 @@
       "souvenir_signal_record": 0
     },
     "item_ledger": [
+      {
+        "time": 1785725265238,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 14,
+        "after": 17,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1785725265237,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 10,
+        "after": 14,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscisxqb-e850pd6q",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
       {
         "time": 1785718712912,
         "type": "expense",
@@ -1224,30 +1264,6 @@
         "meta": {
           "cost": 2000
         }
-      },
-      {
-        "time": 1785634437079,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 36,
-        "after": 6,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785634410813,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 33,
-        "after": 36,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 8.192
-        }
       }
     ],
     "item_daily": {
@@ -1320,12 +1336,12 @@
     "migrated_at": 1784860899630
   },
   "created_at": 1784860899630,
-  "updated_at": 1785718712915,
+  "updated_at": 1785725854358,
   "production": {
     "started_at": 1784880910490,
-    "last_settled_at": 1785718712912,
-    "accumulated_ms": 9267,
-    "progress": 0.05073335781460121,
+    "last_settled_at": 1785725854358,
+    "accumulated_ms": 7150713,
+    "progress": 0.9964779559413607,
     "total_produced": 104,
     "last_collected_at": 1785718703645
   },
@@ -1369,7 +1385,8 @@
       "rtc_broadcast_tower",
       "eld_snow_mountain",
       "rtc_atomic_plant",
-      "rtc_rocket_base"
+      "rtc_rocket_base",
+      "rtc_galaxy_motel"
     ],
     "location_records": {
       "eld_silver_capital": {
@@ -1538,6 +1555,14 @@
         "name": "红沙火箭基地",
         "travel_id": "msaovo4u-70fajc5s",
         "time": 1785616238583,
+        "carried_item_id": ""
+      },
+      "rtc_galaxy_motel": {
+        "id": "rtc_galaxy_motel",
+        "map_id": "retro_tomorrow_city",
+        "name": "银河汽车旅馆",
+        "travel_id": "mscisxqb-e850pd6q",
+        "time": 1785725265237,
         "carried_item_id": ""
       }
     },
@@ -2130,6 +2155,21 @@
         "name": "发现红沙火箭基地",
         "rarity": 3,
         "time": 1785616238584,
+        "actor_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_galaxy_motel": {
+        "id": "ach_rtc_galaxy_motel",
+        "name": "发现银河汽车旅馆",
+        "rarity": 3,
+        "time": 1785725265238,
         "actor_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
         "rewards": [
           {
@@ -4290,9 +4330,67 @@
         "settled_at": 1785696910238,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：胶囊住宅区（明日旧城）\n旅行时间：29分钟\n获得：590若汁币，若汁之缘×1，经验+1\n携带道具：异常信号记录\n旅行事件：走错胶囊屋\n所有房子看起来都一样，小若汁拜访了三户人家才发现自己没有住在这里。"
+      },
+      "mscisxqb-e850pd6q": {
+        "id": "mscisxqb-e850pd6q",
+        "user_id": "980711945",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_galaxy_motel",
+        "location_name": "银河汽车旅馆",
+        "duration_ms": 6572429,
+        "rewards": {
+          "coin": 1826,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "银河汽车旅馆",
+        "achievements": [
+          {
+            "id": "ach_rtc_galaxy_motel",
+            "name": "发现银河汽车旅馆",
+            "rarity": 3,
+            "time": 1785725265238,
+            "actor_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现银河汽车旅馆」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785725265238,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时50分钟\n获得：1826若汁币，若汁之缘×4，经验+3\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscisxqb-e850pd6q",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "980711945",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时50分钟\n获得：1826若汁币，若汁之缘×4，经验+3\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785725265239,
+        "created_at": 1785725265239,
+        "sent_at": 1785725265485,
+        "last_error": ""
+      },
       {
         "travel_id": "msc4tapj-u4leatxs",
         "group_id": "415462812",
@@ -4539,23 +4637,10 @@
         "created_at": 1785522236802,
         "sent_at": 1785522237101,
         "last_error": ""
-      },
-      {
-        "travel_id": "ms905inc-q4qw7v3h",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "980711945",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：2小时22分钟\n获得：2840若汁币，若汁之缘×4，经验+5\n旅行事件：机器人巡游\n巡游机器人把小若汁当成新演员，给它安排了压轴位置。\n纪念品：🤖临时演员铭牌×1\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785514490761,
-        "created_at": 1785514490761,
-        "sent_at": 1785514491007,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 47,
+      "total_trips": 48,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -4564,7 +4649,7 @@
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 10,
+        "retro_tomorrow_city": 11,
         "eldoran_continent": 11
       },
       "map_event_ids": {
@@ -4608,29 +4693,7 @@
         "rtc_event_forbidden_frequency": 1
       }
     },
-    "active": {
-      "id": "mscisxqb-e850pd6q",
-      "user_id": "980711945",
-      "display_name": "【IGN】《鸣潮》共鸣者「景燃」实机演示",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785718692803,
-      "ends_at": 1785725265232,
-      "duration_ms": 6572429,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_galaxy_motel",
-      "location_name": "银河汽车旅馆",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 1826,
-        "fate": 4,
-        "experience": 3
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

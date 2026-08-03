@@ -3,12 +3,12 @@
   "user_id": "1539756040",
   "pet": {
     "level": 6,
-    "experience": 9,
-    "satiety": 55,
+    "experience": 10,
+    "satiety": 50,
     "mood": 100,
     "health": 94,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785718178576,
+    "satiety_decay_at": 1785725378576,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1147,7 +1147,7 @@
     "total_contribution": 101,
     "last_display_name": "菲八啾比",
     "first_joined_at": 1784791767616,
-    "last_active_at": 1785719087180,
+    "last_active_at": 1785725854349,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -1158,10 +1158,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 120262,
-      "total_earned": 440262,
+      "balance": 120855,
+      "total_earned": 440855,
       "total_spent": 320000,
       "ledger": [
+        {
+          "time": 1785721186156,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 593,
+          "before": 120262,
+          "after": 120855,
+          "meta": {
+            "travel_id": "mscj0lcn-zxiqfyp3",
+            "location_id": "rtc_flyover",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785719070915,
           "type": "income",
@@ -1269,18 +1282,6 @@
             "skin_id": "volleyball_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785719064685,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 112562,
-          "after": 112862,
-          "meta": {
-            "skin_id": "frog_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1292,7 +1293,7 @@
       "first_interaction_reward_date": "2026-08-02"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 2,
       "nameless_ruozhi": 2,
       "souvenir_moonbell_festival_ribbon": 1,
       "souvenir_tomorrow_child_ticket": 2,
@@ -1326,9 +1327,37 @@
       "souvenir_half_shell_aurora_photo": 1,
       "souvenir_temporary_astronaut_card": 1,
       "souvenir_safety_visit_badge": 1,
-      "souvenir_water_pattern_rubbing": 1
+      "souvenir_water_pattern_rubbing": 1,
+      "souvenir_slow_vehicle_sticker": 1
     },
     "item_ledger": [
+      {
+        "time": 1785721186156,
+        "type": "income",
+        "item_id": "souvenir_slow_vehicle_sticker",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscj0lcn-zxiqfyp3",
+          "event_id": "rtc_event_traffic_bot",
+          "location_id": "rtc_flyover"
+        }
+      },
+      {
+        "time": 1785721186156,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscj0lcn-zxiqfyp3",
+          "location_id": "rtc_flyover"
+        }
+      },
       {
         "time": 1785719070915,
         "type": "expense",
@@ -1555,31 +1584,6 @@
         "reason": "use_pager",
         "meta": {
           "travel_id": "mscj06we-1fnwwtb7"
-        }
-      },
-      {
-        "time": 1785719029637,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 57,
-        "after": 62,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mscj040v-w1n1ckfi",
-          "location_id": "eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1785719029629,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mscj040v-w1n1ckfi"
         }
       }
     ],
@@ -1921,7 +1925,7 @@
     "migrated_at": 1784791767616
   },
   "created_at": 1784791767616,
-  "updated_at": 1785719087180,
+  "updated_at": 1785725854349,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 0,
@@ -1977,9 +1981,9 @@
   },
   "production": {
     "started_at": 1784874763350,
-    "last_settled_at": 1785719087180,
-    "accumulated_ms": 90873,
-    "progress": 0.8363977907711669,
+    "last_settled_at": 1785725854349,
+    "accumulated_ms": 6858042,
+    "progress": 2.0230685253690273,
     "total_produced": 122,
     "last_collected_at": 1785718996307
   },
@@ -2500,6 +2504,13 @@
         "location_id": "eld_star_lake",
         "travel_id": "mscj0iqv-t7zsrjgl",
         "time": 1785719048553
+      },
+      "rtc_event_traffic_bot": {
+        "id": "rtc_event_traffic_bot",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_flyover",
+        "travel_id": "mscj0lcn-zxiqfyp3",
+        "time": 1785721186156
       }
     },
     "souvenir_records": {
@@ -2726,6 +2737,13 @@
         "event_id": "eld_event_water_map",
         "location_id": "eld_star_lake",
         "time": 1785719048553
+      },
+      "souvenir_slow_vehicle_sticker": {
+        "id": "souvenir_slow_vehicle_sticker",
+        "name": "低速车辆贴纸",
+        "event_id": "rtc_event_traffic_bot",
+        "location_id": "rtc_flyover",
+        "time": 1785721186156
       }
     },
     "achievement_records": {
@@ -7090,9 +7108,72 @@
         "settled_at": 1785719048553,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：沉星湖（艾尔多兰大陆）\n旅行时间：2小时11分钟\n获得：2276若汁币，若汁之缘×5，经验+4\n旅行事件：湖底地图\n湖水退去片刻，露出通向世界树之丘的发光纹路。\n纪念品：🗺️水纹拓片×1"
+      },
+      "mscj0lcn-zxiqfyp3": {
+        "id": "mscj0lcn-zxiqfyp3",
+        "user_id": "1539756040",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "菲八啾比",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_flyover",
+        "location_name": "飞跃立交桥",
+        "duration_ms": 2136142,
+        "rewards": {
+          "coin": 593,
+          "fate": 2,
+          "experience": 1
+        },
+        "event": {
+          "id": "rtc_event_traffic_bot",
+          "name": "交通机器人",
+          "text": "交通机器人给龟壳贴上了“低速车辆”标志。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_slow_vehicle_sticker",
+              "name": "低速车辆贴纸",
+              "emoji": "⚠️",
+              "description": "旅行纪念品「低速车辆贴纸」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_slow_vehicle_sticker",
+            "name": "低速车辆贴纸",
+            "emoji": "⚠️",
+            "description": "旅行纪念品「低速车辆贴纸」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785721186157,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：36分钟\n获得：593若汁币，若汁之缘×2，经验+1\n旅行事件：交通机器人\n交通机器人给龟壳贴上了“低速车辆”标志。\n纪念品：⚠️低速车辆贴纸×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscj0lcn-zxiqfyp3",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1539756040",
+        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：36分钟\n获得：593若汁币，若汁之缘×2，经验+1\n旅行事件：交通机器人\n交通机器人给龟壳贴上了“低速车辆”标志。\n纪念品：⚠️低速车辆贴纸×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785721186157,
+        "created_at": 1785721186157,
+        "sent_at": 1785721186452,
+        "last_error": ""
+      },
       {
         "travel_id": "mscj0iqv-t7zsrjgl",
         "group_id": "415462812",
@@ -7339,23 +7420,10 @@
         "created_at": 1785601773941,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msal6u5x-gg5j8abx",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1539756040",
-        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时19分钟\n获得：1322若汁币，若汁之缘×2，经验+2",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785601770359,
-        "created_at": 1785601770359,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 80,
+      "total_trips": 81,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -7416,7 +7484,8 @@
           "rtc_event_aurora_photo": 1,
           "rtc_event_astronaut_exam": 1,
           "rtc_event_glow_badge": 1,
-          "rtc_event_free_sample": 1
+          "rtc_event_free_sample": 1,
+          "rtc_event_traffic_bot": 1
         }
       },
       "event_ids": {
@@ -7460,46 +7529,11 @@
         "rtc_event_astronaut_exam": 1,
         "rtc_event_glow_badge": 1,
         "rtc_event_free_sample": 1,
-        "eld_event_water_map": 1
+        "eld_event_water_map": 1,
+        "rtc_event_traffic_bot": 1
       }
     },
-    "active": {
-      "id": "mscj0lcn-zxiqfyp3",
-      "user_id": "1539756040",
-      "display_name": "菲八啾比",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785719050007,
-      "ends_at": 1785721186149,
-      "duration_ms": 2136142,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_flyover",
-      "location_name": "飞跃立交桥",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_traffic_bot",
-        "name": "交通机器人",
-        "text": "交通机器人给龟壳贴上了“低速车辆”标志。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_slow_vehicle_sticker",
-            "name": "低速车辆贴纸",
-            "emoji": "⚠️",
-            "description": "旅行纪念品「低速车辆贴纸」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 593,
-        "fate": 2,
-        "experience": 1
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

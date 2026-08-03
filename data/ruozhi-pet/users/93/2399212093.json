@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2399212093",
   "pet": {
-    "level": 2,
-    "experience": 111,
-    "satiety": 59,
+    "level": 3,
+    "experience": 6,
+    "satiety": 67,
     "mood": 100,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785718566596,
+    "satiety_decay_at": 1785725201757,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -43,7 +43,8 @@
       "cactus_turtle",
       "tidal_wave_turtle",
       "galaxy_turtle",
-      "love_letter_turtle"
+      "love_letter_turtle",
+      "beam_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -51,6 +52,13 @@
         "skin_id": "cactus_turtle",
         "level": 2,
         "time": 1785642357528,
+        "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1785722321759,
         "applied": true
       }
     },
@@ -167,9 +175,30 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1785722162221,
+        "actor_name": "里雪りあ",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1785722321759,
+        "level": 3
+      },
       {
         "skin_id": "love_letter_turtle",
         "reason": "gacha",
@@ -344,17 +373,17 @@
     ]
   },
   "profile": {
-    "favorability": 39,
-    "weekly_contribution": 11,
-    "total_contribution": 36,
-    "last_display_name": "里雪りあ",
+    "favorability": 42,
+    "weekly_contribution": 14,
+    "total_contribution": 39,
+    "last_display_name": "Ignotus",
     "first_joined_at": 1784810181975,
-    "last_active_at": 1785718576139,
+    "last_active_at": 1785725854435,
     "daily": {
       "date": "2026-08-03",
-      "event_count": 3,
+      "event_count": 4,
       "same_event_counts": {
-        "feed": 3
+        "feed": 4
       },
       "negative_shared_impact": 0
     },
@@ -362,13 +391,50 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 42,
+      "ruozhi_fate": 50,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
       "souvenir_moonbell_festival_ribbon": 1
     },
     "item_ledger": [
+      {
+        "time": 1785722321758,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 47,
+        "after": 50,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 3
+        }
+      },
+      {
+        "time": 1785722162221,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 44,
+        "after": 47,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_magic_academy"
+        }
+      },
+      {
+        "time": 1785722162221,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 42,
+        "after": 44,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msciqfpn-95b4rc4d",
+          "location_id": "eld_magic_academy"
+        }
+      },
       {
         "time": 1785718551244,
         "type": "income",
@@ -582,42 +648,6 @@
         "meta": {
           "level": 2
         }
-      },
-      {
-        "time": 1785603624871,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 10,
-        "before": 8,
-        "after": 18,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 23.524
-        }
-      },
-      {
-        "time": 1785518970284,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 38,
-        "after": 8,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785518938584,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 20,
-        "after": 38,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 40.478
-        }
       }
     ],
     "item_daily": {
@@ -636,10 +666,34 @@
       }
     },
     "currency": {
-      "balance": 41415,
-      "total_earned": 41415,
+      "balance": 42711,
+      "total_earned": 42711,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785722321758,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 42411,
+          "after": 42711,
+          "meta": {
+            "level": 3
+          }
+        },
+        {
+          "time": 1785722162221,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 996,
+          "before": 41415,
+          "after": 42411,
+          "meta": {
+            "travel_id": "msciqfpn-95b4rc4d",
+            "location_id": "eld_magic_academy",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785718551245,
           "type": "income",
@@ -738,30 +792,6 @@
             "skin_id": "crown_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785651134835,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 32400,
-          "after": 32700,
-          "meta": {
-            "skin_id": "fruit_hat_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785651134835,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 32100,
-          "after": 32400,
-          "meta": {
-            "skin_id": "antler_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -780,6 +810,52 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785722321759,
+      "user_id": "2399212093",
+      "display_name": "里雪りあ",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.3",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [
+        {
+          "level": 3,
+          "need": 120
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 3,
+          "reward": 300,
+          "receiver": {
+            "user_id": "2399212093",
+            "display_name": "里雪りあ"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 3,
+              "skin_id": "beam_turtle",
+              "skin_name": "咧嘴小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785718566597,
       "user_id": "2399212093",
@@ -1018,38 +1094,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 18
-    },
-    {
-      "time": 1785373219212,
-      "user_id": "2399212093",
-      "display_name": "里雪りあ",
-      "event_id": "mention_only",
-      "branch_id": "look_over",
-      "summary": "小若汁抬头看向里雪りあ，轻轻晃了晃尾巴。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 29600
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 20
     }
   ],
   "daily": {
     "date": "2026-08-03",
-    "event_count": 3,
-    "bonus_event_count": 3
+    "event_count": 4,
+    "bonus_event_count": 4
   },
   "processed_messages": {
     "event:1197866451": 1784810181978,
@@ -1067,7 +1117,8 @@
     "event:2129451590": 1785667247629,
     "event:594009564": 1785718551243,
     "event:1115385562": 1785718558460,
-    "event:331731558": 1785718566596
+    "event:331731558": 1785718566596,
+    "event:931470014": 1785722321757
   },
   "skin_sessions": {
     "active": null
@@ -1080,7 +1131,7 @@
     "migrated_at": 1784810181975
   },
   "created_at": 1784810181975,
-  "updated_at": 1785718576139,
+  "updated_at": 1785725854435,
   "gacha": {
     "since_four_plus": 6,
     "since_five": 46,
@@ -1093,9 +1144,9 @@
   },
   "production": {
     "started_at": 1785114566547,
-    "last_settled_at": 1785718576139,
-    "accumulated_ms": 24895,
-    "progress": 0.6333739471785181,
+    "last_settled_at": 1785725854435,
+    "accumulated_ms": 7303191,
+    "progress": 1.8218599954864305,
     "total_produced": 74,
     "last_collected_at": 1785718551244
   },
@@ -1104,7 +1155,8 @@
       "eld_adventurer_guild",
       "eld_moonbell_village",
       "eld_windmill_plain",
-      "rtc_galaxy_motel"
+      "rtc_galaxy_motel",
+      "eld_magic_academy"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1137,6 +1189,14 @@
         "name": "银河汽车旅馆",
         "travel_id": "msc2wo9c-6jz4j486",
         "time": 1785693700597,
+        "carried_item_id": ""
+      },
+      "eld_magic_academy": {
+        "id": "eld_magic_academy",
+        "map_id": "eldoran_continent",
+        "name": "苍蓝魔法学院",
+        "travel_id": "msciqfpn-95b4rc4d",
+        "time": 1785722162221,
         "carried_item_id": ""
       }
     },
@@ -1253,6 +1313,21 @@
         "rarity": 3,
         "time": 1785693700597,
         "actor_name": "Ignotus",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1785722162221,
+        "actor_name": "里雪りあ",
         "rewards": [
           {
             "type": "item",
@@ -1529,9 +1604,67 @@
         "settled_at": 1785693700598,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：28分钟\n获得：500若汁币，若汁之缘×2，经验+1\n旅行事件：外星自动售货机\n自动售货机不收若汁币，却接受小若汁讲的冷笑话。\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★"
+      },
+      "msciqfpn-95b4rc4d": {
+        "id": "msciqfpn-95b4rc4d",
+        "user_id": "2399212093",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "里雪りあ",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_magic_academy",
+        "location_name": "苍蓝魔法学院",
+        "duration_ms": 3586077,
+        "rewards": {
+          "coin": 996,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "苍蓝魔法学院",
+        "achievements": [
+          {
+            "id": "ach_eld_magic_academy",
+            "name": "发现苍蓝魔法学院",
+            "rarity": 3,
+            "time": 1785722162221,
+            "actor_name": "里雪りあ",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现苍蓝魔法学院」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785722162221,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：1小时\n获得：996若汁币，若汁之缘×2，经验+2\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msciqfpn-95b4rc4d",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2399212093",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：1小时\n获得：996若汁币，若汁之缘×2，经验+2\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785722162221,
+        "created_at": 1785722162221,
+        "sent_at": 1785722162636,
+        "last_error": ""
+      },
       {
         "travel_id": "msc2wo9c-6jz4j486",
         "group_id": "",
@@ -1586,7 +1719,7 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -1596,7 +1729,7 @@
       },
       "map_location_counts": {
         "retro_tomorrow_city": 1,
-        "eldoran_continent": 3
+        "eldoran_continent": 4
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -1614,26 +1747,42 @@
       }
     },
     "active": {
-      "id": "msciqfpn-95b4rc4d",
+      "id": "msckz921-t8771wzh",
       "user_id": "2399212093",
-      "display_name": "里雪りあ",
-      "group_id": "946431041",
+      "display_name": "Ignotus",
+      "group_id": "",
       "self_id": "3964480831",
-      "started_at": 1785718576139,
-      "ends_at": 1785722162216,
-      "duration_ms": 3586077,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_magic_academy",
-      "location_name": "苍蓝魔法学院",
+      "started_at": 1785722346649,
+      "ends_at": 1785730938556,
+      "duration_ms": 8591907,
+      "map_id": "retro_tomorrow_city",
+      "map_name": "明日旧城",
+      "location_id": "rtc_atomic_mall",
+      "location_name": "原子百货商场",
       "was_unlocked": false,
       "carried_item_id": "",
       "carried_item_name": "",
-      "event": null,
+      "event": {
+        "id": "rtc_event_wrong_purchase",
+        "name": "买错纪念品",
+        "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
+        "effects": {
+          "coin_percent": -10
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_atomic_child_sunglasses",
+            "name": "原子儿童墨镜",
+            "emoji": "🕶️",
+            "description": "旅行纪念品「原子儿童墨镜」。"
+          }
+        ],
+        "record": false
+      },
       "rewards": {
-        "coin": 996,
-        "fate": 2,
-        "experience": 2
+        "coin": 2148,
+        "fate": 4,
+        "experience": 5
       }
     },
     "prepared_tool": null
