@@ -3,23 +3,116 @@
   "user_id": "2775238188",
   "pet": {
     "level": 1,
-    "experience": 11,
+    "experience": 19,
     "satiety": 5,
     "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785221795961,
+    "satiety_decay_at": 1785687838445,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "tear_turtle",
+      "wide_eyed_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 2,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785664054241,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_first_discovery": {
+        "id": "ach_map_first_discovery",
+        "name": "小若汁出门了",
+        "rarity": 3,
+        "time": 1785664054241,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1785672447573,
+        "actor_name": "风染",
+        "stat_key": "counter:gacha_draws",
+        "count": 2,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1785677499478,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785687837970,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "wide_eyed_turtle",
+        "reason": "gacha",
+        "time": 1785672447573
+      },
+      {
+        "skin_id": "tear_turtle",
+        "reason": "gacha",
+        "time": 1785672447573
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -53,9 +146,9 @@
     "total_contribution": 1,
     "last_display_name": "风染",
     "first_joined_at": 1784810208701,
-    "last_active_at": 1785221795961,
+    "last_active_at": 1785687838445,
     "daily": {
-      "date": "2026-07-28",
+      "date": "2026-08-03",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -64,10 +157,122 @@
       "week": "2026-W31"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 17,
       "nameless_ruozhi": 0
     },
-    "item_ledger": [],
+    "item_ledger": [
+      {
+        "time": 1785687837970,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 14,
+        "after": 17,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785687837969,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 12,
+        "after": 14,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msbxs911-olwlxdrr",
+          "location_id": "rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785677499478,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 9,
+        "after": 12,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_central_station"
+        }
+      },
+      {
+        "time": 1785677499478,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 4,
+        "after": 9,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msbousxu-78up70n9",
+          "location_id": "rtc_central_station"
+        }
+      },
+      {
+        "time": 1785672447573,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 1,
+        "after": 4,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1785672447573,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 7,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
+      {
+        "time": 1785664054241,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 4,
+        "after": 7,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_map_first_discovery"
+        }
+      },
+      {
+        "time": 1785664054241,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 1,
+        "after": 4,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785664054240,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msblfb3g-iptoacts",
+          "location_id": "rtc_broadcast_tower"
+        }
+      }
+    ],
     "item_daily": {},
     "item_migrations": {
       "fate_v1": {
@@ -78,10 +283,49 @@
       }
     },
     "currency": {
-      "balance": 500,
-      "total_earned": 500,
+      "balance": 4866,
+      "total_earned": 4866,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785687837969,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1236,
+          "before": 3630,
+          "after": 4866,
+          "meta": {
+            "travel_id": "msbxs911-olwlxdrr",
+            "location_id": "rtc_blue_harbor",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785677499478,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2530,
+          "before": 1100,
+          "after": 3630,
+          "meta": {
+            "travel_id": "msbousxu-78up70n9",
+            "location_id": "rtc_central_station",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785664054240,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 600,
+          "before": 500,
+          "after": 1100,
+          "meta": {
+            "travel_id": "msblfb3g-iptoacts",
+            "location_id": "rtc_broadcast_tower",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1784810208705,
           "type": "income",
@@ -149,28 +393,348 @@
     "migrated_at": 1784810208701
   },
   "created_at": 1784810208701,
-  "updated_at": 1785221795961,
+  "updated_at": 1785687838446,
   "production": {
     "started_at": 1785141760297,
-    "last_settled_at": 1785221795961,
-    "accumulated_ms": 80035664,
-    "progress": 8.743777319292212,
+    "last_settled_at": 1785687838445,
+    "accumulated_ms": 259200000,
+    "progress": 28.317214700193425,
     "total_produced": 0
   },
   "travel": {
-    "unlocked_location_ids": [],
-    "location_records": {},
-    "event_records": {},
+    "unlocked_location_ids": [
+      "rtc_broadcast_tower",
+      "rtc_central_station",
+      "rtc_blue_harbor"
+    ],
+    "location_records": {
+      "rtc_broadcast_tower": {
+        "id": "rtc_broadcast_tower",
+        "map_id": "retro_tomorrow_city",
+        "name": "星尘广播塔",
+        "travel_id": "msblfb3g-iptoacts",
+        "time": 1785664054240,
+        "carried_item_id": ""
+      },
+      "rtc_central_station": {
+        "id": "rtc_central_station",
+        "map_id": "retro_tomorrow_city",
+        "name": "明日中央车站",
+        "travel_id": "msbousxu-78up70n9",
+        "time": 1785677499478,
+        "carried_item_id": ""
+      },
+      "rtc_blue_harbor": {
+        "id": "rtc_blue_harbor",
+        "map_id": "retro_tomorrow_city",
+        "name": "蓝海观光港",
+        "travel_id": "msbxs911-olwlxdrr",
+        "time": 1785687837970,
+        "carried_item_id": ""
+      }
+    },
+    "event_records": {
+      "rtc_event_tomorrow_news": {
+        "id": "rtc_event_tomorrow_news",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_broadcast_tower",
+        "travel_id": "msblfb3g-iptoacts",
+        "time": 1785664054240
+      }
+    },
     "souvenir_records": {},
-    "achievement_records": {},
-    "settlements": {},
-    "notifications": [],
+    "achievement_records": {
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785664054241,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_first_discovery": {
+        "id": "ach_map_first_discovery",
+        "name": "小若汁出门了",
+        "rarity": 3,
+        "time": 1785664054241,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1785677499478,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785687837970,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
+    "settlements": {
+      "msblfb3g-iptoacts": {
+        "id": "msblfb3g-iptoacts",
+        "user_id": "2775238188",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "风染",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_broadcast_tower",
+        "location_name": "星尘广播塔",
+        "duration_ms": 1424620,
+        "rewards": {
+          "coin": 600,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": {
+          "id": "rtc_event_tomorrow_news",
+          "name": "明日新闻",
+          "text": "收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。",
+          "effects": {
+            "coin_percent": 20
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "星尘广播塔",
+        "achievements": [
+          {
+            "id": "ach_rtc_broadcast_tower",
+            "name": "发现星尘广播塔",
+            "rarity": 3,
+            "time": 1785664054241,
+            "actor_name": "风染",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现星尘广播塔」 ★★★"
+          },
+          {
+            "id": "ach_map_first_discovery",
+            "name": "小若汁出门了",
+            "rarity": 3,
+            "time": 1785664054241,
+            "actor_name": "风染",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「小若汁出门了」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785664054241,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：24分钟\n获得：600若汁币，若汁之缘×1，经验+1\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★\n达成旅行成就「小若汁出门了」 ★★★"
+      },
+      "msbousxu-78up70n9": {
+        "id": "msbousxu-78up70n9",
+        "user_id": "2775238188",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "风染",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_central_station",
+        "location_name": "明日中央车站",
+        "duration_ms": 9108040,
+        "rewards": {
+          "coin": 2530,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "明日中央车站",
+        "achievements": [
+          {
+            "id": "ach_rtc_central_station",
+            "name": "发现明日中央车站",
+            "rarity": 3,
+            "time": 1785677499478,
+            "actor_name": "风染",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现明日中央车站」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785677499479,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时32分钟\n获得：2530若汁币，若汁之缘×5，经验+5\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★"
+      },
+      "msbxs911-olwlxdrr": {
+        "id": "msbxs911-olwlxdrr",
+        "user_id": "2775238188",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "风染",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_blue_harbor",
+        "location_name": "蓝海观光港",
+        "duration_ms": 4449106,
+        "rewards": {
+          "coin": 1236,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "蓝海观光港",
+        "achievements": [
+          {
+            "id": "ach_rtc_blue_harbor",
+            "name": "发现蓝海观光港",
+            "rarity": 3,
+            "time": 1785687837970,
+            "actor_name": "风染",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现蓝海观光港」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785687837970,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：1小时14分钟\n获得：1236若汁币，若汁之缘×2，经验+2\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★"
+      }
+    },
+    "notifications": [
+      {
+        "travel_id": "msbxs911-olwlxdrr",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2775238188",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：1小时14分钟\n获得：1236若汁币，若汁之缘×2，经验+2\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785687837971,
+        "created_at": 1785687837971,
+        "sent_at": 1785687838446,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msbousxu-78up70n9",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2775238188",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时32分钟\n获得：2530若汁币，若汁之缘×5，经验+5\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785677499479,
+        "created_at": 1785677499479,
+        "sent_at": 1785677499931,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msblfb3g-iptoacts",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2775238188",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：24分钟\n获得：600若汁币，若汁之缘×1，经验+1\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★\n达成旅行成就「小若汁出门了」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785664054241,
+        "created_at": 1785664054241,
+        "sent_at": 1785664054706,
+        "last_error": ""
+      }
+    ],
     "stats": {
-      "total_trips": 0,
+      "total_trips": 3,
       "key_item_discoveries": {},
-      "map_location_counts": {},
-      "map_event_ids": {},
-      "event_ids": {}
-    }
+      "map_location_counts": {
+        "retro_tomorrow_city": 3,
+        "eldoran_continent": 0
+      },
+      "map_event_ids": {
+        "retro_tomorrow_city": {
+          "rtc_event_tomorrow_news": 1
+        }
+      },
+      "event_ids": {
+        "rtc_event_tomorrow_news": 1
+      }
+    },
+    "active": null,
+    "prepared_tool": null
+  },
+  "gacha": {
+    "since_four_plus": 2,
+    "since_five": 2,
+    "total_draws": 2,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
   }
 }

@@ -3,12 +3,12 @@
   "user_id": "1750348863",
   "pet": {
     "level": 1,
-    "experience": 11,
+    "experience": 40,
     "satiety": 5,
-    "mood": 71,
+    "mood": 73,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785221795944,
+    "satiety_decay_at": 1785716694817,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -18,7 +18,53 @@
     ],
     "level_reward_records": {},
     "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_records": {
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785692145630,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_first_discovery": {
+        "id": "ach_map_first_discovery",
+        "name": "小若汁出门了",
+        "rarity": 3,
+        "time": 1785692145630,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_adventurer_guild": {
+        "id": "ach_eld_adventurer_guild",
+        "name": "发现金杯冒险者公会",
+        "rarity": 3,
+        "time": 1785716664613,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
       {
         "skin_id": "default_smile_turtle",
@@ -48,26 +94,160 @@
     ]
   },
   "profile": {
-    "favorability": 2,
+    "favorability": 5,
     "weekly_contribution": 0,
-    "total_contribution": 1,
-    "last_display_name": "舔猫回应了你的消息：舔",
+    "total_contribution": 3,
+    "last_display_name": "新神已至！满潜专九卡涅利安实战测评",
     "first_joined_at": 1784810523484,
-    "last_active_at": 1785221795944,
+    "last_active_at": 1785716694818,
     "daily": {
-      "date": "2026-07-28",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-03",
+      "event_count": 1,
+      "same_event_counts": {
+        "mention_only": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W31"
+      "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 0,
-      "nameless_ruozhi": 0
+      "ruozhi_fate": 43,
+      "nameless_ruozhi": 0,
+      "souvenir_atomic_child_sunglasses": 1,
+      "souvenir_border_quest_scroll": 1,
+      "souvenir_border_map": 0
     },
-    "item_ledger": [],
+    "item_ledger": [
+      {
+        "time": 1785716694814,
+        "type": "expense",
+        "item_id": "souvenir_border_map",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "souvenir_border_map"
+        }
+      },
+      {
+        "time": 1785716664613,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 40,
+        "after": 43,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785716664613,
+        "type": "income",
+        "item_id": "souvenir_border_map",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscgecf1-qlct2by9",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785716664613,
+        "type": "income",
+        "item_id": "souvenir_border_quest_scroll",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscgecf1-qlct2by9",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785716664612,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 39,
+        "after": 40,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscgecf1-qlct2by9",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785692145630,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 36,
+        "after": 39,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_map_first_discovery"
+        }
+      },
+      {
+        "time": 1785692145630,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 33,
+        "after": 36,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785692145630,
+        "type": "income",
+        "item_id": "souvenir_atomic_child_sunglasses",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msbxrgzp-1w6u3apa",
+          "event_id": "rtc_event_wrong_purchase",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785692145629,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 28,
+        "after": 33,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msbxrgzp-1w6u3apa",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785672645968,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 28,
+        "before": 0,
+        "after": 28,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      }
+    ],
     "item_daily": {},
     "item_migrations": {
       "fate_v1": {
@@ -78,10 +258,58 @@
       }
     },
     "currency": {
-      "balance": 500,
-      "total_earned": 500,
+      "balance": 4258,
+      "total_earned": 4258,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785716664612,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 559,
+          "before": 3699,
+          "after": 4258,
+          "meta": {
+            "travel_id": "mscgecf1-qlct2by9",
+            "location_id": "eld_adventurer_guild",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785714632912,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 3199,
+          "after": 3699,
+          "meta": {
+            "date": "2026-08-03"
+          }
+        },
+        {
+          "time": 1785692145629,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2199,
+          "before": 1000,
+          "after": 3199,
+          "meta": {
+            "travel_id": "msbxrgzp-1w6u3apa",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785672645969,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 500,
+          "after": 1000,
+          "meta": {
+            "date": "2026-08-02"
+          }
+        },
         {
           "time": 1784810523488,
           "type": "income",
@@ -100,10 +328,62 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-07-23"
+      "first_interaction_reward_date": "2026-08-03"
     }
   },
   "recent_events": [
+    {
+      "time": 1785714632913,
+      "user_id": "1750348863",
+      "display_name": "新神已至！满潜专九卡涅利安实战测评",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向新神已至！满潜专九卡涅利安实战测评，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 3699
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785672645969,
+      "user_id": "1750348863",
+      "display_name": "新神已至！满潜专九卡涅利安实战测评",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到新神已至！满潜专九卡涅利安实战测评身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1000
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 28
+    },
     {
       "time": 1784810523488,
       "user_id": "1750348863",
@@ -131,12 +411,14 @@
     }
   ],
   "daily": {
-    "date": "2026-07-23",
+    "date": "2026-08-03",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
-    "event:1877928168": 1784810523487
+    "event:1877928168": 1784810523487,
+    "event:1069912633": 1785672645967,
+    "event:698205526": 1785714632910
   },
   "skin_sessions": {
     "active": null
@@ -149,28 +431,395 @@
     "migrated_at": 1784810523484
   },
   "created_at": 1784810523484,
-  "updated_at": 1785221795944,
+  "updated_at": 1785716694818,
   "production": {
     "started_at": 1785141760273,
-    "last_settled_at": 1785221795944,
-    "accumulated_ms": 80035671,
-    "progress": 8.743778084031808,
-    "total_produced": 0
+    "last_settled_at": 1785716694817,
+    "accumulated_ms": 44048849,
+    "progress": 5.129485974998208,
+    "total_produced": 28,
+    "last_collected_at": 1785672645968
   },
   "travel": {
-    "unlocked_location_ids": [],
-    "location_records": {},
-    "event_records": {},
-    "souvenir_records": {},
-    "achievement_records": {},
-    "settlements": {},
-    "notifications": [],
+    "unlocked_location_ids": [
+      "rtc_atomic_mall",
+      "eld_adventurer_guild"
+    ],
+    "location_records": {
+      "rtc_atomic_mall": {
+        "id": "rtc_atomic_mall",
+        "map_id": "retro_tomorrow_city",
+        "name": "原子百货商场",
+        "travel_id": "msbxrgzp-1w6u3apa",
+        "time": 1785692145630,
+        "carried_item_id": ""
+      },
+      "eld_adventurer_guild": {
+        "id": "eld_adventurer_guild",
+        "map_id": "eldoran_continent",
+        "name": "金杯冒险者公会",
+        "travel_id": "mscgecf1-qlct2by9",
+        "time": 1785716664613,
+        "carried_item_id": ""
+      }
+    },
+    "event_records": {
+      "rtc_event_wrong_purchase": {
+        "id": "rtc_event_wrong_purchase",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_atomic_mall",
+        "travel_id": "msbxrgzp-1w6u3apa",
+        "time": 1785692145630
+      },
+      "eld_event_border_quest": {
+        "id": "eld_event_border_quest",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_adventurer_guild",
+        "travel_id": "mscgecf1-qlct2by9",
+        "time": 1785716664613
+      }
+    },
+    "souvenir_records": {
+      "souvenir_atomic_child_sunglasses": {
+        "id": "souvenir_atomic_child_sunglasses",
+        "name": "原子儿童墨镜",
+        "event_id": "rtc_event_wrong_purchase",
+        "location_id": "rtc_atomic_mall",
+        "time": 1785692145630
+      },
+      "souvenir_border_quest_scroll": {
+        "id": "souvenir_border_quest_scroll",
+        "name": "越界委托书",
+        "event_id": "eld_event_border_quest",
+        "location_id": "eld_adventurer_guild",
+        "time": 1785716664613
+      },
+      "souvenir_border_map": {
+        "id": "souvenir_border_map",
+        "name": "画出边框的地图",
+        "event_id": "eld_event_border_quest",
+        "location_id": "eld_adventurer_guild",
+        "time": 1785716664613
+      }
+    },
+    "achievement_records": {
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785692145630,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_first_discovery": {
+        "id": "ach_map_first_discovery",
+        "name": "小若汁出门了",
+        "rarity": 3,
+        "time": 1785692145630,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_adventurer_guild": {
+        "id": "ach_eld_adventurer_guild",
+        "name": "发现金杯冒险者公会",
+        "rarity": 3,
+        "time": 1785716664613,
+        "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
+    "settlements": {
+      "msbxrgzp-1w6u3apa": {
+        "id": "msbxrgzp-1w6u3apa",
+        "user_id": "1750348863",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "新神已至！满潜专九卡涅利安实战测评",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 8793111,
+        "rewards": {
+          "coin": 2199,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_wrong_purchase",
+          "name": "买错纪念品",
+          "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
+          "effects": {
+            "coin_percent": -10
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_atomic_child_sunglasses",
+              "name": "原子儿童墨镜",
+              "emoji": "🕶️",
+              "description": "旅行纪念品「原子儿童墨镜」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_atomic_child_sunglasses",
+            "name": "原子儿童墨镜",
+            "emoji": "🕶️",
+            "description": "旅行纪念品「原子儿童墨镜」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "原子百货商场",
+        "achievements": [
+          {
+            "id": "ach_rtc_atomic_mall",
+            "name": "发现原子百货商场",
+            "rarity": 3,
+            "time": 1785692145630,
+            "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现原子百货商场」 ★★★"
+          },
+          {
+            "id": "ach_map_first_discovery",
+            "name": "小若汁出门了",
+            "rarity": 3,
+            "time": 1785692145630,
+            "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「小若汁出门了」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785692145630,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时27分钟\n获得：2199若汁币，若汁之缘×5，经验+5\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★\n达成旅行成就「小若汁出门了」 ★★★"
+      },
+      "mscgecf1-qlct2by9": {
+        "id": "mscgecf1-qlct2by9",
+        "user_id": "1750348863",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "新神已至！满潜专九卡涅利安实战测评",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_adventurer_guild",
+        "location_name": "金杯冒险者公会",
+        "duration_ms": 2011836,
+        "rewards": {
+          "coin": 559,
+          "fate": 1,
+          "experience": 2
+        },
+        "event": {
+          "id": "eld_event_border_quest",
+          "name": "地图外任务",
+          "text": "告示板上有一张要求前往地图边框外的委托。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_border_quest_scroll",
+              "name": "越界委托书",
+              "emoji": "📜",
+              "description": "旅行纪念品「越界委托书」。"
+            },
+            {
+              "id": "souvenir_border_map",
+              "name": "画出边框的地图",
+              "emoji": "🗺️",
+              "travel_tool": true,
+              "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_border_quest_scroll",
+            "name": "越界委托书",
+            "emoji": "📜",
+            "description": "旅行纪念品「越界委托书」。",
+            "amount": 1
+          },
+          {
+            "id": "souvenir_border_map",
+            "name": "画出边框的地图",
+            "emoji": "🗺️",
+            "travel_tool": true,
+            "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "new_location": "金杯冒险者公会",
+        "achievements": [
+          {
+            "id": "ach_eld_adventurer_guild",
+            "name": "发现金杯冒险者公会",
+            "rarity": 3,
+            "time": 1785716664613,
+            "actor_name": "新神已至！满潜专九卡涅利安实战测评",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现金杯冒险者公会」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785716664613,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：34分钟\n获得：559若汁币，若汁之缘×1，经验+2\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n新地点已解锁：金杯冒险者公会\n达成旅行成就「发现金杯冒险者公会」 ★★★"
+      }
+    },
+    "notifications": [
+      {
+        "travel_id": "mscgecf1-qlct2by9",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：34分钟\n获得：559若汁币，若汁之缘×1，经验+2\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n新地点已解锁：金杯冒险者公会\n达成旅行成就「发现金杯冒险者公会」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785716664613,
+        "created_at": 1785716664613,
+        "sent_at": 1785716665145,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msbxrgzp-1w6u3apa",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时27分钟\n获得：2199若汁币，若汁之缘×5，经验+5\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★\n达成旅行成就「小若汁出门了」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785692145630,
+        "created_at": 1785692145630,
+        "sent_at": 1785692146065,
+        "last_error": ""
+      }
+    ],
     "stats": {
-      "total_trips": 0,
+      "total_trips": 2,
       "key_item_discoveries": {},
-      "map_location_counts": {},
-      "map_event_ids": {},
-      "event_ids": {}
-    }
+      "map_location_counts": {
+        "retro_tomorrow_city": 1,
+        "eldoran_continent": 1
+      },
+      "map_event_ids": {
+        "retro_tomorrow_city": {
+          "rtc_event_wrong_purchase": 1
+        },
+        "eldoran_continent": {
+          "eld_event_border_quest": 1
+        }
+      },
+      "event_ids": {
+        "rtc_event_wrong_purchase": 1,
+        "eld_event_border_quest": 1
+      }
+    },
+    "active": {
+      "id": "mschm42q-9ghvm5ua",
+      "user_id": "1750348863",
+      "display_name": "新神已至！满潜专九卡涅利安实战测评",
+      "group_id": "946431041",
+      "self_id": "3964480831",
+      "started_at": 1785716694818,
+      "ends_at": 1785726259285,
+      "duration_ms": 9564467,
+      "map_id": "eldoran_continent",
+      "map_name": "艾尔多兰大陆",
+      "location_id": "eld_adventurer_guild",
+      "location_name": "金杯冒险者公会",
+      "was_unlocked": true,
+      "carried_item_id": "souvenir_border_map",
+      "carried_item_name": "画出边框的地图",
+      "event": {
+        "id": "eld_event_border_quest",
+        "name": "地图外任务",
+        "text": "告示板上有一张要求前往地图边框外的委托。",
+        "effects": {},
+        "souvenirs": [
+          {
+            "id": "souvenir_border_quest_scroll",
+            "name": "越界委托书",
+            "emoji": "📜",
+            "description": "旅行纪念品「越界委托书」。"
+          },
+          {
+            "id": "souvenir_border_map",
+            "name": "画出边框的地图",
+            "emoji": "🗺️",
+            "travel_tool": true,
+            "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。"
+          }
+        ],
+        "record": false
+      },
+      "rewards": {
+        "coin": 2657,
+        "fate": 5,
+        "experience": 6
+      }
+    },
+    "prepared_tool": null
+  },
+  "gacha": {
+    "since_four_plus": 0,
+    "since_five": 0,
+    "total_draws": 0,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
   }
 }

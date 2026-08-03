@@ -3,12 +3,12 @@
   "user_id": "2231357034",
   "pet": {
     "level": 1,
-    "experience": 11,
+    "experience": 33,
     "satiety": 5,
-    "mood": 71,
+    "mood": 73,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785221795888,
+    "satiety_decay_at": 1785670181313,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -48,26 +48,53 @@
     ]
   },
   "profile": {
-    "favorability": 1,
-    "weekly_contribution": 0,
-    "total_contribution": 1,
+    "favorability": 4,
+    "weekly_contribution": 2,
+    "total_contribution": 3,
     "last_display_name": "凶狠小猫",
     "first_joined_at": 1784810223850,
-    "last_active_at": 1785221795888,
+    "last_active_at": 1785670181314,
     "daily": {
-      "date": "2026-07-28",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-02",
+      "event_count": 2,
+      "same_event_counts": {
+        "mention_only": 2
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W31"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 35,
       "nameless_ruozhi": 0
     },
-    "item_ledger": [],
+    "item_ledger": [
+      {
+        "time": 1785670181315,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 28,
+        "after": 35,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 18.481
+        }
+      },
+      {
+        "time": 1785603651373,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 28,
+        "before": 0,
+        "after": 28,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      }
+    ],
     "item_daily": {},
     "item_migrations": {
       "fate_v1": {
@@ -78,10 +105,21 @@
       }
     },
     "currency": {
-      "balance": 500,
-      "total_earned": 500,
+      "balance": 1000,
+      "total_earned": 1000,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785603651373,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 500,
+          "after": 1000,
+          "meta": {
+            "date": "2026-08-02"
+          }
+        },
         {
           "time": 1784810223853,
           "type": "income",
@@ -100,10 +138,59 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-07-23"
+      "first_interaction_reward_date": "2026-08-02"
     }
   },
   "recent_events": [
+    {
+      "time": 1785670181315,
+      "user_id": "2231357034",
+      "display_name": "凶狠小猫",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到凶狠小猫身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 7
+    },
+    {
+      "time": 1785603651374,
+      "user_id": "2231357034",
+      "display_name": "凶狠小猫",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向凶狠小猫，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1000
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 28
+    },
     {
       "time": 1784810223853,
       "user_id": "2231357034",
@@ -131,12 +218,14 @@
     }
   ],
   "daily": {
-    "date": "2026-07-23",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "date": "2026-08-02",
+    "event_count": 2,
+    "bonus_event_count": 2
   },
   "processed_messages": {
-    "event:1464727185": 1784810223851
+    "event:1464727185": 1784810223851,
+    "event:326835647": 1785603651373,
+    "event:388270968": 1785670181314
   },
   "skin_sessions": {
     "active": null
@@ -149,13 +238,14 @@
     "migrated_at": 1784810223850
   },
   "created_at": 1784810223850,
-  "updated_at": 1785221795889,
+  "updated_at": 1785670181315,
   "production": {
     "started_at": 1785141760237,
-    "last_settled_at": 1785221795888,
-    "accumulated_ms": 80035651,
-    "progress": 8.743775899061538,
-    "total_produced": 0
+    "last_settled_at": 1785670181314,
+    "accumulated_ms": 0,
+    "progress": 0.5855118579411114,
+    "total_produced": 35,
+    "last_collected_at": 1785670181314
   },
   "travel": {
     "unlocked_location_ids": [],
