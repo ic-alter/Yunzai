@@ -3,12 +3,12 @@
   "user_id": "523778199",
   "pet": {
     "level": 1,
-    "experience": 73,
+    "experience": 80,
     "satiety": 5,
     "mood": 81,
     "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785743510649,
+    "satiety_decay_at": 1785769852260,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -169,6 +169,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785748590074,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785769852003,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -250,7 +280,7 @@
     "total_contribution": 10,
     "last_display_name": "Koala",
     "first_joined_at": 1784794784420,
-    "last_active_at": 1785743510649,
+    "last_active_at": 1785769852260,
     "daily": {
       "date": "2026-08-03",
       "event_count": 1,
@@ -263,10 +293,36 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 29346,
-      "total_earned": 29346,
+      "balance": 32858,
+      "total_earned": 32858,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785769851999,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 942,
+          "before": 31916,
+          "after": 32858,
+          "meta": {
+            "travel_id": "msdb8qdv-uwdazok8",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785748590072,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2570,
+          "before": 29346,
+          "after": 31916,
+          "meta": {
+            "travel_id": "mscvtb2b-84f6scra",
+            "location_id": "rtc_blue_harbor",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785702834535,
           "type": "income",
@@ -366,32 +422,6 @@
             "location_id": "eld_dwarf_city",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785400177949,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1367,
-          "before": 17673,
-          "after": 19040,
-          "meta": {
-            "travel_id": "ms768l0r-w26b9aat",
-            "location_id": "eld_moonbell_village",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785369984417,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 926,
-          "before": 16747,
-          "after": 17673,
-          "meta": {
-            "travel_id": "ms6p3ph3-6efci973",
-            "location_id": "eld_windmill_plain",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -403,11 +433,76 @@
       "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 168,
+      "ruozhi_fate": 181,
       "nameless_ruozhi": 0,
-      "souvenir_clockwork_leaf": 1
+      "souvenir_clockwork_leaf": 1,
+      "souvenir_sea_future_coin": 1
     },
     "item_ledger": [
+      {
+        "time": 1785769852003,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 178,
+        "after": 181,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785769852000,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 176,
+        "after": 178,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msdb8qdv-uwdazok8",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785748590074,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 173,
+        "after": 176,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785748590073,
+        "type": "income",
+        "item_id": "souvenir_sea_future_coin",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscvtb2b-84f6scra",
+          "event_id": "rtc_event_harbor_cleanup",
+          "location_id": "rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785748590072,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 168,
+        "after": 173,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscvtb2b-84f6scra",
+          "location_id": "rtc_blue_harbor"
+        }
+      },
       {
         "time": 1785702834535,
         "type": "income",
@@ -595,71 +690,6 @@
         "meta": {
           "achievement_id": "ach_eld_moonbell_village"
         }
-      },
-      {
-        "time": 1785400177949,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 75,
-        "after": 78,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms768l0r-w26b9aat",
-          "location_id": "eld_moonbell_village"
-        }
-      },
-      {
-        "time": 1785369984418,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 72,
-        "after": 75,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_first_discovery"
-        }
-      },
-      {
-        "time": 1785369984418,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 69,
-        "after": 72,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_windmill_plain"
-        }
-      },
-      {
-        "time": 1785369984417,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 67,
-        "after": 69,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms6p3ph3-6efci973",
-          "location_id": "eld_windmill_plain"
-        }
-      },
-      {
-        "time": 1785366455753,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 26,
-        "before": 41,
-        "after": 67,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-07-30",
-          "month_count": 2,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
       }
     ],
     "item_daily": {
@@ -807,12 +837,12 @@
     "migrated_at": 1784794784420
   },
   "created_at": 1784794784420,
-  "updated_at": 1785743510649,
+  "updated_at": 1785769852260,
   "production": {
     "started_at": 1785141760322,
-    "last_settled_at": 1785743510649,
-    "accumulated_ms": 49249608,
-    "progress": 5.929545014382985,
+    "last_settled_at": 1785769852260,
+    "accumulated_ms": 75591219,
+    "progress": 8.95671990602995,
     "total_produced": 56,
     "last_collected_at": 1785694261041
   },
@@ -823,7 +853,9 @@
       "eld_dwarf_city",
       "rtc_galaxy_motel",
       "eld_adventurer_guild",
-      "rtc_central_station"
+      "rtc_central_station",
+      "rtc_blue_harbor",
+      "rtc_atomic_mall"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -873,6 +905,22 @@
         "travel_id": "msc1xhwg-vrcw86aq",
         "time": 1785693810081,
         "carried_item_id": ""
+      },
+      "rtc_blue_harbor": {
+        "id": "rtc_blue_harbor",
+        "map_id": "retro_tomorrow_city",
+        "name": "蓝海观光港",
+        "travel_id": "mscvtb2b-84f6scra",
+        "time": 1785748590073,
+        "carried_item_id": ""
+      },
+      "rtc_atomic_mall": {
+        "id": "rtc_atomic_mall",
+        "map_id": "retro_tomorrow_city",
+        "name": "原子百货商场",
+        "travel_id": "msdb8qdv-uwdazok8",
+        "time": 1785769852001,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -896,6 +944,13 @@
         "location_id": "rtc_central_station",
         "travel_id": "msc1xhwg-vrcw86aq",
         "time": 1785693810081
+      },
+      "rtc_event_harbor_cleanup": {
+        "id": "rtc_event_harbor_cleanup",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_blue_harbor",
+        "travel_id": "mscvtb2b-84f6scra",
+        "time": 1785748590073
       }
     },
     "souvenir_records": {
@@ -905,6 +960,13 @@
         "event_id": "rtc_event_lost_luggage",
         "location_id": "rtc_central_station",
         "time": 1785693810081
+      },
+      "souvenir_sea_future_coin": {
+        "id": "souvenir_sea_future_coin",
+        "name": "海水泡过的未来硬币",
+        "event_id": "rtc_event_harbor_cleanup",
+        "location_id": "rtc_blue_harbor",
+        "time": 1785748590073
       }
     },
     "achievement_records": {
@@ -1003,6 +1065,36 @@
         "name": "发现明日中央车站",
         "rarity": 3,
         "time": 1785693810081,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785748590074,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785769852003,
         "actor_name": "Koala",
         "rewards": [
           {
@@ -1398,9 +1490,150 @@
         "settled_at": 1785702834536,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时23分钟\n获得：2379若汁币，若汁之缘×4，经验+5"
+      },
+      "mscvtb2b-84f6scra": {
+        "id": "mscvtb2b-84f6scra",
+        "user_id": "523778199",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "Koala",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_blue_harbor",
+        "location_name": "蓝海观光港",
+        "duration_ms": 8044968,
+        "rewards": {
+          "coin": 2570,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_harbor_cleanup",
+          "name": "港口清理",
+          "text": "小若汁帮忙捡走漂浮垃圾，最后捡到一枚亮晶晶的旧硬币。",
+          "effects": {
+            "coin_percent": 15
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_sea_future_coin",
+              "name": "海水泡过的未来硬币",
+              "emoji": "🪙",
+              "description": "旅行纪念品「海水泡过的未来硬币」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_sea_future_coin",
+            "name": "海水泡过的未来硬币",
+            "emoji": "🪙",
+            "description": "旅行纪念品「海水泡过的未来硬币」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "蓝海观光港",
+        "achievements": [
+          {
+            "id": "ach_rtc_blue_harbor",
+            "name": "发现蓝海观光港",
+            "rarity": 3,
+            "time": 1785748590074,
+            "actor_name": "Koala",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现蓝海观光港」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785748590074,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：2小时14分钟\n获得：2570若汁币，若汁之缘×5，经验+5\n旅行事件：港口清理\n小若汁帮忙捡走漂浮垃圾，最后捡到一枚亮晶晶的旧硬币。\n纪念品：🪙海水泡过的未来硬币×1\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★"
+      },
+      "msdb8qdv-uwdazok8": {
+        "id": "msdb8qdv-uwdazok8",
+        "user_id": "523778199",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "display_name": "Koala",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 3392956,
+        "rewards": {
+          "coin": 942,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "原子百货商场",
+        "achievements": [
+          {
+            "id": "ach_rtc_atomic_mall",
+            "name": "发现原子百货商场",
+            "rarity": 3,
+            "time": 1785769852003,
+            "actor_name": "Koala",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现原子百货商场」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785769852004,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：57分钟\n获得：942若汁币，若汁之缘×2，经验+2\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msdb8qdv-uwdazok8",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "user_id": "523778199",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：57分钟\n获得：942若汁币，若汁之缘×2，经验+2\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785769852004,
+        "created_at": 1785769852004,
+        "sent_at": 1785769852260,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mscvtb2b-84f6scra",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "523778199",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：2小时14分钟\n获得：2570若汁币，若汁之缘×5，经验+5\n旅行事件：港口清理\n小若汁帮忙捡走漂浮垃圾，最后捡到一枚亮晶晶的旧硬币。\n纪念品：🪙海水泡过的未来硬币×1\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785748590075,
+        "created_at": 1785748590075,
+        "sent_at": 1785748590336,
+        "last_error": ""
+      },
       {
         "travel_id": "msc49ibh-1cql9pk0",
         "group_id": "946431041",
@@ -1507,11 +1740,12 @@
       }
     ],
     "stats": {
-      "total_trips": 8,
+      "total_trips": 10,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 2,
-        "eldoran_continent": 4
+        "retro_tomorrow_city": 4,
+        "eldoran_continent": 4,
+        "unregistered_district": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -1519,54 +1753,18 @@
         },
         "retro_tomorrow_city": {
           "rtc_event_alien_vending": 1,
-          "rtc_event_lost_luggage": 1
+          "rtc_event_lost_luggage": 1,
+          "rtc_event_harbor_cleanup": 1
         }
       },
       "event_ids": {
         "eld_event_windmill_chase": 1,
         "rtc_event_alien_vending": 1,
-        "rtc_event_lost_luggage": 1
+        "rtc_event_lost_luggage": 1,
+        "rtc_event_harbor_cleanup": 1
       }
     },
-    "active": {
-      "id": "mscvtb2b-84f6scra",
-      "user_id": "523778199",
-      "display_name": "Koala",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785740545091,
-      "ends_at": 1785748590059,
-      "duration_ms": 8044968,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_blue_harbor",
-      "location_name": "蓝海观光港",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_harbor_cleanup",
-        "name": "港口清理",
-        "text": "小若汁帮忙捡走漂浮垃圾，最后捡到一枚亮晶晶的旧硬币。",
-        "effects": {
-          "coin_percent": 15
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_sea_future_coin",
-            "name": "海水泡过的未来硬币",
-            "emoji": "🪙",
-            "description": "旅行纪念品「海水泡过的未来硬币」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2570,
-        "fate": 5,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null
   },
   "gacha": {

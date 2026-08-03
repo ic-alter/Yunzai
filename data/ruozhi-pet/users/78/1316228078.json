@@ -3,12 +3,12 @@
   "user_id": "1316228078",
   "pet": {
     "level": 1,
-    "experience": 46,
+    "experience": 51,
     "satiety": 5,
     "mood": 81,
     "health": 84,
     "current_skin_id": "snow_peak_turtle",
-    "satiety_decay_at": 1785743510599,
+    "satiety_decay_at": 1785769572424,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -161,6 +161,21 @@
         "name": "发现银冠王城",
         "rarity": 3,
         "time": 1785716412737,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_galaxy_motel": {
+        "id": "ach_rtc_galaxy_motel",
+        "name": "发现银河汽车旅馆",
+        "rarity": 3,
+        "time": 1785746817932,
         "actor_name": "释者",
         "rewards": [
           {
@@ -396,7 +411,7 @@
     "total_contribution": 10,
     "last_display_name": "释者",
     "first_joined_at": 1785060607224,
-    "last_active_at": 1785743510599,
+    "last_active_at": 1785769572424,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -407,12 +422,52 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 5,
+      "ruozhi_fate": 13,
       "nameless_ruozhi": 0,
       "souvenir_infinite_lottery_ticket": 1,
-      "souvenir_paper_visitor_crown": 1
+      "souvenir_paper_visitor_crown": 1,
+      "souvenir_burned_neon_tube": 1
     },
     "item_ledger": [
+      {
+        "time": 1785746817932,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 10,
+        "after": 13,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1785746817932,
+        "type": "income",
+        "item_id": "souvenir_burned_neon_tube",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscuwllr-atrawn3z",
+          "event_id": "rtc_event_neon_sign",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1785746817931,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 5,
+        "after": 10,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscuwllr-atrawn3z",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
       {
         "time": 1785716412737,
         "type": "income",
@@ -626,43 +681,6 @@
         "meta": {
           "achievement_id": "ach_map_first_discovery"
         }
-      },
-      {
-        "time": 1785264716527,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 59,
-        "after": 62,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_botanical_dome"
-        }
-      },
-      {
-        "time": 1785264716526,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 54,
-        "after": 59,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms4uvkdw-7n06tz2e",
-          "location_id": "rtc_botanical_dome"
-        }
-      },
-      {
-        "time": 1785255157267,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 84,
-        "after": 54,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
       }
     ],
     "item_daily": {
@@ -681,10 +699,23 @@
       }
     },
     "currency": {
-      "balance": 34737,
-      "total_earned": 34737,
+      "balance": 37228,
+      "total_earned": 37228,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785746817931,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2491,
+          "before": 34737,
+          "after": 37228,
+          "meta": {
+            "travel_id": "mscuwllr-atrawn3z",
+            "location_id": "rtc_galaxy_motel",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785716412736,
           "type": "income",
@@ -793,18 +824,6 @@
             "skin_id": "heart_shower_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785636651279,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 30575,
-          "after": 30875,
-          "meta": {
-            "skin_id": "shushing_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -897,12 +916,12 @@
     "migrated_at": 1785060607224
   },
   "created_at": 1785060607224,
-  "updated_at": 1785743510599,
+  "updated_at": 1785769572424,
   "production": {
     "started_at": 1785060607224,
-    "last_settled_at": 1785743510599,
-    "accumulated_ms": 106868534,
-    "progress": 14.226184307117585,
+    "last_settled_at": 1785769572424,
+    "accumulated_ms": 132930359,
+    "progress": 17.56536828366674,
     "total_produced": 70,
     "last_collected_at": 1785636642065
   },
@@ -910,7 +929,8 @@
     "unlocked_location_ids": [
       "rtc_botanical_dome",
       "rtc_atomic_mall",
-      "eld_silver_capital"
+      "eld_silver_capital",
+      "rtc_galaxy_motel"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -936,6 +956,14 @@
         "travel_id": "msceu2yg-xlp05k4a",
         "time": 1785716412736,
         "carried_item_id": ""
+      },
+      "rtc_galaxy_motel": {
+        "id": "rtc_galaxy_motel",
+        "map_id": "retro_tomorrow_city",
+        "name": "银河汽车旅馆",
+        "travel_id": "mscuwllr-atrawn3z",
+        "time": 1785746817932,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -952,6 +980,13 @@
         "location_id": "eld_silver_capital",
         "travel_id": "msceu2yg-xlp05k4a",
         "time": 1785716412737
+      },
+      "rtc_event_neon_sign": {
+        "id": "rtc_event_neon_sign",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_galaxy_motel",
+        "travel_id": "mscuwllr-atrawn3z",
+        "time": 1785746817932
       }
     },
     "souvenir_records": {
@@ -968,6 +1003,13 @@
         "event_id": "eld_event_royal_parade",
         "location_id": "eld_silver_capital",
         "time": 1785716412737
+      },
+      "souvenir_burned_neon_tube": {
+        "id": "souvenir_burned_neon_tube",
+        "name": "烧坏的霓虹灯管",
+        "event_id": "rtc_event_neon_sign",
+        "location_id": "rtc_galaxy_motel",
+        "time": 1785746817932
       }
     },
     "achievement_records": {
@@ -1021,6 +1063,21 @@
         "name": "发现银冠王城",
         "rarity": 3,
         "time": 1785716412737,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_galaxy_motel": {
+        "id": "ach_rtc_galaxy_motel",
+        "name": "发现银河汽车旅馆",
+        "rarity": 3,
+        "time": 1785746817932,
         "actor_name": "释者",
         "rewards": [
           {
@@ -1259,9 +1316,91 @@
         "settled_at": 1785716412737,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时13分钟\n获得：1462若汁币，若汁之缘×2，经验+3\n旅行事件：王室巡游\n小若汁站错队伍，跟着王室巡游走完全程。\n纪念品：👑纸质访客王冠×1\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★"
+      },
+      "mscuwllr-atrawn3z": {
+        "id": "mscuwllr-atrawn3z",
+        "user_id": "1316228078",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "释者",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_galaxy_motel",
+        "location_name": "银河汽车旅馆",
+        "duration_ms": 7798817,
+        "rewards": {
+          "coin": 2491,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_neon_sign",
+          "name": "修理霓虹灯",
+          "text": "小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。",
+          "effects": {
+            "coin_percent": 15
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_burned_neon_tube",
+              "name": "烧坏的霓虹灯管",
+              "emoji": "💡",
+              "description": "旅行纪念品「烧坏的霓虹灯管」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_burned_neon_tube",
+            "name": "烧坏的霓虹灯管",
+            "emoji": "💡",
+            "description": "旅行纪念品「烧坏的霓虹灯管」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "银河汽车旅馆",
+        "achievements": [
+          {
+            "id": "ach_rtc_galaxy_motel",
+            "name": "发现银河汽车旅馆",
+            "rarity": 3,
+            "time": 1785746817932,
+            "actor_name": "释者",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现银河汽车旅馆」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785746817933,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：2小时10分钟\n获得：2491若汁币，若汁之缘×5，经验+5\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscuwllr-atrawn3z",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1316228078",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：2小时10分钟\n获得：2491若汁币，若汁之缘×5，经验+5\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785746817933,
+        "created_at": 1785746817933,
+        "sent_at": 1785746818219,
+        "last_error": ""
+      },
       {
         "travel_id": "msceu2yg-xlp05k4a",
         "group_id": "415462812",
@@ -1316,15 +1455,16 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 2,
+        "retro_tomorrow_city": 3,
         "eldoran_continent": 1
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
-          "rtc_event_mall_lottery": 1
+          "rtc_event_mall_lottery": 1,
+          "rtc_event_neon_sign": 1
         },
         "eldoran_continent": {
           "eld_event_royal_parade": 1
@@ -1332,48 +1472,11 @@
       },
       "event_ids": {
         "rtc_event_mall_lottery": 1,
-        "eld_event_royal_parade": 1
+        "eld_event_royal_parade": 1,
+        "rtc_event_neon_sign": 1
       }
     },
-    "active": {
-      "id": "mscuwllr-atrawn3z",
-      "user_id": "1316228078",
-      "display_name": "释者",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785739019103,
-      "ends_at": 1785746817920,
-      "duration_ms": 7798817,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_galaxy_motel",
-      "location_name": "银河汽车旅馆",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_neon_sign",
-        "name": "修理霓虹灯",
-        "text": "小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。",
-        "effects": {
-          "coin_percent": 15
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_burned_neon_tube",
-            "name": "烧坏的霓虹灯管",
-            "emoji": "💡",
-            "description": "旅行纪念品「烧坏的霓虹灯管」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2491,
-        "fate": 5,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null
   },
   "gacha": {

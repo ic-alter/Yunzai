@@ -3,12 +3,12 @@
   "user_id": "2399212093",
   "pet": {
     "level": 3,
-    "experience": 11,
-    "satiety": 55,
+    "experience": 25,
+    "satiety": 37,
     "mood": 100,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785742481757,
+    "satiety_decay_at": 1785768401757,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -44,7 +44,12 @@
       "tidal_wave_turtle",
       "galaxy_turtle",
       "love_letter_turtle",
-      "beam_turtle"
+      "beam_turtle",
+      "coffee_turtle",
+      "rolling_laugh_turtle",
+      "fox_turtle",
+      "watermelon_turtle",
+      "parachute_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -63,7 +68,7 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 46,
+      "counter:gacha_draws": 56,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -205,9 +210,49 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785752831114,
+        "actor_name": "里雪りあ",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "parachute_turtle",
+        "reason": "gacha",
+        "time": 1785747506238
+      },
+      {
+        "skin_id": "watermelon_turtle",
+        "reason": "gacha",
+        "time": 1785747506238
+      },
+      {
+        "skin_id": "fox_turtle",
+        "reason": "gacha",
+        "time": 1785747506238
+      },
+      {
+        "skin_id": "rolling_laugh_turtle",
+        "reason": "gacha",
+        "time": 1785747506238
+      },
+      {
+        "skin_id": "coffee_turtle",
+        "reason": "gacha",
+        "time": 1785747506238
+      },
       {
         "skin_id": "beam_turtle",
         "reason": "level_reward",
@@ -388,17 +433,18 @@
     ]
   },
   "profile": {
-    "favorability": 42,
-    "weekly_contribution": 14,
-    "total_contribution": 39,
+    "favorability": 43,
+    "weekly_contribution": 15,
+    "total_contribution": 40,
     "last_display_name": "Ignotus",
     "first_joined_at": 1784810181975,
-    "last_active_at": 1785743510620,
+    "last_active_at": 1785769572446,
     "daily": {
       "date": "2026-08-03",
-      "event_count": 4,
+      "event_count": 5,
       "same_event_counts": {
-        "feed": 4
+        "feed": 4,
+        "mention_only": 1
       },
       "negative_shared_impact": 0
     },
@@ -406,7 +452,7 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 57,
+      "ruozhi_fate": 33,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
@@ -414,6 +460,43 @@
       "souvenir_atomic_child_sunglasses": 1
     },
     "item_ledger": [
+      {
+        "time": 1785752831114,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 30,
+        "after": 33,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785752831113,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 27,
+        "after": 30,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msczw67m-hy4yysur",
+          "location_id": "rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785747506238,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 57,
+        "after": 27,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
       {
         "time": 1785730938567,
         "type": "income",
@@ -626,47 +709,6 @@
         "meta": {
           "achievement_id": "ach_eld_adventurer_guild"
         }
-      },
-      {
-        "time": 1785657355471,
-        "type": "income",
-        "item_id": "souvenir_border_map",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msbc5b0y-endzw54x",
-          "event_id": "eld_event_border_quest",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1785657355471,
-        "type": "income",
-        "item_id": "souvenir_border_quest_scroll",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msbc5b0y-endzw54x",
-          "event_id": "eld_event_border_quest",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1785657355470,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 0,
-        "after": 5,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msbc5b0y-endzw54x",
-          "location_id": "eld_adventurer_guild"
-        }
       }
     ],
     "item_daily": {
@@ -685,10 +727,83 @@
       }
     },
     "currency": {
-      "balance": 44859,
-      "total_earned": 44859,
+      "balance": 47868,
+      "total_earned": 47868,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785752831113,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1509,
+          "before": 46359,
+          "after": 47868,
+          "meta": {
+            "travel_id": "msczw67m-hy4yysur",
+            "location_id": "rtc_broadcast_tower",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785747506239,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 46059,
+          "after": 46359,
+          "meta": {
+            "skin_id": "heart_shower_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785747506238,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 45759,
+          "after": 46059,
+          "meta": {
+            "skin_id": "antler_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785747506238,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 45459,
+          "after": 45759,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785747506238,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 45159,
+          "after": 45459,
+          "meta": {
+            "skin_id": "sparkling_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785747506238,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 44859,
+          "after": 45159,
+          "meta": {
+            "skin_id": "love_letter_turtle",
+            "rarity": 3
+          }
+        },
         {
           "time": 1785730938566,
           "type": "income",
@@ -736,82 +851,6 @@
           "meta": {
             "date": "2026-08-03"
           }
-        },
-        {
-          "time": 1785693700597,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 500,
-          "before": 40415,
-          "after": 40915,
-          "meta": {
-            "travel_id": "msc2wo9c-6jz4j486",
-            "location_id": "rtc_galaxy_motel",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785684527125,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2202,
-          "before": 38213,
-          "after": 40415,
-          "meta": {
-            "travel_id": "msbtqrhc-o5srtscl",
-            "location_id": "eld_windmill_plain",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785673589423,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1749,
-          "before": 36464,
-          "after": 38213,
-          "meta": {
-            "travel_id": "msbo7a2o-tvrt4t3o",
-            "location_id": "eld_moonbell_village",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785657355470,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2864,
-          "before": 33600,
-          "after": 36464,
-          "meta": {
-            "travel_id": "msbc5b0y-endzw54x",
-            "location_id": "eld_adventurer_guild",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785651134835,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 33300,
-          "after": 33600,
-          "meta": {
-            "skin_id": "nerd_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785651134835,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 33000,
-          "after": 33300,
-          "meta": {
-            "skin_id": "puppy_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -830,6 +869,29 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785753612610,
+      "user_id": "2399212093",
+      "display_name": "里雪りあ",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向里雪りあ，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785722321759,
       "user_id": "2399212093",
@@ -1088,38 +1150,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 10
-    },
-    {
-      "time": 1785518938586,
-      "user_id": "2399212093",
-      "display_name": "里雪りあ",
-      "event_id": "mention_only",
-      "branch_id": "crawl_close",
-      "summary": "小若汁慢慢爬到里雪りあ身边，安静地待了一小会儿。",
-      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 30100
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 18
     }
   ],
   "daily": {
     "date": "2026-08-03",
-    "event_count": 4,
-    "bonus_event_count": 4
+    "event_count": 5,
+    "bonus_event_count": 5
   },
   "processed_messages": {
     "event:1197866451": 1784810181978,
@@ -1138,7 +1174,8 @@
     "event:594009564": 1785718551243,
     "event:1115385562": 1785718558460,
     "event:331731558": 1785718566596,
-    "event:931470014": 1785722321757
+    "event:931470014": 1785722321757,
+    "event:28291975": 1785753612606
   },
   "skin_sessions": {
     "active": null
@@ -1151,12 +1188,12 @@
     "migrated_at": 1784810181975
   },
   "created_at": 1784810181975,
-  "updated_at": 1785743510620,
+  "updated_at": 1785769572446,
   "gacha": {
-    "since_four_plus": 6,
-    "since_five": 46,
-    "total_draws": 46,
-    "total_four": 8,
+    "since_four_plus": 3,
+    "since_five": 56,
+    "total_draws": 56,
+    "total_four": 10,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,
@@ -1164,9 +1201,9 @@
   },
   "production": {
     "started_at": 1785114566547,
-    "last_settled_at": 1785743510620,
-    "accumulated_ms": 24959376,
-    "progress": 4.714275171070054,
+    "last_settled_at": 1785769572446,
+    "accumulated_ms": 51021202,
+    "progress": 8.749794718274588,
     "total_produced": 74,
     "last_collected_at": 1785718551244
   },
@@ -1177,7 +1214,8 @@
       "eld_windmill_plain",
       "rtc_galaxy_motel",
       "eld_magic_academy",
-      "rtc_atomic_mall"
+      "rtc_atomic_mall",
+      "rtc_broadcast_tower"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1226,6 +1264,14 @@
         "name": "原子百货商场",
         "travel_id": "msckz921-t8771wzh",
         "time": 1785730938567,
+        "carried_item_id": ""
+      },
+      "rtc_broadcast_tower": {
+        "id": "rtc_broadcast_tower",
+        "map_id": "retro_tomorrow_city",
+        "name": "星尘广播塔",
+        "travel_id": "msczw67m-hy4yysur",
+        "time": 1785752831113,
         "carried_item_id": ""
       }
     },
@@ -1386,6 +1432,21 @@
         "rarity": 3,
         "time": 1785730938567,
         "actor_name": "Ignotus",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785752831114,
+        "actor_name": "里雪りあ",
         "rewards": [
           {
             "type": "item",
@@ -1776,9 +1837,68 @@
         "settled_at": 1785730938568,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时23分钟\n获得：2148若汁币，若汁之缘×4，经验+5\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★"
+      },
+      "msczw67m-hy4yysur": {
+        "id": "msczw67m-hy4yysur",
+        "user_id": "2399212093",
+        "group_id": "",
+        "self_id": "3964480831",
+        "display_name": "Ignotus",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_broadcast_tower",
+        "location_name": "星尘广播塔",
+        "duration_ms": 5433866,
+        "rewards": {
+          "coin": 1509,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "星尘广播塔",
+        "achievements": [
+          {
+            "id": "ach_rtc_broadcast_tower",
+            "name": "发现星尘广播塔",
+            "rarity": 3,
+            "time": 1785752831114,
+            "actor_name": "里雪りあ",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现星尘广播塔」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785752831114,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时31分钟\n获得：1509若汁币，若汁之缘×3，经验+3\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msczw67m-hy4yysur",
+        "group_id": "",
+        "self_id": "3964480831",
+        "user_id": "2399212093",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时31分钟\n获得：1509若汁币，若汁之缘×3，经验+3\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1785752831114,
+        "created_at": 1785752831114,
+        "sent_at": 0,
+        "last_error": ""
+      },
       {
         "travel_id": "msckz921-t8771wzh",
         "group_id": "",
@@ -1859,7 +1979,7 @@
       }
     ],
     "stats": {
-      "total_trips": 6,
+      "total_trips": 7,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -1868,8 +1988,9 @@
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 2,
-        "eldoran_continent": 4
+        "retro_tomorrow_city": 3,
+        "eldoran_continent": 4,
+        "unregistered_district": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -1888,7 +2009,39 @@
         "rtc_event_wrong_purchase": 1
       }
     },
-    "active": null,
+    "active": {
+      "id": "msdchsra-cfvobrzb",
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "group_id": "1025424898",
+      "self_id": "3762153943",
+      "started_at": 1785768561622,
+      "ends_at": 1785777967500,
+      "duration_ms": 9405878,
+      "map_id": "unregistered_district",
+      "map_name": "未登记城区",
+      "location_id": "school_gate_1743",
+      "location_name": "永远放学的校门",
+      "was_unlocked": false,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "event_dont_look_playground",
+        "name": "不要回头看操场",
+        "text": "告示要求离校者不要回头。小若汁走到街角才偷看，操场上所有秋千都朝它的方向缓慢摆动。",
+        "effects": {
+          "fate_flat": 1,
+          "mood": -1
+        },
+        "souvenirs": [],
+        "record": false
+      },
+      "rewards": {
+        "coin": 2613,
+        "fate": 6,
+        "experience": 5
+      }
+    },
     "prepared_tool": null
   }
 }

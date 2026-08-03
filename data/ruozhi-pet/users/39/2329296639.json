@@ -3,12 +3,12 @@
   "user_id": "2329296639",
   "pet": {
     "level": 6,
-    "experience": 65,
-    "satiety": 53,
+    "experience": 80,
+    "satiety": 35,
     "mood": 100,
     "health": 90,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785742678996,
+    "satiety_decay_at": 1785768598996,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -74,7 +74,9 @@
       "watermelon_turtle",
       "neutral_turtle",
       "fox_turtle",
-      "roast_chicken_turtle"
+      "roast_chicken_turtle",
+      "shidai_turtle",
+      "quilt_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -107,8 +109,8 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 244,
-      "counter:gacha_five": 3,
+      "counter:gacha_draws": 254,
+      "counter:gacha_five": 5,
       "counter:gacha_unlucky_five": 2
     },
     "achievement_records": {
@@ -742,9 +744,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_five_5": {
+        "id": "gacha_five_5",
+        "name": "五星眷顾",
+        "rarity": 4,
+        "time": 1785746474522,
+        "actor_name": "香蕉船",
+        "stat_key": "counter:gacha_five",
+        "count": 5,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "quilt_turtle",
+        "reason": "gacha",
+        "time": 1785746474519
+      },
+      {
+        "skin_id": "shidai_turtle",
+        "reason": "gacha",
+        "time": 1785746474519
+      },
       {
         "skin_id": "roast_chicken_turtle",
         "reason": "gacha",
@@ -1083,7 +1112,7 @@
     "total_contribution": 114,
     "last_display_name": "香蕉船",
     "first_joined_at": 1784791767637,
-    "last_active_at": 1785743510537,
+    "last_active_at": 1785769572359,
     "daily": {
       "date": "2026-08-03",
       "event_count": 4,
@@ -1097,129 +1126,129 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 169193,
-      "total_earned": 291193,
+      "balance": 179456,
+      "total_earned": 301456,
       "total_spent": 122000,
       "ledger": [
         {
-          "time": 1785736654332,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 20000,
-          "before": 189193,
-          "after": 169193,
-          "meta": {
-            "item_id": "travel_checklist",
-            "count": 10
-          }
-        },
-        {
-          "time": 1785736642931,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 20000,
-          "before": 209193,
-          "after": 189193,
-          "meta": {
-            "item_id": "travel_suitcase",
-            "count": 10
-          }
-        },
-        {
-          "time": 1785736629228,
+          "time": 1785765606264,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 722,
-          "before": 208471,
-          "after": 209193,
+          "amount": 2953,
+          "before": 176503,
+          "after": 179456,
           "meta": {
-            "travel_id": "mscrxoq0-l0naq6yt",
-            "location_id": "eld_old_battlefield",
+            "travel_id": "msd4eksv-w4kixirf",
+            "location_id": "rtc_botanical_dome",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1785729938008,
+          "time": 1785753998792,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 1389,
-          "before": 207082,
-          "after": 208471,
+          "amount": 2434,
+          "before": 174069,
+          "after": 176503,
           "meta": {
-            "travel_id": "mscmpous-2h2wtj5j",
-            "location_id": "eld_snow_mountain",
+            "travel_id": "mscylvpd-zrzh9pth",
+            "location_id": "rtc_aurora_station",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1785725271567,
+          "time": 1785746474520,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 206782,
-          "after": 207082,
+          "before": 173769,
+          "after": 174069,
           "meta": {
-            "skin_id": "shushing_turtle",
+            "skin_id": "volleyball_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785725271567,
+          "time": 1785746474520,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 206482,
-          "after": 206782,
+          "before": 173469,
+          "after": 173769,
           "meta": {
-            "skin_id": "thumbs_up_turtle",
+            "skin_id": "bouquet_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785725271566,
+          "time": 1785746474519,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 206182,
-          "after": 206482,
+          "before": 173169,
+          "after": 173469,
+          "meta": {
+            "skin_id": "coffee_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785746474519,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 172869,
+          "after": 173169,
+          "meta": {
+            "skin_id": "starry_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785746474519,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 172569,
+          "after": 172869,
+          "meta": {
+            "skin_id": "goggles_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785746474519,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 172269,
+          "after": 172569,
           "meta": {
             "skin_id": "bell_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785725271566,
+          "time": 1785746474519,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 205882,
-          "after": 206182,
+          "before": 171969,
+          "after": 172269,
           "meta": {
-            "skin_id": "rolling_laugh_turtle",
+            "skin_id": "headphones_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1785725271566,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 200882,
-          "after": 205882,
-          "meta": {
-            "skin_id": "mushroom_shell_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1785725271566,
+          "time": 1785746474519,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 200582,
-          "after": 200882,
+          "before": 171669,
+          "after": 171969,
           "meta": {
-            "skin_id": "heart_shower_turtle",
+            "skin_id": "bell_turtle",
             "rarity": 3
           }
         }
@@ -1233,7 +1262,7 @@
       "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 26,
+      "ruozhi_fate": 18,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_atomic_child_sunglasses": 1,
@@ -1258,7 +1287,7 @@
       "souvenir_shell_maintenance_card": 1,
       "souvenir_silent_moonbell": 1,
       "souvenir_f_rank_adventurer_card": 1,
-      "souvenir_color_snowflake": 2,
+      "souvenir_color_snowflake": 3,
       "souvenir_plastic_turtle": 2,
       "souvenir_paper_visitor_crown": 1,
       "souvenir_slow_vehicle_sticker": 1,
@@ -1267,9 +1296,114 @@
       "souvenir_world_tree_leaf_corner": 1,
       "souvenir_shell_snowman_photo": 1,
       "travel_suitcase": 10,
-      "travel_checklist": 9
+      "travel_checklist": 8
     },
     "item_ledger": [
+      {
+        "time": 1785765606264,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 12,
+        "after": 18,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msd4eksv-w4kixirf",
+          "location_id": "rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785754974398,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 9,
+        "after": 8,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1785753998792,
+        "type": "income",
+        "item_id": "souvenir_color_snowflake",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscylvpd-zrzh9pth",
+          "event_id": "rtc_event_weather_button",
+          "location_id": "rtc_aurora_station"
+        }
+      },
+      {
+        "time": 1785753998792,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 8,
+        "after": 12,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscylvpd-zrzh9pth",
+          "location_id": "rtc_aurora_station"
+        }
+      },
+      {
+        "time": 1785746474522,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_5"
+        }
+      },
+      {
+        "time": 1785746474518,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 35,
+        "after": 5,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1785746456617,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 33,
+        "after": 35,
+        "reason": "ww_skill_grid_settlement_fate",
+        "meta": {
+          "size": 10,
+          "solved": 14,
+          "total": 14,
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1785745213749,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 26,
+        "after": 33,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscti37d-bfe6r340",
+          "location_id": "eld_weeping_swamp"
+        }
+      },
       {
         "time": 1785736662443,
         "type": "expense",
@@ -1421,114 +1555,12 @@
           "travel_id": "msc33lec-d8y1kbu0",
           "location_id": "rtc_botanical_dome"
         }
-      },
-      {
-        "time": 1785692313185,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 64,
-        "after": 69,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc33gmy-eh0ep9aj",
-          "location_id": "eld_magic_academy"
-        }
-      },
-      {
-        "time": 1785692313172,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc33gmy-eh0ep9aj"
-        }
-      },
-      {
-        "time": 1785692308043,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 60,
-        "after": 64,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc33crd-qg4noi7u",
-          "location_id": "eld_world_tree"
-        }
-      },
-      {
-        "time": 1785692308031,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc33crd-qg4noi7u"
-        }
-      },
-      {
-        "time": 1785692302026,
-        "type": "income",
-        "item_id": "souvenir_tomorrow_child_ticket",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msc336ob-dy6na91f",
-          "event_id": "rtc_event_robot_conductor",
-          "location_id": "rtc_central_station"
-        }
-      },
-      {
-        "time": 1785692302026,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 55,
-        "after": 60,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc336ob-dy6na91f",
-          "location_id": "rtc_central_station"
-        }
-      },
-      {
-        "time": 1785692302015,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc336ob-dy6na91f"
-        }
-      },
-      {
-        "time": 1785692292835,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 54,
-        "after": 55,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc330cw-bh7dqe56",
-          "location_id": "rtc_aurora_station"
-        }
       }
     ],
     "item_daily": {
       "date": "2026-08-03",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 0,
+      "game_fate_reward_count": 2,
       "shop_buy_counts": {
         "travel_pager": 10,
         "travel_suitcase": 10,
@@ -1861,14 +1893,28 @@
     "migrated_at": 1784791767637
   },
   "created_at": 1784791767637,
-  "updated_at": 1785743510537,
+  "updated_at": 1785769572359,
   "gacha": {
-    "since_four_plus": 4,
-    "since_five": 21,
-    "total_draws": 244,
+    "since_four_plus": 3,
+    "since_five": 3,
+    "total_draws": 254,
     "total_four": 28,
-    "total_five": 3,
+    "total_five": 5,
     "five_history": [
+      {
+        "time": 1785746474519,
+        "skin_id": "quilt_turtle",
+        "skin_name": "棉被小若汁",
+        "pulls": 4,
+        "draw_index": 251
+      },
+      {
+        "time": 1785746474519,
+        "skin_id": "shidai_turtle",
+        "skin_name": "什戴小若汁",
+        "pulls": 24,
+        "draw_index": 247
+      },
       {
         "time": 1785692149435,
         "skin_id": "roast_chicken_turtle",
@@ -1892,13 +1938,13 @@
       }
     ],
     "route_misses": 0,
-    "route_skin_id": "roast_chicken_turtle"
+    "route_skin_id": "prison_turtle"
   },
   "production": {
     "started_at": 1785115565605,
-    "last_settled_at": 1785743510537,
-    "accumulated_ms": 73505581,
-    "progress": 13.292975899932136,
+    "last_settled_at": 1785769572359,
+    "accumulated_ms": 99567403,
+    "progress": 17.629138819913276,
     "total_produced": 80,
     "last_collected_at": 1785670004956
   },
@@ -2230,8 +2276,8 @@
         "id": "eld_event_fog_guide",
         "map_id": "eldoran_continent",
         "location_id": "eld_weeping_swamp",
-        "travel_id": "ms6xc0x2-yblre4p4",
-        "time": 1785381847975
+        "travel_id": "mscti37d-bfe6r340",
+        "time": 1785745213751
       },
       "eld_event_heavy_spoon": {
         "id": "eld_event_heavy_spoon",
@@ -2328,8 +2374,8 @@
         "id": "rtc_event_weather_button",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_aurora_station",
-        "travel_id": "msc9fy2b-cka3kmun",
-        "time": 1785709083267
+        "travel_id": "mscylvpd-zrzh9pth",
+        "time": 1785753998792
       },
       "rtc_event_prize_turtle": {
         "id": "rtc_event_prize_turtle",
@@ -2569,7 +2615,7 @@
         "name": "不会融化的彩色雪片",
         "event_id": "rtc_event_weather_button",
         "location_id": "rtc_aurora_station",
-        "time": 1785709083267
+        "time": 1785753998793
       },
       "souvenir_plastic_turtle": {
         "id": "souvenir_plastic_turtle",
@@ -7191,9 +7237,165 @@
         "settled_at": 1785736629229,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：43分钟\n获得：722若汁币，若汁之缘×1，经验+1"
+      },
+      "mscti37d-bfe6r340": {
+        "id": "mscti37d-bfe6r340",
+        "user_id": "2329296639",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "香蕉船",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_weeping_swamp",
+        "location_name": "哭泣沼泽",
+        "duration_ms": 8551271,
+        "rewards": {
+          "coin": 2375,
+          "fate": 7,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_fog_guide",
+          "name": "雾中灯火",
+          "text": "一盏紫色灯火带小若汁走出沼泽。",
+          "effects": {
+            "fate_flat": 2
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1785745213753,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时23分钟\n获得：2375若汁币，若汁之缘×7，经验+5\n携带道具：旅行清单\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。"
+      },
+      "mscylvpd-zrzh9pth": {
+        "id": "mscylvpd-zrzh9pth",
+        "user_id": "2329296639",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "香蕉船",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_aurora_station",
+        "location_name": "极光气象站",
+        "duration_ms": 8761327,
+        "rewards": {
+          "coin": 2434,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_weather_button",
+          "name": "天气按钮",
+          "text": "小若汁按下写着“请勿触碰”的按钮，山顶下了三分钟彩色雪。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_color_snowflake",
+              "name": "不会融化的彩色雪片",
+              "emoji": "❄️",
+              "description": "旅行纪念品「不会融化的彩色雪片」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_color_snowflake",
+            "name": "不会融化的彩色雪片",
+            "emoji": "❄️",
+            "description": "旅行纪念品「不会融化的彩色雪片」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785753998793,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：2小时26分钟\n获得：2434若汁币，若汁之缘×4，经验+4\n旅行事件：天气按钮\n小若汁按下写着“请勿触碰”的按钮，山顶下了三分钟彩色雪。\n纪念品：❄️不会融化的彩色雪片×1"
+      },
+      "msd4eksv-w4kixirf": {
+        "id": "msd4eksv-w4kixirf",
+        "user_id": "2329296639",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "香蕉船",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_botanical_dome",
+        "location_name": "玻璃穹顶植物园",
+        "duration_ms": 10631828,
+        "rewards": {
+          "coin": 2953,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1785765606266,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时57分钟\n获得：2953若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msd4eksv-w4kixirf",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2329296639",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时57分钟\n获得：2953若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785765606266,
+        "created_at": 1785765606266,
+        "sent_at": 1785765607241,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mscylvpd-zrzh9pth",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2329296639",
+        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：2小时26分钟\n获得：2434若汁币，若汁之缘×4，经验+4\n旅行事件：天气按钮\n小若汁按下写着“请勿触碰”的按钮，山顶下了三分钟彩色雪。\n纪念品：❄️不会融化的彩色雪片×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785753998794,
+        "created_at": 1785753998794,
+        "sent_at": 1785753999150,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mscti37d-bfe6r340",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2329296639",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时23分钟\n获得：2375若汁币，若汁之缘×7，经验+5\n携带道具：旅行清单\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785745213753,
+        "created_at": 1785745213753,
+        "sent_at": 1785745214112,
+        "last_error": ""
+      },
       {
         "travel_id": "mscrxoq0-l0naq6yt",
         "group_id": "415462812",
@@ -7414,49 +7616,10 @@
         "created_at": 1785676381308,
         "sent_at": 1785676381729,
         "last_error": ""
-      },
-      {
-        "travel_id": "msbk93sk-2fvve2r2",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2329296639",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：2小时33分钟\n获得：2416若汁币，若汁之缘×5，经验+5\n旅行事件：套圈奖品\n小若汁赢到一只长得和自己一模一样的塑料乌龟。\n纪念品：🐢塑料小乌龟×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785669814693,
-        "created_at": 1785669814693,
-        "sent_at": 1785669814956,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msal2gos-51acwy77",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2329296639",
-        "report": "小若汁回来了！\n目的地：沉星湖（艾尔多兰大陆）\n旅行时间：36分钟\n获得：706若汁币，若汁之缘×1，经验+1\n旅行事件：湖底地图\n湖水退去片刻，露出通向世界树之丘的发光纹路。\n纪念品：🗺️水纹拓片×1\n新地点已解锁：沉星湖\n达成旅行成就「发现沉星湖」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785603747131,
-        "created_at": 1785603747131,
-        "sent_at": 1785603747406,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msal2agc-eudlszex",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2329296639",
-        "report": "小若汁回来了！\n目的地：胶囊住宅区（明日旧城）\n旅行时间：1小时50分钟\n获得：1834若汁币，若汁之缘×3，经验+4",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785601560471,
-        "created_at": 1785601560471,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 87,
+      "total_trips": 90,
       "key_item_discoveries": {
         "souvenir_signal_record": {
           "item_id": "souvenir_signal_record",
@@ -7471,7 +7634,8 @@
       },
       "map_location_counts": {
         "retro_tomorrow_city": 13,
-        "eldoran_continent": 13
+        "eldoran_continent": 13,
+        "unregistered_district": 0
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -7558,38 +7722,7 @@
         "eld_event_snowman_shell": 1
       }
     },
-    "active": {
-      "id": "mscti37d-bfe6r340",
-      "user_id": "2329296639",
-      "display_name": "香蕉船",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785736662457,
-      "ends_at": 1785745213728,
-      "duration_ms": 8551271,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_weeping_swamp",
-      "location_name": "哭泣沼泽",
-      "was_unlocked": true,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": {
-        "id": "eld_event_fog_guide",
-        "name": "雾中灯火",
-        "text": "一盏紫色灯火带小若汁走出沼泽。",
-        "effects": {
-          "fate_flat": 2
-        },
-        "souvenirs": [],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2375,
-        "fate": 7,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

@@ -8,18 +8,75 @@
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785743510645,
+    "satiety_decay_at": 1785769572469,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "love_letter_turtle",
+      "cheese_turtle",
+      "lying_turtle",
+      "bell_turtle",
+      "birthday_turtle",
+      "fruit_hat_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 6,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1785758098700,
+        "actor_name": "Fictionsun",
+        "stat_key": "counter:gacha_draws",
+        "count": 6,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "fruit_hat_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
+      {
+        "skin_id": "birthday_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
+      {
+        "skin_id": "bell_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
+      {
+        "skin_id": "lying_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
+      {
+        "skin_id": "cheese_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
+      {
+        "skin_id": "love_letter_turtle",
+        "reason": "gacha",
+        "time": 1785758098699
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -53,7 +110,7 @@
     "total_contribution": 0,
     "last_display_name": "Fictionsun",
     "first_joined_at": 1784985661492,
-    "last_active_at": 1785743510645,
+    "last_active_at": 1785769572469,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -64,10 +121,38 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 1279,
-      "total_earned": 1279,
+      "balance": 3793,
+      "total_earned": 3793,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785758034899,
+          "type": "income",
+          "reason": "fgo_guess_skill_settlement",
+          "amount": 1052,
+          "before": 2741,
+          "after": 3793,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 705,
+            "total_score": 2010
+          }
+        },
+        {
+          "time": 1785757557458,
+          "type": "income",
+          "reason": "fgo_guess_skill_settlement",
+          "amount": 1462,
+          "before": 1279,
+          "after": 2741,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 975,
+            "total_score": 1959.5
+          }
+        },
         {
           "time": 1784986528096,
           "type": "income",
@@ -106,10 +191,64 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 6,
+      "ruozhi_fate": 3,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785758098700,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1785758098699,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 18,
+        "before": 18,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 6
+        }
+      },
+      {
+        "time": 1785758034922,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 12,
+        "after": 18,
+        "reason": "fgo_guess_skill_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1785757557488,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 6,
+        "after": 12,
+        "reason": "fgo_guess_skill_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
       {
         "time": 1784986528097,
         "type": "income",
@@ -142,9 +281,11 @@
       }
     ],
     "item_daily": {
-      "date": "2026-07-25",
+      "date": "2026-08-03",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 6
+      "game_fate_reward_count": 12,
+      "shop_buy_counts": {},
+      "use_counts": {}
     },
     "item_migrations": {
       "fate_v1": {
@@ -173,10 +314,10 @@
     "migrated_at": 1784985661492
   },
   "created_at": 1784985661492,
-  "updated_at": 1785743510645,
+  "updated_at": 1785769572469,
   "production": {
     "started_at": 1784985661492,
-    "last_settled_at": 1785743510645,
+    "last_settled_at": 1785769572469,
     "accumulated_ms": 259200000,
     "progress": 30.026680747013167,
     "total_produced": 0
@@ -196,5 +337,15 @@
       "map_event_ids": {},
       "event_ids": {}
     }
+  },
+  "gacha": {
+    "since_four_plus": 6,
+    "since_five": 6,
+    "total_draws": 6,
+    "total_four": 0,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
   }
 }
