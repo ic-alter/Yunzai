@@ -3,12 +3,12 @@
   "user_id": "1412874037",
   "pet": {
     "level": 5,
-    "experience": 155,
-    "satiety": 49,
+    "experience": 160,
+    "satiety": 36,
     "mood": 100,
     "health": 100,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785725194406,
+    "satiety_decay_at": 1785743914406,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -746,6 +746,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_waste_factory": {
+        "id": "ach_rtc_waste_factory",
+        "name": "发现万能垃圾处理厂",
+        "rarity": 3,
+        "time": 1785744240273,
+        "actor_name": "霜之号商",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1123,7 +1138,7 @@
     "total_contribution": 118,
     "last_display_name": "霜之号商",
     "first_joined_at": 1784860899632,
-    "last_active_at": 1785725854333,
+    "last_active_at": 1785744240628,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -1134,10 +1149,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 7237,
-      "total_earned": 303237,
+      "balance": 9628,
+      "total_earned": 305628,
       "total_spent": 296000,
       "ledger": [
+        {
+          "time": 1785744240272,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2391,
+          "before": 7237,
+          "after": 9628,
+          "meta": {
+            "travel_id": "mscsw10p-qhrh2utc",
+            "location_id": "rtc_waste_factory",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785686853147,
           "type": "income",
@@ -1253,19 +1281,6 @@
             "location_id": "rtc_central_station",
             "forced_by": "pager"
           }
-        },
-        {
-          "time": 1785686729296,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1172,
-          "before": 5785,
-          "after": 6957,
-          "meta": {
-            "travel_id": "msbzrt6l-6l8c74qi",
-            "location_id": "rtc_blue_harbor",
-            "forced_by": "pager"
-          }
         }
       ],
       "sign": {
@@ -1277,7 +1292,7 @@
       "first_interaction_reward_date": "2026-08-02"
     },
     "items": {
-      "ruozhi_fate": 71,
+      "ruozhi_fate": 79,
       "nameless_ruozhi": 1,
       "souvenir_single_song_radio": 1,
       "travel_pager": 3,
@@ -1303,9 +1318,49 @@
       "souvenir_paid_pirate_photo": 1,
       "souvenir_moonbell_festival_ribbon": 1,
       "souvenir_sea_future_coin": 1,
-      "souvenir_burned_neon_tube": 1
+      "souvenir_burned_neon_tube": 1,
+      "souvenir_unrecyclable_sticker": 1
     },
     "item_ledger": [
+      {
+        "time": 1785744240273,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 76,
+        "after": 79,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_waste_factory"
+        }
+      },
+      {
+        "time": 1785744240272,
+        "type": "income",
+        "item_id": "souvenir_unrecyclable_sticker",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscsw10p-qhrh2utc",
+          "event_id": "rtc_event_recycle_shell",
+          "location_id": "rtc_waste_factory"
+        }
+      },
+      {
+        "time": 1785744240272,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 71,
+        "after": 76,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscsw10p-qhrh2utc",
+          "location_id": "rtc_waste_factory"
+        }
+      },
       {
         "time": 1785686853148,
         "type": "income",
@@ -1520,45 +1575,6 @@
         "reason": "use_pager",
         "meta": {
           "travel_id": "msbzt1av-s304fbty"
-        }
-      },
-      {
-        "time": 1785686784715,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1785686778679,
-        "type": "income",
-        "item_id": "souvenir_immortal_plastic_plant",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msbzstux-d9rb2irr",
-          "event_id": "rtc_event_neighbor_gift",
-          "location_id": "rtc_capsule_homes"
-        }
-      },
-      {
-        "time": 1785686778679,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 52,
-        "after": 53,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msbzstux-d9rb2irr",
-          "location_id": "rtc_capsule_homes"
         }
       }
     ],
@@ -1877,12 +1893,12 @@
     "migrated_at": 1784860899632
   },
   "created_at": 1784860899632,
-  "updated_at": 1785725854333,
+  "updated_at": 1785744240628,
   "production": {
     "started_at": 1784874763344,
-    "last_settled_at": 1785725854333,
-    "accumulated_ms": 46752924,
-    "progress": 8.73893860538574,
+    "last_settled_at": 1785744240628,
+    "accumulated_ms": 65139219,
+    "progress": 11.793834363969705,
     "total_produced": 111,
     "last_collected_at": 1785679101409
   },
@@ -1958,7 +1974,8 @@
       "eld_silver_capital",
       "eld_magic_academy",
       "rtc_flyover",
-      "eld_old_battlefield"
+      "eld_old_battlefield",
+      "rtc_waste_factory"
     ],
     "location_records": {
       "rtc_galaxy_motel": {
@@ -2160,6 +2177,14 @@
         "travel_id": "msbzs7w9-rgm8rjcj",
         "time": 1785686753570,
         "carried_item_id": "travel_suitcase"
+      },
+      "rtc_waste_factory": {
+        "id": "rtc_waste_factory",
+        "map_id": "retro_tomorrow_city",
+        "name": "万能垃圾处理厂",
+        "travel_id": "mscsw10p-qhrh2utc",
+        "time": 1785744240272,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -2358,6 +2383,13 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "msbzufcu-305yfruq",
         "time": 1785686853148
+      },
+      "rtc_event_recycle_shell": {
+        "id": "rtc_event_recycle_shell",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_waste_factory",
+        "travel_id": "mscsw10p-qhrh2utc",
+        "time": 1785744240272
       }
     },
     "souvenir_records": {
@@ -2514,6 +2546,13 @@
         "event_id": "rtc_event_neon_sign",
         "location_id": "rtc_galaxy_motel",
         "time": 1785686853148
+      },
+      "souvenir_unrecyclable_sticker": {
+        "id": "souvenir_unrecyclable_sticker",
+        "name": "不可回收贴纸",
+        "event_id": "rtc_event_recycle_shell",
+        "location_id": "rtc_waste_factory",
+        "time": 1785744240272
       }
     },
     "achievement_records": {
@@ -3002,6 +3041,21 @@
         "name": "背包装满了",
         "rarity": 3,
         "time": 1785686788787,
+        "actor_name": "霜之号商",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_waste_factory": {
+        "id": "ach_rtc_waste_factory",
+        "name": "发现万能垃圾处理厂",
+        "rarity": 3,
+        "time": 1785744240273,
         "actor_name": "霜之号商",
         "rewards": [
           {
@@ -6052,9 +6106,89 @@
         "settled_at": 1785686853148,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：2小时46分钟\n获得：3560若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1"
+      },
+      "mscsw10p-qhrh2utc": {
+        "id": "mscsw10p-qhrh2utc",
+        "user_id": "1412874037",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "霜之号商",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_waste_factory",
+        "location_name": "万能垃圾处理厂",
+        "duration_ms": 8607061,
+        "rewards": {
+          "coin": 2391,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_recycle_shell",
+          "name": "龟壳回收警报",
+          "text": "扫描器试图给龟壳贴上可回收标志。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_unrecyclable_sticker",
+              "name": "不可回收贴纸",
+              "emoji": "♻️",
+              "description": "旅行纪念品「不可回收贴纸」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_unrecyclable_sticker",
+            "name": "不可回收贴纸",
+            "emoji": "♻️",
+            "description": "旅行纪念品「不可回收贴纸」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "万能垃圾处理厂",
+        "achievements": [
+          {
+            "id": "ach_rtc_waste_factory",
+            "name": "发现万能垃圾处理厂",
+            "rarity": 3,
+            "time": 1785744240273,
+            "actor_name": "霜之号商",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现万能垃圾处理厂」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785744240273,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：2小时23分钟\n获得：2391若汁币，若汁之缘×5，经验+5\n旅行事件：龟壳回收警报\n扫描器试图给龟壳贴上可回收标志。\n纪念品：♻️不可回收贴纸×1\n新地点已解锁：万能垃圾处理厂\n达成旅行成就「发现万能垃圾处理厂」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscsw10p-qhrh2utc",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1412874037",
+        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：2小时23分钟\n获得：2391若汁币，若汁之缘×5，经验+5\n旅行事件：龟壳回收警报\n扫描器试图给龟壳贴上可回收标志。\n纪念品：♻️不可回收贴纸×1\n新地点已解锁：万能垃圾处理厂\n达成旅行成就「发现万能垃圾处理厂」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785744240273,
+        "created_at": 1785744240273,
+        "sent_at": 1785744240628,
+        "last_error": ""
+      },
       {
         "travel_id": "msbzufcu-305yfruq",
         "group_id": "415462812",
@@ -6301,26 +6435,13 @@
         "created_at": 1785605625199,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msanhdmg-lx582q2u",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1412874037",
-        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：1小时37分钟\n获得：1812若汁币，若汁之缘×3，经验+4\n携带道具：行李箱\n旅行事件：交通机器人\n交通机器人给龟壳贴上了“低速车辆”标志。\n纪念品：⚠️低速车辆贴纸×1\n新地点已解锁：飞跃立交桥\n小若汁升到了Lv.5！\n升级奖励：1000若汁币，若汁之缘×3\n达成 Lv.5，解锁三星皮肤「无语小若汁」！\n达成旅行成就「发现飞跃立交桥」 ★★★\n达成旅行成就「未来交通体验者」 ★★★",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785605620998,
-        "created_at": 1785605620998,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 63,
+      "total_trips": 64,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 14,
+        "retro_tomorrow_city": 15,
         "eldoran_continent": 11
       },
       "map_event_ids": {
@@ -6354,7 +6475,8 @@
           "rtc_event_forbidden_frequency": 1,
           "rtc_event_robot_conductor": 1,
           "rtc_event_harbor_cleanup": 1,
-          "rtc_event_neon_sign": 1
+          "rtc_event_neon_sign": 1,
+          "rtc_event_recycle_shell": 1
         }
       },
       "event_ids": {
@@ -6385,7 +6507,8 @@
         "eld_event_pirate_photo": 1,
         "eld_event_moon_festival": 1,
         "rtc_event_harbor_cleanup": 1,
-        "rtc_event_neon_sign": 1
+        "rtc_event_neon_sign": 1,
+        "rtc_event_recycle_shell": 1
       }
     },
     "active": null,

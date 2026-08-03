@@ -3,12 +3,12 @@
   "user_id": "772165757",
   "pet": {
     "level": 3,
-    "experience": 101,
+    "experience": 132,
     "satiety": 37,
     "mood": 100,
     "health": 98,
     "current_skin_id": "qiqiu_turtle",
-    "satiety_decay_at": 1785725312792,
+    "satiety_decay_at": 1785743181126,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -963,17 +963,18 @@
     ]
   },
   "profile": {
-    "favorability": 49,
-    "weekly_contribution": 5,
-    "total_contribution": 45,
+    "favorability": 55,
+    "weekly_contribution": 11,
+    "total_contribution": 51,
     "last_display_name": "行止 130633278",
     "first_joined_at": 1784794433575,
-    "last_active_at": 1785725854373,
+    "last_active_at": 1785743510569,
     "daily": {
       "date": "2026-08-03",
-      "event_count": 1,
+      "event_count": 3,
       "same_event_counts": {
-        "feed": 1
+        "feed": 2,
+        "petting": 1
       },
       "negative_shared_impact": 0
     },
@@ -981,10 +982,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 146940,
-      "total_earned": 214940,
+      "balance": 149089,
+      "total_earned": 217089,
       "total_spent": 68000,
       "ledger": [
+        {
+          "time": 1785733062815,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2149,
+          "before": 146940,
+          "after": 149089,
+          "meta": {
+            "travel_id": "mscmr4be-sgcubifl",
+            "location_id": "eld_elven_forest",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785725312794,
           "type": "income",
@@ -1091,18 +1105,6 @@
             "skin_id": "bell_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785725261258,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 139040,
-          "after": 139340,
-          "meta": {
-            "skin_id": "starry_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1114,7 +1116,7 @@
       "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 4,
       "nameless_ruozhi": 0,
       "souvenir_dome_giant_leaf": 1,
       "souvenir_atomic_child_sunglasses": 2,
@@ -1140,6 +1142,19 @@
       "souvenir_border_map": 0
     },
     "item_ledger": [
+      {
+        "time": 1785733062815,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 0,
+        "after": 4,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscmr4be-sgcubifl",
+          "location_id": "eld_elven_forest"
+        }
+      },
       {
         "time": 1785725275248,
         "type": "expense",
@@ -1382,19 +1397,6 @@
           "event_id": "eld_event_sun_chart",
           "location_id": "eld_free_port"
         }
-      },
-      {
-        "time": 1785676462987,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 63,
-        "after": 67,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msbtnqb0-31pb7zwe",
-          "location_id": "eld_free_port"
-        }
       }
     ],
     "item_daily": {
@@ -1422,6 +1424,52 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785733121083,
+      "user_id": "772165757",
+      "display_name": "行止 130633278",
+      "event_id": "petting",
+      "branch_id": "normal_comfortable",
+      "summary": "行止 130633278轻轻摸了摸小若汁，小若汁舒服地眯起了眼睛。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785733101128,
+      "user_id": "772165757",
+      "display_name": "行止 130633278",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785725312794,
       "user_id": "772165757",
@@ -1637,38 +1685,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1785294435260,
-      "user_id": "772165757",
-      "display_name": "行止",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，行止及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 26328
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
     "date": "2026-08-03",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "event_count": 3,
+    "bonus_event_count": 3
   },
   "processed_messages": {
     "event:1935299061": 1785294435259,
@@ -1679,7 +1701,9 @@
     "event:475309700": 1785670041011,
     "event:1842563204": 1785670048369,
     "event:1795462927": 1785670107702,
-    "event:17952686": 1785725312789
+    "event:17952686": 1785725312789,
+    "event:900553896": 1785733101123,
+    "event:625913473": 1785733121082
   },
   "skin_sessions": {
     "active": null
@@ -1692,7 +1716,7 @@
     "migrated_at": 1784794433575
   },
   "created_at": 1784794433575,
-  "updated_at": 1785725854373,
+  "updated_at": 1785743510569,
   "gacha": {
     "since_four_plus": 4,
     "since_five": 40,
@@ -1734,9 +1758,9 @@
   },
   "production": {
     "started_at": 1784874763348,
-    "last_settled_at": 1785725854373,
-    "accumulated_ms": 597614,
-    "progress": 0.7419966654184409,
+    "last_settled_at": 1785743510569,
+    "accumulated_ms": 18253810,
+    "progress": 3.5520348105195128,
     "total_produced": 107,
     "last_collected_at": 1785725256759
   },
@@ -2095,8 +2119,8 @@
         "id": "eld_event_talking_tree",
         "map_id": "eldoran_continent",
         "location_id": "eld_elven_forest",
-        "travel_id": "ms9r4ucw-ja5xk65n",
-        "time": 1785561048035
+        "travel_id": "mscmr4be-sgcubifl",
+        "time": 1785733062816
       },
       "rtc_event_mystery_box": {
         "id": "rtc_event_mystery_box",
@@ -5329,9 +5353,57 @@
         "settled_at": 1785679129042,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：44分钟\n获得：728若汁币，若汁之缘×1，经验+2"
+      },
+      "mscmr4be-sgcubifl": {
+        "id": "mscmr4be-sgcubifl",
+        "user_id": "772165757",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "行止 130633278",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_elven_forest",
+        "location_name": "翡翠精灵森林",
+        "duration_ms": 7736299,
+        "rewards": {
+          "coin": 2149,
+          "fate": 4,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_talking_tree",
+          "name": "会说话的树",
+          "text": "古树花了半小时说出第一句话：“你挡住阳光了。”",
+          "effects": {},
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785733062817,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：2小时9分钟\n获得：2149若汁币，若汁之缘×4，经验+5\n旅行事件：会说话的树\n古树花了半小时说出第一句话：“你挡住阳光了。”"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscmr4be-sgcubifl",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "772165757",
+        "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：2小时9分钟\n获得：2149若汁币，若汁之缘×4，经验+5\n旅行事件：会说话的树\n古树花了半小时说出第一句话：“你挡住阳光了。”",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785733062817,
+        "created_at": 1785733062817,
+        "sent_at": 1785733063156,
+        "last_error": ""
+      },
       {
         "travel_id": "msbtoqs6-7yw748i1",
         "group_id": "415462812",
@@ -5578,23 +5650,10 @@
         "created_at": 1785487852765,
         "sent_at": 1785487853053,
         "last_error": ""
-      },
-      {
-        "travel_id": "ms8bny3i-b3aar4lp",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "772165757",
-        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：2小时43分钟\n获得：2725若汁币，若汁之缘×6，经验+6",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785474647296,
-        "created_at": 1785474647296,
-        "sent_at": 1785474647635,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 51,
+      "total_trips": 52,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -5676,36 +5735,7 @@
         "eld_event_shepherd_map": 1
       }
     },
-    "active": {
-      "id": "mscmr4be-sgcubifl",
-      "user_id": "772165757",
-      "display_name": "行止 130633278",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785725326490,
-      "ends_at": 1785733062789,
-      "duration_ms": 7736299,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_elven_forest",
-      "location_name": "翡翠精灵森林",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "eld_event_talking_tree",
-        "name": "会说话的树",
-        "text": "古树花了半小时说出第一句话：“你挡住阳光了。”",
-        "effects": {},
-        "souvenirs": [],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2149,
-        "fate": 4,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

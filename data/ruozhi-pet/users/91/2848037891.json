@@ -3,12 +3,12 @@
   "user_id": "2848037891",
   "pet": {
     "level": 2,
-    "experience": 26,
-    "satiety": 29,
+    "experience": 32,
+    "satiety": 16,
     "mood": 100,
     "health": 96,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785724676551,
+    "satiety_decay_at": 1785743396551,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -247,7 +247,7 @@
     "total_contribution": 37,
     "last_display_name": "Zutto Mayonakade Iinoni.",
     "first_joined_at": 1784809997772,
-    "last_active_at": 1785725854432,
+    "last_active_at": 1785743510618,
     "daily": {
       "date": "2026-08-03",
       "event_count": 1,
@@ -260,10 +260,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 15055,
-      "total_earned": 15055,
+      "balance": 17998,
+      "total_earned": 17998,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785729523342,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2943,
+          "before": 15055,
+          "after": 17998,
+          "meta": {
+            "travel_id": "mscixyer-v4lbfxnm",
+            "location_id": "rtc_central_station",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785718916551,
           "type": "income",
@@ -372,17 +385,6 @@
             "skin_id": "unicorn_turtle",
             "rarity": 4
           }
-        },
-        {
-          "time": 1785637172154,
-          "type": "income",
-          "reason": "level_up_reward",
-          "amount": 300,
-          "before": 3242,
-          "after": 3542,
-          "meta": {
-            "level": 2
-          }
         }
       ],
       "sign": {
@@ -394,10 +396,23 @@
       "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 21,
+      "ruozhi_fate": 27,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785729523342,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 21,
+        "after": 27,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscixyer-v4lbfxnm",
+          "location_id": "rtc_central_station"
+        }
+      },
       {
         "time": 1785718916551,
         "type": "income",
@@ -855,7 +870,7 @@
     "migrated_at": 1784809997772
   },
   "created_at": 1784809997772,
-  "updated_at": 1785725854432,
+  "updated_at": 1785743510618,
   "gacha": {
     "since_four_plus": 2,
     "since_five": 22,
@@ -868,9 +883,9 @@
   },
   "production": {
     "started_at": 1785141760301,
-    "last_settled_at": 1785725854432,
-    "accumulated_ms": 6937881,
-    "progress": 0.9368492844255321,
+    "last_settled_at": 1785743510617,
+    "accumulated_ms": 24594066,
+    "progress": 3.222548580988602,
     "total_produced": 57,
     "last_collected_at": 1785718916551
   },
@@ -1052,9 +1067,50 @@
         "settled_at": 1785678294324,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时45分钟\n获得：2748若汁币，若汁之缘×6，经验+5\n新地点已解锁：潮汐自由港\n达成旅行成就「发现潮汐自由港」 ★★★"
+      },
+      "mscixyer-v4lbfxnm": {
+        "id": "mscixyer-v4lbfxnm",
+        "user_id": "2848037891",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "Zutto Mayonakade Iinoni.",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_central_station",
+        "location_name": "明日中央车站",
+        "duration_ms": 10596370,
+        "rewards": {
+          "coin": 2943,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785729523343,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时57分钟\n获得：2943若汁币，若汁之缘×6，经验+6"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscixyer-v4lbfxnm",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2848037891",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时57分钟\n获得：2943若汁币，若汁之缘×6，经验+6",
+        "status": "sent",
+        "attempts": 2,
+        "next_retry_at": 1785730123720,
+        "created_at": 1785729523343,
+        "sent_at": 1785743065284,
+        "last_error": ""
+      },
       {
         "travel_id": "msbouzdc-u6ebtajx",
         "group_id": "946431041",
@@ -1083,7 +1139,7 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 3,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
@@ -1092,29 +1148,7 @@
       "map_event_ids": {},
       "event_ids": {}
     },
-    "active": {
-      "id": "mscixyer-v4lbfxnm",
-      "user_id": "2848037891",
-      "display_name": "Zutto Mayonakade Iinoni.",
-      "group_id": "946431041",
-      "self_id": "3964480831",
-      "started_at": 1785718926963,
-      "ends_at": 1785729523333,
-      "duration_ms": 10596370,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_central_station",
-      "location_name": "明日中央车站",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 2943,
-        "fate": 6,
-        "experience": 6
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

@@ -3,12 +3,12 @@
   "user_id": "1244785897",
   "pet": {
     "level": 3,
-    "experience": 20,
-    "satiety": 34,
+    "experience": 26,
+    "satiety": 22,
     "mood": 100,
     "health": 92,
     "current_skin_id": "shidai_turtle",
-    "satiety_decay_at": 1785725404118,
+    "satiety_decay_at": 1785742684118,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -857,7 +857,7 @@
     "total_contribution": 30,
     "last_display_name": "穗穗一时性起",
     "first_joined_at": 1784792061225,
-    "last_active_at": 1785725854446,
+    "last_active_at": 1785743510631,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -868,10 +868,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 95184,
-      "total_earned": 155184,
+      "balance": 97735,
+      "total_earned": 157735,
       "total_spent": 60000,
       "ledger": [
+        {
+          "time": 1785728616774,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2551,
+          "before": 95184,
+          "after": 97735,
+          "meta": {
+            "travel_id": "msciw6u7-bvxs1pp4",
+            "location_id": "rtc_broadcast_tower",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785718897198,
           "type": "income",
@@ -979,18 +992,6 @@
             "skin_id": "thumbs_up_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785718855144,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 92184,
-          "after": 92484,
-          "meta": {
-            "skin_id": "grasshopper_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1002,7 +1003,7 @@
       "first_interaction_reward_date": "2026-08-02"
     },
     "items": {
-      "ruozhi_fate": 7,
+      "ruozhi_fate": 14,
       "nameless_ruozhi": 0,
       "souvenir_palace_leaf_basket": 1,
       "souvenir_floating_compass": 0,
@@ -1015,7 +1016,7 @@
       "souvenir_two_smaller_screws": 1,
       "souvenir_border_map": 0,
       "souvenir_atomic_child_sunglasses": 1,
-      "souvenir_single_song_radio": 1,
+      "souvenir_single_song_radio": 2,
       "souvenir_plastic_rocket_model": 1,
       "souvenir_color_snowflake": 1,
       "souvenir_nested_old_boot": 2,
@@ -1023,6 +1024,33 @@
       "souvenir_temporary_astronaut_card": 1
     },
     "item_ledger": [
+      {
+        "time": 1785728616776,
+        "type": "income",
+        "item_id": "souvenir_single_song_radio",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msciw6u7-bvxs1pp4",
+          "event_id": "rtc_event_old_song",
+          "location_id": "rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785728616775,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 7,
+        "after": 14,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msciw6u7-bvxs1pp4",
+          "location_id": "rtc_broadcast_tower"
+        }
+      },
       {
         "time": 1785718897199,
         "type": "income",
@@ -1250,31 +1278,6 @@
           "level": 3,
           "source": "travel"
         }
-      },
-      {
-        "time": 1785718798584,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 35,
-        "after": 39,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msciv509-faoavsna",
-          "location_id": "eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1785718798577,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msciv509-faoavsna"
-        }
       }
     ],
     "item_daily": {
@@ -1477,7 +1480,7 @@
     "migrated_at": 1784792061225
   },
   "created_at": 1784792061225,
-  "updated_at": 1785725854446,
+  "updated_at": 1785743510631,
   "gacha": {
     "since_four_plus": 2,
     "since_five": 2,
@@ -1519,9 +1522,9 @@
   },
   "production": {
     "started_at": 1784874763347,
-    "last_settled_at": 1785725854446,
-    "accumulated_ms": 7101135,
-    "progress": 1.8642318070730237,
+    "last_settled_at": 1785743510631,
+    "accumulated_ms": 24757320,
+    "progress": 4.5055492281488165,
     "total_produced": 101,
     "last_collected_at": 1785718753311
   },
@@ -1797,8 +1800,8 @@
         "id": "rtc_event_old_song",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_broadcast_tower",
-        "travel_id": "ms9y4qwn-r5o5quyk",
-        "time": 1785570800505
+        "travel_id": "msciw6u7-bvxs1pp4",
+        "time": 1785728616776
       },
       "rtc_event_launch_countdown": {
         "id": "rtc_event_launch_countdown",
@@ -1926,7 +1929,7 @@
         "name": "单曲收音机",
         "event_id": "rtc_event_old_song",
         "location_id": "rtc_broadcast_tower",
-        "time": 1785570800505
+        "time": 1785728616776
       },
       "souvenir_plastic_rocket_model": {
         "id": "souvenir_plastic_rocket_model",
@@ -4354,9 +4357,75 @@
         "settled_at": 1785718840839,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：1小时54分钟\n获得：1906若汁币，若汁之缘×6，经验+4\n旅行事件：宇航员体检\n体检机器人认为龟壳是优秀的天然宇航服。\n纪念品：🪪临时宇航员证×1"
+      },
+      "msciw6u7-bvxs1pp4": {
+        "id": "msciw6u7-bvxs1pp4",
+        "user_id": "1244785897",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "穗穗一时性起",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_broadcast_tower",
+        "location_name": "星尘广播塔",
+        "duration_ms": 9772175,
+        "rewards": {
+          "coin": 2551,
+          "fate": 7,
+          "experience": 6
+        },
+        "event": {
+          "id": "rtc_event_old_song",
+          "name": "永不结束的老歌",
+          "text": "广播塔循环播放一首没有结尾的老歌，小若汁听到睡着。",
+          "effects": {
+            "coin_percent": -6,
+            "fate_flat": 1
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_single_song_radio",
+              "name": "单曲收音机",
+              "emoji": "📻",
+              "description": "旅行纪念品「单曲收音机」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_single_song_radio",
+            "name": "单曲收音机",
+            "emoji": "📻",
+            "description": "旅行纪念品「单曲收音机」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785728616778,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：2小时43分钟\n获得：2551若汁币，若汁之缘×7，经验+6\n旅行事件：永不结束的老歌\n广播塔循环播放一首没有结尾的老歌，小若汁听到睡着。\n纪念品：📻单曲收音机×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msciw6u7-bvxs1pp4",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1244785897",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：2小时43分钟\n获得：2551若汁币，若汁之缘×7，经验+6\n旅行事件：永不结束的老歌\n广播塔循环播放一首没有结尾的老歌，小若汁听到睡着。\n纪念品：📻单曲收音机×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785728616779,
+        "created_at": 1785728616779,
+        "sent_at": 1785728617147,
+        "last_error": ""
+      },
       {
         "travel_id": "msciw1np-ltcapec4",
         "group_id": "415462812",
@@ -4603,23 +4672,10 @@
         "created_at": 1785601611052,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msal38lf-oag6fnf2",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1244785897",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时10分钟\n获得：1111若汁币，若汁之缘×2，经验+2\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785601605049,
-        "created_at": 1785601605049,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 40,
+      "total_trips": 41,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -4692,46 +4748,7 @@
         "rtc_event_astronaut_exam": 1
       }
     },
-    "active": {
-      "id": "msciw6u7-bvxs1pp4",
-      "user_id": "1244785897",
-      "display_name": "穗穗一时性起",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785718844575,
-      "ends_at": 1785728616750,
-      "duration_ms": 9772175,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_broadcast_tower",
-      "location_name": "星尘广播塔",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_old_song",
-        "name": "永不结束的老歌",
-        "text": "广播塔循环播放一首没有结尾的老歌，小若汁听到睡着。",
-        "effects": {
-          "coin_percent": -6,
-          "fate_flat": 1
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_single_song_radio",
-            "name": "单曲收音机",
-            "emoji": "📻",
-            "description": "旅行纪念品「单曲收音机」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2551,
-        "fate": 7,
-        "experience": 6
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

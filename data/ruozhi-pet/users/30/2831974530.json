@@ -3,12 +3,12 @@
   "user_id": "2831974530",
   "pet": {
     "level": 7,
-    "experience": 138,
+    "experience": 156,
     "satiety": 5,
     "mood": 100,
     "health": 100,
     "current_skin_id": "qiqiu_turtle",
-    "satiety_decay_at": 1785725854320,
+    "satiety_decay_at": 1785743510516,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -783,6 +783,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_event_collector": {
+        "id": "ach_rtc_event_collector",
+        "name": "旧时代新鲜事",
+        "rarity": 3,
+        "time": 1785733743204,
+        "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1186,25 +1201,64 @@
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 0,
-    "total_contribution": 187,
+    "weekly_contribution": 3,
+    "total_contribution": 190,
     "last_display_name": "【IGN】《原神》共鸣者「流浪者」演示",
     "first_joined_at": 1784792061221,
-    "last_active_at": 1785725854320,
+    "last_active_at": 1785743510516,
     "daily": {
       "date": "2026-08-03",
-      "event_count": 0,
-      "same_event_counts": {},
+      "event_count": 1,
+      "same_event_counts": {
+        "praise": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 232509,
-      "total_earned": 452509,
+      "balance": 235515,
+      "total_earned": 455515,
       "total_spent": 220000,
       "ledger": [
+        {
+          "time": 1785741065318,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 235015,
+          "after": 235515,
+          "meta": {
+            "date": "2026-08-03"
+          }
+        },
+        {
+          "time": 1785740811713,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1914,
+          "before": 233101,
+          "after": 235015,
+          "meta": {
+            "travel_id": "mscrvbpx-fcdcm8op",
+            "location_id": "eld_weeping_swamp",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785733743203,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 592,
+          "before": 232509,
+          "after": 233101,
+          "meta": {
+            "travel_id": "mscqht04-vevruv7m",
+            "location_id": "rtc_rocket_base",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785725120449,
           "type": "income",
@@ -1289,42 +1343,6 @@
             "skin_id": "antler_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785723123210,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 225153,
-          "after": 230153,
-          "meta": {
-            "skin_id": "unicorn_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1785723123210,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 224853,
-          "after": 225153,
-          "meta": {
-            "skin_id": "biting_lip_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785723123210,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 224553,
-          "after": 224853,
-          "meta": {
-            "skin_id": "love_letter_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1333,10 +1351,10 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-01"
+      "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 15,
+      "ruozhi_fate": 38,
       "nameless_ruozhi": 2,
       "travel_pager": 0,
       "travel_checklist": 0,
@@ -1371,9 +1389,74 @@
       "souvenir_safety_visit_badge": 1,
       "souvenir_real_moon_coupon": 1,
       "souvenir_tidal_blue_shell": 1,
-      "souvenir_temporary_actor_badge": 1
+      "souvenir_temporary_actor_badge": 1,
+      "souvenir_temporary_astronaut_card": 1
     },
     "item_ledger": [
+      {
+        "time": 1785741065317,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 11,
+        "before": 27,
+        "after": 38,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 21.141
+        }
+      },
+      {
+        "time": 1785740811713,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 21,
+        "after": 27,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscrvbpx-fcdcm8op",
+          "location_id": "eld_weeping_swamp"
+        }
+      },
+      {
+        "time": 1785733743204,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 18,
+        "after": 21,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_event_collector"
+        }
+      },
+      {
+        "time": 1785733743204,
+        "type": "income",
+        "item_id": "souvenir_temporary_astronaut_card",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscqht04-vevruv7m",
+          "event_id": "rtc_event_astronaut_exam",
+          "location_id": "rtc_rocket_base"
+        }
+      },
+      {
+        "time": 1785733743203,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 15,
+        "after": 18,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscqht04-vevruv7m",
+          "location_id": "rtc_rocket_base"
+        }
+      },
       {
         "time": 1785725120449,
         "type": "income",
@@ -1564,70 +1647,6 @@
           "event_id": "rtc_event_lost_luggage",
           "location_id": "rtc_central_station"
         }
-      },
-      {
-        "time": 1785721171699,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 7,
-        "before": 22,
-        "after": 29,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mscka1df-y2v87fke",
-          "location_id": "rtc_central_station"
-        }
-      },
-      {
-        "time": 1785721171684,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mscka1df-y2v87fke"
-        }
-      },
-      {
-        "time": 1785721165894,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 19,
-        "after": 22,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_event_collector"
-        }
-      },
-      {
-        "time": 1785721165894,
-        "type": "income",
-        "item_id": "souvenir_tidal_blue_shell",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msck9wos-7je7aga7",
-          "event_id": "eld_event_shell_market",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1785721165894,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 15,
-        "after": 19,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msck9wos-7je7aga7",
-          "location_id": "eld_free_port"
-        }
       }
     ],
     "item_daily": {
@@ -1659,6 +1678,32 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785741065319,
+      "user_id": "2831974530",
+      "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+      "event_id": "praise",
+      "branch_id": "happy",
+      "summary": "小若汁被【IGN】《原神》共鸣者「流浪者」演示夸得很开心，尾巴轻轻晃了晃。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 235515
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 11
+    },
     {
       "time": 1785545202478,
       "user_id": "2831974530",
@@ -1882,38 +1927,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1785462801701,
-      "user_id": "2831974530",
-      "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，【IGN】《原神》共鸣者「流浪者」演示及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 118911
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 22
     }
   ],
   "daily": {
-    "date": "2026-08-01",
-    "event_count": 8,
-    "bonus_event_count": 8
+    "date": "2026-08-03",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
   "processed_messages": {
     "event:218626573": 1784880613177,
@@ -1990,7 +2009,8 @@
     "event:443343636": 1785545186400,
     "event:2098814268": 1785545191864,
     "event:530932655": 1785545197451,
-    "event:513628430": 1785545202477
+    "event:513628430": 1785545202477,
+    "event:1842869270": 1785741065316
   },
   "skin_sessions": {
     "active": null
@@ -2003,7 +2023,7 @@
     "migrated_at": 1784792061221
   },
   "created_at": 1784792061221,
-  "updated_at": 1785725854320,
+  "updated_at": 1785743510516,
   "gacha": {
     "since_four_plus": 5,
     "since_five": 5,
@@ -2087,11 +2107,11 @@
   },
   "production": {
     "started_at": 1784880613176,
-    "last_settled_at": 1785725854320,
-    "accumulated_ms": 60896755,
-    "progress": 9.24842405218322,
-    "total_produced": 121,
-    "last_collected_at": 1785664957565
+    "last_settled_at": 1785743510516,
+    "accumulated_ms": 2445199,
+    "progress": 0.761198986936278,
+    "total_produced": 132,
+    "last_collected_at": 1785741065317
   },
   "travel": {
     "unlocked_location_ids": [
@@ -2596,6 +2616,20 @@
         "location_id": "rtc_robot_park",
         "travel_id": "msckaulv-jwaszujh",
         "time": 1785722987535
+      },
+      "rtc_event_astronaut_exam": {
+        "id": "rtc_event_astronaut_exam",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_rocket_base",
+        "travel_id": "mscqht04-vevruv7m",
+        "time": 1785733743204
+      },
+      "eld_event_fog_guide": {
+        "id": "eld_event_fog_guide",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_weeping_swamp",
+        "travel_id": "mscrvbpx-fcdcm8op",
+        "time": 1785740811714
       }
     },
     "souvenir_records": {
@@ -2815,6 +2849,13 @@
         "event_id": "rtc_event_robot_parade",
         "location_id": "rtc_robot_park",
         "time": 1785722987535
+      },
+      "souvenir_temporary_astronaut_card": {
+        "id": "souvenir_temporary_astronaut_card",
+        "name": "临时宇航员证",
+        "event_id": "rtc_event_astronaut_exam",
+        "location_id": "rtc_rocket_base",
+        "time": 1785733743204
       }
     },
     "achievement_records": {
@@ -3333,6 +3374,21 @@
         "name": "异世界见闻录",
         "rarity": 3,
         "time": 1785721165894,
+        "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_event_collector": {
+        "id": "ach_rtc_event_collector",
+        "name": "旧时代新鲜事",
+        "rarity": 3,
+        "time": 1785733743204,
         "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
         "rewards": [
           {
@@ -7917,9 +7973,141 @@
         "settled_at": 1785725120452,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：33分钟\n获得：556若汁币，若汁之缘×1，经验+2"
+      },
+      "mscqht04-vevruv7m": {
+        "id": "mscqht04-vevruv7m",
+        "user_id": "2831974530",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_rocket_base",
+        "location_name": "红沙火箭基地",
+        "duration_ms": 2132797,
+        "rewards": {
+          "coin": 592,
+          "fate": 3,
+          "experience": 2
+        },
+        "event": {
+          "id": "rtc_event_astronaut_exam",
+          "name": "宇航员体检",
+          "text": "体检机器人认为龟壳是优秀的天然宇航服。",
+          "effects": {
+            "fate_flat": 2
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_temporary_astronaut_card",
+              "name": "临时宇航员证",
+              "emoji": "🪪",
+              "description": "旅行纪念品「临时宇航员证」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_temporary_astronaut_card",
+            "name": "临时宇航员证",
+            "emoji": "🪪",
+            "description": "旅行纪念品「临时宇航员证」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [
+          {
+            "id": "ach_rtc_event_collector",
+            "name": "旧时代新鲜事",
+            "rarity": 3,
+            "time": 1785733743204,
+            "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旧时代新鲜事」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785733743204,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：36分钟\n获得：592若汁币，若汁之缘×3，经验+2\n旅行事件：宇航员体检\n体检机器人认为龟壳是优秀的天然宇航服。\n纪念品：🪪临时宇航员证×1\n达成旅行成就「旧时代新鲜事」 ★★★"
+      },
+      "mscrvbpx-fcdcm8op": {
+        "id": "mscrvbpx-fcdcm8op",
+        "user_id": "2831974530",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_weeping_swamp",
+        "location_name": "哭泣沼泽",
+        "duration_ms": 6890908,
+        "rewards": {
+          "coin": 1914,
+          "fate": 6,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_fog_guide",
+          "name": "雾中灯火",
+          "text": "一盏紫色灯火带小若汁走出沼泽。",
+          "effects": {
+            "fate_flat": 2
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785740811715,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：1小时55分钟\n获得：1914若汁币，若汁之缘×6，经验+3\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscrvbpx-fcdcm8op",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2831974530",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：1小时55分钟\n获得：1914若汁币，若汁之缘×6，经验+3\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785740811715,
+        "created_at": 1785740811715,
+        "sent_at": 1785740812027,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mscqht04-vevruv7m",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2831974530",
+        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：36分钟\n获得：592若汁币，若汁之缘×3，经验+2\n旅行事件：宇航员体检\n体检机器人认为龟壳是优秀的天然宇航服。\n纪念品：🪪临时宇航员证×1\n达成旅行成就「旧时代新鲜事」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785733743204,
+        "created_at": 1785733743204,
+        "sent_at": 1785733743602,
+        "last_error": ""
+      },
       {
         "travel_id": "msclfu6j-at2vrix6",
         "group_id": "415462812",
@@ -8153,36 +8341,10 @@
         "created_at": 1785664672767,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msbmmriw-37lvbk4q",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2831974530",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时10分钟\n获得：1161若汁币，若汁之缘×3，经验+2",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785664661761,
-        "created_at": 1785664661761,
-        "sent_at": 0,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msbmmk7y-1de3v50f",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2831974530",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：41分钟\n获得：645若汁币，若汁之缘×1，经验+1\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785664652791,
-        "created_at": 1785664652791,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 104,
+      "total_trips": 106,
       "key_item_discoveries": {
         "souvenir_dragon_footprint": {
           "item_id": "souvenir_dragon_footprint",
@@ -8215,7 +8377,8 @@
           "eld_event_hot_spring": 1,
           "eld_event_shell_forge": 1,
           "eld_event_windmill_chase": 1,
-          "eld_event_shell_market": 1
+          "eld_event_shell_market": 1,
+          "eld_event_fog_guide": 1
         },
         "retro_tomorrow_city": {
           "rtc_event_escape_vine": 1,
@@ -8236,7 +8399,8 @@
           "rtc_event_glow_badge": 1,
           "rtc_event_moon_coupon": 1,
           "rtc_event_same_exit": 1,
-          "rtc_event_robot_parade": 1
+          "rtc_event_robot_parade": 1,
+          "rtc_event_astronaut_exam": 1
         }
       },
       "event_ids": {
@@ -8278,7 +8442,9 @@
         "eld_event_windmill_chase": 1,
         "eld_event_shell_market": 1,
         "rtc_event_same_exit": 1,
-        "rtc_event_robot_parade": 1
+        "rtc_event_robot_parade": 1,
+        "rtc_event_astronaut_exam": 1,
+        "eld_event_fog_guide": 1
       }
     },
     "active": null,

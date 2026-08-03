@@ -3,12 +3,12 @@
   "user_id": "1750348863",
   "pet": {
     "level": 1,
-    "experience": 40,
+    "experience": 46,
     "satiety": 5,
     "mood": 73,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785725854393,
+    "satiety_decay_at": 1785743510590,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -99,7 +99,7 @@
     "total_contribution": 3,
     "last_display_name": "新神已至！满潜专九卡涅利安实战测评",
     "first_joined_at": 1784810523484,
-    "last_active_at": 1785725854393,
+    "last_active_at": 1785743510590,
     "daily": {
       "date": "2026-08-03",
       "event_count": 1,
@@ -112,13 +112,54 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 43,
+      "ruozhi_fate": 48,
       "nameless_ruozhi": 0,
       "souvenir_atomic_child_sunglasses": 1,
-      "souvenir_border_quest_scroll": 1,
-      "souvenir_border_map": 0
+      "souvenir_border_quest_scroll": 2,
+      "souvenir_border_map": 1
     },
     "item_ledger": [
+      {
+        "time": 1785726259300,
+        "type": "income",
+        "item_id": "souvenir_border_map",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mschm42q-9ghvm5ua",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785726259300,
+        "type": "income",
+        "item_id": "souvenir_border_quest_scroll",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mschm42q-9ghvm5ua",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1785726259298,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 43,
+        "after": 48,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mschm42q-9ghvm5ua",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
       {
         "time": 1785716694814,
         "type": "expense",
@@ -258,10 +299,23 @@
       }
     },
     "currency": {
-      "balance": 4258,
-      "total_earned": 4258,
+      "balance": 6915,
+      "total_earned": 6915,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785726259298,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2657,
+          "before": 4258,
+          "after": 6915,
+          "meta": {
+            "travel_id": "mschm42q-9ghvm5ua",
+            "location_id": "eld_adventurer_guild",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785716664612,
           "type": "income",
@@ -431,12 +485,12 @@
     "migrated_at": 1784810523484
   },
   "created_at": 1784810523484,
-  "updated_at": 1785725854393,
+  "updated_at": 1785743510590,
   "production": {
     "started_at": 1785141760273,
-    "last_settled_at": 1785725854393,
-    "accumulated_ms": 53208425,
-    "progress": 6.130156037323591,
+    "last_settled_at": 1785743510590,
+    "accumulated_ms": 70864622,
+    "progress": 8.059069313704422,
     "total_produced": 28,
     "last_collected_at": 1785672645968
   },
@@ -475,8 +529,8 @@
         "id": "eld_event_border_quest",
         "map_id": "eldoran_continent",
         "location_id": "eld_adventurer_guild",
-        "travel_id": "mscgecf1-qlct2by9",
-        "time": 1785716664613
+        "travel_id": "mschm42q-9ghvm5ua",
+        "time": 1785726259300
       }
     },
     "souvenir_records": {
@@ -492,14 +546,14 @@
         "name": "越界委托书",
         "event_id": "eld_event_border_quest",
         "location_id": "eld_adventurer_guild",
-        "time": 1785716664613
+        "time": 1785726259300
       },
       "souvenir_border_map": {
         "id": "souvenir_border_map",
         "name": "画出边框的地图",
         "event_id": "eld_event_border_quest",
         "location_id": "eld_adventurer_guild",
-        "time": 1785716664613
+        "time": 1785726259300
       }
     },
     "achievement_records": {
@@ -716,9 +770,87 @@
         "settled_at": 1785716664613,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：34分钟\n获得：559若汁币，若汁之缘×1，经验+2\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n新地点已解锁：金杯冒险者公会\n达成旅行成就「发现金杯冒险者公会」 ★★★"
+      },
+      "mschm42q-9ghvm5ua": {
+        "id": "mschm42q-9ghvm5ua",
+        "user_id": "1750348863",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "新神已至！满潜专九卡涅利安实战测评",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_adventurer_guild",
+        "location_name": "金杯冒险者公会",
+        "duration_ms": 9564467,
+        "rewards": {
+          "coin": 2657,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": {
+          "id": "eld_event_border_quest",
+          "name": "地图外任务",
+          "text": "告示板上有一张要求前往地图边框外的委托。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_border_quest_scroll",
+              "name": "越界委托书",
+              "emoji": "📜",
+              "description": "旅行纪念品「越界委托书」。"
+            },
+            {
+              "id": "souvenir_border_map",
+              "name": "画出边框的地图",
+              "emoji": "🗺️",
+              "travel_tool": true,
+              "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_border_quest_scroll",
+            "name": "越界委托书",
+            "emoji": "📜",
+            "description": "旅行纪念品「越界委托书」。",
+            "amount": 1
+          },
+          {
+            "id": "souvenir_border_map",
+            "name": "画出边框的地图",
+            "emoji": "🗺️",
+            "travel_tool": true,
+            "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "souvenir_border_map",
+        "tool_name": "画出边框的地图",
+        "settled_at": 1785726259302,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：2小时39分钟\n获得：2657若汁币，若汁之缘×5，经验+6\n携带道具：画出边框的地图\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mschm42q-9ghvm5ua",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：2小时39分钟\n获得：2657若汁币，若汁之缘×5，经验+6\n携带道具：画出边框的地图\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785726259303,
+        "created_at": 1785726259303,
+        "sent_at": 1785726259791,
+        "last_error": ""
+      },
       {
         "travel_id": "mscgecf1-qlct2by9",
         "group_id": "946431041",
@@ -747,7 +879,7 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 3,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
@@ -766,50 +898,7 @@
         "eld_event_border_quest": 1
       }
     },
-    "active": {
-      "id": "mschm42q-9ghvm5ua",
-      "user_id": "1750348863",
-      "display_name": "新神已至！满潜专九卡涅利安实战测评",
-      "group_id": "946431041",
-      "self_id": "3964480831",
-      "started_at": 1785716694818,
-      "ends_at": 1785726259285,
-      "duration_ms": 9564467,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_adventurer_guild",
-      "location_name": "金杯冒险者公会",
-      "was_unlocked": true,
-      "carried_item_id": "souvenir_border_map",
-      "carried_item_name": "画出边框的地图",
-      "event": {
-        "id": "eld_event_border_quest",
-        "name": "地图外任务",
-        "text": "告示板上有一张要求前往地图边框外的委托。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_border_quest_scroll",
-            "name": "越界委托书",
-            "emoji": "📜",
-            "description": "旅行纪念品「越界委托书」。"
-          },
-          {
-            "id": "souvenir_border_map",
-            "name": "画出边框的地图",
-            "emoji": "🗺️",
-            "travel_tool": true,
-            "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2657,
-        "fate": 5,
-        "experience": 6
-      }
-    },
+    "active": null,
     "prepared_tool": null
   },
   "gacha": {

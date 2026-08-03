@@ -3,12 +3,12 @@
   "user_id": "2399212093",
   "pet": {
     "level": 3,
-    "experience": 6,
-    "satiety": 67,
+    "experience": 11,
+    "satiety": 55,
     "mood": 100,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785725201757,
+    "satiety_decay_at": 1785742481757,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -182,6 +182,21 @@
         "rarity": 3,
         "time": 1785722162221,
         "actor_name": "里雪りあ",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785730938567,
+        "actor_name": "Ignotus",
         "rewards": [
           {
             "type": "item",
@@ -378,7 +393,7 @@
     "total_contribution": 39,
     "last_display_name": "Ignotus",
     "first_joined_at": 1784810181975,
-    "last_active_at": 1785725854435,
+    "last_active_at": 1785743510620,
     "daily": {
       "date": "2026-08-03",
       "event_count": 4,
@@ -391,13 +406,53 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 50,
+      "ruozhi_fate": 57,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
-      "souvenir_moonbell_festival_ribbon": 1
+      "souvenir_moonbell_festival_ribbon": 1,
+      "souvenir_atomic_child_sunglasses": 1
     },
     "item_ledger": [
+      {
+        "time": 1785730938567,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 54,
+        "after": 57,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785730938567,
+        "type": "income",
+        "item_id": "souvenir_atomic_child_sunglasses",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msckz921-t8771wzh",
+          "event_id": "rtc_event_wrong_purchase",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785730938566,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 50,
+        "after": 54,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msckz921-t8771wzh",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1785722321758,
         "type": "income",
@@ -612,42 +667,6 @@
           "travel_id": "msbc5b0y-endzw54x",
           "location_id": "eld_adventurer_guild"
         }
-      },
-      {
-        "time": 1785651134835,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 27,
-        "before": 27,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 9
-        }
-      },
-      {
-        "time": 1785646977881,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 21,
-        "after": 27,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 12.043
-        }
-      },
-      {
-        "time": 1785642357527,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 18,
-        "after": 21,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 2
-        }
       }
     ],
     "item_daily": {
@@ -666,10 +685,23 @@
       }
     },
     "currency": {
-      "balance": 42711,
-      "total_earned": 42711,
+      "balance": 44859,
+      "total_earned": 44859,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785730938566,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2148,
+          "before": 42711,
+          "after": 44859,
+          "meta": {
+            "travel_id": "msckz921-t8771wzh",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785722321758,
           "type": "income",
@@ -778,18 +810,6 @@
           "after": 33300,
           "meta": {
             "skin_id": "puppy_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785651134835,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 32700,
-          "after": 33000,
-          "meta": {
-            "skin_id": "crown_turtle",
             "rarity": 3
           }
         }
@@ -1131,7 +1151,7 @@
     "migrated_at": 1784810181975
   },
   "created_at": 1784810181975,
-  "updated_at": 1785725854435,
+  "updated_at": 1785743510620,
   "gacha": {
     "since_four_plus": 6,
     "since_five": 46,
@@ -1144,9 +1164,9 @@
   },
   "production": {
     "started_at": 1785114566547,
-    "last_settled_at": 1785725854435,
-    "accumulated_ms": 7303191,
-    "progress": 1.8218599954864305,
+    "last_settled_at": 1785743510620,
+    "accumulated_ms": 24959376,
+    "progress": 4.714275171070054,
     "total_produced": 74,
     "last_collected_at": 1785718551244
   },
@@ -1156,7 +1176,8 @@
       "eld_moonbell_village",
       "eld_windmill_plain",
       "rtc_galaxy_motel",
-      "eld_magic_academy"
+      "eld_magic_academy",
+      "rtc_atomic_mall"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1198,6 +1219,14 @@
         "travel_id": "msciqfpn-95b4rc4d",
         "time": 1785722162221,
         "carried_item_id": ""
+      },
+      "rtc_atomic_mall": {
+        "id": "rtc_atomic_mall",
+        "map_id": "retro_tomorrow_city",
+        "name": "原子百货商场",
+        "travel_id": "msckz921-t8771wzh",
+        "time": 1785730938567,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1221,6 +1250,13 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "msc2wo9c-6jz4j486",
         "time": 1785693700597
+      },
+      "rtc_event_wrong_purchase": {
+        "id": "rtc_event_wrong_purchase",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_atomic_mall",
+        "travel_id": "msckz921-t8771wzh",
+        "time": 1785730938567
       }
     },
     "souvenir_records": {
@@ -1244,6 +1280,13 @@
         "event_id": "eld_event_moon_festival",
         "location_id": "eld_moonbell_village",
         "time": 1785673589423
+      },
+      "souvenir_atomic_child_sunglasses": {
+        "id": "souvenir_atomic_child_sunglasses",
+        "name": "原子儿童墨镜",
+        "event_id": "rtc_event_wrong_purchase",
+        "location_id": "rtc_atomic_mall",
+        "time": 1785730938567
       }
     },
     "achievement_records": {
@@ -1328,6 +1371,21 @@
         "rarity": 3,
         "time": 1785722162221,
         "actor_name": "里雪りあ",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785730938567,
+        "actor_name": "Ignotus",
         "rewards": [
           {
             "type": "item",
@@ -1649,9 +1707,91 @@
         "settled_at": 1785722162221,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：1小时\n获得：996若汁币，若汁之缘×2，经验+2\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★"
+      },
+      "msckz921-t8771wzh": {
+        "id": "msckz921-t8771wzh",
+        "user_id": "2399212093",
+        "group_id": "",
+        "self_id": "3964480831",
+        "display_name": "Ignotus",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 8591907,
+        "rewards": {
+          "coin": 2148,
+          "fate": 4,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_wrong_purchase",
+          "name": "买错纪念品",
+          "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
+          "effects": {
+            "coin_percent": -10
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_atomic_child_sunglasses",
+              "name": "原子儿童墨镜",
+              "emoji": "🕶️",
+              "description": "旅行纪念品「原子儿童墨镜」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_atomic_child_sunglasses",
+            "name": "原子儿童墨镜",
+            "emoji": "🕶️",
+            "description": "旅行纪念品「原子儿童墨镜」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "原子百货商场",
+        "achievements": [
+          {
+            "id": "ach_rtc_atomic_mall",
+            "name": "发现原子百货商场",
+            "rarity": 3,
+            "time": 1785730938567,
+            "actor_name": "Ignotus",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现原子百货商场」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785730938568,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时23分钟\n获得：2148若汁币，若汁之缘×4，经验+5\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msckz921-t8771wzh",
+        "group_id": "",
+        "self_id": "3964480831",
+        "user_id": "2399212093",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时23分钟\n获得：2148若汁币，若汁之缘×4，经验+5\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1785730938568,
+        "created_at": 1785730938568,
+        "sent_at": 0,
+        "last_error": ""
+      },
       {
         "travel_id": "msciqfpn-95b4rc4d",
         "group_id": "946431041",
@@ -1719,7 +1859,7 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 6,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -1728,7 +1868,7 @@
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 1,
+        "retro_tomorrow_city": 2,
         "eldoran_continent": 4
       },
       "map_event_ids": {
@@ -1737,54 +1877,18 @@
           "eld_event_moon_festival": 1
         },
         "retro_tomorrow_city": {
-          "rtc_event_alien_vending": 1
+          "rtc_event_alien_vending": 1,
+          "rtc_event_wrong_purchase": 1
         }
       },
       "event_ids": {
         "eld_event_border_quest": 1,
         "eld_event_moon_festival": 1,
-        "rtc_event_alien_vending": 1
+        "rtc_event_alien_vending": 1,
+        "rtc_event_wrong_purchase": 1
       }
     },
-    "active": {
-      "id": "msckz921-t8771wzh",
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "group_id": "",
-      "self_id": "3964480831",
-      "started_at": 1785722346649,
-      "ends_at": 1785730938556,
-      "duration_ms": 8591907,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_atomic_mall",
-      "location_name": "原子百货商场",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_wrong_purchase",
-        "name": "买错纪念品",
-        "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
-        "effects": {
-          "coin_percent": -10
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_atomic_child_sunglasses",
-            "name": "原子儿童墨镜",
-            "emoji": "🕶️",
-            "description": "旅行纪念品「原子儿童墨镜」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2148,
-        "fate": 4,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

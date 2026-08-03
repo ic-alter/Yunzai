@@ -3,12 +3,12 @@
   "user_id": "3378912185",
   "pet": {
     "level": 1,
-    "experience": 78,
+    "experience": 91,
     "satiety": 5,
-    "mood": 76,
+    "mood": 77,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785725854414,
+    "satiety_decay_at": 1785743510611,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -63,6 +63,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785731090883,
+        "actor_name": "言言酒酒合约冠军",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -94,17 +109,17 @@
     ]
   },
   "profile": {
-    "favorability": 7,
-    "weekly_contribution": 0,
-    "total_contribution": 6,
+    "favorability": 8,
+    "weekly_contribution": 1,
+    "total_contribution": 7,
     "last_display_name": "言言酒酒合约冠军",
     "first_joined_at": 1784810195924,
-    "last_active_at": 1785725854414,
+    "last_active_at": 1785743510611,
     "daily": {
       "date": "2026-08-03",
-      "event_count": 1,
+      "event_count": 2,
       "same_event_counts": {
-        "mention_only": 1
+        "mention_only": 2
       },
       "negative_shared_impact": 0
     },
@@ -112,12 +127,37 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 67,
+      "ruozhi_fate": 73,
       "nameless_ruozhi": 0,
       "souvenir_border_map": 0,
       "souvenir_auto_watering_tag": 1
     },
     "item_ledger": [
+      {
+        "time": 1785731090883,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 70,
+        "after": 73,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_silver_capital"
+        }
+      },
+      {
+        "time": 1785731090882,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 67,
+        "after": 70,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscnguix-db5av5x0",
+          "location_id": "eld_silver_capital"
+        }
+      },
       {
         "time": 1785699513626,
         "type": "income",
@@ -280,10 +320,23 @@
       }
     },
     "currency": {
-      "balance": 7882,
-      "total_earned": 7882,
+      "balance": 9150,
+      "total_earned": 9150,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785731090882,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1268,
+          "before": 7882,
+          "after": 9150,
+          "meta": {
+            "travel_id": "mscnguix-db5av5x0",
+            "location_id": "eld_silver_capital",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785699513625,
           "type": "income",
@@ -378,6 +431,29 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785726518897,
+      "user_id": "3378912185",
+      "display_name": "言言酒酒合约冠军",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向言言酒酒合约冠军，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785694017061,
       "user_id": "3378912185",
@@ -530,8 +606,8 @@
   ],
   "daily": {
     "date": "2026-08-03",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "event_count": 2,
+    "bonus_event_count": 2
   },
   "processed_messages": {
     "event:1798242586": 1784810195927,
@@ -539,7 +615,8 @@
     "event:1044489930": 1785634546399,
     "event:1140807848": 1785646156726,
     "event:1390517431": 1785672432072,
-    "event:887465066": 1785694017058
+    "event:887465066": 1785694017058,
+    "event:741080587": 1785726518893
   },
   "skin_sessions": {
     "active": null
@@ -552,19 +629,20 @@
     "migrated_at": 1784810195924
   },
   "created_at": 1784810195924,
-  "updated_at": 1785725854414,
+  "updated_at": 1785743510611,
   "production": {
     "started_at": 1785141760293,
-    "last_settled_at": 1785725854414,
-    "accumulated_ms": 31837355,
-    "progress": 3.504571126155172,
+    "last_settled_at": 1785743510611,
+    "accumulated_ms": 49493552,
+    "progress": 5.433484402536002,
     "total_produced": 47,
     "last_collected_at": 1785694017059
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_botanical_dome",
-      "eld_windmill_plain"
+      "eld_windmill_plain",
+      "eld_silver_capital"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -581,6 +659,14 @@
         "name": "风车草原",
         "travel_id": "msbwohgr-a3yy773c",
         "time": 1785690891260,
+        "carried_item_id": ""
+      },
+      "eld_silver_capital": {
+        "id": "eld_silver_capital",
+        "map_id": "eldoran_continent",
+        "name": "银冠王城",
+        "travel_id": "mscnguix-db5av5x0",
+        "time": 1785731090883,
         "carried_item_id": ""
       }
     },
@@ -652,6 +738,21 @@
         "name": "发现风车草原",
         "rarity": 3,
         "time": 1785690891261,
+        "actor_name": "言言酒酒合约冠军",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785731090883,
         "actor_name": "言言酒酒合约冠军",
         "rewards": [
           {
@@ -843,9 +944,67 @@
         "settled_at": 1785699513626,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时31分钟\n获得：1522若汁币，若汁之缘×3，经验+3\n携带道具：画出边框的地图\n旅行事件：园艺机器人\n园艺机器人把小若汁误认成需要浇水的植物。\n纪念品：💧自动浇水标签×1"
+      },
+      "mscnguix-db5av5x0": {
+        "id": "mscnguix-db5av5x0",
+        "user_id": "3378912185",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "言言酒酒合约冠军",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_silver_capital",
+        "location_name": "银冠王城",
+        "duration_ms": 4564011,
+        "rewards": {
+          "coin": 1268,
+          "fate": 3,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "银冠王城",
+        "achievements": [
+          {
+            "id": "ach_eld_silver_capital",
+            "name": "发现银冠王城",
+            "rarity": 3,
+            "time": 1785731090883,
+            "actor_name": "言言酒酒合约冠军",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现银冠王城」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785731090883,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时16分钟\n获得：1268若汁币，若汁之缘×3，经验+2\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscnguix-db5av5x0",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "3378912185",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时16分钟\n获得：1268若汁币，若汁之缘×3，经验+2\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785731090884,
+        "created_at": 1785731090884,
+        "sent_at": 1785731091382,
+        "last_error": ""
+      },
       {
         "travel_id": "msc44dyk-oszmv5er",
         "group_id": "946431041",
@@ -887,11 +1046,11 @@
       }
     ],
     "stats": {
-      "total_trips": 3,
+      "total_trips": 4,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
-        "eldoran_continent": 1
+        "eldoran_continent": 2
       },
       "map_event_ids": {
         "eldoran_continent": {

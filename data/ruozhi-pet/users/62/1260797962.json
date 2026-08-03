@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 1,
-    "experience": 51,
+    "experience": 52,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785725854380,
+    "satiety_decay_at": 1785743510575,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -360,6 +360,36 @@
             "message": "解锁四星皮肤「奶蛙小若汁」。"
           }
         ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785742782277,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_5_locations": {
+        "id": "ach_rtc_5_locations",
+        "name": "初识明日",
+        "rarity": 3,
+        "time": 1785742782277,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -592,7 +622,7 @@
     "total_contribution": 0,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1785725854380,
+    "last_active_at": 1785743510575,
     "daily": {
       "date": "2026-08-03",
       "event_count": 0,
@@ -603,10 +633,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 71316,
-      "total_earned": 71316,
+      "balance": 72046,
+      "total_earned": 72046,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785742782276,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 730,
+          "before": 71316,
+          "after": 72046,
+          "meta": {
+            "travel_id": "mscvruo6-ncbmxxc7",
+            "location_id": "rtc_blue_harbor",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785675168671,
           "type": "income",
@@ -716,19 +759,6 @@
             "location_id": "eld_weeping_swamp",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785590083730,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 567,
-          "before": 64200,
-          "after": 64767,
-          "meta": {
-            "travel_id": "msad0mri-iyipm7wv",
-            "location_id": "rtc_robot_park",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -740,16 +770,68 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 19,
+      "ruozhi_fate": 26,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
       "souvenir_sun_chart": 1,
       "souvenir_slow_vehicle_sticker": 1,
       "souvenir_nested_old_boot": 1,
       "souvenir_vegetable_soup_potion": 1,
-      "souvenir_tomorrow_child_ticket": 1
+      "souvenir_tomorrow_child_ticket": 1,
+      "souvenir_stranger_wedding_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1785742782277,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 23,
+        "after": 26,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_5_locations"
+        }
+      },
+      {
+        "time": 1785742782277,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 20,
+        "after": 23,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785742782277,
+        "type": "income",
+        "item_id": "souvenir_stranger_wedding_photo",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscvruo6-ncbmxxc7",
+          "event_id": "rtc_event_wrong_cruise",
+          "location_id": "rtc_blue_harbor"
+        }
+      },
+      {
+        "time": 1785742782276,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 19,
+        "after": 20,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscvruo6-ncbmxxc7",
+          "location_id": "rtc_blue_harbor"
+        }
+      },
       {
         "time": 1785675168671,
         "type": "income",
@@ -955,57 +1037,6 @@
           "travel_id": "ms90l9ra-ws3rle9b",
           "location_id": "eld_magic_academy"
         }
-      },
-      {
-        "time": 1785506668185,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 20,
-        "after": 23,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_10_locations"
-        }
-      },
-      {
-        "time": 1785506668184,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 17,
-        "after": 20,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1785506668184,
-        "type": "income",
-        "item_id": "souvenir_nested_old_boot",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "ms8xesfb-lu89pzwg",
-          "event_id": "eld_event_lost_boot",
-          "location_id": "eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1785506668182,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 14,
-        "after": 17,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms8xesfb-lu89pzwg",
-          "location_id": "eld_weeping_swamp"
-        }
       }
     ],
     "item_daily": {
@@ -1048,10 +1079,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1785725854380,
+  "updated_at": 1785743510575,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1785725854380,
+    "last_settled_at": 1785743510575,
     "accumulated_ms": 259200000,
     "progress": 33.40637440935916,
     "total_produced": 30,
@@ -1070,7 +1101,8 @@
       "rtc_flyover",
       "eld_weeping_swamp",
       "rtc_atomic_mall",
-      "rtc_robot_park"
+      "rtc_robot_park",
+      "rtc_blue_harbor"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -1168,6 +1200,14 @@
         "travel_id": "msad0mri-iyipm7wv",
         "time": 1785590083731,
         "carried_item_id": ""
+      },
+      "rtc_blue_harbor": {
+        "id": "rtc_blue_harbor",
+        "map_id": "retro_tomorrow_city",
+        "name": "蓝海观光港",
+        "travel_id": "mscvruo6-ncbmxxc7",
+        "time": 1785742782277,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1233,6 +1273,13 @@
         "location_id": "rtc_central_station",
         "travel_id": "msa3rqmz-wnje1it5",
         "time": 1785577625914
+      },
+      "rtc_event_wrong_cruise": {
+        "id": "rtc_event_wrong_cruise",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_blue_harbor",
+        "travel_id": "mscvruo6-ncbmxxc7",
+        "time": 1785742782277
       }
     },
     "souvenir_records": {
@@ -1277,6 +1324,13 @@
         "event_id": "rtc_event_robot_conductor",
         "location_id": "rtc_central_station",
         "time": 1785577625914
+      },
+      "souvenir_stranger_wedding_photo": {
+        "id": "souvenir_stranger_wedding_photo",
+        "name": "陌生人的婚礼合影",
+        "event_id": "rtc_event_wrong_cruise",
+        "location_id": "rtc_blue_harbor",
+        "time": 1785742782277
       }
     },
     "achievement_records": {
@@ -1495,6 +1549,36 @@
         "name": "发现欢笑机器人乐园",
         "rarity": 3,
         "time": 1785590083731,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_blue_harbor": {
+        "id": "ach_rtc_blue_harbor",
+        "name": "发现蓝海观光港",
+        "rarity": 3,
+        "time": 1785742782277,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_5_locations": {
+        "id": "ach_rtc_5_locations",
+        "name": "初识明日",
+        "rarity": 3,
+        "time": 1785742782277,
         "actor_name": "迈特斯妲",
         "rewards": [
           {
@@ -2449,9 +2533,107 @@
         "settled_at": 1785675168672,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：2小时58分钟\n获得：2959若汁币，若汁之缘×6，经验+6"
+      },
+      "mscvruo6-ncbmxxc7": {
+        "id": "mscvruo6-ncbmxxc7",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_blue_harbor",
+        "location_name": "蓝海观光港",
+        "duration_ms": 2305074,
+        "rewards": {
+          "coin": 730,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": {
+          "id": "rtc_event_wrong_cruise",
+          "name": "上错游船",
+          "text": "小若汁登上一艘婚礼游船，并在合影里占据了最中间的位置。",
+          "effects": {
+            "coin_flat": 90
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_stranger_wedding_photo",
+              "name": "陌生人的婚礼合影",
+              "emoji": "📷",
+              "description": "旅行纪念品「陌生人的婚礼合影」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_stranger_wedding_photo",
+            "name": "陌生人的婚礼合影",
+            "emoji": "📷",
+            "description": "旅行纪念品「陌生人的婚礼合影」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "蓝海观光港",
+        "achievements": [
+          {
+            "id": "ach_rtc_blue_harbor",
+            "name": "发现蓝海观光港",
+            "rarity": 3,
+            "time": 1785742782277,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现蓝海观光港」 ★★★"
+          },
+          {
+            "id": "ach_rtc_5_locations",
+            "name": "初识明日",
+            "rarity": 3,
+            "time": 1785742782277,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「初识明日」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785742782278,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：38分钟\n获得：730若汁币，若汁之缘×1，经验+1\n旅行事件：上错游船\n小若汁登上一艘婚礼游船，并在合影里占据了最中间的位置。\n纪念品：📷陌生人的婚礼合影×1\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★\n达成旅行成就「初识明日」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscvruo6-ncbmxxc7",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：38分钟\n获得：730若汁币，若汁之缘×1，经验+1\n旅行事件：上错游船\n小若汁登上一艘婚礼游船，并在合影里占据了最中间的位置。\n纪念品：📷陌生人的婚礼合影×1\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★\n达成旅行成就「初识明日」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785742782278,
+        "created_at": 1785742782278,
+        "sent_at": 1785742782620,
+        "last_error": ""
+      },
       {
         "travel_id": "msbmjpjj-beryl8ye",
         "group_id": "415462812",
@@ -2688,7 +2870,7 @@
       }
     ],
     "stats": {
-      "total_trips": 18,
+      "total_trips": 19,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -2697,7 +2879,7 @@
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 4,
+        "retro_tomorrow_city": 5,
         "eldoran_continent": 8
       },
       "map_event_ids": {
@@ -2712,7 +2894,8 @@
         },
         "retro_tomorrow_city": {
           "rtc_event_traffic_bot": 1,
-          "rtc_event_robot_conductor": 1
+          "rtc_event_robot_conductor": 1,
+          "rtc_event_wrong_cruise": 1
         }
       },
       "event_ids": {
@@ -2724,7 +2907,8 @@
         "rtc_event_traffic_bot": 1,
         "eld_event_lost_boot": 1,
         "eld_event_potion_soup": 1,
-        "rtc_event_robot_conductor": 1
+        "rtc_event_robot_conductor": 1,
+        "rtc_event_wrong_cruise": 1
       }
     },
     "active": null,

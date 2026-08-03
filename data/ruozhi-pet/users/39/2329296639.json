@@ -3,12 +3,12 @@
   "user_id": "2329296639",
   "pet": {
     "level": 6,
-    "experience": 61,
-    "satiety": 65,
+    "experience": 65,
+    "satiety": 53,
     "mood": 100,
     "health": 90,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785725398996,
+    "satiety_decay_at": 1785742678996,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -727,6 +727,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_snow_mountain": {
+        "id": "ach_eld_snow_mountain",
+        "name": "发现白烬雪山",
+        "rarity": 3,
+        "time": 1785729938010,
+        "actor_name": "香蕉船",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1068,7 +1083,7 @@
     "total_contribution": 114,
     "last_display_name": "香蕉船",
     "first_joined_at": 1784791767637,
-    "last_active_at": 1785725854341,
+    "last_active_at": 1785743510537,
     "daily": {
       "date": "2026-08-03",
       "event_count": 4,
@@ -1082,10 +1097,60 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 207082,
-      "total_earned": 289082,
-      "total_spent": 82000,
+      "balance": 169193,
+      "total_earned": 291193,
+      "total_spent": 122000,
       "ledger": [
+        {
+          "time": 1785736654332,
+          "type": "expense",
+          "reason": "buy_item",
+          "amount": 20000,
+          "before": 189193,
+          "after": 169193,
+          "meta": {
+            "item_id": "travel_checklist",
+            "count": 10
+          }
+        },
+        {
+          "time": 1785736642931,
+          "type": "expense",
+          "reason": "buy_item",
+          "amount": 20000,
+          "before": 209193,
+          "after": 189193,
+          "meta": {
+            "item_id": "travel_suitcase",
+            "count": 10
+          }
+        },
+        {
+          "time": 1785736629228,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 722,
+          "before": 208471,
+          "after": 209193,
+          "meta": {
+            "travel_id": "mscrxoq0-l0naq6yt",
+            "location_id": "eld_old_battlefield",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785729938008,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1389,
+          "before": 207082,
+          "after": 208471,
+          "meta": {
+            "travel_id": "mscmpous-2h2wtj5j",
+            "location_id": "eld_snow_mountain",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785725271567,
           "type": "income",
@@ -1157,54 +1222,6 @@
             "skin_id": "heart_shower_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785725271566,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 200282,
-          "after": 200582,
-          "meta": {
-            "skin_id": "love_letter_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785725271566,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 199982,
-          "after": 200282,
-          "meta": {
-            "skin_id": "nerd_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785725271566,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 194982,
-          "after": 199982,
-          "meta": {
-            "skin_id": "mushroom_shell_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1785725271566,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 194682,
-          "after": 194982,
-          "meta": {
-            "skin_id": "volleyball_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1216,7 +1233,7 @@
       "first_interaction_reward_date": "2026-08-03"
     },
     "items": {
-      "ruozhi_fate": 20,
+      "ruozhi_fate": 26,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_atomic_child_sunglasses": 1,
@@ -1247,9 +1264,100 @@
       "souvenir_slow_vehicle_sticker": 1,
       "souvenir_two_smaller_screws": 1,
       "souvenir_water_pattern_rubbing": 1,
-      "souvenir_world_tree_leaf_corner": 1
+      "souvenir_world_tree_leaf_corner": 1,
+      "souvenir_shell_snowman_photo": 1,
+      "travel_suitcase": 10,
+      "travel_checklist": 9
     },
     "item_ledger": [
+      {
+        "time": 1785736662443,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 10,
+        "after": 9,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1785736654332,
+        "type": "income",
+        "item_id": "travel_checklist",
+        "amount": 10,
+        "before": 0,
+        "after": 10,
+        "reason": "buy_item",
+        "meta": {
+          "cost": 20000
+        }
+      },
+      {
+        "time": 1785736642931,
+        "type": "income",
+        "item_id": "travel_suitcase",
+        "amount": 10,
+        "before": 0,
+        "after": 10,
+        "reason": "buy_item",
+        "meta": {
+          "cost": 20000
+        }
+      },
+      {
+        "time": 1785736629228,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 25,
+        "after": 26,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscrxoq0-l0naq6yt",
+          "location_id": "eld_old_battlefield"
+        }
+      },
+      {
+        "time": 1785729938010,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 22,
+        "after": 25,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_snow_mountain"
+        }
+      },
+      {
+        "time": 1785729938009,
+        "type": "income",
+        "item_id": "souvenir_shell_snowman_photo",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mscmpous-2h2wtj5j",
+          "event_id": "eld_event_snowman_shell",
+          "location_id": "eld_snow_mountain"
+        }
+      },
+      {
+        "time": 1785729938009,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 20,
+        "after": 22,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mscmpous-2h2wtj5j",
+          "location_id": "eld_snow_mountain"
+        }
+      },
       {
         "time": 1785725271566,
         "type": "expense",
@@ -1415,93 +1523,6 @@
           "travel_id": "msc330cw-bh7dqe56",
           "location_id": "rtc_aurora_station"
         }
-      },
-      {
-        "time": 1785692292823,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 4,
-        "after": 3,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc330cw-bh7dqe56"
-        }
-      },
-      {
-        "time": 1785692261060,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 51,
-        "after": 54,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 6
-        }
-      },
-      {
-        "time": 1785692256030,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 50,
-        "after": 51,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc328yd-onqdml6l",
-          "location_id": "eld_magic_academy"
-        }
-      },
-      {
-        "time": 1785692256017,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 5,
-        "after": 4,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc328yd-onqdml6l"
-        }
-      },
-      {
-        "time": 1785692251234,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 46,
-        "after": 50,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc325ac-3qk8f44d",
-          "location_id": "rtc_rocket_base"
-        }
-      },
-      {
-        "time": 1785692251224,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msc325ac-3qk8f44d"
-        }
-      },
-      {
-        "time": 1785692246921,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 42,
-        "after": 46,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msc321oc-39cyiavy",
-          "location_id": "eld_dwarf_city"
-        }
       }
     ],
     "item_daily": {
@@ -1509,7 +1530,9 @@
       "fate_exchange_count": 0,
       "game_fate_reward_count": 0,
       "shop_buy_counts": {
-        "travel_pager": 10
+        "travel_pager": 10,
+        "travel_suitcase": 10,
+        "travel_checklist": 10
       },
       "use_counts": {
         "travel_pager": 10
@@ -1838,7 +1861,7 @@
     "migrated_at": 1784791767637
   },
   "created_at": 1784791767637,
-  "updated_at": 1785725854341,
+  "updated_at": 1785743510537,
   "gacha": {
     "since_four_plus": 4,
     "since_five": 21,
@@ -1873,9 +1896,9 @@
   },
   "production": {
     "started_at": 1785115565605,
-    "last_settled_at": 1785725854341,
-    "accumulated_ms": 55849385,
-    "progress": 10.140914251751624,
+    "last_settled_at": 1785743510537,
+    "accumulated_ms": 73505581,
+    "progress": 13.292975899932136,
     "total_produced": 80,
     "last_collected_at": 1785670004956
   },
@@ -1905,7 +1928,8 @@
       "eld_elven_forest",
       "eld_silver_capital",
       "eld_star_lake",
-      "eld_world_tree"
+      "eld_world_tree",
+      "eld_snow_mountain"
     ],
     "location_records": {
       "rtc_atomic_mall": {
@@ -2106,6 +2130,14 @@
         "name": "世界树之丘",
         "travel_id": "msc2zur0-lr2fsu5w",
         "time": 1785692225423,
+        "carried_item_id": ""
+      },
+      "eld_snow_mountain": {
+        "id": "eld_snow_mountain",
+        "map_id": "eldoran_continent",
+        "name": "白烬雪山",
+        "travel_id": "mscmpous-2h2wtj5j",
+        "time": 1785729938009,
         "carried_item_id": ""
       }
     },
@@ -2368,6 +2400,13 @@
         "location_id": "rtc_botanical_dome",
         "travel_id": "msc33lec-d8y1kbu0",
         "time": 1785702716717
+      },
+      "eld_event_snowman_shell": {
+        "id": "eld_event_snowman_shell",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_snow_mountain",
+        "travel_id": "mscmpous-2h2wtj5j",
+        "time": 1785729938009
       }
     },
     "souvenir_records": {
@@ -2573,6 +2612,13 @@
         "event_id": "eld_event_world_leaf",
         "location_id": "eld_world_tree",
         "time": 1785692225423
+      },
+      "souvenir_shell_snowman_photo": {
+        "id": "souvenir_shell_snowman_photo",
+        "name": "龟壳雪人照片",
+        "event_id": "eld_event_snowman_shell",
+        "location_id": "eld_snow_mountain",
+        "time": 1785729938009
       }
     },
     "achievement_records": {
@@ -3091,6 +3137,21 @@
         "name": "发现世界树之丘",
         "rarity": 3,
         "time": 1785692225423,
+        "actor_name": "香蕉船",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_snow_mountain": {
+        "id": "ach_eld_snow_mountain",
+        "name": "发现白烬雪山",
+        "rarity": 3,
+        "time": 1785729938010,
         "actor_name": "香蕉船",
         "rewards": [
           {
@@ -7033,9 +7094,132 @@
         "settled_at": 1785709083268,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：1小时42分钟\n获得：1698若汁币，若汁之缘×4，经验+3\n旅行事件：天气按钮\n小若汁按下写着“请勿触碰”的按钮，山顶下了三分钟彩色雪。\n纪念品：❄️不会融化的彩色雪片×1"
+      },
+      "mscmpous-2h2wtj5j": {
+        "id": "mscmpous-2h2wtj5j",
+        "user_id": "2329296639",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "香蕉船",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_snow_mountain",
+        "location_name": "白烬雪山",
+        "duration_ms": 4678192,
+        "rewards": {
+          "coin": 1389,
+          "fate": 2,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_snowman_shell",
+          "name": "雪人龟壳",
+          "text": "小若汁堆了一个雪人，却把雪球全部做成了龟壳形状。",
+          "effects": {
+            "coin_flat": 90
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_shell_snowman_photo",
+              "name": "龟壳雪人照片",
+              "emoji": "☃️",
+              "description": "旅行纪念品「龟壳雪人照片」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_shell_snowman_photo",
+            "name": "龟壳雪人照片",
+            "emoji": "☃️",
+            "description": "旅行纪念品「龟壳雪人照片」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "白烬雪山",
+        "achievements": [
+          {
+            "id": "ach_eld_snow_mountain",
+            "name": "发现白烬雪山",
+            "rarity": 3,
+            "time": 1785729938010,
+            "actor_name": "香蕉船",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现白烬雪山」 ★★★"
+          }
+        ],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785729938010,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：白烬雪山（艾尔多兰大陆）\n旅行时间：1小时18分钟\n获得：1389若汁币，若汁之缘×2，经验+3\n旅行事件：雪人龟壳\n小若汁堆了一个雪人，却把雪球全部做成了龟壳形状。\n纪念品：☃️龟壳雪人照片×1\n新地点已解锁：白烬雪山\n达成旅行成就「发现白烬雪山」 ★★★"
+      },
+      "mscrxoq0-l0naq6yt": {
+        "id": "mscrxoq0-l0naq6yt",
+        "user_id": "2329296639",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "香蕉船",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_old_battlefield",
+        "location_name": "无名古战场",
+        "duration_ms": 2598252,
+        "rewards": {
+          "coin": 722,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785736629229,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：43分钟\n获得：722若汁币，若汁之缘×1，经验+1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mscrxoq0-l0naq6yt",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2329296639",
+        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：43分钟\n获得：722若汁币，若汁之缘×1，经验+1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785736629229,
+        "created_at": 1785736629229,
+        "sent_at": 1785736629512,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mscmpous-2h2wtj5j",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2329296639",
+        "report": "小若汁回来了！\n目的地：白烬雪山（艾尔多兰大陆）\n旅行时间：1小时18分钟\n获得：1389若汁币，若汁之缘×2，经验+3\n旅行事件：雪人龟壳\n小若汁堆了一个雪人，却把雪球全部做成了龟壳形状。\n纪念品：☃️龟壳雪人照片×1\n新地点已解锁：白烬雪山\n达成旅行成就「发现白烬雪山」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785729938010,
+        "created_at": 1785729938010,
+        "sent_at": 1785729938339,
+        "last_error": ""
+      },
       {
         "travel_id": "msc9fy2b-cka3kmun",
         "group_id": "415462812",
@@ -7269,36 +7453,10 @@
         "created_at": 1785601560471,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msal26q4-tbbcsfb6",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2329296639",
-        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时6分钟\n获得：1094若汁币，若汁之缘×2，经验+2",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785601553791,
-        "created_at": 1785601553791,
-        "sent_at": 0,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msakx4br-ved84c7y",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2329296639",
-        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时11分钟\n获得：1184若汁币，若汁之缘×3，经验+2",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785601548433,
-        "created_at": 1785601548433,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 85,
+      "total_trips": 87,
       "key_item_discoveries": {
         "souvenir_signal_record": {
           "item_id": "souvenir_signal_record",
@@ -7313,7 +7471,7 @@
       },
       "map_location_counts": {
         "retro_tomorrow_city": 13,
-        "eldoran_continent": 12
+        "eldoran_continent": 13
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -7355,7 +7513,8 @@
           "eld_event_royal_parade": 1,
           "eld_event_water_map": 1,
           "eld_event_world_leaf": 1,
-          "eld_event_windmill_chase": 1
+          "eld_event_windmill_chase": 1,
+          "eld_event_snowman_shell": 1
         }
       },
       "event_ids": {
@@ -7395,46 +7554,40 @@
         "eld_event_water_map": 1,
         "eld_event_world_leaf": 1,
         "eld_event_windmill_chase": 1,
-        "rtc_event_escape_vine": 1
+        "rtc_event_escape_vine": 1,
+        "eld_event_snowman_shell": 1
       }
     },
     "active": {
-      "id": "mscmpous-2h2wtj5j",
+      "id": "mscti37d-bfe6r340",
       "user_id": "2329296639",
       "display_name": "香蕉船",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1785725259796,
-      "ends_at": 1785729937988,
-      "duration_ms": 4678192,
+      "started_at": 1785736662457,
+      "ends_at": 1785745213728,
+      "duration_ms": 8551271,
       "map_id": "eldoran_continent",
       "map_name": "艾尔多兰大陆",
-      "location_id": "eld_snow_mountain",
-      "location_name": "白烬雪山",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
+      "location_id": "eld_weeping_swamp",
+      "location_name": "哭泣沼泽",
+      "was_unlocked": true,
+      "carried_item_id": "travel_checklist",
+      "carried_item_name": "旅行清单",
       "event": {
-        "id": "eld_event_snowman_shell",
-        "name": "雪人龟壳",
-        "text": "小若汁堆了一个雪人，却把雪球全部做成了龟壳形状。",
+        "id": "eld_event_fog_guide",
+        "name": "雾中灯火",
+        "text": "一盏紫色灯火带小若汁走出沼泽。",
         "effects": {
-          "coin_flat": 90
+          "fate_flat": 2
         },
-        "souvenirs": [
-          {
-            "id": "souvenir_shell_snowman_photo",
-            "name": "龟壳雪人照片",
-            "emoji": "☃️",
-            "description": "旅行纪念品「龟壳雪人照片」。"
-          }
-        ],
+        "souvenirs": [],
         "record": false
       },
       "rewards": {
-        "coin": 1389,
-        "fate": 2,
-        "experience": 3
+        "coin": 2375,
+        "fate": 7,
+        "experience": 5
       }
     },
     "prepared_tool": null
