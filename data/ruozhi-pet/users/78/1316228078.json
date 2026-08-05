@@ -3,12 +3,12 @@
   "user_id": "1316228078",
   "pet": {
     "level": 1,
-    "experience": 51,
-    "satiety": 5,
-    "mood": 81,
-    "health": 84,
+    "experience": 79,
+    "satiety": 7,
+    "mood": 89,
+    "health": 88,
     "current_skin_id": "snow_peak_turtle",
-    "satiety_decay_at": 1785769572424,
+    "satiety_decay_at": 1785855332408,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -176,6 +176,51 @@
         "name": "发现银河汽车旅馆",
         "rarity": 3,
         "time": 1785746817932,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_forgotten_family_restaurant": {
+        "id": "ach_forgotten_family_restaurant",
+        "name": "发现被遗忘的家庭餐厅",
+        "rarity": 3,
+        "time": 1785802562712,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1785802562712,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785837782220,
         "actor_name": "释者",
         "rewards": [
           {
@@ -406,29 +451,130 @@
     ]
   },
   "profile": {
-    "favorability": 11,
-    "weekly_contribution": 0,
-    "total_contribution": 10,
+    "favorability": 19,
+    "weekly_contribution": 7,
+    "total_contribution": 17,
     "last_display_name": "释者",
     "first_joined_at": 1785060607224,
-    "last_active_at": 1785769572424,
+    "last_active_at": 1785856010132,
     "daily": {
-      "date": "2026-08-03",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-04",
+      "event_count": 1,
+      "same_event_counts": {
+        "feed": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 13,
+      "ruozhi_fate": 56,
       "nameless_ruozhi": 0,
       "souvenir_infinite_lottery_ticket": 1,
       "souvenir_paper_visitor_crown": 1,
       "souvenir_burned_neon_tube": 1
     },
     "item_ledger": [
+      {
+        "time": 1785837782220,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 53,
+        "after": 56,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785837782219,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 49,
+        "after": 53,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msecyjq5-ez62ajp4",
+          "location_id": "rtc_broadcast_tower"
+        }
+      },
+      {
+        "time": 1785826067181,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 44,
+        "after": 49,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mse5va4e-qpzg7m8m",
+          "location_id": "rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785817873774,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 42,
+        "after": 44,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 5.485
+        }
+      },
+      {
+        "time": 1785802562712,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 39,
+        "after": 42,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_first_unregistered_place"
+        }
+      },
+      {
+        "time": 1785802562712,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 36,
+        "after": 39,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_forgotten_family_restaurant"
+        }
+      },
+      {
+        "time": 1785802562710,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 34,
+        "after": 36,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msdu3j0x-ny6l4z1c",
+          "location_id": "forgotten_family_restaurant"
+        }
+      },
+      {
+        "time": 1785798126649,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 21,
+        "before": 13,
+        "after": 34,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 44.857
+        }
+      },
       {
         "time": 1785746817932,
         "type": "income",
@@ -582,109 +728,10 @@
         "meta": {
           "count": 2
         }
-      },
-      {
-        "time": 1785459889573,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 37,
-        "after": 7,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785459881033,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 67,
-        "after": 37,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785459871803,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 97,
-        "after": 67,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785459863645,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 28,
-        "before": 69,
-        "after": 97,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 64.959
-        }
-      },
-      {
-        "time": 1785412448384,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 66,
-        "after": 69,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785412448384,
-        "type": "income",
-        "item_id": "souvenir_infinite_lottery_ticket",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "ms7f20r0-ctmv6ght",
-          "event_id": "rtc_event_mall_lottery",
-          "location_id": "rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785412448383,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 65,
-        "after": 66,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms7f20r0-ctmv6ght",
-          "location_id": "rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785264716527,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 62,
-        "after": 65,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_first_discovery"
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-08-02",
+      "date": "2026-08-04",
       "fate_exchange_count": 0,
       "game_fate_reward_count": 0,
       "shop_buy_counts": {},
@@ -699,10 +746,60 @@
       }
     },
     "currency": {
-      "balance": 37228,
-      "total_earned": 37228,
+      "balance": 43660,
+      "total_earned": 43660,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785837782219,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2658,
+          "before": 41002,
+          "after": 43660,
+          "meta": {
+            "travel_id": "msecyjq5-ez62ajp4",
+            "location_id": "rtc_broadcast_tower",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785826067181,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2042,
+          "before": 38960,
+          "after": 41002,
+          "meta": {
+            "travel_id": "mse5va4e-qpzg7m8m",
+            "location_id": "rtc_botanical_dome",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785817892409,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 38460,
+          "after": 38960,
+          "meta": {
+            "date": "2026-08-04"
+          }
+        },
+        {
+          "time": 1785802562710,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1232,
+          "before": 37228,
+          "after": 38460,
+          "meta": {
+            "travel_id": "msdu3j0x-ny6l4z1c",
+            "location_id": "forgotten_family_restaurant",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785746817931,
           "type": "income",
@@ -776,54 +873,6 @@
             "skin_id": "sparkling_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785636661780,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 31775,
-          "after": 32075,
-          "meta": {
-            "skin_id": "bell_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636651279,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 31475,
-          "after": 31775,
-          "meta": {
-            "skin_id": "antler_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636651279,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 31175,
-          "after": 31475,
-          "meta": {
-            "skin_id": "sparkling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636651279,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 30875,
-          "after": 31175,
-          "meta": {
-            "skin_id": "heart_shower_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -832,7 +881,7 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-07-28"
+      "first_interaction_reward_date": "2026-08-04"
     },
     "item_sign": {
       "month": "2026-07",
@@ -843,6 +892,32 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785817892409,
+      "user_id": "1316228078",
+      "display_name": "释者",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，释者及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 38960
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1785226040297,
       "user_id": "1316228078",
@@ -897,13 +972,14 @@
     }
   ],
   "daily": {
-    "date": "2026-07-28",
+    "date": "2026-08-04",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
     "event:1488474693": 1785061731438,
-    "event:996410552": 1785226040295
+    "event:996410552": 1785226040295,
+    "event:1707158990": 1785817892407
   },
   "skin_sessions": {
     "active": null
@@ -916,21 +992,23 @@
     "migrated_at": 1785060607224
   },
   "created_at": 1785060607224,
-  "updated_at": 1785769572424,
+  "updated_at": 1785856010132,
   "production": {
     "started_at": 1785060607224,
-    "last_settled_at": 1785769572424,
-    "accumulated_ms": 132930359,
-    "progress": 17.56536828366674,
-    "total_produced": 70,
-    "last_collected_at": 1785636642065
+    "last_settled_at": 1785856010132,
+    "accumulated_ms": 38136358,
+    "progress": 5.9857371039432365,
+    "total_produced": 93,
+    "last_collected_at": 1785817873774
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_botanical_dome",
       "rtc_atomic_mall",
       "eld_silver_capital",
-      "rtc_galaxy_motel"
+      "rtc_galaxy_motel",
+      "forgotten_family_restaurant",
+      "rtc_broadcast_tower"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -964,6 +1042,22 @@
         "travel_id": "mscuwllr-atrawn3z",
         "time": 1785746817932,
         "carried_item_id": ""
+      },
+      "forgotten_family_restaurant": {
+        "id": "forgotten_family_restaurant",
+        "map_id": "unregistered_district",
+        "name": "被遗忘的家庭餐厅",
+        "travel_id": "msdu3j0x-ny6l4z1c",
+        "time": 1785802562711,
+        "carried_item_id": ""
+      },
+      "rtc_broadcast_tower": {
+        "id": "rtc_broadcast_tower",
+        "map_id": "retro_tomorrow_city",
+        "name": "星尘广播塔",
+        "travel_id": "msecyjq5-ez62ajp4",
+        "time": 1785837782219,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -987,6 +1081,20 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "mscuwllr-atrawn3z",
         "time": 1785746817932
+      },
+      "rtc_event_escape_vine": {
+        "id": "rtc_event_escape_vine",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_botanical_dome",
+        "travel_id": "mse5va4e-qpzg7m8m",
+        "time": 1785826067182
+      },
+      "rtc_event_tomorrow_news": {
+        "id": "rtc_event_tomorrow_news",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_broadcast_tower",
+        "travel_id": "msecyjq5-ez62ajp4",
+        "time": 1785837782219
       }
     },
     "souvenir_records": {
@@ -1078,6 +1186,51 @@
         "name": "发现银河汽车旅馆",
         "rarity": 3,
         "time": 1785746817932,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_forgotten_family_restaurant": {
+        "id": "ach_forgotten_family_restaurant",
+        "name": "发现被遗忘的家庭餐厅",
+        "rarity": 3,
+        "time": 1785802562712,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1785802562712,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_broadcast_tower": {
+        "id": "ach_rtc_broadcast_tower",
+        "name": "发现星尘广播塔",
+        "rarity": 3,
+        "time": 1785837782220,
         "actor_name": "释者",
         "rewards": [
           {
@@ -1385,9 +1538,204 @@
         "settled_at": 1785746817933,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：2小时10分钟\n获得：2491若汁币，若汁之缘×5，经验+5\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★"
+      },
+      "msdu3j0x-ny6l4z1c": {
+        "id": "msdu3j0x-ny6l4z1c",
+        "user_id": "1316228078",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "释者",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "forgotten_family_restaurant",
+        "location_name": "被遗忘的家庭餐厅",
+        "duration_ms": 4433782,
+        "rewards": {
+          "coin": 1232,
+          "fate": 2,
+          "experience": 3
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "被遗忘的家庭餐厅",
+        "achievements": [
+          {
+            "id": "ach_forgotten_family_restaurant",
+            "name": "发现被遗忘的家庭餐厅",
+            "rarity": 3,
+            "time": 1785802562712,
+            "actor_name": "释者",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+          },
+          {
+            "id": "ach_first_unregistered_place",
+            "name": "地图上不存在的地点",
+            "rarity": 3,
+            "time": 1785802562712,
+            "actor_name": "释者",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「地图上不存在的地点」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785802562712,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时14分钟\n获得：1232若汁币，若汁之缘×2，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "mse5va4e-qpzg7m8m": {
+        "id": "mse5va4e-qpzg7m8m",
+        "user_id": "1316228078",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "释者",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_botanical_dome",
+        "location_name": "玻璃穹顶植物园",
+        "duration_ms": 8167647,
+        "rewards": {
+          "coin": 2042,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_escape_vine",
+          "name": "逃跑藤蔓",
+          "text": "一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。",
+          "effects": {
+            "coin_percent": -10,
+            "fate_flat": 1
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785826067183,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时16分钟\n获得：2042若汁币，若汁之缘×5，经验+4\n旅行事件：逃跑藤蔓\n一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。"
+      },
+      "msecyjq5-ez62ajp4": {
+        "id": "msecyjq5-ez62ajp4",
+        "user_id": "1316228078",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "释者",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_broadcast_tower",
+        "location_name": "星尘广播塔",
+        "duration_ms": 7972964,
+        "rewards": {
+          "coin": 2658,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_tomorrow_news",
+          "name": "明日新闻",
+          "text": "收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。",
+          "effects": {
+            "coin_percent": 20
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "星尘广播塔",
+        "achievements": [
+          {
+            "id": "ach_rtc_broadcast_tower",
+            "name": "发现星尘广播塔",
+            "rarity": 3,
+            "time": 1785837782220,
+            "actor_name": "释者",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现星尘广播塔」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785837782220,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：2小时13分钟\n获得：2658若汁币，若汁之缘×4，经验+4\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msecyjq5-ez62ajp4",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1316228078",
+        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：2小时13分钟\n获得：2658若汁币，若汁之缘×4，经验+4\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785837782220,
+        "created_at": 1785837782220,
+        "sent_at": 1785837782732,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mse5va4e-qpzg7m8m",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1316228078",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时16分钟\n获得：2042若汁币，若汁之缘×5，经验+4\n旅行事件：逃跑藤蔓\n一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785826067183,
+        "created_at": 1785826067183,
+        "sent_at": 1785826067486,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msdu3j0x-ny6l4z1c",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1316228078",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时14分钟\n获得：1232若汁币，若汁之缘×2，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785802562712,
+        "created_at": 1785802562712,
+        "sent_at": 1785802562985,
+        "last_error": ""
+      },
       {
         "travel_id": "mscuwllr-atrawn3z",
         "group_id": "415462812",
@@ -1455,16 +1803,19 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 8,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 3,
-        "eldoran_continent": 1
+        "retro_tomorrow_city": 4,
+        "eldoran_continent": 1,
+        "unregistered_district": 1
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
           "rtc_event_mall_lottery": 1,
-          "rtc_event_neon_sign": 1
+          "rtc_event_neon_sign": 1,
+          "rtc_event_escape_vine": 1,
+          "rtc_event_tomorrow_news": 1
         },
         "eldoran_continent": {
           "eld_event_royal_parade": 1
@@ -1473,7 +1824,9 @@
       "event_ids": {
         "rtc_event_mall_lottery": 1,
         "eld_event_royal_parade": 1,
-        "rtc_event_neon_sign": 1
+        "rtc_event_neon_sign": 1,
+        "rtc_event_escape_vine": 1,
+        "rtc_event_tomorrow_news": 1
       }
     },
     "active": null,

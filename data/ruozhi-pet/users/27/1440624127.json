@@ -3,12 +3,12 @@
   "user_id": "1440624127",
   "pet": {
     "level": 1,
-    "experience": 38,
-    "satiety": 20,
-    "mood": 79,
-    "health": 84,
+    "experience": 92,
+    "satiety": 16,
+    "mood": 94,
+    "health": 90,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785769169109,
+    "satiety_decay_at": 1785855672466,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -25,11 +25,13 @@
       "cheese_turtle",
       "wide_eyed_turtle",
       "ladybug_turtle",
-      "ribbon_turtle"
+      "ribbon_turtle",
+      "shushing_turtle",
+      "parachute_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 12,
+      "counter:gacha_draws": 16,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -130,6 +132,16 @@
     },
     "unlock_records": [
       {
+        "skin_id": "parachute_turtle",
+        "reason": "gacha",
+        "time": 1785804255914
+      },
+      {
+        "skin_id": "shushing_turtle",
+        "reason": "gacha",
+        "time": 1785804255914
+      },
+      {
         "skin_id": "ribbon_turtle",
         "reason": "gacha",
         "time": 1785749624255
@@ -212,18 +224,18 @@
     ]
   },
   "profile": {
-    "favorability": 10,
-    "weekly_contribution": 8,
-    "total_contribution": 8,
+    "favorability": 26,
+    "weekly_contribution": 22,
+    "total_contribution": 22,
     "last_display_name": "H3YF6 3.2",
     "first_joined_at": 1785644212468,
-    "last_active_at": 1785769572331,
+    "last_active_at": 1785856009981,
     "daily": {
-      "date": "2026-08-03",
-      "event_count": 2,
+      "date": "2026-08-04",
+      "event_count": 4,
       "same_event_counts": {
-        "mention_only": 1,
-        "feed": 1
+        "mention_only": 2,
+        "feed": 2
       },
       "negative_shared_impact": 0
     },
@@ -231,12 +243,36 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 5,
+      "ruozhi_fate": 0,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0
     },
     "item_ledger": [
+      {
+        "time": 1785804255914,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 12,
+        "before": 12,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 4
+        }
+      },
+      {
+        "time": 1785804239431,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 5,
+        "after": 12,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 15.172
+        }
+      },
       {
         "time": 1785749624256,
         "type": "income",
@@ -466,10 +502,45 @@
       }
     },
     "currency": {
-      "balance": 5784,
-      "total_earned": 5784,
+      "balance": 6884,
+      "total_earned": 6884,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785804255914,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 6584,
+          "after": 6884,
+          "meta": {
+            "skin_id": "fruit_hat_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785804255914,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 6284,
+          "after": 6584,
+          "meta": {
+            "skin_id": "ribbon_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785804239431,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 5784,
+          "after": 6284,
+          "meta": {
+            "date": "2026-08-04"
+          }
+        },
         {
           "time": 1785749624255,
           "type": "income",
@@ -552,10 +623,105 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-03"
+      "first_interaction_reward_date": "2026-08-04"
     }
   },
   "recent_events": [
+    {
+      "time": 1785844155956,
+      "user_id": "1440624127",
+      "display_name": "H3YF6 3.2",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向H3YF6 3.2，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785844152467,
+      "user_id": "1440624127",
+      "display_name": "H3YF6 3.2",
+      "event_id": "feed",
+      "branch_id": "hungry",
+      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
+      "effects_text": "饱食+18，心情+5，健康+2，好感+5，贡献+5，经验+15",
+      "effects": {
+        "satiety": 18,
+        "mood": 5,
+        "health": 2,
+        "favorability": 5,
+        "contribution": 5,
+        "experience": 15
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785804245350,
+      "user_id": "1440624127",
+      "display_name": "H3YF6 3.2",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，H3YF6 3.2及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785804239431,
+      "user_id": "1440624127",
+      "display_name": "H3YF6 3.2",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到H3YF6 3.2身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 6284
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 7
+    },
     {
       "time": 1785750449110,
       "user_id": "1440624127",
@@ -607,13 +773,17 @@
     }
   ],
   "daily": {
-    "date": "2026-08-03",
-    "event_count": 2,
-    "bonus_event_count": 2
+    "date": "2026-08-04",
+    "event_count": 4,
+    "bonus_event_count": 4
   },
   "processed_messages": {
     "event:1818971190": 1785749619606,
-    "event:250110723": 1785750449108
+    "event:250110723": 1785750449108,
+    "event:2087522704": 1785804239430,
+    "event:2057587339": 1785804245348,
+    "event:400526602": 1785844152466,
+    "event:611081565": 1785844155955
   },
   "skin_sessions": {
     "active": null
@@ -626,19 +796,19 @@
     "migrated_at": 1785644212468
   },
   "created_at": 1785644212468,
-  "updated_at": 1785769572331,
+  "updated_at": 1785856009981,
   "production": {
     "started_at": 1785644212468,
-    "last_settled_at": 1785769572331,
-    "accumulated_ms": 19952721,
-    "progress": 3.136998414510046,
-    "total_produced": 13,
-    "last_collected_at": 1785749619610
+    "last_settled_at": 1785856009981,
+    "accumulated_ms": 51770550,
+    "progress": 6.725718793470017,
+    "total_produced": 20,
+    "last_collected_at": 1785804239431
   },
   "gacha": {
-    "since_four_plus": 2,
-    "since_five": 12,
-    "total_draws": 12,
+    "since_four_plus": 6,
+    "since_five": 16,
+    "total_draws": 16,
     "total_four": 1,
     "total_five": 0,
     "five_history": [],

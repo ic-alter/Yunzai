@@ -3,12 +3,12 @@
   "user_id": "35433674",
   "pet": {
     "level": 1,
-    "experience": 18,
+    "experience": 31,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785769572421,
+    "satiety_decay_at": 1785899515123,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -126,6 +126,51 @@
         "name": "发现银河汽车旅馆",
         "rarity": 3,
         "time": 1785606600724,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785833273847,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1785837931436,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_botanical_dome": {
+        "id": "ach_rtc_botanical_dome",
+        "name": "发现玻璃穹顶植物园",
+        "rarity": 3,
+        "time": 1785899514815,
         "actor_name": "穗穗的星怒",
         "rewards": [
           {
@@ -271,9 +316,9 @@
     "total_contribution": 0,
     "last_display_name": "穗穗的星怒",
     "first_joined_at": 1785344070695,
-    "last_active_at": 1785769572421,
+    "last_active_at": 1785899515123,
     "daily": {
-      "date": "2026-08-03",
+      "date": "2026-08-05",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -282,13 +327,88 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 20,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_wheat_old_coin": 1,
       "souvenir_paid_pirate_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1785899514814,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 17,
+        "after": 20,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785899514814,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 14,
+        "after": 17,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msff5ehr-qaxd7dh6",
+          "location_id": "rtc_botanical_dome"
+        }
+      },
+      {
+        "time": 1785837931436,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 11,
+        "after": 14,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1785837931435,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msef5uwa-nn4tmhbd",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1785833273847,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785833273846,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 0,
+        "after": 5,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mse925ys-fc8gxukr",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1785635607158,
         "type": "expense",
@@ -463,78 +583,6 @@
         "meta": {
           "count": 2
         }
-      },
-      {
-        "time": 1785601562038,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 5,
-        "after": 8,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_10"
-        }
-      },
-      {
-        "time": 1785601562037,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 35,
-        "after": 5,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785601527290,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 5,
-        "after": 35,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 71.516
-        }
-      },
-      {
-        "time": 1785461383684,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 2,
-        "after": 5,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_1"
-        }
-      },
-      {
-        "time": 1785461383683,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 9,
-        "before": 11,
-        "after": 2,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 3
-        }
-      },
-      {
-        "time": 1785353045679,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 8,
-        "after": 11,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_first_discovery"
-        }
       }
     ],
     "item_daily": {
@@ -557,10 +605,49 @@
       }
     },
     "currency": {
-      "balance": 5476,
-      "total_earned": 9476,
+      "balance": 11215,
+      "total_earned": 15215,
       "total_spent": 4000,
       "ledger": [
+        {
+          "time": 1785899514814,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1545,
+          "before": 9670,
+          "after": 11215,
+          "meta": {
+            "travel_id": "msff5ehr-qaxd7dh6",
+            "location_id": "rtc_botanical_dome",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785837931435,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1412,
+          "before": 8258,
+          "after": 9670,
+          "meta": {
+            "travel_id": "msef5uwa-nn4tmhbd",
+            "location_id": "eld_moonbell_village",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785833273846,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2782,
+          "before": 5476,
+          "after": 8258,
+          "meta": {
+            "travel_id": "mse925ys-fc8gxukr",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785635607158,
           "type": "income",
@@ -647,31 +734,6 @@
             "skin_id": "antler_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785601562037,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 2489,
-          "after": 2789,
-          "meta": {
-            "skin_id": "headphones_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785353045677,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2489,
-          "before": 0,
-          "after": 2489,
-          "meta": {
-            "travel_id": "ms6brrct-k5ht5lf3",
-            "location_id": "eld_free_port",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -701,12 +763,12 @@
     "migrated_at": 1785344070695
   },
   "created_at": 1785344070695,
-  "updated_at": 1785769572421,
+  "updated_at": 1785899515123,
   "production": {
     "started_at": 1785344070695,
-    "last_settled_at": 1785769572421,
-    "accumulated_ms": 133971982,
-    "progress": 16.276721167861357,
+    "last_settled_at": 1785899515123,
+    "accumulated_ms": 259200000,
+    "progress": 31.390061441417586,
     "total_produced": 34,
     "last_collected_at": 1785635600439
   },
@@ -714,7 +776,10 @@
     "unlocked_location_ids": [
       "eld_free_port",
       "eld_windmill_plain",
-      "rtc_galaxy_motel"
+      "rtc_galaxy_motel",
+      "rtc_atomic_mall",
+      "eld_moonbell_village",
+      "rtc_botanical_dome"
     ],
     "location_records": {
       "eld_free_port": {
@@ -740,6 +805,30 @@
         "travel_id": "msal4d7k-zbr1c644",
         "time": 1785606600724,
         "carried_item_id": ""
+      },
+      "rtc_atomic_mall": {
+        "id": "rtc_atomic_mall",
+        "map_id": "retro_tomorrow_city",
+        "name": "原子百货商场",
+        "travel_id": "mse925ys-fc8gxukr",
+        "time": 1785833273847,
+        "carried_item_id": ""
+      },
+      "eld_moonbell_village": {
+        "id": "eld_moonbell_village",
+        "map_id": "eldoran_continent",
+        "name": "月铃村",
+        "travel_id": "msef5uwa-nn4tmhbd",
+        "time": 1785837931436,
+        "carried_item_id": ""
+      },
+      "rtc_botanical_dome": {
+        "id": "rtc_botanical_dome",
+        "map_id": "retro_tomorrow_city",
+        "name": "玻璃穹顶植物园",
+        "travel_id": "msff5ehr-qaxd7dh6",
+        "time": 1785899514814,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -763,6 +852,13 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "msal4d7k-zbr1c644",
         "time": 1785606600724
+      },
+      "eld_event_missing_goat": {
+        "id": "eld_event_missing_goat",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_moonbell_village",
+        "travel_id": "msef5uwa-nn4tmhbd",
+        "time": 1785837931436
       }
     },
     "souvenir_records": {
@@ -832,6 +928,51 @@
         "name": "发现银河汽车旅馆",
         "rarity": 3,
         "time": 1785606600724,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785833273847,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1785837931436,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_botanical_dome": {
+        "id": "ach_rtc_botanical_dome",
+        "name": "发现玻璃穹顶植物园",
+        "rarity": 3,
+        "time": 1785899514815,
         "actor_name": "穗穗的星怒",
         "rewards": [
           {
@@ -1079,9 +1220,195 @@
         "settled_at": 1785606600724,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时22分钟\n获得：1374若汁币，若汁之缘×4，经验+3\n旅行事件：外星自动售货机\n自动售货机不收若汁币，却接受小若汁讲的冷笑话。\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★"
+      },
+      "mse925ys-fc8gxukr": {
+        "id": "mse925ys-fc8gxukr",
+        "user_id": "35433674",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "穗穗的星怒",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 10014261,
+        "rewards": {
+          "coin": 2782,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "原子百货商场",
+        "achievements": [
+          {
+            "id": "ach_rtc_atomic_mall",
+            "name": "发现原子百货商场",
+            "rarity": 3,
+            "time": 1785833273847,
+            "actor_name": "穗穗的星怒",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现原子百货商场」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785833273848,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时47分钟\n获得：2782若汁币，若汁之缘×5，经验+6\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★"
+      },
+      "msef5uwa-nn4tmhbd": {
+        "id": "msef5uwa-nn4tmhbd",
+        "user_id": "35433674",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "穗穗的星怒",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_moonbell_village",
+        "location_name": "月铃村",
+        "duration_ms": 4421876,
+        "rewards": {
+          "coin": 1412,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_missing_goat",
+          "name": "失踪山羊",
+          "text": "小若汁找到失踪山羊时，山羊正在精灵森林入口等它。",
+          "effects": {
+            "coin_percent": 15
+          },
+          "souvenirs": [],
+          "record": true
+        },
+        "souvenirs": [],
+        "new_location": "月铃村",
+        "achievements": [
+          {
+            "id": "ach_eld_moonbell_village",
+            "name": "发现月铃村",
+            "rarity": 3,
+            "time": 1785837931436,
+            "actor_name": "穗穗的星怒",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月铃村」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785837931437,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1412若汁币，若汁之缘×3，经验+3\n旅行事件：失踪山羊\n小若汁找到失踪山羊时，山羊正在精灵森林入口等它。\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★"
+      },
+      "msff5ehr-qaxd7dh6": {
+        "id": "msff5ehr-qaxd7dh6",
+        "user_id": "35433674",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "穗穗的星怒",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_botanical_dome",
+        "location_name": "玻璃穹顶植物园",
+        "duration_ms": 5560335,
+        "rewards": {
+          "coin": 1545,
+          "fate": 3,
+          "experience": 4
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "玻璃穹顶植物园",
+        "achievements": [
+          {
+            "id": "ach_rtc_botanical_dome",
+            "name": "发现玻璃穹顶植物园",
+            "rarity": 3,
+            "time": 1785899514815,
+            "actor_name": "穗穗的星怒",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现玻璃穹顶植物园」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785899514815,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时33分钟\n获得：1545若汁币，若汁之缘×3，经验+4\n新地点已解锁：玻璃穹顶植物园\n达成旅行成就「发现玻璃穹顶植物园」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msff5ehr-qaxd7dh6",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "35433674",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时33分钟\n获得：1545若汁币，若汁之缘×3，经验+4\n新地点已解锁：玻璃穹顶植物园\n达成旅行成就「发现玻璃穹顶植物园」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785899514815,
+        "created_at": 1785899514815,
+        "sent_at": 1785899515123,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msef5uwa-nn4tmhbd",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "35433674",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1412若汁币，若汁之缘×3，经验+3\n旅行事件：失踪山羊\n小若汁找到失踪山羊时，山羊正在精灵森林入口等它。\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785837931437,
+        "created_at": 1785837931437,
+        "sent_at": 1785837931712,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mse925ys-fc8gxukr",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "35433674",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时47分钟\n获得：2782若汁币，若汁之缘×5，经验+6\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785833273848,
+        "created_at": 1785833273848,
+        "sent_at": 1785833274118,
+        "last_error": ""
+      },
       {
         "travel_id": "msal4d7k-zbr1c644",
         "group_id": "415462812",
@@ -1136,16 +1463,18 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 7,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 1,
-        "eldoran_continent": 2
+        "retro_tomorrow_city": 3,
+        "eldoran_continent": 3,
+        "unregistered_district": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
           "eld_event_haystack_coin": 1,
-          "eld_event_pirate_photo": 1
+          "eld_event_pirate_photo": 1,
+          "eld_event_missing_goat": 1
         },
         "retro_tomorrow_city": {
           "rtc_event_alien_vending": 1
@@ -1154,7 +1483,8 @@
       "event_ids": {
         "eld_event_haystack_coin": 1,
         "eld_event_pirate_photo": 1,
-        "rtc_event_alien_vending": 1
+        "rtc_event_alien_vending": 1,
+        "eld_event_missing_goat": 1
       }
     },
     "active": null,

@@ -3,12 +3,12 @@
   "user_id": "3353473843",
   "pet": {
     "level": 1,
-    "experience": 4,
+    "experience": 9,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785769572373,
+    "satiety_decay_at": 1785861170447,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -102,6 +102,21 @@
         "name": "小若汁出门了",
         "rarity": 3,
         "time": 1785764311319,
+        "actor_name": "幺的妖星（安卓）100,138,427,860",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1785861169977,
         "actor_name": "幺的妖星（安卓）100,138,427,860",
         "rewards": [
           {
@@ -277,9 +292,9 @@
     "total_contribution": 0,
     "last_display_name": "幺的妖星（安卓）100,138,427,860",
     "first_joined_at": 1784818878629,
-    "last_active_at": 1785769572373,
+    "last_active_at": 1785861170447,
     "daily": {
-      "date": "2026-08-03",
+      "date": "2026-08-05",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -288,10 +303,34 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 24392,
-      "total_earned": 24392,
+      "balance": 28185,
+      "total_earned": 28185,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785861169976,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2593,
+          "before": 25592,
+          "after": 28185,
+          "meta": {
+            "travel_id": "mseps5kp-nzvdnxe2",
+            "location_id": "eld_windmill_plain",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785851100703,
+          "type": "income",
+          "reason": "daily_sign",
+          "amount": 1200,
+          "before": 24392,
+          "after": 25592,
+          "meta": {
+            "date": "2026-08-04"
+          }
+        },
         {
           "time": 1785764311318,
           "type": "income",
@@ -391,50 +430,62 @@
           "meta": {
             "date": "2026-08-03"
           }
-        },
-        {
-          "time": 1785758034919,
-          "type": "income",
-          "reason": "fgo_guess_skill_settlement",
-          "amount": 149,
-          "before": 417,
-          "after": 566,
-          "meta": {
-            "mode": "crop",
-            "rounds": 20,
-            "score": 100,
-            "total_score": 2010
-          }
-        },
-        {
-          "time": 1784819895501,
-          "type": "income",
-          "reason": "fgo_guess_role_settlement",
-          "amount": 285,
-          "before": 132,
-          "after": 417,
-          "meta": {
-            "mode": "crop",
-            "rounds": 20,
-            "score": 190,
-            "total_score": 1969
-          }
         }
       ],
       "sign": {
-        "last_date": "2026-08-03",
-        "total_count": 1,
+        "last_date": "2026-08-04",
+        "total_count": 2,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 25,
+      "ruozhi_fate": 62,
       "nameless_ruozhi": 0,
       "souvenir_moonbell_festival_ribbon": 1
     },
     "item_ledger": [
+      {
+        "time": 1785861169977,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 59,
+        "after": 62,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1785861169976,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 54,
+        "after": 59,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mseps5kp-nzvdnxe2",
+          "location_id": "eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1785851100704,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 29,
+        "before": 25,
+        "after": 54,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-08-04",
+          "month_count": 2,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
       {
         "time": 1785764311319,
         "type": "income",
@@ -636,7 +687,8 @@
     "item_sign": {
       "month": "2026-08",
       "dates": [
-        "2026-08-03"
+        "2026-08-03",
+        "2026-08-04"
       ]
     }
   },
@@ -658,17 +710,18 @@
     "migrated_at": 1784818878629
   },
   "created_at": 1784818878629,
-  "updated_at": 1785769572373,
+  "updated_at": 1785861170447,
   "production": {
     "started_at": 1785141760248,
-    "last_settled_at": 1785769572373,
+    "last_settled_at": 1785861170447,
     "accumulated_ms": 259200000,
     "progress": 28.317214700193425,
     "total_produced": 0
   },
   "travel": {
     "unlocked_location_ids": [
-      "eld_moonbell_village"
+      "eld_moonbell_village",
+      "eld_windmill_plain"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -677,6 +730,14 @@
         "name": "月铃村",
         "travel_id": "msd69jvv-fsqgvnlb",
         "time": 1785764311318,
+        "carried_item_id": ""
+      },
+      "eld_windmill_plain": {
+        "id": "eld_windmill_plain",
+        "map_id": "eldoran_continent",
+        "name": "风车草原",
+        "travel_id": "mseps5kp-nzvdnxe2",
+        "time": 1785861169977,
         "carried_item_id": ""
       }
     },
@@ -687,6 +748,13 @@
         "location_id": "eld_moonbell_village",
         "travel_id": "msd69jvv-fsqgvnlb",
         "time": 1785764311319
+      },
+      "eld_event_windmill_chase": {
+        "id": "eld_event_windmill_chase",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_windmill_plain",
+        "travel_id": "mseps5kp-nzvdnxe2",
+        "time": 1785861169977
       }
     },
     "souvenir_records": {
@@ -719,6 +787,21 @@
         "name": "小若汁出门了",
         "rarity": 3,
         "time": 1785764311319,
+        "actor_name": "幺的妖星（安卓）100,138,427,860",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1785861169977,
         "actor_name": "幺的妖星（安卓）100,138,427,860",
         "rewards": [
           {
@@ -816,9 +899,77 @@
         "settled_at": 1785764311320,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时44分钟\n获得：1726若汁币，若汁之缘×5，经验+4\n旅行事件：月铃祭\n村民让小若汁负责敲开场铃。\n纪念品：🎀月铃祭缎带×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★\n达成旅行成就「小若汁出门了」 ★★★"
+      },
+      "mseps5kp-nzvdnxe2": {
+        "id": "mseps5kp-nzvdnxe2",
+        "user_id": "3353473843",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "display_name": "幺的妖星（安卓）100,138,427,860",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_windmill_plain",
+        "location_name": "风车草原",
+        "duration_ms": 9823987,
+        "rewards": {
+          "coin": 2593,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_windmill_chase",
+          "name": "追逐风车",
+          "text": "小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
+          "effects": {
+            "coin_percent": -5
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "风车草原",
+        "achievements": [
+          {
+            "id": "ach_eld_windmill_plain",
+            "name": "发现风车草原",
+            "rarity": 3,
+            "time": 1785861169977,
+            "actor_name": "幺的妖星（安卓）100,138,427,860",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现风车草原」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785861169978,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2593若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mseps5kp-nzvdnxe2",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "user_id": "3353473843",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2593若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785861169978,
+        "created_at": 1785861169978,
+        "sent_at": 1785861170447,
+        "last_error": ""
+      },
       {
         "travel_id": "msd69jvv-fsqgvnlb",
         "group_id": "138260540",
@@ -834,20 +985,22 @@
       }
     ],
     "stats": {
-      "total_trips": 1,
+      "total_trips": 2,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
-        "eldoran_continent": 1,
+        "eldoran_continent": 2,
         "unregistered_district": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
-          "eld_event_moon_festival": 1
+          "eld_event_moon_festival": 1,
+          "eld_event_windmill_chase": 1
         }
       },
       "event_ids": {
-        "eld_event_moon_festival": 1
+        "eld_event_moon_festival": 1,
+        "eld_event_windmill_chase": 1
       }
     },
     "active": null,

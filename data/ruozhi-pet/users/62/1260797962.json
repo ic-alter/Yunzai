@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 1,
-    "experience": 57,
+    "experience": 60,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785769572397,
+    "satiety_decay_at": 1785856010092,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -390,6 +390,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_school_gate_1743": {
+        "id": "ach_school_gate_1743",
+        "name": "发现永远放学的校门",
+        "rarity": 3,
+        "time": 1785850454449,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1785850454449,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -622,9 +652,9 @@
     "total_contribution": 0,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1785769572397,
+    "last_active_at": 1785856010092,
     "daily": {
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -633,10 +663,50 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 74327,
-      "total_earned": 74327,
+      "balance": 76095,
+      "total_earned": 76095,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785850454448,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 624,
+          "before": 75471,
+          "after": 76095,
+          "meta": {
+            "travel_id": "msenwvx2-uieiobbr",
+            "location_id": "school_gate_1743",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785811469187,
+          "type": "income",
+          "reason": "ww_guess_skill_settlement",
+          "amount": 143,
+          "before": 75328,
+          "after": 75471,
+          "meta": {
+            "mode": "ww_skill",
+            "rounds": 20,
+            "score": 95,
+            "total_score": 1845
+          }
+        },
+        {
+          "time": 1785808979504,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1001,
+          "before": 74327,
+          "after": 75328,
+          "meta": {
+            "travel_id": "msdylvsl-7a43z92t",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785764062049,
           "type": "income",
@@ -723,42 +793,6 @@
             "skin_id": "party_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785636866840,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 66857,
-          "after": 67157,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636866840,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 66557,
-          "after": 66857,
-          "meta": {
-            "skin_id": "raised_eyebrow_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636866840,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 66257,
-          "after": 66557,
-          "meta": {
-            "skin_id": "starry_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -770,7 +804,7 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 32,
+      "ruozhi_fate": 41,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
       "souvenir_sun_chart": 1,
@@ -781,6 +815,56 @@
       "souvenir_stranger_wedding_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1785850454449,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 38,
+        "after": 41,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_first_unregistered_place"
+        }
+      },
+      {
+        "time": 1785850454449,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 35,
+        "after": 38,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_school_gate_1743"
+        }
+      },
+      {
+        "time": 1785850454448,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 34,
+        "after": 35,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msenwvx2-uieiobbr",
+          "location_id": "school_gate_1743"
+        }
+      },
+      {
+        "time": 1785808979504,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 32,
+        "after": 34,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msdylvsl-7a43z92t",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1785764062049,
         "type": "income",
@@ -985,58 +1069,6 @@
           "event_id": "rtc_event_robot_conductor",
           "location_id": "rtc_central_station"
         }
-      },
-      {
-        "time": 1785577625914,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 30,
-        "after": 33,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msa3rqmz-wnje1it5",
-          "location_id": "rtc_central_station"
-        }
-      },
-      {
-        "time": 1785572455934,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 27,
-        "after": 30,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785572455933,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 26,
-        "after": 27,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msa2zrsl-f4jvy0ra",
-          "location_id": "rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785511511917,
-        "type": "income",
-        "item_id": "souvenir_vegetable_soup_potion",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "ms90l9ra-ws3rle9b",
-          "event_id": "eld_event_potion_soup",
-          "location_id": "eld_magic_academy"
-        }
       }
     ],
     "item_daily": {
@@ -1079,10 +1111,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1785769572397,
+  "updated_at": 1785856010092,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1785769572397,
+    "last_settled_at": 1785856010092,
     "accumulated_ms": 259200000,
     "progress": 33.40637440935916,
     "total_produced": 30,
@@ -1102,7 +1134,8 @@
       "eld_weeping_swamp",
       "rtc_atomic_mall",
       "rtc_robot_park",
-      "rtc_blue_harbor"
+      "rtc_blue_harbor",
+      "school_gate_1743"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -1208,6 +1241,14 @@
         "travel_id": "mscvruo6-ncbmxxc7",
         "time": 1785742782277,
         "carried_item_id": ""
+      },
+      "school_gate_1743": {
+        "id": "school_gate_1743",
+        "map_id": "unregistered_district",
+        "name": "永远放学的校门",
+        "travel_id": "msenwvx2-uieiobbr",
+        "time": 1785850454448,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1287,6 +1328,13 @@
         "location_id": "rtc_robot_park",
         "travel_id": "msd4xbne-rrr2nk77",
         "time": 1785764062050
+      },
+      "rtc_event_free_sample": {
+        "id": "rtc_event_free_sample",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_atomic_mall",
+        "travel_id": "msdylvsl-7a43z92t",
+        "time": 1785808979504
       }
     },
     "souvenir_records": {
@@ -1586,6 +1634,36 @@
         "name": "初识明日",
         "rarity": 3,
         "time": 1785742782277,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_school_gate_1743": {
+        "id": "ach_school_gate_1743",
+        "name": "发现永远放学的校门",
+        "rarity": 3,
+        "time": 1785850454449,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1785850454449,
         "actor_name": "迈特斯妲",
         "rewards": [
           {
@@ -2663,9 +2741,135 @@
         "settled_at": 1785764062051,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：2小时17分钟\n获得：2281若汁币，若汁之缘×6，经验+5\n旅行事件：停在最高点\n摩天轮在最高处停了半小时。"
+      },
+      "msdylvsl-7a43z92t": {
+        "id": "msdylvsl-7a43z92t",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 3275752,
+        "rewards": {
+          "coin": 1001,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "rtc_event_free_sample",
+          "name": "未来食品试吃",
+          "text": "小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
+          "effects": {
+            "coin_percent": 10
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785808979505,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：55分钟\n获得：1001若汁币，若汁之缘×2，经验+2\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。"
+      },
+      "msenwvx2-uieiobbr": {
+        "id": "msenwvx2-uieiobbr",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "school_gate_1743",
+        "location_name": "永远放学的校门",
+        "duration_ms": 2246924,
+        "rewards": {
+          "coin": 624,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "永远放学的校门",
+        "achievements": [
+          {
+            "id": "ach_school_gate_1743",
+            "name": "发现永远放学的校门",
+            "rarity": 3,
+            "time": 1785850454449,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现永远放学的校门」 ★★★"
+          },
+          {
+            "id": "ach_first_unregistered_place",
+            "name": "地图上不存在的地点",
+            "rarity": 3,
+            "time": 1785850454449,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「地图上不存在的地点」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785850454449,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：37分钟\n获得：624若汁币，若汁之缘×1，经验+1\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msenwvx2-uieiobbr",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：37分钟\n获得：624若汁币，若汁之缘×1，经验+1\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785850454449,
+        "created_at": 1785850454449,
+        "sent_at": 1785850454790,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msdylvsl-7a43z92t",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：55分钟\n获得：1001若汁币，若汁之缘×2，经验+2\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785808979505,
+        "created_at": 1785808979505,
+        "sent_at": 1785808979830,
+        "last_error": ""
+      },
       {
         "travel_id": "msd4xbne-rrr2nk77",
         "group_id": "415462812",
@@ -2899,36 +3103,10 @@
         "created_at": 1785265562223,
         "sent_at": 1785265562492,
         "last_error": ""
-      },
-      {
-        "travel_id": "ms4ohne9-zfi5nrhf",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时18分钟\n获得：2296若汁币，若汁之缘×5，经验+5\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785252778913,
-        "created_at": 1785252778913,
-        "sent_at": 1785252779377,
-        "last_error": ""
-      },
-      {
-        "travel_id": "ms49fqgx-j58y42s8",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：49分钟\n获得：944若汁币，若汁之缘×2，经验+2\n旅行事件：失踪山羊\n小若汁找到失踪山羊时，山羊正在精灵森林入口等它。\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★\n达成旅行成就「小若汁出门了」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785222187604,
-        "created_at": 1785222187604,
-        "sent_at": 1785222188528,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 20,
+      "total_trips": 22,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -2939,7 +3117,7 @@
       "map_location_counts": {
         "retro_tomorrow_city": 5,
         "eldoran_continent": 8,
-        "unregistered_district": 0
+        "unregistered_district": 1
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -2955,7 +3133,8 @@
           "rtc_event_traffic_bot": 1,
           "rtc_event_robot_conductor": 1,
           "rtc_event_wrong_cruise": 1,
-          "rtc_event_ferris_stop": 1
+          "rtc_event_ferris_stop": 1,
+          "rtc_event_free_sample": 1
         }
       },
       "event_ids": {
@@ -2969,7 +3148,8 @@
         "eld_event_potion_soup": 1,
         "rtc_event_robot_conductor": 1,
         "rtc_event_wrong_cruise": 1,
-        "rtc_event_ferris_stop": 1
+        "rtc_event_ferris_stop": 1,
+        "rtc_event_free_sample": 1
       }
     },
     "active": null,

@@ -3,21 +3,33 @@
   "user_id": "3173827057",
   "pet": {
     "level": 1,
-    "experience": 15,
-    "satiety": 48,
-    "mood": 71,
+    "experience": 26,
+    "satiety": 5,
+    "mood": 72,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785768372430,
+    "satiety_decay_at": 1785910954471,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "crown_turtle",
+      "sneaker_turtle",
+      "tear_turtle",
+      "snow_peak_turtle",
+      "music_turtle",
+      "nerd_turtle",
+      "birthday_turtle",
+      "heart_shower_turtle",
+      "love_letter_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 10,
+      "counter:gacha_five": 1
+    },
     "achievement_records": {
       "ach_eld_adventurer_guild": {
         "id": "ach_eld_adventurer_guild",
@@ -48,9 +60,105 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1785910954473,
+        "actor_name": "N12狙医死仇鸿雪教练",
+        "stat_key": "counter:gacha_draws",
+        "count": 10,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_draw_10": {
+        "id": "gacha_draw_10",
+        "name": "十连启程",
+        "rarity": 3,
+        "time": 1785910954473,
+        "actor_name": "N12狙医死仇鸿雪教练",
+        "stat_key": "counter:gacha_draws",
+        "count": 10,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_five_1": {
+        "id": "gacha_five_1",
+        "name": "金光初现",
+        "rarity": 3,
+        "time": 1785910954473,
+        "actor_name": "N12狙医死仇鸿雪教练",
+        "stat_key": "counter:gacha_five",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "love_letter_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "heart_shower_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "birthday_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "nerd_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "music_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "snow_peak_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "tear_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "sneaker_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
+      {
+        "skin_id": "crown_turtle",
+        "reason": "gacha",
+        "time": 1785910954472
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -79,14 +187,14 @@
     ]
   },
   "profile": {
-    "favorability": 1,
-    "weekly_contribution": 1,
-    "total_contribution": 1,
+    "favorability": 2,
+    "weekly_contribution": 2,
+    "total_contribution": 2,
     "last_display_name": "N12狙医死仇鸿雪教练",
     "first_joined_at": 1785736692430,
-    "last_active_at": 1785769572387,
+    "last_active_at": 1785910954472,
     "daily": {
-      "date": "2026-08-03",
+      "date": "2026-08-05",
       "event_count": 1,
       "same_event_counts": {
         "mention_only": 1
@@ -97,10 +205,70 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 9,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785910954473,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 6,
+        "after": 9,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_1"
+        }
+      },
+      {
+        "time": 1785910954473,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 6,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_10"
+        }
+      },
+      {
+        "time": 1785910954473,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1785910954472,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 30,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1785910910150,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 20,
+        "before": 10,
+        "after": 30,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 48.394
+        }
+      },
       {
         "time": 1785745239610,
         "type": "income",
@@ -149,10 +317,33 @@
       }
     },
     "currency": {
-      "balance": 3449,
-      "total_earned": 3449,
+      "balance": 4249,
+      "total_earned": 4249,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785910954472,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 3949,
+          "after": 4249,
+          "meta": {
+            "skin_id": "crown_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785910910151,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 3449,
+          "after": 3949,
+          "meta": {
+            "date": "2026-08-05"
+          }
+        },
         {
           "time": 1785745239609,
           "type": "income",
@@ -184,10 +375,36 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-03"
+      "first_interaction_reward_date": "2026-08-05"
     }
   },
   "recent_events": [
+    {
+      "time": 1785910910151,
+      "user_id": "3173827057",
+      "display_name": "N12狙医死仇鸿雪教练",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向N12狙医死仇鸿雪教练，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 3949
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 20
+    },
     {
       "time": 1785736692437,
       "user_id": "3173827057",
@@ -216,12 +433,13 @@
     }
   ],
   "daily": {
-    "date": "2026-08-03",
+    "date": "2026-08-05",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
-    "event:1164131239": 1785736692433
+    "event:1164131239": 1785736692433,
+    "event:1885476710": 1785910910149
   },
   "skin_sessions": {
     "active": null
@@ -234,13 +452,14 @@
     "migrated_at": 1785736692430
   },
   "created_at": 1785736692430,
-  "updated_at": 1785769572387,
+  "updated_at": 1785910954473,
   "production": {
     "started_at": 1785736692430,
-    "last_settled_at": 1785769572387,
-    "accumulated_ms": 32879957,
-    "progress": 4.606724492140094,
-    "total_produced": 0
+    "last_settled_at": 1785910954471,
+    "accumulated_ms": 44321,
+    "progress": 0.7473349862136771,
+    "total_produced": 20,
+    "last_collected_at": 1785910910150
   },
   "travel": {
     "unlocked_location_ids": [
@@ -401,16 +620,55 @@
         "eld_event_missing_spoon": 1
       }
     },
-    "active": null,
+    "active": {
+      "id": "msfp9c39-35z6dcml",
+      "user_id": "3173827057",
+      "display_name": "N12狙医死仇鸿雪教练",
+      "group_id": "946431041",
+      "self_id": "3964480831",
+      "started_at": 1785910934133,
+      "ends_at": 1785918278287,
+      "duration_ms": 7344154,
+      "map_id": "unregistered_district",
+      "map_name": "未登记城区",
+      "location_id": "rain_only_store",
+      "location_name": "只在雨中营业的便利店",
+      "was_unlocked": false,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "event_no_night_employee",
+        "name": "本店没有夜班员工",
+        "text": "广播提醒顾客不要和夜班员工交谈。收银台后立即传来礼貌的询问：“需要袋子吗？”",
+        "effects": {
+          "mood": -2
+        },
+        "souvenirs": [],
+        "record": false
+      },
+      "rewards": {
+        "coin": 2040,
+        "fate": 4,
+        "experience": 4
+      }
+    },
     "prepared_tool": null
   },
   "gacha": {
-    "since_four_plus": 0,
-    "since_five": 0,
-    "total_draws": 0,
+    "since_four_plus": 6,
+    "since_five": 6,
+    "total_draws": 10,
     "total_four": 0,
-    "total_five": 0,
-    "five_history": [],
+    "total_five": 1,
+    "five_history": [
+      {
+        "time": 1785910954472,
+        "skin_id": "snow_peak_turtle",
+        "skin_name": "雪峰小若汁",
+        "pulls": 4,
+        "draw_index": 4
+      }
+    ],
     "route_misses": 0,
     "route_skin_id": ""
   }

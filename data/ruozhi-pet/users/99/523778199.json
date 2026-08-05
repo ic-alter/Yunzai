@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "523778199",
   "pet": {
-    "level": 1,
-    "experience": 80,
+    "level": 2,
+    "experience": 8,
     "satiety": 5,
-    "mood": 81,
-    "health": 84,
+    "mood": 90,
+    "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785769852260,
+    "satiety_decay_at": 1785913126814,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -23,9 +23,18 @@
       "cheese_turtle",
       "nerd_turtle",
       "fruit_hat_turtle",
-      "burger_turtle"
+      "burger_turtle",
+      "cactus_turtle"
     ],
-    "level_reward_records": {},
+    "level_reward_records": {
+      "2:unlock_skin:cactus_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "cactus_turtle",
+        "level": 2,
+        "time": 1785814300669,
+        "applied": true
+      }
+    },
     "achievement_stats": {
       "counter:gacha_draws": 10,
       "counter:gacha_five": 0
@@ -203,6 +212,12 @@
     },
     "unlock_records": [
       {
+        "skin_id": "cactus_turtle",
+        "reason": "level_reward",
+        "time": 1785814300669,
+        "level": 2
+      },
+      {
         "skin_id": "burger_turtle",
         "reason": "gacha",
         "time": 1785224900439
@@ -275,28 +290,48 @@
     ]
   },
   "profile": {
-    "favorability": 11,
-    "weekly_contribution": 0,
-    "total_contribution": 10,
+    "favorability": 20,
+    "weekly_contribution": 8,
+    "total_contribution": 18,
     "last_display_name": "Koala",
     "first_joined_at": 1784794784420,
-    "last_active_at": 1785769852260,
+    "last_active_at": 1785913126814,
     "daily": {
-      "date": "2026-08-03",
-      "event_count": 1,
-      "same_event_counts": {
-        "mention_only": 1
-      },
+      "date": "2026-08-05",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 32858,
-      "total_earned": 32858,
+      "balance": 33658,
+      "total_earned": 33658,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785814300667,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 33358,
+          "after": 33658,
+          "meta": {
+            "level": 2
+          }
+        },
+        {
+          "time": 1785814288896,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 32858,
+          "after": 33358,
+          "meta": {
+            "date": "2026-08-04"
+          }
+        },
         {
           "time": 1785769851999,
           "type": "income",
@@ -398,30 +433,6 @@
             "location_id": "rtc_galaxy_motel",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785642621094,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 21672,
-          "after": 22172,
-          "meta": {
-            "date": "2026-08-02"
-          }
-        },
-        {
-          "time": 1785471888506,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2632,
-          "before": 19040,
-          "after": 21672,
-          "meta": {
-            "travel_id": "ms8a7zfp-9luk10oc",
-            "location_id": "eld_dwarf_city",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -430,15 +441,39 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-03"
+      "first_interaction_reward_date": "2026-08-04"
     },
     "items": {
-      "ruozhi_fate": 181,
+      "ruozhi_fate": 198,
       "nameless_ruozhi": 0,
       "souvenir_clockwork_leaf": 1,
       "souvenir_sea_future_coin": 1
     },
     "item_ledger": [
+      {
+        "time": 1785814300667,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 195,
+        "after": 198,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 2
+        }
+      },
+      {
+        "time": 1785814288895,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 14,
+        "before": 181,
+        "after": 195,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 33.341
+        }
+      },
       {
         "time": 1785769852003,
         "type": "income",
@@ -666,30 +701,6 @@
           "travel_id": "ms8a7zfp-9luk10oc",
           "location_id": "eld_dwarf_city"
         }
-      },
-      {
-        "time": 1785462423662,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 29,
-        "before": 81,
-        "after": 110,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 72
-        }
-      },
-      {
-        "time": 1785400177952,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 78,
-        "after": 81,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_moonbell_village"
-        }
       }
     ],
     "item_daily": {
@@ -716,6 +727,78 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785814300669,
+      "user_id": "523778199",
+      "display_name": "Koala",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向Koala，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11，升级到 Lv.2",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [
+        {
+          "level": 2,
+          "need": 100
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 2,
+          "reward": 300,
+          "receiver": {
+            "user_id": "523778199",
+            "display_name": "Koala"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 2,
+              "skin_id": "cactus_turtle",
+              "skin_name": "仙人掌小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785814288896,
+      "user_id": "523778199",
+      "display_name": "Koala",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Koala及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 33358
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 14
+    },
     {
       "time": 1785694261042,
       "user_id": "523778199",
@@ -816,15 +899,17 @@
     }
   ],
   "daily": {
-    "date": "2026-08-03",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "date": "2026-08-04",
+    "event_count": 2,
+    "bonus_event_count": 2
   },
   "processed_messages": {
     "event:2093880454": 1785642621093,
     "event:685062629": 1785647556206,
     "event:1161807210": 1785670603809,
-    "event:1740023767": 1785694261041
+    "event:1740023767": 1785694261041,
+    "event:649650898": 1785814288895,
+    "event:357882782": 1785814300666
   },
   "skin_sessions": {
     "active": null
@@ -837,14 +922,14 @@
     "migrated_at": 1784794784420
   },
   "created_at": 1784794784420,
-  "updated_at": 1785769852260,
+  "updated_at": 1785913126814,
   "production": {
     "started_at": 1785141760322,
-    "last_settled_at": 1785769852260,
-    "accumulated_ms": 75591219,
-    "progress": 8.95671990602995,
-    "total_produced": 56,
-    "last_collected_at": 1785694261041
+    "last_settled_at": 1785913126814,
+    "accumulated_ms": 98837919,
+    "progress": 11.841907535366596,
+    "total_produced": 70,
+    "last_collected_at": 1785814288895
   },
   "travel": {
     "unlocked_location_ids": [
@@ -1764,7 +1849,29 @@
         "rtc_event_harbor_cleanup": 1
       }
     },
-    "active": null,
+    "active": {
+      "id": "msfplmxo-1778zefw",
+      "user_id": "523778199",
+      "display_name": "Koala",
+      "group_id": "946431041",
+      "self_id": "3964480831",
+      "started_at": 1785911508060,
+      "ends_at": 1785921355838,
+      "duration_ms": 9847778,
+      "map_id": "retro_tomorrow_city",
+      "map_name": "明日旧城",
+      "location_id": "rtc_central_station",
+      "location_name": "明日中央车站",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": null,
+      "rewards": {
+        "coin": 2735,
+        "fate": 5,
+        "experience": 5
+      }
+    },
     "prepared_tool": null
   },
   "gacha": {

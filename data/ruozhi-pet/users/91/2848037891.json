@@ -3,12 +3,12 @@
   "user_id": "2848037891",
   "pet": {
     "level": 2,
-    "experience": 47,
-    "satiety": 17,
+    "experience": 70,
+    "satiety": 24,
     "mood": 100,
-    "health": 98,
+    "health": 100,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785768706105,
+    "satiety_decay_at": 1785854651696,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -37,7 +37,12 @@
       "snow_peak_turtle",
       "music_turtle",
       "puppy_turtle",
-      "lying_turtle"
+      "lying_turtle",
+      "goggles_turtle",
+      "snake_turtle",
+      "ribbon_turtle",
+      "kiss_marks_turtle",
+      "crown_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -49,7 +54,7 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 31,
+      "counter:gacha_draws": 41,
       "counter:gacha_five": 1
     },
     "achievement_records": {
@@ -148,9 +153,49 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1785838854194,
+        "actor_name": "Cissia最强",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "crown_turtle",
+        "reason": "gacha",
+        "time": 1785841700211
+      },
+      {
+        "skin_id": "kiss_marks_turtle",
+        "reason": "gacha",
+        "time": 1785841700211
+      },
+      {
+        "skin_id": "ribbon_turtle",
+        "reason": "gacha",
+        "time": 1785841700211
+      },
+      {
+        "skin_id": "snake_turtle",
+        "reason": "gacha",
+        "time": 1785841700211
+      },
+      {
+        "skin_id": "goggles_turtle",
+        "reason": "gacha",
+        "time": 1785841700211
+      },
       {
         "skin_id": "lying_turtle",
         "reason": "gacha",
@@ -295,17 +340,17 @@
     ]
   },
   "profile": {
-    "favorability": 46,
-    "weekly_contribution": 12,
-    "total_contribution": 42,
+    "favorability": 54,
+    "weekly_contribution": 19,
+    "total_contribution": 49,
     "last_display_name": "Cissia最强",
     "first_joined_at": 1784809997772,
-    "last_active_at": 1785769572443,
+    "last_active_at": 1785856010173,
     "daily": {
-      "date": "2026-08-03",
-      "event_count": 2,
+      "date": "2026-08-04",
+      "event_count": 1,
       "same_event_counts": {
-        "feed": 2
+        "feed": 1
       },
       "negative_shared_impact": 0
     },
@@ -313,10 +358,107 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 20227,
-      "total_earned": 20227,
+      "balance": 25420,
+      "total_earned": 25420,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785841700211,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 25120,
+          "after": 25420,
+          "meta": {
+            "skin_id": "parachute_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785841700211,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 24820,
+          "after": 25120,
+          "meta": {
+            "skin_id": "goggles_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785841700211,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 24520,
+          "after": 24820,
+          "meta": {
+            "skin_id": "antler_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785841700211,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 24220,
+          "after": 24520,
+          "meta": {
+            "skin_id": "parachute_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785841700211,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 23920,
+          "after": 24220,
+          "meta": {
+            "skin_id": "music_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785841691698,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 23420,
+          "after": 23920,
+          "meta": {
+            "date": "2026-08-04"
+          }
+        },
+        {
+          "time": 1785841397292,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 704,
+          "before": 22716,
+          "after": 23420,
+          "meta": {
+            "travel_id": "mseicmbj-r5qs75xt",
+            "location_id": "eld_windmill_plain",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785838854193,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2489,
+          "before": 20227,
+          "after": 22716,
+          "meta": {
+            "travel_id": "msecq9hy-8n41lzjb",
+            "location_id": "eld_windmill_plain",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785758937010,
           "type": "income",
@@ -344,103 +486,6 @@
             "score": 510,
             "total_score": 2072
           }
-        },
-        {
-          "time": 1785749993404,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 18598,
-          "after": 18898,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785749993404,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 18298,
-          "after": 18598,
-          "meta": {
-            "skin_id": "shushing_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785749993404,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 17998,
-          "after": 18298,
-          "meta": {
-            "skin_id": "bouquet_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785729523342,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2943,
-          "before": 15055,
-          "after": 17998,
-          "meta": {
-            "travel_id": "mscixyer-v4lbfxnm",
-            "location_id": "rtc_central_station",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785718916551,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 14555,
-          "after": 15055,
-          "meta": {
-            "date": "2026-08-03"
-          }
-        },
-        {
-          "time": 1785678294323,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2748,
-          "before": 11807,
-          "after": 14555,
-          "meta": {
-            "travel_id": "msbouzdc-u6ebtajx",
-            "location_id": "eld_free_port",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785671665016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 11507,
-          "after": 11807,
-          "meta": {
-            "skin_id": "parachute_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785671665016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 11207,
-          "after": 11507,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -449,13 +494,75 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-03"
+      "first_interaction_reward_date": "2026-08-04"
     },
     "items": {
-      "ruozhi_fate": 11,
+      "ruozhi_fate": 6,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1785841700211,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 36,
+        "after": 6,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1785841691697,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 15,
+        "before": 21,
+        "after": 36,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 34.104
+        }
+      },
+      {
+        "time": 1785841397292,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 19,
+        "after": 21,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mseicmbj-r5qs75xt",
+          "location_id": "eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1785838854194,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 16,
+        "after": 19,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1785838854193,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 11,
+        "after": 16,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msecq9hy-8n41lzjb",
+          "location_id": "eld_windmill_plain"
+        }
+      },
       {
         "time": 1785758937022,
         "type": "income",
@@ -644,66 +751,6 @@
         "meta": {
           "level": 2
         }
-      },
-      {
-        "time": 1785637159636,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 3,
-        "after": 33,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 72
-        }
-      },
-      {
-        "time": 1785294547530,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 0,
-        "after": 3,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_1"
-        }
-      },
-      {
-        "time": 1785294547530,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 18,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 6
-        }
-      },
-      {
-        "time": 1785294529425,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 10,
-        "before": 8,
-        "after": 18,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 26.404
-        }
-      },
-      {
-        "time": 1785199476204,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 2,
-        "after": 8,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 16.032
-        }
       }
     ],
     "item_daily": {
@@ -723,6 +770,32 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1785841691698,
+      "user_id": "2848037891",
+      "display_name": "Cissia最强",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 23920
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 15
+    },
     {
       "time": 1785749986106,
       "user_id": "2848037891",
@@ -970,9 +1043,9 @@
     }
   ],
   "daily": {
-    "date": "2026-08-03",
-    "event_count": 2,
-    "bonus_event_count": 2
+    "date": "2026-08-04",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
   "processed_messages": {
     "event:1257087581": 1784809997775,
@@ -983,7 +1056,8 @@
     "event:100866848": 1785637159635,
     "event:1225662975": 1785637172154,
     "event:1013696273": 1785718916550,
-    "event:594639796": 1785749986105
+    "event:594639796": 1785749986105,
+    "event:852793517": 1785841691696
   },
   "skin_sessions": {
     "active": null
@@ -996,12 +1070,12 @@
     "migrated_at": 1784809997772
   },
   "created_at": 1784809997772,
-  "updated_at": 1785769572443,
+  "updated_at": 1785856010173,
   "gacha": {
     "since_four_plus": 4,
-    "since_five": 4,
-    "total_draws": 31,
-    "total_four": 3,
+    "since_five": 14,
+    "total_draws": 41,
+    "total_four": 4,
     "total_five": 1,
     "five_history": [
       {
@@ -1017,16 +1091,17 @@
   },
   "production": {
     "started_at": 1785141760301,
-    "last_settled_at": 1785769572443,
-    "accumulated_ms": 50655892,
-    "progress": 6.639847385360722,
-    "total_produced": 57,
-    "last_collected_at": 1785718916551
+    "last_settled_at": 1785856010173,
+    "accumulated_ms": 14318476,
+    "progress": 2.525903084363952,
+    "total_produced": 72,
+    "last_collected_at": 1785841691697
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_central_station",
-      "eld_free_port"
+      "eld_free_port",
+      "eld_windmill_plain"
     ],
     "location_records": {
       "rtc_central_station": {
@@ -1044,9 +1119,25 @@
         "travel_id": "msbouzdc-u6ebtajx",
         "time": 1785678294323,
         "carried_item_id": ""
+      },
+      "eld_windmill_plain": {
+        "id": "eld_windmill_plain",
+        "map_id": "eldoran_continent",
+        "name": "风车草原",
+        "travel_id": "msecq9hy-8n41lzjb",
+        "time": 1785838854194,
+        "carried_item_id": ""
       }
     },
-    "event_records": {},
+    "event_records": {
+      "eld_event_windmill_chase": {
+        "id": "eld_event_windmill_chase",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_windmill_plain",
+        "travel_id": "msecq9hy-8n41lzjb",
+        "time": 1785838854194
+      }
+    },
     "souvenir_records": {},
     "achievement_records": {
       "ach_rtc_central_station": {
@@ -1085,6 +1176,21 @@
         "rarity": 3,
         "time": 1785678294324,
         "actor_name": "Zutto Mayonakade Iinoni.",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1785838854194,
+        "actor_name": "Cissia最强",
         "rewards": [
           {
             "type": "item",
@@ -1229,9 +1335,119 @@
         "settled_at": 1785729523343,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时57分钟\n获得：2943若汁币，若汁之缘×6，经验+6"
+      },
+      "msecq9hy-8n41lzjb": {
+        "id": "msecq9hy-8n41lzjb",
+        "user_id": "2848037891",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "Cissia最强",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_windmill_plain",
+        "location_name": "风车草原",
+        "duration_ms": 9431425,
+        "rewards": {
+          "coin": 2489,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_windmill_chase",
+          "name": "追逐风车",
+          "text": "小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
+          "effects": {
+            "coin_percent": -5
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "风车草原",
+        "achievements": [
+          {
+            "id": "ach_eld_windmill_plain",
+            "name": "发现风车草原",
+            "rarity": 3,
+            "time": 1785838854194,
+            "actor_name": "Cissia最强",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现风车草原」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785838854195,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时37分钟\n获得：2489若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★"
+      },
+      "mseicmbj-r5qs75xt": {
+        "id": "mseicmbj-r5qs75xt",
+        "user_id": "2848037891",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "Cissia最强",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_windmill_plain",
+        "location_name": "风车草原",
+        "duration_ms": 2533409,
+        "rewards": {
+          "coin": 704,
+          "fate": 2,
+          "experience": 1
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785841397293,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：42分钟\n获得：704若汁币，若汁之缘×2，经验+1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mseicmbj-r5qs75xt",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "2848037891",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：42分钟\n获得：704若汁币，若汁之缘×2，经验+1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785841397293,
+        "created_at": 1785841397293,
+        "sent_at": 1785841397801,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msecq9hy-8n41lzjb",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "2848037891",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时37分钟\n获得：2489若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785838854195,
+        "created_at": 1785838854195,
+        "sent_at": 1785838854718,
+        "last_error": ""
+      },
       {
         "travel_id": "mscixyer-v4lbfxnm",
         "group_id": "946431041",
@@ -1273,14 +1489,21 @@
       }
     ],
     "stats": {
-      "total_trips": 3,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
-        "eldoran_continent": 1
+        "eldoran_continent": 2,
+        "unregistered_district": 0
       },
-      "map_event_ids": {},
-      "event_ids": {}
+      "map_event_ids": {
+        "eldoran_continent": {
+          "eld_event_windmill_chase": 1
+        }
+      },
+      "event_ids": {
+        "eld_event_windmill_chase": 1
+      }
     },
     "active": null,
     "prepared_tool": null
