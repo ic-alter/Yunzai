@@ -3,12 +3,12 @@
   "user_id": "1627293137",
   "pet": {
     "level": 1,
-    "experience": 26,
-    "satiety": 30,
+    "experience": 28,
+    "satiety": 28,
     "mood": 75,
     "health": 82,
     "current_skin_id": "sei_shonagon_turtle",
-    "satiety_decay_at": 1785930407070,
+    "satiety_decay_at": 1785933287070,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -188,6 +188,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785934093048,
+        "actor_name": "LOK_",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -354,7 +369,7 @@
     "total_contribution": 5,
     "last_display_name": "LOK_",
     "first_joined_at": 1785846055612,
-    "last_active_at": 1785930416950,
+    "last_active_at": 1785934513514,
     "daily": {
       "date": "2026-08-05",
       "event_count": 1,
@@ -367,10 +382,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 17005,
-      "total_earned": 27005,
+      "balance": 18146,
+      "total_earned": 28146,
       "total_spent": 10000,
       "ledger": [
+        {
+          "time": 1785934093047,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1141,
+          "before": 17005,
+          "after": 18146,
+          "meta": {
+            "travel_id": "msg0ux4m-aav33lb6",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785930407071,
           "type": "income",
@@ -482,18 +510,6 @@
             "rounds": 30,
             "score": 20
           }
-        },
-        {
-          "time": 1785918583002,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 18465,
-          "after": 18765,
-          "meta": {
-            "skin_id": "starry_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -505,13 +521,53 @@
       "first_interaction_reward_date": "2026-08-05"
     },
     "items": {
-      "ruozhi_fate": 36,
+      "ruozhi_fate": 41,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_duty_student_key": 1,
-      "travel_suitcase": 0
+      "travel_suitcase": 0,
+      "souvenir_infinite_lottery_ticket": 1
     },
     "item_ledger": [
+      {
+        "time": 1785934093048,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 38,
+        "after": 41,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785934093048,
+        "type": "income",
+        "item_id": "souvenir_infinite_lottery_ticket",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msg0ux4m-aav33lb6",
+          "event_id": "rtc_event_mall_lottery",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785934093047,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 36,
+        "after": 38,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msg0ux4m-aav33lb6",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1785930173661,
         "type": "income",
@@ -721,45 +777,6 @@
           "travel_id": "msftq5eg-a7392v2i",
           "location_id": "school_gate_1743"
         }
-      },
-      {
-        "time": 1785919675369,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msftq5eg-a7392v2i"
-        }
-      },
-      {
-        "time": 1785919669611,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 2000
-        }
-      },
-      {
-        "time": 1785919155446,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 0,
-        "after": 6,
-        "reason": "idiom_chain_fate",
-        "meta": {
-          "rounds": 30,
-          "mode": "normal",
-          "planned_amount": 6,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
@@ -836,12 +853,12 @@
     "migrated_at": 1785846055612
   },
   "created_at": 1785846055612,
-  "updated_at": 1785930416950,
+  "updated_at": 1785934513514,
   "production": {
     "started_at": 1785846055612,
-    "last_settled_at": 1785930416950,
-    "accumulated_ms": 11854393,
-    "progress": 2.0860876275899183,
+    "last_settled_at": 1785934513514,
+    "accumulated_ms": 15950957,
+    "progress": 2.6492633644566763,
     "total_produced": 9,
     "last_collected_at": 1785918562557
   },
@@ -850,7 +867,8 @@
       "school_gate_1743",
       "eld_silver_capital",
       "rtc_central_station",
-      "rtc_broadcast_tower"
+      "rtc_broadcast_tower",
+      "rtc_atomic_mall"
     ],
     "location_records": {
       "school_gate_1743": {
@@ -884,6 +902,14 @@
         "travel_id": "msfy2hty-m3oa04ze",
         "time": 1785930173661,
         "carried_item_id": "travel_suitcase"
+      },
+      "rtc_atomic_mall": {
+        "id": "rtc_atomic_mall",
+        "map_id": "retro_tomorrow_city",
+        "name": "原子百货商场",
+        "travel_id": "msg0ux4m-aav33lb6",
+        "time": 1785934093047,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -900,6 +926,13 @@
         "location_id": "rtc_broadcast_tower",
         "travel_id": "msfy2hty-m3oa04ze",
         "time": 1785930173661
+      },
+      "rtc_event_mall_lottery": {
+        "id": "rtc_event_mall_lottery",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_atomic_mall",
+        "travel_id": "msg0ux4m-aav33lb6",
+        "time": 1785934093047
       }
     },
     "souvenir_records": {
@@ -909,6 +942,13 @@
         "event_id": "event_leave_before_dark",
         "location_id": "school_gate_1743",
         "time": 1785919675374
+      },
+      "souvenir_infinite_lottery_ticket": {
+        "id": "souvenir_infinite_lottery_ticket",
+        "name": "无限抽奖券",
+        "event_id": "rtc_event_mall_lottery",
+        "location_id": "rtc_atomic_mall",
+        "time": 1785934093048
       }
     },
     "achievement_records": {
@@ -992,6 +1032,21 @@
         "name": "发现星尘广播塔",
         "rarity": 3,
         "time": 1785930173661,
+        "actor_name": "LOK_",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_atomic_mall": {
+        "id": "ach_rtc_atomic_mall",
+        "name": "发现原子百货商场",
+        "rarity": 3,
+        "time": 1785934093048,
         "actor_name": "LOK_",
         "rewards": [
           {
@@ -1252,9 +1307,92 @@
         "settled_at": 1785930173662,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时14分钟\n获得：1658若汁币，若汁之缘×3，经验+2\n携带道具：行李箱\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★"
+      },
+      "msg0ux4m-aav33lb6": {
+        "id": "msg0ux4m-aav33lb6",
+        "user_id": "1627293137",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "display_name": "LOK_",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 3676083,
+        "rewards": {
+          "coin": 1141,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "rtc_event_mall_lottery",
+          "name": "商场抽奖",
+          "text": "小若汁抽中了“再来一次”，又抽中“欢迎下次再来”。",
+          "effects": {
+            "coin_flat": 120
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_infinite_lottery_ticket",
+              "name": "无限抽奖券",
+              "emoji": "🎟️",
+              "description": "旅行纪念品「无限抽奖券」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_infinite_lottery_ticket",
+            "name": "无限抽奖券",
+            "emoji": "🎟️",
+            "description": "旅行纪念品「无限抽奖券」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "原子百货商场",
+        "achievements": [
+          {
+            "id": "ach_rtc_atomic_mall",
+            "name": "发现原子百货商场",
+            "rarity": 3,
+            "time": 1785934093048,
+            "actor_name": "LOK_",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现原子百货商场」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785934093048,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时1分钟\n获得：1141若汁币，若汁之缘×2，经验+2\n旅行事件：商场抽奖\n小若汁抽中了“再来一次”，又抽中“欢迎下次再来”。\n纪念品：🎟️无限抽奖券×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msg0ux4m-aav33lb6",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "user_id": "1627293137",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时1分钟\n获得：1141若汁币，若汁之缘×2，经验+2\n旅行事件：商场抽奖\n小若汁抽中了“再来一次”，又抽中“欢迎下次再来”。\n纪念品：🎟️无限抽奖券×1\n新地点已解锁：原子百货商场\n达成旅行成就「发现原子百货商场」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785934093048,
+        "created_at": 1785934093048,
+        "sent_at": 1785934093283,
+        "last_error": ""
+      },
       {
         "travel_id": "msfy2hty-m3oa04ze",
         "group_id": "1041227265",
@@ -1309,10 +1447,10 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 2,
+        "retro_tomorrow_city": 3,
         "eldoran_continent": 1,
         "unregistered_district": 1
       },
@@ -1321,51 +1459,53 @@
           "event_leave_before_dark": 1
         },
         "retro_tomorrow_city": {
-          "rtc_event_tomorrow_news": 1
+          "rtc_event_tomorrow_news": 1,
+          "rtc_event_mall_lottery": 1
         }
       },
       "event_ids": {
         "event_leave_before_dark": 1,
-        "rtc_event_tomorrow_news": 1
+        "rtc_event_tomorrow_news": 1,
+        "rtc_event_mall_lottery": 1
       }
     },
     "active": {
-      "id": "msg0ux4m-aav33lb6",
+      "id": "msg32fex-zzyunwsw",
       "user_id": "1627293137",
       "display_name": "LOK_",
       "group_id": "1041227265",
       "self_id": "3762153943",
-      "started_at": 1785930416950,
-      "ends_at": 1785934093033,
-      "duration_ms": 3676083,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_atomic_mall",
-      "location_name": "原子百货商场",
+      "started_at": 1785934126473,
+      "ends_at": 1785938047260,
+      "duration_ms": 3920787,
+      "map_id": "eldoran_continent",
+      "map_name": "艾尔多兰大陆",
+      "location_id": "eld_windmill_plain",
+      "location_name": "风车草原",
       "was_unlocked": false,
       "carried_item_id": "",
       "carried_item_name": "",
       "event": {
-        "id": "rtc_event_mall_lottery",
-        "name": "商场抽奖",
-        "text": "小若汁抽中了“再来一次”，又抽中“欢迎下次再来”。",
+        "id": "eld_event_haystack_coin",
+        "name": "草垛硬币",
+        "text": "小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。",
         "effects": {
-          "coin_flat": 120
+          "coin_percent": 20
         },
         "souvenirs": [
           {
-            "id": "souvenir_infinite_lottery_ticket",
-            "name": "无限抽奖券",
-            "emoji": "🎟️",
-            "description": "旅行纪念品「无限抽奖券」。"
+            "id": "souvenir_wheat_old_coin",
+            "name": "麦香旧硬币",
+            "emoji": "🪙",
+            "description": "旅行纪念品「麦香旧硬币」。"
           }
         ],
         "record": false
       },
       "rewards": {
-        "coin": 1141,
+        "coin": 1307,
         "fate": 2,
-        "experience": 2
+        "experience": 3
       }
     },
     "prepared_tool": null

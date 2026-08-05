@@ -3,12 +3,12 @@
   "user_id": "272950224",
   "pet": {
     "level": 8,
-    "experience": 175,
-    "satiety": 65,
+    "experience": 178,
+    "satiety": 60,
     "mood": 100,
     "health": 100,
     "current_skin_id": "prison_turtle",
-    "satiety_decay_at": 1785926856658,
+    "satiety_decay_at": 1785934056658,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1214,7 +1214,7 @@
     "total_contribution": 192,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1785927361729,
+    "last_active_at": 1785934513449,
     "daily": {
       "date": "2026-08-05",
       "event_count": 9,
@@ -1228,10 +1228,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 120462,
-      "total_earned": 536462,
+      "balance": 122182,
+      "total_earned": 538182,
       "total_spent": 416000,
       "ledger": [
+        {
+          "time": 1785934241355,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1720,
+          "before": 120462,
+          "after": 122182,
+          "meta": {
+            "travel_id": "msfz1fpd-gmygj4m1",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785927310579,
           "type": "income",
@@ -1344,18 +1357,6 @@
             "location_id": "eld_adventurer_guild",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785895190938,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 111281,
-          "after": 111581,
-          "meta": {
-            "skin_id": "fruit_hat_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1367,7 +1368,7 @@
       "first_interaction_reward_date": "2026-08-05"
     },
     "items": {
-      "ruozhi_fate": 11,
+      "ruozhi_fate": 15,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 2,
       "souvenir_border_map": 0,
@@ -1397,7 +1398,7 @@
       "souvenir_heavy_dwarf_spoon": 1,
       "souvenir_auto_watering_tag": 1,
       "souvenir_rain_button": 1,
-      "souvenir_atomic_child_sunglasses": 1,
+      "souvenir_atomic_child_sunglasses": 2,
       "souvenir_rusted_identity_badge": 1,
       "souvenir_world_tree_leaf_corner": 1,
       "souvenir_root_waiting_sign": 1,
@@ -1405,6 +1406,33 @@
       "souvenir_two_smaller_screws": 1
     },
     "item_ledger": [
+      {
+        "time": 1785934241356,
+        "type": "income",
+        "item_id": "souvenir_atomic_child_sunglasses",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msfz1fpd-gmygj4m1",
+          "event_id": "rtc_event_wrong_purchase",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
+      {
+        "time": 1785934241355,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 11,
+        "after": 15,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfz1fpd-gmygj4m1",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1785927310580,
         "type": "income",
@@ -1632,32 +1660,6 @@
         "reason": "travel_reward",
         "meta": {
           "travel_id": "msewsik4-esv5uuxh",
-          "location_id": "eld_world_tree"
-        }
-      },
-      {
-        "time": 1785863121350,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msewsik4-esv5uuxh"
-        }
-      },
-      {
-        "time": 1785863118823,
-        "type": "income",
-        "item_id": "souvenir_world_tree_leaf_corner",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msewsgf4-96u774oa",
-          "event_id": "eld_event_world_leaf",
           "location_id": "eld_world_tree"
         }
       }
@@ -2015,7 +2017,7 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1785927361729,
+  "updated_at": 1785934513449,
   "gacha": {
     "since_four_plus": 8,
     "since_five": 53,
@@ -2071,9 +2073,9 @@
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1785927361729,
-    "accumulated_ms": 16555022,
-    "progress": 3.3914335652027696,
+    "last_settled_at": 1785934513449,
+    "accumulated_ms": 23706742,
+    "progress": 4.717211346179032,
     "total_produced": 163,
     "last_collected_at": 1785910806707
   },
@@ -2600,8 +2602,8 @@
         "id": "rtc_event_wrong_purchase",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_atomic_mall",
-        "travel_id": "msewsc34-5fxfg6q1",
-        "time": 1785863113278
+        "travel_id": "msfz1fpd-gmygj4m1",
+        "time": 1785934241356
       },
       "rtc_event_last_robot": {
         "id": "rtc_event_last_robot",
@@ -2841,7 +2843,7 @@
         "name": "原子儿童墨镜",
         "event_id": "rtc_event_wrong_purchase",
         "location_id": "rtc_atomic_mall",
-        "time": 1785863113278
+        "time": 1785934241356
       },
       "souvenir_rusted_identity_badge": {
         "id": "souvenir_rusted_identity_badge",
@@ -9185,9 +9187,75 @@
         "settled_at": 1785927310580,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：废弃机器人城（明日旧城）\n旅行时间：45分钟\n获得：745若汁币，若汁之缘×2，经验+2\n旅行事件：零件市场\n小若汁用一颗螺丝换到了两颗更小的螺丝。\n纪念品：🔩两颗更小的螺丝×1"
+      },
+      "msfz1fpd-gmygj4m1": {
+        "id": "msfz1fpd-gmygj4m1",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 6879598,
+        "rewards": {
+          "coin": 1720,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": {
+          "id": "rtc_event_wrong_purchase",
+          "name": "买错纪念品",
+          "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
+          "effects": {
+            "coin_percent": -10
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_atomic_child_sunglasses",
+              "name": "原子儿童墨镜",
+              "emoji": "🕶️",
+              "description": "旅行纪念品「原子儿童墨镜」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_atomic_child_sunglasses",
+            "name": "原子儿童墨镜",
+            "emoji": "🕶️",
+            "description": "旅行纪念品「原子儿童墨镜」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785934241357,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时55分钟\n获得：1720若汁币，若汁之缘×4，经验+3\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfz1fpd-gmygj4m1",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时55分钟\n获得：1720若汁币，若汁之缘×4，经验+3\n旅行事件：买错纪念品\n小若汁买了一副尺寸完全不合适的儿童墨镜。\n纪念品：🕶️原子儿童墨镜×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785934241357,
+        "created_at": 1785934241357,
+        "sent_at": 1785934241664,
+        "last_error": ""
+      },
       {
         "travel_id": "msfxev3e-egs40yc0",
         "group_id": "415462812",
@@ -9434,23 +9502,10 @@
         "created_at": 1785806029126,
         "sent_at": 1785806029471,
         "last_error": ""
-      },
-      {
-        "travel_id": "msdutqfb-9lvrtxhp",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：1小时10分钟\n获得：1092若汁币，若汁之缘×2，经验+3\n旅行事件：同一个出口\n小若汁连续经过同一个出口四次，终于承认立交桥不是环形跑道。",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785803536227,
-        "created_at": 1785803536227,
-        "sent_at": 1785803536520,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 130,
+      "total_trips": 131,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -9461,7 +9516,8 @@
       "map_location_counts": {
         "retro_tomorrow_city": 14,
         "eldoran_continent": 13,
-        "unregistered_district": 2
+        "unregistered_district": 2,
+        "four_regions_little_world": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -9560,45 +9616,7 @@
         "rtc_event_machine_market": 1
       }
     },
-    "active": {
-      "id": "msfz1fpd-gmygj4m1",
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1785927361729,
-      "ends_at": 1785934241327,
-      "duration_ms": 6879598,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_atomic_mall",
-      "location_name": "原子百货商场",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_wrong_purchase",
-        "name": "买错纪念品",
-        "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
-        "effects": {
-          "coin_percent": -10
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_atomic_child_sunglasses",
-            "name": "原子儿童墨镜",
-            "emoji": "🕶️",
-            "description": "旅行纪念品「原子儿童墨镜」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 1720,
-        "fate": 4,
-        "experience": 3
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }
