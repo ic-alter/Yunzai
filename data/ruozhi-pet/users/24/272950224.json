@@ -3,12 +3,12 @@
   "user_id": "272950224",
   "pet": {
     "level": 8,
-    "experience": 170,
-    "satiety": 73,
+    "experience": 175,
+    "satiety": 65,
     "mood": 100,
     "health": 100,
     "current_skin_id": "prison_turtle",
-    "satiety_decay_at": 1785915336658,
+    "satiety_decay_at": 1785926856658,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1214,7 +1214,7 @@
     "total_contribution": 192,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1785915408479,
+    "last_active_at": 1785927361729,
     "daily": {
       "date": "2026-08-05",
       "event_count": 9,
@@ -1228,10 +1228,36 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 118377,
-      "total_earned": 534377,
+      "balance": 120462,
+      "total_earned": 536462,
       "total_spent": 416000,
       "ledger": [
+        {
+          "time": 1785927310579,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 745,
+          "before": 119717,
+          "after": 120462,
+          "meta": {
+            "travel_id": "msfxev3e-egs40yc0",
+            "location_id": "rtc_robot_city",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785924586151,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1340,
+          "before": 118377,
+          "after": 119717,
+          "meta": {
+            "travel_id": "msfuiiob-epqdhhm5",
+            "location_id": "rtc_galaxy_motel",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785915408190,
           "type": "income",
@@ -1330,30 +1356,6 @@
             "skin_id": "fruit_hat_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785895190938,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 110981,
-          "after": 111281,
-          "meta": {
-            "skin_id": "shushing_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785895190938,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 110681,
-          "after": 110981,
-          "meta": {
-            "skin_id": "coffee_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1365,7 +1367,7 @@
       "first_interaction_reward_date": "2026-08-05"
     },
     "items": {
-      "ruozhi_fate": 5,
+      "ruozhi_fate": 11,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 2,
       "souvenir_border_map": 0,
@@ -1399,9 +1401,50 @@
       "souvenir_rusted_identity_badge": 1,
       "souvenir_world_tree_leaf_corner": 1,
       "souvenir_root_waiting_sign": 1,
-      "souvenir_star_lake_pebble": 1
+      "souvenir_star_lake_pebble": 1,
+      "souvenir_two_smaller_screws": 1
     },
     "item_ledger": [
+      {
+        "time": 1785927310580,
+        "type": "income",
+        "item_id": "souvenir_two_smaller_screws",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msfxev3e-egs40yc0",
+          "event_id": "rtc_event_machine_market",
+          "location_id": "rtc_robot_city"
+        }
+      },
+      {
+        "time": 1785927310579,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 9,
+        "after": 11,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfxev3e-egs40yc0",
+          "location_id": "rtc_robot_city"
+        }
+      },
+      {
+        "time": 1785924586151,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 5,
+        "after": 9,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfuiiob-epqdhhm5",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
       {
         "time": 1785915408190,
         "type": "income",
@@ -1616,45 +1659,6 @@
           "travel_id": "msewsgf4-96u774oa",
           "event_id": "eld_event_world_leaf",
           "location_id": "eld_world_tree"
-        }
-      },
-      {
-        "time": 1785863118823,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 85,
-        "after": 88,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msewsgf4-96u774oa",
-          "location_id": "eld_world_tree"
-        }
-      },
-      {
-        "time": 1785863118814,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msewsgf4-96u774oa"
-        }
-      },
-      {
-        "time": 1785863116039,
-        "type": "income",
-        "item_id": "souvenir_rusted_identity_badge",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msewsedt-6r1b2lsr",
-          "event_id": "rtc_event_last_robot",
-          "location_id": "rtc_robot_city"
         }
       }
     ],
@@ -2011,7 +2015,7 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1785915408479,
+  "updated_at": 1785927361729,
   "gacha": {
     "since_four_plus": 8,
     "since_five": 53,
@@ -2067,9 +2071,9 @@
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1785915408479,
-    "accumulated_ms": 4601772,
-    "progress": 1.175553572633918,
+    "last_settled_at": 1785927361729,
+    "accumulated_ms": 16555022,
+    "progress": 3.3914335652027696,
     "total_produced": 163,
     "last_collected_at": 1785910806707
   },
@@ -2626,6 +2630,20 @@
         "location_id": "eld_star_lake",
         "travel_id": "msewskj3-sz4ai3mr",
         "time": 1785870803942
+      },
+      "rtc_event_alien_vending": {
+        "id": "rtc_event_alien_vending",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_galaxy_motel",
+        "travel_id": "msfuiiob-epqdhhm5",
+        "time": 1785924586151
+      },
+      "rtc_event_machine_market": {
+        "id": "rtc_event_machine_market",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_robot_city",
+        "travel_id": "msfxev3e-egs40yc0",
+        "time": 1785927310580
       }
     },
     "souvenir_records": {
@@ -2852,6 +2870,13 @@
         "event_id": "eld_event_star_fishing",
         "location_id": "eld_star_lake",
         "time": 1785870803942
+      },
+      "souvenir_two_smaller_screws": {
+        "id": "souvenir_two_smaller_screws",
+        "name": "两颗更小的螺丝",
+        "event_id": "rtc_event_machine_market",
+        "location_id": "rtc_robot_city",
+        "time": 1785927310580
       }
     },
     "achievement_records": {
@@ -9071,9 +9096,124 @@
         "settled_at": 1785915408191,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时17分钟\n获得：1281若汁币，若汁之缘×3，经验+2"
+      },
+      "msfuiiob-epqdhhm5": {
+        "id": "msfuiiob-epqdhhm5",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_galaxy_motel",
+        "location_name": "银河汽车旅馆",
+        "duration_ms": 4825476,
+        "rewards": {
+          "coin": 1340,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": {
+          "id": "rtc_event_alien_vending",
+          "name": "外星自动售货机",
+          "text": "自动售货机不收若汁币，却接受小若汁讲的冷笑话。",
+          "effects": {
+            "fate_flat": 1
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785924586152,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×4，经验+3\n旅行事件：外星自动售货机\n自动售货机不收若汁币，却接受小若汁讲的冷笑话。"
+      },
+      "msfxev3e-egs40yc0": {
+        "id": "msfxev3e-egs40yc0",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_robot_city",
+        "location_name": "废弃机器人城",
+        "duration_ms": 2681590,
+        "rewards": {
+          "coin": 745,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "rtc_event_machine_market",
+          "name": "零件市场",
+          "text": "小若汁用一颗螺丝换到了两颗更小的螺丝。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_two_smaller_screws",
+              "name": "两颗更小的螺丝",
+              "emoji": "🔩",
+              "description": "旅行纪念品「两颗更小的螺丝」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_two_smaller_screws",
+            "name": "两颗更小的螺丝",
+            "emoji": "🔩",
+            "description": "旅行纪念品「两颗更小的螺丝」。",
+            "amount": 1
+          }
+        ],
+        "new_location": "",
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785927310580,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：废弃机器人城（明日旧城）\n旅行时间：45分钟\n获得：745若汁币，若汁之缘×2，经验+2\n旅行事件：零件市场\n小若汁用一颗螺丝换到了两颗更小的螺丝。\n纪念品：🔩两颗更小的螺丝×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfxev3e-egs40yc0",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：废弃机器人城（明日旧城）\n旅行时间：45分钟\n获得：745若汁币，若汁之缘×2，经验+2\n旅行事件：零件市场\n小若汁用一颗螺丝换到了两颗更小的螺丝。\n纪念品：🔩两颗更小的螺丝×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785927310581,
+        "created_at": 1785927310581,
+        "sent_at": 1785927310974,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msfuiiob-epqdhhm5",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×4，经验+3\n旅行事件：外星自动售货机\n自动售货机不收若汁币，却接受小若汁讲的冷笑话。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785924586152,
+        "created_at": 1785924586152,
+        "sent_at": 1785924586446,
+        "last_error": ""
+      },
       {
         "travel_id": "msfp6ecz-nxzmk6oc",
         "group_id": "415462812",
@@ -9307,36 +9447,10 @@
         "created_at": 1785803536227,
         "sent_at": 1785803536520,
         "last_error": ""
-      },
-      {
-        "travel_id": "msdhjya4-ue6sg9g5",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时50分钟\n获得：2833若汁币，若汁之缘×6，经验+6",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785787260649,
-        "created_at": 1785787260649,
-        "sent_at": 1785787260931,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msdhjtbr-4ymhylh3",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：2小时15分钟\n获得：2243若汁币，若汁之缘×5，经验+4\n旅行事件：沉睡电站\n电站早已停运，但小若汁经过时所有灯同时亮了一次。\n纪念品：💡自行点亮的灯泡×1",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785777058143,
-        "created_at": 1785777058143,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 128,
+      "total_trips": 130,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -9392,7 +9506,9 @@
           "rtc_event_escape_vine": 1,
           "rtc_event_gardener_bot": 1,
           "rtc_event_wrong_purchase": 1,
-          "rtc_event_last_robot": 1
+          "rtc_event_last_robot": 1,
+          "rtc_event_alien_vending": 1,
+          "rtc_event_machine_market": 1
         },
         "unregistered_district": {
           "event_change_is_rain": 1
@@ -9439,10 +9555,50 @@
         "rtc_event_last_robot": 1,
         "eld_event_world_leaf": 1,
         "eld_event_root_door": 1,
-        "eld_event_star_fishing": 1
+        "eld_event_star_fishing": 1,
+        "rtc_event_alien_vending": 1,
+        "rtc_event_machine_market": 1
       }
     },
-    "active": null,
+    "active": {
+      "id": "msfz1fpd-gmygj4m1",
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "group_id": "415462812",
+      "self_id": "3762153943",
+      "started_at": 1785927361729,
+      "ends_at": 1785934241327,
+      "duration_ms": 6879598,
+      "map_id": "retro_tomorrow_city",
+      "map_name": "明日旧城",
+      "location_id": "rtc_atomic_mall",
+      "location_name": "原子百货商场",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "rtc_event_wrong_purchase",
+        "name": "买错纪念品",
+        "text": "小若汁买了一副尺寸完全不合适的儿童墨镜。",
+        "effects": {
+          "coin_percent": -10
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_atomic_child_sunglasses",
+            "name": "原子儿童墨镜",
+            "emoji": "🕶️",
+            "description": "旅行纪念品「原子儿童墨镜」。"
+          }
+        ],
+        "record": false
+      },
+      "rewards": {
+        "coin": 1720,
+        "fate": 4,
+        "experience": 3
+      }
+    },
     "prepared_tool": null
   }
 }

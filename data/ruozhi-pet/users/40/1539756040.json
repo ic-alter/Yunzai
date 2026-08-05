@@ -3,12 +3,12 @@
   "user_id": "1539756040",
   "pet": {
     "level": 7,
-    "experience": 208,
-    "satiety": 88,
-    "mood": 100,
+    "experience": 212,
+    "satiety": 68,
+    "mood": 98,
     "health": 96,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785900839323,
+    "satiety_decay_at": 1785929639323,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -912,6 +912,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rain_only_store": {
+        "id": "ach_rain_only_store",
+        "name": "发现只在雨中营业的便利店",
+        "rarity": 3,
+        "time": 1785930567180,
+        "actor_name": "菲八啾比",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1294,7 +1309,7 @@
     "total_contribution": 206,
     "last_display_name": "菲八啾比",
     "first_joined_at": 1784791767616,
-    "last_active_at": 1785900891295,
+    "last_active_at": 1785930567476,
     "daily": {
       "date": "2026-08-05",
       "event_count": 21,
@@ -1308,10 +1323,37 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 77883,
-      "total_earned": 597883,
+      "balance": 80125,
+      "total_earned": 600125,
       "total_spent": 520000,
       "ledger": [
+        {
+          "time": 1785930567179,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2107,
+          "before": 78018,
+          "after": 80125,
+          "meta": {
+            "travel_id": "msfwfkdc-cer4ez7m",
+            "location_id": "rain_only_store",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785928531268,
+          "type": "income",
+          "reason": "mihoyo_guess_role_settlement",
+          "amount": 135,
+          "before": 77883,
+          "after": 78018,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 90,
+            "total_score": 1955
+          }
+        },
         {
           "time": 1785900891006,
           "type": "income",
@@ -1408,30 +1450,6 @@
             "skin_id": "tear_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785899504515,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 70283,
-          "after": 70583,
-          "meta": {
-            "skin_id": "drooling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785899504515,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 69983,
-          "after": 70283,
-          "meta": {
-            "skin_id": "cheese_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1443,7 +1461,7 @@
       "first_interaction_reward_date": "2026-08-05"
     },
     "items": {
-      "ruozhi_fate": 3,
+      "ruozhi_fate": 15,
       "nameless_ruozhi": 3,
       "souvenir_moonbell_festival_ribbon": 2,
       "souvenir_tomorrow_child_ticket": 2,
@@ -1487,6 +1505,43 @@
       "souvenir_sun_chart": 1
     },
     "item_ledger": [
+      {
+        "time": 1785930567180,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 12,
+        "after": 15,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rain_only_store"
+        }
+      },
+      {
+        "time": 1785930567179,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 8,
+        "after": 12,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfwfkdc-cer4ez7m",
+          "location_id": "rain_only_store"
+        }
+      },
+      {
+        "time": 1785922977822,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 3,
+        "after": 8,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 7.635
+        }
+      },
       {
         "time": 1785900891006,
         "type": "income",
@@ -1701,43 +1756,6 @@
         "reason": "use_pager",
         "meta": {
           "travel_id": "msev71jl-nm5u9iz5"
-        }
-      },
-      {
-        "time": 1785860436470,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 81,
-        "after": 85,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msev6xz2-m5xi297l",
-          "location_id": "eld_windmill_plain"
-        }
-      },
-      {
-        "time": 1785860436455,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msev6xz2-m5xi297l"
-        }
-      },
-      {
-        "time": 1785860430714,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 78,
-        "after": 81,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_sunken_temple"
         }
       }
     ],
@@ -2094,7 +2112,7 @@
     "migrated_at": 1784791767616
   },
   "created_at": 1784791767616,
-  "updated_at": 1785900891295,
+  "updated_at": 1785930567476,
   "gacha": {
     "since_four_plus": 3,
     "since_five": 16,
@@ -2164,11 +2182,11 @@
   },
   "production": {
     "started_at": 1784874763350,
-    "last_settled_at": 1785900891294,
-    "accumulated_ms": 5398657,
-    "progress": 1.2853688937330328,
-    "total_produced": 152,
-    "last_collected_at": 1785895492637
+    "last_settled_at": 1785930567476,
+    "accumulated_ms": 7589654,
+    "progress": 1.7510595380882585,
+    "total_produced": 157,
+    "last_collected_at": 1785922977822
   },
   "travel": {
     "unlocked_location_ids": [
@@ -2201,7 +2219,8 @@
       "eld_floating_island",
       "eld_beyond_cottage",
       "moon_platform",
-      "eld_sunken_temple"
+      "eld_sunken_temple",
+      "rain_only_store"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -2443,6 +2462,14 @@
         "travel_id": "msev6s5r-2baz179k",
         "time": 1785860430714,
         "carried_item_id": "souvenir_sun_chart"
+      },
+      "rain_only_store": {
+        "id": "rain_only_store",
+        "map_id": "unregistered_district",
+        "name": "只在雨中营业的便利店",
+        "travel_id": "msfwfkdc-cer4ez7m",
+        "time": 1785930567180,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -2809,6 +2836,13 @@
         "location_id": "eld_sunken_temple",
         "travel_id": "msev6s5r-2baz179k",
         "time": 1785860430714
+      },
+      "event_no_night_employee": {
+        "id": "event_no_night_employee",
+        "map_id": "unregistered_district",
+        "location_id": "rain_only_store",
+        "travel_id": "msfwfkdc-cer4ez7m",
+        "time": 1785930567180
       }
     },
     "souvenir_records": {
@@ -3737,6 +3771,21 @@
         "name": "发现沉没的太阳神殿",
         "rarity": 3,
         "time": 1785860430714,
+        "actor_name": "菲八啾比",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rain_only_store": {
+        "id": "ach_rain_only_store",
+        "name": "发现只在雨中营业的便利店",
+        "rarity": 3,
+        "time": 1785930567180,
         "actor_name": "菲八啾比",
         "rewards": [
           {
@@ -8836,9 +8885,77 @@
         "settled_at": 1785900891007,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月面生活体验区（明日旧城）\n旅行时间：23分钟\n获得：500若汁币，若汁之缘×1，经验+1"
+      },
+      "msfwfkdc-cer4ez7m": {
+        "id": "msfwfkdc-cer4ez7m",
+        "user_id": "1539756040",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "菲八啾比",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "rain_only_store",
+        "location_name": "只在雨中营业的便利店",
+        "duration_ms": 7585050,
+        "rewards": {
+          "coin": 2107,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "event_no_night_employee",
+          "name": "本店没有夜班员工",
+          "text": "广播提醒顾客不要和夜班员工交谈。收银台后立即传来礼貌的询问：“需要袋子吗？”",
+          "effects": {
+            "mood": -2
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "new_location": "只在雨中营业的便利店",
+        "achievements": [
+          {
+            "id": "ach_rain_only_store",
+            "name": "发现只在雨中营业的便利店",
+            "rarity": 3,
+            "time": 1785930567180,
+            "actor_name": "菲八啾比",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现只在雨中营业的便利店」 ★★★"
+          }
+        ],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785930567181,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时6分钟\n获得：2107若汁币，若汁之缘×4，经验+4\n旅行事件：本店没有夜班员工\n广播提醒顾客不要和夜班员工交谈。收银台后立即传来礼貌的询问：“需要袋子吗？”\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfwfkdc-cer4ez7m",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1539756040",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时6分钟\n获得：2107若汁币，若汁之缘×4，经验+4\n旅行事件：本店没有夜班员工\n广播提醒顾客不要和夜班员工交谈。收银台后立即传来礼貌的询问：“需要袋子吗？”\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785930567181,
+        "created_at": 1785930567181,
+        "sent_at": 1785930567476,
+        "last_error": ""
+      },
       {
         "travel_id": "msfigvur-j9n9zk4n",
         "group_id": "415462812",
@@ -9085,23 +9202,10 @@
         "created_at": 1785799480399,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msduw68k-7wqeef3u",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1539756040",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时36分钟\n获得：1596若汁币，若汁之缘×3，经验+3\n旅行事件：牧羊人的地图\n牧羊人画了一张连地图边框外都有道路的地图。\n纪念品：🗺️画出边框的地图×1",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785799469932,
-        "created_at": 1785799469932,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 105,
+      "total_trips": 106,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -9132,7 +9236,7 @@
       "map_location_counts": {
         "retro_tomorrow_city": 14,
         "eldoran_continent": 14,
-        "unregistered_district": 2
+        "unregistered_district": 3
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -9191,7 +9295,8 @@
           "rtc_event_old_song": 1
         },
         "unregistered_district": {
-          "event_never_off_lamp": 1
+          "event_never_off_lamp": 1,
+          "event_no_night_employee": 1
         }
       },
       "event_ids": {
@@ -9246,7 +9351,8 @@
         "event_never_off_lamp": 1,
         "eld_event_extra_corner": 1,
         "eld_event_sun_chart": 1,
-        "eld_event_tide_stairs": 1
+        "eld_event_tide_stairs": 1,
+        "event_no_night_employee": 1
       }
     },
     "active": null,

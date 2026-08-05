@@ -8,7 +8,7 @@
     "mood": 98,
     "health": 96,
     "current_skin_id": "ahat_turtle",
-    "satiety_decay_at": 1785912558745,
+    "satiety_decay_at": 1785928531284,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1126,7 +1126,7 @@
     "total_contribution": 37,
     "last_display_name": "穗穗一时性起",
     "first_joined_at": 1784792061225,
-    "last_active_at": 1785912558745,
+    "last_active_at": 1785928531284,
     "daily": {
       "date": "2026-08-05",
       "event_count": 0,
@@ -1137,10 +1137,24 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 153868,
-      "total_earned": 273868,
+      "balance": 155053,
+      "total_earned": 275053,
       "total_spent": 120000,
       "ledger": [
+        {
+          "time": 1785928531219,
+          "type": "income",
+          "reason": "mihoyo_guess_role_settlement",
+          "amount": 1185,
+          "before": 153868,
+          "after": 155053,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 790,
+            "total_score": 1955
+          }
+        },
         {
           "time": 1785912558485,
           "type": "income",
@@ -1251,18 +1265,6 @@
             "skin_id": "party_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785861980105,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 141753,
-          "after": 142053,
-          "meta": {
-            "skin_id": "sneaker_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1274,7 +1276,7 @@
       "first_interaction_reward_date": "2026-08-04"
     },
     "items": {
-      "ruozhi_fate": 13,
+      "ruozhi_fate": 19,
       "nameless_ruozhi": 0,
       "souvenir_palace_leaf_basket": 1,
       "souvenir_floating_compass": 0,
@@ -1307,6 +1309,21 @@
       "souvenir_wrong_count_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1785928531284,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 13,
+        "after": 19,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
       {
         "time": 1785912558485,
         "type": "income",
@@ -1542,24 +1559,12 @@
         "meta": {
           "travel_id": "msew2nuk-793ifxkd"
         }
-      },
-      {
-        "time": 1785861913903,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
       }
     ],
     "item_daily": {
       "date": "2026-08-05",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 0,
+      "game_fate_reward_count": 6,
       "shop_buy_counts": {
         "travel_pager": 10,
         "travel_suitcase": 10
@@ -1786,7 +1791,7 @@
     "migrated_at": 1784792061225
   },
   "created_at": 1784792061225,
-  "updated_at": 1785912558745,
+  "updated_at": 1785928531284,
   "gacha": {
     "since_four_plus": 2,
     "since_five": 57,
@@ -1835,9 +1840,9 @@
   },
   "production": {
     "started_at": 1784874763347,
-    "last_settled_at": 1785912558745,
-    "accumulated_ms": 16147164,
-    "progress": 3.0122300424361685,
+    "last_settled_at": 1785928531284,
+    "accumulated_ms": 32119703,
+    "progress": 5.197640501509672,
     "total_produced": 126,
     "last_collected_at": 1785896411581
   },

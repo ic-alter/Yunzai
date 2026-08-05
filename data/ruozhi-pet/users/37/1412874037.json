@@ -3,12 +3,12 @@
   "user_id": "1412874037",
   "pet": {
     "level": 6,
-    "experience": 75,
-    "satiety": 26,
-    "mood": 98,
+    "experience": 194,
+    "satiety": 86,
+    "mood": 100,
     "health": 100,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1785903865750,
+    "satiety_decay_at": 1785930754701,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -883,6 +883,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_undersea_restaurant": {
+        "id": "ach_rtc_undersea_restaurant",
+        "name": "发现海底第七餐厅",
+        "rarity": 3,
+        "time": 1785925728792,
+        "actor_name": "霜之号商",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1266,16 +1281,18 @@
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 14,
-    "total_contribution": 132,
+    "weekly_contribution": 41,
+    "total_contribution": 159,
     "last_display_name": "霜之号商",
     "first_joined_at": 1784860899632,
-    "last_active_at": 1785904088189,
+    "last_active_at": 1785930796410,
     "daily": {
       "date": "2026-08-05",
-      "event_count": 1,
+      "event_count": 10,
       "same_event_counts": {
-        "feed": 1
+        "feed": 8,
+        "sunbathe": 1,
+        "petting": 1
       },
       "negative_shared_impact": 0
     },
@@ -1283,10 +1300,23 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 62603,
-      "total_earned": 398603,
+      "balance": 63521,
+      "total_earned": 399521,
       "total_spent": 336000,
       "ledger": [
+        {
+          "time": 1785925728791,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 918,
+          "before": 62603,
+          "after": 63521,
+          "meta": {
+            "travel_id": "msfw3mz3-seck9zpm",
+            "location_id": "rtc_undersea_restaurant",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785904087914,
           "type": "income",
@@ -1396,18 +1426,6 @@
             "skin_id": "birthday_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785893989693,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 52357,
-          "after": 52657,
-          "meta": {
-            "skin_id": "nerd_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1419,7 +1437,7 @@
       "first_interaction_reward_date": "2026-08-05"
     },
     "items": {
-      "ruozhi_fate": 23,
+      "ruozhi_fate": 27,
       "nameless_ruozhi": 1,
       "souvenir_single_song_radio": 1,
       "travel_pager": 3,
@@ -1431,7 +1449,7 @@
       "souvenir_emerald_light_leaf": 2,
       "souvenir_rusted_identity_badge": 1,
       "souvenir_real_moon_coupon": 1,
-      "travel_checklist": 4,
+      "travel_checklist": 3,
       "souvenir_f_rank_adventurer_card": 1,
       "souvenir_auto_watering_tag": 2,
       "souvenir_immortal_plastic_plant": 3,
@@ -1453,6 +1471,43 @@
       "souvenir_transparent_ticket_holder": 1
     },
     "item_ledger": [
+      {
+        "time": 1785930796396,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1785925728792,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 24,
+        "after": 27,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_undersea_restaurant"
+        }
+      },
+      {
+        "time": 1785925728791,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 23,
+        "after": 24,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfw3mz3-seck9zpm",
+          "location_id": "rtc_undersea_restaurant"
+        }
+      },
       {
         "time": 1785904087914,
         "type": "income",
@@ -1663,43 +1718,6 @@
         "meta": {
           "travel_id": "msff4sd3-nuyshpi6"
         }
-      },
-      {
-        "time": 1785893925769,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1785893923293,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 90,
-        "after": 93,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msff4phs-m2b96d5o",
-          "location_id": "rtc_aurora_station"
-        }
-      },
-      {
-        "time": 1785893923278,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msff4phs-m2b96d5o"
-        }
       }
     ],
     "item_daily": {
@@ -1734,6 +1752,213 @@
   },
   "recent_events": [
     {
+      "time": 1785930776372,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "petting",
+      "branch_id": "normal_comfortable",
+      "summary": "霜之号商轻轻摸了摸小若汁，小若汁舒服地眯起了眼睛。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930767811,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "sunbathe",
+      "branch_id": "lazy",
+      "summary": "小若汁趴在阳光下，把四肢都舒展开了。",
+      "effects_text": "心情+4，健康+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 0,
+        "mood": 4,
+        "health": 2,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930761461,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "hide_food",
+      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
+      "effects_text": "心情+3，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 0,
+        "mood": 3,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930754701,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930750046,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930746381,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930744190,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930741535,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1785930738220,
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "event_id": "feed",
+      "branch_id": "hungry",
+      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
+      "effects_text": "饱食+18，心情+5，健康+2，好感+5，贡献+5，经验+15",
+      "effects": {
+        "satiety": 18,
+        "mood": 5,
+        "health": 2,
+        "favorability": 5,
+        "contribution": 5,
+        "experience": 15
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
       "time": 1785893785751,
       "user_id": "1412874037",
       "display_name": "霜之号商",
@@ -1758,236 +1983,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 13
-    },
-    {
-      "time": 1785800215832,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，霜之号商及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17，升级到 Lv.6",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [
-        {
-          "level": 6,
-          "need": 180
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 11678
-      },
-      "level_rewards": [
-        {
-          "level": 6,
-          "reward": 300,
-          "receiver": {
-            "user_id": "1412874037",
-            "display_name": "霜之号商"
-          }
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 20
-    },
-    {
-      "time": 1785679136341,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "sunbathe",
-      "branch_id": "lazy",
-      "summary": "小若汁趴在阳光下，把四肢都舒展开了。",
-      "effects_text": "心情+4，健康+2，好感+2，贡献+2，经验+2",
-      "effects": {
-        "satiety": 0,
-        "mood": 4,
-        "health": 2,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 2
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679126328,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "sunbathe",
-      "branch_id": "lazy",
-      "summary": "小若汁趴在阳光下，把四肢都舒展开了。",
-      "effects_text": "心情+4，健康+2，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 0,
-        "mood": 4,
-        "health": 2,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679116932,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
-      "effects_text": "心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 0,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679114406,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679111628,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679108958,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679104255,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785679101410,
-      "user_id": "1412874037",
-      "display_name": "霜之号商",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，霜之号商及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 11
     }
   ],
   "daily": {
     "date": "2026-08-05",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "event_count": 10,
+    "bonus_event_count": 10
   },
   "processed_messages": {
     "event:1025457938": 1785082515880,
@@ -2027,7 +2028,16 @@
     "event:723227027": 1785679126328,
     "event:669127138": 1785679136340,
     "event:653559281": 1785800215830,
-    "event:388697856": 1785893785749
+    "event:388697856": 1785893785749,
+    "event:1062726019": 1785930738219,
+    "event:1182537460": 1785930741534,
+    "event:231260766": 1785930744189,
+    "event:1351644556": 1785930746381,
+    "event:1682374939": 1785930750045,
+    "event:376199902": 1785930754701,
+    "event:1595297072": 1785930761460,
+    "event:293980970": 1785930767810,
+    "event:927064185": 1785930776371
   },
   "skin_sessions": {
     "active": null
@@ -2040,12 +2050,12 @@
     "migrated_at": 1784860899632
   },
   "created_at": 1784860899632,
-  "updated_at": 1785904088189,
+  "updated_at": 1785930796411,
   "production": {
     "started_at": 1784874763344,
-    "last_settled_at": 1785904088189,
-    "accumulated_ms": 10302439,
-    "progress": 2.1990197082456637,
+    "last_settled_at": 1785930796410,
+    "accumulated_ms": 37010660,
+    "progress": 6.163586040466364,
     "total_produced": 144,
     "last_collected_at": 1785893785750
   },
@@ -2135,7 +2145,8 @@
       "rain_only_store",
       "rainbow_kindergarten",
       "white_fog_houses",
-      "nap_park"
+      "nap_park",
+      "rtc_undersea_restaurant"
     ],
     "location_records": {
       "rtc_galaxy_motel": {
@@ -2393,6 +2404,14 @@
         "travel_id": "msff4vi6-jftfdc1j",
         "time": 1785893931304,
         "carried_item_id": "travel_suitcase"
+      },
+      "rtc_undersea_restaurant": {
+        "id": "rtc_undersea_restaurant",
+        "map_id": "retro_tomorrow_city",
+        "name": "海底第七餐厅",
+        "travel_id": "msfw3mz3-seck9zpm",
+        "time": 1785925728792,
+        "carried_item_id": "souvenir_transparent_ticket_holder"
       }
     },
     "event_records": {
@@ -3461,6 +3480,21 @@
         "name": "发现午睡公园",
         "rarity": 3,
         "time": 1785893931305,
+        "actor_name": "霜之号商",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_undersea_restaurant": {
+        "id": "ach_rtc_undersea_restaurant",
+        "name": "发现海底第七餐厅",
+        "rarity": 3,
+        "time": 1785925728792,
         "actor_name": "霜之号商",
         "rewards": [
           {
@@ -7351,9 +7385,68 @@
         "settled_at": 1785904087915,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：1小时24分钟\n获得：1576若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n旅行事件：透明观光艇\n小若汁乘坐玻璃船看见海底亮着一块餐厅招牌。\n纪念品：🐚透明船票夹×1"
+      },
+      "msfw3mz3-seck9zpm": {
+        "id": "msfw3mz3-seck9zpm",
+        "user_id": "1412874037",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "霜之号商",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_undersea_restaurant",
+        "location_name": "海底第七餐厅",
+        "duration_ms": 3303156,
+        "rewards": {
+          "coin": 918,
+          "fate": 1,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "海底第七餐厅",
+        "achievements": [
+          {
+            "id": "ach_rtc_undersea_restaurant",
+            "name": "发现海底第七餐厅",
+            "rarity": 3,
+            "time": 1785925728792,
+            "actor_name": "霜之号商",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现海底第七餐厅」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "souvenir_transparent_ticket_holder",
+        "tool_name": "透明船票夹",
+        "settled_at": 1785925728793,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：海底第七餐厅（明日旧城）\n旅行时间：55分钟\n获得：918若汁币，若汁之缘×1，经验+2\n携带道具：透明船票夹\n新地点已解锁：海底第七餐厅\n达成旅行成就「发现海底第七餐厅」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfw3mz3-seck9zpm",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1412874037",
+        "report": "小若汁回来了！\n目的地：海底第七餐厅（明日旧城）\n旅行时间：55分钟\n获得：918若汁币，若汁之缘×1，经验+2\n携带道具：透明船票夹\n新地点已解锁：海底第七餐厅\n达成旅行成就「发现海底第七餐厅」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785925728793,
+        "created_at": 1785925728793,
+        "sent_at": 1785925729040,
+        "last_error": ""
+      },
       {
         "travel_id": "msfi61v6-3u70mwlq",
         "group_id": "415462812",
@@ -7600,26 +7693,19 @@
         "created_at": 1785686853148,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msbzu45a-9e5rpzm9",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1412874037",
-        "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：27分钟\n获得：532若汁币，若汁之缘×1，经验+1\n携带道具：行李箱\n旅行事件：精灵指路\n精灵说“跟着月光走”，小若汁白天等了六个小时。\n纪念品：🪶银色引路羽×1",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785686839797,
-        "created_at": 1785686839797,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 81,
-      "key_item_discoveries": {},
+      "total_trips": 82,
+      "key_item_discoveries": {
+        "souvenir_transparent_ticket_holder": {
+          "item_id": "souvenir_transparent_ticket_holder",
+          "location_id": "rtc_undersea_restaurant",
+          "time": 1785925728792
+        }
+      },
       "map_location_counts": {
-        "retro_tomorrow_city": 15,
+        "retro_tomorrow_city": 16,
         "eldoran_continent": 11,
         "unregistered_district": 6
       },
@@ -7706,7 +7792,29 @@
         "rtc_event_glass_boat": 1
       }
     },
-    "active": null,
+    "active": {
+      "id": "msg131x7-q26jy0oj",
+      "user_id": "1412874037",
+      "display_name": "霜之号商",
+      "group_id": "415462812",
+      "self_id": "3762153943",
+      "started_at": 1785930796411,
+      "ends_at": 1785939467256,
+      "duration_ms": 8670845,
+      "map_id": "eldoran_continent",
+      "map_name": "艾尔多兰大陆",
+      "location_id": "eld_magic_academy",
+      "location_name": "苍蓝魔法学院",
+      "was_unlocked": true,
+      "carried_item_id": "travel_checklist",
+      "carried_item_name": "旅行清单",
+      "event": null,
+      "rewards": {
+        "coin": 2409,
+        "fate": 5,
+        "experience": 5
+      }
+    },
     "prepared_tool": null
   }
 }

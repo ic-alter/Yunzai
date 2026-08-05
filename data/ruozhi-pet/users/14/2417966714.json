@@ -3,12 +3,12 @@
   "user_id": "2417966714",
   "pet": {
     "level": 1,
-    "experience": 5,
+    "experience": 9,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785910235431,
+    "satiety_decay_at": 1785920457964,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -63,6 +63,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785916725471,
+        "actor_name": "刮杯蛋(iOS)100,100,300,978",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -99,7 +114,7 @@
     "total_contribution": 0,
     "last_display_name": "刮杯蛋(iOS)100,100,300,978",
     "first_joined_at": 1784771812621,
-    "last_active_at": 1785910235431,
+    "last_active_at": 1785920457964,
     "daily": {
       "date": "2026-08-05",
       "event_count": 0,
@@ -110,10 +125,34 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 60258,
-      "total_earned": 60258,
+      "balance": 63411,
+      "total_earned": 63411,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785920457961,
+          "type": "income",
+          "reason": "daily_sign",
+          "amount": 1065,
+          "before": 62346,
+          "after": 63411,
+          "meta": {
+            "date": "2026-08-05"
+          }
+        },
+        {
+          "time": 1785916725471,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2088,
+          "before": 60258,
+          "after": 62346,
+          "meta": {
+            "travel_id": "msfo8buq-fk4xhcpj",
+            "location_id": "eld_silver_capital",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785910235408,
           "type": "income",
@@ -220,50 +259,62 @@
             "score": 280,
             "total_score": 1922.5
           }
-        },
-        {
-          "time": 1785671891838,
-          "type": "income",
-          "reason": "fgo_guess_role_settlement",
-          "amount": 1493,
-          "before": 37746,
-          "after": 39239,
-          "meta": {
-            "mode": "crop",
-            "rounds": 20,
-            "score": 995,
-            "total_score": 1998.5
-          }
-        },
-        {
-          "time": 1785671460153,
-          "type": "income",
-          "reason": "fgo_guess_role_settlement",
-          "amount": 1430,
-          "before": 36316,
-          "after": 37746,
-          "meta": {
-            "mode": "pixel",
-            "rounds": 20,
-            "score": 953.5,
-            "total_score": 1887.5
-          }
         }
       ],
       "sign": {
-        "last_date": "2026-08-04",
-        "total_count": 1,
+        "last_date": "2026-08-05",
+        "total_count": 2,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 240,
+      "ruozhi_fate": 274,
       "nameless_ruozhi": 0,
       "souvenir_signal_record": 1
     },
     "item_ledger": [
+      {
+        "time": 1785920457961,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 26,
+        "before": 248,
+        "after": 274,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-08-05",
+          "month_count": 2,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
+      {
+        "time": 1785916725471,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 245,
+        "after": 248,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_silver_capital"
+        }
+      },
+      {
+        "time": 1785916725471,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 240,
+        "after": 245,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfo8buq-fk4xhcpj",
+          "location_id": "eld_silver_capital"
+        }
+      },
       {
         "time": 1785910235431,
         "type": "income",
@@ -501,51 +552,6 @@
           "planned_amount": 6,
           "daily_limit": 60
         }
-      },
-      {
-        "time": 1785246018730,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 114,
-        "after": 120,
-        "reason": "fgo_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "crop",
-          "planned_amount": 6,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785159771806,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 108,
-        "after": 114,
-        "reason": "fgo_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "crop",
-          "planned_amount": 6,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785137106563,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 102,
-        "after": 108,
-        "reason": "fgo_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "crop",
-          "planned_amount": 6,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
@@ -570,7 +576,8 @@
     "item_sign": {
       "month": "2026-08",
       "dates": [
-        "2026-08-04"
+        "2026-08-04",
+        "2026-08-05"
       ]
     }
   },
@@ -592,19 +599,20 @@
     "migrated_at": 1784771812621
   },
   "created_at": 1784771812621,
-  "updated_at": 1785910235431,
+  "updated_at": 1785920457964,
   "production": {
     "started_at": 1784985206636,
-    "last_settled_at": 1785910235431,
-    "accumulated_ms": 152009890,
-    "progress": 16.924069220574538,
+    "last_settled_at": 1785920457964,
+    "accumulated_ms": 162232423,
+    "progress": 18.04086575506841,
     "total_produced": 28,
     "last_collected_at": 1785758225541
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_botanical_dome",
-      "rtc_broadcast_tower"
+      "rtc_broadcast_tower",
+      "eld_silver_capital"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -622,6 +630,14 @@
         "travel_id": "msfgdnk3-wuxqe742",
         "time": 1785902123520,
         "carried_item_id": ""
+      },
+      "eld_silver_capital": {
+        "id": "eld_silver_capital",
+        "map_id": "eldoran_continent",
+        "name": "银冠王城",
+        "travel_id": "msfo8buq-fk4xhcpj",
+        "time": 1785916725471,
+        "carried_item_id": "souvenir_signal_record"
       }
     },
     "event_records": {
@@ -678,6 +694,21 @@
         "name": "发现星尘广播塔",
         "rarity": 3,
         "time": 1785902123520,
+        "actor_name": "刮杯蛋(iOS)100,100,300,978",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_silver_capital": {
+        "id": "ach_eld_silver_capital",
+        "name": "发现银冠王城",
+        "rarity": 3,
+        "time": 1785916725471,
         "actor_name": "刮杯蛋(iOS)100,100,300,978",
         "rewards": [
           {
@@ -821,9 +852,68 @@
         "settled_at": 1785902123521,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：1小时42分钟\n获得：1696若汁币，若汁之缘×3，经验+3\n旅行事件：禁止回复的频率\n小若汁收到一段来自第七码头的短波信号，最后一句是“不要回复”。\n纪念品：📡异常信号记录×1\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★"
+      },
+      "msfo8buq-fk4xhcpj": {
+        "id": "msfo8buq-fk4xhcpj",
+        "user_id": "2417966714",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "display_name": "刮杯蛋(iOS)100,100,300,978",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_silver_capital",
+        "location_name": "银冠王城",
+        "duration_ms": 7517908,
+        "rewards": {
+          "coin": 2088,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "银冠王城",
+        "achievements": [
+          {
+            "id": "ach_eld_silver_capital",
+            "name": "发现银冠王城",
+            "rarity": 3,
+            "time": 1785916725471,
+            "actor_name": "刮杯蛋(iOS)100,100,300,978",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现银冠王城」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "souvenir_signal_record",
+        "tool_name": "异常信号记录",
+        "settled_at": 1785916725471,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时5分钟\n获得：2088若汁币，若汁之缘×5，经验+4\n携带道具：异常信号记录\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfo8buq-fk4xhcpj",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "user_id": "2417966714",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时5分钟\n获得：2088若汁币，若汁之缘×5，经验+4\n携带道具：异常信号记录\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785916725471,
+        "created_at": 1785916725471,
+        "sent_at": 1785916725940,
+        "last_error": ""
+      },
       {
         "travel_id": "msfgdnk3-wuxqe742",
         "group_id": "138260540",
@@ -852,11 +942,11 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 3,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 2,
-        "eldoran_continent": 0,
+        "eldoran_continent": 1,
         "unregistered_district": 0
       },
       "map_event_ids": {
@@ -868,29 +958,7 @@
         "rtc_event_forbidden_frequency": 1
       }
     },
-    "active": {
-      "id": "msfo8buq-fk4xhcpj",
-      "user_id": "2417966714",
-      "display_name": "刮杯蛋(iOS)100,100,300,978",
-      "group_id": "138260540",
-      "self_id": "3964480831",
-      "started_at": 1785909207554,
-      "ends_at": 1785916725462,
-      "duration_ms": 7517908,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_silver_capital",
-      "location_name": "银冠王城",
-      "was_unlocked": false,
-      "carried_item_id": "souvenir_signal_record",
-      "carried_item_name": "异常信号记录",
-      "event": null,
-      "rewards": {
-        "coin": 2088,
-        "fate": 5,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

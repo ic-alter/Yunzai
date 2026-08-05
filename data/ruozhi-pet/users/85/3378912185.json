@@ -3,12 +3,12 @@
   "user_id": "3378912185",
   "pet": {
     "level": 2,
-    "experience": 3,
+    "experience": 19,
     "satiety": 5,
-    "mood": 78,
+    "mood": 79,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785856010165,
+    "satiety_decay_at": 1785930050905,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -102,6 +102,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1785930050388,
+        "actor_name": "言言酒酒合约冠军",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -139,14 +154,14 @@
     ]
   },
   "profile": {
-    "favorability": 10,
-    "weekly_contribution": 2,
-    "total_contribution": 8,
+    "favorability": 12,
+    "weekly_contribution": 3,
+    "total_contribution": 9,
     "last_display_name": "言言酒酒合约冠军",
     "first_joined_at": 1784810195924,
-    "last_active_at": 1785856010165,
+    "last_active_at": 1785930050905,
     "daily": {
-      "date": "2026-08-04",
+      "date": "2026-08-05",
       "event_count": 1,
       "same_event_counts": {
         "mention_only": 1
@@ -157,12 +172,49 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 97,
+      "ruozhi_fate": 113,
       "nameless_ruozhi": 0,
       "souvenir_border_map": 0,
       "souvenir_auto_watering_tag": 1
     },
     "item_ledger": [
+      {
+        "time": 1785930050388,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 110,
+        "after": 113,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_magic_academy"
+        }
+      },
+      {
+        "time": 1785930050387,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 105,
+        "after": 110,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msfv7yag-fic142xw",
+          "location_id": "eld_magic_academy"
+        }
+      },
+      {
+        "time": 1785920943697,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 8,
+        "before": 97,
+        "after": 105,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 21.626
+        }
+      },
       {
         "time": 1785846324880,
         "type": "income",
@@ -375,18 +427,6 @@
         "meta": {
           "accumulated_hours": 31.051
         }
-      },
-      {
-        "time": 1785522763720,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 28,
-        "before": 0,
-        "after": 28,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 72
-        }
       }
     ],
     "item_daily": {},
@@ -399,10 +439,34 @@
       }
     },
     "currency": {
-      "balance": 10844,
-      "total_earned": 10844,
+      "balance": 13873,
+      "total_earned": 13873,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1785930050387,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2529,
+          "before": 11344,
+          "after": 13873,
+          "meta": {
+            "travel_id": "msfv7yag-fic142xw",
+            "location_id": "eld_magic_academy",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1785920943697,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 10844,
+          "after": 11344,
+          "meta": {
+            "date": "2026-08-05"
+          }
+        },
         {
           "time": 1785846324879,
           "type": "income",
@@ -500,28 +564,6 @@
             "location_id": "rtc_botanical_dome",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785634546401,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 1000,
-          "after": 1500,
-          "meta": {
-            "date": "2026-08-02"
-          }
-        },
-        {
-          "time": 1785522763721,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 500,
-          "after": 1000,
-          "meta": {
-            "date": "2026-08-01"
-          }
         }
       ],
       "sign": {
@@ -530,10 +572,36 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-04"
+      "first_interaction_reward_date": "2026-08-05"
     }
   },
   "recent_events": [
+    {
+      "time": 1785920943697,
+      "user_id": "3378912185",
+      "display_name": "言言酒酒合约冠军",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到言言酒酒合约冠军身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 11344
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 8
+    },
     {
       "time": 1785843090491,
       "user_id": "3378912185",
@@ -757,7 +825,7 @@
     }
   ],
   "daily": {
-    "date": "2026-08-04",
+    "date": "2026-08-05",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -769,7 +837,8 @@
     "event:1390517431": 1785672432072,
     "event:887465066": 1785694017058,
     "event:741080587": 1785726518893,
-    "event:1386609667": 1785843090486
+    "event:1386609667": 1785843090486,
+    "event:2064437017": 1785920943696
   },
   "skin_sessions": {
     "active": null
@@ -782,21 +851,22 @@
     "migrated_at": 1784810195924
   },
   "created_at": 1784810195924,
-  "updated_at": 1785856010165,
+  "updated_at": 1785930050905,
   "production": {
     "started_at": 1785141760293,
-    "last_settled_at": 1785856010165,
-    "accumulated_ms": 12919677,
-    "progress": 1.7385222419973214,
-    "total_produced": 63,
-    "last_collected_at": 1785843090488
+    "last_settled_at": 1785930050905,
+    "accumulated_ms": 9107208,
+    "progress": 1.9111984613685007,
+    "total_produced": 71,
+    "last_collected_at": 1785920943697
   },
   "travel": {
     "unlocked_location_ids": [
       "rtc_botanical_dome",
       "eld_windmill_plain",
       "eld_silver_capital",
-      "rtc_central_station"
+      "rtc_central_station",
+      "eld_magic_academy"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -829,6 +899,14 @@
         "name": "明日中央车站",
         "travel_id": "msekvji6-ra1tu8sz",
         "time": 1785846324880,
+        "carried_item_id": ""
+      },
+      "eld_magic_academy": {
+        "id": "eld_magic_academy",
+        "map_id": "eldoran_continent",
+        "name": "苍蓝魔法学院",
+        "travel_id": "msfv7yag-fic142xw",
+        "time": 1785930050388,
         "carried_item_id": ""
       }
     },
@@ -930,6 +1008,21 @@
         "name": "发现明日中央车站",
         "rarity": 3,
         "time": 1785846324880,
+        "actor_name": "言言酒酒合约冠军",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1785930050388,
         "actor_name": "言言酒酒合约冠军",
         "rewards": [
           {
@@ -1212,9 +1305,68 @@
         "settled_at": 1785846324881,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：54分钟\n获得：894若汁币，若汁之缘×2，经验+1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★"
+      },
+      "msfv7yag-fic142xw": {
+        "id": "msfv7yag-fic142xw",
+        "user_id": "3378912185",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "言言酒酒合约冠军",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_magic_academy",
+        "location_name": "苍蓝魔法学院",
+        "duration_ms": 9103086,
+        "rewards": {
+          "coin": 2529,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": null,
+        "souvenirs": [],
+        "new_location": "苍蓝魔法学院",
+        "achievements": [
+          {
+            "id": "ach_eld_magic_academy",
+            "name": "发现苍蓝魔法学院",
+            "rarity": 3,
+            "time": 1785930050388,
+            "actor_name": "言言酒酒合约冠军",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现苍蓝魔法学院」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1785930050389,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：2小时32分钟\n获得：2529若汁币，若汁之缘×5，经验+5\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msfv7yag-fic142xw",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "3378912185",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：2小时32分钟\n获得：2529若汁币，若汁之缘×5，经验+5\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1785930050389,
+        "created_at": 1785930050389,
+        "sent_at": 1785930050905,
+        "last_error": ""
+      },
       {
         "travel_id": "msekvji6-ra1tu8sz",
         "group_id": "946431041",
@@ -1282,11 +1434,11 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 6,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 2,
-        "eldoran_continent": 2,
+        "eldoran_continent": 3,
         "unregistered_district": 0
       },
       "map_event_ids": {
