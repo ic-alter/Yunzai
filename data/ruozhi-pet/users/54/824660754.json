@@ -8,7 +8,7 @@
     "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785934513568,
+    "satiety_decay_at": 1786082537440,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -34,11 +34,13 @@
       "antler_turtle",
       "ladybug_turtle",
       "fruit_hat_turtle",
-      "bell_turtle"
+      "bell_turtle",
+      "oni_turtle",
+      "heart_shower_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 28,
+      "counter:gacha_draws": 30,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -138,6 +140,16 @@
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "heart_shower_turtle",
+        "reason": "gacha",
+        "time": 1785938812444
+      },
+      {
+        "skin_id": "oni_turtle",
+        "reason": "gacha",
+        "time": 1785938812443
+      },
       {
         "skin_id": "bell_turtle",
         "reason": "gacha",
@@ -271,9 +283,9 @@
     "total_contribution": 1,
     "last_display_name": "螺风华莺",
     "first_joined_at": 1785029953378,
-    "last_active_at": 1785934513568,
+    "last_active_at": 1786082537440,
     "daily": {
-      "date": "2026-08-05",
+      "date": "2026-08-07",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -282,11 +294,23 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 6,
+      "ruozhi_fate": 0,
       "nameless_ruozhi": 0,
       "souvenir_border_map": 0
     },
     "item_ledger": [
+      {
+        "time": 1785938812443,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 6,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
       {
         "time": 1785607933244,
         "type": "income",
@@ -535,21 +559,6 @@
           "planned_amount": 2,
           "daily_limit": 60
         }
-      },
-      {
-        "time": 1785383075463,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 47,
-        "after": 49,
-        "reason": "genshin_wordle_win_fate",
-        "meta": {
-          "guesses": 6,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
@@ -756,20 +765,20 @@
     "migrated_at": 1785029953378
   },
   "created_at": 1785029953378,
-  "updated_at": 1785934513568,
+  "updated_at": 1786082537440,
   "production": {
     "started_at": 1785029953378,
-    "last_settled_at": 1785934513568,
+    "last_settled_at": 1786082537440,
     "accumulated_ms": 259200000,
     "progress": 29.31862406423868,
     "total_produced": 13,
     "last_collected_at": 1785140913481
   },
   "gacha": {
-    "since_four_plus": 8,
-    "since_five": 28,
-    "total_draws": 28,
-    "total_four": 2,
+    "since_four_plus": 1,
+    "since_five": 30,
+    "total_draws": 30,
+    "total_four": 3,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,

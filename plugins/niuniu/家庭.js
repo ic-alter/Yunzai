@@ -32,7 +32,7 @@ export class 家庭 extends plugin {
       priority: 5000,
       rule: [
         {
-          reg: "^(#|＃)?(家庭|查看家庭|的家庭|户口|户口本)",
+          reg: "^(#|＃)?(家庭|查看家庭|的家庭|户口|户口本)$",
           fnc: "showFamily",
         },
         { reg: "^#?(婚姻|牛牛)帮助$", fnc: "marriageHelp" },

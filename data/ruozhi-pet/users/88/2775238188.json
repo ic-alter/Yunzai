@@ -3,12 +3,12 @@
   "user_id": "2775238188",
   "pet": {
     "level": 1,
-    "experience": 24,
+    "experience": 30,
     "satiety": 5,
     "mood": 69,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785934513636,
+    "satiety_decay_at": 1786082537533,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -135,6 +135,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786019996980,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -206,9 +221,9 @@
     "total_contribution": 1,
     "last_display_name": "风染",
     "first_joined_at": 1784810208701,
-    "last_active_at": 1785934513636,
+    "last_active_at": 1786082537533,
     "daily": {
-      "date": "2026-08-05",
+      "date": "2026-08-07",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -217,10 +232,35 @@
       "week": "2026-W32"
     },
     "items": {
-      "ruozhi_fate": 13,
+      "ruozhi_fate": 21,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1786019996980,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 18,
+        "after": 21,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786019996979,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 13,
+        "after": 18,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mshcbz1t-2gvloos7",
+          "location_id": "eld_moonbell_village"
+        }
+      },
       {
         "time": 1785920361937,
         "type": "income",
@@ -392,10 +432,23 @@
       }
     },
     "currency": {
-      "balance": 7334,
-      "total_earned": 7334,
+      "balance": 10068,
+      "total_earned": 10068,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786019996979,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2734,
+          "before": 7334,
+          "after": 10068,
+          "meta": {
+            "travel_id": "mshcbz1t-2gvloos7",
+            "location_id": "eld_moonbell_village",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785920361935,
           "type": "income",
@@ -515,10 +568,10 @@
     "migrated_at": 1784810208701
   },
   "created_at": 1784810208701,
-  "updated_at": 1785934513636,
+  "updated_at": 1786082537533,
   "production": {
     "started_at": 1785141760297,
-    "last_settled_at": 1785934513636,
+    "last_settled_at": 1786082537533,
     "accumulated_ms": 259200000,
     "progress": 28.317214700193425,
     "total_produced": 0
@@ -528,7 +581,8 @@
       "rtc_broadcast_tower",
       "rtc_central_station",
       "rtc_blue_harbor",
-      "forgotten_family_restaurant"
+      "forgotten_family_restaurant",
+      "eld_moonbell_village"
     ],
     "location_records": {
       "rtc_broadcast_tower": {
@@ -561,6 +615,14 @@
         "name": "被遗忘的家庭餐厅",
         "travel_id": "msfpkzgw-wadsvqc1",
         "time": 1785920361936,
+        "carried_item_id": ""
+      },
+      "eld_moonbell_village": {
+        "id": "eld_moonbell_village",
+        "map_id": "eldoran_continent",
+        "name": "月铃村",
+        "travel_id": "mshcbz1t-2gvloos7",
+        "time": 1786019996979,
         "carried_item_id": ""
       }
     },
@@ -662,6 +724,21 @@
         "name": "地图上不存在的地点",
         "rarity": 3,
         "time": 1785920361937,
+        "actor_name": "风染",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786019996980,
         "actor_name": "风染",
         "rewards": [
           {
@@ -904,9 +981,70 @@
         "settled_at": 1785920361937,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时28分钟\n获得：2468若汁币，若汁之缘×5，经验+5\n旅行事件：生日歌唱给谁\n店内熄灯，生日歌唱到名字的位置时，只剩很长的电流杂音。\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "mshcbz1t-2gvloos7": {
+        "id": "mshcbz1t-2gvloos7",
+        "user_id": "2775238188",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "display_name": "风染",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_moonbell_village",
+        "location_name": "月铃村",
+        "duration_ms": 9842431,
+        "rewards": {
+          "coin": 2734,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": null,
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "月铃村",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_moonbell_village",
+            "name": "发现月铃村",
+            "rarity": 3,
+            "time": 1786019996980,
+            "actor_name": "风染",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月铃村」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786019996980,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2734若汁币，若汁之缘×5，经验+6\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mshcbz1t-2gvloos7",
+        "group_id": "946431041",
+        "self_id": "3964480831",
+        "user_id": "2775238188",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2734若汁币，若汁之缘×5，经验+6\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786019996980,
+        "created_at": 1786019996980,
+        "sent_at": 1786019997545,
+        "last_error": ""
+      },
       {
         "travel_id": "msfpkzgw-wadsvqc1",
         "group_id": "946431041",
@@ -961,12 +1099,13 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 3,
-        "eldoran_continent": 0,
-        "unregistered_district": 1
+        "eldoran_continent": 1,
+        "unregistered_district": 1,
+        "four_regions_little_world": 0
       },
       "map_event_ids": {
         "retro_tomorrow_city": {

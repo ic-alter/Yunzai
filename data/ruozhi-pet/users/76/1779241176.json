@@ -3,23 +3,34 @@
   "user_id": "1779241176",
   "pet": {
     "level": 1,
-    "experience": 0,
+    "experience": 17,
     "satiety": 5,
-    "mood": 70,
-    "health": 80,
+    "mood": 78,
+    "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1785934513617,
+    "satiety_decay_at": 1786082537508,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
       "nervous_turtle",
-      "goggles_turtle"
+      "goggles_turtle",
+      "love_letter_turtle",
+      "sparkling_turtle",
+      "birthday_turtle",
+      "drooling_turtle",
+      "headphones_turtle",
+      "kiss_marks_turtle",
+      "sneaker_turtle",
+      "raised_eyebrow_turtle",
+      "ladybug_turtle",
+      "coffee_turtle",
+      "lying_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 1,
+      "counter:gacha_draws": 14,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -39,9 +50,81 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_draw_10": {
+        "id": "gacha_draw_10",
+        "name": "十连启程",
+        "rarity": 3,
+        "time": 1786000033670,
+        "actor_name": "启明星小姐结婚",
+        "stat_key": "counter:gacha_draws",
+        "count": 13,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "lying_turtle",
+        "reason": "gacha",
+        "time": 1786000059651
+      },
+      {
+        "skin_id": "coffee_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "ladybug_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "raised_eyebrow_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "sneaker_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "kiss_marks_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "headphones_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "drooling_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "birthday_turtle",
+        "reason": "gacha",
+        "time": 1786000033669
+      },
+      {
+        "skin_id": "sparkling_turtle",
+        "reason": "gacha",
+        "time": 1785979668942
+      },
+      {
+        "skin_id": "love_letter_turtle",
+        "reason": "gacha",
+        "time": 1785979668942
+      },
       {
         "skin_id": "goggles_turtle",
         "reason": "gacha",
@@ -75,14 +158,14 @@
     ]
   },
   "profile": {
-    "favorability": 0,
-    "weekly_contribution": 0,
-    "total_contribution": 0,
+    "favorability": 8,
+    "weekly_contribution": 7,
+    "total_contribution": 7,
     "last_display_name": "启明星小姐结婚",
     "first_joined_at": 1785228638973,
-    "last_active_at": 1785934513617,
+    "last_active_at": 1786082537508,
     "daily": {
-      "date": "2026-08-05",
+      "date": "2026-08-07",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -91,10 +174,57 @@
       "week": "2026-W32"
     },
     "currency": {
-      "balance": 1000,
-      "total_earned": 1000,
+      "balance": 2600,
+      "total_earned": 2600,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786000033669,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 2300,
+          "after": 2600,
+          "meta": {
+            "skin_id": "birthday_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786000033669,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 2000,
+          "after": 2300,
+          "meta": {
+            "skin_id": "raised_eyebrow_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1785999963203,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 1500,
+          "after": 2000,
+          "meta": {
+            "date": "2026-08-06"
+          }
+        },
+        {
+          "time": 1785978719530,
+          "type": "income",
+          "reason": "zzz_wordle_win",
+          "amount": 500,
+          "before": 1000,
+          "after": 1500,
+          "meta": {
+            "guesses": 4,
+            "difficulty": "hard"
+          }
+        },
         {
           "time": 1785229499230,
           "type": "income",
@@ -126,13 +256,88 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-08-06"
     },
     "items": {
-      "ruozhi_fate": 4,
+      "ruozhi_fate": 0,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1786000059651,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
+      {
+        "time": 1786000033670,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_10"
+        }
+      },
+      {
+        "time": 1786000033669,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 30,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1785999963202,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 0,
+        "after": 30,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1785979668942,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 6,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
+      {
+        "time": 1785978719533,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 4,
+        "after": 6,
+        "reason": "zzz_wordle_win_fate",
+        "meta": {
+          "guesses": 4,
+          "difficulty": "hard",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
       {
         "time": 1785229516248,
         "type": "income",
@@ -189,9 +394,9 @@
       }
     ],
     "item_daily": {
-      "date": "2026-07-28",
+      "date": "2026-08-06",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 4,
+      "game_fate_reward_count": 2,
       "shop_buy_counts": {},
       "use_counts": {}
     },
@@ -204,13 +409,42 @@
       }
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1785999963203,
+      "user_id": "1779241176",
+      "display_name": "启明星小姐结婚",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，启明星小姐结婚及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 2000
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    }
+  ],
   "daily": {
-    "date": "2026-07-28",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-08-06",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:1185941072": 1785999963202
+  },
   "skin_sessions": {
     "active": null
   },
@@ -222,19 +456,20 @@
     "migrated_at": 1785228638973
   },
   "created_at": 1785228638973,
-  "updated_at": 1785934513617,
+  "updated_at": 1786082537508,
   "production": {
     "started_at": 1785228638973,
-    "last_settled_at": 1785934513617,
-    "accumulated_ms": 259200000,
-    "progress": 30.212952729934184,
-    "total_produced": 0
+    "last_settled_at": 1786082537508,
+    "accumulated_ms": 82574306,
+    "progress": 10.157078070896134,
+    "total_produced": 30,
+    "last_collected_at": 1785999963202
   },
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 1,
-    "total_draws": 1,
-    "total_four": 0,
+    "since_four_plus": 4,
+    "since_five": 14,
+    "total_draws": 14,
+    "total_four": 1,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,
