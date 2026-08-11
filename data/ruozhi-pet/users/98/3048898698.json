@@ -3,12 +3,12 @@
   "user_id": "3048898698",
   "pet": {
     "level": 6,
-    "experience": 88,
-    "satiety": 16,
-    "mood": 100,
+    "experience": 140,
+    "satiety": 5,
+    "mood": 98,
     "health": 100,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1786081616720,
+    "satiety_decay_at": 1786421664939,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -71,7 +71,10 @@
       "bird_turtle",
       "poodle_turtle",
       "dragon_turtle",
-      "lying_turtle"
+      "lying_turtle",
+      "tidal_wave_turtle",
+      "maodie_turtle",
+      "milk_frog_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -104,8 +107,9 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 163,
-      "counter:gacha_five": 2
+      "counter:gacha_draws": 166,
+      "counter:gacha_five": 3,
+      "counter:gacha_unlucky_five": 1
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -595,9 +599,48 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_unlucky_five": {
+        "id": "gacha_unlucky_five",
+        "name": "爽吃保底",
+        "rarity": 4,
+        "time": 1786090005622,
+        "actor_name": "孩子们别忘了剑仙梦",
+        "stat_key": "counter:gacha_unlucky_five",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "milk_frog_turtle",
+            "skin_name": "奶蛙小若汁",
+            "message": "解锁四星皮肤「奶蛙小若汁」。"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "milk_frog_turtle",
+        "reason": "achievement",
+        "time": 1786090005622,
+        "achievement_id": "gacha_unlucky_five"
+      },
+      {
+        "skin_id": "maodie_turtle",
+        "reason": "gacha",
+        "time": 1786090005621
+      },
+      {
+        "skin_id": "tidal_wave_turtle",
+        "reason": "gacha",
+        "time": 1786090005621
+      },
       {
         "skin_id": "lying_turtle",
         "reason": "gacha",
@@ -916,27 +959,100 @@
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 53,
-    "total_contribution": 176,
-    "last_display_name": "孩子们别忘了剑仙梦",
+    "weekly_contribution": 0,
+    "total_contribution": 188,
+    "last_display_name": "已严肃念清师",
     "first_joined_at": 1784793040743,
-    "last_active_at": 1786082537580,
+    "last_active_at": 1786421664939,
     "daily": {
-      "date": "2026-08-07",
-      "event_count": 1,
-      "same_event_counts": {
-        "feed": 1
-      },
+      "date": "2026-08-11",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W32"
+      "week": "2026-W33"
     },
     "currency": {
-      "balance": 10934,
-      "total_earned": 158934,
+      "balance": 22177,
+      "total_earned": 170177,
       "total_spent": 148000,
       "ledger": [
+        {
+          "time": 1786155162415,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2841,
+          "before": 19336,
+          "after": 22177,
+          "meta": {
+            "travel_id": "msjkkryc-8wojp37w",
+            "location_id": "echo_pool",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786144927421,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 18836,
+          "after": 19336,
+          "meta": {
+            "date": "2026-08-08"
+          }
+        },
+        {
+          "time": 1786120581525,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2212,
+          "before": 16624,
+          "after": 18836,
+          "meta": {
+            "travel_id": "msj1c3ts-cz2jvyh1",
+            "location_id": "nap_park",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786112443585,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 3289,
+          "before": 13335,
+          "after": 16624,
+          "meta": {
+            "travel_id": "msivcx49-7xcxi4g2",
+            "location_id": "rtc_aurora_station",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786090005621,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 13035,
+          "after": 13335,
+          "meta": {
+            "skin_id": "tear_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786088645359,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2101,
+          "before": 10934,
+          "after": 13035,
+          "meta": {
+            "travel_id": "msiiywjg-3wom61bx",
+            "location_id": "rtc_atomic_mall",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786068348619,
           "type": "income",
@@ -984,80 +1100,6 @@
             "skin_id": "birthday_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786068348619,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 9434,
-          "after": 9734,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786068348619,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 9134,
-          "after": 9434,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786068348619,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 8834,
-          "after": 9134,
-          "meta": {
-            "skin_id": "goggles_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786068348619,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 8534,
-          "after": 8834,
-          "meta": {
-            "skin_id": "biting_lip_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786066604706,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 615,
-          "before": 7919,
-          "after": 8534,
-          "meta": {
-            "travel_id": "msi8mfwh-mrin15i7",
-            "location_id": "forgotten_family_restaurant",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786064379297,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2411,
-          "before": 5508,
-          "after": 7919,
-          "meta": {
-            "travel_id": "msi4b56o-h62k2kgc",
-            "location_id": "rtc_waste_factory",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -1066,17 +1108,17 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-07"
+      "first_interaction_reward_date": "2026-08-08"
     },
     "items": {
-      "ruozhi_fate": 6,
+      "ruozhi_fate": 34,
       "nameless_ruozhi": 1,
       "souvenir_wheat_old_coin": 2,
       "souvenir_single_song_radio": 2,
       "souvenir_dome_giant_leaf": 3,
       "souvenir_infinite_lottery_ticket": 1,
       "travel_pager": 11,
-      "travel_checklist": 14,
+      "travel_checklist": 11,
       "souvenir_auto_watering_tag": 1,
       "souvenir_silent_moonbell": 1,
       "souvenir_border_map": 0,
@@ -1093,6 +1135,130 @@
       "souvenir_forgotten_flavor_pudding_cup": 1
     },
     "item_ledger": [
+      {
+        "time": 1786155162415,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 28,
+        "after": 34,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msjkkryc-8wojp37w",
+          "location_id": "echo_pool"
+        }
+      },
+      {
+        "time": 1786144934526,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 12,
+        "after": 11,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1786120581525,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 22,
+        "after": 28,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msj1c3ts-cz2jvyh1",
+          "location_id": "nap_park"
+        }
+      },
+      {
+        "time": 1786112617298,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 13,
+        "after": 12,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1786112609504,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 13,
+        "before": 9,
+        "after": 22,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 23.596
+        }
+      },
+      {
+        "time": 1786112443585,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 3,
+        "after": 9,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msivcx49-7xcxi4g2",
+          "location_id": "rtc_aurora_station"
+        }
+      },
+      {
+        "time": 1786102577564,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 14,
+        "after": 13,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1786090005622,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_unlucky_five"
+        }
+      },
+      {
+        "time": 1786090005621,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 9,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1786088645360,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 6,
+        "after": 9,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msiiywjg-3wom61bx",
+          "location_id": "rtc_atomic_mall"
+        }
+      },
       {
         "time": 1786081768238,
         "type": "expense",
@@ -1220,130 +1386,6 @@
           "event_id": "young_beast_snack",
           "location_id": "spirit_wheat_plain"
         }
-      },
-      {
-        "time": 1786033107974,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 22,
-        "after": 25,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mshmrdbl-v2srnf0c",
-          "location_id": "spirit_wheat_plain"
-        }
-      },
-      {
-        "time": 1786027669029,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 10,
-        "after": 9,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1786027662966,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 8,
-        "before": 14,
-        "after": 22,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 14.65
-        }
-      },
-      {
-        "time": 1786009252266,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 9,
-        "after": 14,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msh65tva-bf3hngu9",
-          "location_id": "echo_pool"
-        }
-      },
-      {
-        "time": 1785999862901,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 9,
-        "before": 2,
-        "after": 11,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 18000
-        }
-      },
-      {
-        "time": 1785999844338,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 2000
-        }
-      },
-      {
-        "time": 1785999828242,
-        "type": "income",
-        "item_id": "travel_suitcase",
-        "amount": 10,
-        "before": 0,
-        "after": 10,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 20000
-        }
-      },
-      {
-        "time": 1785999819900,
-        "type": "income",
-        "item_id": "travel_checklist",
-        "amount": 10,
-        "before": 6,
-        "after": 16,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 20000
-        }
-      },
-      {
-        "time": 1785999790186,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1785983465127,
-        "type": "income",
-        "item_id": "souvenir_no_forging_certificate",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msgv8xv0-o10spl6u",
-          "event_id": "eld_event_shell_forge",
-          "location_id": "eld_dwarf_city"
-        }
       }
     ],
     "item_daily": {
@@ -1367,6 +1409,55 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1786144927421,
+      "user_id": "3048898698",
+      "display_name": "已严肃念清师",
+      "event_id": "feed",
+      "branch_id": "hungry",
+      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
+      "effects_text": "饱食+18，心情+5，健康+2，好感+5，贡献+5，经验+15",
+      "effects": {
+        "satiety": 18,
+        "mood": 5,
+        "health": 2,
+        "favorability": 5,
+        "contribution": 5,
+        "experience": 15
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 19336
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786112609505,
+      "user_id": "3048898698",
+      "display_name": "已严肃念清师",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，已严肃念清师及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 13
+    },
     {
       "time": 1786057136721,
       "user_id": "3048898698",
@@ -1559,59 +1650,10 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1785804811931,
-      "user_id": "3048898698",
-      "display_name": "孩子们别忘了剑仙梦",
-      "event_id": "petting",
-      "branch_id": "normal_close",
-      "summary": "小若汁主动把脑袋贴到孩子们别忘了剑仙梦手边，示意还想再摸一会儿。",
-      "effects_text": "心情+7，好感+5，贡献+4，经验+14",
-      "effects": {
-        "satiety": 0,
-        "mood": 7,
-        "health": 0,
-        "favorability": 5,
-        "contribution": 4,
-        "experience": 14
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785797439754,
-      "user_id": "3048898698",
-      "display_name": "孩子们别忘了剑仙梦",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，孩子们别忘了剑仙梦及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 23822
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 13
     }
   ],
   "daily": {
-    "date": "2026-08-07",
+    "date": "2026-08-08",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -1662,7 +1704,9 @@
     "event:232678247": 1785981409998,
     "event:1500530579": 1785999778239,
     "event:440736289": 1786027662965,
-    "event:436497950": 1786057136719
+    "event:436497950": 1786057136719,
+    "event:1571581027": 1786112609503,
+    "event:1534879841": 1786144927419
   },
   "skin_sessions": {
     "active": null
@@ -1675,22 +1719,29 @@
     "migrated_at": 1784793040743
   },
   "created_at": 1784793040743,
-  "updated_at": 1786082537580,
+  "updated_at": 1786421664939,
   "production": {
     "started_at": 1784880986712,
-    "last_settled_at": 1786082537580,
-    "accumulated_ms": 54874614,
-    "progress": 9.042865472499377,
-    "total_produced": 146,
-    "last_collected_at": 1786027662966
+    "last_settled_at": 1786421664939,
+    "accumulated_ms": 259200000,
+    "progress": 36.7177720712599,
+    "total_produced": 159,
+    "last_collected_at": 1786112609504
   },
   "gacha": {
-    "since_four_plus": 9,
-    "since_five": 79,
-    "total_draws": 163,
-    "total_four": 22,
-    "total_five": 2,
+    "since_four_plus": 1,
+    "since_five": 1,
+    "total_draws": 166,
+    "total_four": 23,
+    "total_five": 3,
     "five_history": [
+      {
+        "time": 1786090005621,
+        "skin_id": "maodie_turtle",
+        "skin_name": "耄耋小若汁",
+        "pulls": 81,
+        "draw_index": 165
+      },
       {
         "time": 1785635987505,
         "skin_id": "roast_chicken_turtle",
@@ -1706,7 +1757,7 @@
         "draw_index": 79
       }
     ],
-    "route_misses": 2,
+    "route_misses": 0,
     "route_skin_id": "maodie_turtle"
   },
   "travel": {
@@ -1966,8 +2017,8 @@
         "id": "rtc_event_free_sample",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_atomic_mall",
-        "travel_id": "ms9zflxx-pi3ynn8p",
-        "time": 1785571134511
+        "travel_id": "msiiywjg-3wom61bx",
+        "time": 1786088645361
       },
       "rtc_event_gardener_bot": {
         "id": "rtc_event_gardener_bot",
@@ -2080,6 +2131,27 @@
         "location_id": "forgotten_family_restaurant",
         "travel_id": "msi8mfwh-mrin15i7",
         "time": 1786066604706
+      },
+      "rtc_event_forecast_reward": {
+        "id": "rtc_event_forecast_reward",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_aurora_station",
+        "travel_id": "msivcx49-7xcxi4g2",
+        "time": 1786112443585
+      },
+      "event_bench_fell_asleep": {
+        "id": "event_bench_fell_asleep",
+        "map_id": "unregistered_district",
+        "location_id": "nap_park",
+        "travel_id": "msj1c3ts-cz2jvyh1",
+        "time": 1786120581526
+      },
+      "event_underwater_broadcast": {
+        "id": "event_underwater_broadcast",
+        "map_id": "unregistered_district",
+        "location_id": "echo_pool",
+        "travel_id": "msjkkryc-8wojp37w",
+        "time": 1786155162416
       }
     },
     "souvenir_records": {
@@ -5058,9 +5130,221 @@
         "settled_at": 1786066604707,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：37分钟\n获得：615若汁币，若汁之缘×1，经验+1\n旅行事件：儿童套餐附赠回忆\n餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。\n纪念品：🍮记不起味道的布丁杯×1\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+      },
+      "msiiywjg-3wom61bx": {
+        "id": "msiiywjg-3wom61bx",
+        "user_id": "3048898698",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "孩子们别忘了剑仙梦",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_mall",
+        "location_name": "原子百货商场",
+        "duration_ms": 6877085,
+        "rewards": {
+          "coin": 2101,
+          "fate": 3,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_free_sample",
+          "name": "未来食品试吃",
+          "text": "小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
+          "effects": {
+            "coin_percent": 10
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786088645362,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时55分钟\n获得：2101若汁币，若汁之缘×3，经验+4\n携带道具：旅行清单\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。"
+      },
+      "msivcx49-7xcxi4g2": {
+        "id": "msivcx49-7xcxi4g2",
+        "user_id": "3048898698",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "孩子们别忘了剑仙梦",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_aurora_station",
+        "location_name": "极光气象站",
+        "duration_ms": 9865990,
+        "rewards": {
+          "coin": 3289,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": {
+          "id": "rtc_event_forecast_reward",
+          "name": "精准预报",
+          "text": "小若汁预测“等会儿可能有天气”，结果完全正确。",
+          "effects": {
+            "coin_percent": 20
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786112443587,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：2小时44分钟\n获得：3289若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：精准预报\n小若汁预测“等会儿可能有天气”，结果完全正确。"
+      },
+      "msj1c3ts-cz2jvyh1": {
+        "id": "msj1c3ts-cz2jvyh1",
+        "user_id": "3048898698",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "已严肃念清师",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "nap_park",
+        "location_name": "午睡公园",
+        "duration_ms": 7964196,
+        "rewards": {
+          "coin": 2212,
+          "fate": 6,
+          "experience": 4
+        },
+        "event": {
+          "id": "event_bench_fell_asleep",
+          "name": "长椅替你睡着了",
+          "text": "小若汁刚坐下，长椅便发出均匀呼吸声。它起身后，木板上的凹痕仍在起伏。",
+          "effects": {
+            "fate_flat": 1
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786120581527,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：2小时13分钟\n获得：2212若汁币，若汁之缘×6，经验+4\n携带道具：旅行清单\n旅行事件：长椅替你睡着了\n小若汁刚坐下，长椅便发出均匀呼吸声。它起身后，木板上的凹痕仍在起伏。"
+      },
+      "msjkkryc-8wojp37w": {
+        "id": "msjkkryc-8wojp37w",
+        "user_id": "3048898698",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "已严肃念清师",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "echo_pool",
+        "location_name": "回声游泳馆",
+        "duration_ms": 10227866,
+        "rewards": {
+          "coin": 2841,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": {
+          "id": "event_underwater_broadcast",
+          "name": "水下广播",
+          "text": "水下广播比水面更清晰：“请仍在做梦的游客举手。”池底出现一排缓慢晃动的影子。",
+          "effects": {
+            "mood": -2
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786155162417,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：2小时50分钟\n获得：2841若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：水下广播\n水下广播比水面更清晰：“请仍在做梦的游客举手。”池底出现一排缓慢晃动的影子。\n这段经历让小若汁有些不安，心情-2"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msjkkryc-8wojp37w",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3048898698",
+        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：2小时50分钟\n获得：2841若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：水下广播\n水下广播比水面更清晰：“请仍在做梦的游客举手。”池底出现一排缓慢晃动的影子。\n这段经历让小若汁有些不安，心情-2",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786155162417,
+        "created_at": 1786155162417,
+        "sent_at": 1786155162923,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msj1c3ts-cz2jvyh1",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3048898698",
+        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：2小时13分钟\n获得：2212若汁币，若汁之缘×6，经验+4\n携带道具：旅行清单\n旅行事件：长椅替你睡着了\n小若汁刚坐下，长椅便发出均匀呼吸声。它起身后，木板上的凹痕仍在起伏。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786120581527,
+        "created_at": 1786120581527,
+        "sent_at": 1786120582060,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msivcx49-7xcxi4g2",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3048898698",
+        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：2小时44分钟\n获得：3289若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：精准预报\n小若汁预测“等会儿可能有天气”，结果完全正确。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786112443587,
+        "created_at": 1786112443587,
+        "sent_at": 1786112444119,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msiiywjg-3wom61bx",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3048898698",
+        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时55分钟\n获得：2101若汁币，若汁之缘×3，经验+4\n携带道具：旅行清单\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786088645363,
+        "created_at": 1786088645363,
+        "sent_at": 1786088645947,
+        "last_error": ""
+      },
       {
         "travel_id": "msi8mfwh-mrin15i7",
         "group_id": "415462812",
@@ -5268,62 +5552,10 @@
         "created_at": 1785744147404,
         "sent_at": 1785744147725,
         "last_error": ""
-      },
-      {
-        "travel_id": "msctdlq2-zu3wot4u",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "3048898698",
-        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时6分钟\n获得：1213若汁币，若汁之缘×2，经验+3\n携带道具：旅行清单\n旅行事件：特大菜叶\n温室培育出比小若汁还大的菜叶，它只咬了一个角。\n纪念品：🥬穹顶特大菜叶×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785740425391,
-        "created_at": 1785740425391,
-        "sent_at": 1785740425749,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mscqegrm-1d7oxvub",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "3048898698",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时25分钟\n获得：2411若汁币，若汁之缘×5，经验+5\n携带道具：旅行清单\n旅行事件：城门问答\n卫兵问小若汁来自哪里，它回答“群里”。",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785736302706,
-        "created_at": 1785736302706,
-        "sent_at": 0,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mscl17ob-zkngo4jr",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "3048898698",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：2小时30分钟\n获得：2793若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n新地点已解锁：银冠王城\n达成旅行成就「发现银冠王城」 ★★★\n达成旅行成就「王国、精灵与矮人」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785731416854,
-        "created_at": 1785731416854,
-        "sent_at": 1785731417151,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msckz8wv-fe2iudf6",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "3048898698",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：25分钟\n获得：500若汁币，若汁之缘×1，经验+1",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785722351232,
-        "created_at": 1785722351232,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 49,
+      "total_trips": 53,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 10,
@@ -5355,11 +5587,14 @@
           "rtc_event_last_robot": 1,
           "rtc_event_weather_button": 1,
           "rtc_event_recycle_shell": 1,
-          "rtc_event_treasure_trash": 1
+          "rtc_event_treasure_trash": 1,
+          "rtc_event_forecast_reward": 1
         },
         "unregistered_district": {
           "event_closed_ten_years_ago": 1,
-          "event_kids_meal_memory": 1
+          "event_kids_meal_memory": 1,
+          "event_bench_fell_asleep": 1,
+          "event_underwater_broadcast": 1
         },
         "four_regions_little_world": {
           "young_beast_snack": 1
@@ -5389,41 +5624,13 @@
         "event_closed_ten_years_ago": 1,
         "young_beast_snack": 1,
         "rtc_event_treasure_trash": 1,
-        "event_kids_meal_memory": 1
+        "event_kids_meal_memory": 1,
+        "rtc_event_forecast_reward": 1,
+        "event_bench_fell_asleep": 1,
+        "event_underwater_broadcast": 1
       }
     },
-    "active": {
-      "id": "msiiywjg-3wom61bx",
-      "user_id": "3048898698",
-      "display_name": "孩子们别忘了剑仙梦",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1786081768252,
-      "ends_at": 1786088645337,
-      "duration_ms": 6877085,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_atomic_mall",
-      "location_name": "原子百货商场",
-      "was_unlocked": true,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": {
-        "id": "rtc_event_free_sample",
-        "name": "未来食品试吃",
-        "text": "小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
-        "effects": {
-          "coin_percent": 10
-        },
-        "souvenirs": [],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2101,
-        "fate": 3,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null
   }
 }

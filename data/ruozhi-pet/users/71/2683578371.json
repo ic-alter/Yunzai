@@ -3,12 +3,12 @@
   "user_id": "2683578371",
   "pet": {
     "level": 1,
-    "experience": 30,
+    "experience": 36,
     "satiety": 5,
     "mood": 78,
     "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786082537498,
+    "satiety_decay_at": 1786421664834,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -170,6 +170,36 @@
         "name": "发现一号原子电站",
         "rarity": 3,
         "time": 1785478359944,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1786217308154,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_weeping_swamp": {
+        "id": "ach_eld_weeping_swamp",
+        "name": "发现哭泣沼泽",
+        "rarity": 3,
+        "time": 1786227214310,
         "actor_name": "宝宝我们不拯救世界了我们回家😭",
         "rewards": [
           {
@@ -385,21 +415,47 @@
     "total_contribution": 7,
     "last_display_name": "宝宝我们不拯救世界了我们回家😭",
     "first_joined_at": 1784791767626,
-    "last_active_at": 1786082537498,
+    "last_active_at": 1786421664834,
     "daily": {
-      "date": "2026-08-07",
+      "date": "2026-08-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W32"
+      "week": "2026-W33"
     },
     "currency": {
-      "balance": 45976,
-      "total_earned": 45976,
+      "balance": 49046,
+      "total_earned": 49046,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786227214309,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2570,
+          "before": 46476,
+          "after": 49046,
+          "meta": {
+            "travel_id": "msks1zbt-2f2lvbyy",
+            "location_id": "eld_weeping_swamp",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786217308153,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 500,
+          "before": 45976,
+          "after": 46476,
+          "meta": {
+            "travel_id": "mskqxftd-06qlzsma",
+            "location_id": "eld_magic_academy",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785946952131,
           "type": "income",
@@ -495,30 +551,6 @@
             "skin_id": "headphones_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785946952131,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 43276,
-          "after": 43576,
-          "meta": {
-            "skin_id": "fruit_hat_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785664966882,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 42976,
-          "after": 43276,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -530,10 +562,60 @@
       "first_interaction_reward_date": "2026-07-31"
     },
     "items": {
-      "ruozhi_fate": 11,
+      "ruozhi_fate": 25,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1786227214310,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 22,
+        "after": 25,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_weeping_swamp"
+        }
+      },
+      {
+        "time": 1786227214309,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 15,
+        "after": 22,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msks1zbt-2f2lvbyy",
+          "location_id": "eld_weeping_swamp"
+        }
+      },
+      {
+        "time": 1786217308154,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 12,
+        "after": 15,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_magic_academy"
+        }
+      },
+      {
+        "time": 1786217308153,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 11,
+        "after": 12,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mskqxftd-06qlzsma",
+          "location_id": "eld_magic_academy"
+        }
+      },
       {
         "time": 1785946952131,
         "type": "expense",
@@ -730,56 +812,6 @@
           "first_sign_bonus": 60,
           "monthly_sign_bonus": 0
         }
-      },
-      {
-        "time": 1785424763855,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 19,
-        "after": 22,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_galaxy_motel"
-        }
-      },
-      {
-        "time": 1785424763854,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 17,
-        "after": 19,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms7ldvsf-047hwzvz",
-          "location_id": "rtc_galaxy_motel"
-        }
-      },
-      {
-        "time": 1785418750014,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 14,
-        "after": 17,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_silver_capital"
-        }
-      },
-      {
-        "time": 1785418750013,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 13,
-        "after": 14,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms7jbger-nwax7z93",
-          "location_id": "eld_silver_capital"
-        }
       }
     ],
     "item_daily": {
@@ -851,12 +883,12 @@
     "migrated_at": 1784791767626
   },
   "created_at": 1784791767626,
-  "updated_at": 1786082537498,
+  "updated_at": 1786421664834,
   "production": {
     "started_at": 1784887563456,
-    "last_settled_at": 1786082537498,
-    "accumulated_ms": 135590155,
-    "progress": 17.369078649118165,
+    "last_settled_at": 1786421664834,
+    "accumulated_ms": 259200000,
+    "progress": 33.02382092368757,
     "total_produced": 91,
     "last_collected_at": 1785946947343
   },
@@ -876,7 +908,9 @@
       "eld_silver_capital",
       "rtc_galaxy_motel",
       "rtc_broadcast_tower",
-      "rtc_atomic_plant"
+      "rtc_atomic_plant",
+      "eld_magic_academy",
+      "eld_weeping_swamp"
     ],
     "location_records": {
       "rtc_atomic_mall": {
@@ -918,6 +952,22 @@
         "travel_id": "ms8gmojg-ebgjy684",
         "time": 1785478359944,
         "carried_item_id": ""
+      },
+      "eld_magic_academy": {
+        "id": "eld_magic_academy",
+        "map_id": "eldoran_continent",
+        "name": "苍蓝魔法学院",
+        "travel_id": "mskqxftd-06qlzsma",
+        "time": 1786217308154,
+        "carried_item_id": ""
+      },
+      "eld_weeping_swamp": {
+        "id": "eld_weeping_swamp",
+        "map_id": "eldoran_continent",
+        "name": "哭泣沼泽",
+        "travel_id": "msks1zbt-2f2lvbyy",
+        "time": 1786227214310,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -934,6 +984,13 @@
         "location_id": "rtc_atomic_plant",
         "travel_id": "ms8gmojg-ebgjy684",
         "time": 1785478359944
+      },
+      "eld_event_fog_guide": {
+        "id": "eld_event_fog_guide",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_weeping_swamp",
+        "travel_id": "msks1zbt-2f2lvbyy",
+        "time": 1786227214310
       }
     },
     "souvenir_records": {},
@@ -1018,6 +1075,36 @@
         "name": "发现一号原子电站",
         "rarity": 3,
         "time": 1785478359944,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_magic_academy": {
+        "id": "ach_eld_magic_academy",
+        "name": "发现苍蓝魔法学院",
+        "rarity": 3,
+        "time": 1786217308154,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_weeping_swamp": {
+        "id": "ach_eld_weeping_swamp",
+        "name": "发现哭泣沼泽",
+        "rarity": 3,
+        "time": 1786227214310,
         "actor_name": "宝宝我们不拯救世界了我们回家😭",
         "rewards": [
           {
@@ -1288,9 +1375,140 @@
         "settled_at": 1785478359945,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：1小时26分钟\n获得：1530若汁币，若汁之缘×3，经验+3\n旅行事件：安全讲座\n机器人讲解员用了三个小时说明不要乱按按钮。\n新地点已解锁：一号原子电站\n达成旅行成就「发现一号原子电站」 ★★★"
+      },
+      "mskqxftd-06qlzsma": {
+        "id": "mskqxftd-06qlzsma",
+        "user_id": "2683578371",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "宝宝我们不拯救世界了我们回家😭",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_magic_academy",
+        "location_name": "苍蓝魔法学院",
+        "duration_ms": 1238931,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "苍蓝魔法学院",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_magic_academy",
+            "name": "发现苍蓝魔法学院",
+            "rarity": 3,
+            "time": 1786217308154,
+            "actor_name": "宝宝我们不拯救世界了我们回家😭",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现苍蓝魔法学院」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786217308155,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：21分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★"
+      },
+      "msks1zbt-2f2lvbyy": {
+        "id": "msks1zbt-2f2lvbyy",
+        "user_id": "2683578371",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "宝宝我们不拯救世界了我们回家😭",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_weeping_swamp",
+        "location_name": "哭泣沼泽",
+        "duration_ms": 9253559,
+        "rewards": {
+          "coin": 2570,
+          "fate": 7,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_fog_guide",
+          "name": "雾中灯火",
+          "text": "一盏紫色灯火带小若汁走出沼泽。",
+          "effects": {
+            "fate_flat": 2
+          },
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "哭泣沼泽",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_weeping_swamp",
+            "name": "发现哭泣沼泽",
+            "rarity": 3,
+            "time": 1786227214310,
+            "actor_name": "宝宝我们不拯救世界了我们回家😭",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现哭泣沼泽」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786227214311,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时34分钟\n获得：2570若汁币，若汁之缘×7，经验+5\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。\n新地点已解锁：哭泣沼泽\n达成旅行成就「发现哭泣沼泽」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msks1zbt-2f2lvbyy",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2683578371",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时34分钟\n获得：2570若汁币，若汁之缘×7，经验+5\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。\n新地点已解锁：哭泣沼泽\n达成旅行成就「发现哭泣沼泽」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786227214311,
+        "created_at": 1786227214311,
+        "sent_at": 1786227214802,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mskqxftd-06qlzsma",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2683578371",
+        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：21分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786217308155,
+        "created_at": 1786217308155,
+        "sent_at": 1786217308645,
+        "last_error": ""
+      },
       {
         "travel_id": "ms8gmojg-ebgjy684",
         "group_id": "415462812",
@@ -1358,21 +1576,27 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 7,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 4,
-        "eldoran_continent": 1
+        "eldoran_continent": 3,
+        "unregistered_district": 0,
+        "four_regions_little_world": 0
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
           "rtc_event_tomorrow_news": 1,
           "rtc_event_safety_lecture": 1
+        },
+        "eldoran_continent": {
+          "eld_event_fog_guide": 1
         }
       },
       "event_ids": {
         "rtc_event_tomorrow_news": 1,
-        "rtc_event_safety_lecture": 1
+        "rtc_event_safety_lecture": 1,
+        "eld_event_fog_guide": 1
       }
     },
     "active": null,

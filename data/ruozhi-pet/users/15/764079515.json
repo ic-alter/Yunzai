@@ -3,12 +3,12 @@
   "user_id": "764079515",
   "pet": {
     "level": 1,
-    "experience": 11,
+    "experience": 22,
     "satiety": 5,
-    "mood": 71,
+    "mood": 72,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786082537255,
+    "satiety_decay_at": 1786421664557,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -48,26 +48,39 @@
     ]
   },
   "profile": {
-    "favorability": 1,
+    "favorability": 2,
     "weekly_contribution": 0,
-    "total_contribution": 1,
+    "total_contribution": 2,
     "last_display_name": "小猪鱼（一发十连三黄不玉玉了）",
     "first_joined_at": 1785299576462,
-    "last_active_at": 1786082537256,
+    "last_active_at": 1786421664557,
     "daily": {
-      "date": "2026-08-07",
+      "date": "2026-08-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W32"
+      "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 30,
       "nameless_ruozhi": 0
     },
-    "item_ledger": [],
+    "item_ledger": [
+      {
+        "time": 1786100738878,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 0,
+        "after": 30,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      }
+    ],
     "item_daily": {},
     "item_migrations": {
       "fate_v1": {
@@ -78,10 +91,21 @@
       }
     },
     "currency": {
-      "balance": 500,
-      "total_earned": 500,
+      "balance": 1000,
+      "total_earned": 1000,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786100738879,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 500,
+          "after": 1000,
+          "meta": {
+            "date": "2026-08-07"
+          }
+        },
         {
           "time": 1785299576468,
           "type": "income",
@@ -100,10 +124,36 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-07-29"
+      "first_interaction_reward_date": "2026-08-07"
     }
   },
   "recent_events": [
+    {
+      "time": 1786100738879,
+      "user_id": "764079515",
+      "display_name": "小猪鱼（一发十连三黄不玉玉了）",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向小猪鱼（一发十连三黄不玉玉了），轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1000
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    },
     {
       "time": 1785299576468,
       "user_id": "764079515",
@@ -132,12 +182,13 @@
     }
   ],
   "daily": {
-    "date": "2026-07-29",
+    "date": "2026-08-07",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
-    "event:1807886822": 1785299576466
+    "event:1807886822": 1785299576466,
+    "event:1844546921": 1786100738875
   },
   "skin_sessions": {
     "active": null
@@ -150,13 +201,14 @@
     "migrated_at": 1785299576462
   },
   "created_at": 1785299576462,
-  "updated_at": 1786082537256,
+  "updated_at": 1786421664557,
   "production": {
     "started_at": 1785299576462,
-    "last_settled_at": 1786082537255,
+    "last_settled_at": 1786421664557,
     "accumulated_ms": 259200000,
-    "progress": 30.026680747013163,
-    "total_produced": 0
+    "progress": 28.343895447206584,
+    "total_produced": 30,
+    "last_collected_at": 1786100738877
   },
   "travel": {
     "unlocked_location_ids": [],

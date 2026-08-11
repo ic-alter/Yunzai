@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "3126871739",
   "pet": {
-    "level": 4,
-    "experience": 20,
-    "satiety": 80,
+    "level": 5,
+    "experience": 118,
+    "satiety": 60,
     "mood": 100,
-    "health": 82,
+    "health": 90,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786081867046,
+    "satiety_decay_at": 1786420559742,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -39,7 +39,9 @@
       "bell_turtle",
       "starry_turtle",
       "wide_eyed_turtle",
-      "lying_turtle"
+      "lying_turtle",
+      "astonished_turtle",
+      "neutral_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -62,11 +64,20 @@
         "level": 4,
         "time": 1786077547049,
         "applied": true
+      },
+      "5:unlock_skin:neutral_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "neutral_turtle",
+        "level": 5,
+        "time": 1786331156538,
+        "applied": true
       }
     },
     "achievement_stats": {
       "counter:gacha_draws": 32,
-      "counter:gacha_five": 0
+      "counter:gacha_five": 0,
+      "event_branch_count:feed:full": 1,
+      "event_branch_count:feed:full:last_at": 1786118264999
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -207,9 +218,74 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "feed_full_once": {
+        "id": "feed_full_once",
+        "name": "真的吃不下",
+        "rarity": 3,
+        "time": 1786118265000,
+        "actor_name": "magictobacco",
+        "stat_key": "event_branch_count:feed:full",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "astonished_turtle",
+            "skin_name": "吃惊小若汁",
+            "message": "解锁三星皮肤「吃惊小若汁」。"
+          }
+        ]
+      },
+      "ach_yellow_underpass": {
+        "id": "ach_yellow_underpass",
+        "name": "发现暖黄色地下通道",
+        "rarity": 3,
+        "time": 1786334600032,
+        "actor_name": "magictobacco",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1786334600032,
+        "actor_name": "magictobacco",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "neutral_turtle",
+        "reason": "level_reward",
+        "time": 1786331156538,
+        "level": 5
+      },
+      {
+        "skin_id": "astonished_turtle",
+        "reason": "achievement",
+        "time": 1786118265000,
+        "achievement_id": "feed_full_once"
+      },
       {
         "skin_id": "lying_turtle",
         "reason": "gacha",
@@ -366,30 +442,166 @@
     ]
   },
   "profile": {
-    "favorability": 71,
-    "weekly_contribution": 69,
-    "total_contribution": 69,
+    "favorability": 100,
+    "weekly_contribution": 31,
+    "total_contribution": 123,
     "last_display_name": "magictobacco",
     "first_joined_at": 1785777940319,
-    "last_active_at": 1786082537394,
+    "last_active_at": 1786421664712,
     "daily": {
-      "date": "2026-08-07",
-      "event_count": 6,
+      "date": "2026-08-11",
+      "event_count": 4,
       "same_event_counts": {
-        "feed": 4,
+        "feed": 2,
         "mention_only": 2
       },
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W32"
+      "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 1,
+      "ruozhi_fate": 67,
       "nameless_ruozhi": 0,
-      "souvenir_vine_basket": 1
+      "souvenir_vine_basket": 2
     },
     "item_ledger": [
+      {
+        "time": 1786408463139,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 12,
+        "before": 55,
+        "after": 67,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 21.486
+        }
+      },
+      {
+        "time": 1786334600032,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 52,
+        "after": 55,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_first_unregistered_place"
+        }
+      },
+      {
+        "time": 1786334600032,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 49,
+        "after": 52,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_yellow_underpass"
+        }
+      },
+      {
+        "time": 1786334600031,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 48,
+        "after": 49,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msmnkang-3aul6ix4",
+          "location_id": "yellow_underpass"
+        }
+      },
+      {
+        "time": 1786331156535,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 45,
+        "after": 48,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 5
+        }
+      },
+      {
+        "time": 1786331112818,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 12,
+        "before": 33,
+        "after": 45,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 22.245
+        }
+      },
+      {
+        "time": 1786251029248,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 20,
+        "before": 13,
+        "after": 33,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 36.888
+        }
+      },
+      {
+        "time": 1786121130925,
+        "type": "income",
+        "item_id": "souvenir_vine_basket",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msj4phgy-33vssmdy",
+          "event_id": "vine_medicine_basket",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786121130924,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 11,
+        "after": 13,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msj4phgy-33vssmdy",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786118264999,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "feed_full_once"
+        }
+      },
+      {
+        "time": 1786118232273,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 1,
+        "after": 8,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 12.994
+        }
+      },
       {
         "time": 1786077768926,
         "type": "expense",
@@ -500,141 +712,6 @@
           "travel_id": "msicuygk-87cjomr0",
           "location_id": "wan_chun_valley"
         }
-      },
-      {
-        "time": 1786071455586,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 12,
-        "before": 64,
-        "after": 76,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 22.879
-        }
-      },
-      {
-        "time": 1786011690426,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 61,
-        "after": 64,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_botanical_dome"
-        }
-      },
-      {
-        "time": 1786011690425,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 56,
-        "after": 61,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msh93bo6-pi55x92o",
-          "location_id": "rtc_botanical_dome"
-        }
-      },
-      {
-        "time": 1785999179933,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 53,
-        "after": 56,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785999179932,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 49,
-        "after": 53,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msh10elh-zhxmrvl8",
-          "location_id": "rtc_atomic_mall"
-        }
-      },
-      {
-        "time": 1785989090469,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 46,
-        "after": 49,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 3
-        }
-      },
-      {
-        "time": 1785989090468,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 7,
-        "before": 39,
-        "after": 46,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 13.237
-        }
-      },
-      {
-        "time": 1785955212714,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 36,
-        "after": 39,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_silver_capital"
-        }
-      },
-      {
-        "time": 1785955212712,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 31,
-        "after": 36,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msgasrlm-xb3dudsx",
-          "location_id": "eld_silver_capital"
-        }
-      },
-      {
-        "time": 1785941445217,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 28,
-        "after": 31,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 2
-        }
-      },
-      {
-        "time": 1785941436171,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 13,
-        "before": 15,
-        "after": 28,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 28.707
-        }
       }
     ],
     "item_daily": {},
@@ -647,10 +724,80 @@
       }
     },
     "currency": {
-      "balance": 20896,
-      "total_earned": 20896,
+      "balance": 25091,
+      "total_earned": 25091,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786408463139,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 24591,
+          "after": 25091,
+          "meta": {
+            "date": "2026-08-11"
+          }
+        },
+        {
+          "time": 1786334600031,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 903,
+          "before": 23688,
+          "after": 24591,
+          "meta": {
+            "travel_id": "msmnkang-3aul6ix4",
+            "location_id": "yellow_underpass",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786331156535,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 1000,
+          "before": 22688,
+          "after": 23688,
+          "meta": {
+            "level": 5
+          }
+        },
+        {
+          "time": 1786331112819,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 22188,
+          "after": 22688,
+          "meta": {
+            "date": "2026-08-10"
+          }
+        },
+        {
+          "time": 1786251029250,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 21688,
+          "after": 22188,
+          "meta": {
+            "date": "2026-08-09"
+          }
+        },
+        {
+          "time": 1786121130924,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 792,
+          "before": 20896,
+          "after": 21688,
+          "meta": {
+            "travel_id": "msj4phgy-33vssmdy",
+            "location_id": "wan_chun_valley",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786077768927,
           "type": "income",
@@ -698,78 +845,6 @@
             "skin_id": "biting_lip_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786077768927,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 19396,
-          "after": 19696,
-          "meta": {
-            "skin_id": "antler_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786077768927,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 14396,
-          "after": 19396,
-          "meta": {
-            "skin_id": "disco_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1786077759205,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14096,
-          "after": 14396,
-          "meta": {
-            "skin_id": "raised_eyebrow_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786077759205,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 13796,
-          "after": 14096,
-          "meta": {
-            "skin_id": "biting_lip_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786077759205,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 13496,
-          "after": 13796,
-          "meta": {
-            "skin_id": "tear_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786077759205,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 13196,
-          "after": 13496,
-          "meta": {
-            "skin_id": "headphones_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -778,25 +853,25 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-07"
+      "first_interaction_reward_date": "2026-08-11"
     }
   },
   "recent_events": [
     {
-      "time": 1786077558468,
+      "time": 1786414799743,
       "user_id": "3126871739",
       "display_name": "magictobacco",
-      "event_id": "mention_only",
-      "branch_id": "crawl_close",
-      "summary": "小若汁慢慢爬到magictobacco身边，安静地待了一小会儿。",
-      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
       "effects": {
-        "satiety": 0,
-        "mood": 1,
+        "satiety": 12,
+        "mood": 3,
         "health": 0,
-        "favorability": 2,
-        "contribution": 1,
-        "experience": 11
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
       },
       "level_ups": [],
       "bonus_experience": 10,
@@ -806,53 +881,7 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1786077547050,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.4",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [
-        {
-          "level": 4,
-          "need": 140
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [
-        {
-          "level": 4,
-          "reward": 300,
-          "receiver": {
-            "user_id": "3126871739",
-            "display_name": "magictobacco"
-          },
-          "special_rewards": [
-            {
-              "type": "unlock_skin",
-              "level": 4,
-              "skin_id": "sweat_smile_turtle",
-              "skin_name": "汗笑小若汁",
-              "applied": true
-            }
-          ]
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786071485798,
+      "time": 1786414494587,
       "user_id": "3126871739",
       "display_name": "magictobacco",
       "event_id": "mention_only",
@@ -875,125 +904,7 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1786071474694,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786071468460,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786071455587,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 11287
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 12
-    },
-    {
-      "time": 1786004686909,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
-      "effects_text": "心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 0,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786004677492,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1785991126656,
+      "time": 1786412848398,
       "user_id": "3126871739",
       "display_name": "magictobacco",
       "event_id": "mention_only",
@@ -1016,20 +927,46 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1785989120836,
+      "time": 1786408463139,
       "user_id": "3126871739",
       "display_name": "magictobacco",
       "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
-      "effects_text": "心情+3，好感+2，贡献+2，经验+12",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
       "effects": {
-        "satiety": 0,
+        "satiety": 12,
         "mood": 3,
         "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 25091
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 12
+    },
+    {
+      "time": 1786336341165,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁只吃了一小口。",
+      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 4,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
       },
       "level_ups": [],
       "bonus_experience": 10,
@@ -1037,12 +974,150 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
+    },
+    {
+      "time": 1786331208951,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁只吃了一小口。",
+      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 4,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786331180702,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁只吃了一小口。",
+      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 4,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786331174784,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁只吃了一小口。",
+      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 4,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786331167498,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786331156538,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.5",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [
+        {
+          "level": 5,
+          "need": 160
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 5,
+          "reward": 1000,
+          "receiver": {
+            "user_id": "3126871739",
+            "display_name": "magictobacco"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 5,
+              "skin_id": "neutral_turtle",
+              "skin_name": "无语小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-08-07",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "date": "2026-08-11",
+    "event_count": 4,
+    "bonus_event_count": 4
   },
   "processed_messages": {
     "event:1501387905": 1785838090928,
@@ -1076,7 +1151,28 @@
     "event:1913178768": 1786071474694,
     "event:2088138307": 1786071485796,
     "event:1572077016": 1786077547046,
-    "event:244040031": 1786077558467
+    "event:244040031": 1786077558467,
+    "event:1296991761": 1786118232271,
+    "event:117526106": 1786118241992,
+    "event:1265702063": 1786118248819,
+    "event:364413200": 1786118256321,
+    "event:511479350": 1786118264998,
+    "event:1585926372": 1786251029246,
+    "event:1782891478": 1786251045547,
+    "event:559965671": 1786251051744,
+    "event:1848183858": 1786331112816,
+    "event:996822655": 1786331132602,
+    "event:1814167679": 1786331149492,
+    "event:296944415": 1786331156535,
+    "event:1373226300": 1786331167498,
+    "event:872064603": 1786331174784,
+    "event:643290964": 1786331180701,
+    "event:1316724605": 1786331208950,
+    "event:1953495209": 1786336341164,
+    "event:1800471220": 1786408463138,
+    "event:1308524220": 1786412848396,
+    "event:1418812972": 1786414494585,
+    "event:1166214624": 1786414799740
   },
   "skin_sessions": {
     "active": null
@@ -1089,14 +1185,14 @@
     "migrated_at": 1785777940319
   },
   "created_at": 1785777940319,
-  "updated_at": 1786082537394,
+  "updated_at": 1786421664712,
   "production": {
     "started_at": 1785777940319,
-    "last_settled_at": 1786082537394,
-    "accumulated_ms": 11081808,
-    "progress": 2.0953565503905116,
-    "total_produced": 40,
-    "last_collected_at": 1786071455586
+    "last_settled_at": 1786421664712,
+    "accumulated_ms": 13201574,
+    "progress": 2.8230382933025977,
+    "total_produced": 91,
+    "last_collected_at": 1786408463138
   },
   "gacha": {
     "since_four_plus": 9,
@@ -1114,7 +1210,8 @@
       "eld_silver_capital",
       "rtc_atomic_mall",
       "rtc_botanical_dome",
-      "wan_chun_valley"
+      "wan_chun_valley",
+      "yellow_underpass"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1156,6 +1253,14 @@
         "travel_id": "msicuygk-87cjomr0",
         "time": 1786077300358,
         "carried_item_id": ""
+      },
+      "yellow_underpass": {
+        "id": "yellow_underpass",
+        "map_id": "unregistered_district",
+        "name": "暖黄色地下通道",
+        "travel_id": "msmnkang-3aul6ix4",
+        "time": 1786334600031,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1177,8 +1282,8 @@
         "id": "vine_medicine_basket",
         "map_id": "four_regions_little_world",
         "location_id": "wan_chun_valley",
-        "travel_id": "msicuygk-87cjomr0",
-        "time": 1786077300358
+        "travel_id": "msj4phgy-33vssmdy",
+        "time": 1786121130924
       }
     },
     "souvenir_records": {
@@ -1187,7 +1292,7 @@
         "name": "藤编采药篓",
         "event_id": "vine_medicine_basket",
         "location_id": "wan_chun_valley",
-        "time": 1786077300358
+        "time": 1786121130925
       }
     },
     "achievement_records": {
@@ -1286,6 +1391,36 @@
         "name": "炼气第一步",
         "rarity": 3,
         "time": 1786077300359,
+        "actor_name": "magictobacco",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_yellow_underpass": {
+        "id": "ach_yellow_underpass",
+        "name": "发现暖黄色地下通道",
+        "rarity": 3,
+        "time": 1786334600032,
+        "actor_name": "magictobacco",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_first_unregistered_place": {
+        "id": "ach_first_unregistered_place",
+        "name": "地图上不存在的地点",
+        "rarity": 3,
+        "time": 1786334600032,
         "actor_name": "magictobacco",
         "rewards": [
           {
@@ -1610,9 +1745,152 @@
         "settled_at": 1786077300359,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：1小时37分钟\n获得：1609若汁币，若汁之缘×3，经验+3\n旅行事件：藤蔓递来的药篓\n旧药篓底夹着通往后山洞府的路线。\n纪念品：🧺藤编采药篓×1\n新地点已解锁：万春谷\n达成旅行成就「发现万春谷」 ★★★\n达成旅行成就「炼气第一步」 ★★★"
+      },
+      "msj4phgy-33vssmdy": {
+        "id": "msj4phgy-33vssmdy",
+        "user_id": "3126871739",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "display_name": "magictobacco",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "wan_chun_valley",
+        "location_name": "万春谷",
+        "duration_ms": 2850539,
+        "rewards": {
+          "coin": 792,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "vine_medicine_basket",
+          "name": "藤蔓递来的药篓",
+          "text": "旧药篓底夹着通往后山洞府的路线。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_vine_basket",
+              "name": "藤编采药篓",
+              "emoji": "🧺",
+              "description": "旅行纪念品「藤编采药篓」。"
+            }
+          ],
+          "record": true
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_vine_basket",
+            "name": "藤编采药篓",
+            "emoji": "🧺",
+            "description": "旅行纪念品「藤编采药篓」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786121130925,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：48分钟\n获得：792若汁币，若汁之缘×2，经验+2\n旅行事件：藤蔓递来的药篓\n旧药篓底夹着通往后山洞府的路线。\n纪念品：🧺藤编采药篓×1"
+      },
+      "msmnkang-3aul6ix4": {
+        "id": "msmnkang-3aul6ix4",
+        "user_id": "3126871739",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "display_name": "magictobacco",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "yellow_underpass",
+        "location_name": "暖黄色地下通道",
+        "duration_ms": 3250528,
+        "rewards": {
+          "coin": 903,
+          "fate": 1,
+          "experience": 2
+        },
+        "event": null,
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "暖黄色地下通道",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_yellow_underpass",
+            "name": "发现暖黄色地下通道",
+            "rarity": 3,
+            "time": 1786334600032,
+            "actor_name": "magictobacco",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现暖黄色地下通道」 ★★★"
+          },
+          {
+            "id": "ach_first_unregistered_place",
+            "name": "地图上不存在的地点",
+            "rarity": 3,
+            "time": 1786334600032,
+            "actor_name": "magictobacco",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「地图上不存在的地点」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786334600033,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：54分钟\n获得：903若汁币，若汁之缘×1，经验+2\n新地点已解锁：暖黄色地下通道\n达成旅行成就「发现暖黄色地下通道」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msmnkang-3aul6ix4",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "user_id": "3126871739",
+        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：54分钟\n获得：903若汁币，若汁之缘×1，经验+2\n新地点已解锁：暖黄色地下通道\n达成旅行成就「发现暖黄色地下通道」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786334600033,
+        "created_at": 1786334600033,
+        "sent_at": 1786334600514,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msj4phgy-33vssmdy",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "user_id": "3126871739",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：48分钟\n获得：792若汁币，若汁之缘×2，经验+2\n旅行事件：藤蔓递来的药篓\n旧药篓底夹着通往后山洞府的路线。\n纪念品：🧺藤编采药篓×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786121130926,
+        "created_at": 1786121130926,
+        "sent_at": 1786121131374,
+        "last_error": ""
+      },
       {
         "travel_id": "msicuygk-87cjomr0",
         "group_id": "1025424898",
@@ -1680,12 +1958,12 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 7,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 2,
         "eldoran_continent": 2,
-        "unregistered_district": 0,
+        "unregistered_district": 1,
         "four_regions_little_world": 1
       },
       "map_event_ids": {

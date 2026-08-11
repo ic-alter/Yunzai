@@ -3,12 +3,12 @@
   "user_id": "1779241176",
   "pet": {
     "level": 1,
-    "experience": 17,
-    "satiety": 5,
-    "mood": 78,
-    "health": 84,
+    "experience": 34,
+    "satiety": 28,
+    "mood": 86,
+    "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786082537508,
+    "satiety_decay_at": 1786420451845,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -158,26 +158,39 @@
     ]
   },
   "profile": {
-    "favorability": 8,
+    "favorability": 16,
     "weekly_contribution": 7,
-    "total_contribution": 7,
+    "total_contribution": 14,
     "last_display_name": "启明星小姐结婚",
     "first_joined_at": 1785228638973,
-    "last_active_at": 1786082537508,
+    "last_active_at": 1786421664843,
     "daily": {
-      "date": "2026-08-07",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-11",
+      "event_count": 1,
+      "same_event_counts": {
+        "feed": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W32"
+      "week": "2026-W33"
     },
     "currency": {
-      "balance": 2600,
-      "total_earned": 2600,
+      "balance": 3100,
+      "total_earned": 3100,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786413251846,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 2600,
+          "after": 3100,
+          "meta": {
+            "date": "2026-08-11"
+          }
+        },
         {
           "time": 1786000033669,
           "type": "income",
@@ -256,13 +269,25 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-06"
+      "first_interaction_reward_date": "2026-08-11"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 30,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1786413251845,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 0,
+        "after": 30,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1786000059651,
         "type": "expense",
@@ -411,6 +436,32 @@
   },
   "recent_events": [
     {
+      "time": 1786413251846,
+      "user_id": "1779241176",
+      "display_name": "启明星小姐结婚",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，启明星小姐结婚及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 28,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 3100
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    },
+    {
       "time": 1785999963203,
       "user_id": "1779241176",
       "display_name": "启明星小姐结婚",
@@ -438,12 +489,13 @@
     }
   ],
   "daily": {
-    "date": "2026-08-06",
+    "date": "2026-08-11",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
-    "event:1185941072": 1785999963202
+    "event:1185941072": 1785999963202,
+    "event:1222377590": 1786413251844
   },
   "skin_sessions": {
     "active": null
@@ -456,14 +508,14 @@
     "migrated_at": 1785228638973
   },
   "created_at": 1785228638973,
-  "updated_at": 1786082537508,
+  "updated_at": 1786421664843,
   "production": {
     "started_at": 1785228638973,
-    "last_settled_at": 1786082537508,
-    "accumulated_ms": 82574306,
-    "progress": 10.157078070896134,
-    "total_produced": 30,
-    "last_collected_at": 1785999963202
+    "last_settled_at": 1786421664843,
+    "accumulated_ms": 8412998,
+    "progress": 1.8535254839922501,
+    "total_produced": 60,
+    "last_collected_at": 1786413251845
   },
   "gacha": {
     "since_four_plus": 4,
