@@ -3,12 +3,12 @@
   "user_id": "1256806998",
   "pet": {
     "level": 2,
-    "experience": 74,
-    "satiety": 57,
+    "experience": 76,
+    "satiety": 52,
     "mood": 98,
     "health": 81,
     "current_skin_id": "quilt_turtle",
-    "satiety_decay_at": 1786718930050,
+    "satiety_decay_at": 1786726130050,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -957,8 +957,8 @@
       "shidai_turtle": 0
     },
     "weight": 50,
-    "weight_decay_at": 1786719478729,
-    "health_decay_at": 1786719478729
+    "weight_decay_at": 1786727269035,
+    "health_decay_at": 1786727269035
   },
   "profile": {
     "favorability": 23,
@@ -966,20 +966,18 @@
     "total_contribution": 22,
     "last_display_name": "库洛4000+",
     "first_joined_at": 1784995755795,
-    "last_active_at": 1786719478729,
+    "last_active_at": 1786727269035,
     "daily": {
-      "date": "2026-08-14",
-      "event_count": 6,
-      "same_event_counts": {
-        "feed": 6
-      },
+      "date": "2026-08-15",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 40,
+      "ruozhi_fate": 43,
       "nameless_ruozhi": 1,
       "souvenir_paid_pirate_photo": 1,
       "souvenir_atomic_child_sunglasses": 1,
@@ -994,9 +992,37 @@
       "souvenir_acting_lingzhi": 1,
       "souvenir_forgotten_flavor_pudding_cup": 1,
       "souvenir_water_sword_tassel": 1,
-      "souvenir_tidal_blue_shell": 1
+      "souvenir_tidal_blue_shell": 1,
+      "souvenir_self_lighting_bulb": 1
     },
     "item_ledger": [
+      {
+        "time": 1786721270740,
+        "type": "income",
+        "item_id": "souvenir_self_lighting_bulb",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mst1golr-d8bw3r33",
+          "event_id": "rtc_event_sleeping_plant",
+          "location_id": "rtc_atomic_plant"
+        }
+      },
+      {
+        "time": 1786721270740,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 40,
+        "after": 43,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst1golr-d8bw3r33",
+          "location_id": "rtc_atomic_plant"
+        }
+      },
       {
         "time": 1786717402932,
         "type": "income",
@@ -1227,30 +1253,6 @@
         "meta": {
           "count": 10
         }
-      },
-      {
-        "time": 1786665285085,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 41,
-        "after": 44,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_five_5"
-        }
-      },
-      {
-        "time": 1786665285084,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 71,
-        "after": 41,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
       }
     ],
     "item_daily": {
@@ -1269,10 +1271,23 @@
       }
     },
     "currency": {
-      "balance": 167557,
-      "total_earned": 247557,
+      "balance": 168606,
+      "total_earned": 248606,
       "total_spent": 80000,
       "ledger": [
+        {
+          "time": 1786721270740,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1049,
+          "before": 167557,
+          "after": 168606,
+          "meta": {
+            "travel_id": "mst1golr-d8bw3r33",
+            "location_id": "rtc_atomic_plant",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786717402932,
           "type": "income",
@@ -1378,18 +1393,6 @@
           "after": 156582,
           "meta": {
             "skin_id": "love_letter_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786701562160,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 155982,
-          "after": 156282,
-          "meta": {
-            "skin_id": "lying_turtle",
             "rarity": 3
           }
         }
@@ -1611,12 +1614,12 @@
     "migrated_at": 1784995755795
   },
   "created_at": 1784995755795,
-  "updated_at": 1786719478729,
+  "updated_at": 1786727269035,
   "production": {
     "started_at": 1784995755795,
-    "last_settled_at": 1786719478729,
-    "accumulated_ms": 17918559,
-    "progress": 2.734470112510067,
+    "last_settled_at": 1786727269035,
+    "accumulated_ms": 25708865,
+    "progress": 4.075000381774528,
     "total_produced": 71,
     "last_collected_at": 1786701560170
   },
@@ -1961,6 +1964,13 @@
         "location_id": "eld_free_port",
         "travel_id": "mssoi90s-fst2z2oh",
         "time": 1786701546544
+      },
+      "rtc_event_sleeping_plant": {
+        "id": "rtc_event_sleeping_plant",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_atomic_plant",
+        "travel_id": "mst1golr-d8bw3r33",
+        "time": 1786721270740
       }
     },
     "souvenir_records": {
@@ -2061,6 +2071,13 @@
         "event_id": "eld_event_shell_market",
         "location_id": "eld_free_port",
         "time": 1786701546544
+      },
+      "souvenir_self_lighting_bulb": {
+        "id": "souvenir_self_lighting_bulb",
+        "name": "自行点亮的灯泡",
+        "event_id": "rtc_event_sleeping_plant",
+        "location_id": "rtc_atomic_plant",
+        "time": 1786721270740
       }
     },
     "achievement_records": {
@@ -2456,6 +2473,64 @@
       }
     },
     "settlements": {
+      "mst1golr-d8bw3r33": {
+        "id": "mst1golr-d8bw3r33",
+        "user_id": "1256806998",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "库洛4000+",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_atomic_plant",
+        "location_name": "一号原子电站",
+        "duration_ms": 3778090,
+        "rewards": {
+          "coin": 1049,
+          "fate": 3,
+          "experience": 2
+        },
+        "event": {
+          "id": "rtc_event_sleeping_plant",
+          "name": "沉睡电站",
+          "text": "电站早已停运，但小若汁经过时所有灯同时亮了一次。",
+          "effects": {
+            "fate_flat": 1
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_self_lighting_bulb",
+              "name": "自行点亮的灯泡",
+              "emoji": "💡",
+              "description": "旅行纪念品「自行点亮的灯泡」。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_self_lighting_bulb",
+            "name": "自行点亮的灯泡",
+            "emoji": "💡",
+            "description": "旅行纪念品「自行点亮的灯泡」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786721270744,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：1小时3分钟\n获得：1049若汁币，若汁之缘×3，经验+2\n旅行事件：沉睡电站\n电站早已停运，但小若汁经过时所有灯同时亮了一次。\n纪念品：💡自行点亮的灯泡×1"
+      },
       "msswtrej-zs1zzop8": {
         "id": "msswtrej-zs1zzop8",
         "user_id": "1256806998",
@@ -3629,79 +3704,22 @@
         "settled_at": 1786537946365,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时34分钟\n获得：2561若汁币，若汁之缘×5，经验+5\n旅行事件：监控里的第二只小若汁\n屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
-      },
-      "mspv2lwl-z2kaub2x": {
-        "id": "mspv2lwl-z2kaub2x",
-        "user_id": "1256806998",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "库洛4000+",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_dwarf_city",
-        "location_name": "铁砧矮人城",
-        "duration_ms": 2666356,
-        "rewards": {
-          "coin": 741,
-          "fate": 1,
-          "experience": 2
-        },
-        "event": {
-          "id": "eld_event_heavy_spoon",
-          "name": "矮人汤勺",
-          "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
-          "effects": {},
-          "souvenirs": [
-            {
-              "id": "souvenir_heavy_dwarf_spoon",
-              "name": "超重矮人汤勺",
-              "emoji": "🥄",
-              "description": "旅行纪念品「超重矮人汤勺」。"
-            }
-          ],
-          "record": false
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_heavy_dwarf_spoon",
-            "name": "超重矮人汤勺",
-            "emoji": "🥄",
-            "description": "旅行纪念品「超重矮人汤勺」。",
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "铁砧矮人城",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_eld_dwarf_city",
-            "name": "发现铁砧矮人城",
-            "rarity": 3,
-            "time": 1786528026094,
-            "actor_name": "库洛4000+",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现铁砧矮人城」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786528026094,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：44分钟\n获得：741若汁币，若汁之缘×1，经验+2\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1\n新地点已解锁：铁砧矮人城\n达成旅行成就「发现铁砧矮人城」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst1golr-d8bw3r33",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1256806998",
+        "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：1小时3分钟\n获得：1049若汁币，若汁之缘×3，经验+2\n旅行事件：沉睡电站\n电站早已停运，但小若汁经过时所有灯同时亮了一次。\n纪念品：💡自行点亮的灯泡×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786721270744,
+        "created_at": 1786721270744,
+        "sent_at": 1786721271331,
+        "last_error": ""
+      },
       {
         "travel_id": "msswtrej-zs1zzop8",
         "group_id": "415462812",
@@ -3948,23 +3966,10 @@
         "created_at": 1786537946366,
         "sent_at": 1786537946872,
         "last_error": ""
-      },
-      {
-        "travel_id": "mspv2lwl-z2kaub2x",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1256806998",
-        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：44分钟\n获得：741若汁币，若汁之缘×1，经验+2\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1\n新地点已解锁：铁砧矮人城\n达成旅行成就「发现铁砧矮人城」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786528026094,
-        "created_at": 1786528026094,
-        "sent_at": 1786528026640,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 26,
+      "total_trips": 27,
       "key_item_discoveries": {
         "souvenir_return_coin": {
           "item_id": "souvenir_return_coin",
@@ -3976,7 +3981,8 @@
         "retro_tomorrow_city": 5,
         "eldoran_continent": 5,
         "unregistered_district": 6,
-        "four_regions_little_world": 3
+        "four_regions_little_world": 3,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -3989,7 +3995,8 @@
         "retro_tomorrow_city": {
           "rtc_event_wrong_purchase": 1,
           "rtc_event_lost_luggage": 1,
-          "rtc_event_old_song": 1
+          "rtc_event_old_song": 1,
+          "rtc_event_sleeping_plant": 1
         },
         "four_regions_little_world": {
           "vine_medicine_basket": 1,
@@ -4022,52 +4029,73 @@
         "mushroom_play_dead": 1,
         "event_kids_meal_memory": 1,
         "underwater_sword": 1,
-        "eld_event_shell_market": 1
+        "eld_event_shell_market": 1,
+        "rtc_event_sleeping_plant": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0
     },
     "active": {
-      "id": "mst1golr-d8bw3r33",
+      "id": "mst46tq4-fb9x2qsy",
       "user_id": "1256806998",
       "display_name": "库洛4000+",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1786717492623,
-      "ends_at": 1786721270713,
-      "duration_ms": 3778090,
+      "started_at": 1786722071548,
+      "ends_at": 1786730224908,
+      "duration_ms": 8153360,
       "map_id": "retro_tomorrow_city",
       "map_name": "明日旧城",
-      "location_id": "rtc_atomic_plant",
-      "location_name": "一号原子电站",
-      "was_unlocked": true,
+      "location_id": "rtc_aurora_station",
+      "location_name": "极光气象站",
+      "was_unlocked": false,
       "carried_item_id": "",
       "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_sleeping_plant",
-        "name": "沉睡电站",
-        "text": "电站早已停运，但小若汁经过时所有灯同时亮了一次。",
-        "effects": {
-          "fate_flat": 1
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_self_lighting_bulb",
-            "name": "自行点亮的灯泡",
-            "emoji": "💡",
-            "description": "旅行纪念品「自行点亮的灯泡」。"
-          }
-        ],
-        "items": [],
-        "record": false
-      },
+      "event": null,
       "rewards": {
-        "coin": 1049,
-        "fate": 3,
-        "experience": 2
+        "coin": 2265,
+        "fate": 5,
+        "experience": 4
+      },
+      "encounter": {
+        "id": "encounter-mst6lnai-f9qo9dv8",
+        "time": 1786726122282,
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "ic·alter同时被妻子和情夫绿"
       }
     },
     "prepared_tool": null,
-    "encounter_records": {}
+    "encounter_records": {
+      "encounter-mst6lnai-f9qo9dv8": {
+        "id": "encounter-mst6lnai-f9qo9dv8",
+        "time": 1786726122282,
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "ic·alter同时被妻子和情夫绿"
+      }
+    }
   }
 }

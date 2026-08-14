@@ -3,12 +3,12 @@
   "user_id": "3048898698",
   "pet": {
     "level": 7,
-    "experience": 31,
-    "satiety": 22,
+    "experience": 35,
+    "satiety": 16,
     "mood": 100,
     "health": 100,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1786718505662,
+    "satiety_decay_at": 1786727145662,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -638,6 +638,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_map_event_30": {
+        "id": "ach_map_event_30",
+        "name": "旅行故事收藏家",
+        "rarity": 3,
+        "time": 1786723122381,
+        "actor_name": "已严肃念清师",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_souvenir_20": {
+        "id": "ach_map_souvenir_20",
+        "name": "背包装满了",
+        "rarity": 3,
+        "time": 1786723122381,
+        "actor_name": "已严肃念清师",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -982,8 +1012,8 @@
       "roast_chicken_turtle": 1
     },
     "weight": 50,
-    "weight_decay_at": 1786719478738,
-    "health_decay_at": 1786719478738
+    "weight_decay_at": 1786727269044,
+    "health_decay_at": 1786727269044
   },
   "profile": {
     "favorability": 100,
@@ -991,23 +1021,34 @@
     "total_contribution": 213,
     "last_display_name": "已严肃念清师",
     "first_joined_at": 1784793040743,
-    "last_active_at": 1786719478738,
+    "last_active_at": 1786727269044,
     "daily": {
-      "date": "2026-08-14",
-      "event_count": 2,
-      "same_event_counts": {
-        "feed": 2
-      },
+      "date": "2026-08-15",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 61923,
-      "total_earned": 209923,
+      "balance": 63603,
+      "total_earned": 211603,
       "total_spent": 148000,
       "ledger": [
+        {
+          "time": 1786723122375,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1680,
+          "before": 61923,
+          "after": 63603,
+          "meta": {
+            "travel_id": "mst17pys-n54tfb7m",
+            "location_id": "rtc_galaxy_motel",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786717081923,
           "type": "income",
@@ -1117,18 +1158,6 @@
             "location_id": "eld_free_port",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1786665694585,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 50403,
-          "after": 50703,
-          "meta": {
-            "skin_id": "bell_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1140,7 +1169,7 @@
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 10,
       "nameless_ruozhi": 1,
       "souvenir_wheat_old_coin": 2,
       "souvenir_single_song_radio": 2,
@@ -1163,9 +1192,76 @@
       "souvenir_machine_certified_relic": 2,
       "souvenir_forgotten_flavor_pudding_cup": 2,
       "souvenir_f_rank_adventurer_card": 1,
-      "souvenir_paid_pirate_photo": 1
+      "souvenir_paid_pirate_photo": 1,
+      "souvenir_missing_road_map": 1,
+      "food_stardust_jelly": 3
     },
     "item_ledger": [
+      {
+        "time": 1786723122381,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 7,
+        "after": 10,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_map_souvenir_20"
+        }
+      },
+      {
+        "time": 1786723122381,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 4,
+        "after": 7,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_map_event_30"
+        }
+      },
+      {
+        "time": 1786723122379,
+        "type": "income",
+        "item_id": "food_stardust_jelly",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "mst17pys-n54tfb7m",
+          "event_id": "rtc_event_room_207",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1786723122376,
+        "type": "income",
+        "item_id": "souvenir_missing_road_map",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mst17pys-n54tfb7m",
+          "event_id": "rtc_event_room_207",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1786723122375,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 0,
+        "after": 4,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst17pys-n54tfb7m",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
       {
         "time": 1786717081922,
         "type": "expense",
@@ -1353,69 +1449,6 @@
         "meta": {
           "travel_id": "msrisuww-ncwc3wya",
           "location_id": "rtc_waste_factory"
-        }
-      },
-      {
-        "time": 1786602918834,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 42,
-        "after": 12,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786600013262,
-        "type": "income",
-        "item_id": "souvenir_f_rank_adventurer_card",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msr1i23d-vi2qvgty",
-          "event_id": "eld_event_rank_test",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1786600013261,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 40,
-        "after": 42,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msr1i23d-vi2qvgty",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1786596624398,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 11,
-        "after": 10,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1786596610984,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 70,
-        "after": 40,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
         }
       }
     ],
@@ -1769,12 +1802,12 @@
     "migrated_at": 1784793040743
   },
   "created_at": 1784793040743,
-  "updated_at": 1786719478738,
+  "updated_at": 1786727269044,
   "production": {
     "started_at": 1784880986712,
-    "last_settled_at": 1786719478738,
-    "accumulated_ms": 2413076,
-    "progress": 1.1389116769200274,
+    "last_settled_at": 1786727269044,
+    "accumulated_ms": 10203382,
+    "progress": 2.2927708363992787,
     "total_produced": 213,
     "last_collected_at": 1786717065662
   },
@@ -2225,6 +2258,13 @@
         "location_id": "eld_free_port",
         "travel_id": "mss6m0rr-gmqywt38",
         "time": 1786674635472
+      },
+      "rtc_event_room_207": {
+        "id": "rtc_event_room_207",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_galaxy_motel",
+        "travel_id": "mst17pys-n54tfb7m",
+        "time": 1786723122376
       }
     },
     "souvenir_records": {
@@ -2360,6 +2400,13 @@
         "event_id": "eld_event_pirate_photo",
         "location_id": "eld_free_port",
         "time": 1786674635472
+      },
+      "souvenir_missing_road_map": {
+        "id": "souvenir_missing_road_map",
+        "name": "缺页公路图",
+        "event_id": "rtc_event_room_207",
+        "location_id": "rtc_galaxy_motel",
+        "time": 1786723122376
       }
     },
     "achievement_records": {
@@ -2797,9 +2844,152 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_map_event_30": {
+        "id": "ach_map_event_30",
+        "name": "旅行故事收藏家",
+        "rarity": 3,
+        "time": 1786723122381,
+        "actor_name": "已严肃念清师",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_souvenir_20": {
+        "id": "ach_map_souvenir_20",
+        "name": "背包装满了",
+        "rarity": 3,
+        "time": 1786723122381,
+        "actor_name": "已严肃念清师",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mst17pys-n54tfb7m": {
+        "id": "mst17pys-n54tfb7m",
+        "user_id": "3048898698",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "已严肃念清师",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_galaxy_motel",
+        "location_name": "银河汽车旅馆",
+        "duration_ms": 6047869,
+        "rewards": {
+          "coin": 1680,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_room_207",
+          "name": "207号房",
+          "text": "小若汁住进不存在于楼层图上的207号房，枕头下面压着一张缺页公路图。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_missing_road_map",
+              "name": "缺页公路图",
+              "emoji": "🗺️",
+              "travel_tool": true,
+              "description": "银河汽车旅馆的缺页公路图，可作为寻找昨日尽头的旅行道具。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_stardust_jelly",
+              "amount": 3
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_missing_road_map",
+            "name": "缺页公路图",
+            "emoji": "🗺️",
+            "travel_tool": true,
+            "description": "银河汽车旅馆的缺页公路图，可作为寻找昨日尽头的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_stardust_jelly",
+            "name": "星尘果冻",
+            "emoji": "🍮",
+            "description": "明日旧城流行的微光甜品。",
+            "food": {
+              "satiety": 13,
+              "mood": 4,
+              "weight_gain": 4
+            },
+            "amount": 3
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_map_event_30",
+            "name": "旅行故事收藏家",
+            "rarity": 3,
+            "time": 1786723122381,
+            "actor_name": "已严肃念清师",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅行故事收藏家」 ★★★"
+          },
+          {
+            "id": "ach_map_souvenir_20",
+            "name": "背包装满了",
+            "rarity": 3,
+            "time": 1786723122381,
+            "actor_name": "已严肃念清师",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「背包装满了」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786723122381,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时41分钟\n获得：1680若汁币，若汁之缘×4，经验+4\n携带道具：旅行清单\n旅行事件：207号房\n小若汁住进不存在于楼层图上的207号房，枕头下面压着一张缺页公路图。\n食物：🍮星尘果冻×3\n纪念品：🗺️缺页公路图×1\n达成旅行成就「旅行故事收藏家」 ★★★\n达成旅行成就「背包装满了」 ★★★"
+      },
       "mssc8lsx-ijsvo9b9": {
         "id": "mssc8lsx-ijsvo9b9",
         "user_id": "3048898698",
@@ -3761,38 +3951,22 @@
         "settled_at": 1785809016867,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：22分钟\n获得：560若汁币，若汁之缘×1，经验+1\n携带道具：行李箱\n新地点已解锁：午睡公园\n达成旅行成就「发现午睡公园」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
-      },
-      "msdy3f7b-zpig0teq": {
-        "id": "msdy3f7b-zpig0teq",
-        "user_id": "3048898698",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "孩子们别忘了剑仙梦",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_botanical_dome",
-        "location_name": "玻璃穹顶植物园",
-        "duration_ms": 2486160,
-        "rewards": {
-          "coin": 774,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "souvenirs": [],
-        "new_location": "",
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1785807328600,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：41分钟\n获得：774若汁币，若汁之缘×1，经验+1\n携带道具：行李箱"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst17pys-n54tfb7m",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3048898698",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时41分钟\n获得：1680若汁币，若汁之缘×4，经验+4\n携带道具：旅行清单\n旅行事件：207号房\n小若汁住进不存在于楼层图上的207号房，枕头下面压着一张缺页公路图。\n食物：🍮星尘果冻×3\n纪念品：🗺️缺页公路图×1\n达成旅行成就「旅行故事收藏家」 ★★★\n达成旅行成就「背包装满了」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786723122382,
+        "created_at": 1786723122382,
+        "sent_at": 1786723122897,
+        "last_error": ""
+      },
       {
         "travel_id": "mssc8lsx-ijsvo9b9",
         "group_id": "415462812",
@@ -4039,29 +4213,17 @@
         "created_at": 1785809016867,
         "sent_at": 1785809017116,
         "last_error": ""
-      },
-      {
-        "travel_id": "msdy3f7b-zpig0teq",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "3048898698",
-        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：41分钟\n获得：774若汁币，若汁之缘×1，经验+1\n携带道具：行李箱",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785807328601,
-        "created_at": 1785807328601,
-        "sent_at": 1785807328963,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 57,
+      "total_trips": 58,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 10,
         "eldoran_continent": 9,
         "unregistered_district": 3,
-        "four_regions_little_world": 1
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -4090,7 +4252,8 @@
           "rtc_event_weather_button": 1,
           "rtc_event_recycle_shell": 1,
           "rtc_event_treasure_trash": 1,
-          "rtc_event_forecast_reward": 1
+          "rtc_event_forecast_reward": 1,
+          "rtc_event_room_207": 1
         },
         "unregistered_district": {
           "event_closed_ten_years_ago": 1,
@@ -4131,55 +4294,13 @@
         "event_bench_fell_asleep": 1,
         "event_underwater_broadcast": 1,
         "eld_event_rank_test": 1,
-        "eld_event_pirate_photo": 1
+        "eld_event_pirate_photo": 1,
+        "rtc_event_room_207": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0
     },
-    "active": {
-      "id": "mst17pys-n54tfb7m",
-      "user_id": "3048898698",
-      "display_name": "已严肃念清师",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1786717074484,
-      "ends_at": 1786723122353,
-      "duration_ms": 6047869,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_galaxy_motel",
-      "location_name": "银河汽车旅馆",
-      "was_unlocked": true,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": {
-        "id": "rtc_event_room_207",
-        "name": "207号房",
-        "text": "小若汁住进不存在于楼层图上的207号房，枕头下面压着一张缺页公路图。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_missing_road_map",
-            "name": "缺页公路图",
-            "emoji": "🗺️",
-            "travel_tool": true,
-            "description": "银河汽车旅馆的缺页公路图，可作为寻找昨日尽头的旅行道具。"
-          }
-        ],
-        "items": [
-          {
-            "id": "food_stardust_jelly",
-            "amount": 3
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 1680,
-        "fate": 4,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {}
   }

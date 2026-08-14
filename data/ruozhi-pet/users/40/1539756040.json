@@ -4,11 +4,11 @@
   "pet": {
     "level": 11,
     "experience": 36,
-    "satiety": 60,
+    "satiety": 55,
     "mood": 100,
     "health": 98,
     "current_skin_id": "yaya_turtle",
-    "satiety_decay_at": 1786718963170,
+    "satiety_decay_at": 1786726163170,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1682,33 +1682,41 @@
       "radical_foresight_turtle": 0
     },
     "weight": 50,
-    "weight_decay_at": 1786719478542,
-    "health_decay_at": 1786719478542
+    "weight_decay_at": 1786727268799,
+    "health_decay_at": 1786727268799
   },
   "profile": {
     "favorability": 100,
     "weekly_contribution": 84,
     "total_contribution": 346,
-    "last_display_name": "無憂",
+    "last_display_name": "菲八啾比",
     "first_joined_at": 1784791767616,
-    "last_active_at": 1786719478542,
+    "last_active_at": 1786727268799,
     "daily": {
-      "date": "2026-08-14",
-      "event_count": 12,
-      "same_event_counts": {
-        "feed": 11,
-        "petting": 1
-      },
+      "date": "2026-08-15",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 139317,
-      "total_earned": 1067317,
+      "balance": 140379,
+      "total_earned": 1068379,
       "total_spent": 928000,
       "ledger": [
+        {
+          "time": 1786725697133,
+          "type": "income",
+          "reason": "daily_sign",
+          "amount": 1062,
+          "before": 139317,
+          "after": 140379,
+          "meta": {
+            "date": "2026-08-15"
+          }
+        },
         {
           "time": 1786671439053,
           "type": "income",
@@ -1815,30 +1823,18 @@
             "skin_id": "bird_turtle",
             "rarity": 4
           }
-        },
-        {
-          "time": 1786668919773,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 121620,
-          "after": 121920,
-          "meta": {
-            "skin_id": "shushing_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
-        "last_date": "2026-08-14",
-        "total_count": 22,
+        "last_date": "2026-08-15",
+        "total_count": 23,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 49,
       "nameless_ruozhi": 4,
       "souvenir_moonbell_festival_ribbon": 2,
       "souvenir_tomorrow_child_ticket": 2,
@@ -1897,270 +1893,240 @@
       "souvenir_beast_name_tag": 1,
       "souvenir_returning_sword": 1,
       "souvenir_stranger_wedding_photo": 1,
-      "souvenir_strangers_spare_key": 1
+      "souvenir_strangers_spare_key": 1,
+      "food_donut": 3,
+      "food_milk_tea": 2,
+      "food_cake": 3,
+      "food_ice_cream": 4,
+      "food_sandwich": 3,
+      "food_bread": 3,
+      "food_pancake": 2,
+      "food_fried_chicken": 3,
+      "food_curry": 3,
+      "food_leaf_salad": 1,
+      "food_rice_ball": 1,
+      "food_apple": 2,
+      "food_carrot": 2,
+      "food_grapes": 3,
+      "food_burger": 1,
+      "food_noodles": 2,
+      "food_fish": 2
     },
     "item_ledger": [
       {
-        "time": 1786671439054,
+        "time": 1786725705684,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 7,
-        "after": 10,
-        "reason": "level_up_reward",
+        "amount": 11,
+        "before": 38,
+        "after": 49,
+        "reason": "pet_production_collect",
         "meta": {
-          "level": 11
+          "accumulated_hours": 15.823
         }
       },
       {
-        "time": 1786671400569,
+        "time": 1786725697133,
         "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 7,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_blue_corridor_hotel"
-        }
+        "item_id": "food_sandwich",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
       },
       {
-        "time": 1786671400568,
+        "time": 1786725697133,
         "type": "income",
-        "item_id": "ruozhi_fate",
+        "item_id": "food_apple",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_curry",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_fish",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_ice_cream",
         "amount": 1,
         "before": 3,
         "after": 4,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8j0mz-wc64r3i6",
-          "location_id": "blue_corridor_hotel"
-        }
+        "reason": "daily_sign_food",
+        "meta": {}
       },
       {
-        "time": 1786668919772,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 33,
-        "after": 3,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786668911245,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 63,
-        "after": 33,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786668902137,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 93,
-        "after": 63,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786668883936,
+        "time": 1786725697133,
         "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 88,
-        "after": 93,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8ioee-ipgye4uz",
-          "location_id": "rtc_yesterday_end"
-        }
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
       },
       {
-        "time": 1786668883917,
-        "type": "expense",
-        "item_id": "travel_pager",
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_donut",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_pancake",
         "amount": 1,
         "before": 1,
-        "after": 0,
-        "reason": "use_pager",
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_noodles",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_fried_chicken",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_grapes",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 28,
+        "before": 10,
+        "after": 38,
+        "reason": "daily_sign",
         "meta": {
-          "travel_id": "mss8ioee-ipgye4uz"
+          "date": "2026-08-15",
+          "month_count": 15,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
         }
       },
       {
-        "time": 1786668869405,
+        "time": 1786725697133,
         "type": "income",
-        "item_id": "souvenir_strangers_spare_key",
+        "item_id": "food_cake",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_ice_cream",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_curry",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_cake",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1786725697133,
+        "type": "income",
+        "item_id": "food_fish",
         "amount": 1,
         "before": 0,
         "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mss8igcg-4oyxvcd4",
-          "event_id": "event_welcome_home",
-          "location_id": "white_fog_houses"
-        }
+        "reason": "daily_sign_food",
+        "meta": {}
       },
       {
-        "time": 1786668869404,
+        "time": 1786725697133,
         "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 82,
-        "after": 88,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8igcg-4oyxvcd4",
-          "location_id": "white_fog_houses"
-        }
-      },
-      {
-        "time": 1786668869383,
-        "type": "expense",
-        "item_id": "travel_pager",
+        "item_id": "food_noodles",
         "amount": 1,
-        "before": 2,
+        "before": 0,
         "after": 1,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mss8igcg-4oyxvcd4"
-        }
-      },
-      {
-        "time": 1786668862783,
-        "type": "income",
-        "item_id": "souvenir_nested_old_boot",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mss8i9xi-c6sp2ic6",
-          "event_id": "eld_event_lost_boot",
-          "location_id": "eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1786668862783,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 76,
-        "after": 82,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8i9xi-c6sp2ic6",
-          "location_id": "eld_weeping_swamp"
-        }
-      },
-      {
-        "time": 1786668862766,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mss8i9xi-c6sp2ic6"
-        }
-      },
-      {
-        "time": 1786668823157,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 73,
-        "after": 76,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_hidden_pair"
-        }
-      },
-      {
-        "time": 1786668823157,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 70,
-        "after": 73,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_dock_seven"
-        }
-      },
-      {
-        "time": 1786668823157,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 67,
-        "after": 70,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8h7yw-whyk9xbm",
-          "location_id": "rtc_dock_seven"
-        }
-      },
-      {
-        "time": 1786668823138,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 4,
-        "after": 3,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mss8h7yw-whyk9xbm"
-        }
-      },
-      {
-        "time": 1786668788851,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 64,
-        "after": 67,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss8goco-ck0p1onw",
-          "location_id": "eld_magic_academy"
-        }
-      },
-      {
-        "time": 1786668788831,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 5,
-        "after": 4,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mss8goco-ck0p1onw"
-        }
+        "reason": "daily_sign_food",
+        "meta": {}
       }
     ],
     "item_daily": {
-      "date": "2026-08-14",
+      "date": "2026-08-15",
       "fate_exchange_count": 0,
       "game_fate_reward_count": 0,
-      "shop_buy_counts": {
-        "travel_pager": 10
-      },
-      "use_counts": {
-        "travel_pager": 10
-      }
+      "shop_buy_counts": {},
+      "use_counts": {}
     },
     "item_migrations": {
       "fate_v1": {
@@ -2186,8 +2152,14 @@
         "2026-08-11",
         "2026-08-12",
         "2026-08-13",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-15"
       ]
+    },
+    "food_sign_backfill": {
+      "month": "2026-08",
+      "dates": 15,
+      "time": 1786725697133
     }
   },
   "recent_events": [
@@ -2581,7 +2553,7 @@
     "migrated_at": 1784791767616
   },
   "created_at": 1784791767616,
-  "updated_at": 1786719478543,
+  "updated_at": 1786727268799,
   "gacha": {
     "since_four_plus": 1,
     "since_five": 62,
@@ -2686,11 +2658,11 @@
   },
   "production": {
     "started_at": 1784874763350,
-    "last_settled_at": 1786719478542,
-    "accumulated_ms": 50736817,
-    "progress": 10.072369384642212,
-    "total_produced": 276,
-    "last_collected_at": 1786668741725
+    "last_settled_at": 1786727268799,
+    "accumulated_ms": 1563116,
+    "progress": 0.5288387514208822,
+    "total_produced": 287,
+    "last_collected_at": 1786725705683
   },
   "travel": {
     "unlocked_location_ids": [

@@ -3,12 +3,12 @@
   "user_id": "2417966714",
   "pet": {
     "level": 3,
-    "experience": 73,
-    "satiety": 9,
+    "experience": 76,
+    "satiety": 5,
     "mood": 100,
     "health": 94,
     "current_skin_id": "starry_turtle",
-    "satiety_decay_at": 1786719112930,
+    "satiety_decay_at": 1786727268692,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -525,6 +525,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786721889790,
+        "actor_name": "刮杯蛋(iOS)100,100,300,978",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -733,8 +748,8 @@
     ],
     "five_skin_shadow_counts": {},
     "weight": 50,
-    "weight_decay_at": 1786719478408,
-    "health_decay_at": 1786719478408
+    "weight_decay_at": 1786723244539,
+    "health_decay_at": 1786727268692
   },
   "profile": {
     "favorability": 50,
@@ -742,24 +757,34 @@
     "total_contribution": 47,
     "last_display_name": "刮杯蛋(iOS)100,100,300,978",
     "first_joined_at": 1784771812621,
-    "last_active_at": 1786719478408,
+    "last_active_at": 1786727268692,
     "daily": {
-      "date": "2026-08-14",
-      "event_count": 3,
-      "same_event_counts": {
-        "feed": 2,
-        "petting": 1
-      },
+      "date": "2026-08-15",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 157245,
-      "total_earned": 157245,
+      "balance": 158649,
+      "total_earned": 158649,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786721889788,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1404,
+          "before": 157245,
+          "after": 158649,
+          "meta": {
+            "travel_id": "mst12lu4-kz60yvsq",
+            "location_id": "eld_dwarf_city",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786676017615,
           "type": "income",
@@ -866,19 +891,6 @@
           "meta": {
             "date": "2026-08-14"
           }
-        },
-        {
-          "time": 1786622306667,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1779,
-          "before": 149228,
-          "after": 151007,
-          "meta": {
-            "travel_id": "msrdqr5b-jm3i30wj",
-            "location_id": "eld_adventurer_guild",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -890,7 +902,7 @@
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 693,
+      "ruozhi_fate": 700,
       "nameless_ruozhi": 0,
       "souvenir_signal_record": 1,
       "souvenir_paper_visitor_crown": 1,
@@ -906,9 +918,62 @@
       "souvenir_palace_leaf_basket": 1,
       "souvenir_moon_footprint_photo": 1,
       "souvenir_complaining_mushroom": 1,
-      "souvenir_no_forging_certificate": 1
+      "souvenir_no_forging_certificate": 1,
+      "souvenir_heavy_dwarf_spoon": 1
     },
     "item_ledger": [
+      {
+        "time": 1786721889790,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 697,
+        "after": 700,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_first"
+        }
+      },
+      {
+        "time": 1786721889788,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 696,
+        "after": 697,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mst12m52-lk4cpdq5",
+          "partner_user_id": "2831974530"
+        }
+      },
+      {
+        "time": 1786721889788,
+        "type": "income",
+        "item_id": "souvenir_heavy_dwarf_spoon",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mst12lu4-kz60yvsq",
+          "event_id": "eld_event_heavy_spoon",
+          "location_id": "eld_dwarf_city"
+        }
+      },
+      {
+        "time": 1786721889788,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 693,
+        "after": 696,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst12lu4-kz60yvsq",
+          "location_id": "eld_dwarf_city"
+        }
+      },
       {
         "time": 1786676017616,
         "type": "income",
@@ -1114,59 +1179,6 @@
         "reason": "pet_production_interaction_auto_collect",
         "meta": {
           "accumulated_hours": 37.074
-        }
-      },
-      {
-        "time": 1786586897959,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 73,
-        "before": 572,
-        "after": 645,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-13",
-          "month_count": 10,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 45
-        }
-      },
-      {
-        "time": 1786521872694,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 566,
-        "after": 572,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mspmm4fy-eyfs5amg",
-          "location_id": "eld_moonbell_village"
-        }
-      },
-      {
-        "time": 1786510337292,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 563,
-        "after": 566,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_golden_cloud_temple"
-        }
-      },
-      {
-        "time": 1786510337290,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 558,
-        "after": 563,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mspgrbwh-k9gppc6s",
-          "location_id": "golden_cloud_temple"
         }
       }
     ],
@@ -1499,12 +1511,12 @@
     "migrated_at": 1784771812621
   },
   "created_at": 1784771812621,
-  "updated_at": 1786719478408,
+  "updated_at": 1786727268692,
   "production": {
     "started_at": 1784985206636,
-    "last_settled_at": 1786719478408,
-    "accumulated_ms": 52270259,
-    "progress": 7.909936023143189,
+    "last_settled_at": 1786727268692,
+    "accumulated_ms": 60060543,
+    "progress": 8.915994793341712,
     "total_produced": 116,
     "last_collected_at": 1786667208149
   },
@@ -1865,6 +1877,13 @@
         "location_id": "eld_dwarf_city",
         "travel_id": "mss7kiln-cenq4510",
         "time": 1786676017615
+      },
+      "eld_event_heavy_spoon": {
+        "id": "eld_event_heavy_spoon",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_dwarf_city",
+        "travel_id": "mst12lu4-kz60yvsq",
+        "time": 1786721889788
       }
     },
     "souvenir_records": {
@@ -1972,6 +1991,13 @@
         "event_id": "eld_event_shell_forge",
         "location_id": "eld_dwarf_city",
         "time": 1786676017615
+      },
+      "souvenir_heavy_dwarf_spoon": {
+        "id": "souvenir_heavy_dwarf_spoon",
+        "name": "超重矮人汤勺",
+        "event_id": "eld_event_heavy_spoon",
+        "location_id": "eld_dwarf_city",
+        "time": 1786721889788
       }
     },
     "achievement_records": {
@@ -2394,9 +2420,115 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786721889790,
+        "actor_name": "刮杯蛋(iOS)100,100,300,978",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mst12lu4-kz60yvsq": {
+        "id": "mst12lu4-kz60yvsq",
+        "user_id": "2417966714",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "display_name": "刮杯蛋(iOS)100,100,300,978",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_dwarf_city",
+        "location_name": "铁砧矮人城",
+        "duration_ms": 5053859,
+        "rewards": {
+          "coin": 1404,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_heavy_spoon",
+          "name": "矮人汤勺",
+          "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_heavy_dwarf_spoon",
+              "name": "超重矮人汤勺",
+              "emoji": "🥄",
+              "description": "旅行纪念品「超重矮人汤勺」。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-mst12m52-lk4cpdq5",
+          "time": 1786716836246,
+          "map_id": "eldoran_continent",
+          "map_name": "艾尔多兰大陆",
+          "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+          "reward": {
+            "id": "fate",
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "name": "若汁之缘",
+            "amount": 1,
+            "reward_text": "若汁之缘×1"
+          },
+          "status": "pending",
+          "partner_user_id": "2831974530",
+          "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+          "reward_text": "若汁之缘×1"
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_heavy_dwarf_spoon",
+            "name": "超重矮人汤勺",
+            "emoji": "🥄",
+            "description": "旅行纪念品「超重矮人汤勺」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_travel_encounter_first",
+            "name": "旅途中的同伴",
+            "rarity": 3,
+            "time": 1786721889790,
+            "actor_name": "刮杯蛋(iOS)100,100,300,978",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅途中的同伴」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786721889791,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：1小时24分钟\n获得：1404若汁币，若汁之缘×3，经验+3\n小若汁偶遇了【IGN】《原神》共鸣者「流浪者」演示的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：若汁之缘×1\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
       "mss7kiln-cenq4510": {
         "id": "mss7kiln-cenq4510",
         "user_id": "2417966714",
@@ -3299,73 +3431,22 @@
         "settled_at": 1786246473766,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：49分钟\n获得：823若汁币，若汁之缘×1，经验+2\n携带道具：异常信号记录"
-      },
-      "msl358i8-9mrjugda": {
-        "id": "msl358i8-9mrjugda",
-        "user_id": "2417966714",
-        "group_id": "138260540",
-        "self_id": "3964480831",
-        "display_name": "刮杯蛋(iOS)100,100,300,978",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_aurora_station",
-        "location_name": "极光气象站",
-        "duration_ms": 6868388,
-        "rewards": {
-          "coin": 1908,
-          "fate": 4,
-          "experience": 4
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "极光气象站",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_rtc_aurora_station",
-            "name": "发现极光气象站",
-            "rarity": 3,
-            "time": 1786243456771,
-            "actor_name": "刮杯蛋(iOS)100,100,300,978",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现极光气象站」 ★★★"
-          },
-          {
-            "id": "ach_rtc_5_locations",
-            "name": "初识明日",
-            "rarity": 3,
-            "time": 1786243456771,
-            "actor_name": "刮杯蛋(iOS)100,100,300,978",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「初识明日」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "souvenir_signal_record",
-        "tool_name": "异常信号记录",
-        "settled_at": 1786243456772,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：1小时54分钟\n获得：1908若汁币，若汁之缘×4，经验+4\n携带道具：异常信号记录\n新地点已解锁：极光气象站\n达成旅行成就「发现极光气象站」 ★★★\n达成旅行成就「初识明日」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst12lu4-kz60yvsq",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "user_id": "2417966714",
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：1小时24分钟\n获得：1404若汁币，若汁之缘×3，经验+3\n小若汁偶遇了【IGN】《原神》共鸣者「流浪者」演示的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：若汁之缘×1\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1\n达成旅行成就「旅途中的同伴」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786721889791,
+        "created_at": 1786721889791,
+        "sent_at": 1786721890356,
+        "last_error": ""
+      },
       {
         "travel_id": "mss7kiln-cenq4510",
         "group_id": "138260540",
@@ -3612,23 +3693,10 @@
         "created_at": 1786246473766,
         "sent_at": 1786246474270,
         "last_error": ""
-      },
-      {
-        "travel_id": "msl358i8-9mrjugda",
-        "group_id": "138260540",
-        "self_id": "3964480831",
-        "user_id": "2417966714",
-        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：1小时54分钟\n获得：1908若汁币，若汁之缘×4，经验+4\n携带道具：异常信号记录\n新地点已解锁：极光气象站\n达成旅行成就「发现极光气象站」 ★★★\n达成旅行成就「初识明日」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786243456772,
-        "created_at": 1786243456772,
-        "sent_at": 1786243457326,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 40,
+      "total_trips": 41,
       "key_item_discoveries": {
         "souvenir_signal_record": {
           "item_id": "souvenir_signal_record",
@@ -3640,7 +3708,8 @@
         "retro_tomorrow_city": 8,
         "eldoran_continent": 8,
         "unregistered_district": 3,
-        "four_regions_little_world": 3
+        "four_regions_little_world": 3,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -3664,7 +3733,8 @@
           "eld_event_palace_feast": 1,
           "eld_event_complaining_mushroom": 1,
           "eld_event_missing_spoon": 1,
-          "eld_event_shell_forge": 1
+          "eld_event_shell_forge": 1,
+          "eld_event_heavy_spoon": 1
         },
         "four_regions_little_world": {
           "midnight_vendor": 1
@@ -3696,67 +3766,15 @@
         "rtc_event_unknown_tracks": 1,
         "eld_event_complaining_mushroom": 1,
         "eld_event_missing_spoon": 1,
-        "eld_event_shell_forge": 1
+        "eld_event_shell_forge": 1,
+        "eld_event_heavy_spoon": 1
       },
-      "encounter_reward_types": {},
-      "total_encounters": 0
+      "encounter_reward_types": {
+        "ruozhi_fate": 1
+      },
+      "total_encounters": 1
     },
-    "active": {
-      "id": "mst12lu4-kz60yvsq",
-      "user_id": "2417966714",
-      "display_name": "刮杯蛋(iOS)100,100,300,978",
-      "group_id": "138260540",
-      "self_id": "3964480831",
-      "started_at": 1786716835852,
-      "ends_at": 1786721889711,
-      "duration_ms": 5053859,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_dwarf_city",
-      "location_name": "铁砧矮人城",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "eld_event_heavy_spoon",
-        "name": "矮人汤勺",
-        "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_heavy_dwarf_spoon",
-            "name": "超重矮人汤勺",
-            "emoji": "🥄",
-            "description": "旅行纪念品「超重矮人汤勺」。"
-          }
-        ],
-        "items": [],
-        "record": false
-      },
-      "rewards": {
-        "coin": 1404,
-        "fate": 3,
-        "experience": 3
-      },
-      "encounter": {
-        "id": "encounter-mst12m52-lk4cpdq5",
-        "time": 1786716836246,
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
-        "reward": {
-          "id": "fate",
-          "type": "item",
-          "item_id": "ruozhi_fate",
-          "name": "若汁之缘",
-          "amount": 1,
-          "reward_text": "若汁之缘×1"
-        },
-        "status": "pending",
-        "partner_user_id": "2831974530",
-        "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示"
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mst12m52-lk4cpdq5": {
@@ -3773,9 +3791,10 @@
           "amount": 1,
           "reward_text": "若汁之缘×1"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "2831974530",
-        "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示"
+        "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "settled_at": 1786721889789
       }
     }
   },

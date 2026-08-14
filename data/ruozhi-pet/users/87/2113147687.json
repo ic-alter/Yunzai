@@ -3,12 +3,12 @@
   "user_id": "2113147687",
   "pet": {
     "level": 1,
-    "experience": 5,
+    "experience": 8,
     "satiety": 5,
     "mood": 68,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786719478686,
+    "satiety_decay_at": 1786727268996,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -101,6 +101,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_forgotten_family_restaurant": {
+        "id": "ach_forgotten_family_restaurant",
+        "name": "发现被遗忘的家庭餐厅",
+        "rarity": 3,
+        "time": 1786724010111,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -147,7 +162,7 @@
     ],
     "weight": 50,
     "weight_decay_at": 1786710729933,
-    "health_decay_at": 1786719478686
+    "health_decay_at": 1786727268996
   },
   "profile": {
     "favorability": 0,
@@ -155,9 +170,9 @@
     "total_contribution": 0,
     "last_display_name": "兔女郎服务部",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1786719478686,
+    "last_active_at": 1786727268996,
     "daily": {
-      "date": "2026-08-14",
+      "date": "2026-08-15",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -166,10 +181,23 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 4970,
-      "total_earned": 4970,
+      "balance": 6310,
+      "total_earned": 6310,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786724010110,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1340,
+          "before": 4970,
+          "after": 6310,
+          "meta": {
+            "travel_id": "mst2h0bo-4a1zvfmw",
+            "location_id": "forgotten_family_restaurant",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786622641316,
           "type": "income",
@@ -305,22 +333,6 @@
             "score": 106,
             "total_score": 140
           }
-        },
-        {
-          "time": 1784793808341,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 520,
-          "before": 0,
-          "after": 520,
-          "meta": {
-            "size": 10,
-            "solved": 14,
-            "total": 14,
-            "hints": 1,
-            "score": 176,
-            "total_score": 812
-          }
         }
       ],
       "sign": {
@@ -332,11 +344,36 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 17,
+      "ruozhi_fate": 23,
       "nameless_ruozhi": 0,
       "souvenir_wheat_noodle": 1
     },
     "item_ledger": [
+      {
+        "time": 1786724010111,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 20,
+        "after": 23,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_forgotten_family_restaurant"
+        }
+      },
+      {
+        "time": 1786724010110,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 17,
+        "after": 20,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst2h0bo-4a1zvfmw",
+          "location_id": "forgotten_family_restaurant"
+        }
+      },
       {
         "time": 1786622641318,
         "type": "income",
@@ -553,7 +590,7 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1786719478686,
+  "updated_at": 1786727268996,
   "gacha": {
     "since_four_plus": 3,
     "since_five": 3,
@@ -566,7 +603,7 @@
   },
   "production": {
     "started_at": 1784876695881,
-    "last_settled_at": 1786719478686,
+    "last_settled_at": 1786727268996,
     "accumulated_ms": 259200000,
     "progress": 28.493616746453903,
     "total_produced": 0
@@ -574,7 +611,8 @@
   "travel": {
     "unlocked_location_ids": [
       "rain_only_store",
-      "qing_he_town"
+      "qing_he_town",
+      "forgotten_family_restaurant"
     ],
     "location_records": {
       "rain_only_store": {
@@ -591,6 +629,14 @@
         "name": "青禾镇",
         "travel_id": "msrdan7h-kkx3l8fg",
         "time": 1786622641317,
+        "carried_item_id": ""
+      },
+      "forgotten_family_restaurant": {
+        "id": "forgotten_family_restaurant",
+        "map_id": "unregistered_district",
+        "name": "被遗忘的家庭餐厅",
+        "travel_id": "mst2h0bo-4a1zvfmw",
+        "time": 1786724010110,
         "carried_item_id": ""
       }
     },
@@ -670,6 +716,21 @@
         "name": "发现青禾镇",
         "rarity": 3,
         "time": 1786622641318,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_forgotten_family_restaurant": {
+        "id": "ach_forgotten_family_restaurant",
+        "name": "发现被遗忘的家庭餐厅",
+        "rarity": 3,
+        "time": 1786724010111,
         "actor_name": "兔女郎服务部",
         "rewards": [
           {
@@ -842,9 +903,72 @@
         "settled_at": 1786622641318,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时43分钟\n获得：1724若汁币，若汁之缘×3，经验+3\n旅行事件：不肯见底的面\n碗里始终剩着最后一根灵麦面。\n本次状态变化：饱食+6\n纪念品：🍜最后一根灵麦面×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
+      },
+      "mst2h0bo-4a1zvfmw": {
+        "id": "mst2h0bo-4a1zvfmw",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "兔女郎服务部",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "forgotten_family_restaurant",
+        "location_name": "被遗忘的家庭餐厅",
+        "duration_ms": 4822665,
+        "rewards": {
+          "coin": 1340,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "被遗忘的家庭餐厅",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_forgotten_family_restaurant",
+            "name": "发现被遗忘的家庭餐厅",
+            "rarity": 3,
+            "time": 1786724010111,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786724010112,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×3，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst2h0bo-4a1zvfmw",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×3，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786724010112,
+        "created_at": 1786724010112,
+        "sent_at": 1786724010678,
+        "last_error": ""
+      },
       {
         "travel_id": "msrdan7h-kkx3l8fg",
         "group_id": "415462812",
@@ -873,13 +997,14 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 3,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
         "eldoran_continent": 0,
-        "unregistered_district": 1,
-        "four_regions_little_world": 1
+        "unregistered_district": 2,
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "unregistered_district": {
@@ -896,29 +1021,7 @@
       "encounter_reward_types": {},
       "total_encounters": 0
     },
-    "active": {
-      "id": "mst2h0bo-4a1zvfmw",
-      "user_id": "2113147687",
-      "display_name": "兔女郎服务部",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1786719187428,
-      "ends_at": 1786724010093,
-      "duration_ms": 4822665,
-      "map_id": "unregistered_district",
-      "map_name": "未登记城区",
-      "location_id": "forgotten_family_restaurant",
-      "location_name": "被遗忘的家庭餐厅",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 1340,
-        "fate": 3,
-        "experience": 3
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {}
   }

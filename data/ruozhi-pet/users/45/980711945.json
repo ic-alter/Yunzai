@@ -3,12 +3,12 @@
   "user_id": "980711945",
   "pet": {
     "level": 5,
-    "experience": 60,
+    "experience": 65,
     "satiety": 5,
     "mood": 100,
     "health": 100,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1786719478563,
+    "satiety_decay_at": 1786727268819,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1648,7 +1648,7 @@
     },
     "weight": 50,
     "weight_decay_at": 1786710729785,
-    "health_decay_at": 1786719478563
+    "health_decay_at": 1786727268819
   },
   "profile": {
     "favorability": 61,
@@ -1656,9 +1656,9 @@
     "total_contribution": 54,
     "last_display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
     "first_joined_at": 1784860899630,
-    "last_active_at": 1786719478563,
+    "last_active_at": 1786727268819,
     "daily": {
-      "date": "2026-08-14",
+      "date": "2026-08-15",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -1667,10 +1667,23 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 162258,
-      "total_earned": 454258,
+      "balance": 164990,
+      "total_earned": 456990,
       "total_spent": 292000,
       "ledger": [
+        {
+          "time": 1786725200115,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2732,
+          "before": 162258,
+          "after": 164990,
+          "meta": {
+            "travel_id": "mst073dz-kmlp14bc",
+            "location_id": "eld_weeping_swamp",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786715388096,
           "type": "income",
@@ -1778,18 +1791,6 @@
             "skin_id": "drooling_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786715388095,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 149858,
-          "after": 150158,
-          "meta": {
-            "skin_id": "volleyball_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1801,7 +1802,7 @@
       "first_interaction_reward_date": "2026-08-13"
     },
     "items": {
-      "ruozhi_fate": 17,
+      "ruozhi_fate": 22,
       "nameless_ruozhi": 0,
       "travel_pager": 5,
       "souvenir_clockwork_leaf": 1,
@@ -1844,6 +1845,19 @@
       "souvenir_rain_drop": 1
     },
     "item_ledger": [
+      {
+        "time": 1786725200115,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 17,
+        "after": 22,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst073dz-kmlp14bc",
+          "location_id": "eld_weeping_swamp"
+        }
+      },
       {
         "time": 1786715388095,
         "type": "expense",
@@ -2090,18 +2104,6 @@
         "meta": {
           "travel_id": "msrmdvkf-dnt4rxgt",
           "location_id": "eld_moonbell_village"
-        }
-      },
-      {
-        "time": 1786631710221,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 33,
-        "after": 3,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
         }
       }
     ],
@@ -2429,12 +2431,12 @@
     "migrated_at": 1784860899630
   },
   "created_at": 1784860899630,
-  "updated_at": 1786719478563,
+  "updated_at": 1786727268819,
   "production": {
     "started_at": 1784880910490,
-    "last_settled_at": 1786719478563,
-    "accumulated_ms": 4104763,
-    "progress": 1.299520764815117,
+    "last_settled_at": 1786727268819,
+    "accumulated_ms": 11895019,
+    "progress": 2.3840699910594,
     "total_produced": 242,
     "last_collected_at": 1786715373800
   },
@@ -4617,6 +4619,39 @@
       }
     },
     "settlements": {
+      "mst073dz-kmlp14bc": {
+        "id": "mst073dz-kmlp14bc",
+        "user_id": "980711945",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_weeping_swamp",
+        "location_name": "哭泣沼泽",
+        "duration_ms": 9834442,
+        "rewards": {
+          "coin": 2732,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786725200117,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2732若汁币，若汁之缘×5，经验+5"
+      },
       "mssurgii-sw2kt0q0": {
         "id": "mssurgii-sw2kt0q0",
         "user_id": "980711945",
@@ -5560,40 +5595,22 @@
         "settled_at": 1786595950018,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：40分钟\n获得：662若汁币，若汁之缘×2，经验+2\n旅行事件：保留了很久的座位\n屏幕提示家人已经提前到达。对面的空椅子向后挪了一点，像有人刚刚起身。\n纪念品：🍽️永远多出一份的餐巾×1"
-      },
-      "msqwdgkq-pjg515ka": {
-        "id": "msqwdgkq-pjg515ka",
-        "user_id": "980711945",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "still_ferris_wheel",
-        "location_name": "静止摩天轮",
-        "duration_ms": 6389148,
-        "rewards": {
-          "coin": 1775,
-          "fate": 3,
-          "experience": 4
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786594400991,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：静止摩天轮（未登记城区）\n旅行时间：1小时46分钟\n获得：1775若汁币，若汁之缘×3，经验+4"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst073dz-kmlp14bc",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "980711945",
+        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时44分钟\n获得：2732若汁币，若汁之缘×5，经验+5",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786725200117,
+        "created_at": 1786725200117,
+        "sent_at": 1786725200637,
+        "last_error": ""
+      },
       {
         "travel_id": "mssurgii-sw2kt0q0",
         "group_id": "415462812",
@@ -5840,23 +5857,10 @@
         "created_at": 1786595950018,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msqwdgkq-pjg515ka",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "980711945",
-        "report": "小若汁回来了！\n目的地：静止摩天轮（未登记城区）\n旅行时间：1小时46分钟\n获得：1775若汁币，若汁之缘×3，经验+4",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786594400991,
-        "created_at": 1786594400991,
-        "sent_at": 1786594401765,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 146,
+      "total_trips": 147,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -5888,7 +5892,8 @@
         "retro_tomorrow_city": 15,
         "eldoran_continent": 14,
         "unregistered_district": 14,
-        "four_regions_little_world": 6
+        "four_regions_little_world": 6,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -6012,14 +6017,14 @@
       "total_encounters": 1
     },
     "active": {
-      "id": "mst073dz-kmlp14bc",
+      "id": "mst64nyc-9te6eyzd",
       "user_id": "980711945",
       "display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1786715365607,
-      "ends_at": 1786725200049,
-      "duration_ms": 9834442,
+      "started_at": 1786725329988,
+      "ends_at": 1786727954640,
+      "duration_ms": 2624652,
       "map_id": "eldoran_continent",
       "map_name": "艾尔多兰大陆",
       "location_id": "eld_weeping_swamp",
@@ -6027,11 +6032,46 @@
       "was_unlocked": true,
       "carried_item_id": "",
       "carried_item_name": "",
-      "event": null,
+      "event": {
+        "id": "eld_event_complaining_mushroom",
+        "name": "抱怨蘑菇",
+        "text": "蘑菇一路抱怨沼泽太湿，小若汁提醒它是一朵蘑菇。",
+        "effects": {
+          "coin_flat": 90
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_complaining_mushroom",
+            "name": "会抱怨的蘑菇",
+            "emoji": "🍄",
+            "description": "旅行纪念品「会抱怨的蘑菇」。"
+          }
+        ],
+        "items": [],
+        "record": false
+      },
       "rewards": {
-        "coin": 2732,
-        "fate": 5,
-        "experience": 5
+        "coin": 819,
+        "fate": 1,
+        "experience": 1
+      },
+      "encounter": {
+        "id": "encounter-mst6mq4k-w4grtw9l",
+        "time": 1786726172612,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们把地图摊在地上研究了很久，最后发现两只都把上下拿反了。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "ic·alter同时被妻子和情夫绿"
       }
     },
     "prepared_tool": null,
@@ -6055,6 +6095,24 @@
         "partner_user_id": "travel-shop-pager-1786698892745-paloye",
         "partner_display_name": "Tester",
         "settled_at": 1786700913899
+      },
+      "encounter-mst6mq4k-w4grtw9l": {
+        "id": "encounter-mst6mq4k-w4grtw9l",
+        "time": 1786726172612,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们把地图摊在地上研究了很久，最后发现两只都把上下拿反了。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "ic·alter同时被妻子和情夫绿"
       }
     }
   }

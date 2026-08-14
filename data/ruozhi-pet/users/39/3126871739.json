@@ -3,12 +3,12 @@
   "user_id": "3126871739",
   "pet": {
     "level": 7,
-    "experience": 70,
-    "satiety": 76,
+    "experience": 94,
+    "satiety": 78,
     "mood": 100,
     "health": 96,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786718690208,
+    "satiety_decay_at": 1786727156885,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -686,22 +686,22 @@
     ],
     "five_skin_shadow_counts": {},
     "weight": 50,
-    "weight_decay_at": 1786719478531,
-    "health_decay_at": 1786719478531
+    "weight_decay_at": 1786727268792,
+    "health_decay_at": 1786727268792
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 94,
-    "total_contribution": 186,
+    "weekly_contribution": 98,
+    "total_contribution": 190,
     "last_display_name": "magictobacco",
     "first_joined_at": 1785777940319,
-    "last_active_at": 1786719478531,
+    "last_active_at": 1786727268792,
     "daily": {
-      "date": "2026-08-14",
-      "event_count": 7,
+      "date": "2026-08-15",
+      "event_count": 2,
       "same_event_counts": {
-        "feed": 5,
-        "mention_only": 2
+        "mention_only": 1,
+        "feed": 1
       },
       "negative_shared_impact": 0
     },
@@ -978,10 +978,21 @@
       }
     },
     "currency": {
-      "balance": 46233,
-      "total_earned": 46233,
+      "balance": 46733,
+      "total_earned": 46733,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786725711427,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 46233,
+          "after": 46733,
+          "meta": {
+            "date": "2026-08-15"
+          }
+        },
         {
           "time": 1786703147147,
           "type": "income",
@@ -1090,18 +1101,6 @@
             "skin_id": "bouquet_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786634429891,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 39160,
-          "after": 39460,
-          "meta": {
-            "skin_id": "crown_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1110,10 +1109,59 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-14"
+      "first_interaction_reward_date": "2026-08-15"
     }
   },
   "recent_events": [
+    {
+      "time": 1786725716885,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786725711427,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向magictobacco，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 46733
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1786697090209,
       "user_id": "3126871739",
@@ -1314,58 +1362,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 9
-    },
-    {
-      "time": 1786605195456,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "小若汁把食物藏到了龟壳下面，准备以后再吃。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+1",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 1
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786605188151,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "mention_only",
-      "branch_id": "look_over",
-      "summary": "小若汁抬头看向magictobacco，轻轻晃了晃尾巴。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+1",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 1
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-08-14",
-    "event_count": 7,
-    "bonus_event_count": 7
+    "date": "2026-08-15",
+    "event_count": 2,
+    "bonus_event_count": 2
   },
   "processed_messages": {
     "event:1501387905": 1785838090928,
@@ -1447,7 +1449,9 @@
     "event:1517300189": 1786676130567,
     "event:1909404307": 1786686488712,
     "event:31824868": 1786691504162,
-    "event:1479958584": 1786697090207
+    "event:1479958584": 1786697090207,
+    "event:1193174407": 1786725711425,
+    "event:700713698": 1786725716884
   },
   "skin_sessions": {
     "active": null
@@ -1460,12 +1464,12 @@
     "migrated_at": 1785777940319
   },
   "created_at": 1785777940319,
-  "updated_at": 1786719478531,
+  "updated_at": 1786727268792,
   "production": {
     "started_at": 1785777940319,
-    "last_settled_at": 1786719478531,
-    "accumulated_ms": 32989818,
-    "progress": 5.8328363937571845,
+    "last_settled_at": 1786727268792,
+    "accumulated_ms": 40780079,
+    "progress": 7.1911031305199105,
     "total_produced": 135,
     "last_collected_at": 1786686488713
   },
@@ -3024,7 +3028,51 @@
       },
       "total_encounters": 1
     },
-    "active": null,
+    "active": {
+      "id": "mst6d4mi-tu36in25",
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "group_id": "1025424898",
+      "self_id": "3762153943",
+      "started_at": 1786725724842,
+      "ends_at": 1786732089595,
+      "duration_ms": 6364753,
+      "map_id": "retro_tomorrow_city",
+      "map_name": "明日旧城",
+      "location_id": "rtc_atomic_mall",
+      "location_name": "原子百货商场",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "rtc_event_mall_lottery",
+        "name": "商场抽奖",
+        "text": "小若汁抽中了“再来一次”，又抽中“欢迎下次再来”。",
+        "effects": {
+          "coin_flat": 120
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_infinite_lottery_ticket",
+            "name": "无限抽奖券",
+            "emoji": "🎟️",
+            "description": "旅行纪念品「无限抽奖券」。"
+          }
+        ],
+        "items": [
+          {
+            "id": "food_bread",
+            "amount": 2
+          }
+        ],
+        "record": false
+      },
+      "rewards": {
+        "coin": 1888,
+        "fate": 3,
+        "experience": 4
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mssqk0nv-yca709md": {

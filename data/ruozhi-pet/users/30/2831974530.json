@@ -3,12 +3,12 @@
   "user_id": "2831974530",
   "pet": {
     "level": 11,
-    "experience": 257,
+    "experience": 263,
     "satiety": 5,
     "mood": 99,
     "health": 100,
     "current_skin_id": "yaya_turtle",
-    "satiety_decay_at": 1786719478478,
+    "satiety_decay_at": 1786727268742,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1374,6 +1374,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786723676393,
+        "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1833,7 +1848,7 @@
     },
     "weight": 50,
     "weight_decay_at": 1786710729671,
-    "health_decay_at": 1786719478478
+    "health_decay_at": 1786727268742
   },
   "profile": {
     "favorability": 100,
@@ -1841,9 +1856,9 @@
     "total_contribution": 362,
     "last_display_name": "【IGN】《原神》共鸣者「流浪者」演示",
     "first_joined_at": 1784792061221,
-    "last_active_at": 1786719478478,
+    "last_active_at": 1786727268742,
     "daily": {
-      "date": "2026-08-14",
+      "date": "2026-08-15",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -1852,10 +1867,23 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 324887,
-      "total_earned": 1184887,
+      "balance": 327451,
+      "total_earned": 1187451,
       "total_spent": 860000,
       "ledger": [
+        {
+          "time": 1786723676381,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2564,
+          "before": 324887,
+          "after": 327451,
+          "meta": {
+            "travel_id": "mssz1f09-28jrgrsl",
+            "location_id": "eld_free_port",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786713581292,
           "type": "income",
@@ -1963,18 +1991,6 @@
             "skin_id": "crown_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786713581291,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 312487,
-          "after": 312787,
-          "meta": {
-            "skin_id": "goggles_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1986,7 +2002,7 @@
       "first_interaction_reward_date": "2026-08-13"
     },
     "items": {
-      "ruozhi_fate": 8,
+      "ruozhi_fate": 18,
       "nameless_ruozhi": 10,
       "travel_pager": 10,
       "travel_checklist": 0,
@@ -2009,7 +2025,7 @@
       "souvenir_sea_future_coin": 2,
       "souvenir_heavy_dwarf_spoon": 3,
       "souvenir_paper_visitor_crown": 1,
-      "souvenir_paid_pirate_photo": 1,
+      "souvenir_paid_pirate_photo": 2,
       "souvenir_emerald_light_leaf": 1,
       "souvenir_legendary_sword_handle": 1,
       "souvenir_clockwork_leaf": 2,
@@ -2050,9 +2066,76 @@
       "souvenir_plastic_rocket_model": 1,
       "souvenir_temporary_demon_crown": 1,
       "souvenir_hollow_cloud_pill": 1,
-      "souvenir_tomorrow_school_badge": 1
+      "souvenir_tomorrow_school_badge": 1,
+      "food_dwarf_bread": 2
     },
     "item_ledger": [
+      {
+        "time": 1786723676393,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 15,
+        "after": 18,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_first"
+        }
+      },
+      {
+        "time": 1786723676389,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 14,
+        "after": 15,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mst12m52-lk4cpdq5",
+          "partner_user_id": "2417966714"
+        }
+      },
+      {
+        "time": 1786723676389,
+        "type": "income",
+        "item_id": "food_dwarf_bread",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "mssz1f09-28jrgrsl",
+          "event_id": "eld_event_pirate_photo",
+          "location_id": "eld_free_port"
+        }
+      },
+      {
+        "time": 1786723676382,
+        "type": "income",
+        "item_id": "souvenir_paid_pirate_photo",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mssz1f09-28jrgrsl",
+          "event_id": "eld_event_pirate_photo",
+          "location_id": "eld_free_port"
+        }
+      },
+      {
+        "time": 1786723676381,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 8,
+        "after": 14,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mssz1f09-28jrgrsl",
+          "location_id": "eld_free_port"
+        }
+      },
       {
         "time": 1786713581291,
         "type": "expense",
@@ -2238,69 +2321,6 @@
         "amount": 1,
         "before": 5,
         "after": 4,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1786617432921,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 36,
-        "after": 6,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786617428646,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 32,
-        "after": 36,
-        "reason": "pet_production_collect",
-        "meta": {
-          "accumulated_hours": 6.436
-        }
-      },
-      {
-        "time": 1786613211641,
-        "type": "income",
-        "item_id": "souvenir_hollow_cloud_pill",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msr7ldbx-nnx5sjxy",
-          "event_id": "event_cloud_prescription",
-          "location_id": "pink_cloud_hospital"
-        }
-      },
-      {
-        "time": 1786613211641,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 28,
-        "after": 32,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msr7ldbx-nnx5sjxy",
-          "location_id": "pink_cloud_hospital"
-        }
-      },
-      {
-        "time": 1786606856604,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
         "reason": "prepare_travel_tool",
         "meta": {
           "item_id": "travel_checklist"
@@ -2731,7 +2751,7 @@
     "migrated_at": 1784792061221
   },
   "created_at": 1784792061221,
-  "updated_at": 1786719478478,
+  "updated_at": 1786727268742,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 22,
@@ -2913,9 +2933,9 @@
   },
   "production": {
     "started_at": 1784880613176,
-    "last_settled_at": 1786719478478,
-    "accumulated_ms": 5919324,
-    "progress": 1.035205357160161,
+    "last_settled_at": 1786727268742,
+    "accumulated_ms": 13709588,
+    "progress": 2.1795740155609558,
     "total_produced": 295,
     "last_collected_at": 1786713559154
   },
@@ -3542,8 +3562,8 @@
         "id": "eld_event_pirate_photo",
         "map_id": "eldoran_continent",
         "location_id": "eld_free_port",
-        "travel_id": "ms8fi2t8-4xjb1rtc",
-        "time": 1785475094493
+        "travel_id": "mssz1f09-28jrgrsl",
+        "time": 1786723676382
       },
       "rtc_event_rocket_lunch": {
         "id": "rtc_event_rocket_lunch",
@@ -4119,7 +4139,7 @@
         "name": "付费海盗合影",
         "event_id": "eld_event_pirate_photo",
         "location_id": "eld_free_port",
-        "time": 1785475094493
+        "time": 1786723676382
       },
       "souvenir_emerald_light_leaf": {
         "id": "souvenir_emerald_light_leaf",
@@ -5459,9 +5479,139 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786723676393,
+        "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mssz1f09-28jrgrsl": {
+        "id": "mssz1f09-28jrgrsl",
+        "user_id": "2831974530",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_free_port",
+        "location_name": "潮汐自由港",
+        "duration_ms": 10255239,
+        "rewards": {
+          "coin": 2564,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": {
+          "id": "eld_event_pirate_photo",
+          "name": "海盗合影",
+          "text": "海盗们发现小若汁没有财宝，便改为收取合影费。",
+          "effects": {
+            "coin_percent": -10
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_paid_pirate_photo",
+              "name": "付费海盗合影",
+              "emoji": "🏴‍☠️",
+              "description": "旅行纪念品「付费海盗合影」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_dwarf_bread",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-mst12m52-lk4cpdq5",
+          "time": 1786716836246,
+          "map_id": "eldoran_continent",
+          "map_name": "艾尔多兰大陆",
+          "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+          "reward": {
+            "id": "fate",
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "name": "若汁之缘",
+            "amount": 1,
+            "reward_text": "若汁之缘×1"
+          },
+          "status": "pending",
+          "partner_user_id": "2417966714",
+          "partner_display_name": "刮杯蛋(iOS)100,100,300,978",
+          "reward_text": "若汁之缘×1"
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_paid_pirate_photo",
+            "name": "付费海盗合影",
+            "emoji": "🏴‍☠️",
+            "description": "旅行纪念品「付费海盗合影」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_dwarf_bread",
+            "name": "矮人黑面包",
+            "emoji": "🥖",
+            "description": "艾尔多兰大陆的硬壳面包。",
+            "food": {
+              "satiety": 16,
+              "mood": 4,
+              "weight_gain": 4
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_travel_encounter_first",
+            "name": "旅途中的同伴",
+            "rarity": 3,
+            "time": 1786723676393,
+            "actor_name": "【IGN】《原神》共鸣者「流浪者」演示",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅途中的同伴」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786723676394,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时51分钟\n获得：2564若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n小若汁偶遇了刮杯蛋(iOS)100,100,300,978的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：若汁之缘×1\n旅行事件：海盗合影\n海盗们发现小若汁没有财宝，便改为收取合影费。\n食物：🥖矮人黑面包×2\n纪念品：🏴‍☠️付费海盗合影×1\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
       "mssuqmp6-3l6h4f94": {
         "id": "mssuqmp6-3l6h4f94",
         "user_id": "2831974530",
@@ -6268,40 +6418,22 @@
         "settled_at": 1786499523109,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：1小时43分钟\n获得：1889若汁币，若汁之缘×3，经验+4\n携带道具：旅行清单\n旅行事件：错过倒计时\n小若汁从十开始倒数，数到七时火箭已经飞走了。\n纪念品：🚀塑料火箭模型×1"
-      },
-      "mspfohha-vg2zfuhd": {
-        "id": "mspfohha-vg2zfuhd",
-        "user_id": "2831974530",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_rocket_base",
-        "location_name": "红沙火箭基地",
-        "duration_ms": 2800210,
-        "rewards": {
-          "coin": 871,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1786499508571,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：47分钟\n获得：871若汁币，若汁之缘×2，经验+2\n携带道具：行李箱"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mssz1f09-28jrgrsl",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2831974530",
+        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时51分钟\n获得：2564若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n小若汁偶遇了刮杯蛋(iOS)100,100,300,978的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：若汁之缘×1\n旅行事件：海盗合影\n海盗们发现小若汁没有财宝，便改为收取合影费。\n食物：🥖矮人黑面包×2\n纪念品：🏴‍☠️付费海盗合影×1\n达成旅行成就「旅途中的同伴」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786723676395,
+        "created_at": 1786723676395,
+        "sent_at": 1786723676922,
+        "last_error": ""
+      },
       {
         "travel_id": "mssuqmp6-3l6h4f94",
         "group_id": "415462812",
@@ -6548,23 +6680,10 @@
         "created_at": 1786499523109,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "mspfohha-vg2zfuhd",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2831974530",
-        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：47分钟\n获得：871若汁币，若汁之缘×2，经验+2\n携带道具：行李箱",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1786499508571,
-        "created_at": 1786499508571,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 236,
+      "total_trips": 237,
       "key_item_discoveries": {
         "souvenir_dragon_footprint": {
           "item_id": "souvenir_dragon_footprint",
@@ -6606,7 +6725,8 @@
         "retro_tomorrow_city": 17,
         "eldoran_continent": 15,
         "unregistered_district": 10,
-        "four_regions_little_world": 9
+        "four_regions_little_world": 9,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -6792,70 +6912,32 @@
         "event_late_first_grader": 1,
         "event_windows_one_second_late": 1
       },
-      "encounter_reward_types": {},
-      "total_encounters": 0
+      "encounter_reward_types": {
+        "ruozhi_fate": 1
+      },
+      "total_encounters": 1
     },
     "active": {
-      "id": "mssz1f09-28jrgrsl",
+      "id": "mst57jah-foehsbzz",
       "user_id": "2831974530",
       "display_name": "【IGN】《原神》共鸣者「流浪者」演示",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1786713421113,
-      "ends_at": 1786723676352,
-      "duration_ms": 10255239,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_free_port",
-      "location_name": "潮汐自由港",
+      "started_at": 1786723784297,
+      "ends_at": 1786732218171,
+      "duration_ms": 8433874,
+      "map_id": "retro_tomorrow_city",
+      "map_name": "明日旧城",
+      "location_id": "rtc_rocket_base",
+      "location_name": "红沙火箭基地",
       "was_unlocked": true,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": {
-        "id": "eld_event_pirate_photo",
-        "name": "海盗合影",
-        "text": "海盗们发现小若汁没有财宝，便改为收取合影费。",
-        "effects": {
-          "coin_percent": -10
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_paid_pirate_photo",
-            "name": "付费海盗合影",
-            "emoji": "🏴‍☠️",
-            "description": "旅行纪念品「付费海盗合影」。"
-          }
-        ],
-        "items": [
-          {
-            "id": "food_dwarf_bread",
-            "amount": 2
-          }
-        ],
-        "record": false
-      },
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": null,
       "rewards": {
-        "coin": 2564,
-        "fate": 6,
-        "experience": 6
-      },
-      "encounter": {
-        "id": "encounter-mst12m52-lk4cpdq5",
-        "time": 1786716836246,
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
-        "reward": {
-          "id": "fate",
-          "type": "item",
-          "item_id": "ruozhi_fate",
-          "name": "若汁之缘",
-          "amount": 1,
-          "reward_text": "若汁之缘×1"
-        },
-        "status": "pending",
-        "partner_user_id": "2417966714",
-        "partner_display_name": "刮杯蛋(iOS)100,100,300,978"
+        "coin": 2343,
+        "fate": 4,
+        "experience": 5
       }
     },
     "prepared_tool": null,
@@ -6874,9 +6956,10 @@
           "amount": 1,
           "reward_text": "若汁之缘×1"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "2417966714",
-        "partner_display_name": "刮杯蛋(iOS)100,100,300,978"
+        "partner_display_name": "刮杯蛋(iOS)100,100,300,978",
+        "settled_at": 1786723676389
       }
     }
   }
