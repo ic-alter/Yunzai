@@ -3,12 +3,12 @@
   "user_id": "3546805220",
   "pet": {
     "level": 1,
-    "experience": 9,
+    "experience": 15,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786421664566,
+    "satiety_decay_at": 1786699098299,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -93,6 +93,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1786600433911,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -129,9 +144,9 @@
     "total_contribution": 0,
     "last_display_name": "购德帕瓦",
     "first_joined_at": 1785642699283,
-    "last_active_at": 1786421664566,
+    "last_active_at": 1786699098299,
     "daily": {
-      "date": "2026-08-11",
+      "date": "2026-08-14",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -140,12 +155,52 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 25,
+      "ruozhi_fate": 33,
       "nameless_ruozhi": 0,
       "souvenir_paper_visitor_crown": 1,
-      "souvenir_temporary_summon_card": 1
+      "souvenir_temporary_summon_card": 1,
+      "souvenir_tomorrow_child_ticket": 1
     },
     "item_ledger": [
+      {
+        "time": 1786600433911,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 30,
+        "after": 33,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_central_station"
+        }
+      },
+      {
+        "time": 1786600433911,
+        "type": "income",
+        "item_id": "souvenir_tomorrow_child_ticket",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msqxnaed-17hiqcuq",
+          "event_id": "rtc_event_robot_conductor",
+          "location_id": "rtc_central_station"
+        }
+      },
+      {
+        "time": 1786600433910,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 25,
+        "after": 30,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msqxnaed-17hiqcuq",
+          "location_id": "rtc_central_station"
+        }
+      },
       {
         "time": 1786098408899,
         "type": "income",
@@ -297,10 +352,23 @@
       }
     },
     "currency": {
-      "balance": 5112,
-      "total_earned": 5112,
+      "balance": 8049,
+      "total_earned": 8049,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786600433910,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2937,
+          "before": 5112,
+          "after": 8049,
+          "meta": {
+            "travel_id": "msqxnaed-17hiqcuq",
+            "location_id": "rtc_central_station",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786098408898,
           "type": "income",
@@ -381,10 +449,10 @@
     "migrated_at": 1785642699283
   },
   "created_at": 1785642699283,
-  "updated_at": 1786421664566,
+  "updated_at": 1786699098299,
   "production": {
     "started_at": 1785642699283,
-    "last_settled_at": 1786421664566,
+    "last_settled_at": 1786699098299,
     "accumulated_ms": 259200000,
     "progress": 30.026680747013167,
     "total_produced": 0
@@ -404,7 +472,8 @@
       "eld_silver_capital",
       "bixi_ferry",
       "eld_magic_academy",
-      "eld_windmill_plain"
+      "eld_windmill_plain",
+      "rtc_central_station"
     ],
     "location_records": {
       "eld_silver_capital": {
@@ -438,6 +507,14 @@
         "travel_id": "msiqjlrz-1iezytod",
         "time": 1786098408899,
         "carried_item_id": ""
+      },
+      "rtc_central_station": {
+        "id": "rtc_central_station",
+        "map_id": "retro_tomorrow_city",
+        "name": "明日中央车站",
+        "travel_id": "msqxnaed-17hiqcuq",
+        "time": 1786600433910,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -454,6 +531,13 @@
         "location_id": "eld_magic_academy",
         "travel_id": "msimrxpe-scjcp9ox",
         "time": 1786094203077
+      },
+      "rtc_event_robot_conductor": {
+        "id": "rtc_event_robot_conductor",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_central_station",
+        "travel_id": "msqxnaed-17hiqcuq",
+        "time": 1786600433910
       }
     },
     "souvenir_records": {
@@ -470,6 +554,13 @@
         "event_id": "eld_event_pet_registration",
         "location_id": "eld_magic_academy",
         "time": 1786094203077
+      },
+      "souvenir_tomorrow_child_ticket": {
+        "id": "souvenir_tomorrow_child_ticket",
+        "name": "明日儿童票",
+        "event_id": "rtc_event_robot_conductor",
+        "location_id": "rtc_central_station",
+        "time": 1786600433911
       }
     },
     "achievement_records": {
@@ -538,6 +629,21 @@
         "name": "发现风车草原",
         "rarity": 3,
         "time": 1786098408899,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1786600433911,
         "actor_name": "购德帕瓦",
         "rewards": [
           {
@@ -802,9 +908,94 @@
         "settled_at": 1786098408900,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时5分钟\n获得：1088若汁币，若汁之缘×2，经验+2\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★"
+      },
+      "msqxnaed-17hiqcuq": {
+        "id": "msqxnaed-17hiqcuq",
+        "user_id": "3546805220",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "display_name": "购德帕瓦",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_central_station",
+        "location_name": "明日中央车站",
+        "duration_ms": 10283907,
+        "rewards": {
+          "coin": 2937,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": {
+          "id": "rtc_event_robot_conductor",
+          "name": "机器人检票",
+          "text": "检票机器人把龟壳当成超大行李，最后补发了一张儿童票。",
+          "effects": {
+            "coin_flat": 80
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_tomorrow_child_ticket",
+              "name": "明日儿童票",
+              "emoji": "🎫",
+              "description": "旅行纪念品「明日儿童票」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_tomorrow_child_ticket",
+            "name": "明日儿童票",
+            "emoji": "🎫",
+            "description": "旅行纪念品「明日儿童票」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "明日中央车站",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_rtc_central_station",
+            "name": "发现明日中央车站",
+            "rarity": 3,
+            "time": 1786600433911,
+            "actor_name": "购德帕瓦",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现明日中央车站」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786600433911,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时51分钟\n获得：2937若汁币，若汁之缘×5，经验+6\n旅行事件：机器人检票\n检票机器人把龟壳当成超大行李，最后补发了一张儿童票。\n纪念品：🎫明日儿童票×1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msqxnaed-17hiqcuq",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "user_id": "3546805220",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时51分钟\n获得：2937若汁币，若汁之缘×5，经验+6\n旅行事件：机器人检票\n检票机器人把龟壳当成超大行李，最后补发了一张儿童票。\n纪念品：🎫明日儿童票×1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786600433911,
+        "created_at": 1786600433911,
+        "sent_at": 1786600434426,
+        "last_error": ""
+      },
       {
         "travel_id": "msiqjlrz-1iezytod",
         "group_id": "1025424898",
@@ -859,10 +1050,10 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 0,
+        "retro_tomorrow_city": 1,
         "eldoran_continent": 3,
         "unregistered_district": 0,
         "four_regions_little_world": 1
@@ -871,14 +1062,21 @@
         "eldoran_continent": {
           "eld_event_royal_parade": 1,
           "eld_event_pet_registration": 1
+        },
+        "retro_tomorrow_city": {
+          "rtc_event_robot_conductor": 1
         }
       },
       "event_ids": {
         "eld_event_royal_parade": 1,
-        "eld_event_pet_registration": 1
-      }
+        "eld_event_pet_registration": 1,
+        "rtc_event_robot_conductor": 1
+      },
+      "encounter_reward_types": {},
+      "total_encounters": 0
     },
     "active": null,
-    "prepared_tool": null
+    "prepared_tool": null,
+    "encounter_records": {}
   }
 }

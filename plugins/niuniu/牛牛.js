@@ -38,7 +38,7 @@ export class example extends plugin {
         { reg: '^#*重置牛牛$', fnc: 'resetNiuNiu' },
         { reg: '^#*硬化$', fnc: 'upgradeHardness' },
         { reg: '^#*(贤者模式|贤者时刻|贤者时间|不录了|不鹿了|索然无味)$', fnc: 'sageMode' },
-        { reg: '^#*捐精.*$', fnc: 'donateJy' },
+        { reg: '^#*捐精(?:\\s*[0-9]+(?:\\.[0-9]+)?)?$', fnc: 'donateJy' },
         { reg: "^#?(如何|怎样|怎么)(获取|获得|长出)(牛牛|牛子)$", fnc: "howToNiuniu" },
       ],
       task: [] // 明确无定时任务，防 loader 误判
@@ -420,8 +420,8 @@ export class example extends plugin {
     const id = String(e.user_id)
   const msg = String(e.msg ?? "")
 
-  // 提取 “捐精” 后面的第一个数字（允许小数）
-  const m = msg.match(/捐精\s*([0-9]+(?:\.[0-9]+)?)/)
+  // 规则已限定为“捐精”或“捐精 + 数字”（允许小数和空格）。
+  const m = msg.match(/^#*捐精\s*([0-9]+(?:\.[0-9]+)?)$/)
   const hasNumber = !!m?.[1]
   const want = hasNumber ? Number(m[1]) : null
 

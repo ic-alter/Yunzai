@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "1627293137",
   "pet": {
-    "level": 3,
-    "experience": 119,
-    "satiety": 81,
+    "level": 4,
+    "experience": 144,
+    "satiety": 29,
     "mood": 100,
-    "health": 92,
+    "health": 96,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1786420697825,
+    "satiety_decay_at": 1786697887757,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -67,7 +67,11 @@
       "beam_turtle",
       "mushroom_shell_turtle",
       "snake_turtle",
-      "roast_chicken_turtle"
+      "roast_chicken_turtle",
+      "sweat_smile_turtle",
+      "galaxy_turtle",
+      "fox_turtle",
+      "octopus_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -83,10 +87,17 @@
         "level": 3,
         "time": 1786195980298,
         "applied": true
+      },
+      "4:unlock_skin:sweat_smile_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "sweat_smile_turtle",
+        "level": 4,
+        "time": 1786551226422,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 152,
+      "counter:gacha_draws": 167,
       "counter:gacha_five": 4
     },
     "achievement_records": {
@@ -607,9 +618,45 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786614403789,
+        "actor_name": "LOK_",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "octopus_turtle",
+        "reason": "gacha",
+        "time": 1786605546997
+      },
+      {
+        "skin_id": "fox_turtle",
+        "reason": "gacha",
+        "time": 1786605541885
+      },
+      {
+        "skin_id": "galaxy_turtle",
+        "reason": "gacha",
+        "time": 1786605541885
+      },
+      {
+        "skin_id": "sweat_smile_turtle",
+        "reason": "level_reward",
+        "time": 1786551226422,
+        "level": 4
+      },
       {
         "skin_id": "roast_chicken_turtle",
         "reason": "gacha",
@@ -902,20 +949,26 @@
         "type": "starter",
         "time": 1785846055612
       }
-    ]
+    ],
+    "five_skin_shadow_counts": {
+      "roast_chicken_turtle": 0,
+      "rabbit_head_turtle": 0,
+      "quilt_turtle": 0,
+      "sei_shonagon_turtle": 0
+    }
   },
   "profile": {
-    "favorability": 64,
-    "weekly_contribution": 20,
-    "total_contribution": 62,
+    "favorability": 100,
+    "weekly_contribution": 67,
+    "total_contribution": 109,
     "last_display_name": "LOK_",
     "first_joined_at": 1785846055612,
-    "last_active_at": 1786421664694,
+    "last_active_at": 1786699098438,
     "daily": {
-      "date": "2026-08-11",
-      "event_count": 6,
+      "date": "2026-08-14",
+      "event_count": 1,
       "same_event_counts": {
-        "feed": 6
+        "feed": 1
       },
       "negative_shared_impact": 0
     },
@@ -923,129 +976,127 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 85736,
-      "total_earned": 125736,
+      "balance": 94957,
+      "total_earned": 134957,
       "total_spent": 40000,
       "ledger": [
         {
-          "time": 1786420823819,
+          "time": 1786692127758,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 94457,
+          "after": 94957,
+          "meta": {
+            "date": "2026-08-14"
+          }
+        },
+        {
+          "time": 1786614403787,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 674,
-          "before": 85062,
-          "after": 85736,
+          "amount": 2457,
+          "before": 92000,
+          "after": 94457,
           "meta": {
-            "travel_id": "mso3jlaj-20uoasha",
-            "location_id": "sunflower_tunnel",
+            "travel_id": "msr6tiq1-to0u48ky",
+            "location_id": "bixi_ferry",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1786417846428,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 892,
-          "before": 84170,
-          "after": 85062,
-          "meta": {
-            "travel_id": "mso1cszn-x43ltlyp",
-            "location_id": "eld_moonbell_village",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786415782748,
+          "time": 1786605546997,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 83870,
-          "after": 84170,
+          "before": 91700,
+          "after": 92000,
           "meta": {
             "skin_id": "coffee_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786415782748,
+          "time": 1786605546997,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 83570,
-          "after": 83870,
+          "before": 91400,
+          "after": 91700,
           "meta": {
-            "skin_id": "love_letter_turtle",
+            "skin_id": "fruit_hat_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786415782748,
+          "time": 1786605546997,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 83270,
-          "after": 83570,
+          "before": 91100,
+          "after": 91400,
           "meta": {
-            "skin_id": "sparkling_turtle",
+            "skin_id": "grasshopper_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786415782748,
+          "time": 1786605546997,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 82970,
-          "after": 83270,
+          "before": 90800,
+          "after": 91100,
           "meta": {
-            "skin_id": "hearts_turtle",
+            "skin_id": "antler_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786415782748,
+          "time": 1786605541886,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 82670,
-          "after": 82970,
+          "before": 90500,
+          "after": 90800,
           "meta": {
-            "skin_id": "sneaker_turtle",
+            "skin_id": "kiss_marks_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786415782748,
+          "time": 1786605541886,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 82370,
-          "after": 82670,
-          "meta": {
-            "skin_id": "raised_eyebrow_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786415782748,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 82070,
-          "after": 82370,
-          "meta": {
-            "skin_id": "sparkling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786415782748,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 81770,
-          "after": 82070,
+          "before": 90200,
+          "after": 90500,
           "meta": {
             "skin_id": "goggles_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786605541886,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89900,
+          "after": 90200,
+          "meta": {
+            "skin_id": "lying_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786605541886,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89600,
+          "after": 89900,
+          "meta": {
+            "skin_id": "frog_turtle",
             "rarity": 3
           }
         }
@@ -1056,10 +1107,10 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-11"
+      "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 23,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_duty_student_key": 1,
@@ -1074,9 +1125,134 @@
       "souvenir_mini_life_jacket": 1,
       "souvenir_yesterday_calendar": 1,
       "souvenir_f_rank_adventurer_card": 1,
-      "souvenir_zero_ticket": 1
+      "souvenir_zero_ticket": 1,
+      "souvenir_burned_neon_tube": 1
     },
     "item_ledger": [
+      {
+        "time": 1786692127758,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 13,
+        "before": 10,
+        "after": 23,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 24.063
+        }
+      },
+      {
+        "time": 1786614403789,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 7,
+        "after": 10,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_bixi_ferry"
+        }
+      },
+      {
+        "time": 1786614403787,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 2,
+        "after": 7,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msr6tiq1-to0u48ky",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786605546997,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 15,
+        "before": 17,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 5
+        }
+      },
+      {
+        "time": 1786605541885,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 47,
+        "after": 17,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1786605501423,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 10,
+        "before": 37,
+        "after": 47,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 15.08
+        }
+      },
+      {
+        "time": 1786551226421,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 34,
+        "after": 37,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 4
+        }
+      },
+      {
+        "time": 1786551215099,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 21,
+        "before": 13,
+        "after": 34,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 37.871
+        }
+      },
+      {
+        "time": 1786465821449,
+        "type": "income",
+        "item_id": "souvenir_burned_neon_tube",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msos5f7w-4qqqy0yc",
+          "event_id": "rtc_event_neon_sign",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
+      {
+        "time": 1786465821448,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 10,
+        "after": 13,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msos5f7w-4qqqy0yc",
+          "location_id": "rtc_galaxy_motel"
+        }
+      },
       {
         "time": 1786420823819,
         "type": "income",
@@ -1201,131 +1377,6 @@
         "meta": {
           "count": 10
         }
-      },
-      {
-        "time": 1786414879159,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 102,
-        "after": 132,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 60.805
-        }
-      },
-      {
-        "time": 1786297280966,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 99,
-        "after": 102,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_zero_visitor"
-        }
-      },
-      {
-        "time": 1786297280966,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 96,
-        "after": 99,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_empty_amusement_park"
-        }
-      },
-      {
-        "time": 1786297280965,
-        "type": "income",
-        "item_id": "souvenir_zero_ticket",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mslz45c3-tpiivun2",
-          "event_id": "event_zero_visitor",
-          "location_id": "empty_amusement_park"
-        }
-      },
-      {
-        "time": 1786297280965,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 92,
-        "after": 96,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mslz45c3-tpiivun2",
-          "location_id": "empty_amusement_park"
-        }
-      },
-      {
-        "time": 1786280563974,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 90,
-        "after": 92,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mslrmy1g-pgmmduot",
-          "location_id": "rtc_galaxy_motel"
-        }
-      },
-      {
-        "time": 1786277725386,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1786272063679,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 89,
-        "after": 90,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mslng1cz-pv7u9ash",
-          "location_id": "eld_windmill_plain"
-        }
-      },
-      {
-        "time": 1786270684632,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 4,
-        "after": 3,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1786270566683,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 86,
-        "after": 89,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_5_locations"
-        }
       }
     ],
     "item_daily": {
@@ -1357,122 +1408,7 @@
   },
   "recent_events": [
     {
-      "time": 1786414937826,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786414934597,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786414930387,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786414925266,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786414920036,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786414879159,
+      "time": 1786692127758,
       "user_id": "1627293137",
       "display_name": "LOK_",
       "event_id": "feed",
@@ -1491,109 +1427,106 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 59531
+        "balance": 94957
       },
       "level_rewards": [],
       "achievements": [],
-      "auto_production_collect": 30
+      "auto_production_collect": 13
     },
     {
-      "time": 1786195985388,
+      "time": 1786605501424,
       "user_id": "1627293137",
       "display_name": "LOK_",
       "event_id": "feed",
       "branch_id": "normal",
       "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+3",
       "effects": {
         "satiety": 12,
         "mood": 3,
         "health": 0,
         "favorability": 3,
         "contribution": 3,
-        "experience": 13
+        "experience": 3
       },
       "level_ups": [],
-      "bonus_experience": 10,
+      "bonus_experience": 0,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
-      "auto_production_collect": 0
+      "auto_production_collect": 10
     },
     {
-      "time": 1786195980299,
+      "time": 1786552033644,
       "user_id": "1627293137",
       "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "hungry",
-      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
-      "effects_text": "饱食+18，心情+5，健康+2，好感+5，贡献+5，经验+15，升级到 Lv.3",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向LOK_，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+1",
       "effects": {
-        "satiety": 18,
-        "mood": 5,
-        "health": 2,
-        "favorability": 5,
-        "contribution": 5,
-        "experience": 15
-      },
-      "level_ups": [
-        {
-          "level": 3,
-          "need": 120
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 49052
-      },
-      "level_rewards": [
-        {
-          "level": 3,
-          "reward": 300,
-          "receiver": {
-            "user_id": "1627293137",
-            "display_name": "LOK_"
-          },
-          "special_rewards": [
-            {
-              "type": "unlock_skin",
-              "level": 3,
-              "skin_id": "beam_turtle",
-              "skin_name": "咧嘴小若汁",
-              "applied": true
-            }
-          ]
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 15
-    },
-    {
-      "time": 1786099377755,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+6，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 6,
+        "satiety": 0,
         "mood": 1,
         "health": 0,
         "favorability": 1,
         "contribution": 1,
-        "experience": 11
+        "experience": 1
       },
       "level_ups": [],
-      "bonus_experience": 10,
+      "bonus_experience": 0,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     },
     {
-      "time": 1786099367248,
+      "time": 1786551962564,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "petting",
+      "branch_id": "head_close",
+      "summary": "小若汁追着LOK_的手蹭了蹭。",
+      "effects_text": "心情+8，好感+5，贡献+4，经验+4",
+      "effects": {
+        "satiety": 0,
+        "mood": 8,
+        "health": 0,
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 4
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551942018,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "attack",
+      "branch_id": "light_hit",
+      "summary": "LOK_踢中了小若汁。小若汁滚了两圈，生气地瞪了回来。",
+      "effects_text": "心情-7，健康-4，好感-8，贡献+1，经验+1",
+      "effects": {
+        "satiety": 0,
+        "mood": -7,
+        "health": -4,
+        "favorability": -8,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551264244,
       "user_id": "1627293137",
       "display_name": "LOK_",
       "event_id": "feed",
@@ -1607,6 +1540,98 @@
         "favorability": 3,
         "contribution": 3,
         "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551257851,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "petting",
+      "branch_id": "head_normal",
+      "summary": "小若汁低下脑袋，安静地接受了摸头。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551252144,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551248245,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "petting",
+      "branch_id": "head_close",
+      "summary": "小若汁追着LOK_的手蹭了蹭。",
+      "effects_text": "心情+8，好感+5，贡献+4，经验+14",
+      "effects": {
+        "satiety": 0,
+        "mood": 8,
+        "health": 0,
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 14
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786551243810,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到LOK_身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
       },
       "level_ups": [],
       "bonus_experience": 10,
@@ -1617,9 +1642,9 @@
     }
   ],
   "daily": {
-    "date": "2026-08-11",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "date": "2026-08-14",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
   "processed_messages": {
     "event:1565137729": 1785930407070,
@@ -1639,7 +1664,22 @@
     "event:573435281": 1786414925266,
     "event:198248128": 1786414930387,
     "event:716885303": 1786414934596,
-    "event:1495810972": 1786414937825
+    "event:1495810972": 1786414937825,
+    "event:852507237": 1786551215098,
+    "event:1486758412": 1786551226420,
+    "event:97987286": 1786551231073,
+    "event:1147794763": 1786551234528,
+    "event:1733705993": 1786551237089,
+    "event:1048828231": 1786551243809,
+    "event:183712763": 1786551248245,
+    "event:526524489": 1786551252144,
+    "event:1000631365": 1786551257850,
+    "event:1796098709": 1786551264243,
+    "event:1100584103": 1786551942017,
+    "event:1865511581": 1786551962563,
+    "event:614337360": 1786552033642,
+    "event:732229650": 1786605501421,
+    "event:986399665": 1786692127757
   },
   "skin_sessions": {
     "active": null
@@ -1652,14 +1692,14 @@
     "migrated_at": 1785846055612
   },
   "created_at": 1785846055612,
-  "updated_at": 1786421664694,
+  "updated_at": 1786699098438,
   "production": {
     "started_at": 1785846055612,
-    "last_settled_at": 1786421664694,
-    "accumulated_ms": 6785536,
-    "progress": 1.7138272809517292,
-    "total_produced": 80,
-    "last_collected_at": 1786414879158
+    "last_settled_at": 1786699098437,
+    "accumulated_ms": 6970680,
+    "progress": 1.3919258538237143,
+    "total_produced": 124,
+    "last_collected_at": 1786692127757
   },
   "travel": {
     "unlocked_location_ids": [
@@ -1684,7 +1724,8 @@
       "eld_moonbell_village",
       "eld_dwarf_city",
       "eld_adventurer_guild",
-      "empty_amusement_park"
+      "empty_amusement_park",
+      "bixi_ferry"
     ],
     "location_records": {
       "school_gate_1743": {
@@ -1862,6 +1903,14 @@
         "travel_id": "mslz45c3-tpiivun2",
         "time": 1786297280965,
         "carried_item_id": ""
+      },
+      "bixi_ferry": {
+        "id": "bixi_ferry",
+        "map_id": "four_regions_little_world",
+        "name": "碧溪渡",
+        "travel_id": "msr6tiq1-to0u48ky",
+        "time": 1786614403788,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1990,6 +2039,20 @@
         "location_id": "empty_amusement_park",
         "travel_id": "mslz45c3-tpiivun2",
         "time": 1786297280965
+      },
+      "rtc_event_neon_sign": {
+        "id": "rtc_event_neon_sign",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_galaxy_motel",
+        "travel_id": "msos5f7w-4qqqy0yc",
+        "time": 1786465821449
+      },
+      "extra_passenger": {
+        "id": "extra_passenger",
+        "map_id": "four_regions_little_world",
+        "location_id": "bixi_ferry",
+        "travel_id": "msr6tiq1-to0u48ky",
+        "time": 1786614403788
       }
     },
     "souvenir_records": {
@@ -2076,6 +2139,13 @@
         "event_id": "event_zero_visitor",
         "location_id": "empty_amusement_park",
         "time": 1786297280965
+      },
+      "souvenir_burned_neon_tube": {
+        "id": "souvenir_burned_neon_tube",
+        "name": "烧坏的霓虹灯管",
+        "event_id": "rtc_event_neon_sign",
+        "location_id": "rtc_galaxy_motel",
+        "time": 1786465821449
       }
     },
     "achievement_records": {
@@ -2519,6 +2589,21 @@
         "name": "今日最后一位首位游客",
         "rarity": 3,
         "time": 1786297280966,
+        "actor_name": "LOK_",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786614403789,
         "actor_name": "LOK_",
         "rewards": [
           {
@@ -4472,9 +4557,145 @@
         "settled_at": 1786420823821,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：太阳花隧道（未登记城区）\n旅行时间：36分钟\n获得：674若汁币，若汁之缘×1，经验+1\n携带道具：行李箱"
+      },
+      "msos5f7w-4qqqy0yc": {
+        "id": "msos5f7w-4qqqy0yc",
+        "user_id": "1627293137",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "display_name": "LOK_",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_galaxy_motel",
+        "location_name": "银河汽车旅馆",
+        "duration_ms": 5835435,
+        "rewards": {
+          "coin": 1864,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "rtc_event_neon_sign",
+          "name": "修理霓虹灯",
+          "text": "小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。",
+          "effects": {
+            "coin_percent": 15
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_burned_neon_tube",
+              "name": "烧坏的霓虹灯管",
+              "emoji": "💡",
+              "description": "旅行纪念品「烧坏的霓虹灯管」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_burned_neon_tube",
+            "name": "烧坏的霓虹灯管",
+            "emoji": "💡",
+            "description": "旅行纪念品「烧坏的霓虹灯管」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786465821450,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时37分钟\n获得：1864若汁币，若汁之缘×3，经验+3\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1"
+      },
+      "msr6tiq1-to0u48ky": {
+        "id": "msr6tiq1-to0u48ky",
+        "user_id": "1627293137",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "display_name": "LOK_",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "bixi_ferry",
+        "location_name": "碧溪渡",
+        "duration_ms": 8846505,
+        "rewards": {
+          "coin": 2457,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "extra_passenger",
+          "name": "少了一名乘客",
+          "text": "船夫每次点人数都多出一人，最后决定不再数。",
+          "effects": {},
+          "souvenirs": [],
+          "record": false
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "碧溪渡",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_bixi_ferry",
+            "name": "发现碧溪渡",
+            "rarity": 3,
+            "time": 1786614403789,
+            "actor_name": "LOK_",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现碧溪渡」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786614403789,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时27分钟\n获得：2457若汁币，若汁之缘×5，经验+5\n旅行事件：少了一名乘客\n船夫每次点人数都多出一人，最后决定不再数。\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msr6tiq1-to0u48ky",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "user_id": "1627293137",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时27分钟\n获得：2457若汁币，若汁之缘×5，经验+5\n旅行事件：少了一名乘客\n船夫每次点人数都多出一人，最后决定不再数。\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786614403789,
+        "created_at": 1786614403789,
+        "sent_at": 1786614404388,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msos5f7w-4qqqy0yc",
+        "group_id": "1041227265",
+        "self_id": "3762153943",
+        "user_id": "1627293137",
+        "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时37分钟\n获得：1864若汁币，若汁之缘×3，经验+3\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786465821450,
+        "created_at": 1786465821450,
+        "sent_at": 1786465821966,
+        "last_error": ""
+      },
       {
         "travel_id": "mso3jlaj-20uoasha",
         "group_id": "1041227265",
@@ -4708,36 +4929,10 @@
         "created_at": 1786042777666,
         "sent_at": 1786042777957,
         "last_error": ""
-      },
-      {
-        "travel_id": "mshjzwiq-jbdol12r",
-        "group_id": "1041227265",
-        "self_id": "3762153943",
-        "user_id": "1627293137",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时32分钟\n获得：3415若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n旅行事件：草垛硬币\n小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。\n纪念品：🪙麦香旧硬币×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786032175956,
-        "created_at": 1786032175956,
-        "sent_at": 1786032176267,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mshe3mb8-hdbjcoub",
-        "group_id": "1041227265",
-        "self_id": "3762153943",
-        "user_id": "1627293137",
-        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：2小时36分钟\n获得：2905若汁币，若汁之缘×6，经验+5\n携带道具：行李箱",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786022461638,
-        "created_at": 1786022461638,
-        "sent_at": 1786022462016,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 34,
+      "total_trips": 36,
       "key_item_discoveries": {
         "souvenir_return_coin": {
           "item_id": "souvenir_return_coin",
@@ -4754,7 +4949,7 @@
         "retro_tomorrow_city": 8,
         "eldoran_continent": 5,
         "unregistered_district": 8,
-        "four_regions_little_world": 1
+        "four_regions_little_world": 2
       },
       "map_event_ids": {
         "unregistered_district": {
@@ -4773,7 +4968,8 @@
           "rtc_event_robot_conductor": 1,
           "rtc_event_same_exit": 1,
           "rtc_event_glass_boat": 1,
-          "rtc_event_emergency_float": 1
+          "rtc_event_emergency_float": 1,
+          "rtc_event_neon_sign": 1
         },
         "eldoran_continent": {
           "eld_event_haystack_coin": 1,
@@ -4781,7 +4977,8 @@
           "eld_event_rank_test": 1
         },
         "four_regions_little_world": {
-          "watering_accident": 1
+          "watering_accident": 1,
+          "extra_passenger": 1
         }
       },
       "event_ids": {
@@ -4802,17 +4999,22 @@
         "eld_event_mine_cart": 1,
         "event_exit_to_yesterday": 1,
         "eld_event_rank_test": 1,
-        "event_zero_visitor": 1
-      }
+        "event_zero_visitor": 1,
+        "rtc_event_neon_sign": 1,
+        "extra_passenger": 1
+      },
+      "encounter_reward_types": {},
+      "total_encounters": 0
     },
     "active": null,
-    "prepared_tool": null
+    "prepared_tool": null,
+    "encounter_records": {}
   },
   "gacha": {
-    "since_four_plus": 9,
-    "since_five": 9,
-    "total_draws": 152,
-    "total_four": 17,
+    "since_four_plus": 3,
+    "since_five": 24,
+    "total_draws": 167,
+    "total_four": 20,
     "total_five": 4,
     "five_history": [
       {

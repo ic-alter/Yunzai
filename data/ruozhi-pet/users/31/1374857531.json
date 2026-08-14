@@ -3,12 +3,12 @@
   "user_id": "1374857531",
   "pet": {
     "level": 1,
-    "experience": 4,
+    "experience": 21,
     "satiety": 5,
-    "mood": 70,
+    "mood": 75,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786421664648,
+    "satiety_decay_at": 1786699098393,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -78,6 +78,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1786456467110,
+        "actor_name": "路过的王厨",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786497251511,
+        "actor_name": "路过的王厨",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -109,14 +139,14 @@
     ]
   },
   "profile": {
-    "favorability": 0,
-    "weekly_contribution": 0,
-    "total_contribution": 0,
+    "favorability": 3,
+    "weekly_contribution": 3,
+    "total_contribution": 3,
     "last_display_name": "路过的王厨",
     "first_joined_at": 1786157442232,
-    "last_active_at": 1786421664648,
+    "last_active_at": 1786699098393,
     "daily": {
-      "date": "2026-08-11",
+      "date": "2026-08-14",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -125,12 +155,104 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 18,
+      "ruozhi_fate": 57,
       "nameless_ruozhi": 0,
       "souvenir_yesterday_calendar": 1,
-      "souvenir_rain_button": 1
+      "souvenir_rain_button": 1,
+      "souvenir_wheat_noodle": 1,
+      "souvenir_silent_moonbell": 1
     },
     "item_ledger": [
+      {
+        "time": 1786499551514,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 27,
+        "after": 57,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1786497251511,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 24,
+        "after": 27,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786497251511,
+        "type": "income",
+        "item_id": "souvenir_silent_moonbell",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mspcuunl-wv9r7qlf",
+          "event_id": "eld_event_silent_bell",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786497251510,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 23,
+        "after": 24,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mspcuunl-wv9r7qlf",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786456467110,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 20,
+        "after": 23,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_qing_he_town"
+        }
+      },
+      {
+        "time": 1786456467109,
+        "type": "income",
+        "item_id": "souvenir_wheat_noodle",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msonsgt8-y0v6q1ao",
+          "event_id": "endless_noodle",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1786456467109,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 18,
+        "after": 20,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msonsgt8-y0v6q1ao",
+          "location_id": "qing_he_town"
+        }
+      },
       {
         "time": 1786182229971,
         "type": "income",
@@ -244,10 +366,47 @@
       }
     },
     "currency": {
-      "balance": 2042,
-      "total_earned": 2042,
+      "balance": 4290,
+      "total_earned": 4290,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786499551515,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 3790,
+          "after": 4290,
+          "meta": {
+            "date": "2026-08-12"
+          }
+        },
+        {
+          "time": 1786497251510,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 691,
+          "before": 3099,
+          "after": 3790,
+          "meta": {
+            "travel_id": "mspcuunl-wv9r7qlf",
+            "location_id": "eld_moonbell_village",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786456467109,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1057,
+          "before": 2042,
+          "after": 3099,
+          "meta": {
+            "travel_id": "msonsgt8-y0v6q1ao",
+            "location_id": "qing_he_town",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786182229970,
           "type": "income",
@@ -281,16 +440,45 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-08-12"
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1786499551515,
+      "user_id": "1374857531",
+      "display_name": "路过的王厨",
+      "event_id": "petting",
+      "branch_id": "head_normal",
+      "summary": "小若汁低下脑袋，安静地接受了摸头。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 4290
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    }
+  ],
   "daily": {
-    "date": "2026-08-08",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-08-12",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:2063765549": 1786499551513
+  },
   "skin_sessions": {
     "active": null
   },
@@ -302,18 +490,21 @@
     "migrated_at": 1786157442232
   },
   "created_at": 1786157442232,
-  "updated_at": 1786421664648,
+  "updated_at": 1786699098393,
   "production": {
     "started_at": 1786157442232,
-    "last_settled_at": 1786421664648,
-    "accumulated_ms": 259200000,
-    "progress": 30.026680747013163,
-    "total_produced": 0
+    "last_settled_at": 1786699098393,
+    "accumulated_ms": 199546879,
+    "progress": 21.82688065209232,
+    "total_produced": 30,
+    "last_collected_at": 1786499551514
   },
   "travel": {
     "unlocked_location_ids": [
       "yellow_underpass",
-      "rain_only_store"
+      "rain_only_store",
+      "qing_he_town",
+      "eld_moonbell_village"
     ],
     "location_records": {
       "yellow_underpass": {
@@ -331,6 +522,22 @@
         "travel_id": "msk3h618-l5cequuu",
         "time": 1786182229970,
         "carried_item_id": ""
+      },
+      "qing_he_town": {
+        "id": "qing_he_town",
+        "map_id": "four_regions_little_world",
+        "name": "青禾镇",
+        "travel_id": "msonsgt8-y0v6q1ao",
+        "time": 1786456467109,
+        "carried_item_id": ""
+      },
+      "eld_moonbell_village": {
+        "id": "eld_moonbell_village",
+        "map_id": "eldoran_continent",
+        "name": "月铃村",
+        "travel_id": "mspcuunl-wv9r7qlf",
+        "time": 1786497251511,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -347,6 +554,20 @@
         "location_id": "rain_only_store",
         "travel_id": "msk3h618-l5cequuu",
         "time": 1786182229970
+      },
+      "endless_noodle": {
+        "id": "endless_noodle",
+        "map_id": "four_regions_little_world",
+        "location_id": "qing_he_town",
+        "travel_id": "msonsgt8-y0v6q1ao",
+        "time": 1786456467109
+      },
+      "eld_event_silent_bell": {
+        "id": "eld_event_silent_bell",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_moonbell_village",
+        "travel_id": "mspcuunl-wv9r7qlf",
+        "time": 1786497251511
       }
     },
     "souvenir_records": {
@@ -363,6 +584,20 @@
         "event_id": "event_change_is_rain",
         "location_id": "rain_only_store",
         "time": 1786182229970
+      },
+      "souvenir_wheat_noodle": {
+        "id": "souvenir_wheat_noodle",
+        "name": "最后一根灵麦面",
+        "event_id": "endless_noodle",
+        "location_id": "qing_he_town",
+        "time": 1786456467109
+      },
+      "souvenir_silent_moonbell": {
+        "id": "souvenir_silent_moonbell",
+        "name": "不响的月铃",
+        "event_id": "eld_event_silent_bell",
+        "location_id": "eld_moonbell_village",
+        "time": 1786497251511
       }
     },
     "achievement_records": {
@@ -416,6 +651,36 @@
         "name": "发现只在雨中营业的便利店",
         "rarity": 3,
         "time": 1786182229971,
+        "actor_name": "路过的王厨",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1786456467110,
+        "actor_name": "路过的王厨",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786497251511,
         "actor_name": "路过的王厨",
         "rewards": [
           {
@@ -603,9 +868,177 @@
         "settled_at": 1786182229971,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：1小时33分钟\n获得：1542若汁币，若汁之缘×4，经验+3\n旅行事件：找零是一场小雨\n收银机没有吐出硬币，而是在小若汁头顶下了三秒钟的雨。\n纪念品：🔘雨做的纽扣×1\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★"
+      },
+      "msonsgt8-y0v6q1ao": {
+        "id": "msonsgt8-y0v6q1ao",
+        "user_id": "1374857531",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "display_name": "路过的王厨",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "qing_he_town",
+        "location_name": "青禾镇",
+        "duration_ms": 3804027,
+        "rewards": {
+          "coin": 1057,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "endless_noodle",
+          "name": "不肯见底的面",
+          "text": "碗里始终剩着最后一根灵麦面。",
+          "effects": {
+            "satiety": 6
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_wheat_noodle",
+              "name": "最后一根灵麦面",
+              "emoji": "🍜",
+              "description": "旅行纪念品「最后一根灵麦面」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_wheat_noodle",
+            "name": "最后一根灵麦面",
+            "emoji": "🍜",
+            "description": "旅行纪念品「最后一根灵麦面」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 6,
+        "new_location": "青禾镇",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_qing_he_town",
+            "name": "发现青禾镇",
+            "rarity": 3,
+            "time": 1786456467110,
+            "actor_name": "路过的王厨",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现青禾镇」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786456467110,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时3分钟\n获得：1057若汁币，若汁之缘×2，经验+2\n旅行事件：不肯见底的面\n碗里始终剩着最后一根灵麦面。\n本次状态变化：饱食+6\n纪念品：🍜最后一根灵麦面×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
+      },
+      "mspcuunl-wv9r7qlf": {
+        "id": "mspcuunl-wv9r7qlf",
+        "user_id": "1374857531",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "display_name": "路过的王厨",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_moonbell_village",
+        "location_name": "月铃村",
+        "duration_ms": 2486777,
+        "rewards": {
+          "coin": 691,
+          "fate": 1,
+          "experience": 2
+        },
+        "event": {
+          "id": "eld_event_silent_bell",
+          "name": "不响的铃铛",
+          "text": "村里最古老的铃只在没人看时响。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_silent_moonbell",
+              "name": "不响的月铃",
+              "emoji": "🔔",
+              "description": "旅行纪念品「不响的月铃」。"
+            }
+          ],
+          "record": false
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_silent_moonbell",
+            "name": "不响的月铃",
+            "emoji": "🔔",
+            "description": "旅行纪念品「不响的月铃」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "月铃村",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_moonbell_village",
+            "name": "发现月铃村",
+            "rarity": 3,
+            "time": 1786497251511,
+            "actor_name": "路过的王厨",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月铃村」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786497251512,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：41分钟\n获得：691若汁币，若汁之缘×1，经验+2\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n纪念品：🔔不响的月铃×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mspcuunl-wv9r7qlf",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "user_id": "1374857531",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：41分钟\n获得：691若汁币，若汁之缘×1，经验+2\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n纪念品：🔔不响的月铃×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786497251512,
+        "created_at": 1786497251512,
+        "sent_at": 1786497251936,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msonsgt8-y0v6q1ao",
+        "group_id": "138260540",
+        "self_id": "3964480831",
+        "user_id": "1374857531",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时3分钟\n获得：1057若汁币，若汁之缘×2，经验+2\n旅行事件：不肯见底的面\n碗里始终剩着最后一根灵麦面。\n本次状态变化：饱食+6\n纪念品：🍜最后一根灵麦面×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786456467111,
+        "created_at": 1786456467111,
+        "sent_at": 1786456467725,
+        "last_error": ""
+      },
       {
         "travel_id": "msk3h618-l5cequuu",
         "group_id": "138260540",
@@ -634,26 +1067,37 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 4,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
-        "eldoran_continent": 0,
+        "eldoran_continent": 1,
         "unregistered_district": 2,
-        "four_regions_little_world": 0
+        "four_regions_little_world": 1
       },
       "map_event_ids": {
         "unregistered_district": {
           "event_exit_to_yesterday": 1,
           "event_change_is_rain": 1
+        },
+        "four_regions_little_world": {
+          "endless_noodle": 1
+        },
+        "eldoran_continent": {
+          "eld_event_silent_bell": 1
         }
       },
       "event_ids": {
         "event_exit_to_yesterday": 1,
-        "event_change_is_rain": 1
-      }
+        "event_change_is_rain": 1,
+        "endless_noodle": 1,
+        "eld_event_silent_bell": 1
+      },
+      "encounter_reward_types": {},
+      "total_encounters": 0
     },
     "active": null,
-    "prepared_tool": null
+    "prepared_tool": null,
+    "encounter_records": {}
   }
 }

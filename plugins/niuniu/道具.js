@@ -25,8 +25,8 @@ export class NiuNiuItem extends plugin {
       priority: 200,
       rule: [
         { reg: "^#?(道具列表|牛牛仓库)$", fnc: "showBag" },
-        { reg: "^#?(道具使用|使用道具)", fnc: "useItem" },
-        { reg: "^#?(丢弃道具|道具丢弃)", fnc: "dropItem" },
+        { reg: "^#(道具使用|使用道具)", fnc: "useItem" },
+        { reg: "^#(丢弃道具|道具丢弃)", fnc: "dropItem" },
         { reg: "^#?(回收道具|道具回收)$", fnc: "openRecycleShop" }
       ]
     })
@@ -62,7 +62,7 @@ export class NiuNiuItem extends plugin {
    *  道具使用（入口）
    * ======================= */
   async useItem(e) {
-    const arg = e.msg.replace(/^#?(道具使用|使用道具)/, "").trim()
+    const arg = e.msg.replace(/^#(道具使用|使用道具)/, "").trim()
 
     // 直接指定道具名
     if (arg) {
@@ -217,7 +217,7 @@ export class NiuNiuItem extends plugin {
    *  丢弃道具
    * ======================= */
   async dropItem(e) {
-    const arg = e.msg.replace(/^#?(丢弃道具|道具丢弃)/, "").trim()
+    const arg = e.msg.replace(/^#(丢弃道具|道具丢弃)/, "").trim()
 
     // 未指定 → 列出可丢弃道具
     if (!arg) {
@@ -301,7 +301,7 @@ export class NiuNiuItem extends plugin {
     // 复用 dropItem 的逻辑（此处不是上下文读取 msg，所以直接构造 msg 即可）
     await this.dropItem({
       ...e,
-      msg: `丢弃道具 ${ctx.items[idx - 1].name}`
+      msg: `#丢弃道具 ${ctx.items[idx - 1].name}`
     })
     return true
   }

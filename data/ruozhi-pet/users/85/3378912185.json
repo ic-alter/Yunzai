@@ -3,12 +3,12 @@
   "user_id": "3378912185",
   "pet": {
     "level": 2,
-    "experience": 19,
+    "experience": 30,
     "satiety": 5,
-    "mood": 79,
+    "mood": 80,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786421664864,
+    "satiety_decay_at": 1786699098610,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -154,14 +154,14 @@
     ]
   },
   "profile": {
-    "favorability": 12,
-    "weekly_contribution": 0,
-    "total_contribution": 9,
+    "favorability": 13,
+    "weekly_contribution": 1,
+    "total_contribution": 10,
     "last_display_name": "言言酒酒合约冠军",
     "first_joined_at": 1784810195924,
-    "last_active_at": 1786421664864,
+    "last_active_at": 1786699098610,
     "daily": {
-      "date": "2026-08-11",
+      "date": "2026-08-14",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -170,12 +170,24 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 113,
+      "ruozhi_fate": 142,
       "nameless_ruozhi": 0,
       "souvenir_border_map": 0,
       "souvenir_auto_watering_tag": 1
     },
     "item_ledger": [
+      {
+        "time": 1786449802517,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 29,
+        "before": 113,
+        "after": 142,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1785930050388,
         "type": "income",
@@ -413,18 +425,6 @@
           "travel_id": "msbmx98l-u8iccfjf",
           "location_id": "rtc_botanical_dome"
         }
-      },
-      {
-        "time": 1785634546400,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 12,
-        "before": 28,
-        "after": 40,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 31.051
-        }
       }
     ],
     "item_daily": {},
@@ -437,10 +437,21 @@
       }
     },
     "currency": {
-      "balance": 13873,
-      "total_earned": 13873,
+      "balance": 14373,
+      "total_earned": 14373,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786449802518,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 13873,
+          "after": 14373,
+          "meta": {
+            "date": "2026-08-11"
+          }
+        },
         {
           "time": 1785930050387,
           "type": "income",
@@ -549,19 +560,6 @@
             "location_id": "eld_windmill_plain",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1785671485071,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1761,
-          "before": 1500,
-          "after": 3261,
-          "meta": {
-            "travel_id": "msbmx98l-u8iccfjf",
-            "location_id": "rtc_botanical_dome",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -570,10 +568,36 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-05"
+      "first_interaction_reward_date": "2026-08-11"
     }
   },
   "recent_events": [
+    {
+      "time": 1786449802518,
+      "user_id": "3378912185",
+      "display_name": "言言酒酒合约冠军",
+      "event_id": "mention_only",
+      "branch_id": "sleepy_response",
+      "summary": "小若汁听见言言酒酒合约冠军叫它，困困地探出脑袋看了一眼。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 14373
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 29
+    },
     {
       "time": 1785920943697,
       "user_id": "3378912185",
@@ -823,7 +847,7 @@
     }
   ],
   "daily": {
-    "date": "2026-08-05",
+    "date": "2026-08-11",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -836,7 +860,8 @@
     "event:887465066": 1785694017058,
     "event:741080587": 1785726518893,
     "event:1386609667": 1785843090486,
-    "event:2064437017": 1785920943696
+    "event:2064437017": 1785920943696,
+    "event:1057022579": 1786449802516
   },
   "skin_sessions": {
     "active": null
@@ -849,14 +874,14 @@
     "migrated_at": 1784810195924
   },
   "created_at": 1784810195924,
-  "updated_at": 1786421664864,
+  "updated_at": 1786699098610,
   "production": {
     "started_at": 1785141760293,
-    "last_settled_at": 1786421664864,
-    "accumulated_ms": 259200000,
-    "progress": 29.516641273184568,
-    "total_produced": 71,
-    "last_collected_at": 1785920943697
+    "last_settled_at": 1786699098610,
+    "accumulated_ms": 249296093,
+    "progress": 28.034143810885375,
+    "total_produced": 100,
+    "last_collected_at": 1786449802517
   },
   "travel": {
     "unlocked_location_ids": [
@@ -1450,9 +1475,12 @@
       "event_ids": {
         "eld_event_shepherd_map": 1,
         "rtc_event_gardener_bot": 1
-      }
+      },
+      "encounter_reward_types": {},
+      "total_encounters": 0
     },
     "active": null,
-    "prepared_tool": null
+    "prepared_tool": null,
+    "encounter_records": {}
   }
 }
