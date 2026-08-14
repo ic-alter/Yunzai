@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2213304613",
   "pet": {
-    "level": 1,
-    "experience": 99,
+    "level": 2,
+    "experience": 1,
     "satiety": 5,
     "mood": 100,
     "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786702774240,
+    "satiety_decay_at": 1786718589837,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -71,9 +71,18 @@
       "diamond_turtle",
       "tidal_wave_turtle",
       "world_devourer_turtle",
-      "milk_frog_turtle"
+      "milk_frog_turtle",
+      "cactus_turtle"
     ],
-    "level_reward_records": {},
+    "level_reward_records": {
+      "2:unlock_skin:cactus_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "cactus_turtle",
+        "level": 2,
+        "time": 1786707203049,
+        "applied": true
+      }
+    },
     "achievement_stats": {
       "counter:gacha_draws": 173,
       "counter:gacha_five": 3,
@@ -215,9 +224,30 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1786707203050,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "cactus_turtle",
+        "reason": "level_reward",
+        "time": 1786707203049,
+        "level": 2
+      },
       {
         "skin_id": "milk_frog_turtle",
         "reason": "achievement",
@@ -532,7 +562,10 @@
     ],
     "five_skin_shadow_counts": {
       "snow_peak_turtle": 1
-    }
+    },
+    "weight": 50,
+    "weight_decay_at": 1786710729584,
+    "health_decay_at": 1786718589837
   },
   "profile": {
     "favorability": 29,
@@ -540,7 +573,7 @@
     "total_contribution": 27,
     "last_display_name": "骛雍",
     "first_joined_at": 1785862100287,
-    "last_active_at": 1786702774240,
+    "last_active_at": 1786718589837,
     "daily": {
       "date": "2026-08-14",
       "event_count": 1,
@@ -553,13 +586,66 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 40,
+      "ruozhi_fate": 48,
       "nameless_ruozhi": 1,
       "travel_suitcase": 3,
       "souvenir_border_quest_scroll": 1,
-      "souvenir_border_map": 1
+      "souvenir_border_map": 1,
+      "souvenir_wheat_old_coin": 1
     },
     "item_ledger": [
+      {
+        "time": 1786707203050,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 45,
+        "after": 48,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1786707203049,
+        "type": "income",
+        "item_id": "souvenir_wheat_old_coin",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msssp7tt-6v0n2dta",
+          "event_id": "eld_event_haystack_coin",
+          "location_id": "eld_windmill_plain"
+        }
+      },
+      {
+        "time": 1786707203046,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 42,
+        "after": 45,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 2,
+          "source": "travel"
+        }
+      },
+      {
+        "time": 1786707203045,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 40,
+        "after": 42,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msssp7tt-6v0n2dta",
+          "location_id": "eld_windmill_plain"
+        }
+      },
       {
         "time": 1786702774236,
         "type": "expense",
@@ -760,57 +846,6 @@
           "first_sign_bonus": 0,
           "monthly_sign_bonus": 45
         }
-      },
-      {
-        "time": 1786593986102,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 37,
-        "after": 7,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786593947061,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 12,
-        "before": 25,
-        "after": 37,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 26.926
-        }
-      },
-      {
-        "time": 1786593938200,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 55,
-        "after": 25,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786593915160,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 27,
-        "before": 28,
-        "after": 55,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-13",
-          "month_count": 9,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
       }
     ],
     "item_daily": {
@@ -831,10 +866,35 @@
       }
     },
     "currency": {
-      "balance": 8063,
-      "total_earned": 98063,
+      "balance": 10017,
+      "total_earned": 100017,
       "total_spent": 90000,
       "ledger": [
+        {
+          "time": 1786707203046,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 9717,
+          "after": 10017,
+          "meta": {
+            "level": 2,
+            "source": "travel"
+          }
+        },
+        {
+          "time": 1786707203045,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1654,
+          "before": 8063,
+          "after": 9717,
+          "meta": {
+            "travel_id": "msssp7tt-6v0n2dta",
+            "location_id": "eld_windmill_plain",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786702587119,
           "type": "income",
@@ -927,30 +987,6 @@
           "after": 95686,
           "meta": {
             "skin_id": "crown_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786699141647,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 95086,
-          "after": 95386,
-          "meta": {
-            "skin_id": "parachute_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786699141647,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 94786,
-          "after": 95086,
-          "meta": {
-            "skin_id": "volleyball_turtle",
             "rarity": 3
           }
         }
@@ -1185,12 +1221,12 @@
     "migrated_at": 1785862100287
   },
   "created_at": 1785862100287,
-  "updated_at": 1786702774241,
+  "updated_at": 1786718589837,
   "production": {
     "started_at": 1785862100287,
-    "last_settled_at": 1786702774240,
-    "accumulated_ms": 3592117,
-    "progress": 1.3624320889096702,
+    "last_settled_at": 1786718589837,
+    "accumulated_ms": 19407714,
+    "progress": 3.49437249474249,
     "total_produced": 104,
     "last_collected_at": 1786699182123
   },
@@ -1228,7 +1264,8 @@
   },
   "travel": {
     "unlocked_location_ids": [
-      "eld_adventurer_guild"
+      "eld_adventurer_guild",
+      "eld_windmill_plain"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1237,6 +1274,14 @@
         "name": "金杯冒险者公会",
         "travel_id": "mssqpc66-rb1hyxx0",
         "time": 1786702587119,
+        "carried_item_id": "travel_suitcase"
+      },
+      "eld_windmill_plain": {
+        "id": "eld_windmill_plain",
+        "map_id": "eldoran_continent",
+        "name": "风车草原",
+        "travel_id": "msssp7tt-6v0n2dta",
+        "time": 1786707203049,
         "carried_item_id": "travel_suitcase"
       }
     },
@@ -1247,6 +1292,13 @@
         "location_id": "eld_adventurer_guild",
         "travel_id": "mssqpc66-rb1hyxx0",
         "time": 1786702587119
+      },
+      "eld_event_haystack_coin": {
+        "id": "eld_event_haystack_coin",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_windmill_plain",
+        "travel_id": "msssp7tt-6v0n2dta",
+        "time": 1786707203049
       }
     },
     "souvenir_records": {
@@ -1263,6 +1315,13 @@
         "event_id": "eld_event_border_quest",
         "location_id": "eld_adventurer_guild",
         "time": 1786702587119
+      },
+      "souvenir_wheat_old_coin": {
+        "id": "souvenir_wheat_old_coin",
+        "name": "麦香旧硬币",
+        "event_id": "eld_event_haystack_coin",
+        "location_id": "eld_windmill_plain",
+        "time": 1786707203049
       }
     },
     "achievement_records": {
@@ -1301,6 +1360,21 @@
         "name": "旅途中的同伴",
         "rarity": 3,
         "time": 1786702587121,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_windmill_plain": {
+        "id": "ach_eld_windmill_plain",
+        "name": "发现风车草原",
+        "rarity": 3,
+        "time": 1786707203050,
         "actor_name": "骛雍",
         "rewards": [
           {
@@ -1449,9 +1523,103 @@
         "settled_at": 1786702587121,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：53分钟\n获得：986若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n小若汁偶遇了北游的主人的小若汁，它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。\n偶遇奖励：291若汁币\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n新地点已解锁：金杯冒险者公会\n达成旅行成就「发现金杯冒险者公会」 ★★★\n达成旅行成就「小若汁出门了」 ★★★\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
+      "msssp7tt-6v0n2dta": {
+        "id": "msssp7tt-6v0n2dta",
+        "user_id": "2213304613",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "骛雍",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_windmill_plain",
+        "location_name": "风车草原",
+        "duration_ms": 4428786,
+        "rewards": {
+          "coin": 1654,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "eld_event_haystack_coin",
+          "name": "草垛硬币",
+          "text": "小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。",
+          "effects": {
+            "coin_percent": 20
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_wheat_old_coin",
+              "name": "麦香旧硬币",
+              "emoji": "🪙",
+              "description": "旅行纪念品「麦香旧硬币」。"
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_wheat_old_coin",
+            "name": "麦香旧硬币",
+            "emoji": "🪙",
+            "description": "旅行纪念品「麦香旧硬币」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "风车草原",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_windmill_plain",
+            "name": "发现风车草原",
+            "rarity": 3,
+            "time": 1786707203050,
+            "actor_name": "骛雍",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现风车草原」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [
+          {
+            "level": 2,
+            "need": 100
+          }
+        ],
+        "level_reward_messages": [
+          "升级奖励：300若汁币，若汁之缘×3",
+          "达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！"
+        ],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1786707203051,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1654若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n旅行事件：草垛硬币\n小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。\n纪念品：🪙麦香旧硬币×1\n新地点已解锁：风车草原\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现风车草原」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msssp7tt-6v0n2dta",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "2213304613",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1654若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n旅行事件：草垛硬币\n小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。\n纪念品：🪙麦香旧硬币×1\n新地点已解锁：风车草原\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现风车草原」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786707203051,
+        "created_at": 1786707203051,
+        "sent_at": 1786707203584,
+        "last_error": ""
+      },
       {
         "travel_id": "mssqpc66-rb1hyxx0",
         "group_id": "464519950",
@@ -1467,21 +1635,23 @@
       }
     ],
     "stats": {
-      "total_trips": 1,
+      "total_trips": 2,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
-        "eldoran_continent": 1,
+        "eldoran_continent": 2,
         "unregistered_district": 0,
         "four_regions_little_world": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
-          "eld_event_border_quest": 1
+          "eld_event_border_quest": 1,
+          "eld_event_haystack_coin": 1
         }
       },
       "event_ids": {
-        "eld_event_border_quest": 1
+        "eld_event_border_quest": 1,
+        "eld_event_haystack_coin": 1
       },
       "encounter_reward_types": {
         "currency": 1
@@ -1511,44 +1681,6 @@
       }
     },
     "prepared_tool": null,
-    "active": {
-      "id": "msssp7tt-6v0n2dta",
-      "user_id": "2213304613",
-      "display_name": "骛雍",
-      "group_id": "464519950",
-      "self_id": "3964480831",
-      "started_at": 1786702774241,
-      "ends_at": 1786707203027,
-      "duration_ms": 4428786,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_windmill_plain",
-      "location_name": "风车草原",
-      "was_unlocked": false,
-      "carried_item_id": "travel_suitcase",
-      "carried_item_name": "行李箱",
-      "event": {
-        "id": "eld_event_haystack_coin",
-        "name": "草垛硬币",
-        "text": "小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。",
-        "effects": {
-          "coin_percent": 20
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_wheat_old_coin",
-            "name": "麦香旧硬币",
-            "emoji": "🪙",
-            "description": "旅行纪念品「麦香旧硬币」。"
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 1654,
-        "fate": 2,
-        "experience": 2
-      }
-    }
+    "active": null
   }
 }

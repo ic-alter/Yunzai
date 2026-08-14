@@ -3,12 +3,12 @@
   "user_id": "2069743095",
   "pet": {
     "level": 9,
-    "experience": 70,
-    "satiety": 50,
+    "experience": 79,
+    "satiety": 39,
     "mood": 100,
     "health": 100,
     "current_skin_id": "snow_peak_turtle",
-    "satiety_decay_at": 1786701330010,
+    "satiety_decay_at": 1786717170010,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1244,6 +1244,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786708635568,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_pager": {
+        "id": "ach_travel_encounter_pager",
+        "name": "意外的联络方式",
+        "rarity": 3,
+        "time": 1786708635568,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1610,7 +1640,10 @@
       "ahat_turtle": 0,
       "rongyin_turtle": 0,
       "snow_peak_turtle": 0
-    }
+    },
+    "weight": 50,
+    "weight_decay_at": 1786718590212,
+    "health_decay_at": 1786718590212
   },
   "profile": {
     "favorability": 100,
@@ -1618,7 +1651,7 @@
     "total_contribution": 248,
     "last_display_name": "瀛",
     "first_joined_at": 1785240777696,
-    "last_active_at": 1786702418739,
+    "last_active_at": 1786718590212,
     "daily": {
       "date": "2026-08-14",
       "event_count": 2,
@@ -1632,7 +1665,7 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 358,
+      "ruozhi_fate": 373,
       "nameless_ruozhi": 0,
       "souvenir_wheat_old_coin": 4,
       "souvenir_single_song_radio": 1,
@@ -1641,7 +1674,7 @@
       "souvenir_plastic_rocket_model": 1,
       "souvenir_tidal_blue_shell": 2,
       "souvenir_temporary_summon_card": 2,
-      "travel_pager": 9,
+      "travel_pager": 10,
       "souvenir_tomorrow_child_ticket": 2,
       "souvenir_moonbell_festival_ribbon": 2,
       "souvenir_temporary_actor_badge": 1,
@@ -1656,8 +1689,8 @@
       "souvenir_vegetable_soup_potion": 2,
       "souvenir_shell_snowman_photo": 1,
       "souvenir_machine_certified_relic": 2,
-      "travel_suitcase": 6,
-      "travel_checklist": 5,
+      "travel_suitcase": 5,
+      "travel_checklist": 4,
       "souvenir_root_waiting_sign": 1,
       "souvenir_return_coin": 1,
       "souvenir_extra_place_napkin": 1,
@@ -1689,9 +1722,111 @@
       "souvenir_waiting_bear_tag": 2,
       "souvenir_rain_drop": 1,
       "souvenir_nameless_roll_book": 1,
-      "souvenir_charred_furnace_core": 1
+      "souvenir_charred_furnace_core": 1,
+      "souvenir_spring_sprout": 1
     },
     "item_ledger": [
+      {
+        "time": 1786715084299,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 5,
+        "after": 4,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1786714911694,
+        "type": "income",
+        "item_id": "souvenir_spring_sprout",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mssw8bj3-b1b9fzvm",
+          "event_id": "spring_sprout_guide",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786714911693,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 370,
+        "after": 373,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mssw8bj3-b1b9fzvm",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786708704323,
+        "type": "expense",
+        "item_id": "travel_suitcase",
+        "amount": 1,
+        "before": 6,
+        "after": 5,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_suitcase"
+        }
+      },
+      {
+        "time": 1786708635568,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 367,
+        "after": 370,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_pager"
+        }
+      },
+      {
+        "time": 1786708635568,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 364,
+        "after": 367,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_first"
+        }
+      },
+      {
+        "time": 1786708635566,
+        "type": "income",
+        "item_id": "travel_pager",
+        "amount": 1,
+        "before": 9,
+        "after": 10,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mssshlil-239dopmz",
+          "partner_user_id": "travel-shop-pager-1786702418469-k69on4"
+        }
+      },
+      {
+        "time": 1786708635566,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 358,
+        "after": 364,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msspuxxn-0bp4ttq8",
+          "location_id": "forgotten_family_restaurant"
+        }
+      },
       {
         "time": 1786698002481,
         "type": "expense",
@@ -1844,109 +1979,6 @@
         "meta": {
           "travel_id": "mssfrcuq-y2qzt46j"
         }
-      },
-      {
-        "time": 1786681031999,
-        "type": "income",
-        "item_id": "souvenir_waiting_bear_tag",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mssfm5ct-uqnp3pn3",
-          "event_id": "event_who_picks_you_up",
-          "location_id": "rainbow_kindergarten"
-        }
-      },
-      {
-        "time": 1786681031999,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 301,
-        "after": 304,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mssfm5ct-uqnp3pn3",
-          "location_id": "rainbow_kindergarten"
-        }
-      },
-      {
-        "time": 1786681031976,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 11,
-        "after": 10,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mssfm5ct-uqnp3pn3"
-        }
-      },
-      {
-        "time": 1786680796033,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1786680753106,
-        "type": "income",
-        "item_id": "souvenir_nameless_roll_book",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mssbn6jf-am1nf83h",
-          "event_id": "event_no_roll_call_today",
-          "location_id": "school_gate_1743"
-        }
-      },
-      {
-        "time": 1786680753105,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 297,
-        "after": 301,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mssbn6jf-am1nf83h",
-          "location_id": "school_gate_1743"
-        }
-      },
-      {
-        "time": 1786674125758,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1786673954594,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 293,
-        "after": 297,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mss77ddn-uovhf2qd",
-          "location_id": "rtc_lunar_zone"
-        }
       }
     ],
     "item_daily": {
@@ -1967,10 +1999,36 @@
       }
     },
     "currency": {
-      "balance": 233814,
-      "total_earned": 471814,
+      "balance": 238699,
+      "total_earned": 476699,
       "total_spent": 238000,
       "ledger": [
+        {
+          "time": 1786714911693,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1931,
+          "before": 236768,
+          "after": 238699,
+          "meta": {
+            "travel_id": "mssw8bj3-b1b9fzvm",
+            "location_id": "wan_chun_valley",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786708635566,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2954,
+          "before": 233814,
+          "after": 236768,
+          "meta": {
+            "travel_id": "msspuxxn-0bp4ttq8",
+            "location_id": "forgotten_family_restaurant",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786697973335,
           "type": "income",
@@ -2067,32 +2125,6 @@
           "after": 224091,
           "meta": {
             "travel_id": "mssbn6jf-am1nf83h",
-            "location_id": "school_gate_1743",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786673954594,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2607,
-          "before": 219643,
-          "after": 222250,
-          "meta": {
-            "travel_id": "mss77ddn-uovhf2qd",
-            "location_id": "rtc_lunar_zone",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786654966671,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2192,
-          "before": 217451,
-          "after": 219643,
-          "meta": {
-            "travel_id": "msrvjec6-dx0uoyvs",
             "location_id": "school_gate_1743",
             "forced_by": "timer"
           }
@@ -2463,12 +2495,12 @@
     "migrated_at": 1785240777696
   },
   "created_at": 1785240777696,
-  "updated_at": 1786702418739,
+  "updated_at": 1786718590212,
   "production": {
     "started_at": 1785240777696,
-    "last_settled_at": 1786702418739,
-    "accumulated_ms": 6848729,
-    "progress": 1.7180808884789651,
+    "last_settled_at": 1786718590212,
+    "accumulated_ms": 23020202,
+    "progress": 4.466156549549999,
     "total_produced": 220,
     "last_collected_at": 1786695570010
   },
@@ -3459,6 +3491,13 @@
         "location_id": "thunderfire_furnace_ruins",
         "travel_id": "mssofa7a-k3ztt4d7",
         "time": 1786697973336
+      },
+      "spring_sprout_guide": {
+        "id": "spring_sprout_guide",
+        "map_id": "four_regions_little_world",
+        "location_id": "wan_chun_valley",
+        "travel_id": "mssw8bj3-b1b9fzvm",
+        "time": 1786714911694
       }
     },
     "souvenir_records": {
@@ -3832,6 +3871,13 @@
         "event_id": "ownerless_furnace",
         "location_id": "golden_cloud_temple",
         "time": 1786690498391
+      },
+      "souvenir_spring_sprout": {
+        "id": "souvenir_spring_sprout",
+        "name": "指路春芽",
+        "event_id": "spring_sprout_guide",
+        "location_id": "wan_chun_valley",
+        "time": 1786714911694
       }
     },
     "achievement_records": {
@@ -4845,6 +4891,36 @@
         "name": "发现雷火炼炉遗址",
         "rarity": 3,
         "time": 1786697973337,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786708635568,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_pager": {
+        "id": "ach_travel_encounter_pager",
+        "name": "意外的联络方式",
+        "rarity": 3,
+        "time": 1786708635568,
         "actor_name": "瀛",
         "rewards": [
           {
@@ -12429,9 +12505,175 @@
         "settled_at": 1786697973337,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：雷火炼炉遗址（四州小天地）\n旅行时间：40分钟\n获得：661若汁币，若汁之缘×1，经验+1\n携带道具：焦黑炼炉芯\n旅行事件：炉火认主\n炼器傀儡把小若汁请上主位。\n新地点已解锁：雷火炼炉遗址\n达成旅行成就「发现雷火炼炉遗址」 ★★★"
+      },
+      "msspuxxn-0bp4ttq8": {
+        "id": "msspuxxn-0bp4ttq8",
+        "user_id": "2069743095",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "瀛",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "forgotten_family_restaurant",
+        "location_name": "被遗忘的家庭餐厅",
+        "duration_ms": 10633018,
+        "rewards": {
+          "coin": 2954,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mssshlil-239dopmz",
+          "time": 1786702418733,
+          "map_id": "unregistered_district",
+          "map_name": "未登记城区",
+          "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
+          "reward": {
+            "id": "pager",
+            "type": "item",
+            "item_id": "travel_pager",
+            "name": "寻呼机",
+            "amount": 1,
+            "reward_text": "寻呼机×1"
+          },
+          "status": "pending",
+          "partner_user_id": "travel-shop-pager-1786702418469-k69on4",
+          "partner_display_name": "Tester",
+          "reward_text": "寻呼机×1"
+        },
+        "souvenirs": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_travel_encounter_first",
+            "name": "旅途中的同伴",
+            "rarity": 3,
+            "time": 1786708635568,
+            "actor_name": "瀛",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅途中的同伴」 ★★★"
+          },
+          {
+            "id": "ach_travel_encounter_pager",
+            "name": "意外的联络方式",
+            "rarity": 3,
+            "time": 1786708635568,
+            "actor_name": "瀛",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「意外的联络方式」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1786708635568,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时57分钟\n获得：2954若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n小若汁偶遇了Tester的小若汁，它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。\n偶遇奖励：寻呼机×1\n达成旅行成就「旅途中的同伴」 ★★★\n达成旅行成就「意外的联络方式」 ★★★"
+      },
+      "mssw8bj3-b1b9fzvm": {
+        "id": "mssw8bj3-b1b9fzvm",
+        "user_id": "2069743095",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "瀛",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "wan_chun_valley",
+        "location_name": "万春谷",
+        "duration_ms": 6207307,
+        "rewards": {
+          "coin": 1931,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "spring_sprout_guide",
+          "name": "春芽问路",
+          "text": "一株灵草伸长叶片为小若汁指路，走远后又装作普通嫩芽。",
+          "effects": {
+            "mood": 3
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_spring_sprout",
+              "name": "指路春芽",
+              "emoji": "🌱",
+              "description": "旅行纪念品「指路春芽」。"
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_spring_sprout",
+            "name": "指路春芽",
+            "emoji": "🌱",
+            "description": "旅行纪念品「指路春芽」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1786714911697,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：1小时43分钟\n获得：1931若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n旅行事件：春芽问路\n一株灵草伸长叶片为小若汁指路，走远后又装作普通嫩芽。\n纪念品：🌱指路春芽×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mssw8bj3-b1b9fzvm",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2069743095",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：1小时43分钟\n获得：1931若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n旅行事件：春芽问路\n一株灵草伸长叶片为小若汁指路，走远后又装作普通嫩芽。\n纪念品：🌱指路春芽×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786714911698,
+        "created_at": 1786714911698,
+        "sent_at": 1786714912353,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msspuxxn-0bp4ttq8",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2069743095",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时57分钟\n获得：2954若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n小若汁偶遇了Tester的小若汁，它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。\n偶遇奖励：寻呼机×1\n达成旅行成就「旅途中的同伴」 ★★★\n达成旅行成就「意外的联络方式」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786708635568,
+        "created_at": 1786708635568,
+        "sent_at": 1786708636149,
+        "last_error": ""
+      },
       {
         "travel_id": "mssofa7a-k3ztt4d7",
         "group_id": "415462812",
@@ -12665,36 +12907,10 @@
         "created_at": 1786604460450,
         "sent_at": 1786604461075,
         "last_error": ""
-      },
-      {
-        "travel_id": "msr13z1t-2ffky4ga",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2069743095",
-        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：1小时34分钟\n获得：1570若汁币，若汁之缘×3，经验+3\n携带道具：旅行清单",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786601620895,
-        "created_at": 1786601620895,
-        "sent_at": 1786601621484,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msqv6hr4-lteoetfm",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2069743095",
-        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时43分钟\n获得：3036若汁币，若汁之缘×5，经验+5\n携带道具：行李箱",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786595765691,
-        "created_at": 1786595765691,
-        "sent_at": 1786595766345,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 148,
+      "total_trips": 150,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -12826,7 +13042,8 @@
           "reverse_paper_boat": 1,
           "watering_accident": 1,
           "ownerless_furnace": 1,
-          "furnace_mistakes_owner": 1
+          "furnace_mistakes_owner": 1,
+          "spring_sprout_guide": 1
         }
       },
       "event_ids": {
@@ -12905,50 +13122,51 @@
         "rtc_event_low_gravity": 1,
         "event_no_roll_call_today": 1,
         "ownerless_furnace": 1,
-        "furnace_mistakes_owner": 1
+        "furnace_mistakes_owner": 1,
+        "spring_sprout_guide": 1
       },
-      "encounter_reward_types": {},
-      "total_encounters": 0
+      "encounter_reward_types": {
+        "travel_pager": 1
+      },
+      "total_encounters": 1
     },
     "active": {
-      "id": "msspuxxn-0bp4ttq8",
+      "id": "mst012cv-7reg31dz",
       "user_id": "2069743095",
       "display_name": "瀛",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1786698002507,
-      "ends_at": 1786708635525,
-      "duration_ms": 10633018,
+      "started_at": 1786715084335,
+      "ends_at": 1786721665026,
+      "duration_ms": 6580691,
       "map_id": "unregistered_district",
       "map_name": "未登记城区",
-      "location_id": "forgotten_family_restaurant",
-      "location_name": "被遗忘的家庭餐厅",
+      "location_id": "school_gate_1743",
+      "location_name": "永远放学的校门",
       "was_unlocked": true,
       "carried_item_id": "travel_checklist",
       "carried_item_name": "旅行清单",
-      "event": null,
-      "rewards": {
-        "coin": 2954,
-        "fate": 6,
-        "experience": 6
-      },
-      "encounter": {
-        "id": "encounter-mssshlil-239dopmz",
-        "time": 1786702418733,
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
-        "reward": {
-          "id": "pager",
-          "type": "item",
-          "item_id": "travel_pager",
-          "name": "寻呼机",
-          "amount": 1,
-          "reward_text": "寻呼机×1"
+      "event": {
+        "id": "event_dont_look_playground",
+        "name": "不要回头看操场",
+        "text": "告示要求离校者不要回头。小若汁走到街角才偷看，操场上所有秋千都朝它的方向缓慢摆动。",
+        "effects": {
+          "fate_flat": 1,
+          "mood": -1
         },
-        "status": "pending",
-        "partner_user_id": "travel-shop-pager-1786702418469-k69on4",
-        "partner_display_name": "Tester"
+        "souvenirs": [],
+        "items": [
+          {
+            "id": "food_donut",
+            "amount": 1
+          }
+        ],
+        "record": false
+      },
+      "rewards": {
+        "coin": 1828,
+        "fate": 4,
+        "experience": 4
       }
     },
     "prepared_tool": null,
@@ -12967,9 +13185,10 @@
           "amount": 1,
           "reward_text": "寻呼机×1"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "travel-shop-pager-1786702418469-k69on4",
-        "partner_display_name": "Tester"
+        "partner_display_name": "Tester",
+        "settled_at": 1786708635566
       }
     }
   },

@@ -3,12 +3,12 @@
   "user_id": "272950224",
   "pet": {
     "level": 12,
-    "experience": 159,
-    "satiety": 32,
+    "experience": 167,
+    "satiety": 21,
     "mood": 98,
     "health": 97,
     "current_skin_id": "yaya_turtle",
-    "satiety_decay_at": 1786702366252,
+    "satiety_decay_at": 1786718206252,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1720,7 +1720,10 @@
       "rabbit_head_turtle": 0,
       "ahat_turtle": 0,
       "world_devourer_turtle": 0
-    }
+    },
+    "weight": 50,
+    "weight_decay_at": 1786718589892,
+    "health_decay_at": 1786718589892
   },
   "profile": {
     "favorability": 100,
@@ -1728,7 +1731,7 @@
     "total_contribution": 316,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1786702711152,
+    "last_active_at": 1786718589892,
     "daily": {
       "date": "2026-08-14",
       "event_count": 3,
@@ -1741,10 +1744,49 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 91888,
-      "total_earned": 1175888,
+      "balance": 95936,
+      "total_earned": 1179936,
       "total_spent": 1084000,
       "ledger": [
+        {
+          "time": 1786717650817,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1234,
+          "before": 94702,
+          "after": 95936,
+          "meta": {
+            "travel_id": "mssywuso-q13b2wn5",
+            "location_id": "eld_elven_forest",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786713084143,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 831,
+          "before": 93871,
+          "after": 94702,
+          "meta": {
+            "travel_id": "mssx23gn-yekt3am9",
+            "location_id": "myriad_phenomena_sect",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786709850245,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1983,
+          "before": 91888,
+          "after": 93871,
+          "meta": {
+            "travel_id": "msssnv5d-krc8eeoh",
+            "location_id": "eld_silver_capital",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786702557259,
           "type": "income",
@@ -1831,45 +1873,6 @@
             "skin_id": "sparkling_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786673642969,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1783,
-          "before": 80368,
-          "after": 82151,
-          "meta": {
-            "travel_id": "mss7j84q-os4xchfq",
-            "location_id": "school_gate_1743",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786667063881,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 834,
-          "before": 79534,
-          "after": 80368,
-          "meta": {
-            "travel_id": "mss5ng9y-id50v3j1",
-            "location_id": "eld_sunken_temple",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786646761786,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 517,
-          "before": 79017,
-          "after": 79534,
-          "meta": {
-            "travel_id": "msru6nyz-3sgeuxz7",
-            "location_id": "rtc_robot_park",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -1881,7 +1884,7 @@
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 20,
+      "ruozhi_fate": 30,
       "nameless_ruozhi": 3,
       "souvenir_border_quest_scroll": 2,
       "souvenir_border_map": 0,
@@ -1889,7 +1892,7 @@
       "souvenir_clockwork_leaf": 2,
       "souvenir_legendary_sword_handle": 5,
       "souvenir_dome_giant_leaf": 3,
-      "souvenir_palace_leaf_basket": 4,
+      "souvenir_palace_leaf_basket": 5,
       "souvenir_nameless_soldier_badge": 1,
       "souvenir_sea_future_coin": 1,
       "souvenir_driverless_car_card": 1,
@@ -1950,9 +1953,77 @@
       "souvenir_tomorrow_child_ticket": 1,
       "souvenir_beast_paw": 1,
       "souvenir_sun_chart": 1,
-      "souvenir_tomorrow_school_badge": 1
+      "souvenir_tomorrow_school_badge": 1,
+      "souvenir_future_mirror_shard": 1
     },
     "item_ledger": [
+      {
+        "time": 1786717650817,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 27,
+        "after": 30,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mssywuso-q13b2wn5",
+          "location_id": "eld_elven_forest"
+        }
+      },
+      {
+        "time": 1786713084144,
+        "type": "income",
+        "item_id": "souvenir_future_mirror_shard",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mssx23gn-yekt3am9",
+          "event_id": "five_futures",
+          "location_id": "myriad_phenomena_sect"
+        }
+      },
+      {
+        "time": 1786713084143,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 25,
+        "after": 27,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mssx23gn-yekt3am9",
+          "location_id": "myriad_phenomena_sect"
+        }
+      },
+      {
+        "time": 1786709850246,
+        "type": "income",
+        "item_id": "souvenir_palace_leaf_basket",
+        "amount": 1,
+        "before": 4,
+        "after": 5,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msssnv5d-krc8eeoh",
+          "event_id": "eld_event_palace_feast",
+          "location_id": "eld_silver_capital"
+        }
+      },
+      {
+        "time": 1786709850245,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 20,
+        "after": 25,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msssnv5d-krc8eeoh",
+          "location_id": "eld_silver_capital"
+        }
+      },
       {
         "time": 1786702557260,
         "type": "income",
@@ -2146,69 +2217,6 @@
         "meta": {
           "count": 10,
           "cost": 80000
-        }
-      },
-      {
-        "time": 1786644813940,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 47,
-        "after": 17,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786644808794,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 77,
-        "after": 47,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786644797861,
-        "type": "income",
-        "item_id": "souvenir_sun_chart",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msru6jqc-upewarfq",
-          "event_id": "eld_event_sun_chart",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1786644797861,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 76,
-        "after": 77,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msru6jqc-upewarfq",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1786644797833,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msru6jqc-upewarfq"
         }
       }
     ],
@@ -2618,7 +2626,7 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1786702711154,
+  "updated_at": 1786718589892,
   "gacha": {
     "since_four_plus": 3,
     "since_five": 36,
@@ -2737,9 +2745,9 @@
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1786702711152,
-    "accumulated_ms": 57970163,
-    "progress": 10.786411854779248,
+    "last_settled_at": 1786718589892,
+    "accumulated_ms": 73848903,
+    "progress": 13.352511855888386,
     "total_produced": 294,
     "last_collected_at": 1786644740989
   },
@@ -3240,8 +3248,8 @@
         "id": "eld_event_palace_feast",
         "map_id": "eldoran_continent",
         "location_id": "eld_silver_capital",
-        "travel_id": "msru5xtz-oxpbyabz",
-        "time": 1786644769438
+        "travel_id": "msssnv5d-krc8eeoh",
+        "time": 1786709850246
       },
       "eld_event_ghost_badge": {
         "id": "eld_event_ghost_badge",
@@ -3380,8 +3388,8 @@
         "id": "eld_event_talking_tree",
         "map_id": "eldoran_continent",
         "location_id": "eld_elven_forest",
-        "travel_id": "mshp7427-hidr0mrs",
-        "time": 1786033895460
+        "travel_id": "mssywuso-q13b2wn5",
+        "time": 1786717650818
       },
       "rtc_event_same_exit": {
         "id": "rtc_event_same_exit",
@@ -3830,6 +3838,13 @@
         "location_id": "yellow_underpass",
         "travel_id": "mssbgpnj-t77ld88o",
         "time": 1786682404677
+      },
+      "five_futures": {
+        "id": "five_futures",
+        "map_id": "four_regions_little_world",
+        "location_id": "myriad_phenomena_sect",
+        "travel_id": "mssx23gn-yekt3am9",
+        "time": 1786713084144
       }
     },
     "souvenir_records": {
@@ -3873,7 +3888,7 @@
         "name": "王宫菜叶篮",
         "event_id": "eld_event_palace_feast",
         "location_id": "eld_silver_capital",
-        "time": 1786644769438
+        "time": 1786709850246
       },
       "souvenir_nameless_soldier_badge": {
         "id": "souvenir_nameless_soldier_badge",
@@ -4301,6 +4316,13 @@
         "event_id": "event_late_first_grader",
         "location_id": "school_gate_1743",
         "time": 1786673642970
+      },
+      "souvenir_future_mirror_shard": {
+        "id": "souvenir_future_mirror_shard",
+        "name": "多余未来的镜片",
+        "event_id": "five_futures",
+        "location_id": "myriad_phenomena_sect",
+        "time": 1786713084144
       }
     },
     "achievement_records": {
@@ -17724,9 +17746,200 @@
         "settled_at": 1786702557260,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时51分钟\n获得：3427若汁币，若汁之缘×6，经验+5\n小若汁偶遇了骛雍的小若汁，它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。\n偶遇奖励：291若汁币\n旅行事件：草垛硬币\n小若汁钻进草垛避风，出来时龟壳里多了几枚旧硬币。\n纪念品：🪙麦香旧硬币×1\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
+      "msssnv5d-krc8eeoh": {
+        "id": "msssnv5d-krc8eeoh",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_silver_capital",
+        "location_name": "银冠王城",
+        "duration_ms": 7139050,
+        "rewards": {
+          "coin": 1983,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "eld_event_palace_feast",
+          "name": "宴会剩菜",
+          "text": "王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。",
+          "effects": {
+            "fate_flat": 1
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_palace_leaf_basket",
+              "name": "王宫菜叶篮",
+              "emoji": "🥗",
+              "description": "旅行纪念品「王宫菜叶篮」。"
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_palace_leaf_basket",
+            "name": "王宫菜叶篮",
+            "emoji": "🥗",
+            "description": "旅行纪念品「王宫菜叶篮」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786709850247,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时59分钟\n获得：1983若汁币，若汁之缘×5，经验+4\n旅行事件：宴会剩菜\n王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。\n纪念品：🥗王宫菜叶篮×1"
+      },
+      "mssx23gn-yekt3am9": {
+        "id": "mssx23gn-yekt3am9",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "myriad_phenomena_sect",
+        "location_name": "万象宗",
+        "duration_ms": 2990517,
+        "rewards": {
+          "coin": 831,
+          "fate": 2,
+          "experience": 1
+        },
+        "event": {
+          "id": "five_futures",
+          "name": "五个未来",
+          "text": "观星镜里有五只经历不同未来的小若汁。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_future_mirror_shard",
+              "name": "多余未来的镜片",
+              "emoji": "🔭",
+              "description": "旅行纪念品「多余未来的镜片」。"
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_future_mirror_shard",
+            "name": "多余未来的镜片",
+            "emoji": "🔭",
+            "description": "旅行纪念品「多余未来的镜片」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786713084146,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万象宗（四州小天地）\n旅行时间：50分钟\n获得：831若汁币，若汁之缘×2，经验+1\n旅行事件：五个未来\n观星镜里有五只经历不同未来的小若汁。\n纪念品：🔭多余未来的镜片×1"
+      },
+      "mssywuso-q13b2wn5": {
+        "id": "mssywuso-q13b2wn5",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "北游的主人",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_elven_forest",
+        "location_name": "翡翠精灵森林",
+        "duration_ms": 4442475,
+        "rewards": {
+          "coin": 1234,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_talking_tree",
+          "name": "会说话的树",
+          "text": "古树花了半小时说出第一句话：“你挡住阳光了。”",
+          "effects": {},
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786717650819,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1234若汁币，若汁之缘×3，经验+3\n旅行事件：会说话的树\n古树花了半小时说出第一句话：“你挡住阳光了。”"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mssywuso-q13b2wn5",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：1小时14分钟\n获得：1234若汁币，若汁之缘×3，经验+3\n旅行事件：会说话的树\n古树花了半小时说出第一句话：“你挡住阳光了。”",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786717650819,
+        "created_at": 1786717650819,
+        "sent_at": 1786717651454,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mssx23gn-yekt3am9",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：万象宗（四州小天地）\n旅行时间：50分钟\n获得：831若汁币，若汁之缘×2，经验+1\n旅行事件：五个未来\n观星镜里有五只经历不同未来的小若汁。\n纪念品：🔭多余未来的镜片×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786713084146,
+        "created_at": 1786713084146,
+        "sent_at": 1786713084832,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msssnv5d-krc8eeoh",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时59分钟\n获得：1983若汁币，若汁之缘×5，经验+4\n旅行事件：宴会剩菜\n王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。\n纪念品：🥗王宫菜叶篮×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786709850247,
+        "created_at": 1786709850247,
+        "sent_at": 1786709850876,
+        "last_error": ""
+      },
       {
         "travel_id": "mssmg5ng-f6qt4dkg",
         "group_id": "415462812",
@@ -17947,49 +18160,10 @@
         "created_at": 1786626770202,
         "sent_at": 1786626770823,
         "last_error": ""
-      },
-      {
-        "travel_id": "msrflap9-8jrukya3",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：36分钟\n获得：568若汁币，若汁之缘×2，经验+1\n旅行事件：永不结束的老歌\n广播塔循环播放一首没有结尾的老歌，小若汁听到睡着。\n纪念品：📻单曲收音机×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786622465129,
-        "created_at": 1786622465129,
-        "sent_at": 1786622465763,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msrdtaz7-r5l6svwa",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：49分钟\n获得：813若汁币，若汁之缘×2，经验+2",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786620229613,
-        "created_at": 1786620229613,
-        "sent_at": 1786620230308,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msr9yr42-qm7u6rdm",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：灵兽宗（四州小天地）\n旅行时间：1小时45分钟\n获得：1752若汁币，若汁之缘×4，经验+3",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786617146298,
-        "created_at": 1786617146298,
-        "sent_at": 1786617146934,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 278,
+      "total_trips": 281,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -18021,7 +18195,8 @@
         "retro_tomorrow_city": 15,
         "eldoran_continent": 16,
         "unregistered_district": 10,
-        "four_regions_little_world": 10
+        "four_regions_little_world": 10,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -18119,7 +18294,8 @@
           "star_on_roof": 1,
           "sword_intent_trial": 1,
           "furnace_hiccup": 1,
-          "young_beast_snack": 1
+          "young_beast_snack": 1,
+          "five_futures": 1
         }
       },
       "event_ids": {
@@ -18211,7 +18387,8 @@
         "young_beast_snack": 1,
         "eld_event_sun_chart": 1,
         "event_late_first_grader": 1,
-        "event_missed_own_footsteps": 1
+        "event_missed_own_footsteps": 1,
+        "five_futures": 1
       },
       "encounter_reward_types": {
         "currency": 1
@@ -18219,42 +18396,26 @@
       "total_encounters": 1
     },
     "active": {
-      "id": "msssnv5d-krc8eeoh",
+      "id": "mst1ka8s-vpifrgo8",
       "user_id": "272950224",
       "display_name": "北游的主人",
       "group_id": "415462812",
       "self_id": "3762153943",
-      "started_at": 1786702711154,
-      "ends_at": 1786709850204,
-      "duration_ms": 7139050,
+      "started_at": 1786717660636,
+      "ends_at": 1786720749262,
+      "duration_ms": 3088626,
       "map_id": "eldoran_continent",
       "map_name": "艾尔多兰大陆",
-      "location_id": "eld_silver_capital",
-      "location_name": "银冠王城",
+      "location_id": "eld_magic_academy",
+      "location_name": "苍蓝魔法学院",
       "was_unlocked": true,
       "carried_item_id": "",
       "carried_item_name": "",
-      "event": {
-        "id": "eld_event_palace_feast",
-        "name": "宴会剩菜",
-        "text": "王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。",
-        "effects": {
-          "fate_flat": 1
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_palace_leaf_basket",
-            "name": "王宫菜叶篮",
-            "emoji": "🥗",
-            "description": "旅行纪念品「王宫菜叶篮」。"
-          }
-        ],
-        "record": false
-      },
+      "event": null,
       "rewards": {
-        "coin": 1983,
-        "fate": 5,
-        "experience": 4
+        "coin": 858,
+        "fate": 2,
+        "experience": 2
       }
     },
     "prepared_tool": null,

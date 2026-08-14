@@ -3,12 +3,12 @@
   "user_id": "2818259462",
   "pet": {
     "level": 8,
-    "experience": 100,
-    "satiety": 84,
+    "experience": 200,
+    "satiety": 91,
     "mood": 100,
     "health": 100,
     "current_skin_id": "maodie_turtle",
-    "satiety_decay_at": 1786700949790,
+    "satiety_decay_at": 1786718085692,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1573,21 +1573,25 @@
       "maodie_turtle": 0,
       "snow_peak_turtle": 0,
       "spirit_pearl_turtle": 0
-    }
+    },
+    "weight": 191,
+    "weight_decay_at": 1786718590124,
+    "health_decay_at": 1786712532511
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 64,
-    "total_contribution": 187,
-    "last_display_name": "ic·alter同时被妻子和情夫绿",
+    "weekly_contribution": 164,
+    "total_contribution": 287,
+    "last_display_name": "浪漫窝瓜ic.alter ((安卓)) 100,125,039,865",
     "first_joined_at": 1784722630639,
-    "last_active_at": 1786702247087,
+    "last_active_at": 1786718590124,
     "daily": {
       "date": "2026-08-14",
-      "event_count": 10,
+      "event_count": 83,
       "same_event_counts": {
-        "feed": 6,
-        "petting": 4
+        "feed": 61,
+        "petting": 17,
+        "hug": 5
       },
       "negative_shared_impact": 0
     },
@@ -1595,10 +1599,22 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 465384,
-      "total_earned": 850384,
+      "balance": 465884,
+      "total_earned": 850884,
       "total_spent": 385000,
       "ledger": [
+        {
+          "time": 1786717851704,
+          "type": "income",
+          "reason": "fgo_wordle_win",
+          "amount": 500,
+          "before": 465384,
+          "after": 465884,
+          "meta": {
+            "guesses": 5,
+            "difficulty": "hard"
+          }
+        },
         {
           "time": 1786699526904,
           "type": "income",
@@ -1706,18 +1722,6 @@
             "skin_id": "music_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786699522909,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 452984,
-          "after": 453284,
-          "meta": {
-            "skin_id": "music_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1729,7 +1733,7 @@
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 2,
+      "ruozhi_fate": 4,
       "nameless_ruozhi": 6,
       "travel_checklist": 0,
       "travel_pager": 9,
@@ -1772,263 +1776,308 @@
       "souvenir_shell_maintenance_card": 1,
       "souvenir_fish_napkin_clip": 1,
       "souvenir_backdoor_plate": 1,
-      "souvenir_sea_future_coin": 1
+      "souvenir_sea_future_coin": 1,
+      "food_burger": 3,
+      "food_popcorn": 5,
+      "food_sandwich": 2,
+      "food_carrot": 1,
+      "food_milk_tea": 0,
+      "food_curry": 1,
+      "food_ice_cream": 2,
+      "food_noodles": 1,
+      "food_apple": 0,
+      "food_leaf_salad": 1,
+      "food_midnight_cookie": 4,
+      "food_rice_ball": 0,
+      "food_eighth_day_pudding": 8,
+      "food_cake": 6,
+      "food_dragon_stew": 3,
+      "food_pancake": 0,
+      "food_atom_candy": 0,
+      "food_stardust_jelly": 1,
+      "food_comet_soda": 3,
+      "food_grapes": 1,
+      "food_elven_tart": 1,
+      "food_spirit_pill": 1,
+      "food_dumpling": 4,
+      "food_pizza": 3,
+      "food_bread": 1,
+      "food_immortal_peach": 1,
+      "food_fried_chicken": 2,
+      "food_donut": 1,
+      "food_dwarf_bread": 1,
+      "food_mooncake_talisman": 2,
+      "food_fish": 0,
+      "food_dream_milk": 0
     },
     "item_ledger": [
       {
-        "time": 1786699526904,
+        "time": 1786717851730,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 2,
+        "after": 4,
+        "reason": "fgo_wordle_win_fate",
+        "meta": {
+          "guesses": 5,
+          "difficulty": "hard",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1786713689417,
         "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 20,
-        "after": 2,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 6
-        }
-      },
-      {
-        "time": 1786699522908,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 50,
-        "after": 20,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786699493548,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 47,
-        "after": 50,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 8
-        }
-      },
-      {
-        "time": 1786699483577,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 29,
-        "after": 47,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 32.234
-        }
-      },
-      {
-        "time": 1786699200529,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 26,
-        "after": 29,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_travel_encounter_first"
-        }
-      },
-      {
-        "time": 1786699200527,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 25,
-        "after": 26,
-        "reason": "travel_encounter_reward",
-        "meta": {
-          "encounter_id": "encounter-mssqk0nv-yca709md",
-          "partner_user_id": "3126871739"
-        }
-      },
-      {
-        "time": 1786699200527,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 24,
-        "after": 25,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mssqk0hn-ur7jn7a9",
-          "location_id": "rtc_aurora_station"
-        }
-      },
-      {
-        "time": 1786699200499,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 10,
-        "after": 9,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mssqk0hn-ur7jn7a9"
-        }
-      },
-      {
-        "time": 1786699193908,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 10,
-        "before": 0,
-        "after": 10,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 20000
-        }
-      },
-      {
-        "time": 1786699172194,
-        "type": "expense",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_checklist"
-        }
-      },
-      {
-        "time": 1786699162695,
-        "type": "income",
-        "item_id": "souvenir_sea_future_coin",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mssqjoc6-mz9v2m3k",
-          "event_id": "rtc_event_harbor_cleanup",
-          "location_id": "rtc_blue_harbor"
-        }
-      },
-      {
-        "time": 1786699162695,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 19,
-        "after": 24,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mssqjoc6-mz9v2m3k",
-          "location_id": "rtc_blue_harbor"
-        }
-      },
-      {
-        "time": 1786699162676,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mssqjoc6-mz9v2m3k"
-        }
-      },
-      {
-        "time": 1786699156444,
-        "type": "expense",
-        "item_id": "travel_checklist",
+        "item_id": "food_elven_tart",
         "amount": 1,
         "before": 2,
         "after": 1,
-        "reason": "prepare_travel_tool",
+        "reason": "feed_food",
         "meta": {
-          "item_id": "travel_checklist"
+          "food_id": "food_elven_tart",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786699147473,
-        "type": "income",
-        "item_id": "souvenir_paper_visitor_crown",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mssq970u-iy004nl5",
-          "event_id": "eld_event_royal_parade",
-          "location_id": "eld_silver_capital"
-        }
-      },
-      {
-        "time": 1786699147471,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 14,
-        "after": 19,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mssq970u-iy004nl5",
-          "location_id": "eld_silver_capital"
-        }
-      },
-      {
-        "time": 1786699147453,
+        "time": 1786713685958,
         "type": "expense",
-        "item_id": "travel_pager",
+        "item_id": "food_midnight_cookie",
+        "amount": 1,
+        "before": 5,
+        "after": 4,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_midnight_cookie",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713681690,
+        "type": "expense",
+        "item_id": "food_bread",
         "amount": 1,
         "before": 2,
         "after": 1,
-        "reason": "use_pager",
+        "reason": "feed_food",
         "meta": {
-          "travel_id": "mssq970u-iy004nl5"
+          "food_id": "food_bread",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786698667443,
+        "time": 1786713677036,
         "type": "expense",
-        "item_id": "travel_checklist",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_carrot",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713599631,
+        "type": "expense",
+        "item_id": "food_comet_soda",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_comet_soda",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713595741,
+        "type": "expense",
+        "item_id": "food_mooncake_talisman",
         "amount": 1,
         "before": 3,
         "after": 2,
-        "reason": "prepare_travel_tool",
+        "reason": "feed_food",
         "meta": {
-          "item_id": "travel_checklist"
+          "food_id": "food_mooncake_talisman",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786698210691,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 9,
-        "after": 14,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msspzbiq-0t2l1f5d",
-          "location_id": "empty_amusement_park"
-        }
-      },
-      {
-        "time": 1786698210661,
+        "time": 1786713591216,
         "type": "expense",
-        "item_id": "travel_pager",
+        "item_id": "food_leaf_salad",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_leaf_salad",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713587750,
+        "type": "expense",
+        "item_id": "food_leaf_salad",
         "amount": 1,
         "before": 3,
         "after": 2,
-        "reason": "use_pager",
+        "reason": "feed_food",
         "meta": {
-          "travel_id": "msspzbiq-0t2l1f5d"
+          "food_id": "food_leaf_salad",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713584239,
+        "type": "expense",
+        "item_id": "food_stardust_jelly",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_stardust_jelly",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713579966,
+        "type": "expense",
+        "item_id": "food_apple",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_apple",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713575171,
+        "type": "expense",
+        "item_id": "food_burger",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_burger",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713571301,
+        "type": "expense",
+        "item_id": "food_fish",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_fish",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786713567537,
+        "type": "expense",
+        "item_id": "food_stardust_jelly",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_stardust_jelly",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786712532512,
+        "type": "expense",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_bread",
+          "stage": "overweight"
+        }
+      },
+      {
+        "time": 1786711148100,
+        "type": "expense",
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_rice_ball",
+          "stage": "overweight"
+        }
+      },
+      {
+        "time": 1786711143427,
+        "type": "expense",
+        "item_id": "food_dream_milk",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_dream_milk",
+          "stage": "overweight"
+        }
+      },
+      {
+        "time": 1786711139897,
+        "type": "expense",
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_rice_ball",
+          "stage": "overweight"
+        }
+      },
+      {
+        "time": 1786711136291,
+        "type": "expense",
+        "item_id": "food_grapes",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_grapes",
+          "stage": "overweight"
+        }
+      },
+      {
+        "time": 1786711132782,
+        "type": "expense",
+        "item_id": "food_curry",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_curry",
+          "stage": "overweight"
         }
       }
     ],
     "item_daily": {
       "date": "2026-08-14",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 0,
+      "game_fate_reward_count": 2,
       "shop_buy_counts": {
         "travel_checklist": 5,
         "travel_pager": 10
@@ -2066,256 +2115,239 @@
   },
   "recent_events": [
     {
-      "time": 1786702247087,
+      "time": 1786713701618,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "petting",
-      "branch_id": "belly_allow",
-      "summary": "小若汁犹豫了一下，最后还是允许ic·alter同时被妻子和情夫绿摸了摸肚子。",
-      "effects_text": "心情+4，好感+4，贡献+3，经验+13",
+      "branch_id": "limb_trust",
+      "summary": "它主动靠近ic·alter同时被妻子和情夫绿，像是在邀请再多摸一会儿。\n小若汁被摸得很舒服，整只都传来满足的哼声。",
+      "effects_text": "心情+5，好感+3，贡献+1，经验+1",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713689417,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁吃完🥧精灵莓果挞后舒服地眯起眼，显然十分满意。",
+      "effects_text": "心情+8，好感+2，贡献+2，经验+2",
+      "effects": {
+        "satiety": 0,
+        "mood": 8,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 2
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713685959,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁慢吞吞地咬着🍪午夜饼干，吃完后幸福地靠在一旁。",
+      "effects_text": "心情+8，好感+2，贡献+2，经验+2",
+      "effects": {
+        "satiety": 0,
+        "mood": 8,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 2
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713681690,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "它闻到香味就改了主意，满足地享用了🍞松软面包。",
+      "effects_text": "心情+5，好感+2，贡献+2，经验+2",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 2
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713677037,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "它闻到香味就改了主意，满足地享用了🥕脆胡萝卜。",
+      "effects_text": "心情+5，好感+2，贡献+2，经验+2",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 2
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713668200,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "hug",
+      "branch_id": "hug_trust",
+      "summary": "小若汁开心地扑进ic·alter同时被妻子和情夫绿怀里，热情地回抱了回来。\n抱住小若汁时，最先感到的是它身上的软肉轻轻贴过来。",
+      "effects_text": "心情+11，好感+8，贡献+6，经验+6",
+      "effects": {
+        "satiety": 0,
+        "mood": 11,
+        "health": 0,
+        "favorability": 8,
+        "contribution": 6,
+        "experience": 6
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713663188,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "hug",
+      "branch_id": "hug_trust",
+      "summary": "小若汁开心地扑进ic·alter同时被妻子和情夫绿怀里，热情地回抱了回来。\n小若汁靠进怀里，圆润又有弹性，像个暖团子。",
+      "effects_text": "心情+11，好感+8，贡献+6，经验+6",
+      "effects": {
+        "satiety": 0,
+        "mood": 11,
+        "health": 0,
+        "favorability": 8,
+        "contribution": 6,
+        "experience": 6
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713604359,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "petting",
+      "branch_id": "belly_trust",
+      "summary": "小若汁毫不犹豫地翻过身，把肚子放心地交给ic·alter同时被妻子和情夫绿摸。\n小若汁身上软肉明显多了起来，被碰到时满足地哼哼了一声。",
+      "effects_text": "心情+5，好感+3，贡献+1，经验+1",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713599631,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁虽然有点撑，还是吃掉了🥤彗星汽水，满足地眯起了眼睛。",
+      "effects_text": "心情+3，好感+1，贡献+1，经验+1",
+      "effects": {
+        "satiety": 0,
+        "mood": 3,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 1
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786713595741,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁虽然有点撑，还是吃掉了🥮符纹月饼，满足地眯起了眼睛。",
+      "effects_text": "心情+4，好感+1，贡献+1，经验+1",
       "effects": {
         "satiety": 0,
         "mood": 4,
         "health": 0,
-        "favorability": 4,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786702229713,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "petting",
-      "branch_id": "private_shy",
-      "summary": "小若汁害羞地躲开，但没有生气。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
         "favorability": 1,
         "contribution": 1,
-        "experience": 11
+        "experience": 1
       },
       "level_ups": [],
-      "bonus_experience": 10,
+      "bonus_experience": 0,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1786701991645,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "petting",
-      "branch_id": "normal_close",
-      "summary": "小若汁主动把脑袋贴到ic·alter同时被妻子和情夫绿手边，示意还想再摸一会儿。",
-      "effects_text": "心情+7，好感+5，贡献+4，经验+14",
-      "effects": {
-        "satiety": 0,
-        "mood": 7,
-        "health": 0,
-        "favorability": 5,
-        "contribution": 4,
-        "experience": 14
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786701838463,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "petting",
-      "branch_id": "head_close",
-      "summary": "小若汁追着ic·alter同时被妻子和情夫绿的手蹭了蹭。",
-      "effects_text": "心情+8，好感+5，贡献+4，经验+14",
-      "effects": {
-        "satiety": 0,
-        "mood": 8,
-        "health": 0,
-        "favorability": 5,
-        "contribution": 4,
-        "experience": 14
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699509791,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "小若汁只吃了一小口。",
-      "effects_text": "饱食+4，心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 4,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699503910,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699499531,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699493549,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13，升级到 Lv.8",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [
-        {
-          "level": 8,
-          "need": 220
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [
-        {
-          "level": 8,
-          "reward": 300,
-          "receiver": {
-            "user_id": "2818259462",
-            "display_name": "ic·alter同时被妻子和情夫绿"
-          }
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699489522,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786699483578,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，ic·alter同时被妻子和情夫绿及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+28，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 28,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 450884
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 18
     }
   ],
   "daily": {
     "date": "2026-08-14",
-    "event_count": 10,
+    "event_count": 83,
     "bonus_event_count": 10
   },
   "processed_messages": {
@@ -2378,7 +2410,80 @@
     "event:1625893903": 1786701838460,
     "event:358704645": 1786701991644,
     "event:1295584580": 1786702229711,
-    "event:2001538342": 1786702247087
+    "event:2001538342": 1786702247087,
+    "event:1960192626": 1786710757001,
+    "event:118509344": 1786710763194,
+    "event:1303399851": 1786710826991,
+    "event:986569819": 1786710830678,
+    "event:736611842": 1786710835509,
+    "event:704704281": 1786710839346,
+    "event:1399107800": 1786710885689,
+    "event:105701959": 1786710927078,
+    "event:120813431": 1786710931443,
+    "event:1767797212": 1786710937452,
+    "event:734335250": 1786710942199,
+    "event:1269645635": 1786710949269,
+    "event:753741435": 1786710954363,
+    "event:1607980132": 1786710958556,
+    "event:917282948": 1786710962312,
+    "event:303296371": 1786710967481,
+    "event:1076175238": 1786710973713,
+    "event:1785209163": 1786710985998,
+    "event:1721779571": 1786710997736,
+    "event:403072268": 1786711005206,
+    "event:551954428": 1786711010246,
+    "event:1701430337": 1786711016076,
+    "event:838458641": 1786711021106,
+    "event:2082340501": 1786711025892,
+    "event:1393408061": 1786711030429,
+    "event:1930920781": 1786711034486,
+    "event:604933359": 1786711038966,
+    "event:1738389099": 1786711042861,
+    "event:2036035008": 1786711047075,
+    "event:1923823624": 1786711051233,
+    "event:2057747886": 1786711059188,
+    "event:1796667702": 1786711063959,
+    "event:344609015": 1786711067449,
+    "event:1337427067": 1786711071238,
+    "event:487949270": 1786711076481,
+    "event:1526071447": 1786711082431,
+    "event:1167749315": 1786711086329,
+    "event:529520983": 1786711092413,
+    "event:1183914963": 1786711096499,
+    "event:752612194": 1786711100773,
+    "event:2081143502": 1786711106320,
+    "event:968576549": 1786711110417,
+    "event:22671742": 1786711114986,
+    "event:1581828695": 1786711119304,
+    "event:1648622438": 1786711123339,
+    "event:1062139686": 1786711128283,
+    "event:851180830": 1786711132782,
+    "event:842823688": 1786711136291,
+    "event:595507796": 1786711139896,
+    "event:766243796": 1786711143427,
+    "event:907755787": 1786711148099,
+    "event:900821591": 1786712532511,
+    "event:2136600922": 1786712769901,
+    "event:1797982250": 1786713545693,
+    "event:145394373": 1786713556615,
+    "event:1376526613": 1786713562312,
+    "event:2010888702": 1786713567535,
+    "event:962855239": 1786713571301,
+    "event:31895977": 1786713575171,
+    "event:1413565019": 1786713579965,
+    "event:1777454214": 1786713584239,
+    "event:292466129": 1786713587750,
+    "event:1040138215": 1786713591216,
+    "event:1111920005": 1786713595741,
+    "event:1379843263": 1786713599630,
+    "event:1288517571": 1786713604358,
+    "event:570077617": 1786713663181,
+    "event:729051820": 1786713668199,
+    "event:567873778": 1786713677034,
+    "event:1634306112": 1786713681689,
+    "event:299772380": 1786713685958,
+    "event:535729477": 1786713689416,
+    "event:440956806": 1786713701615
   },
   "skin_sessions": {
     "active": null
@@ -2391,7 +2496,7 @@
     "migrated_at": 1784722630639
   },
   "created_at": 1784722630639,
-  "updated_at": 1786702247087,
+  "updated_at": 1786718590124,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 63,
@@ -2475,9 +2580,9 @@
   },
   "production": {
     "started_at": 1784871541125,
-    "last_settled_at": 1786702247086,
-    "accumulated_ms": 2763509,
-    "progress": 1.3935000787000953,
+    "last_settled_at": 1786718590124,
+    "accumulated_ms": 19106547,
+    "progress": 4.4496509266672115,
     "total_produced": 231,
     "last_collected_at": 1786699483577
   },

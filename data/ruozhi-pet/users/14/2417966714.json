@@ -4,11 +4,11 @@
   "pet": {
     "level": 3,
     "experience": 73,
-    "satiety": 23,
+    "satiety": 10,
     "mood": 100,
     "health": 94,
     "current_skin_id": "starry_turtle",
-    "satiety_decay_at": 1786698952930,
+    "satiety_decay_at": 1786717672930,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -731,7 +731,10 @@
         "time": 1784771812621
       }
     ],
-    "five_skin_shadow_counts": {}
+    "five_skin_shadow_counts": {},
+    "weight": 50,
+    "weight_decay_at": 1786718589845,
+    "health_decay_at": 1786718589845
   },
   "profile": {
     "favorability": 50,
@@ -739,7 +742,7 @@
     "total_contribution": 47,
     "last_display_name": "刮杯蛋(iOS)100,100,300,978",
     "first_joined_at": 1784771812621,
-    "last_active_at": 1786699098283,
+    "last_active_at": 1786718589845,
     "daily": {
       "date": "2026-08-14",
       "event_count": 3,
@@ -1496,12 +1499,12 @@
     "migrated_at": 1784771812621
   },
   "created_at": 1784771812621,
-  "updated_at": 1786699098283,
+  "updated_at": 1786718589845,
   "production": {
     "started_at": 1784985206636,
-    "last_settled_at": 1786699098282,
-    "accumulated_ms": 31890133,
-    "progress": 5.163528506079132,
+    "last_settled_at": 1786718589845,
+    "accumulated_ms": 51381696,
+    "progress": 7.79373019679434,
     "total_produced": 116,
     "last_collected_at": 1786667208149
   },
@@ -4874,9 +4877,83 @@
       "encounter_reward_types": {},
       "total_encounters": 0
     },
-    "active": null,
+    "active": {
+      "id": "mst12lu4-kz60yvsq",
+      "user_id": "2417966714",
+      "display_name": "刮杯蛋(iOS)100,100,300,978",
+      "group_id": "138260540",
+      "self_id": "3964480831",
+      "started_at": 1786716835852,
+      "ends_at": 1786721889711,
+      "duration_ms": 5053859,
+      "map_id": "eldoran_continent",
+      "map_name": "艾尔多兰大陆",
+      "location_id": "eld_dwarf_city",
+      "location_name": "铁砧矮人城",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "eld_event_heavy_spoon",
+        "name": "矮人汤勺",
+        "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
+        "effects": {},
+        "souvenirs": [
+          {
+            "id": "souvenir_heavy_dwarf_spoon",
+            "name": "超重矮人汤勺",
+            "emoji": "🥄",
+            "description": "旅行纪念品「超重矮人汤勺」。"
+          }
+        ],
+        "items": [],
+        "record": false
+      },
+      "rewards": {
+        "coin": 1404,
+        "fate": 3,
+        "experience": 3
+      },
+      "encounter": {
+        "id": "encounter-mst12m52-lk4cpdq5",
+        "time": 1786716836246,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2831974530",
+        "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示"
+      }
+    },
     "prepared_tool": null,
-    "encounter_records": {}
+    "encounter_records": {
+      "encounter-mst12m52-lk4cpdq5": {
+        "id": "encounter-mst12m52-lk4cpdq5",
+        "time": 1786716836246,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2831974530",
+        "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示"
+      }
+    }
   },
   "gacha": {
     "since_four_plus": 6,
