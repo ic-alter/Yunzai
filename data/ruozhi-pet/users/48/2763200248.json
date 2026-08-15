@@ -8,7 +8,7 @@
     "mood": 72,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786727268855,
+    "satiety_decay_at": 1786826391290,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -46,9 +46,9 @@
         "time": 1785335360008
       }
     ],
-    "weight": 50,
-    "weight_decay_at": 1786710729802,
-    "health_decay_at": 1786727268855
+    "weight": 48,
+    "weight_decay_at": 1786797129802,
+    "health_decay_at": 1786826391290
   },
   "profile": {
     "favorability": 3,
@@ -56,9 +56,9 @@
     "total_contribution": 2,
     "last_display_name": "了爾",
     "first_joined_at": 1785335360008,
-    "last_active_at": 1786727268855,
+    "last_active_at": 1786826391290,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -67,10 +67,25 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 7,
+      "ruozhi_fate": 13,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1786784101598,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 7,
+        "after": 13,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
       {
         "time": 1785387101005,
         "type": "income",
@@ -84,7 +99,13 @@
         }
       }
     ],
-    "item_daily": {},
+    "item_daily": {
+      "date": "2026-08-15",
+      "fate_exchange_count": 0,
+      "game_fate_reward_count": 6,
+      "shop_buy_counts": {},
+      "use_counts": {}
+    },
     "item_migrations": {
       "fate_v1": {
         "time": 1785335360012,
@@ -94,10 +115,24 @@
       }
     },
     "currency": {
-      "balance": 1000,
-      "total_earned": 1000,
+      "balance": 2050,
+      "total_earned": 2050,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786784101587,
+          "type": "income",
+          "reason": "mihoyo_guess_role_settlement",
+          "amount": 1050,
+          "before": 1000,
+          "after": 2050,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 185,
+            "total_score": 185
+          }
+        },
         {
           "time": 1785387101007,
           "type": "income",
@@ -204,10 +239,10 @@
     "migrated_at": 1785335360008
   },
   "created_at": 1785335360008,
-  "updated_at": 1786727268855,
+  "updated_at": 1786826391290,
   "production": {
     "started_at": 1785335360008,
-    "last_settled_at": 1786727268855,
+    "last_settled_at": 1786826391290,
     "accumulated_ms": 259200000,
     "progress": 28.67930775646943,
     "total_produced": 7,

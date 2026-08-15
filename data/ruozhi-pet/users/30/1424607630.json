@@ -3,12 +3,12 @@
   "user_id": "1424607630",
   "pet": {
     "level": 1,
-    "experience": 23,
+    "experience": 53,
     "satiety": 5,
-    "mood": 68,
-    "health": 80,
+    "mood": 79,
+    "health": 84,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786727268735,
+    "satiety_decay_at": 1786826391212,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -167,19 +167,19 @@
         "time": 1785402390078
       }
     ],
-    "weight": 50,
-    "weight_decay_at": 1786710729651,
-    "health_decay_at": 1786727268735
+    "weight": 49,
+    "weight_decay_at": 1786813748891,
+    "health_decay_at": 1786826391212
   },
   "profile": {
-    "favorability": 0,
-    "weekly_contribution": 0,
-    "total_contribution": 0,
+    "favorability": 11,
+    "weekly_contribution": 10,
+    "total_contribution": 10,
     "last_display_name": "KrT 100144083705",
     "first_joined_at": 1785402390078,
-    "last_active_at": 1786727268735,
+    "last_active_at": 1786826391212,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -188,10 +188,21 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 28716,
-      "total_earned": 28716,
+      "balance": 29216,
+      "total_earned": 29216,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786779087199,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 28716,
+          "after": 29216,
+          "meta": {
+            "date": "2026-08-15"
+          }
+        },
         {
           "time": 1786497093198,
           "type": "income",
@@ -310,17 +321,6 @@
             "score": 595,
             "total_score": 1960
           }
-        },
-        {
-          "time": 1785991938798,
-          "type": "income",
-          "reason": "first_sign",
-          "amount": 15000,
-          "before": 602,
-          "after": 15602,
-          "meta": {
-            "date": "2026-08-06"
-          }
         }
       ],
       "sign": {
@@ -329,14 +329,26 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-08-15"
     },
     "items": {
-      "ruozhi_fate": 149,
+      "ruozhi_fate": 179,
       "nameless_ruozhi": 0,
       "souvenir_infinite_lottery_ticket": 1
     },
     "item_ledger": [
+      {
+        "time": 1786779087198,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 149,
+        "after": 179,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1786497093199,
         "type": "income",
@@ -582,21 +594,6 @@
           "first_sign_bonus": 60,
           "monthly_sign_bonus": 0
         }
-      },
-      {
-        "time": 1785402390102,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 0,
-        "after": 4,
-        "reason": "fgo_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "crop",
-          "planned_amount": 4,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
@@ -621,13 +618,66 @@
       ]
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1786779102149,
+      "user_id": "1424607630",
+      "display_name": "KrT 100144083705",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786779087199,
+      "user_id": "1424607630",
+      "display_name": "KrT 100144083705",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，KrT 100144083705及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 29216
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    }
+  ],
   "daily": {
-    "date": "2026-07-30",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-08-15",
+    "event_count": 2,
+    "bonus_event_count": 2
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:1174834873": 1786779087196,
+    "event:520790377": 1786779102148
+  },
   "skin_sessions": {
     "active": null
   },
@@ -639,13 +689,14 @@
     "migrated_at": 1785402390078
   },
   "created_at": 1785402390078,
-  "updated_at": 1786727268735,
+  "updated_at": 1786826391212,
   "production": {
     "started_at": 1785402390078,
-    "last_settled_at": 1786727268735,
-    "accumulated_ms": 259200000,
-    "progress": 30.026680747013167,
-    "total_produced": 0
+    "last_settled_at": 1786826391212,
+    "accumulated_ms": 47304014,
+    "progress": 5.429418145774373,
+    "total_produced": 30,
+    "last_collected_at": 1786779087198
   },
   "travel": {
     "unlocked_location_ids": [

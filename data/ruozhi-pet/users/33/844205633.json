@@ -3,12 +3,12 @@
   "user_id": "844205633",
   "pet": {
     "level": 2,
-    "experience": 28,
+    "experience": 32,
     "satiety": 5,
     "mood": 66,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786727268757,
+    "satiety_decay_at": 1786826391227,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -867,9 +867,9 @@
       "maodie_turtle": 0,
       "yaya_turtle": 0
     },
-    "weight": 50,
-    "weight_decay_at": 1786710729688,
-    "health_decay_at": 1786727268757
+    "weight": 48,
+    "weight_decay_at": 1786797129688,
+    "health_decay_at": 1786826391227
   },
   "profile": {
     "favorability": 0,
@@ -877,9 +877,9 @@
     "total_contribution": 0,
     "last_display_name": "散樗",
     "first_joined_at": 1784803173103,
-    "last_active_at": 1786727268757,
+    "last_active_at": 1786826391227,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -888,10 +888,23 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 48679,
-      "total_earned": 128679,
+      "balance": 50684,
+      "total_earned": 130684,
       "total_spent": 80000,
       "ledger": [
+        {
+          "time": 1786732563625,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2005,
+          "before": 48679,
+          "after": 50684,
+          "meta": {
+            "travel_id": "mst64zhp-5gttcqyy",
+            "location_id": "rtc_waste_factory",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786725353191,
           "type": "income",
@@ -1001,18 +1014,6 @@
             "skin_id": "thumbs_up_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786596524529,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 43181,
-          "after": 43481,
-          "meta": {
-            "skin_id": "antler_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1024,7 +1025,7 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 1,
+      "ruozhi_fate": 5,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
@@ -1043,6 +1044,19 @@
       "souvenir_driverless_car_card": 1
     },
     "item_ledger": [
+      {
+        "time": 1786732563625,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 1,
+        "after": 5,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mst64zhp-5gttcqyy",
+          "location_id": "rtc_waste_factory"
+        }
+      },
       {
         "time": 1786725353191,
         "type": "expense",
@@ -1283,19 +1297,6 @@
         "meta": {
           "achievement_id": "ach_school_gate_1743"
         }
-      },
-      {
-        "time": 1786400700042,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 20,
-        "after": 26,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msnmo9uj-dke6fyuc",
-          "location_id": "school_gate_1743"
-        }
       }
     ],
     "item_daily": {
@@ -1332,7 +1333,7 @@
     "migrated_at": 1784803173103
   },
   "created_at": 1784803173103,
-  "updated_at": 1786727268757,
+  "updated_at": 1786826391227,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 16,
@@ -1367,7 +1368,7 @@
   },
   "production": {
     "started_at": 1784876695884,
-    "last_settled_at": 1786727268757,
+    "last_settled_at": 1786826391227,
     "accumulated_ms": 259200000,
     "progress": 28.548758587470452,
     "total_produced": 0
@@ -2264,6 +2265,39 @@
       }
     },
     "settlements": {
+      "mst64zhp-5gttcqyy": {
+        "id": "mst64zhp-5gttcqyy",
+        "user_id": "844205633",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "散樗",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_waste_factory",
+        "location_name": "万能垃圾处理厂",
+        "duration_ms": 7218664,
+        "rewards": {
+          "coin": 2005,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786732563628,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：2小时\n获得：2005若汁币，若汁之缘×4，经验+4"
+      },
       "msrw724x-xypd142b": {
         "id": "msrw724x-xypd142b",
         "user_id": "844205633",
@@ -3328,40 +3362,22 @@
         "settled_at": 1786115245720,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：2小时57分钟\n获得：3033若汁币，若汁之缘×6，经验+6\n旅行事件：上错游船\n小若汁登上一艘婚礼游船，并在合影里占据了最中间的位置。\n纪念品：📷陌生人的婚礼合影×1\n新地点已解锁：蓝海观光港\n达成旅行成就「发现蓝海观光港」 ★★★"
-      },
-      "msinjt9u-57v1aar8": {
-        "id": "msinjt9u-57v1aar8",
-        "user_id": "844205633",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "散樗",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_moonbell_village",
-        "location_name": "月铃村",
-        "duration_ms": 2707811,
-        "rewards": {
-          "coin": 752,
-          "fate": 2,
-          "experience": 1
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786092170089,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：45分钟\n获得：752若汁币，若汁之缘×2，经验+1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mst64zhp-5gttcqyy",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "844205633",
+        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：2小时\n获得：2005若汁币，若汁之缘×4，经验+4",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786732563629,
+        "created_at": 1786732563629,
+        "sent_at": 1786732564078,
+        "last_error": ""
+      },
       {
         "travel_id": "msrw724x-xypd142b",
         "group_id": "415462812",
@@ -3608,23 +3624,10 @@
         "created_at": 1786115245721,
         "sent_at": 1786115246167,
         "last_error": ""
-      },
-      {
-        "travel_id": "msinjt9u-57v1aar8",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "844205633",
-        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：45分钟\n获得：752若汁币，若汁之缘×2，经验+1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786092170089,
-        "created_at": 1786092170089,
-        "sent_at": 1786092170524,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 33,
+      "total_trips": 34,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -3641,7 +3644,8 @@
         "retro_tomorrow_city": 8,
         "eldoran_continent": 9,
         "unregistered_district": 5,
-        "four_regions_little_world": 1
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -3694,29 +3698,7 @@
       "encounter_reward_types": {},
       "total_encounters": 0
     },
-    "active": {
-      "id": "mst64zhp-5gttcqyy",
-      "user_id": "844205633",
-      "display_name": "散樗",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1786725344941,
-      "ends_at": 1786732563605,
-      "duration_ms": 7218664,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_waste_factory",
-      "location_name": "万能垃圾处理厂",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 2005,
-        "fate": 4,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {}
   }

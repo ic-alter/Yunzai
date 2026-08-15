@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2818259462",
   "pet": {
-    "level": 9,
-    "experience": 55,
-    "satiety": 91,
+    "level": 10,
+    "experience": 11,
+    "satiety": 96,
     "mood": 100,
-    "health": 100,
+    "health": 96,
     "current_skin_id": "maodie_turtle",
-    "satiety_decay_at": 1786727319024,
+    "satiety_decay_at": 1786826373857,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -89,7 +89,9 @@
       "unicorn_turtle",
       "spirit_pearl_turtle",
       "octopus_turtle",
-      "sei_shonagon_turtle"
+      "sei_shonagon_turtle",
+      "vomit_turtle",
+      "radical_foresight_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -124,9 +126,11 @@
     "achievement_stats": {
       "event_branch_count:feed:full": 1,
       "event_branch_count:feed:full:last_at": 1784723299295,
-      "counter:gacha_draws": 692,
-      "counter:gacha_five": 11,
-      "counter:gacha_unlucky_five": 2
+      "counter:gacha_draws": 712,
+      "counter:gacha_five": 12,
+      "counter:gacha_unlucky_five": 2,
+      "pet_stat_reach_count:satiety:98": 1,
+      "pet_stat_reach_count:satiety:98:last_at": 1786776647978
     },
     "achievement_records": {
       "feed_full_once": {
@@ -1245,9 +1249,58 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "overfed": {
+        "id": "overfed",
+        "name": "撑死了...",
+        "rarity": 2,
+        "time": 1786776647980,
+        "actor_name": "ic·alter同时被妻子和情夫绿",
+        "stat_key": "pet_stat_reach_count:satiety:98",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "vomit_turtle",
+            "skin_name": "呕吐小若汁",
+            "message": "解锁二星皮肤「呕吐小若汁」。"
+          }
+        ]
+      },
+      "ach_cream_swamp": {
+        "id": "ach_cream_swamp",
+        "name": "发现奶油沼泽",
+        "rarity": 3,
+        "time": 1786819602428,
+        "actor_name": "ic·alter同时被妻子和情夫绿",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "radical_foresight_turtle",
+        "reason": "gacha",
+        "time": 1786814996842
+      },
+      {
+        "skin_id": "vomit_turtle",
+        "reason": "achievement",
+        "time": 1786776647980,
+        "achievement_id": "overfed"
+      },
       {
         "skin_id": "sei_shonagon_turtle",
         "reason": "gacha",
@@ -1669,167 +1722,167 @@
       "maodie_turtle": 0,
       "snow_peak_turtle": 0,
       "spirit_pearl_turtle": 0,
-      "sei_shonagon_turtle": 0
+      "sei_shonagon_turtle": 0,
+      "radical_foresight_turtle": 0
     },
-    "weight": 192,
-    "weight_decay_at": 1786727351190,
-    "health_decay_at": 1786712532511
+    "weight": 229,
+    "weight_decay_at": 1786826391325,
+    "health_decay_at": 1786816212511
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 168,
-    "total_contribution": 291,
+    "weekly_contribution": 214,
+    "total_contribution": 337,
     "last_display_name": "ic·alter同时被妻子和情夫绿",
     "first_joined_at": 1784722630639,
-    "last_active_at": 1786727351190,
+    "last_active_at": 1786826391325,
     "daily": {
-      "date": "2026-08-15",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-16",
+      "event_count": 14,
+      "same_event_counts": {
+        "feed": 12,
+        "petting": 2
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 552569,
-      "total_earned": 969569,
+      "balance": 579315,
+      "total_earned": 996315,
       "total_spent": 417000,
       "ledger": [
         {
-          "time": 1786727351191,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 2000,
-          "before": 554569,
-          "after": 552569,
+          "time": 1786820696848,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 1500,
+          "before": 577815,
+          "after": 579315,
           "meta": {
-            "item_id": "travel_checklist",
-            "count": 1
+            "level": 10
           }
         },
         {
-          "time": 1786727335579,
+          "time": 1786820605304,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 577315,
+          "after": 577815,
+          "meta": {
+            "date": "2026-08-16"
+          }
+        },
+        {
+          "time": 1786819602421,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 793,
-          "before": 553776,
-          "after": 554569,
+          "amount": 2667,
+          "before": 574648,
+          "after": 577315,
           "meta": {
-            "travel_id": "mst7bkl9-xlmbee3n",
-            "location_id": "chocolate_falls",
-            "forced_by": "pager"
+            "travel_id": "msukjg7d-gmj3tnch",
+            "location_id": "cream_swamp",
+            "forced_by": "timer"
           }
         },
         {
-          "time": 1786727320983,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2071,
-          "before": 551705,
-          "after": 553776,
-          "meta": {
-            "travel_id": "mst7b2tc-zaiiysm9",
-            "location_id": "sugar_crystal_mine",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786727300418,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 30000,
-          "before": 581705,
-          "after": 551705,
-          "meta": {
-            "item_id": "travel_ticket",
-            "count": 10
-          }
-        },
-        {
-          "time": 1786727289475,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 13,
-          "before": 581692,
-          "after": 581705,
-          "meta": {
-            "encounter_id": "encounter-mst78bff-vw865wp4",
-            "partner_user_id": "mock-shop-travel-1786727179784-j5zygy"
-          }
-        },
-        {
-          "time": 1786727289475,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2444,
-          "before": 579248,
-          "after": 581692,
-          "meta": {
-            "travel_id": "mst6ybwy-4sx367k4",
-            "location_id": "nap_park",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786726749849,
+          "time": 1786815001380,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 578948,
-          "after": 579248,
+          "before": 574348,
+          "after": 574648,
+          "meta": {
+            "skin_id": "drooling_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786815001380,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 574048,
+          "after": 574348,
           "meta": {
             "skin_id": "hearts_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786726749849,
+          "time": 1786815001380,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 578648,
-          "after": 578948,
+          "before": 573748,
+          "after": 574048,
           "meta": {
-            "skin_id": "volleyball_turtle",
+            "skin_id": "bouquet_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786726749849,
+          "time": 1786815001380,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 578348,
-          "after": 578648,
+          "before": 573448,
+          "after": 573748,
           "meta": {
-            "skin_id": "wide_eyed_turtle",
+            "skin_id": "crown_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786726745817,
+          "time": 1786815001380,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 5000,
-          "before": 573348,
-          "after": 578348,
+          "before": 568448,
+          "after": 573448,
           "meta": {
-            "skin_id": "cat_turtle",
+            "skin_id": "bee_turtle",
             "rarity": 4
+          }
+        },
+        {
+          "time": 1786815001380,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 563448,
+          "after": 568448,
+          "meta": {
+            "skin_id": "paint_splash_turtle",
+            "rarity": 4
+          }
+        },
+        {
+          "time": 1786815001380,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 563148,
+          "after": 563448,
+          "meta": {
+            "skin_id": "goggles_turtle",
+            "rarity": 3
           }
         }
       ],
       "sign": {
-        "last_date": "2026-08-15",
-        "total_count": 20,
+        "last_date": "2026-08-16",
+        "total_count": 21,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-14"
+      "first_interaction_reward_date": "2026-08-16"
     },
     "items": {
-      "ruozhi_fate": 15,
+      "ruozhi_fate": 34,
       "nameless_ruozhi": 6,
       "travel_checklist": 1,
       "travel_pager": 86,
@@ -1873,298 +1926,308 @@
       "souvenir_fish_napkin_clip": 1,
       "souvenir_backdoor_plate": 1,
       "souvenir_sea_future_coin": 1,
-      "food_burger": 3,
-      "food_popcorn": 7,
+      "food_burger": 4,
+      "food_popcorn": 5,
       "food_sandwich": 3,
-      "food_carrot": 2,
-      "food_milk_tea": 2,
+      "food_carrot": 1,
+      "food_milk_tea": 0,
       "food_curry": 3,
       "food_ice_cream": 2,
       "food_noodles": 2,
       "food_apple": 1,
-      "food_leaf_salad": 0,
+      "food_leaf_salad": 1,
       "food_midnight_cookie": 4,
-      "food_rice_ball": 1,
+      "food_rice_ball": 2,
       "food_eighth_day_pudding": 8,
-      "food_cake": 8,
-      "food_dragon_stew": 3,
-      "food_pancake": 0,
-      "food_atom_candy": 2,
+      "food_cake": 7,
+      "food_dragon_stew": 2,
+      "food_pancake": 1,
+      "food_atom_candy": 1,
       "food_stardust_jelly": 6,
       "food_comet_soda": 3,
       "food_grapes": 2,
-      "food_elven_tart": 1,
+      "food_elven_tart": 0,
       "food_spirit_pill": 1,
       "food_dumpling": 5,
-      "food_pizza": 4,
-      "food_bread": 1,
+      "food_pizza": 5,
+      "food_bread": 0,
       "food_immortal_peach": 1,
       "food_fried_chicken": 3,
       "food_donut": 5,
       "food_dwarf_bread": 3,
-      "food_mooncake_talisman": 2,
-      "food_fish": 1,
+      "food_mooncake_talisman": 1,
+      "food_fish": 2,
       "food_dream_milk": 0,
       "souvenir_paid_pirate_photo": 1,
       "souvenir_half_shell_aurora_photo": 1,
       "souvenir_cultivation_paper": 1,
       "souvenir_ninth_lane_goggles": 1,
-      "travel_ticket": 8,
-      "souvenir_cocoa_rainbow_photo": 1
+      "travel_ticket": 5,
+      "souvenir_cocoa_rainbow_photo": 1,
+      "food_seabreeze_popping_candy": 0,
+      "food_cream_strawberry_cup": 1
     },
     "item_ledger": [
       {
-        "time": 1786727351191,
-        "type": "income",
-        "item_id": "travel_checklist",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 2000
-        }
-      },
-      {
-        "time": 1786727335579,
-        "type": "income",
-        "item_id": "souvenir_cocoa_rainbow_photo",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mst7bkl9-xlmbee3n",
-          "event_id": "cocoa_rainbow",
-          "location_id": "chocolate_falls"
-        }
-      },
-      {
-        "time": 1786727335579,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 14,
-        "after": 15,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mst7bkl9-xlmbee3n",
-          "location_id": "chocolate_falls"
-        }
-      },
-      {
-        "time": 1786727335572,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 87,
-        "after": 86,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mst7bkl9-xlmbee3n"
-        }
-      },
-      {
-        "time": 1786727331823,
+        "time": 1786820767351,
         "type": "expense",
         "item_id": "travel_ticket",
+        "amount": 1,
+        "before": 6,
+        "after": 5,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_ticket"
+        }
+      },
+      {
+        "time": 1786820696848,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 31,
+        "after": 34,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 10
+        }
+      },
+      {
+        "time": 1786820696848,
+        "type": "expense",
+        "item_id": "food_dragon_stew",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_dragon_stew",
+          "stage": "moderate_obesity"
+        }
+      },
+      {
+        "time": 1786820693099,
+        "type": "expense",
+        "item_id": "food_mooncake_talisman",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_mooncake_talisman",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820689186,
+        "type": "expense",
+        "item_id": "food_sandwich",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_sandwich",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820685165,
+        "type": "expense",
+        "item_id": "food_cake",
+        "amount": 1,
+        "before": 8,
+        "after": 7,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_cake",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820649140,
+        "type": "expense",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_bread",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820631278,
+        "type": "expense",
+        "item_id": "food_atom_candy",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_atom_candy",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820627108,
+        "type": "expense",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_carrot",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820621224,
+        "type": "expense",
+        "item_id": "food_seabreeze_popping_candy",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_seabreeze_popping_candy",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820617499,
+        "type": "expense",
+        "item_id": "food_popcorn",
+        "amount": 1,
+        "before": 6,
+        "after": 5,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_popcorn",
+          "stage": "mild_obesity"
+        }
+      },
+      {
+        "time": 1786820613857,
+        "type": "expense",
+        "item_id": "food_cake",
         "amount": 1,
         "before": 9,
         "after": 8,
-        "reason": "prepare_travel_tool",
+        "reason": "feed_food",
         "meta": {
-          "item_id": "travel_ticket"
+          "food_id": "food_cake",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786727320985,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 11,
-        "after": 14,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_sugar_crystal_mine"
-        }
-      },
-      {
-        "time": 1786727320983,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 7,
-        "after": 11,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mst7b2tc-zaiiysm9",
-          "location_id": "sugar_crystal_mine"
-        }
-      },
-      {
-        "time": 1786727320975,
+        "time": 1786820609749,
         "type": "expense",
-        "item_id": "travel_pager",
+        "item_id": "food_milk_tea",
         "amount": 1,
-        "before": 88,
-        "after": 87,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mst7b2tc-zaiiysm9"
-        }
-      },
-      {
-        "time": 1786727308781,
-        "type": "expense",
-        "item_id": "travel_ticket",
-        "amount": 1,
-        "before": 10,
-        "after": 9,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_ticket"
-        }
-      },
-      {
-        "time": 1786727300418,
-        "type": "income",
-        "item_id": "travel_ticket",
-        "amount": 10,
-        "before": 0,
-        "after": 10,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 30000
-        }
-      },
-      {
-        "time": 1786727289475,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
         "before": 1,
-        "after": 7,
-        "reason": "travel_reward",
+        "after": 0,
+        "reason": "feed_food",
         "meta": {
-          "travel_id": "mst6ybwy-4sx367k4",
-          "location_id": "nap_park"
+          "food_id": "food_milk_tea",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786727289467,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 89,
-        "after": 88,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mst6ybwy-4sx367k4"
-        }
-      },
-      {
-        "time": 1786726749849,
-        "type": "expense",
+        "time": 1786820605304,
+        "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 9,
-        "before": 10,
+        "before": 22,
+        "after": 31,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 13.563
+        }
+      },
+      {
+        "time": 1786820605304,
+        "type": "expense",
+        "item_id": "food_milk_tea",
+        "amount": 1,
+        "before": 2,
         "after": 1,
-        "reason": "gacha_draw",
+        "reason": "feed_food",
         "meta": {
-          "count": 3
+          "food_id": "food_milk_tea",
+          "stage": "mild_obesity"
         }
       },
       {
-        "time": 1786726745817,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 40,
-        "after": 10,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786726740322,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 70,
-        "after": 40,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786726730437,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 100,
-        "after": 70,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786726691281,
+        "time": 1786819602428,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 3,
-        "before": 97,
-        "after": 100,
+        "before": 19,
+        "after": 22,
         "reason": "travel_achievement_unlock",
         "meta": {
-          "achievement_id": "ach_chocolate_falls"
+          "achievement_id": "ach_cream_swamp"
         }
       },
       {
-        "time": 1786726691279,
+        "time": 1786819602426,
+        "type": "income",
+        "item_id": "food_cream_strawberry_cup",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msukjg7d-gmj3tnch",
+          "event_id": "strawberry_island",
+          "location_id": "cream_swamp"
+        }
+      },
+      {
+        "time": 1786819602421,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 94,
-        "after": 97,
+        "amount": 5,
+        "before": 14,
+        "after": 19,
         "reason": "travel_reward",
         "meta": {
-          "travel_id": "mst6xsz2-l6lx0489",
-          "location_id": "chocolate_falls"
+          "travel_id": "msukjg7d-gmj3tnch",
+          "location_id": "cream_swamp"
         }
       },
       {
-        "time": 1786726691270,
+        "time": 1786815001379,
         "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 90,
-        "after": 89,
-        "reason": "use_pager",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 44,
+        "after": 14,
+        "reason": "gacha_draw",
         "meta": {
-          "travel_id": "mst6xsz2-l6lx0489"
+          "count": 10
         }
       },
       {
-        "time": 1786726686813,
-        "type": "income",
+        "time": 1786814996842,
+        "type": "expense",
         "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 93,
-        "after": 94,
-        "reason": "travel_reward",
+        "amount": 30,
+        "before": 74,
+        "after": 44,
+        "reason": "gacha_draw",
         "meta": {
-          "travel_id": "mst6xjgc-fbeyc1m4",
-          "location_id": "nap_park"
+          "count": 10
         }
       }
     ],
     "item_daily": {
       "date": "2026-08-15",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 0,
+      "game_fate_reward_count": 12,
       "shop_buy_counts": {
         "travel_ticket": 10,
         "travel_checklist": 1
@@ -2197,77 +2260,32 @@
         "2026-08-12",
         "2026-08-13",
         "2026-08-14",
-        "2026-08-15"
+        "2026-08-15",
+        "2026-08-16"
       ]
     },
     "food_sign_backfill": {
       "month": "2026-08",
-      "dates": 10,
-      "time": 1786723222346
+      "dates": 11,
+      "time": 1786814992551
     }
   },
   "recent_events": [
     {
-      "time": 1786719638673,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "full",
-      "summary": "它犹豫片刻后还是没忍住，开心地吃下了🥗菜叶沙拉。",
-      "effects_text": "心情+5，好感+2，贡献+2，经验+2",
-      "effects": {
-        "satiety": 0,
-        "mood": 5,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 2
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786718679026,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "feed",
-      "branch_id": "small_bite",
-      "summary": "它认真品尝完🥕脆胡萝卜，随后满足地蹭了蹭。",
-      "effects_text": "饱食+6，心情+2，好感+2，贡献+2，经验+2",
-      "effects": {
-        "satiety": 6,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 2
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786713701618,
+      "time": 1786820747029,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "petting",
-      "branch_id": "limb_trust",
-      "summary": "它主动靠近ic·alter同时被妻子和情夫绿，像是在邀请再多摸一会儿。\n小若汁被摸得很舒服，整只都传来满足的哼声。",
-      "effects_text": "心情+5，好感+3，贡献+1，经验+1",
+      "branch_id": "belly_trust",
+      "summary": "它主动露出肚皮，舒舒服服地等着ic·alter同时被妻子和情夫绿揉一揉。\n指尖碰到它时像陷进温热的靠垫，它满意地哼了一声。",
+      "effects_text": "心情+10，好感+7，贡献+5，经验+5",
       "effects": {
         "satiety": 0,
-        "mood": 5,
+        "mood": 10,
         "health": 0,
-        "favorability": 3,
-        "contribution": 1,
-        "experience": 1
+        "favorability": 7,
+        "contribution": 5,
+        "experience": 5
       },
       "level_ups": [],
       "bonus_experience": 0,
@@ -2277,12 +2295,72 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1786713689417,
+      "time": 1786820738635,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "petting",
+      "branch_id": "normal_trust",
+      "summary": "小若汁带着信赖凑过来，把摸摸当成专属的陪伴。\n小若汁费劲地调整姿势，圆润的身形也跟着晃了晃。",
+      "effects_text": "心情+10，好感+6，贡献+5，经验+5",
+      "effects": {
+        "satiety": 0,
+        "mood": 10,
+        "health": 0,
+        "favorability": 6,
+        "contribution": 5,
+        "experience": 5
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786820696849,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "feed",
       "branch_id": "full",
-      "summary": "小若汁吃完🥧精灵莓果挞后舒服地眯起眼，显然十分满意。",
+      "summary": "小若汁慢吞吞地咬着🍲龙息炖菜，吃完后幸福地靠在一旁。",
+      "effects_text": "心情+10，健康-1，好感+2，贡献+2，经验+2，升级到 Lv.10",
+      "effects": {
+        "satiety": 0,
+        "mood": 10,
+        "health": -1,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 2
+      },
+      "level_ups": [
+        {
+          "level": 10,
+          "need": 260
+        }
+      ],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 10,
+          "reward": 1500,
+          "receiver": {
+            "user_id": "2818259462",
+            "display_name": "ic·alter同时被妻子和情夫绿"
+          }
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786820693099,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁宣布这是最后一口，随后把🥮符纹月饼吃得干干净净。",
       "effects_text": "心情+8，好感+2，贡献+2，经验+2",
       "effects": {
         "satiety": 0,
@@ -2300,138 +2378,138 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1786713685959,
+      "time": 1786820689186,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "feed",
       "branch_id": "full",
-      "summary": "小若汁慢吞吞地咬着🍪午夜饼干，吃完后幸福地靠在一旁。",
-      "effects_text": "心情+8，好感+2，贡献+2，经验+2",
+      "summary": "它闻到香味就改了主意，满足地享用了🥪蔬菜三明治。",
+      "effects_text": "心情+6，好感+2，贡献+2，经验+12",
       "effects": {
         "satiety": 0,
-        "mood": 8,
+        "mood": 6,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
-        "experience": 2
+        "experience": 12
       },
       "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     },
     {
-      "time": 1786713681690,
+      "time": 1786820685167,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "它圆滚滚地点点头，还是收下并吃掉了🍰奶油蛋糕。",
+      "effects_text": "心情+7，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 0,
+        "mood": 7,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786820649140,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "feed",
       "branch_id": "full",
       "summary": "它闻到香味就改了主意，满足地享用了🍞松软面包。",
-      "effects_text": "心情+5，好感+2，贡献+2，经验+2",
+      "effects_text": "心情+5，好感+2，贡献+2，经验+12",
       "effects": {
         "satiety": 0,
         "mood": 5,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
-        "experience": 2
+        "experience": 12
       },
       "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     },
     {
-      "time": 1786713677037,
+      "time": 1786820631278,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
       "event_id": "feed",
       "branch_id": "full",
-      "summary": "它闻到香味就改了主意，满足地享用了🥕脆胡萝卜。",
-      "effects_text": "心情+5，好感+2，贡献+2，经验+2",
+      "summary": "它努力给肚子腾出一点位置，把🍬原子糖果郑重地吃下去了。",
+      "effects_text": "心情+7，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 0,
+        "mood": 7,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1786820627108,
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "它明明已经很饱，却还是把🥕脆胡萝卜一点不剩地吃完。",
+      "effects_text": "心情+5，好感+2，贡献+2，经验+12",
       "effects": {
         "satiety": 0,
         "mood": 5,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
-        "experience": 2
+        "experience": 12
       },
       "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     },
     {
-      "time": 1786713668200,
+      "time": 1786820621225,
       "user_id": "2818259462",
       "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "hug",
-      "branch_id": "hug_trust",
-      "summary": "小若汁开心地扑进ic·alter同时被妻子和情夫绿怀里，热情地回抱了回来。\n抱住小若汁时，最先感到的是它身上的软肉轻轻贴过来。",
-      "effects_text": "心情+11，好感+8，贡献+6，经验+6",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁吃完🍬海风跳跳糖后舒服地眯起眼，显然十分满意。",
+      "effects_text": "心情+7，好感+2，贡献+2，经验+12",
       "effects": {
         "satiety": 0,
-        "mood": 11,
+        "mood": 7,
         "health": 0,
-        "favorability": 8,
-        "contribution": 6,
-        "experience": 6
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
       },
       "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786713663188,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "hug",
-      "branch_id": "hug_trust",
-      "summary": "小若汁开心地扑进ic·alter同时被妻子和情夫绿怀里，热情地回抱了回来。\n小若汁靠进怀里，圆润又有弹性，像个暖团子。",
-      "effects_text": "心情+11，好感+8，贡献+6，经验+6",
-      "effects": {
-        "satiety": 0,
-        "mood": 11,
-        "health": 0,
-        "favorability": 8,
-        "contribution": 6,
-        "experience": 6
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786713604359,
-      "user_id": "2818259462",
-      "display_name": "ic·alter同时被妻子和情夫绿",
-      "event_id": "petting",
-      "branch_id": "belly_trust",
-      "summary": "小若汁毫不犹豫地翻过身，把肚子放心地交给ic·alter同时被妻子和情夫绿摸。\n小若汁身上软肉明显多了起来，被碰到时满足地哼哼了一声。",
-      "effects_text": "心情+5，好感+3，贡献+1，经验+1",
-      "effects": {
-        "satiety": 0,
-        "mood": 5,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 1,
-        "experience": 1
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
@@ -2439,8 +2517,8 @@
     }
   ],
   "daily": {
-    "date": "2026-08-14",
-    "event_count": 85,
+    "date": "2026-08-16",
+    "event_count": 14,
     "bonus_event_count": 10
   },
   "processed_messages": {
@@ -2578,7 +2656,27 @@
     "event:535729477": 1786713689416,
     "event:440956806": 1786713701615,
     "event:1782640400": 1786718679019,
-    "event:1795440965": 1786719638671
+    "event:1795440965": 1786719638671,
+    "event:1411400625": 1786771778655,
+    "event:1518459620": 1786771784324,
+    "event:1615098816": 1786771790129,
+    "event:505422249": 1786771811273,
+    "event:584651675": 1786776647975,
+    "event:836408924": 1786776660056,
+    "event:277151013": 1786820605303,
+    "event:1863215493": 1786820609748,
+    "event:868983779": 1786820613856,
+    "event:1090584327": 1786820617499,
+    "event:430705742": 1786820621224,
+    "event:1284743634": 1786820627107,
+    "event:696704133": 1786820631277,
+    "event:714283459": 1786820649139,
+    "event:1019410029": 1786820685164,
+    "event:1951008952": 1786820689185,
+    "event:705228157": 1786820693099,
+    "event:801402824": 1786820696847,
+    "event:469458298": 1786820738633,
+    "event:972600703": 1786820747028
   },
   "skin_sessions": {
     "active": null
@@ -2591,16 +2689,23 @@
     "migrated_at": 1784722630639
   },
   "created_at": 1784722630639,
-  "updated_at": 1786727351191,
+  "updated_at": 1786826391325,
   "gacha": {
-    "since_four_plus": 3,
-    "since_five": 45,
-    "total_draws": 692,
-    "total_five": 11,
-    "route_misses": 2,
+    "since_four_plus": 4,
+    "since_five": 15,
+    "total_draws": 712,
+    "total_five": 12,
+    "route_misses": 0,
     "route_skin_id": "radical_foresight_turtle",
-    "total_four": 93,
+    "total_four": 95,
     "five_history": [
+      {
+        "time": 1786814996842,
+        "skin_id": "radical_foresight_turtle",
+        "skin_name": "激进远视小若汁",
+        "pulls": 50,
+        "draw_index": 697
+      },
       {
         "time": 1786723285841,
         "skin_id": "sei_shonagon_turtle",
@@ -2682,11 +2787,11 @@
   },
   "production": {
     "started_at": 1784871541125,
-    "last_settled_at": 1786727351190,
-    "accumulated_ms": 4017707,
-    "progress": 1.0902741118552242,
-    "total_produced": 236,
-    "last_collected_at": 1786723333483
+    "last_settled_at": 1786826391325,
+    "accumulated_ms": 5786021,
+    "progress": 1.7528822709731908,
+    "total_produced": 254,
+    "last_collected_at": 1786820605304
   },
   "travel": {
     "unlocked_location_ids": [
@@ -2736,7 +2841,8 @@
       "echo_pool",
       "popping_candy_beach",
       "chocolate_falls",
-      "sugar_crystal_mine"
+      "sugar_crystal_mine",
+      "cream_swamp"
     ],
     "location_records": {
       "rtc_central_station": {
@@ -3113,6 +3219,14 @@
         "name": "糖晶矿山",
         "travel_id": "mst7b2tc-zaiiysm9",
         "time": 1786727320983,
+        "carried_item_id": "travel_ticket"
+      },
+      "cream_swamp": {
+        "id": "cream_swamp",
+        "map_id": "candy_dreamland",
+        "name": "奶油沼泽",
+        "travel_id": "msukjg7d-gmj3tnch",
+        "time": 1786819602422,
         "carried_item_id": "travel_ticket"
       }
     },
@@ -3599,6 +3713,20 @@
         "location_id": "chocolate_falls",
         "travel_id": "mst7bkl9-xlmbee3n",
         "time": 1786727335579
+      },
+      "popping_candy_bucket": {
+        "id": "popping_candy_bucket",
+        "map_id": "candy_dreamland",
+        "location_id": "popping_candy_beach",
+        "travel_id": "mst7fdpc-ui0q9qm9",
+        "time": 1786735990272
+      },
+      "strawberry_island": {
+        "id": "strawberry_island",
+        "map_id": "candy_dreamland",
+        "location_id": "cream_swamp",
+        "travel_id": "msukjg7d-gmj3tnch",
+        "time": 1786819602422
       }
     },
     "souvenir_records": {
@@ -4893,9 +5021,185 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_cream_swamp": {
+        "id": "ach_cream_swamp",
+        "name": "发现奶油沼泽",
+        "rarity": 3,
+        "time": 1786819602428,
+        "actor_name": "ic·alter同时被妻子和情夫绿",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "msukjg7d-gmj3tnch": {
+        "id": "msukjg7d-gmj3tnch",
+        "user_id": "2818259462",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "display_name": "ic·alter同时被妻子和情夫绿",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "cream_swamp",
+        "location_name": "奶油沼泽",
+        "duration_ms": 9601810,
+        "rewards": {
+          "coin": 2667,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "strawberry_island",
+          "name": "草莓安全岛",
+          "text": "小若汁爬上一块巨大的草莓干，在上面休息很久。",
+          "effects": {},
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_cream_strawberry_cup",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_cream_strawberry_cup",
+            "name": "奶油草莓杯",
+            "emoji": "🍓",
+            "description": "从奶油沼泽安全岛带回的甜品。",
+            "food": {
+              "satiety": 13,
+              "mood": 5,
+              "weight_gain": 5
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "奶油沼泽",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_cream_swamp",
+            "name": "发现奶油沼泽",
+            "rarity": 3,
+            "time": 1786819602428,
+            "actor_name": "ic·alter同时被妻子和情夫绿",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现奶油沼泽」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_ticket",
+        "tool_name": "景点门票",
+        "settled_at": 1786819602428,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：奶油沼泽（糖霜梦境）\n旅行时间：2小时40分钟\n获得：2667若汁币，若汁之缘×5，经验+5\n携带道具：景点门票\n旅行事件：草莓安全岛\n小若汁爬上一块巨大的草莓干，在上面休息很久。\n食物：🍓奶油草莓杯×1\n新地点已解锁：奶油沼泽\n达成旅行成就「发现奶油沼泽」 ★★★"
+      },
+      "mst7fdpc-ui0q9qm9": {
+        "id": "mst7fdpc-ui0q9qm9",
+        "user_id": "2818259462",
+        "group_id": "",
+        "self_id": "3964480831",
+        "display_name": "ic·alter同时被妻子和情夫绿",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "popping_candy_beach",
+        "location_name": "跳跳糖海滩",
+        "duration_ms": 8480720,
+        "rewards": {
+          "coin": 2356,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "popping_candy_bucket",
+          "name": "海滩小桶",
+          "text": "工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。",
+          "effects": {},
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_seabreeze_popping_candy",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-mst8b528-6w62h340",
+          "time": 1786728991328,
+          "map_id": "candy_dreamland",
+          "map_name": "糖霜梦境",
+          "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
+          "reward": {
+            "id": "fate",
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "name": "若汁之缘",
+            "amount": 1,
+            "reward_text": "若汁之缘×1"
+          },
+          "status": "pending",
+          "partner_user_id": "2069743095",
+          "partner_display_name": "瀛",
+          "reward_text": "若汁之缘×1"
+        },
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_seabreeze_popping_candy",
+            "name": "海风跳跳糖",
+            "emoji": "🍬",
+            "description": "带着海盐气泡感的跳跳糖。",
+            "food": {
+              "satiety": 7,
+              "mood": 4,
+              "weight_gain": 3
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_ticket",
+        "tool_name": "景点门票",
+        "settled_at": 1786735990287,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：2小时21分钟\n获得：2356若汁币，若汁之缘×5，经验+5\n携带道具：景点门票\n小若汁偶遇了瀛的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：若汁之缘×1\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2"
+      },
       "mst7bkl9-xlmbee3n": {
         "id": "mst7bkl9-xlmbee3n",
         "user_id": "2818259462",
@@ -5914,152 +6218,35 @@
         "settled_at": 1786726135445,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时29分钟\n获得：1491若汁币，若汁之缘×2，经验+3\n旅行事件：茶馆宗门传闻\n两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。\n食物：🍙暖饭团×1\n纪念品：📰真假各半的修真小报×1"
-      },
-      "mst6ln2s-0c9jko1a": {
-        "id": "mst6ln2s-0c9jko1a",
-        "user_id": "2818259462",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "display_name": "ic·alter同时被妻子和情夫绿",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_atomic_mall",
-        "location_name": "原子百货商场",
-        "duration_ms": 5457065,
-        "rewards": {
-          "coin": 1668,
-          "fate": 3,
-          "experience": 3
-        },
-        "event": {
-          "id": "rtc_event_free_sample",
-          "name": "未来食品试吃",
-          "text": "小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
-          "effects": {
-            "coin_percent": 10
-          },
-          "souvenirs": [],
-          "items": [
-            {
-              "id": "food_stardust_jelly",
-              "name": "星尘果冻",
-              "emoji": "🍮",
-              "amount": 2
-            }
-          ],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-mst6lnai-f9qo9dv8",
-          "time": 1786726122282,
-          "map_id": "retro_tomorrow_city",
-          "map_name": "明日旧城",
-          "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
-          "reward": {
-            "id": "fate",
-            "type": "item",
-            "item_id": "ruozhi_fate",
-            "name": "若汁之缘",
-            "amount": 1,
-            "reward_text": "若汁之缘×1"
-          },
-          "status": "pending",
-          "partner_user_id": "1256806998",
-          "partner_display_name": "库洛4000+",
-          "reward_text": "若汁之缘×1"
-        },
-        "souvenirs": [],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_stardust_jelly",
-            "name": "星尘果冻",
-            "emoji": "🍮",
-            "description": "明日旧城流行的微光甜品。",
-            "food": {
-              "satiety": 13,
-              "mood": 4,
-              "weight_gain": 4
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786726127042,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时31分钟\n获得：1668若汁币，若汁之缘×3，经验+3\n小若汁偶遇了库洛4000+的小若汁，它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。\n偶遇奖励：若汁之缘×1\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。\n食物：🍮星尘果冻×2"
-      },
-      "mst6lb90-11z6hupk": {
-        "id": "mst6lb90-11z6hupk",
-        "user_id": "2818259462",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "display_name": "ic·alter同时被妻子和情夫绿",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_aurora_station",
-        "location_name": "极光气象站",
-        "duration_ms": 4305735,
-        "rewards": {
-          "coin": 1286,
-          "fate": 3,
-          "experience": 2
-        },
-        "event": {
-          "id": "rtc_event_aurora_photo",
-          "name": "极光合影",
-          "text": "相机只拍到极光和半个龟壳。",
-          "effects": {
-            "coin_flat": 90
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_half_shell_aurora_photo",
-              "name": "半个龟壳极光照",
-              "emoji": "📷",
-              "description": "旅行纪念品「半个龟壳极光照」。"
-            }
-          ],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_half_shell_aurora_photo",
-            "name": "半个龟壳极光照",
-            "emoji": "📷",
-            "description": "旅行纪念品「半个龟壳极光照」。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786726113179,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：1小时12分钟\n获得：1286若汁币，若汁之缘×3，经验+2\n旅行事件：极光合影\n相机只拍到极光和半个龟壳。\n纪念品：📷半个龟壳极光照×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msukjg7d-gmj3tnch",
+        "group_id": "1025424898",
+        "self_id": "3762153943",
+        "user_id": "2818259462",
+        "report": "小若汁回来了！\n目的地：奶油沼泽（糖霜梦境）\n旅行时间：2小时40分钟\n获得：2667若汁币，若汁之缘×5，经验+5\n携带道具：景点门票\n旅行事件：草莓安全岛\n小若汁爬上一块巨大的草莓干，在上面休息很久。\n食物：🍓奶油草莓杯×1\n新地点已解锁：奶油沼泽\n达成旅行成就「发现奶油沼泽」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786819602429,
+        "created_at": 1786819602429,
+        "sent_at": 1786819602937,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mst7fdpc-ui0q9qm9",
+        "group_id": "",
+        "self_id": "3964480831",
+        "user_id": "2818259462",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：2小时21分钟\n获得：2356若汁币，若汁之缘×5，经验+5\n携带道具：景点门票\n小若汁偶遇了瀛的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：若汁之缘×1\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1786735990288,
+        "created_at": 1786735990288,
+        "sent_at": 0,
+        "last_error": ""
+      },
       {
         "travel_id": "mst7bkl9-xlmbee3n",
         "group_id": "1054409426",
@@ -6293,36 +6480,10 @@
         "created_at": 1786726135445,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "mst6ln2s-0c9jko1a",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "user_id": "2818259462",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：1小时31分钟\n获得：1668若汁币，若汁之缘×3，经验+3\n小若汁偶遇了库洛4000+的小若汁，它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。\n偶遇奖励：若汁之缘×1\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。\n食物：🍮星尘果冻×2",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1786726127042,
-        "created_at": 1786726127042,
-        "sent_at": 0,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mst6lb90-11z6hupk",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "user_id": "2818259462",
-        "report": "小若汁回来了！\n目的地：极光气象站（明日旧城）\n旅行时间：1小时12分钟\n获得：1286若汁币，若汁之缘×3，经验+2\n旅行事件：极光合影\n相机只拍到极光和半个龟壳。\n纪念品：📷半个龟壳极光照×1",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1786726113179,
-        "created_at": 1786726113179,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 160,
+      "total_trips": 162,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -6350,7 +6511,7 @@
         "eldoran_continent": 14,
         "unregistered_district": 8,
         "four_regions_little_world": 6,
-        "candy_dreamland": 3
+        "candy_dreamland": 4
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -6430,7 +6591,9 @@
         },
         "candy_dreamland": {
           "popping_beach_run": 1,
-          "cocoa_rainbow": 1
+          "cocoa_rainbow": 1,
+          "popping_candy_bucket": 1,
+          "strawberry_island": 1
         }
       },
       "event_ids": {
@@ -6502,15 +6665,54 @@
         "event_ninth_lane": 1,
         "popping_beach_run": 1,
         "event_bench_fell_asleep": 1,
-        "cocoa_rainbow": 1
+        "cocoa_rainbow": 1,
+        "popping_candy_bucket": 1,
+        "strawberry_island": 1
       },
       "encounter_reward_types": {
         "ruozhi_fate": 1,
         "currency": 1
       },
-      "total_encounters": 6
+      "total_encounters": 7
     },
-    "active": null,
+    "active": {
+      "id": "msuqy7wm-ckyz1ada",
+      "user_id": "2818259462",
+      "display_name": "ic·alter同时被妻子和情夫绿",
+      "group_id": "1025424898",
+      "self_id": "3762153943",
+      "started_at": 1786820767366,
+      "ends_at": 1786828376620,
+      "duration_ms": 7609254,
+      "map_id": "candy_dreamland",
+      "map_name": "糖霜梦境",
+      "location_id": "cream_swamp",
+      "location_name": "奶油沼泽",
+      "was_unlocked": true,
+      "carried_item_id": "travel_ticket",
+      "carried_item_name": "景点门票",
+      "event": {
+        "id": "ancient_whisk",
+        "name": "深处的搅拌器",
+        "text": "沼泽中央插着一根巨大而古老的搅拌棒。",
+        "effects": {},
+        "souvenirs": [
+          {
+            "id": "souvenir_ancient_swamp_whisk",
+            "name": "奶油沼泽的旧搅拌棒",
+            "emoji": "🥄",
+            "description": "旅行纪念品「奶油沼泽的旧搅拌棒」。"
+          }
+        ],
+        "items": [],
+        "record": false
+      },
+      "rewards": {
+        "coin": 2114,
+        "fate": 5,
+        "experience": 4
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mssqk0nv-yca709md": {
@@ -6628,6 +6830,25 @@
         "partner_user_id": "mock-shop-travel-1786727179784-j5zygy",
         "partner_display_name": "Mock玩家",
         "settled_at": 1786727289475
+      },
+      "encounter-mst8b528-6w62h340": {
+        "id": "encounter-mst8b528-6w62h340",
+        "time": 1786728991328,
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "settled",
+        "partner_user_id": "2069743095",
+        "partner_display_name": "瀛",
+        "settled_at": 1786735990285
       }
     }
   }

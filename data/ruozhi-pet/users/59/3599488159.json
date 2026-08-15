@@ -3,12 +3,12 @@
   "user_id": "3599488159",
   "pet": {
     "level": 3,
-    "experience": 119,
-    "satiety": 19,
+    "experience": 127,
+    "satiety": 5,
     "mood": 100,
-    "health": 100,
+    "health": 98,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786726731965,
+    "satiety_decay_at": 1786826391308,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -428,6 +428,51 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1786799178779,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "four_western_scenes": {
+        "id": "four_western_scenes",
+        "name": "西境四景",
+        "rarity": 3,
+        "time": 1786799178779,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_popping_candy_beach": {
+        "id": "ach_popping_candy_beach",
+        "name": "发现跳跳糖海滩",
+        "rarity": 3,
+        "time": 1786802617125,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -626,9 +671,9 @@
       }
     ],
     "five_skin_shadow_counts": {},
-    "weight": 50,
-    "weight_decay_at": 1786727268882,
-    "health_decay_at": 1786727268882
+    "weight": 51,
+    "weight_decay_at": 1786802617946,
+    "health_decay_at": 1786826391308
   },
   "profile": {
     "favorability": 84,
@@ -636,9 +681,9 @@
     "total_contribution": 80,
     "last_display_name": "Luminary.x",
     "first_joined_at": 1785078704385,
-    "last_active_at": 1786727268882,
+    "last_active_at": 1786826391308,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -647,10 +692,36 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 20688,
-      "total_earned": 44688,
+      "balance": 24270,
+      "total_earned": 48270,
       "total_spent": 24000,
       "ledger": [
+        {
+          "time": 1786802617122,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 887,
+          "before": 23383,
+          "after": 24270,
+          "meta": {
+            "travel_id": "msue8rht-4r6p21to",
+            "location_id": "popping_candy_beach",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786799178769,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2695,
+          "before": 20688,
+          "after": 23383,
+          "meta": {
+            "travel_id": "msu8bj17-eh3lfwrb",
+            "location_id": "qing_he_town",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786690524913,
           "type": "income",
@@ -745,30 +816,6 @@
             "skin_id": "sparkling_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786465241183,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 16221,
-          "after": 16521,
-          "meta": {
-            "skin_id": "love_letter_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786465241183,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 15921,
-          "after": 16221,
-          "meta": {
-            "skin_id": "starry_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -780,7 +827,7 @@
       "first_interaction_reward_date": "2026-08-14"
     },
     "items": {
-      "ruozhi_fate": 57,
+      "ruozhi_fate": 74,
       "nameless_ruozhi": 0,
       "souvenir_infinite_lottery_ticket": 1,
       "souvenir_brandless_soda_bottle": 1,
@@ -791,9 +838,101 @@
       "souvenir_ninth_lane_goggles": 1,
       "souvenir_beast_bell": 1,
       "souvenir_legendary_sword_handle": 1,
-      "souvenir_burned_neon_tube": 1
+      "souvenir_burned_neon_tube": 1,
+      "souvenir_cultivation_paper": 1,
+      "food_rice_ball": 1
     },
     "item_ledger": [
+      {
+        "time": 1786802617125,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 71,
+        "after": 74,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_popping_candy_beach"
+        }
+      },
+      {
+        "time": 1786802617122,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 69,
+        "after": 71,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msue8rht-4r6p21to",
+          "location_id": "popping_candy_beach"
+        }
+      },
+      {
+        "time": 1786799178779,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 66,
+        "after": 69,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "four_western_scenes"
+        }
+      },
+      {
+        "time": 1786799178779,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 63,
+        "after": 66,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_qing_he_town"
+        }
+      },
+      {
+        "time": 1786799178777,
+        "type": "income",
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msu8bj17-eh3lfwrb",
+          "event_id": "sect_rumors",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1786799178770,
+        "type": "income",
+        "item_id": "souvenir_cultivation_paper",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msu8bj17-eh3lfwrb",
+          "event_id": "sect_rumors",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1786799178769,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 57,
+        "after": 63,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msu8bj17-eh3lfwrb",
+          "location_id": "qing_he_town"
+        }
+      },
       {
         "time": 1786690524912,
         "type": "income",
@@ -955,93 +1094,6 @@
         "reason": "use_pager",
         "meta": {
           "travel_id": "msov9ny7-72wgod99"
-        }
-      },
-      {
-        "time": 1786465216298,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 28,
-        "after": 31,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_yellow_underpass"
-        }
-      },
-      {
-        "time": 1786465216297,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 26,
-        "after": 28,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msov98cc-8niti6u2",
-          "location_id": "yellow_underpass"
-        }
-      },
-      {
-        "time": 1786465216291,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 11,
-        "after": 10,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msov98cc-8niti6u2"
-        }
-      },
-      {
-        "time": 1786465192360,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 56,
-        "after": 26,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786465186064,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 86,
-        "after": 56,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786464981969,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 83,
-        "after": 86,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_spirit_beast_sect"
-        }
-      },
-      {
-        "time": 1786464981968,
-        "type": "income",
-        "item_id": "souvenir_beast_bell",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msou650m-78vcvjrt",
-          "event_id": "beasts_cry_at_night",
-          "location_id": "spirit_beast_sect"
         }
       }
     ],
@@ -1371,12 +1423,12 @@
     "migrated_at": 1785078704385
   },
   "created_at": 1785078704385,
-  "updated_at": 1786727268882,
+  "updated_at": 1786826391308,
   "production": {
     "started_at": 1785078704385,
-    "last_settled_at": 1786727268882,
-    "accumulated_ms": 36743970,
-    "progress": 5.934044985679483,
+    "last_settled_at": 1786826391308,
+    "accumulated_ms": 135866396,
+    "progress": 18.660205014447268,
     "total_produced": 111,
     "last_collected_at": 1786690524912
   },
@@ -1396,7 +1448,9 @@
       "yellow_underpass",
       "eld_old_battlefield",
       "rtc_blue_harbor",
-      "rtc_galaxy_motel"
+      "rtc_galaxy_motel",
+      "qing_he_town",
+      "popping_candy_beach"
     ],
     "location_records": {
       "spirit_wheat_plain": {
@@ -1518,6 +1572,22 @@
         "travel_id": "msovaeqx-ee883nl6",
         "time": 1786470477722,
         "carried_item_id": ""
+      },
+      "qing_he_town": {
+        "id": "qing_he_town",
+        "map_id": "four_regions_little_world",
+        "name": "青禾镇",
+        "travel_id": "msu8bj17-eh3lfwrb",
+        "time": 1786799178769,
+        "carried_item_id": ""
+      },
+      "popping_candy_beach": {
+        "id": "popping_candy_beach",
+        "map_id": "candy_dreamland",
+        "name": "跳跳糖海滩",
+        "travel_id": "msue8rht-4r6p21to",
+        "time": 1786802617122,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1597,6 +1667,20 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "msovaeqx-ee883nl6",
         "time": 1786470477722
+      },
+      "sect_rumors": {
+        "id": "sect_rumors",
+        "map_id": "four_regions_little_world",
+        "location_id": "qing_he_town",
+        "travel_id": "msu8bj17-eh3lfwrb",
+        "time": 1786799178770
+      },
+      "buried_in_popping_candy": {
+        "id": "buried_in_popping_candy",
+        "map_id": "candy_dreamland",
+        "location_id": "popping_candy_beach",
+        "travel_id": "msue8rht-4r6p21to",
+        "time": 1786802617123
       }
     },
     "souvenir_records": {
@@ -1662,6 +1746,13 @@
         "event_id": "rtc_event_neon_sign",
         "location_id": "rtc_galaxy_motel",
         "time": 1786470477722
+      },
+      "souvenir_cultivation_paper": {
+        "id": "souvenir_cultivation_paper",
+        "name": "真假各半的修真小报",
+        "event_id": "sect_rumors",
+        "location_id": "qing_he_town",
+        "time": 1786799178770
       }
     },
     "achievement_records": {
@@ -1955,6 +2046,51 @@
         "name": "初识明日",
         "rarity": 3,
         "time": 1786470477722,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1786799178779,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "four_western_scenes": {
+        "id": "four_western_scenes",
+        "name": "西境四景",
+        "rarity": 3,
+        "time": 1786799178779,
+        "actor_name": "Luminary.x",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_popping_candy_beach": {
+        "id": "ach_popping_candy_beach",
+        "name": "发现跳跳糖海滩",
+        "rarity": 3,
+        "time": 1786802617125,
         "actor_name": "Luminary.x",
         "rewards": [
           {
@@ -3060,9 +3196,212 @@
         "settled_at": 1786470477723,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：银河汽车旅馆（明日旧城）\n旅行时间：1小时27分钟\n获得：1667若汁币，若汁之缘×3，经验+3\n旅行事件：修理霓虹灯\n小若汁拍了拍坏掉的招牌，整间旅馆突然亮了一分钟。\n纪念品：💡烧坏的霓虹灯管×1\n新地点已解锁：银河汽车旅馆\n达成旅行成就「发现银河汽车旅馆」 ★★★\n达成旅行成就「初识明日」 ★★★"
+      },
+      "msu8bj17-eh3lfwrb": {
+        "id": "msu8bj17-eh3lfwrb",
+        "user_id": "3599488159",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "Luminary.x",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "qing_he_town",
+        "location_name": "青禾镇",
+        "duration_ms": 9703132,
+        "rewards": {
+          "coin": 2695,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": {
+          "id": "sect_rumors",
+          "name": "茶馆宗门传闻",
+          "text": "两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。",
+          "effects": {
+            "mood": 3
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_cultivation_paper",
+              "name": "真假各半的修真小报",
+              "emoji": "📰",
+              "description": "旅行纪念品「真假各半的修真小报」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_rice_ball",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_cultivation_paper",
+            "name": "真假各半的修真小报",
+            "emoji": "📰",
+            "description": "旅行纪念品「真假各半的修真小报」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_rice_ball",
+            "name": "暖饭团",
+            "emoji": "🍙",
+            "description": "朴素又顶饿的饭团。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 12,
+              "mood": 3,
+              "weight_gain": 3
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "青禾镇",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_qing_he_town",
+            "name": "发现青禾镇",
+            "rarity": 3,
+            "time": 1786799178779,
+            "actor_name": "Luminary.x",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现青禾镇」 ★★★"
+          },
+          {
+            "id": "four_western_scenes",
+            "name": "西境四景",
+            "rarity": 3,
+            "time": 1786799178779,
+            "actor_name": "Luminary.x",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「西境四景」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786799178780,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时42分钟\n获得：2695若汁币，若汁之缘×6，经验+6\n旅行事件：茶馆宗门传闻\n两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。\n食物：🍙暖饭团×1\n纪念品：📰真假各半的修真小报×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★\n达成旅行成就「西境四景」 ★★★"
+      },
+      "msue8rht-4r6p21to": {
+        "id": "msue8rht-4r6p21to",
+        "user_id": "3599488159",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "Luminary.x",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "popping_candy_beach",
+        "location_name": "跳跳糖海滩",
+        "duration_ms": 3192793,
+        "rewards": {
+          "coin": 887,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "buried_in_popping_candy",
+          "name": "埋在沙子里",
+          "text": "小若汁模仿游客把自己埋进“沙子”，三秒后就后悔了。",
+          "effects": {
+            "satiety": 5,
+            "mood": 3,
+            "health": -2,
+            "weight_gain": 2
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 5,
+        "new_location": "跳跳糖海滩",
+        "health_change": -2,
+        "achievements": [
+          {
+            "id": "ach_popping_candy_beach",
+            "name": "发现跳跳糖海滩",
+            "rarity": 3,
+            "time": 1786802617125,
+            "actor_name": "Luminary.x",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现跳跳糖海滩」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786802617126,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：53分钟\n获得：887若汁币，若汁之缘×2，经验+2\n旅行事件：埋在沙子里\n小若汁模仿游客把自己埋进“沙子”，三秒后就后悔了。\n本次状态变化：饱食+5，健康-2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msue8rht-4r6p21to",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3599488159",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：53分钟\n获得：887若汁币，若汁之缘×2，经验+2\n旅行事件：埋在沙子里\n小若汁模仿游客把自己埋进“沙子”，三秒后就后悔了。\n本次状态变化：饱食+5，健康-2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786802617126,
+        "created_at": 1786802617126,
+        "sent_at": 1786802617946,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msu8bj17-eh3lfwrb",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "3599488159",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时42分钟\n获得：2695若汁币，若汁之缘×6，经验+6\n旅行事件：茶馆宗门传闻\n两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。\n食物：🍙暖饭团×1\n纪念品：📰真假各半的修真小报×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★\n达成旅行成就「西境四景」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786799178780,
+        "created_at": 1786799178780,
+        "sent_at": 1786799179392,
+        "last_error": ""
+      },
       {
         "travel_id": "msovaeqx-ee883nl6",
         "group_id": "415462812",
@@ -3286,13 +3625,14 @@
       }
     ],
     "stats": {
-      "total_trips": 17,
+      "total_trips": 19,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 5,
         "eldoran_continent": 2,
         "unregistered_district": 4,
-        "four_regions_little_world": 4
+        "four_regions_little_world": 5,
+        "candy_dreamland": 1
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -3312,7 +3652,11 @@
         "four_regions_little_world": {
           "vine_medicine_basket": 1,
           "reverse_paper_boat": 1,
-          "beasts_cry_at_night": 1
+          "beasts_cry_at_night": 1,
+          "sect_rumors": 1
+        },
+        "candy_dreamland": {
+          "buried_in_popping_candy": 1
         }
       },
       "event_ids": {
@@ -3326,7 +3670,9 @@
         "event_ninth_lane": 1,
         "beasts_cry_at_night": 1,
         "eld_event_legendary_handle": 1,
-        "rtc_event_neon_sign": 1
+        "rtc_event_neon_sign": 1,
+        "sect_rumors": 1,
+        "buried_in_popping_candy": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0

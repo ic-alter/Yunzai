@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 2,
-    "experience": 59,
+    "experience": 62,
     "satiety": 5,
     "mood": 87,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786727268889,
+    "satiety_decay_at": 1786826391313,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -830,9 +830,9 @@
     "five_skin_shadow_counts": {
       "faceless_turtle": 0
     },
-    "weight": 50,
-    "weight_decay_at": 1786710729837,
-    "health_decay_at": 1786727268889
+    "weight": 48,
+    "weight_decay_at": 1786797129837,
+    "health_decay_at": 1786826391313
   },
   "profile": {
     "favorability": 19,
@@ -840,9 +840,9 @@
     "total_contribution": 18,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1786727268889,
+    "last_active_at": 1786826391313,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -851,10 +851,23 @@
       "week": "2026-W33"
     },
     "currency": {
-      "balance": 139423,
-      "total_earned": 139423,
+      "balance": 140993,
+      "total_earned": 140993,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786803414806,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1570,
+          "before": 139423,
+          "after": 140993,
+          "meta": {
+            "travel_id": "msud94gi-05lc0pcy",
+            "location_id": "eld_free_port",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786698636312,
           "type": "income",
@@ -964,18 +977,6 @@
             "skin_id": "tear_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786409535468,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 128531,
-          "after": 128831,
-          "meta": {
-            "skin_id": "bouquet_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -987,10 +988,10 @@
       "first_interaction_reward_date": "2026-08-07"
     },
     "items": {
-      "ruozhi_fate": 8,
+      "ruozhi_fate": 11,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
-      "souvenir_sun_chart": 2,
+      "souvenir_sun_chart": 3,
       "souvenir_slow_vehicle_sticker": 1,
       "souvenir_nested_old_boot": 1,
       "souvenir_vegetable_soup_potion": 1,
@@ -1000,9 +1001,51 @@
       "souvenir_clockwork_leaf": 1,
       "souvenir_waiting_bear_tag": 1,
       "souvenir_missing_road_map": 1,
-      "souvenir_yesterday_clock": 1
+      "souvenir_yesterday_clock": 1,
+      "food_elven_tart": 1
     },
     "item_ledger": [
+      {
+        "time": 1786803414814,
+        "type": "income",
+        "item_id": "food_elven_tart",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msud94gi-05lc0pcy",
+          "event_id": "eld_event_sun_chart",
+          "location_id": "eld_free_port"
+        }
+      },
+      {
+        "time": 1786803414807,
+        "type": "income",
+        "item_id": "souvenir_sun_chart",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msud94gi-05lc0pcy",
+          "event_id": "eld_event_sun_chart",
+          "location_id": "eld_free_port"
+        }
+      },
+      {
+        "time": 1786803414806,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msud94gi-05lc0pcy",
+          "location_id": "eld_free_port"
+        }
+      },
       {
         "time": 1786698636312,
         "type": "income",
@@ -1218,46 +1261,6 @@
         "meta": {
           "achievement_id": "ach_yellow_underpass"
         }
-      },
-      {
-        "time": 1786193583032,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 6,
-        "after": 11,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msk8ojx6-yoz4h6un",
-          "location_id": "yellow_underpass"
-        }
-      },
-      {
-        "time": 1786132833953,
-        "type": "income",
-        "item_id": "souvenir_clockwork_leaf",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msj7xtb5-tbq6mzv0",
-          "event_id": "rtc_event_lost_luggage",
-          "location_id": "rtc_central_station"
-        }
-      },
-      {
-        "time": 1786132833952,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 0,
-        "after": 6,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msj7xtb5-tbq6mzv0",
-          "location_id": "rtc_central_station"
-        }
       }
     ],
     "item_daily": {
@@ -1425,10 +1428,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1786727268889,
+  "updated_at": 1786826391313,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1786727268889,
+    "last_settled_at": 1786826391313,
     "accumulated_ms": 259200000,
     "progress": 35.08025954477688,
     "total_produced": 102,
@@ -1645,8 +1648,8 @@
         "id": "eld_event_sun_chart",
         "map_id": "eldoran_continent",
         "location_id": "eld_free_port",
-        "travel_id": "msibkraf-lxg355no",
-        "time": 1786078961483
+        "travel_id": "msud94gi-05lc0pcy",
+        "time": 1786803414807
       },
       "eld_event_tide_stairs": {
         "id": "eld_event_tide_stairs",
@@ -1760,7 +1763,7 @@
         "name": "太阳航海图",
         "event_id": "eld_event_sun_chart",
         "location_id": "eld_free_port",
-        "time": 1786078961483
+        "time": 1786803414807
       },
       "souvenir_slow_vehicle_sticker": {
         "id": "souvenir_slow_vehicle_sticker",
@@ -2211,6 +2214,86 @@
       }
     },
     "settlements": {
+      "msud94gi-05lc0pcy": {
+        "id": "msud94gi-05lc0pcy",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_free_port",
+        "location_name": "潮汐自由港",
+        "duration_ms": 5653295,
+        "rewards": {
+          "coin": 1570,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "eld_event_sun_chart",
+          "name": "太阳航海图",
+          "text": "老船长送给小若汁一张只在阳光下显字的航海图。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_sun_chart",
+              "name": "太阳航海图",
+              "emoji": "☀️",
+              "travel_tool": true,
+              "description": "潮汐自由港的航海图，可作为寻找沉没的太阳神殿的旅行道具。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_elven_tart",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_sun_chart",
+            "name": "太阳航海图",
+            "emoji": "☀️",
+            "travel_tool": true,
+            "description": "潮汐自由港的航海图，可作为寻找沉没的太阳神殿的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_elven_tart",
+            "name": "精灵莓果挞",
+            "emoji": "🥧",
+            "description": "艾尔多兰大陆的森林甜点。",
+            "food": {
+              "satiety": 14,
+              "mood": 5,
+              "weight_gain": 5
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786803414817,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：1小时34分钟\n获得：1570若汁币，若汁之缘×3，经验+3\n旅行事件：太阳航海图\n老船长送给小若汁一张只在阳光下显字的航海图。\n食物：🥧精灵莓果挞×1\n纪念品：☀️太阳航海图×1"
+      },
       "mssnlaie-kusxvvb0": {
         "id": "mssnlaie-kusxvvb0",
         "user_id": "1260797962",
@@ -3166,37 +3249,22 @@
         "settled_at": 1785590083731,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：34分钟\n获得：567若汁币，若汁之缘×1，经验+1\n新地点已解锁：欢笑机器人乐园\n达成旅行成就「发现欢笑机器人乐园」 ★★★"
-      },
-      "msa88tid-ek1vzk0m": {
-        "id": "msa88tid-ek1vzk0m",
-        "user_id": "1260797962",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "迈特斯妲",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_flyover",
-        "location_name": "飞跃立交桥",
-        "duration_ms": 2868246,
-        "rewards": {
-          "coin": 797,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": null,
-        "souvenirs": [],
-        "new_location": "",
-        "achievements": [],
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1785582893953,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：48分钟\n获得：797若汁币，若汁之缘×2，经验+2"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msud94gi-05lc0pcy",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：1小时34分钟\n获得：1570若汁币，若汁之缘×3，经验+3\n旅行事件：太阳航海图\n老船长送给小若汁一张只在阳光下显字的航海图。\n食物：🥧精灵莓果挞×1\n纪念品：☀️太阳航海图×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786803414817,
+        "created_at": 1786803414817,
+        "sent_at": 1786803415349,
+        "last_error": ""
+      },
       {
         "travel_id": "mssnlaie-kusxvvb0",
         "group_id": "415462812",
@@ -3443,23 +3511,10 @@
         "created_at": 1785590083731,
         "sent_at": 1785590084033,
         "last_error": ""
-      },
-      {
-        "travel_id": "msa88tid-ek1vzk0m",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：48分钟\n获得：797若汁币，若汁之缘×2，经验+2",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785582893953,
-        "created_at": 1785582893953,
-        "sent_at": 1785582894202,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 34,
+      "total_trips": 35,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -3476,7 +3531,8 @@
         "retro_tomorrow_city": 7,
         "eldoran_continent": 8,
         "unregistered_district": 4,
-        "four_regions_little_world": 1
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {

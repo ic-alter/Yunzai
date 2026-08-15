@@ -3,12 +3,12 @@
   "user_id": "824660754",
   "pet": {
     "level": 1,
-    "experience": 21,
+    "experience": 22,
     "satiety": 5,
     "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786727268864,
+    "satiety_decay_at": 1786826391296,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -36,11 +36,12 @@
       "fruit_hat_turtle",
       "bell_turtle",
       "oni_turtle",
-      "heart_shower_turtle"
+      "heart_shower_turtle",
+      "drooling_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 30,
+      "counter:gacha_draws": 33,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -137,9 +138,29 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786802287641,
+        "actor_name": "色色小缇安",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "drooling_turtle",
+        "reason": "gacha",
+        "time": 1786802306896
+      },
       {
         "skin_id": "heart_shower_turtle",
         "reason": "gacha",
@@ -276,19 +297,20 @@
         "time": 1785029953378
       }
     ],
-    "weight": 50,
-    "weight_decay_at": 1786710729810,
-    "health_decay_at": 1786727268864
+    "weight": 48,
+    "weight_decay_at": 1786797129810,
+    "health_decay_at": 1786826391296,
+    "five_skin_shadow_counts": {}
   },
   "profile": {
     "favorability": 2,
     "weekly_contribution": 0,
     "total_contribution": 1,
-    "last_display_name": "螺风华莺",
+    "last_display_name": "色色小缇安",
     "first_joined_at": 1785029953378,
-    "last_active_at": 1786727268864,
+    "last_active_at": 1786826391296,
     "daily": {
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -297,11 +319,141 @@
       "week": "2026-W33"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 16,
       "nameless_ruozhi": 0,
-      "souvenir_border_map": 0
+      "souvenir_border_map": 0,
+      "souvenir_water_sword_tassel": 1,
+      "food_spirit_pill": 3
     },
     "item_ledger": [
+      {
+        "time": 1786803662796,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 10,
+        "after": 16,
+        "reason": "mihoyo_skill_grid_settlement_fate",
+        "meta": {
+          "size": 10,
+          "solved": 11,
+          "total": 14,
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1786803142157,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 8,
+        "after": 10,
+        "reason": "mihoyo_skill_grid_settlement_fate",
+        "meta": {
+          "size": 10,
+          "solved": 16,
+          "total": 16,
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1786802652302,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 2,
+        "after": 8,
+        "reason": "mihoyo_skill_grid_settlement_fate",
+        "meta": {
+          "size": 10,
+          "solved": 14,
+          "total": 14,
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1786802306896,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 11,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1786802287641,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 8,
+        "after": 11,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_bixi_ferry"
+        }
+      },
+      {
+        "time": 1786802287640,
+        "type": "income",
+        "item_id": "food_spirit_pill",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msuebe8k-8d57bgkq",
+          "event_id": "underwater_sword",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786802287633,
+        "type": "income",
+        "item_id": "souvenir_water_sword_tassel",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msuebe8k-8d57bgkq",
+          "event_id": "underwater_sword",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786802287633,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 6,
+        "after": 8,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msuebe8k-8d57bgkq",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786802263608,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 0,
+        "after": 6,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
       {
         "time": 1785938812443,
         "type": "expense",
@@ -441,133 +593,12 @@
           "event_id": "eld_event_shepherd_map",
           "location_id": "eld_windmill_plain"
         }
-      },
-      {
-        "time": 1785544101206,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 3,
-        "after": 7,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "ms9j4nw5-ffow0vwo",
-          "location_id": "eld_windmill_plain"
-        }
-      },
-      {
-        "time": 1785383909895,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 33,
-        "after": 3,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785383897742,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 30,
-        "after": 33,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_10"
-        }
-      },
-      {
-        "time": 1785383897742,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 27,
-        "after": 30,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_1"
-        }
-      },
-      {
-        "time": 1785383897741,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 57,
-        "after": 27,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1785383813223,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 55,
-        "after": 57,
-        "reason": "genshin_wordle_win_fate",
-        "meta": {
-          "guesses": 10,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785383696788,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 53,
-        "after": 55,
-        "reason": "genshin_wordle_win_fate",
-        "meta": {
-          "guesses": 4,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785383595401,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 51,
-        "after": 53,
-        "reason": "genshin_wordle_win_fate",
-        "meta": {
-          "guesses": 5,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1785383211574,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 49,
-        "after": 51,
-        "reason": "genshin_wordle_win_fate",
-        "meta": {
-          "guesses": 2,
-          "difficulty": "hard",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-08-02",
+      "date": "2026-08-15",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 4,
+      "game_fate_reward_count": 20,
       "shop_buy_counts": {},
       "use_counts": {}
     },
@@ -580,10 +611,109 @@
       }
     },
     "currency": {
-      "balance": 17834,
-      "total_earned": 17834,
+      "balance": 22673,
+      "total_earned": 22673,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786803662786,
+          "type": "income",
+          "reason": "mihoyo_skill_grid_settlement",
+          "amount": 913,
+          "before": 21760,
+          "after": 22673,
+          "meta": {
+            "size": 10,
+            "solved": 11,
+            "total": 14,
+            "hints": 2,
+            "score": 276,
+            "total_score": 546
+          }
+        },
+        {
+          "time": 1786803142151,
+          "type": "income",
+          "reason": "mihoyo_skill_grid_settlement",
+          "amount": 260,
+          "before": 21500,
+          "after": 21760,
+          "meta": {
+            "size": 10,
+            "solved": 16,
+            "total": 16,
+            "hints": 5,
+            "score": 106,
+            "total_score": 816
+          }
+        },
+        {
+          "time": 1786802652295,
+          "type": "income",
+          "reason": "mihoyo_skill_grid_settlement",
+          "amount": 1000,
+          "before": 20500,
+          "after": 21500,
+          "meta": {
+            "size": 10,
+            "solved": 14,
+            "total": 14,
+            "hints": 1,
+            "score": 336,
+            "total_score": 806
+          }
+        },
+        {
+          "time": 1786802306896,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 20200,
+          "after": 20500,
+          "meta": {
+            "skin_id": "hearts_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786802306896,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 19900,
+          "after": 20200,
+          "meta": {
+            "skin_id": "bouquet_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1786802287633,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 761,
+          "before": 19139,
+          "after": 19900,
+          "meta": {
+            "travel_id": "msuebe8k-8d57bgkq",
+            "location_id": "bixi_ferry",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786802263596,
+          "type": "income",
+          "reason": "mihoyo_guess_role_settlement",
+          "amount": 1305,
+          "before": 17834,
+          "after": 19139,
+          "meta": {
+            "mode": "crop",
+            "rounds": 20,
+            "score": 870,
+            "total_score": 1945
+          }
+        },
         {
           "time": 1785607933244,
           "type": "income",
@@ -619,96 +749,6 @@
           "meta": {
             "skin_id": "grasshopper_turtle",
             "rarity": 3
-          }
-        },
-        {
-          "time": 1785602743510,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 15571,
-          "after": 15871,
-          "meta": {
-            "skin_id": "goggles_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785602743510,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 15271,
-          "after": 15571,
-          "meta": {
-            "skin_id": "nerd_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785602743510,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14971,
-          "after": 15271,
-          "meta": {
-            "skin_id": "tear_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785602743510,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14671,
-          "after": 14971,
-          "meta": {
-            "skin_id": "hearts_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785602732090,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 383,
-          "before": 14288,
-          "after": 14671,
-          "meta": {
-            "size": 9,
-            "solved": 11,
-            "total": 11,
-            "hints": 2,
-            "score": 124,
-            "total_score": 626
-          }
-        },
-        {
-          "time": 1785550175187,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1633,
-          "before": 12655,
-          "after": 14288,
-          "meta": {
-            "travel_id": "ms9mz1dx-rf8rjvee",
-            "location_id": "rtc_galaxy_motel",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785544101206,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1739,
-          "before": 10916,
-          "after": 12655,
-          "meta": {
-            "travel_id": "ms9j4nw5-ffow0vwo",
-            "location_id": "eld_windmill_plain",
-            "forced_by": "timer"
           }
         }
       ],
@@ -768,19 +808,19 @@
     "migrated_at": 1785029953378
   },
   "created_at": 1785029953378,
-  "updated_at": 1786727268864,
+  "updated_at": 1786826391296,
   "production": {
     "started_at": 1785029953378,
-    "last_settled_at": 1786727268864,
+    "last_settled_at": 1786826391296,
     "accumulated_ms": 259200000,
     "progress": 29.31862406423868,
     "total_produced": 13,
     "last_collected_at": 1785140913481
   },
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 30,
-    "total_draws": 30,
+    "since_four_plus": 4,
+    "since_five": 33,
+    "total_draws": 33,
     "total_four": 3,
     "total_five": 0,
     "five_history": [],
@@ -791,7 +831,8 @@
     "unlocked_location_ids": [
       "eld_windmill_plain",
       "rtc_galaxy_motel",
-      "rtc_rocket_base"
+      "rtc_rocket_base",
+      "bixi_ferry"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -817,6 +858,14 @@
         "travel_id": "msalxsie-ni65fqu1",
         "time": 1785607933244,
         "carried_item_id": ""
+      },
+      "bixi_ferry": {
+        "id": "bixi_ferry",
+        "map_id": "four_regions_little_world",
+        "name": "碧溪渡",
+        "travel_id": "msuebe8k-8d57bgkq",
+        "time": 1786802287633,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -833,6 +882,13 @@
         "location_id": "rtc_galaxy_motel",
         "travel_id": "ms9mz1dx-rf8rjvee",
         "time": 1785550175188
+      },
+      "underwater_sword": {
+        "id": "underwater_sword",
+        "map_id": "four_regions_little_world",
+        "location_id": "bixi_ferry",
+        "travel_id": "msuebe8k-8d57bgkq",
+        "time": 1786802287633
       }
     },
     "souvenir_records": {
@@ -842,6 +898,13 @@
         "event_id": "eld_event_shepherd_map",
         "location_id": "eld_windmill_plain",
         "time": 1785544101207
+      },
+      "souvenir_water_sword_tassel": {
+        "id": "souvenir_water_sword_tassel",
+        "name": "水影剑穗",
+        "event_id": "underwater_sword",
+        "location_id": "bixi_ferry",
+        "time": 1786802287633
       }
     },
     "achievement_records": {
@@ -896,6 +959,21 @@
         "rarity": 3,
         "time": 1785607933244,
         "actor_name": "螺风华莺",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786802287641,
+        "actor_name": "色色小缇安",
         "rewards": [
           {
             "type": "item",
@@ -1090,9 +1168,117 @@
         "settled_at": 1785607933245,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：1小时22分钟\n获得：1363若汁币，若汁之缘×3，经验+3\n新地点已解锁：红沙火箭基地\n达成旅行成就「发现红沙火箭基地」 ★★★"
+      },
+      "msuebe8k-8d57bgkq": {
+        "id": "msuebe8k-8d57bgkq",
+        "user_id": "824660754",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "螺风华莺",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "bixi_ferry",
+        "location_name": "碧溪渡",
+        "duration_ms": 2740521,
+        "rewards": {
+          "coin": 761,
+          "fate": 2,
+          "experience": 1
+        },
+        "event": {
+          "id": "underwater_sword",
+          "name": "河底练剑声",
+          "text": "河中倒影练着陌生剑法，远处传来剑鸣。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_water_sword_tassel",
+              "name": "水影剑穗",
+              "emoji": "🗡️",
+              "description": "旅行纪念品「水影剑穗」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_spirit_pill",
+              "amount": 3
+            }
+          ],
+          "record": true
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_water_sword_tassel",
+            "name": "水影剑穗",
+            "emoji": "🗡️",
+            "description": "旅行纪念品「水影剑穗」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_spirit_pill",
+            "name": "灵麦团子",
+            "emoji": "🍡",
+            "description": "四州小天地的灵麦小点。",
+            "food": {
+              "satiety": 15,
+              "mood": 4,
+              "weight_gain": 5
+            },
+            "amount": 3
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "碧溪渡",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_bixi_ferry",
+            "name": "发现碧溪渡",
+            "rarity": 3,
+            "time": 1786802287641,
+            "actor_name": "色色小缇安",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现碧溪渡」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786802287642,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：46分钟\n获得：761若汁币，若汁之缘×2，经验+1\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msuebe8k-8d57bgkq",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "824660754",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：46分钟\n获得：761若汁币，若汁之缘×2，经验+1\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786802287642,
+        "created_at": 1786802287642,
+        "sent_at": 1786802288221,
+        "last_error": ""
+      },
       {
         "travel_id": "msalxsie-ni65fqu1",
         "group_id": "415462812",
@@ -1134,7 +1320,7 @@
       }
     ],
     "stats": {
-      "total_trips": 3,
+      "total_trips": 4,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -1144,7 +1330,10 @@
       },
       "map_location_counts": {
         "retro_tomorrow_city": 2,
-        "eldoran_continent": 1
+        "eldoran_continent": 1,
+        "unregistered_district": 0,
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -1152,11 +1341,15 @@
         },
         "retro_tomorrow_city": {
           "rtc_event_alien_vending": 1
+        },
+        "four_regions_little_world": {
+          "underwater_sword": 1
         }
       },
       "event_ids": {
         "eld_event_shepherd_map": 1,
-        "rtc_event_alien_vending": 1
+        "rtc_event_alien_vending": 1,
+        "underwater_sword": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0
