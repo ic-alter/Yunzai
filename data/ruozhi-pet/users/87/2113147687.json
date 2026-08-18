@@ -3,12 +3,12 @@
   "user_id": "2113147687",
   "pet": {
     "level": 1,
-    "experience": 8,
+    "experience": 23,
     "satiety": 5,
     "mood": 68,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786826391391,
+    "satiety_decay_at": 1787005096289,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -116,6 +116,66 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786836524434,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786980806588,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786980806589,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_mystic_sword_sect": {
+        "id": "ach_mystic_sword_sect",
+        "name": "发现玄剑宗",
+        "rarity": 3,
+        "time": 1787005095840,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -160,9 +220,9 @@
         "time": 1784793808338
       }
     ],
-    "weight": 48,
-    "weight_decay_at": 1786797129933,
-    "health_decay_at": 1786826391391
+    "weight": 44,
+    "weight_decay_at": 1786969929933,
+    "health_decay_at": 1787005096289
   },
   "profile": {
     "favorability": 0,
@@ -170,21 +230,72 @@
     "total_contribution": 0,
     "last_display_name": "兔女郎服务部",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1786826391391,
+    "last_active_at": 1787005096289,
     "daily": {
-      "date": "2026-08-16",
+      "date": "2026-08-18",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W33"
+      "week": "2026-W34"
     },
     "currency": {
-      "balance": 6310,
-      "total_earned": 6310,
+      "balance": 13770,
+      "total_earned": 13770,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787005095838,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1723,
+          "before": 12047,
+          "after": 13770,
+          "meta": {
+            "travel_id": "msxp03ug-ee8f31ex",
+            "location_id": "mystic_sword_sect",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786980806588,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 356,
+          "before": 11691,
+          "after": 12047,
+          "meta": {
+            "encounter_id": "encounter-msxcfjye-iiar1hkf",
+            "partner_user_id": "3536417662"
+          }
+        },
+        {
+          "time": 1786980806585,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2506,
+          "before": 9185,
+          "after": 11691,
+          "meta": {
+            "travel_id": "msx8v35t-9honxq39",
+            "location_id": "eld_moonbell_village",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786836524430,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2875,
+          "before": 6310,
+          "after": 9185,
+          "meta": {
+            "travel_id": "msuu62nx-j4sxvyjg",
+            "location_id": "bixi_ferry",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786724010110,
           "type": "income",
@@ -269,70 +380,6 @@
             "score": 32,
             "total_score": 270
           }
-        },
-        {
-          "time": 1784795039779,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 309,
-          "before": 1121,
-          "after": 1430,
-          "meta": {
-            "size": 6,
-            "solved": 5,
-            "total": 6,
-            "hints": 0,
-            "score": 94,
-            "total_score": 228
-          }
-        },
-        {
-          "time": 1784794838534,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 92,
-          "before": 1029,
-          "after": 1121,
-          "meta": {
-            "size": 6,
-            "solved": 6,
-            "total": 6,
-            "hints": 0,
-            "score": 34,
-            "total_score": 332
-          }
-        },
-        {
-          "time": 1784794617102,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 168,
-          "before": 861,
-          "after": 1029,
-          "meta": {
-            "size": 6,
-            "solved": 6,
-            "total": 6,
-            "hints": 0,
-            "score": 62,
-            "total_score": 332
-          }
-        },
-        {
-          "time": 1784794204518,
-          "type": "income",
-          "reason": "ww_skill_grid_settlement",
-          "amount": 341,
-          "before": 520,
-          "after": 861,
-          "meta": {
-            "size": 6,
-            "solved": 3,
-            "total": 6,
-            "hints": 0,
-            "score": 106,
-            "total_score": 140
-          }
         }
       ],
       "sign": {
@@ -344,11 +391,158 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 23,
+      "ruozhi_fate": 50,
       "nameless_ruozhi": 0,
-      "souvenir_wheat_noodle": 1
+      "souvenir_wheat_noodle": 1,
+      "souvenir_water_sword_tassel": 1,
+      "food_spirit_pill": 3,
+      "souvenir_silent_moonbell": 1,
+      "food_noodles": 2
     },
     "item_ledger": [
+      {
+        "time": 1787005095840,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 47,
+        "after": 50,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_mystic_sword_sect"
+        }
+      },
+      {
+        "time": 1787005095838,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 43,
+        "after": 47,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msxp03ug-ee8f31ex",
+          "location_id": "mystic_sword_sect"
+        }
+      },
+      {
+        "time": 1786980806589,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 40,
+        "after": 43,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_first"
+        }
+      },
+      {
+        "time": 1786980806588,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 37,
+        "after": 40,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786980806588,
+        "type": "income",
+        "item_id": "food_noodles",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msx8v35t-9honxq39",
+          "event_id": "eld_event_silent_bell",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786980806586,
+        "type": "income",
+        "item_id": "souvenir_silent_moonbell",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msx8v35t-9honxq39",
+          "event_id": "eld_event_silent_bell",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786980806585,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 32,
+        "after": 37,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msx8v35t-9honxq39",
+          "location_id": "eld_moonbell_village"
+        }
+      },
+      {
+        "time": 1786836524434,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 29,
+        "after": 32,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_bixi_ferry"
+        }
+      },
+      {
+        "time": 1786836524433,
+        "type": "income",
+        "item_id": "food_spirit_pill",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msuu62nx-j4sxvyjg",
+          "event_id": "underwater_sword",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786836524431,
+        "type": "income",
+        "item_id": "souvenir_water_sword_tassel",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msuu62nx-j4sxvyjg",
+          "event_id": "underwater_sword",
+          "location_id": "bixi_ferry"
+        }
+      },
+      {
+        "time": 1786836524430,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 23,
+        "after": 29,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msuu62nx-j4sxvyjg",
+          "location_id": "bixi_ferry"
+        }
+      },
       {
         "time": 1786724010111,
         "type": "income",
@@ -461,99 +655,6 @@
           "travel_id": "msq45oum-0jquog6g",
           "location_id": "rain_only_store"
         }
-      },
-      {
-        "time": 1786207404113,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 6,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 2
-        }
-      },
-      {
-        "time": 1785594404687,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 4,
-        "after": 6,
-        "reason": "ww_guess_role_settlement_fate",
-        "meta": {
-          "rounds": 20,
-          "mode": "pixel",
-          "planned_amount": 2,
-          "daily_limit": 60
-        }
-      },
-      {
-        "time": 1784876695887,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "ww_skill_grid_settlement_fate",
-        "meta": {
-          "size": 6,
-          "solved": 3,
-          "total": 6
-        }
-      },
-      {
-        "time": 1784863908249,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 0,
-        "after": 3,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_1"
-        }
-      },
-      {
-        "time": 1784863908249,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 3,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 1
-        }
-      },
-      {
-        "time": 1784794204522,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "ww_skill_grid_settlement_fate",
-        "meta": {
-          "size": 6,
-          "solved": 3,
-          "total": 6
-        }
-      },
-      {
-        "time": 1784793808346,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "ww_skill_grid_settlement_fate",
-        "meta": {
-          "size": 10,
-          "solved": 14,
-          "total": 14
-        }
       }
     ],
     "item_daily": {
@@ -590,7 +691,7 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1786826391391,
+  "updated_at": 1787005096289,
   "gacha": {
     "since_four_plus": 3,
     "since_five": 3,
@@ -603,7 +704,7 @@
   },
   "production": {
     "started_at": 1784876695881,
-    "last_settled_at": 1786826391391,
+    "last_settled_at": 1787005096289,
     "accumulated_ms": 259200000,
     "progress": 28.493616746453903,
     "total_produced": 0
@@ -612,7 +713,10 @@
     "unlocked_location_ids": [
       "rain_only_store",
       "qing_he_town",
-      "forgotten_family_restaurant"
+      "forgotten_family_restaurant",
+      "bixi_ferry",
+      "eld_moonbell_village",
+      "mystic_sword_sect"
     ],
     "location_records": {
       "rain_only_store": {
@@ -638,6 +742,30 @@
         "travel_id": "mst2h0bo-4a1zvfmw",
         "time": 1786724010110,
         "carried_item_id": ""
+      },
+      "bixi_ferry": {
+        "id": "bixi_ferry",
+        "map_id": "four_regions_little_world",
+        "name": "碧溪渡",
+        "travel_id": "msuu62nx-j4sxvyjg",
+        "time": 1786836524430,
+        "carried_item_id": ""
+      },
+      "eld_moonbell_village": {
+        "id": "eld_moonbell_village",
+        "map_id": "eldoran_continent",
+        "name": "月铃村",
+        "travel_id": "msx8v35t-9honxq39",
+        "time": 1786980806585,
+        "carried_item_id": ""
+      },
+      "mystic_sword_sect": {
+        "id": "mystic_sword_sect",
+        "map_id": "four_regions_little_world",
+        "name": "玄剑宗",
+        "travel_id": "msxp03ug-ee8f31ex",
+        "time": 1787005095840,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -654,6 +782,20 @@
         "location_id": "qing_he_town",
         "travel_id": "msrdan7h-kkx3l8fg",
         "time": 1786622641317
+      },
+      "underwater_sword": {
+        "id": "underwater_sword",
+        "map_id": "four_regions_little_world",
+        "location_id": "bixi_ferry",
+        "travel_id": "msuu62nx-j4sxvyjg",
+        "time": 1786836524431
+      },
+      "eld_event_silent_bell": {
+        "id": "eld_event_silent_bell",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_moonbell_village",
+        "travel_id": "msx8v35t-9honxq39",
+        "time": 1786980806585
       }
     },
     "souvenir_records": {
@@ -663,6 +805,20 @@
         "event_id": "endless_noodle",
         "location_id": "qing_he_town",
         "time": 1786622641317
+      },
+      "souvenir_water_sword_tassel": {
+        "id": "souvenir_water_sword_tassel",
+        "name": "水影剑穗",
+        "event_id": "underwater_sword",
+        "location_id": "bixi_ferry",
+        "time": 1786836524431
+      },
+      "souvenir_silent_moonbell": {
+        "id": "souvenir_silent_moonbell",
+        "name": "不响的月铃",
+        "event_id": "eld_event_silent_bell",
+        "location_id": "eld_moonbell_village",
+        "time": 1786980806586
       }
     },
     "achievement_records": {
@@ -731,6 +887,66 @@
         "name": "发现被遗忘的家庭餐厅",
         "rarity": 3,
         "time": 1786724010111,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1786836524434,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_eld_moonbell_village": {
+        "id": "ach_eld_moonbell_village",
+        "name": "发现月铃村",
+        "rarity": 3,
+        "time": 1786980806588,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786980806589,
+        "actor_name": "兔女郎服务部",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_mystic_sword_sect": {
+        "id": "ach_mystic_sword_sect",
+        "name": "发现玄剑宗",
+        "rarity": 3,
+        "time": 1787005095840,
         "actor_name": "兔女郎服务部",
         "rewards": [
           {
@@ -953,9 +1169,324 @@
         "settled_at": 1786724010112,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×3，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+      },
+      "msuu62nx-j4sxvyjg": {
+        "id": "msuu62nx-j4sxvyjg",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "兔女郎服务部",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "bixi_ferry",
+        "location_name": "碧溪渡",
+        "duration_ms": 10351733,
+        "rewards": {
+          "coin": 2875,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": {
+          "id": "underwater_sword",
+          "name": "河底练剑声",
+          "text": "河中倒影练着陌生剑法，远处传来剑鸣。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_water_sword_tassel",
+              "name": "水影剑穗",
+              "emoji": "🗡️",
+              "description": "旅行纪念品「水影剑穗」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_spirit_pill",
+              "amount": 3
+            }
+          ],
+          "record": true
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_water_sword_tassel",
+            "name": "水影剑穗",
+            "emoji": "🗡️",
+            "description": "旅行纪念品「水影剑穗」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_spirit_pill",
+            "name": "灵麦团子",
+            "emoji": "🍡",
+            "description": "四州小天地的灵麦小点。",
+            "food": {
+              "satiety": 15,
+              "mood": 4,
+              "weight_gain": 5
+            },
+            "amount": 3
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "碧溪渡",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_bixi_ferry",
+            "name": "发现碧溪渡",
+            "rarity": 3,
+            "time": 1786836524434,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现碧溪渡」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786836524435,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时53分钟\n获得：2875若汁币，若汁之缘×6，经验+6\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
+      },
+      "msx8v35t-9honxq39": {
+        "id": "msx8v35t-9honxq39",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_moonbell_village",
+        "location_name": "月铃村",
+        "duration_ms": 9019877,
+        "rewards": {
+          "coin": 2506,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_silent_bell",
+          "name": "不响的铃铛",
+          "text": "村里最古老的铃只在没人看时响。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_silent_moonbell",
+              "name": "不响的月铃",
+              "emoji": "🔔",
+              "description": "旅行纪念品「不响的月铃」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_noodles",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-msxcfjye-iiar1hkf",
+          "time": 1786977780422,
+          "map_id": "eldoran_continent",
+          "map_name": "艾尔多兰大陆",
+          "text": "它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。",
+          "reward": {
+            "id": "coin_extra_large",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 300,
+            "max_amount": 400,
+            "amount": 356,
+            "reward_text": "356若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "3536417662",
+          "partner_display_name": "冬至",
+          "reward_text": "356若汁币"
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_silent_moonbell",
+            "name": "不响的月铃",
+            "emoji": "🔔",
+            "description": "旅行纪念品「不响的月铃」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_noodles",
+            "name": "热汤面",
+            "emoji": "🍜",
+            "description": "暖呼呼的一碗面。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 12,
+              "mood": 3,
+              "weight_gain": 3
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "月铃村",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_moonbell_village",
+            "name": "发现月铃村",
+            "rarity": 3,
+            "time": 1786980806588,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月铃村」 ★★★"
+          },
+          {
+            "id": "ach_travel_encounter_first",
+            "name": "旅途中的同伴",
+            "rarity": 3,
+            "time": 1786980806589,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅途中的同伴」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786980806589,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时30分钟\n获得：2506若汁币，若汁之缘×5，经验+5\n小若汁偶遇了冬至的小若汁，它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。\n偶遇奖励：356若汁币\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n食物：🍜热汤面×2\n纪念品：🔔不响的月铃×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
+      "msxp03ug-ee8f31ex": {
+        "id": "msxp03ug-ee8f31ex",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "mystic_sword_sect",
+        "location_name": "玄剑宗",
+        "duration_ms": 6201108,
+        "rewards": {
+          "coin": 1723,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "玄剑宗",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_mystic_sword_sect",
+            "name": "发现玄剑宗",
+            "rarity": 3,
+            "time": 1787005095840,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现玄剑宗」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787005095841,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：1小时43分钟\n获得：1723若汁币，若汁之缘×4，经验+4\n新地点已解锁：玄剑宗\n达成旅行成就「发现玄剑宗」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msxp03ug-ee8f31ex",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：1小时43分钟\n获得：1723若汁币，若汁之缘×4，经验+4\n新地点已解锁：玄剑宗\n达成旅行成就「发现玄剑宗」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787005095841,
+        "created_at": 1787005095841,
+        "sent_at": 1787005096289,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msx8v35t-9honxq39",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时30分钟\n获得：2506若汁币，若汁之缘×5，经验+5\n小若汁偶遇了冬至的小若汁，它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。\n偶遇奖励：356若汁币\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n食物：🍜热汤面×2\n纪念品：🔔不响的月铃×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★\n达成旅行成就「旅途中的同伴」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786980806590,
+        "created_at": 1786980806590,
+        "sent_at": 1786980807077,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msuu62nx-j4sxvyjg",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时53分钟\n获得：2875若汁币，若汁之缘×6，经验+6\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786836524435,
+        "created_at": 1786836524435,
+        "sent_at": 1786836524973,
+        "last_error": ""
+      },
       {
         "travel_id": "mst2h0bo-4a1zvfmw",
         "group_id": "415462812",
@@ -997,13 +1528,13 @@
       }
     ],
     "stats": {
-      "total_trips": 3,
+      "total_trips": 6,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
-        "eldoran_continent": 0,
+        "eldoran_continent": 1,
         "unregistered_district": 2,
-        "four_regions_little_world": 1,
+        "four_regions_little_world": 3,
         "candy_dreamland": 0
       },
       "map_event_ids": {
@@ -1011,60 +1542,47 @@
           "event_second_ruozhi_monitor": 1
         },
         "four_regions_little_world": {
-          "endless_noodle": 1
+          "endless_noodle": 1,
+          "underwater_sword": 1
+        },
+        "eldoran_continent": {
+          "eld_event_silent_bell": 1
         }
       },
       "event_ids": {
         "event_second_ruozhi_monitor": 1,
-        "endless_noodle": 1
+        "endless_noodle": 1,
+        "underwater_sword": 1,
+        "eld_event_silent_bell": 1
       },
-      "encounter_reward_types": {},
-      "total_encounters": 0
-    },
-    "active": {
-      "id": "msuu62nx-j4sxvyjg",
-      "user_id": "2113147687",
-      "display_name": "兔女郎服务部",
-      "group_id": "415462812",
-      "self_id": "3762153943",
-      "started_at": 1786826172669,
-      "ends_at": 1786836524402,
-      "duration_ms": 10351733,
-      "map_id": "four_regions_little_world",
-      "map_name": "四州小天地",
-      "location_id": "bixi_ferry",
-      "location_name": "碧溪渡",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "underwater_sword",
-        "name": "河底练剑声",
-        "text": "河中倒影练着陌生剑法，远处传来剑鸣。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_water_sword_tassel",
-            "name": "水影剑穗",
-            "emoji": "🗡️",
-            "description": "旅行纪念品「水影剑穗」。"
-          }
-        ],
-        "items": [
-          {
-            "id": "food_spirit_pill",
-            "amount": 3
-          }
-        ],
-        "record": true
+      "encounter_reward_types": {
+        "currency": 1
       },
-      "rewards": {
-        "coin": 2875,
-        "fate": 6,
-        "experience": 6
-      }
+      "total_encounters": 1
     },
+    "active": null,
     "prepared_tool": null,
-    "encounter_records": {}
+    "encounter_records": {
+      "encounter-msxcfjye-iiar1hkf": {
+        "id": "encounter-msxcfjye-iiar1hkf",
+        "time": 1786977780422,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 356,
+          "reward_text": "356若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "3536417662",
+        "partner_display_name": "冬至",
+        "settled_at": 1786980806588
+      }
+    }
   }
 }

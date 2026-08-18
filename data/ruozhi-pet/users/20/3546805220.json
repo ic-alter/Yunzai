@@ -3,12 +3,12 @@
   "user_id": "3546805220",
   "pet": {
     "level": 1,
-    "experience": 15,
+    "experience": 20,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786826391190,
+    "satiety_decay_at": 1786986793372,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -108,6 +108,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_wan_chun_valley": {
+        "id": "ach_wan_chun_valley",
+        "name": "发现万春谷",
+        "rarity": 3,
+        "time": 1786931130545,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "xianxia_first_step": {
+        "id": "xianxia_first_step",
+        "name": "炼气第一步",
+        "rarity": 3,
+        "time": 1786931130545,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -137,9 +167,9 @@
         "time": 1785642699283
       }
     ],
-    "weight": 48,
-    "weight_decay_at": 1786797129601,
-    "health_decay_at": 1786826391190
+    "weight": 44,
+    "weight_decay_at": 1786969929601,
+    "health_decay_at": 1786986793372
   },
   "profile": {
     "favorability": 0,
@@ -147,24 +177,89 @@
     "total_contribution": 0,
     "last_display_name": "购德帕瓦",
     "first_joined_at": 1785642699283,
-    "last_active_at": 1786826391190,
+    "last_active_at": 1786986793372,
     "daily": {
-      "date": "2026-08-16",
+      "date": "2026-08-18",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W33"
+      "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 33,
+      "ruozhi_fate": 44,
       "nameless_ruozhi": 0,
       "souvenir_paper_visitor_crown": 1,
       "souvenir_temporary_summon_card": 1,
-      "souvenir_tomorrow_child_ticket": 1
+      "souvenir_tomorrow_child_ticket": 1,
+      "food_curry": 2
     },
     "item_ledger": [
+      {
+        "time": 1786931130545,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 41,
+        "after": 44,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "xianxia_first_step"
+        }
+      },
+      {
+        "time": 1786931130545,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 38,
+        "after": 41,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786931130543,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 37,
+        "after": 38,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mswj5327-sglxvbyz",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1786864484310,
+        "type": "income",
+        "item_id": "food_curry",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msvd9zfm-x7flejtw",
+          "event_id": "eld_event_guard_question",
+          "location_id": "eld_silver_capital"
+        }
+      },
+      {
+        "time": 1786864484307,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 33,
+        "after": 37,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msvd9zfm-x7flejtw",
+          "location_id": "eld_silver_capital"
+        }
+      },
       {
         "time": 1786600433911,
         "type": "income",
@@ -355,10 +450,36 @@
       }
     },
     "currency": {
-      "balance": 8049,
-      "total_earned": 8049,
+      "balance": 10484,
+      "total_earned": 10484,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786931130543,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 708,
+          "before": 9776,
+          "after": 10484,
+          "meta": {
+            "travel_id": "mswj5327-sglxvbyz",
+            "location_id": "wan_chun_valley",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1786864484307,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1727,
+          "before": 8049,
+          "after": 9776,
+          "meta": {
+            "travel_id": "msvd9zfm-x7flejtw",
+            "location_id": "eld_silver_capital",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786600433910,
           "type": "income",
@@ -452,10 +573,10 @@
     "migrated_at": 1785642699283
   },
   "created_at": 1785642699283,
-  "updated_at": 1786826391190,
+  "updated_at": 1786986793373,
   "production": {
     "started_at": 1785642699283,
-    "last_settled_at": 1786826391190,
+    "last_settled_at": 1786986793372,
     "accumulated_ms": 259200000,
     "progress": 30.026680747013167,
     "total_produced": 0
@@ -476,7 +597,8 @@
       "bixi_ferry",
       "eld_magic_academy",
       "eld_windmill_plain",
-      "rtc_central_station"
+      "rtc_central_station",
+      "wan_chun_valley"
     ],
     "location_records": {
       "eld_silver_capital": {
@@ -518,6 +640,14 @@
         "travel_id": "msqxnaed-17hiqcuq",
         "time": 1786600433910,
         "carried_item_id": ""
+      },
+      "wan_chun_valley": {
+        "id": "wan_chun_valley",
+        "map_id": "four_regions_little_world",
+        "name": "万春谷",
+        "travel_id": "mswj5327-sglxvbyz",
+        "time": 1786931130543,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -541,6 +671,13 @@
         "location_id": "rtc_central_station",
         "travel_id": "msqxnaed-17hiqcuq",
         "time": 1786600433910
+      },
+      "eld_event_guard_question": {
+        "id": "eld_event_guard_question",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_silver_capital",
+        "travel_id": "msvd9zfm-x7flejtw",
+        "time": 1786864484308
       }
     },
     "souvenir_records": {
@@ -647,6 +784,36 @@
         "name": "发现明日中央车站",
         "rarity": 3,
         "time": 1786600433911,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_wan_chun_valley": {
+        "id": "ach_wan_chun_valley",
+        "name": "发现万春谷",
+        "rarity": 3,
+        "time": 1786931130545,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "xianxia_first_step": {
+        "id": "xianxia_first_step",
+        "name": "炼气第一步",
+        "rarity": 3,
+        "time": 1786931130545,
         "actor_name": "购德帕瓦",
         "rewards": [
           {
@@ -983,9 +1150,165 @@
         "settled_at": 1786600433911,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：2小时51分钟\n获得：2937若汁币，若汁之缘×5，经验+6\n旅行事件：机器人检票\n检票机器人把龟壳当成超大行李，最后补发了一张儿童票。\n纪念品：🎫明日儿童票×1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★"
+      },
+      "msvd9zfm-x7flejtw": {
+        "id": "msvd9zfm-x7flejtw",
+        "user_id": "3546805220",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "购德帕瓦",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_silver_capital",
+        "location_name": "银冠王城",
+        "duration_ms": 6216478,
+        "rewards": {
+          "coin": 1727,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "eld_event_guard_question",
+          "name": "城门问答",
+          "text": "卫兵问小若汁来自哪里，它回答“群里”。",
+          "effects": {},
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_curry",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_curry",
+            "name": "香浓咖喱饭",
+            "emoji": "🍛",
+            "description": "一盘热乎乎的饭。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 16,
+              "mood": 4,
+              "weight_gain": 5
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786864484312,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时44分钟\n获得：1727若汁币，若汁之缘×4，经验+4\n旅行事件：城门问答\n卫兵问小若汁来自哪里，它回答“群里”。\n食物：🍛香浓咖喱饭×2"
+      },
+      "mswj5327-sglxvbyz": {
+        "id": "mswj5327-sglxvbyz",
+        "user_id": "3546805220",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "购德帕瓦",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "wan_chun_valley",
+        "location_name": "万春谷",
+        "duration_ms": 2547423,
+        "rewards": {
+          "coin": 708,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "万春谷",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_wan_chun_valley",
+            "name": "发现万春谷",
+            "rarity": 3,
+            "time": 1786931130545,
+            "actor_name": "购德帕瓦",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现万春谷」 ★★★"
+          },
+          {
+            "id": "xianxia_first_step",
+            "name": "炼气第一步",
+            "rarity": 3,
+            "time": 1786931130545,
+            "actor_name": "购德帕瓦",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「炼气第一步」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786931130545,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：42分钟\n获得：708若汁币，若汁之缘×1，经验+1\n新地点已解锁：万春谷\n达成旅行成就「发现万春谷」 ★★★\n达成旅行成就「炼气第一步」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mswj5327-sglxvbyz",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "3546805220",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：42分钟\n获得：708若汁币，若汁之缘×1，经验+1\n新地点已解锁：万春谷\n达成旅行成就「发现万春谷」 ★★★\n达成旅行成就「炼气第一步」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786931130545,
+        "created_at": 1786931130545,
+        "sent_at": 1786931131082,
+        "last_error": ""
+      },
+      {
+        "travel_id": "msvd9zfm-x7flejtw",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "3546805220",
+        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：1小时44分钟\n获得：1727若汁币，若汁之缘×4，经验+4\n旅行事件：城门问答\n卫兵问小若汁来自哪里，它回答“群里”。\n食物：🍛香浓咖喱饭×2",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786864484313,
+        "created_at": 1786864484313,
+        "sent_at": 1786864484738,
+        "last_error": ""
+      },
       {
         "travel_id": "msqxnaed-17hiqcuq",
         "group_id": "1025424898",
@@ -1053,18 +1376,20 @@
       }
     ],
     "stats": {
-      "total_trips": 5,
+      "total_trips": 7,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
         "eldoran_continent": 3,
         "unregistered_district": 0,
-        "four_regions_little_world": 1
+        "four_regions_little_world": 2,
+        "candy_dreamland": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
           "eld_event_royal_parade": 1,
-          "eld_event_pet_registration": 1
+          "eld_event_pet_registration": 1,
+          "eld_event_guard_question": 1
         },
         "retro_tomorrow_city": {
           "rtc_event_robot_conductor": 1
@@ -1073,7 +1398,8 @@
       "event_ids": {
         "eld_event_royal_parade": 1,
         "eld_event_pet_registration": 1,
-        "rtc_event_robot_conductor": 1
+        "rtc_event_robot_conductor": 1,
+        "eld_event_guard_question": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0

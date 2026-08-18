@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 2,
-    "experience": 62,
+    "experience": 66,
     "satiety": 5,
     "mood": 87,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786826391313,
+    "satiety_decay_at": 1786986793509,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -546,6 +546,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786973594915,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -830,9 +845,9 @@
     "five_skin_shadow_counts": {
       "faceless_turtle": 0
     },
-    "weight": 48,
-    "weight_decay_at": 1786797129837,
-    "health_decay_at": 1786826391313
+    "weight": 44,
+    "weight_decay_at": 1786969929837,
+    "health_decay_at": 1786986793509
   },
   "profile": {
     "favorability": 19,
@@ -840,21 +855,46 @@
     "total_contribution": 18,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1786826391313,
+    "last_active_at": 1786986793509,
     "daily": {
-      "date": "2026-08-16",
+      "date": "2026-08-18",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W33"
+      "week": "2026-W34"
     },
     "currency": {
-      "balance": 140993,
-      "total_earned": 140993,
+      "balance": 143351,
+      "total_earned": 143351,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1786973594910,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 338,
+          "before": 143013,
+          "after": 143351,
+          "meta": {
+            "encounter_id": "encounter-msx5lzko-g6y3j322",
+            "partner_user_id": "980711945"
+          }
+        },
+        {
+          "time": 1786973594905,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2020,
+          "before": 140993,
+          "after": 143013,
+          "meta": {
+            "travel_id": "msx5lzab-p2adxd6e",
+            "location_id": "eld_adventurer_guild",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786803414806,
           "type": "income",
@@ -953,30 +993,6 @@
             "skin_id": "music_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786409535468,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 129131,
-          "after": 129431,
-          "meta": {
-            "skin_id": "coffee_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786409535468,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 128831,
-          "after": 129131,
-          "meta": {
-            "skin_id": "tear_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -988,7 +1004,7 @@
       "first_interaction_reward_date": "2026-08-07"
     },
     "items": {
-      "ruozhi_fate": 11,
+      "ruozhi_fate": 18,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
       "souvenir_sun_chart": 3,
@@ -1002,9 +1018,79 @@
       "souvenir_waiting_bear_tag": 1,
       "souvenir_missing_road_map": 1,
       "souvenir_yesterday_clock": 1,
-      "food_elven_tart": 1
+      "food_elven_tart": 1,
+      "souvenir_border_quest_scroll": 1,
+      "souvenir_border_map": 1,
+      "food_dwarf_bread": 1
     },
     "item_ledger": [
+      {
+        "time": 1786973594915,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 15,
+        "after": 18,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_first"
+        }
+      },
+      {
+        "time": 1786973594910,
+        "type": "income",
+        "item_id": "food_dwarf_bread",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msx5lzab-p2adxd6e",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1786973594907,
+        "type": "income",
+        "item_id": "souvenir_border_map",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msx5lzab-p2adxd6e",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1786973594907,
+        "type": "income",
+        "item_id": "souvenir_border_quest_scroll",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msx5lzab-p2adxd6e",
+          "event_id": "eld_event_border_quest",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
+      {
+        "time": 1786973594905,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 11,
+        "after": 15,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msx5lzab-p2adxd6e",
+          "location_id": "eld_adventurer_guild"
+        }
+      },
       {
         "time": 1786803414814,
         "type": "income",
@@ -1197,70 +1283,6 @@
           "travel_id": "mslwcza0-dk2mukxc",
           "location_id": "rtc_galaxy_motel"
         }
-      },
-      {
-        "time": 1786263498160,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 22,
-        "after": 25,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rainbow_kindergarten"
-        }
-      },
-      {
-        "time": 1786263498160,
-        "type": "income",
-        "item_id": "souvenir_waiting_bear_tag",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mslcutkr-6qs70l91",
-          "event_id": "event_who_picks_you_up",
-          "location_id": "rainbow_kindergarten"
-        }
-      },
-      {
-        "time": 1786263498159,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 16,
-        "after": 22,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mslcutkr-6qs70l91",
-          "location_id": "rainbow_kindergarten"
-        }
-      },
-      {
-        "time": 1786244922111,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 14,
-        "after": 16,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msl6mu7m-2qgvk994",
-          "location_id": "rtc_blue_harbor"
-        }
-      },
-      {
-        "time": 1786193583033,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 11,
-        "after": 14,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_yellow_underpass"
-        }
       }
     ],
     "item_daily": {
@@ -1428,10 +1450,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1786826391313,
+  "updated_at": 1786986793509,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1786826391313,
+    "last_settled_at": 1786986793509,
     "accumulated_ms": 259200000,
     "progress": 35.08025954477688,
     "total_produced": 102,
@@ -1748,6 +1770,13 @@
         "location_id": "rtc_yesterday_end",
         "travel_id": "mslxjhhh-mg11zb6p",
         "time": 1786293633161
+      },
+      "eld_event_border_quest": {
+        "id": "eld_event_border_quest",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_adventurer_guild",
+        "travel_id": "msx5lzab-p2adxd6e",
+        "time": 1786973594907
       }
     },
     "souvenir_records": {
@@ -1834,6 +1863,20 @@
         "event_id": "rtc_event_yesterday_clock",
         "location_id": "rtc_yesterday_end",
         "time": 1786293633161
+      },
+      "souvenir_border_quest_scroll": {
+        "id": "souvenir_border_quest_scroll",
+        "name": "越界委托书",
+        "event_id": "eld_event_border_quest",
+        "location_id": "eld_adventurer_guild",
+        "time": 1786973594907
+      },
+      "souvenir_border_map": {
+        "id": "souvenir_border_map",
+        "name": "画出边框的地图",
+        "event_id": "eld_event_border_quest",
+        "location_id": "eld_adventurer_guild",
+        "time": 1786973594907
       }
     },
     "achievement_records": {
@@ -2211,9 +2254,153 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_travel_encounter_first": {
+        "id": "ach_travel_encounter_first",
+        "name": "旅途中的同伴",
+        "rarity": 3,
+        "time": 1786973594915,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "msx5lzab-p2adxd6e": {
+        "id": "msx5lzab-p2adxd6e",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "迈特斯妲",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_adventurer_guild",
+        "location_name": "金杯冒险者公会",
+        "duration_ms": 7271964,
+        "rewards": {
+          "coin": 2020,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "eld_event_border_quest",
+          "name": "地图外任务",
+          "text": "告示板上有一张要求前往地图边框外的委托。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_border_quest_scroll",
+              "name": "越界委托书",
+              "emoji": "📜",
+              "description": "旅行纪念品「越界委托书」。"
+            },
+            {
+              "id": "souvenir_border_map",
+              "name": "画出边框的地图",
+              "emoji": "🗺️",
+              "travel_tool": true,
+              "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_dwarf_bread",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-msx5lzko-g6y3j322",
+          "time": 1786966323288,
+          "map_id": "eldoran_continent",
+          "map_name": "艾尔多兰大陆",
+          "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+          "reward": {
+            "id": "coin_extra_large",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 300,
+            "max_amount": 400,
+            "amount": 338,
+            "reward_text": "338若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "980711945",
+          "partner_display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
+          "reward_text": "338若汁币"
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_border_quest_scroll",
+            "name": "越界委托书",
+            "emoji": "📜",
+            "description": "旅行纪念品「越界委托书」。",
+            "amount": 1
+          },
+          {
+            "id": "souvenir_border_map",
+            "name": "画出边框的地图",
+            "emoji": "🗺️",
+            "travel_tool": true,
+            "description": "连地图边框外都有道路的地图，可作为寻找地图之外的小屋的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_dwarf_bread",
+            "name": "矮人黑面包",
+            "emoji": "🥖",
+            "description": "艾尔多兰大陆的硬壳面包。",
+            "food": {
+              "satiety": 16,
+              "mood": 4,
+              "weight_gain": 4
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_travel_encounter_first",
+            "name": "旅途中的同伴",
+            "rarity": 3,
+            "time": 1786973594915,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅途中的同伴」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786973594915,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：2小时1分钟\n获得：2020若汁币，若汁之缘×4，经验+4\n小若汁偶遇了【IGN】《鸣潮》共鸣者「小若汁」实机演示的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：338若汁币\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n食物：🥖矮人黑面包×1\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
       "msud94gi-05lc0pcy": {
         "id": "msud94gi-05lc0pcy",
         "user_id": "1260797962",
@@ -3204,54 +3391,22 @@
         "settled_at": 1785633257383,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：1小时29分钟\n获得：1490若汁币，若汁之缘×3，经验+3"
-      },
-      "msad0mri-iyipm7wv": {
-        "id": "msad0mri-iyipm7wv",
-        "user_id": "1260797962",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "迈特斯妲",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_robot_park",
-        "location_name": "欢笑机器人乐园",
-        "duration_ms": 2041931,
-        "rewards": {
-          "coin": 567,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "souvenirs": [],
-        "new_location": "欢笑机器人乐园",
-        "achievements": [
-          {
-            "id": "ach_rtc_robot_park",
-            "name": "发现欢笑机器人乐园",
-            "rarity": 3,
-            "time": 1785590083731,
-            "actor_name": "迈特斯妲",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现欢笑机器人乐园」 ★★★"
-          }
-        ],
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1785590083731,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：34分钟\n获得：567若汁币，若汁之缘×1，经验+1\n新地点已解锁：欢笑机器人乐园\n达成旅行成就「发现欢笑机器人乐园」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msx5lzab-p2adxd6e",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：金杯冒险者公会（艾尔多兰大陆）\n旅行时间：2小时1分钟\n获得：2020若汁币，若汁之缘×4，经验+4\n小若汁偶遇了【IGN】《鸣潮》共鸣者「小若汁」实机演示的小若汁，它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。\n偶遇奖励：338若汁币\n旅行事件：地图外任务\n告示板上有一张要求前往地图边框外的委托。\n食物：🥖矮人黑面包×1\n纪念品：📜越界委托书×1、🗺️画出边框的地图×1\n达成旅行成就「旅途中的同伴」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1786973594915,
+        "created_at": 1786973594915,
+        "sent_at": 1786973595397,
+        "last_error": ""
+      },
       {
         "travel_id": "msud94gi-05lc0pcy",
         "group_id": "415462812",
@@ -3498,23 +3653,10 @@
         "created_at": 1785633257383,
         "sent_at": 1785633257619,
         "last_error": ""
-      },
-      {
-        "travel_id": "msad0mri-iyipm7wv",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：34分钟\n获得：567若汁币，若汁之缘×1，经验+1\n新地点已解锁：欢笑机器人乐园\n达成旅行成就「发现欢笑机器人乐园」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1785590083731,
-        "created_at": 1785590083731,
-        "sent_at": 1785590084033,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 35,
+      "total_trips": 36,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -3542,7 +3684,8 @@
           "eld_event_sun_chart": 1,
           "eld_event_tide_stairs": 1,
           "eld_event_lost_boot": 1,
-          "eld_event_potion_soup": 1
+          "eld_event_potion_soup": 1,
+          "eld_event_border_quest": 1
         },
         "retro_tomorrow_city": {
           "rtc_event_traffic_bot": 1,
@@ -3578,14 +3721,38 @@
         "event_blank_people_ad": 1,
         "event_who_picks_you_up": 1,
         "rtc_event_room_207": 1,
-        "rtc_event_yesterday_clock": 1
+        "rtc_event_yesterday_clock": 1,
+        "eld_event_border_quest": 1
       },
-      "encounter_reward_types": {},
-      "total_encounters": 0
+      "encounter_reward_types": {
+        "currency": 1
+      },
+      "total_encounters": 1
     },
     "active": null,
     "prepared_tool": null,
-    "encounter_records": {}
+    "encounter_records": {
+      "encounter-msx5lzko-g6y3j322": {
+        "id": "encounter-msx5lzko-g6y3j322",
+        "time": 1786966323288,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 338,
+          "reward_text": "338若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "980711945",
+        "partner_display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
+        "settled_at": 1786973594910
+      }
+    }
   },
   "gacha": {
     "since_four_plus": 1,
