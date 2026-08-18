@@ -3,12 +3,12 @@
   "user_id": "3126871739",
   "pet": {
     "level": 8,
-    "experience": 85,
-    "satiety": 39,
+    "experience": 163,
+    "satiety": 36,
     "mood": 100,
     "health": 100,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786988275957,
+    "satiety_decay_at": 1787050180806,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -57,7 +57,13 @@
       "shushing_turtle",
       "sneaker_turtle",
       "puppy_turtle",
-      "kiss_marks_turtle"
+      "kiss_marks_turtle",
+      "party_turtle",
+      "sparkling_turtle",
+      "love_letter_turtle",
+      "mouse_turtle",
+      "ufo_turtle",
+      "ahat_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -90,8 +96,8 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 62,
-      "counter:gacha_five": 1,
+      "counter:gacha_draws": 102,
+      "counter:gacha_five": 2,
       "event_branch_count:feed:full": 1,
       "event_branch_count:feed:full:last_at": 1786118264999,
       "pet_stat_reach_count:satiety:98": 1,
@@ -494,9 +500,56 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_draw_100": {
+        "id": "gacha_draw_100",
+        "name": "百次邂逅",
+        "rarity": 4,
+        "time": 1787035837979,
+        "actor_name": "magictobacco",
+        "stat_key": "counter:gacha_draws",
+        "count": 102,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "ahat_turtle",
+        "reason": "gacha",
+        "time": 1787035837978
+      },
+      {
+        "skin_id": "ufo_turtle",
+        "reason": "gacha",
+        "time": 1787035837978
+      },
+      {
+        "skin_id": "mouse_turtle",
+        "reason": "gacha",
+        "time": 1787035823939
+      },
+      {
+        "skin_id": "love_letter_turtle",
+        "reason": "gacha",
+        "time": 1787035811398
+      },
+      {
+        "skin_id": "sparkling_turtle",
+        "reason": "gacha",
+        "time": 1787035811398
+      },
+      {
+        "skin_id": "party_turtle",
+        "reason": "gacha",
+        "time": 1787035811398
+      },
       {
         "skin_id": "kiss_marks_turtle",
         "reason": "gacha",
@@ -744,29 +797,34 @@
         "time": 1785777940319
       }
     ],
-    "five_skin_shadow_counts": {},
+    "five_skin_shadow_counts": {
+      "shidai_turtle": 0
+    },
     "weight": 50,
-    "weight_decay_at": 1786989068670,
-    "health_decay_at": 1786989068670
+    "weight_decay_at": 1787050603636,
+    "health_decay_at": 1787050603636
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 15,
-    "total_contribution": 229,
+    "weekly_contribution": 33,
+    "total_contribution": 247,
     "last_display_name": "magictobacco",
     "first_joined_at": 1785777940319,
-    "last_active_at": 1786989068670,
+    "last_active_at": 1787050603636,
     "daily": {
       "date": "2026-08-18",
-      "event_count": 0,
-      "same_event_counts": {},
+      "event_count": 6,
+      "same_event_counts": {
+        "feed": 5,
+        "mention_only": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 164,
+      "ruozhi_fate": 54,
       "nameless_ruozhi": 0,
       "souvenir_vine_basket": 2,
       "souvenir_dome_giant_leaf": 1,
@@ -781,6 +839,78 @@
       "souvenir_cocoa_rainbow_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1787035837979,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 51,
+        "after": 54,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_100"
+        }
+      },
+      {
+        "time": 1787035837978,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 81,
+        "after": 51,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787035823939,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 111,
+        "after": 81,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787035811398,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 141,
+        "after": 111,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787035797410,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 171,
+        "after": 141,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787025946704,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 164,
+        "after": 171,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 12.878
+        }
+      },
       {
         "time": 1786989068270,
         "type": "income",
@@ -960,82 +1090,6 @@
           "food_id": "food_spirit_pill",
           "stage": "normal"
         }
-      },
-      {
-        "time": 1786885765481,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 124,
-        "after": 127,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_hundred_herbs_cave"
-        }
-      },
-      {
-        "time": 1786885765480,
-        "type": "income",
-        "item_id": "food_spirit_pill",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msvofiyk-qx2p9r3i",
-          "event_id": "cave_owner_porridge",
-          "location_id": "hundred_herbs_cave"
-        }
-      },
-      {
-        "time": 1786885765477,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 119,
-        "after": 124,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msvofiyk-qx2p9r3i",
-          "location_id": "hundred_herbs_cave"
-        }
-      },
-      {
-        "time": 1786850578060,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 12,
-        "before": 107,
-        "after": 119,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 21.237
-        }
-      },
-      {
-        "time": 1786800755847,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 104,
-        "after": 107,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_gingerbread_town"
-        }
-      },
-      {
-        "time": 1786800755843,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 100,
-        "after": 104,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msuaskxe-p6mphyzj",
-          "location_id": "gingerbread_town"
-        }
       }
     ],
     "item_daily": {},
@@ -1048,130 +1102,128 @@
       }
     },
     "currency": {
-      "balance": 59197,
-      "total_earned": 59197,
+      "balance": 79297,
+      "total_earned": 79297,
       "total_spent": 0,
       "ledger": [
         {
-          "time": 1786989068251,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 2610,
-          "before": 56587,
-          "after": 59197,
-          "meta": {
-            "travel_id": "msxdk3lh-zhwtskr3",
-            "location_id": "chocolate_falls",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786902593250,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1464,
-          "before": 55123,
-          "after": 56587,
-          "meta": {
-            "travel_id": "msw0j1ox-gnnk0zmg",
-            "location_id": "rain_only_store",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786897305475,
-          "type": "income",
-          "reason": "level_up_reward",
+          "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 54823,
-          "after": 55123,
+          "before": 78997,
+          "after": 79297,
           "meta": {
-            "level": 8
+            "skin_id": "thumbs_up_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786897305475,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 54323,
-          "after": 54823,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 78697,
+          "after": 78997,
           "meta": {
-            "date": "2026-08-17"
+            "skin_id": "lying_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786885765480,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 403,
-          "before": 53920,
-          "after": 54323,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 78397,
+          "after": 78697,
           "meta": {
-            "encounter_id": "encounter-msvog7ff-9q5ce6e7",
-            "partner_user_id": "2399212093"
+            "skin_id": "tear_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786885765477,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 2434,
-          "before": 51486,
-          "after": 53920,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 78097,
+          "after": 78397,
           "meta": {
-            "travel_id": "msvofiyk-qx2p9r3i",
-            "location_id": "hundred_herbs_cave",
-            "forced_by": "timer"
+            "skin_id": "coffee_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786850578061,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 50986,
-          "after": 51486,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 77797,
+          "after": 78097,
           "meta": {
-            "date": "2026-08-16"
+            "skin_id": "antler_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786800755844,
+          "time": 1787035837979,
           "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 386,
-          "before": 50600,
-          "after": 50986,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 77497,
+          "after": 77797,
           "meta": {
-            "encounter_id": "encounter-msuasl4f-669g76vt",
-            "partner_user_id": "272950224"
+            "skin_id": "rolling_laugh_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786800755843,
+          "time": 1787035837978,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 1979,
-          "before": 48621,
-          "after": 50600,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 77197,
+          "after": 77497,
           "meta": {
-            "travel_id": "msuaskxe-p6mphyzj",
-            "location_id": "gingerbread_town",
-            "forced_by": "timer"
+            "skin_id": "nerd_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786732089615,
+          "time": 1787035837978,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 1888,
-          "before": 46733,
-          "after": 48621,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 76897,
+          "after": 77197,
           "meta": {
-            "travel_id": "mst6d4mi-tu36in25",
-            "location_id": "rtc_atomic_mall",
-            "forced_by": "timer"
+            "skin_id": "sparkling_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787035823939,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 76597,
+          "after": 76897,
+          "meta": {
+            "skin_id": "goggles_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787035823939,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 76297,
+          "after": 76597,
+          "meta": {
+            "skin_id": "crown_turtle",
+            "rarity": 3
           }
         }
       ],
@@ -1181,10 +1233,151 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-17"
+      "first_interaction_reward_date": "2026-08-18"
     }
   },
   "recent_events": [
+    {
+      "time": 1787035789761,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向magictobacco，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787035780806,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787035772895,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787035763898,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787025961978,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787025946706,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "hungry",
+      "summary": "小若汁早就饿坏了，立刻把食物吃得干干净净。",
+      "effects_text": "饱食+11，心情+5，健康+2，好感+5，贡献+5，经验+15",
+      "effects": {
+        "satiety": 11,
+        "mood": 5,
+        "health": 2,
+        "favorability": 5,
+        "contribution": 5,
+        "experience": 15
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 59697
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 7
+    },
     {
       "time": 1786979665432,
       "user_id": "3126871739",
@@ -1276,170 +1469,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1786979599868,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁尝了一口🧋珍珠奶茶就露出满足的表情。",
-      "effects_text": "饱食+9，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 9,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786979584670,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "petting",
-      "branch_id": "head_trust",
-      "summary": "小若汁熟练地把脑袋塞进magictobacco掌心，催着再摸一会儿。",
-      "effects_text": "心情+10，好感+6，贡献+5，经验+15",
-      "effects": {
-        "satiety": 0,
-        "mood": 10,
-        "health": 0,
-        "favorability": 6,
-        "contribution": 5,
-        "experience": 15
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 12
-    },
-    {
-      "time": 1786897305477,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "hungry",
-      "summary": "小若汁开心地吃掉了🍡灵麦团子。",
-      "effects_text": "饱食+15，心情+4，好感+2，贡献+2，经验+12，升级到 Lv.8",
-      "effects": {
-        "satiety": 15,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [
-        {
-          "level": 8,
-          "need": 220
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 54823
-      },
-      "level_rewards": [
-        {
-          "level": 8,
-          "reward": 300,
-          "receiver": {
-            "user_id": "3126871739",
-            "display_name": "magictobacco"
-          }
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 7
-    },
-    {
-      "time": 1786876987645,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 7,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786850589584,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "mention_only",
-      "branch_id": "look_over",
-      "summary": "小若汁抬头看向magictobacco，轻轻晃了晃尾巴。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786850578062,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 7,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 51486
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 12
     }
   ],
   "daily": {
-    "date": "2026-08-17",
-    "event_count": 7,
-    "bonus_event_count": 7
+    "date": "2026-08-18",
+    "event_count": 6,
+    "bonus_event_count": 6
   },
   "processed_messages": {
     "event:1501387905": 1785838090928,
@@ -1538,7 +1573,13 @@
     "event:108052355": 1786979612545,
     "event:1200320530": 1786979624932,
     "event:1671739705": 1786979635956,
-    "event:1598494688": 1786979665430
+    "event:1598494688": 1786979665430,
+    "event:137648779": 1787025946700,
+    "event:1611669633": 1787025961977,
+    "event:755727951": 1787035763896,
+    "event:111080859": 1787035772894,
+    "event:1061444137": 1787035780805,
+    "event:233041817": 1787035789761
   },
   "skin_sessions": {
     "active": null
@@ -1551,22 +1592,29 @@
     "migrated_at": 1785777940319
   },
   "created_at": 1785777940319,
-  "updated_at": 1786989068671,
+  "updated_at": 1787050603636,
   "production": {
     "started_at": 1785777940319,
-    "last_settled_at": 1786989068670,
-    "accumulated_ms": 9484001,
-    "progress": 1.8590391290101165,
-    "total_produced": 181,
-    "last_collected_at": 1786979584669
+    "last_settled_at": 1787050603636,
+    "accumulated_ms": 24656932,
+    "progress": 4.153234925567108,
+    "total_produced": 188,
+    "last_collected_at": 1787025946704
   },
   "gacha": {
-    "since_four_plus": 7,
-    "since_five": 7,
-    "total_draws": 62,
-    "total_four": 7,
-    "total_five": 1,
+    "since_four_plus": 6,
+    "since_five": 6,
+    "total_draws": 102,
+    "total_four": 11,
+    "total_five": 2,
     "five_history": [
+      {
+        "time": 1787035837978,
+        "skin_id": "ahat_turtle",
+        "skin_name": "小若汁·阿帽",
+        "pulls": 41,
+        "draw_index": 96
+      },
       {
         "time": 1786634444002,
         "skin_id": "shidai_turtle",

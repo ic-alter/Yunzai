@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2683578371",
   "pet": {
-    "level": 2,
-    "experience": 85,
-    "satiety": 5,
-    "mood": 98,
+    "level": 3,
+    "experience": 6,
+    "satiety": 27,
+    "mood": 99,
     "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787012225624,
+    "satiety_decay_at": 1787049990122,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -65,7 +65,10 @@
       "party_turtle",
       "unicorn_turtle",
       "ladybug_turtle",
-      "gift_turtle"
+      "gift_turtle",
+      "beam_turtle",
+      "crown_turtle",
+      "qingshan_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -74,12 +77,19 @@
         "level": 2,
         "time": 1786725430446,
         "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1787026950123,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 152,
-      "counter:gacha_five": 1,
-      "counter:gacha_unlucky_five": 1
+      "counter:gacha_draws": 172,
+      "counter:gacha_five": 2,
+      "counter:gacha_unlucky_five": 2
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -577,9 +587,40 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_school_gate_1743": {
+        "id": "ach_school_gate_1743",
+        "name": "发现永远放学的校门",
+        "rarity": 3,
+        "time": 1787036881940,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "qingshan_turtle",
+        "reason": "gacha",
+        "time": 1787027035112
+      },
+      {
+        "skin_id": "crown_turtle",
+        "reason": "gacha",
+        "time": 1787027019027
+      },
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1787026950123,
+        "level": 3
+      },
       {
         "skin_id": "gift_turtle",
         "reason": "gacha",
@@ -866,152 +907,151 @@
     "five_skin_shadow_counts": {
       "rongyin_turtle": 0
     },
-    "weight": 45,
-    "weight_decay_at": 1786971334068,
-    "health_decay_at": 1787012225624
+    "weight": 44,
+    "weight_decay_at": 1787051129481,
+    "health_decay_at": 1787051129481
   },
   "profile": {
-    "favorability": 31,
-    "weekly_contribution": 0,
-    "total_contribution": 29,
+    "favorability": 37,
+    "weekly_contribution": 6,
+    "total_contribution": 35,
     "last_display_name": "宝宝我们不拯救世界了我们回家😭",
     "first_joined_at": 1784791767626,
-    "last_active_at": 1787012225624,
+    "last_active_at": 1787051129481,
     "daily": {
       "date": "2026-08-18",
-      "event_count": 0,
-      "same_event_counts": {},
+      "event_count": 3,
+      "same_event_counts": {
+        "feed": 3
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 79904,
-      "total_earned": 119904,
+      "balance": 93468,
+      "total_earned": 133468,
       "total_spent": 40000,
       "ledger": [
         {
-          "time": 1787012225188,
+          "time": 1787036881937,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 3790,
-          "before": 76114,
-          "after": 79904,
+          "amount": 2664,
+          "before": 90804,
+          "after": 93468,
           "meta": {
-            "travel_id": "msxqw8eu-tyxgia6k",
-            "location_id": "rtc_aurora_station",
+            "travel_id": "msy5wrea-c37o1w72",
+            "location_id": "school_gate_1743",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1787001732966,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2868,
-          "before": 73246,
-          "after": 76114,
-          "meta": {
-            "travel_id": "msxkjoeb-xjex398p",
-            "location_id": "eld_windmill_plain",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786991393634,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1393,
-          "before": 71853,
-          "after": 73246,
-          "meta": {
-            "travel_id": "msxhvd11-oruvffl1",
-            "location_id": "white_fog_houses",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786986828974,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 421,
-          "before": 71432,
-          "after": 71853,
-          "meta": {
-            "encounter_id": "encounter-msxc0n2k-5w29x94k",
-            "partner_user_id": "2069743095"
-          }
-        },
-        {
-          "time": 1786986828969,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2797,
-          "before": 68635,
-          "after": 71432,
-          "meta": {
-            "travel_id": "msxc0mv7-enkbimmy",
-            "location_id": "eld_free_port",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786983733401,
-          "type": "income",
-          "reason": "daily_sign",
-          "amount": 1048,
-          "before": 67587,
-          "after": 68635,
-          "meta": {
-            "date": "2026-08-18"
-          }
-        },
-        {
-          "time": 1786962509510,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1482,
-          "before": 66105,
-          "after": 67587,
-          "meta": {
-            "travel_id": "msx05uu9-9rcnp54o",
-            "location_id": "bixi_ferry",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786959328166,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 20000,
-          "before": 86105,
-          "after": 66105,
-          "meta": {
-            "item_id": "travel_suitcase",
-            "count": 10
-          }
-        },
-        {
-          "time": 1786959311904,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 20000,
-          "before": 106105,
-          "after": 86105,
-          "meta": {
-            "item_id": "travel_checklist",
-            "count": 10
-          }
-        },
-        {
-          "time": 1786957162055,
+          "time": 1787027035112,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 105805,
-          "after": 106105,
+          "before": 90504,
+          "after": 90804,
           "meta": {
-            "skin_id": "hearts_turtle",
+            "skin_id": "ribbon_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 90204,
+          "after": 90504,
+          "meta": {
+            "skin_id": "drooling_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89904,
+          "after": 90204,
+          "meta": {
+            "skin_id": "crown_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89604,
+          "after": 89904,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89304,
+          "after": 89604,
+          "meta": {
+            "skin_id": "birthday_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 89004,
+          "after": 89304,
+          "meta": {
+            "skin_id": "birthday_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 88704,
+          "after": 89004,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 88404,
+          "after": 88704,
+          "meta": {
+            "skin_id": "starry_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787027035112,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 88104,
+          "after": 88404,
+          "meta": {
+            "skin_id": "birthday_turtle",
             "rarity": 3
           }
         }
@@ -1022,10 +1062,10 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-15"
+      "first_interaction_reward_date": "2026-08-18"
     },
     "items": {
-      "ruozhi_fate": 73,
+      "ruozhi_fate": 54,
       "nameless_ruozhi": 0,
       "food_elven_tart": 2,
       "travel_pager": 4,
@@ -1038,8 +1078,8 @@
       "food_ice_cream": 2,
       "food_grapes": 4,
       "food_popcorn": 3,
-      "food_donut": 3,
-      "food_bread": 3,
+      "food_donut": 4,
+      "food_bread": 5,
       "food_carrot": 2,
       "food_burger": 1,
       "food_pancake": 1,
@@ -1047,20 +1087,183 @@
       "food_dream_milk": 2,
       "souvenir_clockwork_leaf": 1,
       "food_comet_soda": 2,
-      "food_fried_chicken": 2,
+      "food_fried_chicken": 1,
       "food_fish": 2,
       "food_pizza": 3,
-      "food_curry": 2,
-      "food_apple": 1,
+      "food_curry": 1,
+      "food_apple": 0,
       "food_noodles": 2,
-      "travel_checklist": 8,
-      "travel_suitcase": 8,
+      "travel_checklist": 7,
+      "travel_suitcase": 7,
       "souvenir_water_sword_tassel": 1,
       "food_spirit_pill": 3,
       "food_rice_ball": 2,
       "souvenir_tidal_blue_shell": 1
     },
     "item_ledger": [
+      {
+        "time": 1787050816566,
+        "type": "expense",
+        "item_id": "travel_suitcase",
+        "amount": 1,
+        "before": 8,
+        "after": 7,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_suitcase"
+        }
+      },
+      {
+        "time": 1787036881940,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 51,
+        "after": 54,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_school_gate_1743"
+        }
+      },
+      {
+        "time": 1787036881939,
+        "type": "income",
+        "item_id": "food_bread",
+        "amount": 2,
+        "before": 3,
+        "after": 5,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-msybm7xe-4mowtirh",
+          "partner_user_id": "2818259462"
+        }
+      },
+      {
+        "time": 1787036881939,
+        "type": "income",
+        "item_id": "food_donut",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msy5wrea-c37o1w72",
+          "event_id": "event_dont_look_playground",
+          "location_id": "school_gate_1743"
+        }
+      },
+      {
+        "time": 1787036881937,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 45,
+        "after": 51,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msy5wrea-c37o1w72",
+          "location_id": "school_gate_1743"
+        }
+      },
+      {
+        "time": 1787027292077,
+        "type": "expense",
+        "item_id": "travel_checklist",
+        "amount": 1,
+        "before": 8,
+        "after": 7,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_checklist"
+        }
+      },
+      {
+        "time": 1787027035112,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 75,
+        "after": 45,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787027019026,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 105,
+        "after": 75,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787026950122,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 102,
+        "after": 105,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 3
+        }
+      },
+      {
+        "time": 1787026950122,
+        "type": "expense",
+        "item_id": "food_fried_chicken",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_fried_chicken",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787026944007,
+        "type": "expense",
+        "item_id": "food_curry",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_curry",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787026938481,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 29,
+        "before": 73,
+        "after": 102,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 61.139
+        }
+      },
+      {
+        "time": 1787026938481,
+        "type": "expense",
+        "item_id": "food_apple",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_apple",
+          "stage": "normal"
+        }
+      },
       {
         "time": 1787012225189,
         "type": "income",
@@ -1147,149 +1350,6 @@
         "meta": {
           "item_id": "travel_suitcase"
         }
-      },
-      {
-        "time": 1786986828975,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 52,
-        "after": 55,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_free_port"
-        }
-      },
-      {
-        "time": 1786986828974,
-        "type": "income",
-        "item_id": "food_noodles",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msxc0mv7-enkbimmy",
-          "event_id": "eld_event_shell_market",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1786986828969,
-        "type": "income",
-        "item_id": "souvenir_tidal_blue_shell",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msxc0mv7-enkbimmy",
-          "event_id": "eld_event_shell_market",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1786986828969,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 46,
-        "after": 52,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msxc0mv7-enkbimmy",
-          "location_id": "eld_free_port"
-        }
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_pizza",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_dumpling",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_bread",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_carrot",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_rice_ball",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_rice_ball",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733402,
-        "type": "income",
-        "item_id": "food_grapes",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786983733401,
-        "type": "income",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
       }
     ],
     "item_daily": {
@@ -1325,6 +1385,101 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787026950124,
+      "user_id": "2683578371",
+      "display_name": "宝宝我们不拯救世界了我们回家😭",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "它认真品尝完🍗炸鸡块，随后满足地蹭了蹭。",
+      "effects_text": "饱食+15，心情+4，好感+2，贡献+2，经验+12，升级到 Lv.3",
+      "effects": {
+        "satiety": 15,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [
+        {
+          "level": 3,
+          "need": 120
+        }
+      ],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [
+        {
+          "level": 3,
+          "reward": 300,
+          "receiver": {
+            "user_id": "2683578371",
+            "display_name": "宝宝我们不拯救世界了我们回家😭"
+          },
+          "special_rewards": [
+            {
+              "type": "unlock_skin",
+              "level": 3,
+              "skin_id": "beam_turtle",
+              "skin_name": "咧嘴小若汁",
+              "applied": true
+            }
+          ]
+        }
+      ],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787026944009,
+      "user_id": "2683578371",
+      "display_name": "宝宝我们不拯救世界了我们回家😭",
+      "event_id": "feed",
+      "branch_id": "hungry",
+      "summary": "小若汁尝了一口🍛香浓咖喱饭就露出满足的表情。",
+      "effects_text": "饱食+16，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 16,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787026938481,
+      "user_id": "2683578371",
+      "display_name": "宝宝我们不拯救世界了我们回家😭",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁闻到香味就凑过来，把🍎脆苹果吃得很认真。",
+      "effects_text": "饱食+7，心情+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 7,
+        "mood": 2,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 80404
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 29
+    },
     {
       "time": 1786725440353,
       "user_id": "2683578371",
@@ -1517,9 +1672,9 @@
     }
   ],
   "daily": {
-    "date": "2026-08-15",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "date": "2026-08-18",
+    "event_count": 3,
+    "bonus_event_count": 3
   },
   "processed_messages": {
     "event:334870394": 1785430512014,
@@ -1528,7 +1683,10 @@
     "event:278678645": 1786725422370,
     "event:1597430524": 1786725425946,
     "event:32342113": 1786725430444,
-    "event:388197001": 1786725440353
+    "event:388197001": 1786725440353,
+    "event:1674351133": 1787026938481,
+    "event:1714025041": 1787026944007,
+    "event:1480530205": 1787026950122
   },
   "skin_sessions": {
     "active": null
@@ -1541,22 +1699,29 @@
     "migrated_at": 1784791767626
   },
   "created_at": 1784791767626,
-  "updated_at": 1787012225624,
+  "updated_at": 1787051129481,
   "production": {
     "started_at": 1784887563456,
-    "last_settled_at": 1787012225624,
-    "accumulated_ms": 205388984,
-    "progress": 27.822484370983446,
-    "total_produced": 158,
-    "last_collected_at": 1786806836640
+    "last_settled_at": 1787051129481,
+    "accumulated_ms": 24191000,
+    "progress": 4.516001378639429,
+    "total_produced": 187,
+    "last_collected_at": 1787026938481
   },
   "gacha": {
-    "since_four_plus": 2,
-    "since_five": 70,
-    "total_draws": 152,
-    "total_four": 18,
-    "total_five": 1,
+    "since_four_plus": 8,
+    "since_five": 8,
+    "total_draws": 172,
+    "total_four": 19,
+    "total_five": 2,
     "five_history": [
+      {
+        "time": 1787027035112,
+        "skin_id": "qingshan_turtle",
+        "skin_name": "倾山小若汁",
+        "pulls": 82,
+        "draw_index": 164
+      },
       {
         "time": 1786549798586,
         "skin_id": "rongyin_turtle",
@@ -1565,7 +1730,7 @@
         "draw_index": 82
       }
     ],
-    "route_misses": 0,
+    "route_misses": 1,
     "route_skin_id": "yaya_turtle"
   },
   "travel": {
@@ -1588,7 +1753,8 @@
       "popping_candy_beach",
       "bixi_ferry",
       "eld_free_port",
-      "rtc_aurora_station"
+      "rtc_aurora_station",
+      "school_gate_1743"
     ],
     "location_records": {
       "rtc_atomic_mall": {
@@ -1742,6 +1908,14 @@
         "travel_id": "msxqw8eu-tyxgia6k",
         "time": 1787012225188,
         "carried_item_id": "travel_suitcase"
+      },
+      "school_gate_1743": {
+        "id": "school_gate_1743",
+        "map_id": "unregistered_district",
+        "name": "永远放学的校门",
+        "travel_id": "msy5wrea-c37o1w72",
+        "time": 1787036881937,
+        "carried_item_id": "travel_checklist"
       }
     },
     "event_records": {
@@ -1842,6 +2016,13 @@
         "location_id": "rtc_aurora_station",
         "travel_id": "msxqw8eu-tyxgia6k",
         "time": 1787012225188
+      },
+      "event_dont_look_playground": {
+        "id": "event_dont_look_playground",
+        "map_id": "unregistered_district",
+        "location_id": "school_gate_1743",
+        "travel_id": "msy5wrea-c37o1w72",
+        "time": 1787036881937
       }
     },
     "souvenir_records": {
@@ -2293,9 +2474,126 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_school_gate_1743": {
+        "id": "ach_school_gate_1743",
+        "name": "发现永远放学的校门",
+        "rarity": 3,
+        "time": 1787036881940,
+        "actor_name": "宝宝我们不拯救世界了我们回家😭",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "msy5wrea-c37o1w72": {
+        "id": "msy5wrea-c37o1w72",
+        "user_id": "2683578371",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "宝宝我们不拯救世界了我们回家😭",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "school_gate_1743",
+        "location_name": "永远放学的校门",
+        "duration_ms": 9589838,
+        "rewards": {
+          "coin": 2664,
+          "fate": 6,
+          "experience": 5
+        },
+        "event": {
+          "id": "event_dont_look_playground",
+          "name": "不要回头看操场",
+          "text": "告示要求离校者不要回头。小若汁走到街角才偷看，操场上所有秋千都朝它的方向缓慢摆动。",
+          "effects": {
+            "fate_flat": 1,
+            "mood": -1
+          },
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_donut",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-msybm7xe-4mowtirh",
+          "time": 1787036877986,
+          "map_id": "unregistered_district",
+          "map_name": "未登记城区",
+          "text": "它们聊起刚才做过的梦，发现梦里都有一条怎么走也走不完的放学路。",
+          "reward": {
+            "id": "food_bread",
+            "type": "item",
+            "item_id": "food_bread",
+            "name": "松软面包",
+            "amount": 2,
+            "reward_text": "松软面包×2"
+          },
+          "status": "pending",
+          "partner_user_id": "2818259462",
+          "partner_display_name": "不愿看到优秀ic·alter被埋没",
+          "reward_text": "松软面包×2"
+        },
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_donut",
+            "name": "糖霜甜甜圈",
+            "emoji": "🍩",
+            "description": "甜得让龟壳都发亮。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 12,
+              "mood": 4,
+              "weight_gain": 5
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "永远放学的校门",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_school_gate_1743",
+            "name": "发现永远放学的校门",
+            "rarity": 3,
+            "time": 1787036881940,
+            "actor_name": "宝宝我们不拯救世界了我们回家😭",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现永远放学的校门」 ★★★"
+          }
+        ],
+        "mood_change": -1,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787036881942,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：2小时40分钟\n获得：2664若汁币，若汁之缘×6，经验+5\n携带道具：旅行清单\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们聊起刚才做过的梦，发现梦里都有一条怎么走也走不完的放学路。\n偶遇奖励：松软面包×2\n旅行事件：不要回头看操场\n告示要求离校者不要回头。小若汁走到街角才偷看，操场上所有秋千都朝它的方向缓慢摆动。\n这段经历让小若汁有些不安，心情-1\n食物：🍩糖霜甜甜圈×1\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★"
+      },
       "msxqw8eu-tyxgia6k": {
         "id": "msxqw8eu-tyxgia6k",
         "user_id": "2683578371",
@@ -3760,57 +4058,22 @@
         "settled_at": 1786227214311,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：2小时34分钟\n获得：2570若汁币，若汁之缘×7，经验+5\n旅行事件：雾中灯火\n一盏紫色灯火带小若汁走出沼泽。\n新地点已解锁：哭泣沼泽\n达成旅行成就「发现哭泣沼泽」 ★★★"
-      },
-      "mskqxftd-06qlzsma": {
-        "id": "mskqxftd-06qlzsma",
-        "user_id": "2683578371",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "宝宝我们不拯救世界了我们回家😭",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_magic_academy",
-        "location_name": "苍蓝魔法学院",
-        "duration_ms": 1238931,
-        "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "苍蓝魔法学院",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_eld_magic_academy",
-            "name": "发现苍蓝魔法学院",
-            "rarity": 3,
-            "time": 1786217308154,
-            "actor_name": "宝宝我们不拯救世界了我们回家😭",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现苍蓝魔法学院」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786217308155,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：21分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msy5wrea-c37o1w72",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2683578371",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：2小时40分钟\n获得：2664若汁币，若汁之缘×6，经验+5\n携带道具：旅行清单\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们聊起刚才做过的梦，发现梦里都有一条怎么走也走不完的放学路。\n偶遇奖励：松软面包×2\n旅行事件：不要回头看操场\n告示要求离校者不要回头。小若汁走到街角才偷看，操场上所有秋千都朝它的方向缓慢摆动。\n这段经历让小若汁有些不安，心情-1\n食物：🍩糖霜甜甜圈×1\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787036881942,
+        "created_at": 1787036881942,
+        "sent_at": 1787036882519,
+        "last_error": ""
+      },
       {
         "travel_id": "msxqw8eu-tyxgia6k",
         "group_id": "415462812",
@@ -4057,28 +4320,15 @@
         "created_at": 1786227214311,
         "sent_at": 1786227214802,
         "last_error": ""
-      },
-      {
-        "travel_id": "mskqxftd-06qlzsma",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2683578371",
-        "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：21分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：苍蓝魔法学院\n达成旅行成就「发现苍蓝魔法学院」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786217308155,
-        "created_at": 1786217308155,
-        "sent_at": 1786217308645,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 25,
+      "total_trips": 26,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 6,
         "eldoran_continent": 6,
-        "unregistered_district": 4,
+        "unregistered_district": 5,
         "four_regions_little_world": 1,
         "candy_dreamland": 2
       },
@@ -4099,7 +4349,8 @@
         },
         "unregistered_district": {
           "event_expired_before_childhood": 1,
-          "event_underwater_broadcast": 1
+          "event_underwater_broadcast": 1,
+          "event_dont_look_playground": 1
         },
         "candy_dreamland": {
           "cotton_sugar_path": 1
@@ -4122,16 +4373,59 @@
         "event_underwater_broadcast": 1,
         "underwater_sword": 1,
         "eld_event_shell_market": 1,
-        "rtc_event_forecast_reward": 1
+        "rtc_event_forecast_reward": 1,
+        "event_dont_look_playground": 1
       },
       "encounter_reward_types": {
         "travel_pager": 1,
         "food_cake": 1,
-        "currency": 1
+        "currency": 1,
+        "food_bread": 1
       },
-      "total_encounters": 8
+      "total_encounters": 9
     },
-    "active": null,
+    "active": {
+      "id": "msyjwz0d-l6dkrg7z",
+      "user_id": "2683578371",
+      "display_name": "宝宝我们不拯救世界了我们回家😭",
+      "group_id": "415462812",
+      "self_id": "3874871823",
+      "started_at": 1787050816573,
+      "ends_at": 1787057612015,
+      "duration_ms": 6795442,
+      "map_id": "alvita",
+      "map_name": "阿尔维塔",
+      "location_id": "old_town",
+      "location_name": "旧城区",
+      "was_unlocked": false,
+      "carried_item_id": "travel_suitcase",
+      "carried_item_name": "行李箱",
+      "event": null,
+      "rewards": {
+        "coin": 2115,
+        "fate": 4,
+        "experience": 4
+      },
+      "encounter": {
+        "id": "encounter-msyk3og7-z5f252ab",
+        "time": 1787051129479,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "encounter_robot_rest",
+        "text": "充电站旁的机器人正在讨论人类为什么总在下班前五分钟下单。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "travel-shop-pager-1787051129204-szvved",
+        "partner_display_name": "Tester"
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mst67y6y-wrbq7e1l": {
@@ -4287,6 +4581,44 @@
         "partner_user_id": "2069743095",
         "partner_display_name": "瀛",
         "settled_at": 1786986828974
+      },
+      "encounter-msybm7xe-4mowtirh": {
+        "id": "encounter-msybm7xe-4mowtirh",
+        "time": 1787036877986,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "text": "它们聊起刚才做过的梦，发现梦里都有一条怎么走也走不完的放学路。",
+        "reward": {
+          "id": "food_bread",
+          "type": "item",
+          "item_id": "food_bread",
+          "name": "松软面包",
+          "amount": 2,
+          "reward_text": "松软面包×2"
+        },
+        "status": "settled",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "不愿看到优秀ic·alter被埋没",
+        "settled_at": 1787036881939
+      },
+      "encounter-msyk3og7-z5f252ab": {
+        "id": "encounter-msyk3og7-z5f252ab",
+        "time": 1787051129479,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "encounter_robot_rest",
+        "text": "充电站旁的机器人正在讨论人类为什么总在下班前五分钟下单。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "pending",
+        "partner_user_id": "travel-shop-pager-1787051129204-szvved",
+        "partner_display_name": "Tester"
       }
     }
   }

@@ -3,12 +3,12 @@
   "user_id": "2213304613",
   "pet": {
     "level": 2,
-    "experience": 59,
+    "experience": 64,
     "satiety": 5,
-    "mood": 99,
+    "mood": 100,
     "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786986793356,
+    "satiety_decay_at": 1787050603546,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -85,7 +85,7 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 223,
+      "counter:gacha_draws": 233,
       "counter:gacha_five": 3,
       "counter:gacha_unlucky_five": 1
     },
@@ -276,6 +276,21 @@
         "name": "地图上不存在的地点",
         "rarity": 3,
         "time": 1786962430832,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1787034730815,
         "actor_name": "骛雍",
         "rewards": [
           {
@@ -615,9 +630,9 @@
       "snow_peak_turtle": 1,
       "world_devourer_turtle": 0
     },
-    "weight": 44,
-    "weight_decay_at": 1786969929584,
-    "health_decay_at": 1786986793356
+    "weight": 43,
+    "weight_decay_at": 1787013129584,
+    "health_decay_at": 1787050603546
   },
   "profile": {
     "favorability": 40,
@@ -625,7 +640,7 @@
     "total_contribution": 37,
     "last_display_name": "骛雍",
     "first_joined_at": 1785862100287,
-    "last_active_at": 1786986793356,
+    "last_active_at": 1787050603546,
     "daily": {
       "date": "2026-08-18",
       "event_count": 0,
@@ -636,33 +651,237 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 32,
+      "ruozhi_fate": 35,
       "nameless_ruozhi": 1,
-      "travel_suitcase": 1,
+      "travel_suitcase": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 1,
       "souvenir_wheat_old_coin": 1,
       "food_grapes": 7,
-      "food_donut": 5,
-      "food_popcorn": 4,
+      "food_donut": 6,
+      "food_popcorn": 5,
       "food_cake": 2,
       "food_bread": 5,
-      "food_burger": 4,
-      "food_leaf_salad": 2,
+      "food_burger": 5,
+      "food_leaf_salad": 4,
       "food_fish": 4,
       "food_milk_tea": 1,
       "food_pancake": 4,
       "food_pizza": 3,
       "food_apple": 2,
-      "food_fried_chicken": 2,
-      "food_noodles": 3,
-      "food_carrot": 1,
+      "food_fried_chicken": 3,
+      "food_noodles": 4,
+      "food_carrot": 2,
       "food_spirit_pill": 3,
-      "food_sandwich": 2,
-      "food_rice_ball": 2,
-      "souvenir_handless_nap_clock": 1
+      "food_sandwich": 4,
+      "food_rice_ball": 3,
+      "souvenir_handless_nap_clock": 1,
+      "food_ice_cream": 1,
+      "souvenir_cultivation_paper": 1
     },
     "item_ledger": [
+      {
+        "time": 1787034730815,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 32,
+        "after": 35,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_qing_he_town"
+        }
+      },
+      {
+        "time": 1787034730812,
+        "type": "income",
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msy4qbuz-0z12xx0p",
+          "event_id": "sect_rumors",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1787034730807,
+        "type": "income",
+        "item_id": "souvenir_cultivation_paper",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msy4qbuz-0z12xx0p",
+          "event_id": "sect_rumors",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1787034730805,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 27,
+        "after": 32,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msy4qbuz-0z12xx0p",
+          "location_id": "qing_he_town"
+        }
+      },
+      {
+        "time": 1787025312387,
+        "type": "expense",
+        "item_id": "travel_suitcase",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_suitcase"
+        }
+      },
+      {
+        "time": 1787025290306,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 57,
+        "after": 27,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_popcorn",
+        "amount": 1,
+        "before": 4,
+        "after": 5,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_noodles",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_sandwich",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_fried_chicken",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_ice_cream",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_donut",
+        "amount": 1,
+        "before": 5,
+        "after": 6,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_leaf_salad",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_leaf_salad",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_sandwich",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280737,
+        "type": "income",
+        "item_id": "food_burger",
+        "amount": 1,
+        "before": 4,
+        "after": 5,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787025280735,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 25,
+        "before": 32,
+        "after": 57,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-08-18",
+          "month_count": 14,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
       {
         "time": 1786962430832,
         "type": "income",
@@ -686,206 +905,6 @@
         "meta": {
           "achievement_id": "ach_nap_park"
         }
-      },
-      {
-        "time": 1786962430830,
-        "type": "income",
-        "item_id": "souvenir_handless_nap_clock",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msx13sae-el3lb4an",
-          "event_id": "event_three_pm_shadow",
-          "location_id": "nap_park"
-        }
-      },
-      {
-        "time": 1786962430829,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 23,
-        "after": 26,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msx13sae-el3lb4an",
-          "location_id": "nap_park"
-        }
-      },
-      {
-        "time": 1786958755565,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1786958738899,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 13,
-        "before": 10,
-        "after": 23,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 28.368
-        }
-      },
-      {
-        "time": 1786922706461,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 40,
-        "after": 10,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786922690814,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 70,
-        "after": 40,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_grapes",
-        "amount": 1,
-        "before": 6,
-        "after": 7,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_grapes",
-        "amount": 1,
-        "before": 5,
-        "after": 6,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_rice_ball",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_rice_ball",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_sandwich",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_pancake",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686403,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786922686402,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 27,
-        "before": 43,
-        "after": 70,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-17",
-          "month_count": 13,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
       }
     ],
     "item_daily": {
@@ -906,134 +925,135 @@
       }
     },
     "currency": {
-      "balance": 58272,
-      "total_earned": 148272,
+      "balance": 70012,
+      "total_earned": 160012,
       "total_spent": 90000,
       "ledger": [
         {
-          "time": 1786962430831,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 398,
-          "before": 57874,
-          "after": 58272,
-          "meta": {
-            "encounter_id": "encounter-msx1megr-btkrpkmc",
-            "partner_user_id": "1244785897"
-          }
-        },
-        {
-          "time": 1786962430829,
+          "time": 1787034730805,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 1144,
-          "before": 56730,
-          "after": 57874,
+          "amount": 2930,
+          "before": 67082,
+          "after": 70012,
           "meta": {
-            "travel_id": "msx13sae-el3lb4an",
-            "location_id": "nap_park",
+            "travel_id": "msy4qbuz-0z12xx0p",
+            "location_id": "qing_he_town",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1786958738900,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 56230,
-          "after": 56730,
-          "meta": {
-            "date": "2026-08-17"
-          }
-        },
-        {
-          "time": 1786922706461,
+          "time": 1787025290307,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 55930,
-          "after": 56230,
-          "meta": {
-            "skin_id": "drooling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786922706461,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 50930,
-          "after": 55930,
-          "meta": {
-            "skin_id": "cat_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1786922706461,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 50630,
-          "after": 50930,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786922706461,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 50330,
-          "after": 50630,
-          "meta": {
-            "skin_id": "hearts_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786922706461,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 50030,
-          "after": 50330,
+          "before": 66782,
+          "after": 67082,
           "meta": {
             "skin_id": "nerd_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786922706461,
+          "time": 1787025290307,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 49730,
-          "after": 50030,
+          "before": 66482,
+          "after": 66782,
           "meta": {
-            "skin_id": "ribbon_turtle",
+            "skin_id": "raised_eyebrow_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786922706461,
+          "time": 1787025290307,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 49430,
-          "after": 49730,
+          "before": 66182,
+          "after": 66482,
+          "meta": {
+            "skin_id": "hearts_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 65882,
+          "after": 66182,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 65582,
+          "after": 65882,
+          "meta": {
+            "skin_id": "puppy_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 65282,
+          "after": 65582,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 64982,
+          "after": 65282,
           "meta": {
             "skin_id": "rolling_laugh_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 64682,
+          "after": 64982,
+          "meta": {
+            "skin_id": "tear_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787025290307,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 64382,
+          "after": 64682,
+          "meta": {
+            "skin_id": "parachute_turtle",
             "rarity": 3
           }
         }
       ],
       "sign": {
-        "last_date": "2026-08-17",
-        "total_count": 13,
+        "last_date": "2026-08-18",
+        "total_count": 14,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
@@ -1054,13 +1074,14 @@
         "2026-08-14",
         "2026-08-15",
         "2026-08-16",
-        "2026-08-17"
+        "2026-08-17",
+        "2026-08-18"
       ]
     },
     "food_sign_backfill": {
       "month": "2026-08",
-      "dates": 13,
-      "time": 1786922686403
+      "dates": 14,
+      "time": 1787025280737
     }
   },
   "recent_events": [
@@ -1348,20 +1369,20 @@
     "migrated_at": 1785862100287
   },
   "created_at": 1785862100287,
-  "updated_at": 1786986793356,
+  "updated_at": 1787050603546,
   "production": {
     "started_at": 1785862100287,
-    "last_settled_at": 1786986793356,
-    "accumulated_ms": 28054457,
-    "progress": 4.755293702731301,
+    "last_settled_at": 1787050603546,
+    "accumulated_ms": 91864647,
+    "progress": 13.391395561853919,
     "total_produced": 139,
     "last_collected_at": 1786958738899
   },
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 51,
-    "total_draws": 223,
-    "total_four": 32,
+    "since_four_plus": 9,
+    "since_five": 61,
+    "total_draws": 233,
+    "total_four": 33,
     "total_five": 3,
     "five_history": [
       {
@@ -1394,7 +1415,8 @@
       "eld_adventurer_guild",
       "eld_windmill_plain",
       "spirit_wheat_plain",
-      "nap_park"
+      "nap_park",
+      "qing_he_town"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1428,6 +1450,14 @@
         "travel_id": "msx13sae-el3lb4an",
         "time": 1786962430830,
         "carried_item_id": "travel_suitcase"
+      },
+      "qing_he_town": {
+        "id": "qing_he_town",
+        "map_id": "four_regions_little_world",
+        "name": "青禾镇",
+        "travel_id": "msy4qbuz-0z12xx0p",
+        "time": 1787034730807,
+        "carried_item_id": "travel_suitcase"
       }
     },
     "event_records": {
@@ -1458,6 +1488,13 @@
         "location_id": "nap_park",
         "travel_id": "msx13sae-el3lb4an",
         "time": 1786962430830
+      },
+      "sect_rumors": {
+        "id": "sect_rumors",
+        "map_id": "four_regions_little_world",
+        "location_id": "qing_he_town",
+        "travel_id": "msy4qbuz-0z12xx0p",
+        "time": 1787034730807
       }
     },
     "souvenir_records": {
@@ -1488,6 +1525,13 @@
         "event_id": "event_three_pm_shadow",
         "location_id": "nap_park",
         "time": 1786962430830
+      },
+      "souvenir_cultivation_paper": {
+        "id": "souvenir_cultivation_paper",
+        "name": "真假各半的修真小报",
+        "event_id": "sect_rumors",
+        "location_id": "qing_he_town",
+        "time": 1787034730807
       }
     },
     "achievement_records": {
@@ -1586,6 +1630,21 @@
         "name": "地图上不存在的地点",
         "rarity": 3,
         "time": 1786962430832,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_qing_he_town": {
+        "id": "ach_qing_he_town",
+        "name": "发现青禾镇",
+        "rarity": 3,
+        "time": 1787034730815,
         "actor_name": "骛雍",
         "rewards": [
           {
@@ -2009,9 +2068,120 @@
         "settled_at": 1786962430833,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：1小时1分钟\n获得：1144若汁币，若汁之缘×3，经验+2\n携带道具：行李箱\n小若汁偶遇了穗穗一时性起的小若汁，它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。\n偶遇奖励：398若汁币\n旅行事件：下午三点的影子\n所有影子都指向同一棵树。树洞里传出没有按钮可以关闭的闹钟声。\n这段经历让小若汁有些不安，心情-1\n纪念品：⏰没有指针的午睡钟×1\n新地点已解锁：午睡公园\n达成旅行成就「发现午睡公园」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "msy4qbuz-0z12xx0p": {
+        "id": "msy4qbuz-0z12xx0p",
+        "user_id": "2213304613",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "骛雍",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "qing_he_town",
+        "location_name": "青禾镇",
+        "duration_ms": 9418379,
+        "rewards": {
+          "coin": 2930,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "sect_rumors",
+          "name": "茶馆宗门传闻",
+          "text": "两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。",
+          "effects": {
+            "mood": 3
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_cultivation_paper",
+              "name": "真假各半的修真小报",
+              "emoji": "📰",
+              "description": "旅行纪念品「真假各半的修真小报」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_rice_ball",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_cultivation_paper",
+            "name": "真假各半的修真小报",
+            "emoji": "📰",
+            "description": "旅行纪念品「真假各半的修真小报」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_rice_ball",
+            "name": "暖饭团",
+            "emoji": "🍙",
+            "description": "朴素又顶饿的饭团。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 12,
+              "mood": 3,
+              "weight_gain": 3
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "青禾镇",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_qing_he_town",
+            "name": "发现青禾镇",
+            "rarity": 3,
+            "time": 1787034730815,
+            "actor_name": "骛雍",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现青禾镇」 ★★★"
+          }
+        ],
+        "mood_change": 1,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787034730816,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时37分钟\n获得：2930若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n旅行事件：茶馆宗门传闻\n两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。\n本次状态变化：心情+1\n食物：🍙暖饭团×1\n纪念品：📰真假各半的修真小报×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msy4qbuz-0z12xx0p",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "2213304613",
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时37分钟\n获得：2930若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n旅行事件：茶馆宗门传闻\n两桌修士争论玄剑宗传说，瓜子却被小若汁吃完。\n本次状态变化：心情+1\n食物：🍙暖饭团×1\n纪念品：📰真假各半的修真小报×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787034730817,
+        "created_at": 1787034730817,
+        "sent_at": 1787034731282,
+        "last_error": ""
+      },
       {
         "travel_id": "msx13sae-el3lb4an",
         "group_id": "464519950",
@@ -2066,13 +2236,13 @@
       }
     ],
     "stats": {
-      "total_trips": 4,
+      "total_trips": 5,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
         "eldoran_continent": 2,
         "unregistered_district": 1,
-        "four_regions_little_world": 1,
+        "four_regions_little_world": 2,
         "candy_dreamland": 0
       },
       "map_event_ids": {
@@ -2081,7 +2251,8 @@
           "eld_event_haystack_coin": 1
         },
         "four_regions_little_world": {
-          "tail_in_wheat": 1
+          "tail_in_wheat": 1,
+          "sect_rumors": 1
         },
         "unregistered_district": {
           "event_three_pm_shadow": 1
@@ -2091,7 +2262,8 @@
         "eld_event_border_quest": 1,
         "eld_event_haystack_coin": 1,
         "tail_in_wheat": 1,
-        "event_three_pm_shadow": 1
+        "event_three_pm_shadow": 1,
+        "sect_rumors": 1
       },
       "encounter_reward_types": {
         "currency": 1

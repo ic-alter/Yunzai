@@ -3,12 +3,12 @@
   "user_id": "844205633",
   "pet": {
     "level": 2,
-    "experience": 39,
+    "experience": 44,
     "satiety": 5,
     "mood": 66,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787019947559,
+    "satiety_decay_at": 1787050603605,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -899,7 +899,7 @@
     },
     "weight": 43,
     "weight_decay_at": 1787013129688,
-    "health_decay_at": 1787019947559
+    "health_decay_at": 1787050603605
   },
   "profile": {
     "favorability": 0,
@@ -907,7 +907,7 @@
     "total_contribution": 0,
     "last_display_name": "鸣式·「椰和滑」",
     "first_joined_at": 1784803173103,
-    "last_active_at": 1787019947559,
+    "last_active_at": 1787050603605,
     "daily": {
       "date": "2026-08-18",
       "event_count": 0,
@@ -918,10 +918,35 @@
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 57153,
-      "total_earned": 137153,
+      "balance": 59898,
+      "total_earned": 139898,
       "total_spent": 80000,
       "ledger": [
+        {
+          "time": 1787028768642,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 177,
+          "before": 59721,
+          "after": 59898,
+          "meta": {
+            "encounter_id": "encounter-msy1jcbq-k8av6u60",
+            "partner_user_id": "1539756040"
+          }
+        },
+        {
+          "time": 1787028768641,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2568,
+          "before": 57153,
+          "after": 59721,
+          "meta": {
+            "travel_id": "msy1a8jr-vds3088z",
+            "location_id": "eld_dwarf_city",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787019542709,
           "type": "income",
@@ -1019,30 +1044,6 @@
             "skin_id": "sneaker_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786957016690,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 53098,
-          "after": 53398,
-          "meta": {
-            "skin_id": "sparkling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786894862304,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 211,
-          "before": 52887,
-          "after": 53098,
-          "meta": {
-            "encounter_id": "encounter-msvv11qy-obm2hsgi",
-            "partner_user_id": "1256806998"
-          }
         }
       ],
       "sign": {
@@ -1054,14 +1055,14 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 5,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
       "souvenir_atomic_child_sunglasses": 1,
       "souvenir_sun_chart": 1,
       "souvenir_paper_visitor_crown": 1,
-      "souvenir_heavy_dwarf_spoon": 1,
+      "souvenir_heavy_dwarf_spoon": 2,
       "souvenir_shell_snowman_photo": 1,
       "souvenir_stranger_wedding_photo": 1,
       "souvenir_waiting_bear_tag": 1,
@@ -1073,6 +1074,33 @@
       "souvenir_driverless_car_card": 1
     },
     "item_ledger": [
+      {
+        "time": 1787028768642,
+        "type": "income",
+        "item_id": "souvenir_heavy_dwarf_spoon",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msy1a8jr-vds3088z",
+          "event_id": "eld_event_heavy_spoon",
+          "location_id": "eld_dwarf_city"
+        }
+      },
+      {
+        "time": 1787028768641,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 0,
+        "after": 5,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msy1a8jr-vds3088z",
+          "location_id": "eld_dwarf_city"
+        }
+      },
       {
         "time": 1787019542709,
         "type": "expense",
@@ -1297,32 +1325,6 @@
         "meta": {
           "achievement_id": "ach_rtc_waste_factory"
         }
-      },
-      {
-        "time": 1786566922826,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 56,
-        "after": 58,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msqi5v23-pn3wja3g",
-          "location_id": "rtc_waste_factory"
-        }
-      },
-      {
-        "time": 1786560762237,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 50,
-        "after": 56,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msqacyf1-xi5clo3n",
-          "location_id": "rtc_robot_park"
-        }
       }
     ],
     "item_daily": {
@@ -1359,7 +1361,7 @@
     "migrated_at": 1784803173103
   },
   "created_at": 1784803173103,
-  "updated_at": 1787019947559,
+  "updated_at": 1787050603605,
   "gacha": {
     "since_four_plus": 7,
     "since_five": 23,
@@ -1394,7 +1396,7 @@
   },
   "production": {
     "started_at": 1784876695884,
-    "last_settled_at": 1787019947559,
+    "last_settled_at": 1787050603605,
     "accumulated_ms": 259200000,
     "progress": 28.548758587470452,
     "total_produced": 0
@@ -1660,8 +1662,8 @@
         "id": "eld_event_heavy_spoon",
         "map_id": "eldoran_continent",
         "location_id": "eld_dwarf_city",
-        "travel_id": "msgfsht7-wwkmo5bw",
-        "time": 1785956768127
+        "travel_id": "msy1a8jr-vds3088z",
+        "time": 1787028768642
       },
       "eld_event_snowman_shell": {
         "id": "eld_event_snowman_shell",
@@ -1803,7 +1805,7 @@
         "name": "超重矮人汤勺",
         "event_id": "eld_event_heavy_spoon",
         "location_id": "eld_dwarf_city",
-        "time": 1785956768127
+        "time": 1787028768642
       },
       "souvenir_shell_snowman_photo": {
         "id": "souvenir_shell_snowman_photo",
@@ -2337,6 +2339,81 @@
       }
     },
     "settlements": {
+      "msy1a8jr-vds3088z": {
+        "id": "msy1a8jr-vds3088z",
+        "user_id": "844205633",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "鸣式·「椰和滑」",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_dwarf_city",
+        "location_name": "铁砧矮人城",
+        "duration_ms": 9245859,
+        "rewards": {
+          "coin": 2568,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "eld_event_heavy_spoon",
+          "name": "矮人汤勺",
+          "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_heavy_dwarf_spoon",
+              "name": "超重矮人汤勺",
+              "emoji": "🥄",
+              "description": "旅行纪念品「超重矮人汤勺」。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-msy1jcbq-k8av6u60",
+          "time": 1787019947558,
+          "map_id": "eldoran_continent",
+          "map_name": "艾尔多兰大陆",
+          "text": "它们躺在路边看云，把每一朵都认成了会飞的菜叶。",
+          "reward": {
+            "id": "coin_medium",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 100,
+            "max_amount": 200,
+            "amount": 177,
+            "reward_text": "177若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "1539756040",
+          "partner_display_name": "菲八啾比",
+          "reward_text": "177若汁币"
+        },
+        "souvenirs": [
+          {
+            "id": "souvenir_heavy_dwarf_spoon",
+            "name": "超重矮人汤勺",
+            "emoji": "🥄",
+            "description": "旅行纪念品「超重矮人汤勺」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787028768647,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：2小时34分钟\n获得：2568若汁币，若汁之缘×5，经验+5\n小若汁偶遇了菲八啾比的小若汁，它们躺在路边看云，把每一朵都认成了会飞的菜叶。\n偶遇奖励：177若汁币\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1"
+      },
       "msxlom6e-ecgm1hel": {
         "id": "msxlom6e-ecgm1hel",
         "user_id": "844205633",
@@ -3342,62 +3419,22 @@
         "settled_at": 1786196910893,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：翡翠精灵森林（艾尔多兰大陆）\n旅行时间：1小时56分钟\n获得：1938若汁币，若汁之缘×6，经验+4\n旅行事件：森林礼物\n小若汁归还迷路的小精灵，收到一枚会发微光的叶片。\n纪念品：🍃翡翠光叶×1\n新地点已解锁：翡翠精灵森林\n达成旅行成就「发现翡翠精灵森林」 ★★★\n达成旅行成就「王国、精灵与矮人」 ★★★"
-      },
-      "msk5yqxx-g7pcyfa9": {
-        "id": "msk5yqxx-g7pcyfa9",
-        "user_id": "844205633",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "散樗",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "forgotten_family_restaurant",
-        "location_name": "被遗忘的家庭餐厅",
-        "duration_ms": 8412606,
-        "rewards": {
-          "coin": 2337,
-          "fate": 4,
-          "experience": 5
-        },
-        "event": {
-          "id": "event_kids_meal_memory",
-          "name": "儿童套餐附赠回忆",
-          "text": "餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。",
-          "effects": {},
-          "souvenirs": [
-            {
-              "id": "souvenir_forgotten_flavor_pudding_cup",
-              "name": "记不起味道的布丁杯",
-              "emoji": "🍮",
-              "description": "杯底写着“谢谢你那天来过”。"
-            }
-          ],
-          "record": false
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_forgotten_flavor_pudding_cup",
-            "name": "记不起味道的布丁杯",
-            "emoji": "🍮",
-            "description": "杯底写着“谢谢你那天来过”。",
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786189270966,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时20分钟\n获得：2337若汁币，若汁之缘×4，经验+5\n旅行事件：儿童套餐附赠回忆\n餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。\n纪念品：🍮记不起味道的布丁杯×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msy1a8jr-vds3088z",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "844205633",
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：2小时34分钟\n获得：2568若汁币，若汁之缘×5，经验+5\n小若汁偶遇了菲八啾比的小若汁，它们躺在路边看云，把每一朵都认成了会飞的菜叶。\n偶遇奖励：177若汁币\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787028768647,
+        "created_at": 1787028768647,
+        "sent_at": 1787028769142,
+        "last_error": ""
+      },
       {
         "travel_id": "msxlom6e-ecgm1hel",
         "group_id": "415462812",
@@ -3644,23 +3681,10 @@
         "created_at": 1786196910893,
         "sent_at": 1786196911372,
         "last_error": ""
-      },
-      {
-        "travel_id": "msk5yqxx-g7pcyfa9",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "844205633",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时20分钟\n获得：2337若汁币，若汁之缘×4，经验+5\n旅行事件：儿童套餐附赠回忆\n餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。\n纪念品：🍮记不起味道的布丁杯×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786189270966,
-        "created_at": 1786189270966,
-        "sent_at": 1786189271449,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 37,
+      "total_trips": 38,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -3733,65 +3757,9 @@
       "encounter_reward_types": {
         "currency": 1
       },
-      "total_encounters": 1
+      "total_encounters": 2
     },
-    "active": {
-      "id": "msy1a8jr-vds3088z",
-      "user_id": "844205633",
-      "display_name": "鸣式·「椰和滑」",
-      "group_id": "415462812",
-      "self_id": "3874871823",
-      "started_at": 1787019522759,
-      "ends_at": 1787028768618,
-      "duration_ms": 9245859,
-      "map_id": "eldoran_continent",
-      "map_name": "艾尔多兰大陆",
-      "location_id": "eld_dwarf_city",
-      "location_name": "铁砧矮人城",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "eld_event_heavy_spoon",
-        "name": "矮人汤勺",
-        "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
-        "effects": {},
-        "souvenirs": [
-          {
-            "id": "souvenir_heavy_dwarf_spoon",
-            "name": "超重矮人汤勺",
-            "emoji": "🥄",
-            "description": "旅行纪念品「超重矮人汤勺」。"
-          }
-        ],
-        "items": [],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2568,
-        "fate": 5,
-        "experience": 5
-      },
-      "encounter": {
-        "id": "encounter-msy1jcbq-k8av6u60",
-        "time": 1787019947558,
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "text": "它们躺在路边看云，把每一朵都认成了会飞的菜叶。",
-        "reward": {
-          "id": "coin_medium",
-          "type": "currency",
-          "name": "若汁币",
-          "min_amount": 100,
-          "max_amount": 200,
-          "amount": 177,
-          "reward_text": "177若汁币"
-        },
-        "status": "pending",
-        "partner_user_id": "1539756040",
-        "partner_display_name": "菲八啾比"
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-msvv11qy-obm2hsgi": {
@@ -3829,9 +3797,10 @@
           "amount": 177,
           "reward_text": "177若汁币"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "1539756040",
-        "partner_display_name": "菲八啾比"
+        "partner_display_name": "菲八啾比",
+        "settled_at": 1787028768642
       }
     }
   }

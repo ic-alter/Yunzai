@@ -3,12 +3,12 @@
   "user_id": "772165757",
   "pet": {
     "level": 6,
-    "experience": 109,
-    "satiety": 10,
+    "experience": 123,
+    "satiety": 9,
     "mood": 100,
     "health": 100,
     "current_skin_id": "qiqiu_turtle",
-    "satiety_decay_at": 1787021059702,
+    "satiety_decay_at": 1787049849721,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -919,6 +919,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_popping_candy_beach": {
+        "id": "ach_popping_candy_beach",
+        "name": "发现跳跳糖海滩",
+        "rarity": 3,
+        "time": 1787040302404,
+        "actor_name": "行止 130633278",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1312,21 +1327,21 @@
       "roast_chicken_turtle": 0
     },
     "weight": 45,
-    "weight_decay_at": 1787022282966,
-    "health_decay_at": 1787022282966
+    "weight_decay_at": 1787050603697,
+    "health_decay_at": 1787050603697
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 2,
-    "total_contribution": 148,
+    "weekly_contribution": 4,
+    "total_contribution": 150,
     "last_display_name": "行止 130633278",
     "first_joined_at": 1784794433575,
-    "last_active_at": 1787022282966,
+    "last_active_at": 1787050603697,
     "daily": {
       "date": "2026-08-18",
-      "event_count": 1,
+      "event_count": 2,
       "same_event_counts": {
-        "feed": 1
+        "feed": 2
       },
       "negative_shared_impact": 0
     },
@@ -1334,10 +1349,23 @@
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 356619,
-      "total_earned": 484619,
+      "balance": 357565,
+      "total_earned": 485565,
       "total_spent": 128000,
       "ledger": [
+        {
+          "time": 1787040302400,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 946,
+          "before": 356619,
+          "after": 357565,
+          "meta": {
+            "travel_id": "msybmm6v-cnhy7wop",
+            "location_id": "popping_candy_beach",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787022282506,
           "type": "income",
@@ -1446,18 +1474,6 @@
             "skin_id": "crown_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787012448455,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 351072,
-          "after": 351372,
-          "meta": {
-            "skin_id": "rolling_laugh_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1469,7 +1485,7 @@
       "first_interaction_reward_date": "2026-08-18"
     },
     "items": {
-      "ruozhi_fate": 10,
+      "ruozhi_fate": 15,
       "nameless_ruozhi": 1,
       "souvenir_dome_giant_leaf": 1,
       "souvenir_atomic_child_sunglasses": 2,
@@ -1512,7 +1528,7 @@
       "food_leaf_salad": 5,
       "food_burger": 5,
       "food_pizza": 4,
-      "food_dumpling": 4,
+      "food_dumpling": 3,
       "food_milk_tea": 3,
       "food_pancake": 4,
       "food_cake": 2,
@@ -1522,9 +1538,62 @@
       "food_carrot": 2,
       "souvenir_beast_paw": 1,
       "food_immortal_peach": 2,
-      "food_donut": 1
+      "food_donut": 1,
+      "food_seabreeze_popping_candy": 2
     },
     "item_ledger": [
+      {
+        "time": 1787040302404,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 12,
+        "after": 15,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_popping_candy_beach"
+        }
+      },
+      {
+        "time": 1787040302403,
+        "type": "income",
+        "item_id": "food_seabreeze_popping_candy",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msybmm6v-cnhy7wop",
+          "event_id": "popping_candy_bucket",
+          "location_id": "popping_candy_beach"
+        }
+      },
+      {
+        "time": 1787040302400,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 10,
+        "after": 12,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msybmm6v-cnhy7wop",
+          "location_id": "popping_candy_beach"
+        }
+      },
+      {
+        "time": 1787036889721,
+        "type": "expense",
+        "item_id": "food_dumpling",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_dumpling",
+          "stage": "normal"
+        }
+      },
       {
         "time": 1787022282508,
         "type": "income",
@@ -1700,51 +1769,6 @@
         "meta": {
           "accumulated_hours": 32.059
         }
-      },
-      {
-        "time": 1787012419701,
-        "type": "expense",
-        "item_id": "food_fish",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_fish",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1786897017958,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 39,
-        "after": 9,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1786897013160,
-        "type": "income",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1786897013160,
-        "type": "income",
-        "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
       }
     ],
     "item_daily": {
@@ -1788,6 +1812,29 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787036889722,
+      "user_id": "772165757",
+      "display_name": "行止 130633278",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁尝了一口🥟小笼包就露出满足的表情。",
+      "effects_text": "饱食+13，心情+3，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 13,
+        "mood": 3,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1787012419703,
       "user_id": "772165757",
@@ -2009,35 +2056,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 10
-    },
-    {
-      "time": 1786112462514,
-      "user_id": "772165757",
-      "display_name": "行止 130633278",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
     "date": "2026-08-18",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "event_count": 2,
+    "bonus_event_count": 2
   },
   "processed_messages": {
     "event:1935299061": 1785294435259,
@@ -2077,7 +2101,8 @@
     "event:1216381624": 1786793467012,
     "event:2030208072": 1786839849623,
     "event:686367970": 1786848282490,
-    "event:1680023402": 1787012419700
+    "event:1680023402": 1787012419700,
+    "event:1426592754": 1787036889721
   },
   "skin_sessions": {
     "active": null
@@ -2090,7 +2115,7 @@
     "migrated_at": 1784794433575
   },
   "created_at": 1784794433575,
-  "updated_at": 1787022282966,
+  "updated_at": 1787050603697,
   "gacha": {
     "since_four_plus": 3,
     "since_five": 52,
@@ -2153,9 +2178,9 @@
   },
   "production": {
     "started_at": 1784874763348,
-    "last_settled_at": 1787022282966,
-    "accumulated_ms": 9863264,
-    "progress": 1.8598400251309766,
+    "last_settled_at": 1787050603697,
+    "accumulated_ms": 38183995,
+    "progress": 5.934590464235695,
     "total_produced": 296,
     "last_collected_at": 1787012419702
   },
@@ -2192,7 +2217,8 @@
       "rtc_capsule_homes",
       "wan_chun_valley",
       "spirit_wheat_plain",
-      "spirit_beast_sect"
+      "spirit_beast_sect",
+      "popping_candy_beach"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -2449,6 +2475,14 @@
         "name": "灵兽宗",
         "travel_id": "msxx2ycj-w8f06ku4",
         "time": 1787022282506,
+        "carried_item_id": ""
+      },
+      "popping_candy_beach": {
+        "id": "popping_candy_beach",
+        "map_id": "candy_dreamland",
+        "name": "跳跳糖海滩",
+        "travel_id": "msybmm6v-cnhy7wop",
+        "time": 1787040302400,
         "carried_item_id": ""
       }
     },
@@ -2739,6 +2773,13 @@
         "location_id": "spirit_wheat_plain",
         "travel_id": "msv2bf7k-0oivjlsb",
         "time": 1786843814309
+      },
+      "popping_candy_bucket": {
+        "id": "popping_candy_bucket",
+        "map_id": "candy_dreamland",
+        "location_id": "popping_candy_beach",
+        "travel_id": "msybmm6v-cnhy7wop",
+        "time": 1787040302400
       }
     },
     "souvenir_records": {
@@ -3650,9 +3691,104 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_popping_candy_beach": {
+        "id": "ach_popping_candy_beach",
+        "name": "发现跳跳糖海滩",
+        "rarity": 3,
+        "time": 1787040302404,
+        "actor_name": "行止 130633278",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "msybmm6v-cnhy7wop": {
+        "id": "msybmm6v-cnhy7wop",
+        "user_id": "772165757",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "行止 130633278",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "popping_candy_beach",
+        "location_name": "跳跳糖海滩",
+        "duration_ms": 3405918,
+        "rewards": {
+          "coin": 946,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "popping_candy_bucket",
+          "name": "海滩小桶",
+          "text": "工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。",
+          "effects": {},
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_seabreeze_popping_candy",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_seabreeze_popping_candy",
+            "name": "海风跳跳糖",
+            "emoji": "🍬",
+            "description": "带着海盐气泡感的跳跳糖。",
+            "food": {
+              "satiety": 7,
+              "mood": 4,
+              "weight_gain": 3
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "跳跳糖海滩",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_popping_candy_beach",
+            "name": "发现跳跳糖海滩",
+            "rarity": 3,
+            "time": 1787040302404,
+            "actor_name": "行止 130633278",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现跳跳糖海滩」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787040302404,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：57分钟\n获得：946若汁币，若汁之缘×2，经验+2\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★"
+      },
       "msxx2ycj-w8f06ku4": {
         "id": "msxx2ycj-w8f06ku4",
         "user_id": "772165757",
@@ -4798,65 +4934,22 @@
         "settled_at": 1785838243628,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时22分钟\n获得：2370若汁币，若汁之缘×5，经验+5\n旅行事件：本店没有夜班员工\n广播提醒顾客不要和夜班员工交谈。收银台后立即传来礼貌的询问：“需要袋子吗？”\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★"
-      },
-      "msehz4as-gk7iv2z8": {
-        "id": "msehz4as-gk7iv2z8",
-        "user_id": "772165757",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "行止 130633278",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_botanical_dome",
-        "location_name": "玻璃穹顶植物园",
-        "duration_ms": 8049137,
-        "rewards": {
-          "coin": 2012,
-          "fate": 6,
-          "experience": 4
-        },
-        "event": {
-          "id": "rtc_event_escape_vine",
-          "name": "逃跑藤蔓",
-          "text": "一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。",
-          "effects": {
-            "coin_percent": -10,
-            "fate_flat": 1
-          },
-          "souvenirs": [],
-          "record": false
-        },
-        "souvenirs": [],
-        "new_location": "",
-        "achievements": [
-          {
-            "id": "ach_map_event_30",
-            "name": "旅行故事收藏家",
-            "rarity": 3,
-            "time": 1785838237412,
-            "actor_name": "行止 130633278",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「旅行故事收藏家」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1785838237412,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时14分钟\n获得：2012若汁币，若汁之缘×6，经验+4\n旅行事件：逃跑藤蔓\n一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。\n达成旅行成就「旅行故事收藏家」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msybmm6v-cnhy7wop",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "772165757",
+        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：57分钟\n获得：946若汁币，若汁之缘×2，经验+2\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787040302404,
+        "created_at": 1787040302404,
+        "sent_at": 1787040302840,
+        "last_error": ""
+      },
       {
         "travel_id": "msxx2ycj-w8f06ku4",
         "group_id": "415462812",
@@ -5103,23 +5196,10 @@
         "created_at": 1785838243629,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msehz4as-gk7iv2z8",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "772165757",
-        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：2小时14分钟\n获得：2012若汁币，若汁之缘×6，经验+4\n旅行事件：逃跑藤蔓\n一根藤蔓卷走了小若汁的旅行包，追了半天又把它送回来。\n达成旅行成就「旅行故事收藏家」 ★★★",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1785838237412,
-        "created_at": 1785838237412,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 77,
+      "total_trips": 78,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -5142,7 +5222,7 @@
         "eldoran_continent": 14,
         "unregistered_district": 4,
         "four_regions_little_world": 3,
-        "candy_dreamland": 0
+        "candy_dreamland": 1
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -5193,6 +5273,9 @@
         "four_regions_little_world": {
           "vine_medicine_basket": 1,
           "young_beast_snack": 1
+        },
+        "candy_dreamland": {
+          "popping_candy_bucket": 1
         }
       },
       "event_ids": {
@@ -5236,7 +5319,8 @@
         "rtc_event_neighbor_gift": 1,
         "eld_event_rank_test": 1,
         "vine_medicine_basket": 1,
-        "young_beast_snack": 1
+        "young_beast_snack": 1,
+        "popping_candy_bucket": 1
       },
       "encounter_reward_types": {
         "travel_pager": 1,

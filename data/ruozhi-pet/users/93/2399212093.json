@@ -3,12 +3,12 @@
   "user_id": "2399212093",
   "pet": {
     "level": 9,
-    "experience": 123,
-    "satiety": 98,
+    "experience": 173,
+    "satiety": 99,
     "mood": 100,
     "health": 100,
     "current_skin_id": "rabbit_head_turtle",
-    "satiety_decay_at": 1787013887077,
+    "satiety_decay_at": 1787051481364,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -76,7 +76,10 @@
       "volleyball_turtle",
       "gift_turtle",
       "ufo_turtle",
-      "vomit_turtle"
+      "vomit_turtle",
+      "snake_turtle",
+      "crab_turtle",
+      "maodie_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -109,8 +112,8 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 226,
-      "counter:gacha_five": 5,
+      "counter:gacha_draws": 246,
+      "counter:gacha_five": 6,
       "event_branch_count:feed:full": 1,
       "event_branch_count:feed:full:last_at": 1786236688133,
       "pet_stat_reach_count:satiety:98": 1,
@@ -1061,6 +1064,21 @@
     },
     "unlock_records": [
       {
+        "skin_id": "maodie_turtle",
+        "reason": "gacha",
+        "time": 1787051501926
+      },
+      {
+        "skin_id": "crab_turtle",
+        "reason": "gacha",
+        "time": 1787051501925
+      },
+      {
+        "skin_id": "snake_turtle",
+        "reason": "gacha",
+        "time": 1787051492312
+      },
+      {
         "skin_id": "vomit_turtle",
         "reason": "achievement",
         "time": 1787013887079,
@@ -1409,22 +1427,22 @@
       "rabbit_head_turtle": 0
     },
     "weight": 48,
-    "weight_decay_at": 1787013895735,
-    "health_decay_at": 1787013895735
+    "weight_decay_at": 1787051501925,
+    "health_decay_at": 1787051501925
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 19,
-    "total_contribution": 262,
+    "weekly_contribution": 26,
+    "total_contribution": 269,
     "last_display_name": "Ignotus",
     "first_joined_at": 1784810181975,
-    "last_active_at": 1787013895735,
+    "last_active_at": 1787051501925,
     "daily": {
       "date": "2026-08-18",
-      "event_count": 6,
+      "event_count": 10,
       "same_event_counts": {
-        "mention_only": 1,
-        "feed": 5
+        "mention_only": 2,
+        "feed": 8
       },
       "negative_shared_impact": 0
     },
@@ -1432,7 +1450,7 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 154,
+      "ruozhi_fate": 97,
       "nameless_ruozhi": 1,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
@@ -1466,9 +1484,9 @@
       "souvenir_spring_sprout": 1,
       "souvenir_returning_sword": 1,
       "souvenir_sword_tomb_fragment": 1,
-      "travel_ticket": 5,
+      "travel_ticket": 3,
       "food_curry": 6,
-      "food_rice_ball": 5,
+      "food_rice_ball": 4,
       "food_bread": 3,
       "food_noodles": 4,
       "food_fish": 8,
@@ -1478,12 +1496,12 @@
       "food_grapes": 6,
       "food_sandwich": 5,
       "food_apple": 6,
-      "food_donut": 3,
+      "food_donut": 2,
       "food_carrot": 4,
       "food_milk_tea": 1,
       "food_pancake": 4,
       "food_fried_chicken": 2,
-      "food_leaf_salad": 2,
+      "food_leaf_salad": 1,
       "food_burger": 7,
       "food_dumpling": 3,
       "food_ice_cream": 3,
@@ -1493,9 +1511,139 @@
       "souvenir_faded_ancient_candy_wrapper": 1,
       "souvenir_vine_basket": 1,
       "food_mooncake_talisman": 2,
-      "food_seabreeze_popping_candy": 2
+      "food_seabreeze_popping_candy": 2,
+      "souvenir_rain_drop": 1,
+      "food_immortal_peach": 1
     },
     "item_ledger": [
+      {
+        "time": 1787051501925,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 127,
+        "after": 97,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787051492311,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 157,
+        "after": 127,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787051488601,
+        "type": "expense",
+        "item_id": "travel_ticket",
+        "amount": 1,
+        "before": 4,
+        "after": 3,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_ticket"
+        }
+      },
+      {
+        "time": 1787051481364,
+        "type": "expense",
+        "item_id": "food_leaf_salad",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_leaf_salad",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787047678783,
+        "type": "income",
+        "item_id": "food_immortal_peach",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msyehdvw-wihwy52a",
+          "event_id": "watering_accident",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1787047678778,
+        "type": "income",
+        "item_id": "souvenir_rain_drop",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msyehdvw-wihwy52a",
+          "event_id": "watering_accident",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1787047678778,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 154,
+        "after": 157,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msyehdvw-wihwy52a",
+          "location_id": "wan_chun_valley"
+        }
+      },
+      {
+        "time": 1787041691266,
+        "type": "expense",
+        "item_id": "travel_ticket",
+        "amount": 1,
+        "before": 5,
+        "after": 4,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_ticket"
+        }
+      },
+      {
+        "time": 1787041681627,
+        "type": "expense",
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 5,
+        "after": 4,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_rice_ball",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787041621162,
+        "type": "expense",
+        "item_id": "food_donut",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_donut",
+          "stage": "normal"
+        }
+      },
       {
         "time": 1787013887078,
         "type": "income",
@@ -1621,137 +1769,6 @@
         "meta": {
           "achievement_id": "ach_popping_candy_beach"
         }
-      },
-      {
-        "time": 1786968660987,
-        "type": "income",
-        "item_id": "food_seabreeze_popping_candy",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msx6498i-4hc6ta7a",
-          "event_id": "popping_candy_bucket",
-          "location_id": "popping_candy_beach"
-        }
-      },
-      {
-        "time": 1786968660984,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 134,
-        "after": 135,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msx6498i-4hc6ta7a",
-          "location_id": "popping_candy_beach"
-        }
-      },
-      {
-        "time": 1786967175600,
-        "type": "expense",
-        "item_id": "travel_ticket",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_ticket"
-        }
-      },
-      {
-        "time": 1786967155483,
-        "type": "expense",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 11,
-        "after": 10,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_popcorn",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1786967011736,
-        "type": "income",
-        "item_id": "food_mooncake_talisman",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msx1m8nq-x94drgrt",
-          "event_id": "vine_medicine_basket",
-          "location_id": "wan_chun_valley"
-        }
-      },
-      {
-        "time": 1786967011734,
-        "type": "income",
-        "item_id": "souvenir_vine_basket",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msx1m8nq-x94drgrt",
-          "event_id": "vine_medicine_basket",
-          "location_id": "wan_chun_valley"
-        }
-      },
-      {
-        "time": 1786967011733,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 130,
-        "after": 134,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msx1m8nq-x94drgrt",
-          "location_id": "wan_chun_valley"
-        }
-      },
-      {
-        "time": 1786959616580,
-        "type": "expense",
-        "item_id": "travel_ticket",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_ticket"
-        }
-      },
-      {
-        "time": 1786959604640,
-        "type": "expense",
-        "item_id": "food_cake",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_cake",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1786959599758,
-        "type": "expense",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_burger",
-          "stage": "normal"
-        }
       }
     ],
     "item_daily": {
@@ -1773,132 +1790,128 @@
       }
     },
     "currency": {
-      "balance": 112179,
-      "total_earned": 252179,
+      "balance": 118942,
+      "total_earned": 258942,
       "total_spent": 140000,
       "ledger": [
         {
-          "time": 1787013847054,
+          "time": 1787051501926,
           "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 111679,
-          "after": 112179,
-          "meta": {
-            "date": "2026-08-18"
-          }
-        },
-        {
-          "time": 1786975094675,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 391,
-          "before": 111288,
-          "after": 111679,
-          "meta": {
-            "encounter_id": "encounter-msx715go-dxkyzmsq",
-            "partner_user_id": "2818259462"
-          }
-        },
-        {
-          "time": 1786975094675,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1773,
-          "before": 109515,
-          "after": 111288,
-          "meta": {
-            "travel_id": "msx7159u-d0unx58m",
-            "location_id": "mystic_sword_sect",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786968660984,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 500,
-          "before": 109015,
-          "after": 109515,
-          "meta": {
-            "travel_id": "msx6498i-4hc6ta7a",
-            "location_id": "popping_candy_beach",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786967011733,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2054,
-          "before": 106961,
-          "after": 109015,
-          "meta": {
-            "travel_id": "msx1m8nq-x94drgrt",
-            "location_id": "wan_chun_valley",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786959594574,
-          "type": "income",
-          "reason": "level_up_reward",
+          "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 106661,
-          "after": 106961,
+          "before": 118642,
+          "after": 118942,
           "meta": {
-            "level": 9
+            "skin_id": "biting_lip_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786954418283,
+          "time": 1787051501925,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 2093,
-          "before": 104568,
-          "after": 106661,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 118342,
+          "after": 118642,
           "meta": {
-            "travel_id": "mswu1co6-bz2snifj",
-            "location_id": "gingerbread_town",
-            "forced_by": "timer"
+            "skin_id": "fruit_hat_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786946051895,
+          "time": 1787051501925,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 2466,
-          "before": 102102,
-          "after": 104568,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 118042,
+          "after": 118342,
           "meta": {
-            "travel_id": "mswo98du-qwibswor",
-            "location_id": "eld_old_battlefield",
-            "forced_by": "timer"
+            "skin_id": "lying_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786936275230,
+          "time": 1787051501925,
           "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 156,
-          "before": 101946,
-          "after": 102102,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 117742,
+          "after": 118042,
           "meta": {
-            "encounter_id": "encounter-mswhtegt-hd195uee",
-            "partner_user_id": "1750348863"
+            "skin_id": "coffee_turtle",
+            "rarity": 3
           }
         },
         {
-          "time": 1786936275229,
+          "time": 1787051501925,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 2755,
-          "before": 99191,
-          "after": 101946,
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 117442,
+          "after": 117742,
           "meta": {
-            "travel_id": "mswhte9f-5dz3pl4p",
-            "location_id": "sugar_crystal_mine",
-            "forced_by": "timer"
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787051501925,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 117142,
+          "after": 117442,
+          "meta": {
+            "skin_id": "birthday_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787051501925,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 116842,
+          "after": 117142,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787051501925,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 116542,
+          "after": 116842,
+          "meta": {
+            "skin_id": "party_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787051492312,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 116242,
+          "after": 116542,
+          "meta": {
+            "skin_id": "bouquet_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787051492312,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 115942,
+          "after": 116242,
+          "meta": {
+            "skin_id": "goggles_turtle",
+            "rarity": 3
           }
         }
       ],
@@ -1918,6 +1931,98 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787051481367,
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "它高兴地接过🥗菜叶沙拉，一口一口享用了起来。",
+      "effects_text": "饱食+8，心情+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 8,
+        "mood": 2,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787041681629,
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "event_id": "feed",
+      "branch_id": "hide_food",
+      "summary": "小若汁开心地收下🍙暖饭团，连龟壳都像亮了一点。",
+      "effects_text": "饱食+12，心情+3，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 12,
+        "mood": 3,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787041621162,
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "它慢吞吞地解决了🍩糖霜甜甜圈，看起来心情很好。",
+      "effects_text": "饱食+12，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 12,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787041615423,
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "event_id": "mention_only",
+      "branch_id": "crawl_close",
+      "summary": "小若汁慢慢爬到Ignotus身边，安静地待了一小会儿。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1787013887080,
       "user_id": "2399212093",
@@ -2087,118 +2192,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 10
-    },
-    {
-      "time": 1786967155485,
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它高兴地接过🍿奶油爆米花，一口一口享用了起来。",
-      "effects_text": "饱食+8，心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 8,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786959604641,
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁尝了一口🍰奶油蛋糕就露出满足的表情。",
-      "effects_text": "饱食+14，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 14,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786959599759,
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它把🍔双层汉堡护在爪子间，开心地吃得一点不剩。",
-      "effects_text": "饱食+17，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 17,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786959594574,
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它慢吞吞地解决了🥕脆胡萝卜，看起来心情很好。",
-      "effects_text": "饱食+6，心情+2，好感+2，贡献+2，经验+12，升级到 Lv.9",
-      "effects": {
-        "satiety": 6,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [
-        {
-          "level": 9,
-          "need": 240
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [
-        {
-          "level": 9,
-          "reward": 300,
-          "receiver": {
-            "user_id": "2399212093",
-            "display_name": "Ignotus"
-          }
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 11
     }
   ],
   "daily": {
     "date": "2026-08-18",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "event_count": 10,
+    "bonus_event_count": 10
   },
   "processed_messages": {
     "event:1197866451": 1784810181978,
@@ -2315,7 +2314,11 @@
     "event:55412593": 1787013861551,
     "event:304680536": 1787013866508,
     "event:799690402": 1787013881903,
-    "event:1761768486": 1787013887077
+    "event:1761768486": 1787013887077,
+    "event:2045374064": 1787041615421,
+    "event:1819646408": 1787041621161,
+    "event:1583493377": 1787041681627,
+    "event:1246381099": 1787051481359
   },
   "skin_sessions": {
     "active": null
@@ -2328,14 +2331,21 @@
     "migrated_at": 1784810181975
   },
   "created_at": 1784810181975,
-  "updated_at": 1787013895735,
+  "updated_at": 1787051501927,
   "gacha": {
-    "since_four_plus": 5,
-    "since_five": 59,
-    "total_draws": 226,
-    "total_four": 29,
-    "total_five": 5,
+    "since_four_plus": 1,
+    "since_five": 1,
+    "total_draws": 246,
+    "total_four": 31,
+    "total_five": 6,
     "five_history": [
+      {
+        "time": 1787051501926,
+        "skin_id": "maodie_turtle",
+        "skin_name": "耄耋小若汁",
+        "pulls": 78,
+        "draw_index": 245
+      },
       {
         "time": 1786441876658,
         "skin_id": "rabbit_head_turtle",
@@ -2372,14 +2382,14 @@
         "draw_index": 66
       }
     ],
-    "route_misses": 0,
+    "route_misses": 1,
     "route_skin_id": "thunder_emperor_turtle"
   },
   "production": {
     "started_at": 1785114566547,
-    "last_settled_at": 1787013895735,
-    "accumulated_ms": 48682,
-    "progress": 0.4401200998690213,
+    "last_settled_at": 1787051501925,
+    "accumulated_ms": 37654872,
+    "progress": 7.351373557271572,
     "total_produced": 282,
     "last_collected_at": 1787013847053
   },
@@ -3040,6 +3050,13 @@
         "location_id": "mystic_sword_sect",
         "travel_id": "msx7159u-d0unx58m",
         "time": 1786975094675
+      },
+      "watering_accident": {
+        "id": "watering_accident",
+        "map_id": "four_regions_little_world",
+        "location_id": "wan_chun_valley",
+        "travel_id": "msyehdvw-wihwy52a",
+        "time": 1787047678778
       }
     },
     "souvenir_records": {
@@ -3266,6 +3283,13 @@
         "event_id": "vine_medicine_basket",
         "location_id": "wan_chun_valley",
         "time": 1786967011734
+      },
+      "souvenir_rain_drop": {
+        "id": "souvenir_rain_drop",
+        "name": "不会落地的雨珠",
+        "event_id": "watering_accident",
+        "location_id": "wan_chun_valley",
+        "time": 1787047678778
       }
     },
     "achievement_records": {
@@ -4081,6 +4105,87 @@
       }
     },
     "settlements": {
+      "msyehdvw-wihwy52a": {
+        "id": "msyehdvw-wihwy52a",
+        "user_id": "2399212093",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "Ignotus",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "wan_chun_valley",
+        "location_name": "万春谷",
+        "duration_ms": 5987475,
+        "rewards": {
+          "coin": 1663,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "watering_accident",
+          "name": "帮倒忙的浇水术",
+          "text": "药田和外门弟子一起被小若汁的浇水术浇透。",
+          "effects": {
+            "mood": 6,
+            "satiety": -3
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_rain_drop",
+              "name": "不会落地的雨珠",
+              "emoji": "💧",
+              "description": "旅行纪念品「不会落地的雨珠」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_immortal_peach",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_rain_drop",
+            "name": "不会落地的雨珠",
+            "emoji": "💧",
+            "description": "旅行纪念品「不会落地的雨珠」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_immortal_peach",
+            "name": "灵桃酥",
+            "emoji": "🍑",
+            "description": "四州小天地的酥香点心。",
+            "food": {
+              "satiety": 14,
+              "mood": 5,
+              "weight_gain": 5
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": -3,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_ticket",
+        "tool_name": "景点门票",
+        "settled_at": 1787047678787,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：1小时40分钟\n获得：1663若汁币，若汁之缘×3，经验+3\n携带道具：景点门票\n旅行事件：帮倒忙的浇水术\n药田和外门弟子一起被小若汁的浇水术浇透。\n本次状态变化：饱食-3\n食物：🍑灵桃酥×1\n纪念品：💧不会落地的雨珠×1"
+      },
       "msx7159u-d0unx58m": {
         "id": "msx7159u-d0unx58m",
         "user_id": "2399212093",
@@ -5418,49 +5523,22 @@
         "settled_at": 1786504824161,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时30分钟\n获得：2244若汁币，若汁之缘×5，经验+5\n携带道具：旅行清单\n旅行事件：海盗合影\n海盗们发现小若汁没有财宝，便改为收取合影费。\n纪念品：🏴‍☠️付费海盗合影×1\n达成旅行成就「旅行故事收藏家」 ★★★"
-      },
-      "msoqjb8g-fp041nrl": {
-        "id": "msoqjb8g-fp041nrl",
-        "user_id": "2399212093",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "display_name": "Ignotus",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "forgotten_family_restaurant",
-        "location_name": "被遗忘的家庭餐厅",
-        "duration_ms": 8412048,
-        "rewards": {
-          "coin": 2617,
-          "fate": 4,
-          "experience": 5
-        },
-        "event": {
-          "id": "event_birthday_song_for_whom",
-          "name": "生日歌唱给谁",
-          "text": "店内熄灯，生日歌唱到名字的位置时，只剩很长的电流杂音。",
-          "effects": {
-            "mood": -2
-          },
-          "souvenirs": [],
-          "record": false
-        },
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": -2,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1786465686841,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时20分钟\n获得：2617若汁币，若汁之缘×4，经验+5\n携带道具：行李箱\n旅行事件：生日歌唱给谁\n店内熄灯，生日歌唱到名字的位置时，只剩很长的电流杂音。\n这段经历让小若汁有些不安，心情-2"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msyehdvw-wihwy52a",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "2399212093",
+        "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：1小时40分钟\n获得：1663若汁币，若汁之缘×3，经验+3\n携带道具：景点门票\n旅行事件：帮倒忙的浇水术\n药田和外门弟子一起被小若汁的浇水术浇透。\n本次状态变化：饱食-3\n食物：🍑灵桃酥×1\n纪念品：💧不会落地的雨珠×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787047678788,
+        "created_at": 1787047678788,
+        "sent_at": 1787047679257,
+        "last_error": ""
+      },
       {
         "travel_id": "msx7159u-d0unx58m",
         "group_id": "1025424898",
@@ -5707,23 +5785,10 @@
         "created_at": 1786504824161,
         "sent_at": 1786504824703,
         "last_error": ""
-      },
-      {
-        "travel_id": "msoqjb8g-fp041nrl",
-        "group_id": "1025424898",
-        "self_id": "3762153943",
-        "user_id": "2399212093",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：2小时20分钟\n获得：2617若汁币，若汁之缘×4，经验+5\n携带道具：行李箱\n旅行事件：生日歌唱给谁\n店内熄灯，生日歌唱到名字的位置时，只剩很长的电流杂音。\n这段经历让小若汁有些不安，心情-2",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786465686841,
-        "created_at": 1786465686841,
-        "sent_at": 1786465687280,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 66,
+      "total_trips": 67,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -5756,7 +5821,8 @@
         "eldoran_continent": 12,
         "unregistered_district": 5,
         "four_regions_little_world": 4,
-        "candy_dreamland": 4
+        "candy_dreamland": 4,
+        "alvita": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -5805,7 +5871,8 @@
           "letter_from_sword_tomb": 1,
           "broken_sword_returns": 1,
           "vine_medicine_basket": 1,
-          "swords_mistake_master": 1
+          "swords_mistake_master": 1,
+          "watering_accident": 1
         },
         "candy_dreamland": {
           "chocolate_rafting": 1,
@@ -5856,7 +5923,8 @@
         "eld_event_banner_wind": 1,
         "vine_medicine_basket": 1,
         "popping_candy_bucket": 1,
-        "swords_mistake_master": 1
+        "swords_mistake_master": 1,
+        "watering_accident": 1
       },
       "encounter_reward_types": {
         "currency": 1,
@@ -5866,7 +5934,39 @@
       },
       "total_encounters": 6
     },
-    "active": null,
+    "active": {
+      "id": "msykbdk2-2izgs6er",
+      "user_id": "2399212093",
+      "display_name": "Ignotus",
+      "group_id": "1025424898",
+      "self_id": "3874871823",
+      "started_at": 1787051488610,
+      "ends_at": 1787053112642,
+      "duration_ms": 1624032,
+      "map_id": "alvita",
+      "map_name": "阿尔维塔",
+      "location_id": "old_town",
+      "location_name": "旧城区",
+      "was_unlocked": false,
+      "carried_item_id": "travel_ticket",
+      "carried_item_name": "景点门票",
+      "event": {
+        "id": "subscription_commute",
+        "name": "通勤订阅",
+        "text": "广告推销高级通勤会员：优先换乘、更低拥堵、座位预测。旁边乘客说：“以前坐车只要买票。”",
+        "effects": {
+          "mood": 2
+        },
+        "souvenirs": [],
+        "items": [],
+        "record": false
+      },
+      "rewards": {
+        "coin": 500,
+        "fate": 1,
+        "experience": 1
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-msvog7ff-9q5ce6e7": {

@@ -3,12 +3,12 @@
   "user_id": "1244785897",
   "pet": {
     "level": 6,
-    "experience": 73,
-    "satiety": 23,
+    "experience": 78,
+    "satiety": 5,
     "mood": 100,
     "health": 100,
     "current_skin_id": "ahat_turtle",
-    "satiety_decay_at": 1787020766081,
+    "satiety_decay_at": 1787050603841,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1776,8 +1776,8 @@
       "thunder_emperor_turtle": 0
     },
     "weight": 48,
-    "weight_decay_at": 1787020798007,
-    "health_decay_at": 1787020798007
+    "weight_decay_at": 1787033985374,
+    "health_decay_at": 1787050603841
   },
   "profile": {
     "favorability": 63,
@@ -1785,7 +1785,7 @@
     "total_contribution": 58,
     "last_display_name": "穗穗一时性起",
     "first_joined_at": 1784792061225,
-    "last_active_at": 1787020798007,
+    "last_active_at": 1787050603841,
     "daily": {
       "date": "2026-08-18",
       "event_count": 0,
@@ -1796,10 +1796,23 @@
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 205974,
-      "total_earned": 841974,
+      "balance": 208881,
+      "total_earned": 844881,
       "total_spent": 636000,
       "ledger": [
+        {
+          "time": 1787029867912,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2907,
+          "before": 205974,
+          "after": 208881,
+          "meta": {
+            "travel_id": "msy20xtf-scy6292x",
+            "location_id": "rtc_flyover",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787020798007,
           "type": "income",
@@ -1907,17 +1920,6 @@
             "skin_id": "octopus_turtle",
             "rarity": 4
           }
-        },
-        {
-          "time": 1787020791118,
-          "type": "expense",
-          "reason": "exchange_fate",
-          "amount": 24000,
-          "before": 222574,
-          "after": 198574,
-          "meta": {
-            "count": 3
-          }
         }
       ],
       "sign": {
@@ -1929,7 +1931,7 @@
       "first_interaction_reward_date": "2026-08-06"
     },
     "items": {
-      "ruozhi_fate": 1,
+      "ruozhi_fate": 6,
       "nameless_ruozhi": 4,
       "souvenir_palace_leaf_basket": 2,
       "souvenir_floating_compass": 0,
@@ -1952,7 +1954,7 @@
       "souvenir_clockwork_leaf": 2,
       "souvenir_moonbell_festival_ribbon": 1,
       "souvenir_shell_maintenance_card": 1,
-      "souvenir_driverless_car_card": 1,
+      "souvenir_driverless_car_card": 2,
       "souvenir_border_quest_scroll": 1,
       "souvenir_burned_neon_tube": 1,
       "souvenir_tomorrow_school_badge": 1,
@@ -1988,7 +1990,7 @@
       "food_ice_cream": 2,
       "food_carrot": 1,
       "food_fish": 2,
-      "food_bread": 4,
+      "food_bread": 6,
       "food_cake": 3,
       "food_noodles": 1,
       "food_pancake": 3,
@@ -2008,6 +2010,47 @@
       "souvenir_empty_scabbard": 1
     },
     "item_ledger": [
+      {
+        "time": 1787029867917,
+        "type": "income",
+        "item_id": "food_bread",
+        "amount": 2,
+        "before": 4,
+        "after": 6,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "msy20xtf-scy6292x",
+          "event_id": "rtc_event_driverless_car",
+          "location_id": "rtc_flyover"
+        }
+      },
+      {
+        "time": 1787029867913,
+        "type": "income",
+        "item_id": "souvenir_driverless_car_card",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "msy20xtf-scy6292x",
+          "event_id": "rtc_event_driverless_car",
+          "location_id": "rtc_flyover"
+        }
+      },
+      {
+        "time": 1787029867912,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 1,
+        "after": 6,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msy20xtf-scy6292x",
+          "location_id": "rtc_flyover"
+        }
+      },
       {
         "time": 1787020798007,
         "type": "expense",
@@ -2221,45 +2264,6 @@
         "reason": "use_pager",
         "meta": {
           "travel_id": "msy1zsvk-wks7f5ej"
-        }
-      },
-      {
-        "time": 1787020692365,
-        "type": "income",
-        "item_id": "souvenir_returning_sword",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msy1z9nu-dpe37t8n",
-          "event_id": "letter_from_sword_tomb",
-          "location_id": "mystic_sword_sect"
-        }
-      },
-      {
-        "time": 1787020692365,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 25,
-        "after": 30,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msy1z9nu-dpe37t8n",
-          "location_id": "mystic_sword_sect"
-        }
-      },
-      {
-        "time": 1787020692357,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 5,
-        "after": 4,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msy1z9nu-dpe37t8n"
         }
       }
     ],
@@ -2579,7 +2583,7 @@
     "migrated_at": 1784792061225
   },
   "created_at": 1784792061225,
-  "updated_at": 1787020798007,
+  "updated_at": 1787050603841,
   "gacha": {
     "since_four_plus": 8,
     "since_five": 23,
@@ -2684,9 +2688,9 @@
   },
   "production": {
     "started_at": 1784874763347,
-    "last_settled_at": 1787020798007,
-    "accumulated_ms": 140542,
-    "progress": 0.22448883962488608,
+    "last_settled_at": 1787050603841,
+    "accumulated_ms": 29946376,
+    "progress": 4.609739068003074,
     "total_produced": 286,
     "last_collected_at": 1787020657465
   },
@@ -3343,8 +3347,8 @@
         "id": "rtc_event_driverless_car",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_flyover",
-        "travel_id": "msdfghr3-idlzw1vb",
-        "time": 1785773542461
+        "travel_id": "msy20xtf-scy6292x",
+        "time": 1787029867913
       },
       "eld_event_border_quest": {
         "id": "eld_event_border_quest",
@@ -3794,7 +3798,7 @@
         "name": "无人车临时乘车卡",
         "event_id": "rtc_event_driverless_car",
         "location_id": "rtc_flyover",
-        "time": 1785773542461
+        "time": 1787029867913
       },
       "souvenir_border_quest_scroll": {
         "id": "souvenir_border_quest_scroll",
@@ -5099,6 +5103,87 @@
       }
     },
     "settlements": {
+      "msy20xtf-scy6292x": {
+        "id": "msy20xtf-scy6292x",
+        "user_id": "1244785897",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "穗穗一时性起",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_flyover",
+        "location_name": "飞跃立交桥",
+        "duration_ms": 9099321,
+        "rewards": {
+          "coin": 2907,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "rtc_event_driverless_car",
+          "name": "无人飞车",
+          "text": "无人驾驶飞车把小若汁送到了正确地点。",
+          "effects": {
+            "coin_percent": 15
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_driverless_car_card",
+              "name": "无人车临时乘车卡",
+              "emoji": "🚗",
+              "description": "旅行纪念品「无人车临时乘车卡」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_bread",
+              "amount": 2
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_driverless_car_card",
+            "name": "无人车临时乘车卡",
+            "emoji": "🚗",
+            "description": "旅行纪念品「无人车临时乘车卡」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_bread",
+            "name": "松软面包",
+            "emoji": "🍞",
+            "description": "刚出炉的常规食物。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 10,
+              "mood": 2,
+              "weight_gain": 2
+            },
+            "amount": 2
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787029867919,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：2小时32分钟\n获得：2907若汁币，若汁之缘×5，经验+5\n旅行事件：无人飞车\n无人驾驶飞车把小若汁送到了正确地点。\n食物：🍞松软面包×2\n纪念品：🚗无人车临时乘车卡×1"
+      },
       "msy20jbp-ctj183ju": {
         "id": "msy20jbp-ctj183ju",
         "user_id": "1244785897",
@@ -6341,121 +6426,22 @@
         "settled_at": 1786959833589,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：地图之外的小屋（艾尔多兰大陆）\n旅行时间：1小时58分钟\n获得：1965若汁币，若汁之缘×4，经验+4\n旅行事件：通往别处的后门\n小屋后门外不是大陆，而是一片从未见过的天空。\n纪念品：🚪后门门牌×1"
-      },
-      "msx1qs0h-qormkxza": {
-        "id": "msx1qs0h-qormkxza",
-        "user_id": "1244785897",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "穗穗一时性起",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "qing_he_town",
-        "location_name": "青禾镇",
-        "duration_ms": 1760873,
-        "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": {
-          "id": "midnight_vendor",
-          "name": "夜半收摊人",
-          "text": "关门集市的摊主递来无字令牌并要求保密。",
-          "effects": {},
-          "souvenirs": [
-            {
-              "id": "souvenir_blank_guest_token",
-              "name": "无字客卿牌",
-              "emoji": "🪪",
-              "description": "旅行纪念品「无字客卿牌」。"
-            }
-          ],
-          "items": [
-            {
-              "id": "food_dumpling",
-              "amount": 2
-            }
-          ],
-          "record": true
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_blank_guest_token",
-            "name": "无字客卿牌",
-            "emoji": "🪪",
-            "description": "旅行纪念品「无字客卿牌」。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [
-          {
-            "tags": [
-              "food"
-            ],
-            "id": "food_dumpling",
-            "name": "小笼包",
-            "emoji": "🥟",
-            "description": "热气腾腾的小点心。",
-            "usage": "投喂时优先使用，恢复饱食度。",
-            "food": {
-              "common": true,
-              "satiety": 13,
-              "mood": 3,
-              "weight_gain": 3
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "青禾镇",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_qing_he_town",
-            "name": "发现青禾镇",
-            "rarity": 3,
-            "time": 1786959830136,
-            "actor_name": "穗穗一时性起",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现青禾镇」 ★★★"
-          },
-          {
-            "id": "four_western_scenes",
-            "name": "西境四景",
-            "rarity": 3,
-            "time": 1786959830136,
-            "actor_name": "穗穗一时性起",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「西境四景」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786959830137,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：29分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：夜半收摊人\n关门集市的摊主递来无字令牌并要求保密。\n食物：🥟小笼包×2\n纪念品：🪪无字客卿牌×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★\n达成旅行成就「西境四景」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msy20xtf-scy6292x",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "1244785897",
+        "report": "小若汁回来了！\n目的地：飞跃立交桥（明日旧城）\n旅行时间：2小时32分钟\n获得：2907若汁币，若汁之缘×5，经验+5\n旅行事件：无人飞车\n无人驾驶飞车把小若汁送到了正确地点。\n食物：🍞松软面包×2\n纪念品：🚗无人车临时乘车卡×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787029867920,
+        "created_at": 1787029867920,
+        "sent_at": 1787029868514,
+        "last_error": ""
+      },
       {
         "travel_id": "msy20jbp-ctj183ju",
         "group_id": "415462812",
@@ -6702,23 +6688,10 @@
         "created_at": 1786959833589,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "msx1qs0h-qormkxza",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "1244785897",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：29分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：夜半收摊人\n关门集市的摊主递来无字令牌并要求保密。\n食物：🥟小笼包×2\n纪念品：🪪无字客卿牌×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★\n达成旅行成就「西境四景」 ★★★",
-        "status": "skipped",
-        "attempts": 0,
-        "next_retry_at": 1786959830137,
-        "created_at": 1786959830137,
-        "sent_at": 0,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 181,
+      "total_trips": 182,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -6923,51 +6896,7 @@
       },
       "total_encounters": 7
     },
-    "active": {
-      "id": "msy20xtf-scy6292x",
-      "user_id": "1244785897",
-      "display_name": "穗穗一时性起",
-      "group_id": "415462812",
-      "self_id": "3874871823",
-      "started_at": 1787020768563,
-      "ends_at": 1787029867884,
-      "duration_ms": 9099321,
-      "map_id": "retro_tomorrow_city",
-      "map_name": "明日旧城",
-      "location_id": "rtc_flyover",
-      "location_name": "飞跃立交桥",
-      "was_unlocked": true,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "rtc_event_driverless_car",
-        "name": "无人飞车",
-        "text": "无人驾驶飞车把小若汁送到了正确地点。",
-        "effects": {
-          "coin_percent": 15
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_driverless_car_card",
-            "name": "无人车临时乘车卡",
-            "emoji": "🚗",
-            "description": "旅行纪念品「无人车临时乘车卡」。"
-          }
-        ],
-        "items": [
-          {
-            "id": "food_bread",
-            "amount": 2
-          }
-        ],
-        "record": false
-      },
-      "rewards": {
-        "coin": 2907,
-        "fate": 5,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-msx1lxrj-acteid7q": {

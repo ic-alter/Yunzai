@@ -84,7 +84,7 @@ export class example extends plugin {
   }
 
   const p = pickJueParents(e)
-  if (!p) return true
+  if (!p) return false
 
   const res = await processInjection(p)
   if (res?.triggered && res?.message) {
@@ -120,7 +120,7 @@ async she(e) {
   }
 
   const p = pickSheParents(e)
-  if (!p) return true
+  if (!p) return false
 
   const res = await processInjection(p)
   if (res?.triggered && res?.message) {

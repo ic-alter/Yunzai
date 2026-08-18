@@ -3,12 +3,12 @@
   "user_id": "3546805220",
   "pet": {
     "level": 1,
-    "experience": 20,
+    "experience": 23,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1786986793372,
+    "satiety_decay_at": 1787050603561,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -138,6 +138,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_gingerbread_town": {
+        "id": "ach_gingerbread_town",
+        "name": "发现姜饼小镇",
+        "rarity": 3,
+        "time": 1787040132226,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -167,9 +182,9 @@
         "time": 1785642699283
       }
     ],
-    "weight": 44,
-    "weight_decay_at": 1786969929601,
-    "health_decay_at": 1786986793372
+    "weight": 43,
+    "weight_decay_at": 1787013129601,
+    "health_decay_at": 1787050603561
   },
   "profile": {
     "favorability": 0,
@@ -177,7 +192,7 @@
     "total_contribution": 0,
     "last_display_name": "购德帕瓦",
     "first_joined_at": 1785642699283,
-    "last_active_at": 1786986793372,
+    "last_active_at": 1787050603561,
     "daily": {
       "date": "2026-08-18",
       "event_count": 0,
@@ -188,7 +203,7 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 44,
+      "ruozhi_fate": 50,
       "nameless_ruozhi": 0,
       "souvenir_paper_visitor_crown": 1,
       "souvenir_temporary_summon_card": 1,
@@ -196,6 +211,31 @@
       "food_curry": 2
     },
     "item_ledger": [
+      {
+        "time": 1787040132226,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 47,
+        "after": 50,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_gingerbread_town"
+        }
+      },
+      {
+        "time": 1787040132224,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 44,
+        "after": 47,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "msyaevh1-emmkyujf",
+          "location_id": "gingerbread_town"
+        }
+      },
       {
         "time": 1786931130545,
         "type": "income",
@@ -425,19 +465,6 @@
           "event_id": "eld_event_royal_parade",
           "location_id": "eld_silver_capital"
         }
-      },
-      {
-        "time": 1785662890345,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msbksjdp-oebiuruu",
-          "location_id": "eld_silver_capital"
-        }
       }
     ],
     "item_daily": {},
@@ -450,10 +477,23 @@
       }
     },
     "currency": {
-      "balance": 10484,
-      "total_earned": 10484,
+      "balance": 11950,
+      "total_earned": 11950,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787040132224,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1466,
+          "before": 10484,
+          "after": 11950,
+          "meta": {
+            "travel_id": "msyaevh1-emmkyujf",
+            "location_id": "gingerbread_town",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786931130543,
           "type": "income",
@@ -573,10 +613,10 @@
     "migrated_at": 1785642699283
   },
   "created_at": 1785642699283,
-  "updated_at": 1786986793373,
+  "updated_at": 1787050603561,
   "production": {
     "started_at": 1785642699283,
-    "last_settled_at": 1786986793372,
+    "last_settled_at": 1787050603561,
     "accumulated_ms": 259200000,
     "progress": 30.026680747013167,
     "total_produced": 0
@@ -598,7 +638,8 @@
       "eld_magic_academy",
       "eld_windmill_plain",
       "rtc_central_station",
-      "wan_chun_valley"
+      "wan_chun_valley",
+      "gingerbread_town"
     ],
     "location_records": {
       "eld_silver_capital": {
@@ -647,6 +688,14 @@
         "name": "万春谷",
         "travel_id": "mswj5327-sglxvbyz",
         "time": 1786931130543,
+        "carried_item_id": ""
+      },
+      "gingerbread_town": {
+        "id": "gingerbread_town",
+        "map_id": "candy_dreamland",
+        "name": "姜饼小镇",
+        "travel_id": "msyaevh1-emmkyujf",
+        "time": 1787040132224,
         "carried_item_id": ""
       }
     },
@@ -814,6 +863,21 @@
         "name": "炼气第一步",
         "rarity": 3,
         "time": 1786931130545,
+        "actor_name": "购德帕瓦",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_gingerbread_town": {
+        "id": "ach_gingerbread_town",
+        "name": "发现姜饼小镇",
+        "rarity": 3,
+        "time": 1787040132226,
         "actor_name": "购德帕瓦",
         "rewards": [
           {
@@ -1280,9 +1344,72 @@
         "settled_at": 1786931130545,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：万春谷（四州小天地）\n旅行时间：42分钟\n获得：708若汁币，若汁之缘×1，经验+1\n新地点已解锁：万春谷\n达成旅行成就「发现万春谷」 ★★★\n达成旅行成就「炼气第一步」 ★★★"
+      },
+      "msyaevh1-emmkyujf": {
+        "id": "msyaevh1-emmkyujf",
+        "user_id": "3546805220",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "购德帕瓦",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "gingerbread_town",
+        "location_name": "姜饼小镇",
+        "duration_ms": 5276562,
+        "rewards": {
+          "coin": 1466,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "姜饼小镇",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_gingerbread_town",
+            "name": "发现姜饼小镇",
+            "rarity": 3,
+            "time": 1787040132226,
+            "actor_name": "购德帕瓦",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现姜饼小镇」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787040132227,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：姜饼小镇（糖霜梦境）\n旅行时间：1小时28分钟\n获得：1466若汁币，若汁之缘×3，经验+3\n新地点已解锁：姜饼小镇\n达成旅行成就「发现姜饼小镇」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "msyaevh1-emmkyujf",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "3546805220",
+        "report": "小若汁回来了！\n目的地：姜饼小镇（糖霜梦境）\n旅行时间：1小时28分钟\n获得：1466若汁币，若汁之缘×3，经验+3\n新地点已解锁：姜饼小镇\n达成旅行成就「发现姜饼小镇」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787040132227,
+        "created_at": 1787040132227,
+        "sent_at": 1787040132815,
+        "last_error": ""
+      },
       {
         "travel_id": "mswj5327-sglxvbyz",
         "group_id": "1025424898",
@@ -1376,14 +1503,14 @@
       }
     ],
     "stats": {
-      "total_trips": 7,
+      "total_trips": 8,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
         "eldoran_continent": 3,
         "unregistered_district": 0,
         "four_regions_little_world": 2,
-        "candy_dreamland": 0
+        "candy_dreamland": 1
       },
       "map_event_ids": {
         "eldoran_continent": {
