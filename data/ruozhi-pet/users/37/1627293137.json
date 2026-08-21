@@ -3,12 +3,12 @@
   "user_id": "1627293137",
   "pet": {
     "level": 5,
-    "experience": 13,
+    "experience": 24,
     "satiety": 5,
-    "mood": 100,
-    "health": 93,
+    "mood": 93,
+    "health": 89,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1787050603624,
+    "satiety_decay_at": 1787275361662,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1075,19 +1075,19 @@
       "quilt_turtle": 0,
       "sei_shonagon_turtle": 0
     },
-    "weight": 43,
-    "weight_decay_at": 1787031860081,
-    "health_decay_at": 1787050603624
+    "weight": 38,
+    "weight_decay_at": 1787247860081,
+    "health_decay_at": 1787275361662
   },
   "profile": {
-    "favorability": 100,
-    "weekly_contribution": 0,
-    "total_contribution": 109,
+    "favorability": 92,
+    "weekly_contribution": 1,
+    "total_contribution": 110,
     "last_display_name": "LOK_",
     "first_joined_at": 1785846055612,
-    "last_active_at": 1787050603624,
+    "last_active_at": 1787275361662,
     "daily": {
-      "date": "2026-08-18",
+      "date": "2026-08-21",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -1096,10 +1096,21 @@
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 86908,
-      "total_earned": 166908,
+      "balance": 87408,
+      "total_earned": 167408,
       "total_spent": 80000,
       "ledger": [
+        {
+          "time": 1787156809411,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 86908,
+          "after": 87408,
+          "meta": {
+            "date": "2026-08-20"
+          }
+        },
         {
           "time": 1786729459531,
           "type": "income",
@@ -1208,18 +1219,6 @@
             "skin_id": "poodle_turtle",
             "rarity": 4
           }
-        },
-        {
-          "time": 1786727670727,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 78987,
-          "after": 79287,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1228,10 +1227,10 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-14"
+      "first_interaction_reward_date": "2026-08-20"
     },
     "items": {
-      "ruozhi_fate": 9,
+      "ruozhi_fate": 45,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_duty_student_key": 1,
@@ -1257,6 +1256,18 @@
       "souvenir_still_round_ticket": 1
     },
     "item_ledger": [
+      {
+        "time": 1787156809410,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 36,
+        "before": 9,
+        "after": 45,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1786729459535,
         "type": "income",
@@ -1495,19 +1506,6 @@
           "event_id": "eld_event_potion_soup",
           "location_id": "eld_magic_academy"
         }
-      },
-      {
-        "time": 1786727570224,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 50,
-        "after": 53,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 5,
-          "source": "travel"
-        }
       }
     ],
     "item_daily": {
@@ -1539,6 +1537,32 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787156809411,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "attack",
+      "branch_id": "light_hit",
+      "summary": "LOK_踢中了小若汁。小若汁滚了两圈，生气地瞪了回来。",
+      "effects_text": "心情-7，健康-4，好感-8，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": -7,
+        "health": -4,
+        "favorability": -8,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 87408
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 36
+    },
     {
       "time": 1786692127758,
       "user_id": "1627293137",
@@ -1748,33 +1772,10 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1786551243810,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "mention_only",
-      "branch_id": "crawl_close",
-      "summary": "小若汁慢慢爬到LOK_身边，安静地待了一小会儿。",
-      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-08-14",
+    "date": "2026-08-20",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -1811,7 +1812,8 @@
     "event:1865511581": 1786551962563,
     "event:614337360": 1786552033642,
     "event:732229650": 1786605501421,
-    "event:986399665": 1786692127757
+    "event:986399665": 1786692127757,
+    "event:914483642": 1787156809409
   },
   "skin_sessions": {
     "active": null
@@ -1824,14 +1826,14 @@
     "migrated_at": 1785846055612
   },
   "created_at": 1785846055612,
-  "updated_at": 1787050603624,
+  "updated_at": 1787275361662,
   "production": {
     "started_at": 1785846055612,
-    "last_settled_at": 1787050603624,
-    "accumulated_ms": 259200000,
-    "progress": 36.18461147114081,
-    "total_produced": 124,
-    "last_collected_at": 1786692127757
+    "last_settled_at": 1787275361662,
+    "accumulated_ms": 118552252,
+    "progress": 16.43267427359875,
+    "total_produced": 160,
+    "last_collected_at": 1787156809410
   },
   "travel": {
     "unlocked_location_ids": [

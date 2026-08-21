@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "272950224",
   "pet": {
-    "level": 13,
-    "experience": 194,
-    "satiety": 5,
+    "level": 14,
+    "experience": 228,
+    "satiety": 87,
     "mood": 100,
-    "health": 99,
+    "health": 97,
     "current_skin_id": "yaya_turtle",
-    "satiety_decay_at": 1787050603571,
+    "satiety_decay_at": 1787285871715,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -93,7 +93,11 @@
       "cat_turtle",
       "world_devourer_turtle",
       "radical_foresight_turtle",
-      "thunder_emperor_turtle"
+      "thunder_emperor_turtle",
+      "vomit_turtle",
+      "qingshan_turtle",
+      "astonished_turtle",
+      "spirit_pearl_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -126,9 +130,13 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 981,
-      "counter:gacha_five": 18,
-      "counter:gacha_unlucky_five": 4
+      "counter:gacha_draws": 1156,
+      "counter:gacha_five": 24,
+      "counter:gacha_unlucky_five": 4,
+      "pet_stat_reach_count:satiety:98": 1,
+      "pet_stat_reach_count:satiety:98:last_at": 1787101027122,
+      "event_branch_count:feed:full": 1,
+      "event_branch_count:feed:full:last_at": 1787184041637
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -1470,9 +1478,319 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "overfed": {
+        "id": "overfed",
+        "name": "撑死了...",
+        "rarity": 2,
+        "time": 1787101027123,
+        "actor_name": "北游的主人",
+        "stat_key": "pet_stat_reach_count:satiety:98",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "vomit_turtle",
+            "skin_name": "呕吐小若汁",
+            "message": "解锁二星皮肤「呕吐小若汁」。"
+          }
+        ]
+      },
+      "ach_rtc_yesterday_end": {
+        "id": "ach_rtc_yesterday_end",
+        "name": "发现昨日尽头",
+        "rarity": 3,
+        "time": 1787121568355,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_exotic_pet_house": {
+        "id": "ach_exotic_pet_house",
+        "name": "发现珍宠阁",
+        "rarity": 3,
+        "time": 1787122086382,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "galovian_first_steps": {
+        "id": "galovian_first_steps",
+        "name": "初到迦洛维安",
+        "rarity": 3,
+        "time": 1787122086382,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_caramel_volcano": {
+        "id": "ach_caramel_volcano",
+        "name": "发现焦糖火山",
+        "rarity": 3,
+        "time": 1787122098036,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_candy_sweet_nature": {
+        "id": "ach_candy_sweet_nature",
+        "name": "甜点自然课",
+        "rarity": 3,
+        "time": 1787122098036,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_five_20": {
+        "id": "gacha_five_20",
+        "name": "群星汇聚",
+        "rarity": 5,
+        "time": 1787141610077,
+        "actor_name": "北游的主人",
+        "stat_key": "counter:gacha_five",
+        "count": 20,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_outer_official_market": {
+        "id": "ach_outer_official_market",
+        "name": "发现城外官市",
+        "rarity": 3,
+        "time": 1787157415228,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "feed_full_once": {
+        "id": "feed_full_once",
+        "name": "真的吃不下",
+        "rarity": 3,
+        "time": 1787184041638,
+        "actor_name": "北游的主人",
+        "stat_key": "event_branch_count:feed:full",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "astonished_turtle",
+            "skin_name": "吃惊小若汁",
+            "message": "解锁三星皮肤「吃惊小若汁」。"
+          }
+        ]
+      },
+      "ach_smart_farm": {
+        "id": "ach_smart_farm",
+        "name": "发现智慧农庄",
+        "rarity": 3,
+        "time": 1787270053264,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_southern_market": {
+        "id": "ach_southern_market",
+        "name": "发现南市",
+        "rarity": 3,
+        "time": 1787270063923,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_old_town": {
+        "id": "ach_old_town",
+        "name": "发现旧城区",
+        "rarity": 3,
+        "time": 1787270067089,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_parliament_new_palace": {
+        "id": "ach_parliament_new_palace",
+        "name": "发现议会与新王宫",
+        "rarity": 3,
+        "time": 1787270073023,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_lanzan_restaurant": {
+        "id": "ach_lanzan_restaurant",
+        "name": "发现兰馔楼",
+        "rarity": 3,
+        "time": 1787270079667,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_changle_residential_quarter": {
+        "id": "ach_changle_residential_quarter",
+        "name": "发现长乐坊",
+        "rarity": 3,
+        "time": 1787270085749,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_abandoned_old_port": {
+        "id": "ach_abandoned_old_port",
+        "name": "发现旧港口",
+        "rarity": 3,
+        "time": 1787270103813,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_hundred_arts_quarter": {
+        "id": "ach_hundred_arts_quarter",
+        "name": "发现百艺坊",
+        "rarity": 3,
+        "time": 1787270121810,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_golden_gate_avenue": {
+        "id": "ach_golden_gate_avenue",
+        "name": "发现金阙大街",
+        "rarity": 3,
+        "time": 1787276328580,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "spirit_pearl_turtle",
+        "reason": "gacha",
+        "time": 1787270151259
+      },
+      {
+        "skin_id": "astonished_turtle",
+        "reason": "achievement",
+        "time": 1787184041638,
+        "achievement_id": "feed_full_once"
+      },
+      {
+        "skin_id": "qingshan_turtle",
+        "reason": "gacha",
+        "time": 1787122141174
+      },
+      {
+        "skin_id": "vomit_turtle",
+        "reason": "achievement",
+        "time": 1787101027123,
+        "achievement_id": "overfed"
+      },
       {
         "skin_id": "thunder_emperor_turtle",
         "reason": "gacha",
@@ -1901,8 +2219,8 @@
     ],
     "five_skin_shadow_counts": {
       "roast_chicken_turtle": 0,
-      "snow_peak_turtle": 0,
-      "yaya_turtle": 1,
+      "snow_peak_turtle": 1,
+      "yaya_turtle": 3,
       "maodie_turtle": 2,
       "prison_turtle": 0,
       "shidai_turtle": 0,
@@ -1912,166 +2230,171 @@
       "rabbit_head_turtle": 0,
       "ahat_turtle": 0,
       "world_devourer_turtle": 0,
-      "radical_foresight_turtle": 0,
-      "thunder_emperor_turtle": 0
+      "radical_foresight_turtle": 1,
+      "thunder_emperor_turtle": 0,
+      "qingshan_turtle": 0,
+      "spirit_pearl_turtle": 0
     },
-    "weight": 52,
-    "weight_decay_at": 1787029993382,
-    "health_decay_at": 1787050603571
+    "weight": 57,
+    "weight_decay_at": 1787286046217,
+    "health_decay_at": 1787286046217
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 0,
-    "total_contribution": 346,
+    "weekly_contribution": 31,
+    "total_contribution": 377,
     "last_display_name": "北游的主人",
     "first_joined_at": 1784792495794,
-    "last_active_at": 1787050603571,
+    "last_active_at": 1787286046217,
     "daily": {
-      "date": "2026-08-18",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-08-21",
+      "event_count": 3,
+      "same_event_counts": {
+        "feed": 3
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 67603,
-      "total_earned": 1415603,
-      "total_spent": 1348000,
+      "balance": 165649,
+      "total_earned": 1637649,
+      "total_spent": 1472000,
       "ledger": [
         {
-          "time": 1787021277600,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 433,
-          "before": 67170,
-          "after": 67603,
-          "meta": {
-            "encounter_id": "encounter-msy1adlj-uuir3llc",
-            "partner_user_id": "1256806998"
-          }
-        },
-        {
-          "time": 1787021277599,
+          "time": 1787276328571,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 500,
-          "before": 66670,
-          "after": 67170,
+          "amount": 2124,
+          "before": 163525,
+          "after": 165649,
           "meta": {
-            "travel_id": "msy1adf9-dne89aie",
-            "location_id": "eld_old_battlefield",
+            "travel_id": "mt26hhb8-ldpcm9u9",
+            "location_id": "golden_gate_avenue",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1787019559591,
+          "time": 1787270156969,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 66370,
-          "after": 66670,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787019559591,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 61370,
-          "after": 66370,
-          "meta": {
-            "skin_id": "tidal_wave_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1787019559591,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 61070,
-          "after": 61370,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787019559591,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 60770,
-          "after": 61070,
+          "before": 163225,
+          "after": 163525,
           "meta": {
             "skin_id": "sparkling_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1787019559591,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 55770,
-          "after": 60770,
-          "meta": {
-            "skin_id": "gift_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1787019559591,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 50770,
-          "after": 55770,
-          "meta": {
-            "skin_id": "snake_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1787019556789,
-          "type": "expense",
-          "reason": "exchange_fate",
-          "amount": 80000,
-          "before": 130770,
-          "after": 50770,
-          "meta": {
-            "count": 10
-          }
-        },
-        {
-          "time": 1787019537935,
+          "time": 1787270156969,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 130470,
-          "after": 130770,
+          "before": 162925,
+          "after": 163225,
           "meta": {
-            "skin_id": "frog_turtle",
+            "skin_id": "birthday_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156969,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 162625,
+          "after": 162925,
+          "meta": {
+            "skin_id": "bouquet_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 162325,
+          "after": 162625,
+          "meta": {
+            "skin_id": "bouquet_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 162025,
+          "after": 162325,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 157025,
+          "after": 162025,
+          "meta": {
+            "skin_id": "unicorn_turtle",
+            "rarity": 4
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 156725,
+          "after": 157025,
+          "meta": {
+            "skin_id": "thumbs_up_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 156425,
+          "after": 156725,
+          "meta": {
+            "skin_id": "crown_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787270156968,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 156125,
+          "after": 156425,
+          "meta": {
+            "skin_id": "thumbs_up_turtle",
             "rarity": 3
           }
         }
       ],
       "sign": {
-        "last_date": "2026-08-17",
-        "total_count": 24,
+        "last_date": "2026-08-21",
+        "total_count": 27,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-17"
+      "first_interaction_reward_date": "2026-08-21"
     },
     "items": {
-      "ruozhi_fate": 2,
-      "nameless_ruozhi": 4,
+      "ruozhi_fate": 6,
+      "nameless_ruozhi": 8,
       "souvenir_border_quest_scroll": 2,
       "souvenir_border_map": 0,
       "travel_pager": 0,
@@ -2082,7 +2405,7 @@
       "souvenir_nameless_soldier_badge": 1,
       "souvenir_sea_future_coin": 1,
       "souvenir_driverless_car_card": 1,
-      "souvenir_temporary_actor_badge": 4,
+      "souvenir_temporary_actor_badge": 5,
       "souvenir_single_song_radio": 3,
       "souvenir_color_snowflake": 3,
       "souvenir_burned_neon_tube": 3,
@@ -2097,12 +2420,12 @@
       "souvenir_water_pattern_rubbing": 1,
       "souvenir_no_forging_certificate": 1,
       "souvenir_dragon_footprint": 0,
-      "souvenir_heavy_dwarf_spoon": 1,
+      "souvenir_heavy_dwarf_spoon": 2,
       "souvenir_auto_watering_tag": 2,
       "souvenir_rain_button": 2,
       "souvenir_atomic_child_sunglasses": 3,
       "souvenir_rusted_identity_badge": 1,
-      "souvenir_world_tree_leaf_corner": 1,
+      "souvenir_world_tree_leaf_corner": 2,
       "souvenir_root_waiting_sign": 1,
       "souvenir_star_lake_pebble": 2,
       "souvenir_two_smaller_screws": 2,
@@ -2118,13 +2441,13 @@
       "souvenir_emerald_light_leaf": 3,
       "souvenir_duty_student_key": 3,
       "souvenir_temporary_summon_card": 1,
-      "souvenir_transparent_ticket_holder": 1,
+      "souvenir_transparent_ticket_holder": 2,
       "souvenir_beast_name_tag": 1,
       "souvenir_rewriting_door_number": 2,
       "souvenir_wheat_old_coin": 2,
       "souvenir_floating_compass": 1,
       "souvenir_floating_stone": 2,
-      "souvenir_pine_needle": 1,
+      "souvenir_pine_needle": 2,
       "souvenir_plastic_turtle": 2,
       "souvenir_mini_life_jacket": 2,
       "souvenir_wrong_count_photo": 1,
@@ -2141,118 +2464,203 @@
       "souvenir_sun_chart": 2,
       "souvenir_tomorrow_school_badge": 1,
       "souvenir_future_mirror_shard": 1,
-      "food_noodles": 6,
+      "food_noodles": 9,
       "food_elven_tart": 0,
-      "food_seabreeze_popping_candy": 4,
-      "food_milk_tea": 0,
+      "food_seabreeze_popping_candy": 2,
+      "food_milk_tea": 1,
       "souvenir_nameless_roll_book": 2,
-      "food_midnight_cookie": 10,
-      "food_bread": 3,
-      "food_popcorn": 4,
-      "food_cake": 10,
-      "food_burger": 3,
+      "food_midnight_cookie": 16,
+      "food_bread": 5,
+      "food_popcorn": 5,
+      "food_cake": 13,
+      "food_burger": 2,
       "food_dumpling": 3,
-      "food_leaf_salad": 0,
-      "food_sandwich": 0,
-      "food_carrot": 2,
+      "food_leaf_salad": 3,
+      "food_sandwich": 1,
+      "food_carrot": 4,
       "food_curry": 2,
-      "food_ice_cream": 1,
-      "food_apple": 2,
+      "food_ice_cream": 0,
+      "food_apple": 6,
       "food_pancake": 4,
       "food_pizza": 1,
-      "food_donut": 3,
+      "food_donut": 8,
       "food_rice_ball": 1,
-      "food_fried_chicken": 1,
+      "food_fried_chicken": 0,
       "souvenir_wheat_noodle": 1,
-      "food_spirit_pill": 6,
-      "food_waterfall_chocolate": 1,
+      "food_spirit_pill": 5,
+      "food_waterfall_chocolate": 0,
       "souvenir_yesterday_calendar": 1,
-      "food_stardust_jelly": 2,
-      "food_dragon_stew": 2,
+      "food_stardust_jelly": 4,
+      "food_dragon_stew": 1,
       "souvenir_nested_old_boot": 1,
       "souvenir_unknown_compressed_cube": 1,
-      "souvenir_forgotten_flavor_pudding_cup": 1
+      "souvenir_forgotten_flavor_pudding_cup": 1,
+      "food_grapes": 2,
+      "souvenir_missing_road_map": 1,
+      "souvenir_silk_ribbon": 1,
+      "food_volcano_caramel_crisp": 2,
+      "souvenir_faded_park_candy": 2,
+      "food_deep_sea_boba": 1,
+      "food_fish": 2,
+      "food_nonstandard_fruit": 2,
+      "food_old_town_butter_bread": 1,
+      "souvenir_reverse_talisman": 1,
+      "souvenir_silent_bamboo_whistle": 1,
+      "souvenir_ninth_lane_goggles": 1,
+      "souvenir_cloud_empty_bottle": 1,
+      "souvenir_turtle_landscape": 1
     },
     "item_ledger": [
       {
-        "time": 1787021277599,
+        "time": 1787276328580,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
+        "amount": 3,
+        "before": 3,
+        "after": 6,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_golden_gate_avenue"
+        }
+      },
+      {
+        "time": 1787276328571,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
         "reason": "travel_reward",
         "meta": {
-          "travel_id": "msy1adf9-dne89aie",
-          "location_id": "eld_old_battlefield"
+          "travel_id": "mt26hhb8-ldpcm9u9",
+          "location_id": "golden_gate_avenue"
         }
       },
       {
-        "time": 1787019559591,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 19,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 6
-        }
-      },
-      {
-        "time": 1787019556789,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 10,
-        "before": 9,
-        "after": 19,
-        "reason": "exchange_fate",
-        "meta": {
-          "count": 10,
-          "cost": 80000
-        }
-      },
-      {
-        "time": 1787019537934,
+        "time": 1787270156968,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 30,
-        "before": 39,
-        "after": 9,
+        "before": 30,
+        "after": 0,
         "reason": "gacha_draw",
         "meta": {
           "count": 10
         }
       },
       {
-        "time": 1787019520648,
-        "type": "income",
-        "item_id": "souvenir_sunset_pill",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
+        "time": 1787270151259,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 60,
+        "after": 30,
+        "reason": "gacha_draw",
         "meta": {
-          "travel_id": "msy1a5h1-uzxaoyij",
-          "event_id": "furnace_hiccup",
-          "location_id": "golden_cloud_temple"
+          "count": 10
         }
       },
       {
-        "time": 1787019520648,
+        "time": 1787270147511,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 90,
+        "after": 60,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787270143515,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 120,
+        "after": 90,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787270132751,
+        "type": "income",
+        "item_id": "nameless_ruozhi",
+        "amount": 1,
+        "before": 7,
+        "after": 8,
+        "reason": "gacha_five_duplicate",
+        "meta": {
+          "skin_id": "yaya_turtle"
+        }
+      },
+      {
+        "time": 1787270132751,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 37,
-        "after": 39,
-        "reason": "travel_reward",
+        "amount": 45,
+        "before": 75,
+        "after": 120,
+        "reason": "gacha_five_duplicate",
         "meta": {
-          "travel_id": "msy1a5h1-uzxaoyij",
-          "location_id": "golden_cloud_temple"
+          "skin_id": "yaya_turtle"
         }
       },
       {
-        "time": 1787019520634,
+        "time": 1787270132750,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 105,
+        "after": 75,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787270121810,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 102,
+        "after": 105,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_hundred_arts_quarter"
+        }
+      },
+      {
+        "time": 1787270121808,
+        "type": "income",
+        "item_id": "souvenir_turtle_landscape",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mt26hev4-o5g71hq4",
+          "event_id": "hundred_arts_portrait",
+          "location_id": "hundred_arts_quarter"
+        }
+      },
+      {
+        "time": 1787270121808,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 101,
+        "after": 102,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt26hev4-o5g71hq4",
+          "location_id": "hundred_arts_quarter"
+        }
+      },
+      {
+        "time": 1787270121795,
         "type": "expense",
         "item_id": "travel_pager",
         "amount": 1,
@@ -2260,24 +2668,38 @@
         "after": 0,
         "reason": "use_pager",
         "meta": {
-          "travel_id": "msy1a5h1-uzxaoyij"
+          "travel_id": "mt26hev4-o5g71hq4"
         }
       },
       {
-        "time": 1787019516579,
+        "time": 1787270116433,
+        "type": "income",
+        "item_id": "souvenir_cloud_empty_bottle",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mt26hanu-xz899s6h",
+          "event_id": "eld_event_cloud_sheep",
+          "location_id": "eld_floating_island"
+        }
+      },
+      {
+        "time": 1787270116433,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 33,
-        "after": 37,
+        "amount": 5,
+        "before": 96,
+        "after": 101,
         "reason": "travel_reward",
         "meta": {
-          "travel_id": "msy1a217-61s3fxo3",
-          "location_id": "rtc_waste_factory"
+          "travel_id": "mt26hanu-xz899s6h",
+          "location_id": "eld_floating_island"
         }
       },
       {
-        "time": 1787019516569,
+        "time": 1787270116421,
         "type": "expense",
         "item_id": "travel_pager",
         "amount": 1,
@@ -2285,52 +2707,38 @@
         "after": 1,
         "reason": "use_pager",
         "meta": {
-          "travel_id": "msy1a217-61s3fxo3"
+          "travel_id": "mt26hanu-xz899s6h"
         }
       },
       {
-        "time": 1787019512073,
+        "time": 1787270112788,
         "type": "income",
-        "item_id": "food_midnight_cookie",
-        "amount": 2,
-        "before": 8,
-        "after": 10,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msy19z65-ew0bpoqv",
-          "event_id": "event_kids_meal_memory",
-          "location_id": "forgotten_family_restaurant"
-        }
-      },
-      {
-        "time": 1787019512069,
-        "type": "income",
-        "item_id": "souvenir_forgotten_flavor_pudding_cup",
+        "item_id": "souvenir_ninth_lane_goggles",
         "amount": 1,
         "before": 0,
         "after": 1,
         "reason": "travel_event_souvenir",
         "meta": {
-          "travel_id": "msy19z65-ew0bpoqv",
-          "event_id": "event_kids_meal_memory",
-          "location_id": "forgotten_family_restaurant"
+          "travel_id": "mt26h7uz-uxk49qxw",
+          "event_id": "event_ninth_lane",
+          "location_id": "echo_pool"
         }
       },
       {
-        "time": 1787019512069,
+        "time": 1787270112788,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 30,
-        "after": 33,
+        "amount": 2,
+        "before": 94,
+        "after": 96,
         "reason": "travel_reward",
         "meta": {
-          "travel_id": "msy19z65-ew0bpoqv",
-          "location_id": "forgotten_family_restaurant"
+          "travel_id": "mt26h7uz-uxk49qxw",
+          "location_id": "echo_pool"
         }
       },
       {
-        "time": 1787019512059,
+        "time": 1787270112777,
         "type": "expense",
         "item_id": "travel_pager",
         "amount": 1,
@@ -2338,102 +2746,27 @@
         "after": 2,
         "reason": "use_pager",
         "meta": {
-          "travel_id": "msy19z65-ew0bpoqv"
+          "travel_id": "mt26h7uz-uxk49qxw"
         }
       },
       {
-        "time": 1787019508199,
+        "time": 1787270108418,
         "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 26,
-        "after": 30,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msy19ts4-82je8izn",
-          "location_id": "chocolate_falls"
-        }
-      },
-      {
-        "time": 1787019508189,
-        "type": "expense",
-        "item_id": "travel_pager",
+        "item_id": "souvenir_heavy_dwarf_spoon",
         "amount": 1,
-        "before": 4,
-        "after": 3,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msy19ts4-82je8izn"
-        }
-      },
-      {
-        "time": 1787019498672,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 24,
-        "after": 26,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msy19oof-y8vmpy5v",
-          "location_id": "echo_pool"
-        }
-      },
-      {
-        "time": 1787019498663,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 5,
-        "after": 4,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msy19oof-y8vmpy5v"
-        }
-      },
-      {
-        "time": 1787019494736,
-        "type": "income",
-        "item_id": "souvenir_unknown_compressed_cube",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
+        "before": 1,
+        "after": 2,
         "reason": "travel_event_souvenir",
         "meta": {
-          "travel_id": "msy19kq5-ekg4kx9s",
-          "event_id": "rtc_event_mystery_box",
-          "location_id": "rtc_waste_factory"
-        }
-      },
-      {
-        "time": 1787019494736,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 21,
-        "after": 24,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msy19kq5-ekg4kx9s",
-          "location_id": "rtc_waste_factory"
-        }
-      },
-      {
-        "time": 1787019494726,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msy19kq5-ekg4kx9s"
+          "travel_id": "mt26h3df-r3or4rw5",
+          "event_id": "eld_event_heavy_spoon",
+          "location_id": "eld_dwarf_city"
         }
       }
     ],
     "item_daily": {
-      "date": "2026-08-18",
-      "fate_exchange_count": 10,
+      "date": "2026-08-21",
+      "fate_exchange_count": 0,
       "game_fate_reward_count": 0,
       "shop_buy_counts": {
         "travel_pager": 10
@@ -2466,26 +2799,52 @@
         "2026-08-13",
         "2026-08-14",
         "2026-08-16",
-        "2026-08-17"
+        "2026-08-17",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21"
       ]
     },
     "food_sign_backfill": {
       "month": "2026-08",
-      "dates": 16,
-      "time": 1786899080993
+      "dates": 19,
+      "time": 1787270017536
     }
   },
   "recent_events": [
     {
-      "time": 1786899076863,
+      "time": 1787270035565,
       "user_id": "272950224",
       "display_name": "北游的主人",
       "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁闻到香味就凑过来，把🍩糖霜甜甜圈吃得很认真。",
-      "effects_text": "饱食+12，心情+4，好感+2，贡献+2，经验+12",
+      "branch_id": "full",
+      "summary": "小若汁肚子已经完全装不下啦，还是先歇一会儿吧。",
+      "effects_text": "经验+10",
       "effects": {
-        "satiety": 12,
+        "satiety": 0,
+        "mood": 0,
+        "health": 0,
+        "favorability": 0,
+        "contribution": 0,
+        "experience": 10
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787270031715,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "它慢吞吞地解决了🍗炸鸡块，看起来心情很好。",
+      "effects_text": "饱食+15，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 15,
         "mood": 4,
         "health": 0,
         "favorability": 2,
@@ -2500,108 +2859,16 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1786899070179,
+      "time": 1787270027420,
       "user_id": "272950224",
       "display_name": "北游的主人",
       "event_id": "feed",
       "branch_id": "normal",
-      "summary": "小若汁尝了一口🍞松软面包就露出满足的表情。",
-      "effects_text": "饱食+10，心情+2，好感+2，贡献+2，经验+12",
+      "summary": "它慢吞吞地解决了🍲龙息炖菜，看起来心情很好。",
+      "effects_text": "饱食+18，心情+5，好感+2，贡献+2，经验+12",
       "effects": {
-        "satiety": 10,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786899060469,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它把🥕脆胡萝卜护在爪子间，开心地吃得一点不剩。",
-      "effects_text": "饱食+6，心情+2，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 6,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786899053784,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它认真品尝完🧋珍珠奶茶，随后满足地蹭了蹭。",
-      "effects_text": "饱食+9，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 9,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786899051099,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它把🥕脆胡萝卜护在爪子间，开心地吃得一点不剩。",
-      "effects_text": "饱食+6，心情+2，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 6,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786899048096,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁尝了一口🍛香浓咖喱饭就露出满足的表情。",
-      "effects_text": "饱食+16，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 16,
-        "mood": 4,
+        "satiety": 18,
+        "mood": 5,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
@@ -2611,91 +2878,163 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 173131
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 13
-    },
-    {
-      "time": 1786819153160,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它高兴地接过🍜热汤面，一口一口享用了起来。",
-      "effects_text": "饱食+12，心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786819150510,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它抱着🥗菜叶沙拉慢慢吃完，满足地晃了晃。",
-      "effects_text": "饱食+8，心情+2，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 8,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786819147516,
-      "user_id": "272950224",
-      "display_name": "北游的主人",
-      "event_id": "feed",
-      "branch_id": "hungry",
-      "summary": "它抱着🥪蔬菜三明治慢慢吃完，满足地晃了晃。",
-      "effects_text": "饱食+11，心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 11,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 149586
+        "balance": 76406
       },
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 10
     },
     {
-      "time": 1786732074247,
+      "time": 1787218583517,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁把脸转开，表示再香也得等会儿。",
+      "effects_text": "经验+10",
+      "effects": {
+        "satiety": 0,
+        "mood": 0,
+        "health": 0,
+        "favorability": 0,
+        "contribution": 0,
+        "experience": 10
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787218580161,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "hide_food",
+      "summary": "它慢吞吞地解决了🍗炸鸡块，看起来心情很好。",
+      "effects_text": "饱食+15，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 15,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787218577178,
       "user_id": "272950224",
       "display_name": "北游的主人",
       "event_id": "feed",
       "branch_id": "normal",
-      "summary": "它把🍜热汤面护在爪子间，开心地吃得一点不剩。",
+      "summary": "小若汁开心地收下🍦香草冰淇淋，连龟壳都像亮了一点。",
+      "effects_text": "饱食+10，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 10,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787218573997,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁尝了一口🍬海风跳跳糖就露出满足的表情。",
+      "effects_text": "饱食+7，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 7,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787184041638,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "full",
+      "summary": "小若汁把脸转开，表示再香也得等会儿。",
+      "effects_text": "经验+10",
+      "effects": {
+        "satiety": 0,
+        "mood": 0,
+        "health": 0,
+        "favorability": 0,
+        "contribution": 0,
+        "experience": 10
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [
+        {
+          "id": "feed_full_once",
+          "name": "真的吃不下",
+          "description": "触发 1 次投喂事件的吃饱分支",
+          "unlocked": true,
+          "unlocked_at": 1787184041638,
+          "current_count": 1,
+          "target_count": 1,
+          "progress_text": "1 / 1",
+          "rarity": 3,
+          "rarity_stars": "⭐⭐⭐",
+          "rarity_class": "rarity-3",
+          "rewards": [
+            {
+              "type": "item",
+              "item_id": "ruozhi_fate",
+              "amount": 3,
+              "message": "成就奖励：若汁之缘 ×3"
+            },
+            {
+              "type": "unlock_skin",
+              "skin_id": "astonished_turtle",
+              "skin_name": "吃惊小若汁",
+              "message": "解锁三星皮肤「吃惊小若汁」。"
+            }
+          ],
+          "message": "达成成就「真的吃不下」 ⭐⭐⭐"
+        }
+      ],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787184037525,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁尝了一口🍙暖饭团就露出满足的表情。",
       "effects_text": "饱食+12，心情+3，好感+2，贡献+2，经验+12",
       "effects": {
         "satiety": 12,
@@ -2704,6 +3043,29 @@
         "favorability": 2,
         "contribution": 2,
         "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787184032406,
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向北游的主人，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
       },
       "level_ups": [],
       "bonus_experience": 10,
@@ -2714,9 +3076,9 @@
     }
   ],
   "daily": {
-    "date": "2026-08-17",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "date": "2026-08-21",
+    "event_count": 3,
+    "bonus_event_count": 3
   },
   "processed_messages": {
     "event:2094525768": 1784974461548,
@@ -2844,7 +3206,26 @@
     "event:866702852": 1786899053783,
     "event:1223849799": 1786899060468,
     "event:36641030": 1786899070178,
-    "event:1094166285": 1786899076862
+    "event:1094166285": 1786899076862,
+    "event:1225932821": 1787101010873,
+    "event:425697600": 1787101013663,
+    "event:7242057": 1787101016364,
+    "event:1871346133": 1787101019065,
+    "event:12614276": 1787101021224,
+    "event:347219532": 1787101023512,
+    "event:166521792": 1787101027121,
+    "event:2119434733": 1787184015250,
+    "event:749807339": 1787184028765,
+    "event:881699933": 1787184032406,
+    "event:129278227": 1787184037524,
+    "event:2056626894": 1787184041635,
+    "event:1788028681": 1787218573995,
+    "event:1871954870": 1787218577177,
+    "event:1857111006": 1787218580161,
+    "event:500319827": 1787218583517,
+    "event:1694728562": 1787270027415,
+    "event:801078469": 1787270031714,
+    "event:1466018659": 1787270035564
   },
   "skin_sessions": {
     "active": null
@@ -2857,14 +3238,56 @@
     "migrated_at": 1784792495794
   },
   "created_at": 1784792495794,
-  "updated_at": 1787050603571,
+  "updated_at": 1787286046220,
   "gacha": {
-    "since_four_plus": 1,
-    "since_five": 14,
-    "total_draws": 981,
-    "total_four": 128,
-    "total_five": 18,
+    "since_four_plus": 5,
+    "since_five": 18,
+    "total_draws": 1156,
+    "total_four": 146,
+    "total_five": 24,
     "five_history": [
+      {
+        "time": 1787270151259,
+        "skin_id": "spirit_pearl_turtle",
+        "skin_name": "灵珠小若汁",
+        "pulls": 27,
+        "draw_index": 1138
+      },
+      {
+        "time": 1787270132751,
+        "skin_id": "yaya_turtle",
+        "skin_name": "娅娅小若汁",
+        "pulls": 31,
+        "draw_index": 1111
+      },
+      {
+        "time": 1787218600209,
+        "skin_id": "snow_peak_turtle",
+        "skin_name": "雪峰小若汁",
+        "pulls": 28,
+        "draw_index": 1080
+      },
+      {
+        "time": 1787184059476,
+        "skin_id": "radical_foresight_turtle",
+        "skin_name": "激进远视小若汁",
+        "pulls": 28,
+        "draw_index": 1052
+      },
+      {
+        "time": 1787141610075,
+        "skin_id": "yaya_turtle",
+        "skin_name": "娅娅小若汁",
+        "pulls": 21,
+        "draw_index": 1024
+      },
+      {
+        "time": 1787122141174,
+        "skin_id": "qingshan_turtle",
+        "skin_name": "倾山小若汁",
+        "pulls": 36,
+        "draw_index": 1003
+      },
       {
         "time": 1787019537934,
         "skin_id": "thunder_emperor_turtle",
@@ -2997,11 +3420,11 @@
   },
   "production": {
     "started_at": 1784875580645,
-    "last_settled_at": 1787050603571,
-    "accumulated_ms": 31367500,
-    "progress": 4.915261880327902,
-    "total_produced": 357,
-    "last_collected_at": 1787019236071
+    "last_settled_at": 1787286046217,
+    "accumulated_ms": 16018799,
+    "progress": 3.300972119677314,
+    "total_produced": 402,
+    "last_collected_at": 1787270027418
   },
   "travel": {
     "unlocked_location_ids": [
@@ -3063,7 +3486,20 @@
       "sugar_crystal_mine",
       "heaven_breaking_pass",
       "bitter_bamboo_village",
-      "mint_milk_sea"
+      "mint_milk_sea",
+      "rtc_yesterday_end",
+      "exotic_pet_house",
+      "caramel_volcano",
+      "outer_official_market",
+      "smart_farm",
+      "southern_market",
+      "old_town",
+      "parliament_new_palace",
+      "lanzan_restaurant",
+      "changle_residential_quarter",
+      "abandoned_old_port",
+      "hundred_arts_quarter",
+      "golden_gate_avenue"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -3537,6 +3973,110 @@
         "travel_id": "msy19h9h-wzpk1mgo",
         "time": 1787019489253,
         "carried_item_id": ""
+      },
+      "rtc_yesterday_end": {
+        "id": "rtc_yesterday_end",
+        "map_id": "retro_tomorrow_city",
+        "name": "昨日尽头",
+        "travel_id": "mszllgjx-rj79uhnx",
+        "time": 1787121568351,
+        "carried_item_id": "souvenir_missing_road_map"
+      },
+      "exotic_pet_house": {
+        "id": "exotic_pet_house",
+        "map_id": "galovian",
+        "name": "珍宠阁",
+        "travel_id": "mszqccef-cz6y7p5q",
+        "time": 1787122086378,
+        "carried_item_id": ""
+      },
+      "caramel_volcano": {
+        "id": "caramel_volcano",
+        "map_id": "candy_dreamland",
+        "name": "焦糖火山",
+        "travel_id": "mszqcr4o-mwspdhqx",
+        "time": 1787122098032,
+        "carried_item_id": ""
+      },
+      "outer_official_market": {
+        "id": "outer_official_market",
+        "map_id": "galovian",
+        "name": "城外官市",
+        "travel_id": "mt05tt1a-notj8hgo",
+        "time": 1787157415223,
+        "carried_item_id": ""
+      },
+      "smart_farm": {
+        "id": "smart_farm",
+        "map_id": "alvita",
+        "name": "智慧农庄",
+        "travel_id": "mt26fpjy-c7ojst0j",
+        "time": 1787270053258,
+        "carried_item_id": ""
+      },
+      "southern_market": {
+        "id": "southern_market",
+        "map_id": "galovian",
+        "name": "南市",
+        "travel_id": "mt26g5rp-k163380j",
+        "time": 1787270063919,
+        "carried_item_id": ""
+      },
+      "old_town": {
+        "id": "old_town",
+        "map_id": "alvita",
+        "name": "旧城区",
+        "travel_id": "mt26g8mo-21bhi083",
+        "time": 1787270067086,
+        "carried_item_id": ""
+      },
+      "parliament_new_palace": {
+        "id": "parliament_new_palace",
+        "map_id": "alvita",
+        "name": "议会与新王宫",
+        "travel_id": "mt26gd9g-xp8z2l3w",
+        "time": 1787270073020,
+        "carried_item_id": ""
+      },
+      "lanzan_restaurant": {
+        "id": "lanzan_restaurant",
+        "map_id": "galovian",
+        "name": "兰馔楼",
+        "travel_id": "mt26gi6p-ul3w8oso",
+        "time": 1787270079665,
+        "carried_item_id": ""
+      },
+      "changle_residential_quarter": {
+        "id": "changle_residential_quarter",
+        "map_id": "galovian",
+        "name": "长乐坊",
+        "travel_id": "mt26gmv0-zuiw6j4j",
+        "time": 1787270085745,
+        "carried_item_id": ""
+      },
+      "abandoned_old_port": {
+        "id": "abandoned_old_port",
+        "map_id": "alvita",
+        "name": "旧港口",
+        "travel_id": "mt26h0rt-fxdefhdo",
+        "time": 1787270103811,
+        "carried_item_id": ""
+      },
+      "hundred_arts_quarter": {
+        "id": "hundred_arts_quarter",
+        "map_id": "galovian",
+        "name": "百艺坊",
+        "travel_id": "mt26hev4-o5g71hq4",
+        "time": 1787270121808,
+        "carried_item_id": ""
+      },
+      "golden_gate_avenue": {
+        "id": "golden_gate_avenue",
+        "map_id": "galovian",
+        "name": "金阙大街",
+        "travel_id": "mt26hhb8-ldpcm9u9",
+        "time": 1787276328572,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -3621,8 +4161,8 @@
         "id": "rtc_event_robot_parade",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_robot_park",
-        "travel_id": "msmqv9vo-eqybx4no",
-        "time": 1786346379669
+        "travel_id": "mszqcvu4-qy0vu82y",
+        "time": 1787122104561
       },
       "rtc_event_old_song": {
         "id": "rtc_event_old_song",
@@ -3768,8 +4308,8 @@
         "id": "eld_event_heavy_spoon",
         "map_id": "eldoran_continent",
         "location_id": "eld_dwarf_city",
-        "travel_id": "msd69u0k-f0m98lf4",
-        "time": 1785767485356
+        "travel_id": "mt26h3df-r3or4rw5",
+        "time": 1787270108418
       },
       "rtc_event_escape_vine": {
         "id": "rtc_event_escape_vine",
@@ -3810,8 +4350,8 @@
         "id": "eld_event_world_leaf",
         "map_id": "eldoran_continent",
         "location_id": "eld_world_tree",
-        "travel_id": "msewsgf4-96u774oa",
-        "time": 1785863118823
+        "travel_id": "mszdtr1q-lb8d993e",
+        "time": 1787104356089
       },
       "eld_event_root_door": {
         "id": "eld_event_root_door",
@@ -3964,8 +4504,8 @@
         "id": "rtc_event_glass_boat",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_blue_harbor",
-        "travel_id": "msklceen-xhzol9va",
-        "time": 1786206691263
+        "travel_id": "mt26gfkt-zbwkcz7m",
+        "time": 1787270076251
       },
       "mistaken_spirit_beast": {
         "id": "mistaken_spirit_beast",
@@ -3978,8 +4518,8 @@
         "id": "event_exit_under_maintenance",
         "map_id": "unregistered_district",
         "location_id": "sunflower_tunnel",
-        "travel_id": "mslpbeha-1l7poryg",
-        "time": 1786282859092
+        "travel_id": "mszqd3kr-d5ch4ngr",
+        "time": 1787122114563
       },
       "event_fog_doorplate": {
         "id": "event_fog_doorplate",
@@ -4034,8 +4574,8 @@
         "id": "first_sword_flight",
         "map_id": "four_regions_little_world",
         "location_id": "mystic_sword_sect",
-        "travel_id": "msnj7kx8-9q7g5lhi",
-        "time": 1786392080186
+        "travel_id": "mszqd1dq-i95ftwsv",
+        "time": 1787122111364
       },
       "rtc_event_prize_turtle": {
         "id": "rtc_event_prize_turtle",
@@ -4202,8 +4742,8 @@
         "id": "rtc_event_safety_lecture",
         "map_id": "retro_tomorrow_city",
         "location_id": "rtc_atomic_plant",
-        "travel_id": "msupyvtd-w2cszr3r",
-        "time": 1786819120440
+        "travel_id": "mszw7td3-spczqieb",
+        "time": 1787141566705
       },
       "cotton_cloud_fall": {
         "id": "cotton_cloud_fall",
@@ -4260,6 +4800,139 @@
         "location_id": "forgotten_family_restaurant",
         "travel_id": "msy19z65-ew0bpoqv",
         "time": 1787019512069
+      },
+      "rtc_event_room_207": {
+        "id": "rtc_event_room_207",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_galaxy_motel",
+        "travel_id": "mszfstyj-7nrkd3t1",
+        "time": 1787114051283
+      },
+      "exotic_pet_house_ribbon": {
+        "id": "exotic_pet_house_ribbon",
+        "map_id": "galovian",
+        "location_id": "exotic_pet_house",
+        "travel_id": "mszqccef-cz6y7p5q",
+        "time": 1787122086378
+      },
+      "chocolate_waterfall_drink": {
+        "id": "chocolate_waterfall_drink",
+        "map_id": "candy_dreamland",
+        "location_id": "chocolate_falls",
+        "travel_id": "mszqcp0l-m4tq28u3",
+        "time": 1787122095296
+      },
+      "caramel_eruption": {
+        "id": "caramel_eruption",
+        "map_id": "candy_dreamland",
+        "location_id": "caramel_volcano",
+        "travel_id": "mszqcr4o-mwspdhqx",
+        "time": 1787122098032
+      },
+      "event_missing_carousel_horse": {
+        "id": "event_missing_carousel_horse",
+        "map_id": "unregistered_district",
+        "location_id": "empty_amusement_park",
+        "travel_id": "mt01yxk0-qnrn1gyq",
+        "time": 1787147977361
+      },
+      "cotton_sugar_path": {
+        "id": "cotton_sugar_path",
+        "map_id": "candy_dreamland",
+        "location_id": "cotton_candy_forest",
+        "travel_id": "mt0ulkby-jvue7706",
+        "time": 1787197975991
+      },
+      "pearl_diving": {
+        "id": "pearl_diving",
+        "map_id": "candy_dreamland",
+        "location_id": "mint_milk_sea",
+        "travel_id": "mt1bsvi1-iyyx1uhv",
+        "time": 1787229052984
+      },
+      "ugly_fruit": {
+        "id": "ugly_fruit",
+        "map_id": "alvita",
+        "location_id": "smart_farm",
+        "travel_id": "mt26fpjy-c7ojst0j",
+        "time": 1787270053258
+      },
+      "caramel_hot_spring": {
+        "id": "caramel_hot_spring",
+        "map_id": "candy_dreamland",
+        "location_id": "caramel_volcano",
+        "travel_id": "mt26g0lj-eqwko851",
+        "time": 1787270057071
+      },
+      "event_second_ruozhi_monitor": {
+        "id": "event_second_ruozhi_monitor",
+        "map_id": "unregistered_district",
+        "location_id": "rain_only_store",
+        "travel_id": "mt26g3bz-q4cp8rx4",
+        "time": 1787270060181
+      },
+      "old_town_bakery": {
+        "id": "old_town_bakery",
+        "map_id": "alvita",
+        "location_id": "old_town",
+        "travel_id": "mt26g8mo-21bhi083",
+        "time": 1787270067086
+      },
+      "portal_commuter_sleep": {
+        "id": "portal_commuter_sleep",
+        "map_id": "alvita",
+        "location_id": "parliament_new_palace",
+        "travel_id": "mt26gd9g-xp8z2l3w",
+        "time": 1787270073020
+      },
+      "reversed_light_talisman": {
+        "id": "reversed_light_talisman",
+        "map_id": "four_regions_little_world",
+        "location_id": "golden_cloud_temple",
+        "travel_id": "mt26gklk-m1e01ppa",
+        "time": 1787270082516
+      },
+      "changle_first_servant": {
+        "id": "changle_first_servant",
+        "map_id": "galovian",
+        "location_id": "changle_residential_quarter",
+        "travel_id": "mt26gmv0-zuiw6j4j",
+        "time": 1787270085745
+      },
+      "westbound_refugees": {
+        "id": "westbound_refugees",
+        "map_id": "four_regions_little_world",
+        "location_id": "heaven_breaking_pass",
+        "travel_id": "mt26gsfk-zquopfhz",
+        "time": 1787270093460
+      },
+      "event_ninth_lane": {
+        "id": "event_ninth_lane",
+        "map_id": "unregistered_district",
+        "location_id": "echo_pool",
+        "travel_id": "mt26h7uz-uxk49qxw",
+        "time": 1787270112788
+      },
+      "eld_event_cloud_sheep": {
+        "id": "eld_event_cloud_sheep",
+        "map_id": "eldoran_continent",
+        "location_id": "eld_floating_island",
+        "travel_id": "mt26hanu-xz899s6h",
+        "time": 1787270116433
+      },
+      "hundred_arts_portrait": {
+        "id": "hundred_arts_portrait",
+        "map_id": "galovian",
+        "location_id": "hundred_arts_quarter",
+        "travel_id": "mt26hev4-o5g71hq4",
+        "time": 1787270121808
+      },
+      "golden_gate_jewelry": {
+        "id": "golden_gate_jewelry",
+        "map_id": "galovian",
+        "location_id": "golden_gate_avenue",
+        "travel_id": "mt26hhb8-ldpcm9u9",
+        "time": 1787276328573
       }
     },
     "souvenir_records": {
@@ -4331,7 +5004,8 @@
         "name": "临时演员铭牌",
         "event_id": "rtc_event_robot_parade",
         "location_id": "rtc_robot_park",
-        "time": 1786346379669
+        "map_id": "retro_tomorrow_city",
+        "time": 1787122104561
       },
       "souvenir_single_song_radio": {
         "id": "souvenir_single_song_radio",
@@ -4436,7 +5110,8 @@
         "name": "超重矮人汤勺",
         "event_id": "eld_event_heavy_spoon",
         "location_id": "eld_dwarf_city",
-        "time": 1785767485356
+        "map_id": "eldoran_continent",
+        "time": 1787270108418
       },
       "souvenir_auto_watering_tag": {
         "id": "souvenir_auto_watering_tag",
@@ -4471,7 +5146,8 @@
         "name": "世界树叶角",
         "event_id": "eld_event_world_leaf",
         "location_id": "eld_world_tree",
-        "time": 1785863118823
+        "map_id": "eldoran_continent",
+        "time": 1787104356089
       },
       "souvenir_root_waiting_sign": {
         "id": "souvenir_root_waiting_sign",
@@ -4583,7 +5259,8 @@
         "name": "透明船票夹",
         "event_id": "rtc_event_glass_boat",
         "location_id": "rtc_blue_harbor",
-        "time": 1786206691263
+        "map_id": "retro_tomorrow_city",
+        "time": 1787270076251
       },
       "souvenir_beast_name_tag": {
         "id": "souvenir_beast_name_tag",
@@ -4625,7 +5302,8 @@
         "name": "迎客松松针",
         "event_id": "first_sword_flight",
         "location_id": "mystic_sword_sect",
-        "time": 1786392080186
+        "map_id": "four_regions_little_world",
+        "time": 1787122111364
       },
       "souvenir_plastic_turtle": {
         "id": "souvenir_plastic_turtle",
@@ -4780,6 +5458,70 @@
         "event_id": "event_kids_meal_memory",
         "location_id": "forgotten_family_restaurant",
         "time": 1787019512069
+      },
+      "souvenir_missing_road_map": {
+        "id": "souvenir_missing_road_map",
+        "name": "缺页公路图",
+        "event_id": "rtc_event_room_207",
+        "location_id": "rtc_galaxy_motel",
+        "map_id": "retro_tomorrow_city",
+        "time": 1787114051283
+      },
+      "souvenir_silk_ribbon": {
+        "id": "souvenir_silk_ribbon",
+        "name": "珍宠阁缎带",
+        "event_id": "exotic_pet_house_ribbon",
+        "location_id": "exotic_pet_house",
+        "map_id": "galovian",
+        "time": 1787122086378
+      },
+      "souvenir_faded_park_candy": {
+        "id": "souvenir_faded_park_candy",
+        "name": "褪色的乐园糖",
+        "event_id": "event_missing_carousel_horse",
+        "location_id": "empty_amusement_park",
+        "map_id": "unregistered_district",
+        "time": 1787147977361
+      },
+      "souvenir_reverse_talisman": {
+        "id": "souvenir_reverse_talisman",
+        "name": "倒贴轻身符",
+        "event_id": "reversed_light_talisman",
+        "location_id": "golden_cloud_temple",
+        "map_id": "four_regions_little_world",
+        "time": 1787270082516
+      },
+      "souvenir_silent_bamboo_whistle": {
+        "id": "souvenir_silent_bamboo_whistle",
+        "name": "无声苦竹哨",
+        "event_id": "westbound_refugees",
+        "location_id": "heaven_breaking_pass",
+        "map_id": "four_regions_little_world",
+        "time": 1787270093460
+      },
+      "souvenir_ninth_lane_goggles": {
+        "id": "souvenir_ninth_lane_goggles",
+        "name": "第九泳道护目镜",
+        "event_id": "event_ninth_lane",
+        "location_id": "echo_pool",
+        "map_id": "unregistered_district",
+        "time": 1787270112788
+      },
+      "souvenir_cloud_empty_bottle": {
+        "id": "souvenir_cloud_empty_bottle",
+        "name": "装过云的空瓶",
+        "event_id": "eld_event_cloud_sheep",
+        "location_id": "eld_floating_island",
+        "map_id": "eldoran_continent",
+        "time": 1787270116433
+      },
+      "souvenir_turtle_landscape": {
+        "id": "souvenir_turtle_landscape",
+        "name": "《山河小若图》",
+        "event_id": "hundred_arts_portrait",
+        "location_id": "hundred_arts_quarter",
+        "map_id": "galovian",
+        "time": 1787270121808
       }
     },
     "achievement_records": {
@@ -5997,90 +6739,324 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_yesterday_end": {
+        "id": "ach_rtc_yesterday_end",
+        "name": "发现昨日尽头",
+        "rarity": 3,
+        "time": 1787121568355,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_exotic_pet_house": {
+        "id": "ach_exotic_pet_house",
+        "name": "发现珍宠阁",
+        "rarity": 3,
+        "time": 1787122086382,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "galovian_first_steps": {
+        "id": "galovian_first_steps",
+        "name": "初到迦洛维安",
+        "rarity": 3,
+        "time": 1787122086382,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_caramel_volcano": {
+        "id": "ach_caramel_volcano",
+        "name": "发现焦糖火山",
+        "rarity": 3,
+        "time": 1787122098036,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_candy_sweet_nature": {
+        "id": "ach_candy_sweet_nature",
+        "name": "甜点自然课",
+        "rarity": 3,
+        "time": 1787122098036,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_outer_official_market": {
+        "id": "ach_outer_official_market",
+        "name": "发现城外官市",
+        "rarity": 3,
+        "time": 1787157415228,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_smart_farm": {
+        "id": "ach_smart_farm",
+        "name": "发现智慧农庄",
+        "rarity": 3,
+        "time": 1787270053264,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_southern_market": {
+        "id": "ach_southern_market",
+        "name": "发现南市",
+        "rarity": 3,
+        "time": 1787270063923,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_old_town": {
+        "id": "ach_old_town",
+        "name": "发现旧城区",
+        "rarity": 3,
+        "time": 1787270067089,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_parliament_new_palace": {
+        "id": "ach_parliament_new_palace",
+        "name": "发现议会与新王宫",
+        "rarity": 3,
+        "time": 1787270073023,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_lanzan_restaurant": {
+        "id": "ach_lanzan_restaurant",
+        "name": "发现兰馔楼",
+        "rarity": 3,
+        "time": 1787270079667,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_changle_residential_quarter": {
+        "id": "ach_changle_residential_quarter",
+        "name": "发现长乐坊",
+        "rarity": 3,
+        "time": 1787270085749,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_abandoned_old_port": {
+        "id": "ach_abandoned_old_port",
+        "name": "发现旧港口",
+        "rarity": 3,
+        "time": 1787270103813,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_hundred_arts_quarter": {
+        "id": "ach_hundred_arts_quarter",
+        "name": "发现百艺坊",
+        "rarity": 3,
+        "time": 1787270121810,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_golden_gate_avenue": {
+        "id": "ach_golden_gate_avenue",
+        "name": "发现金阙大街",
+        "rarity": 3,
+        "time": 1787276328580,
+        "actor_name": "北游的主人",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
-      "msy1adf9-dne89aie": {
-        "id": "msy1adf9-dne89aie",
+      "mt26hhb8-ldpcm9u9": {
+        "id": "mt26hhb8-ldpcm9u9",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_old_battlefield",
-        "location_name": "无名古战场",
-        "duration_ms": 1748497,
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "golden_gate_avenue",
+        "location_name": "金阙大街",
+        "duration_ms": 6205038,
         "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
+          "coin": 2124,
+          "fate": 3,
+          "experience": 4
         },
-        "event": null,
-        "encounter": {
-          "id": "encounter-msy1adlj-uuir3llc",
-          "time": 1787019529303,
-          "map_id": "eldoran_continent",
-          "map_name": "艾尔多兰大陆",
-          "text": "它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。",
-          "reward": {
-            "id": "coin_jackpot",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 400,
-            "max_amount": 500,
-            "amount": 433,
-            "reward_text": "433若汁币"
+        "event": {
+          "id": "golden_gate_jewelry",
+          "name": "镇店之龟",
+          "text": "珠宝铺掌柜把一串宝石临时挂在小若汁身上展示，没想到围观的人越来越多，当天下午生意格外好。掌柜高兴地给了它一笔\"镇店费\"。",
+          "effects": {
+            "coin_flat": 400,
+            "mood": 3
           },
-          "status": "pending",
-          "partner_user_id": "1256806998",
-          "partner_display_name": "库洛4000+",
-          "reward_text": "433若汁币"
+          "souvenirs": [],
+          "items": [],
+          "record": false
         },
+        "encounter": null,
         "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "",
+        "new_location": "金阙大街",
         "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
+        "achievements": [
+          {
+            "id": "ach_golden_gate_avenue",
+            "name": "发现金阙大街",
+            "rarity": 3,
+            "time": 1787276328580,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现金阙大街」 ★★★"
+          }
+        ],
+        "mood_change": 1,
         "level_ups": [],
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787021277601,
+        "settled_at": 1787276328581,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：29分钟\n获得：500若汁币，若汁之缘×1，经验+1\n小若汁偶遇了库洛4000+的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：433若汁币"
+        "report": "小若汁回来了！\n目的地：金阙大街（迦洛维安府）\n旅行时间：1小时43分钟\n获得：2124若汁币，若汁之缘×3，经验+4\n旅行事件：镇店之龟\n珠宝铺掌柜把一串宝石临时挂在小若汁身上展示，没想到围观的人越来越多，当天下午生意格外好。掌柜高兴地给了它一笔\"镇店费\"。\n本次状态变化：心情+1\n新地点已解锁：金阙大街\n达成旅行成就「发现金阙大街」 ★★★"
       },
-      "msy1a5h1-uzxaoyij": {
-        "id": "msy1a5h1-uzxaoyij",
+      "mt26hev4-o5g71hq4": {
+        "id": "mt26hev4-o5g71hq4",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "golden_cloud_temple",
-        "location_name": "金霞观",
-        "duration_ms": 4182578,
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "hundred_arts_quarter",
+        "location_name": "百艺坊",
+        "duration_ms": 2678487,
         "rewards": {
-          "coin": 1162,
-          "fate": 2,
-          "experience": 3
+          "coin": 744,
+          "fate": 1,
+          "experience": 2
         },
         "event": {
-          "id": "furnace_hiccup",
-          "name": "炼丹炉打嗝",
-          "text": "五彩烟雾把龟壳熏得闪闪发光。",
+          "id": "hundred_arts_portrait",
+          "name": "小若汁肖像",
+          "text": "一个年轻画师坚持认为小若汁的侧脸\"极有古意\"，拉着它坐了半天。最后画里山河壮阔、云气万千，小若汁本人只占角落里指甲盖那么大一点。",
           "effects": {
-            "health": 3
+            "mood": 6
           },
           "souvenirs": [
             {
-              "id": "souvenir_sunset_pill",
-              "name": "炼歪的霞光丹",
-              "emoji": "💊",
-              "description": "旅行纪念品「炼歪的霞光丹」。"
+              "id": "souvenir_turtle_landscape",
+              "name": "《山河小若图》",
+              "emoji": "🖼️",
+              "description": "山河壮阔，小若汁却只有角落里一点点大"
             }
           ],
           "items": [],
@@ -6089,159 +7065,86 @@
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_sunset_pill",
-            "name": "炼歪的霞光丹",
-            "emoji": "💊",
-            "description": "旅行纪念品「炼歪的霞光丹」。",
+            "id": "souvenir_turtle_landscape",
+            "name": "《山河小若图》",
+            "emoji": "🖼️",
+            "description": "山河壮阔，小若汁却只有角落里一点点大",
             "amount": 1
           }
         ],
         "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "",
-        "health_change": 3,
-        "achievements": [],
-        "mood_change": 0,
+        "new_location": "百艺坊",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_hundred_arts_quarter",
+            "name": "发现百艺坊",
+            "rarity": 3,
+            "time": 1787270121810,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现百艺坊」 ★★★"
+          }
+        ],
+        "mood_change": 6,
         "level_ups": [],
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787019520649,
+        "settled_at": 1787270121811,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：1小时10分钟\n获得：1162若汁币，若汁之缘×2，经验+3\n旅行事件：炼丹炉打嗝\n五彩烟雾把龟壳熏得闪闪发光。\n本次状态变化：健康+3\n纪念品：💊炼歪的霞光丹×1"
+        "report": "小若汁回来了！\n目的地：百艺坊（迦洛维安府）\n旅行时间：45分钟\n获得：744若汁币，若汁之缘×1，经验+2\n旅行事件：小若汁肖像\n一个年轻画师坚持认为小若汁的侧脸\"极有古意\"，拉着它坐了半天。最后画里山河壮阔、云气万千，小若汁本人只占角落里指甲盖那么大一点。\n本次状态变化：心情+6\n纪念品：🖼️《山河小若图》×1\n新地点已解锁：百艺坊\n达成旅行成就「发现百艺坊」 ★★★"
       },
-      "msy1a217-61s3fxo3": {
-        "id": "msy1a217-61s3fxo3",
+      "mt26hanu-xz899s6h": {
+        "id": "mt26hanu-xz899s6h",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_waste_factory",
-        "location_name": "万能垃圾处理厂",
-        "duration_ms": 6061325,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_floating_island",
+        "location_name": "倒悬浮空岛",
+        "duration_ms": 7500095,
         "rewards": {
-          "coin": 1684,
-          "fate": 4,
+          "coin": 2083,
+          "fate": 5,
           "experience": 4
         },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019516580,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：1小时41分钟\n获得：1684若汁币，若汁之缘×4，经验+4"
-      },
-      "msy19z65-ew0bpoqv": {
-        "id": "msy19z65-ew0bpoqv",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "forgotten_family_restaurant",
-        "location_name": "被遗忘的家庭餐厅",
-        "duration_ms": 5121304,
-        "rewards": {
-          "coin": 1423,
-          "fate": 3,
-          "experience": 2
-        },
         "event": {
-          "id": "event_kids_meal_memory",
-          "name": "儿童套餐附赠回忆",
-          "text": "餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。",
+          "id": "eld_event_cloud_sheep",
+          "name": "云做的羊",
+          "text": "小若汁追着云羊走了很久，最后只抓到一小团雾。",
           "effects": {},
           "souvenirs": [
             {
-              "id": "souvenir_forgotten_flavor_pudding_cup",
-              "name": "记不起味道的布丁杯",
-              "emoji": "🍮",
-              "description": "杯底写着“谢谢你那天来过”。"
+              "id": "souvenir_cloud_empty_bottle",
+              "name": "装过云的空瓶",
+              "emoji": "☁️",
+              "description": "旅行纪念品「装过云的空瓶」。"
             }
           ],
-          "items": [
-            {
-              "id": "food_midnight_cookie",
-              "name": "午夜饼干",
-              "emoji": "🍪",
-              "amount": 2
-            }
-          ],
+          "items": [],
           "record": false
         },
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_forgotten_flavor_pudding_cup",
-            "name": "记不起味道的布丁杯",
-            "emoji": "🍮",
-            "description": "杯底写着“谢谢你那天来过”。",
+            "id": "souvenir_cloud_empty_bottle",
+            "name": "装过云的空瓶",
+            "emoji": "☁️",
+            "description": "旅行纪念品「装过云的空瓶」。",
             "amount": 1
           }
         ],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_midnight_cookie",
-            "name": "午夜饼干",
-            "emoji": "🍪",
-            "description": "未登记城区总在不该营业时出现的点心。",
-            "food": {
-              "satiety": 12,
-              "mood": 5,
-              "weight_gain": 4
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019512075,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时25分钟\n获得：1423若汁币，若汁之缘×3，经验+2\n旅行事件：儿童套餐附赠回忆\n餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。\n食物：🍪午夜饼干×2\n纪念品：🍮记不起味道的布丁杯×1"
-      },
-      "msy19ts4-82je8izn": {
-        "id": "msy19ts4-82je8izn",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "candy_dreamland",
-        "map_name": "糖霜梦境",
-        "location_id": "chocolate_falls",
-        "location_name": "巧克力大瀑布",
-        "duration_ms": 7631943,
-        "rewards": {
-          "coin": 2120,
-          "fate": 4,
-          "experience": 4
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
         "new_location": "",
@@ -6252,12 +7155,12 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787019508200,
+        "settled_at": 1787270116436,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：2小时7分钟\n获得：2120若汁币，若汁之缘×4，经验+4"
+        "report": "小若汁回来了！\n目的地：倒悬浮空岛（艾尔多兰大陆）\n旅行时间：2小时5分钟\n获得：2083若汁币，若汁之缘×5，经验+4\n旅行事件：云做的羊\n小若汁追着云羊走了很久，最后只抓到一小团雾。\n纪念品：☁️装过云的空瓶×1"
       },
-      "msy19oof-y8vmpy5v": {
-        "id": "msy19oof-y8vmpy5v",
+      "mt26h7uz-uxk49qxw": {
+        "id": "mt26h7uz-uxk49qxw",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
@@ -6266,58 +7169,25 @@
         "map_name": "未登记城区",
         "location_id": "echo_pool",
         "location_name": "回声游泳馆",
-        "duration_ms": 4387533,
+        "duration_ms": 3474241,
         "rewards": {
-          "coin": 1219,
+          "coin": 965,
           "fate": 2,
           "experience": 2
         },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019498674,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：1小时13分钟\n获得：1219若汁币，若汁之缘×2，经验+2"
-      },
-      "msy19kq5-ekg4kx9s": {
-        "id": "msy19kq5-ekg4kx9s",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_waste_factory",
-        "location_name": "万能垃圾处理厂",
-        "duration_ms": 5223206,
-        "rewards": {
-          "coin": 1541,
-          "fate": 3,
-          "experience": 3
-        },
         "event": {
-          "id": "rtc_event_mystery_box",
-          "name": "压缩方块",
-          "text": "小若汁带回一块无法判断原材料的完美方块。",
+          "id": "event_ninth_lane",
+          "name": "第九条泳道",
+          "text": "墙上只有八条泳道，倒影里却多出第九条，终点写着“家”。",
           "effects": {
-            "coin_flat": 90
+            "fate_flat": 1
           },
           "souvenirs": [
             {
-              "id": "souvenir_unknown_compressed_cube",
-              "name": "未知压缩方块",
-              "emoji": "📦",
-              "description": "旅行纪念品「未知压缩方块」。"
+              "id": "souvenir_ninth_lane_goggles",
+              "name": "第九泳道护目镜",
+              "emoji": "🥽",
+              "description": "戴上后水下出口会多一个。"
             }
           ],
           "items": [],
@@ -6326,10 +7196,10 @@
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_unknown_compressed_cube",
-            "name": "未知压缩方块",
-            "emoji": "📦",
-            "description": "旅行纪念品「未知压缩方块」。",
+            "id": "souvenir_ninth_lane_goggles",
+            "name": "第九泳道护目镜",
+            "emoji": "🥽",
+            "description": "戴上后水下出口会多一个。",
             "amount": 1
           }
         ],
@@ -6343,103 +7213,37 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787019494737,
+        "settled_at": 1787270112790,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：1小时27分钟\n获得：1541若汁币，若汁之缘×3，经验+3\n旅行事件：压缩方块\n小若汁带回一块无法判断原材料的完美方块。\n纪念品：📦未知压缩方块×1"
+        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：58分钟\n获得：965若汁币，若汁之缘×2，经验+2\n旅行事件：第九条泳道\n墙上只有八条泳道，倒影里却多出第九条，终点写着“家”。\n纪念品：🥽第九泳道护目镜×1"
       },
-      "msy19h9h-wzpk1mgo": {
-        "id": "msy19h9h-wzpk1mgo",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "candy_dreamland",
-        "map_name": "糖霜梦境",
-        "location_id": "mint_milk_sea",
-        "location_name": "薄荷奶绿海",
-        "duration_ms": 8528671,
-        "rewards": {
-          "coin": 2369,
-          "fate": 4,
-          "experience": 5
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "薄荷奶绿海",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_mint_milk_sea",
-            "name": "发现薄荷奶绿海",
-            "rarity": 3,
-            "time": 1787019489255,
-            "actor_name": "北游的主人",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现薄荷奶绿海」 ★★★"
-          },
-          {
-            "id": "ach_candy_5_locations",
-            "name": "糖霜初游",
-            "rarity": 3,
-            "time": 1787019489255,
-            "actor_name": "北游的主人",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「糖霜初游」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019489255,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：薄荷奶绿海（糖霜梦境）\n旅行时间：2小时22分钟\n获得：2369若汁币，若汁之缘×4，经验+5\n新地点已解锁：薄荷奶绿海\n达成旅行成就「发现薄荷奶绿海」 ★★★\n达成旅行成就「糖霜初游」 ★★★"
-      },
-      "msy18tyd-6s9tofdv": {
-        "id": "msy18tyd-6s9tofdv",
+      "mt26h3df-r3or4rw5": {
+        "id": "mt26h3df-r3or4rw5",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
         "map_id": "eldoran_continent",
         "map_name": "艾尔多兰大陆",
-        "location_id": "eld_weeping_swamp",
-        "location_name": "哭泣沼泽",
-        "duration_ms": 2374603,
+        "location_id": "eld_dwarf_city",
+        "location_name": "铁砧矮人城",
+        "duration_ms": 5963317,
         "rewards": {
-          "coin": 660,
-          "fate": 2,
-          "experience": 2
+          "coin": 1656,
+          "fate": 4,
+          "experience": 3
         },
         "event": {
-          "id": "eld_event_lost_boot",
-          "name": "沼泽旧靴",
-          "text": "小若汁从泥里拔出一只旧靴，靴子里还有一只更小的靴子。",
+          "id": "eld_event_heavy_spoon",
+          "name": "矮人汤勺",
+          "text": "小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。",
           "effects": {},
           "souvenirs": [
             {
-              "id": "souvenir_nested_old_boot",
-              "name": "套娃旧靴",
-              "emoji": "🥾",
-              "description": "旅行纪念品「套娃旧靴」。"
+              "id": "souvenir_heavy_dwarf_spoon",
+              "name": "超重矮人汤勺",
+              "emoji": "🥄",
+              "description": "旅行纪念品「超重矮人汤勺」。"
             }
           ],
           "items": [],
@@ -6448,10 +7252,10 @@
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_nested_old_boot",
-            "name": "套娃旧靴",
-            "emoji": "🥾",
-            "description": "旅行纪念品「套娃旧靴」。",
+            "id": "souvenir_heavy_dwarf_spoon",
+            "name": "超重矮人汤勺",
+            "emoji": "🥄",
+            "description": "旅行纪念品「超重矮人汤勺」。",
             "amount": 1
           }
         ],
@@ -6465,25 +7269,108 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787019485076,
+        "settled_at": 1787270108421,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：40分钟\n获得：660若汁币，若汁之缘×2，经验+2\n旅行事件：沼泽旧靴\n小若汁从泥里拔出一只旧靴，靴子里还有一只更小的靴子。\n纪念品：🥾套娃旧靴×1"
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：1小时39分钟\n获得：1656若汁币，若汁之缘×4，经验+3\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1"
       },
-      "msy18pdt-bstztkmf": {
-        "id": "msy18pdt-bstztkmf",
+      "mt26h0rt-fxdefhdo": {
+        "id": "mt26h0rt-fxdefhdo",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "abandoned_old_port",
+        "location_name": "旧港口",
+        "duration_ms": 4864088,
+        "rewards": {
+          "coin": 1351,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "旧港口",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_abandoned_old_port",
+            "name": "发现旧港口",
+            "rarity": 3,
+            "time": 1787270103813,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现旧港口」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270103815,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：旧港口（阿尔维塔）\n旅行时间：1小时21分钟\n获得：1351若汁币，若汁之缘×3，经验+3\n新地点已解锁：旧港口\n达成旅行成就「发现旧港口」 ★★★"
+      },
+      "mt26gy63-8qo9bdku": {
+        "id": "mt26gy63-8qo9bdku",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "parliament_new_palace",
+        "location_name": "议会与新王宫",
+        "duration_ms": 1580733,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270100312,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：26分钟\n获得：500若汁币，若汁之缘×1，经验+1"
+      },
+      "mt26gvcn-lelu5ot9": {
+        "id": "mt26gvcn-lelu5ot9",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
         "map_id": "unregistered_district",
         "map_name": "未登记城区",
-        "location_id": "nap_park",
-        "location_name": "午睡公园",
-        "duration_ms": 2072306,
+        "location_id": "forgotten_family_restaurant",
+        "location_name": "被遗忘的家庭餐厅",
+        "duration_ms": 5696536,
         "rewards": {
-          "coin": 576,
-          "fate": 1,
-          "experience": 1
+          "coin": 1582,
+          "fate": 4,
+          "experience": 3
         },
         "event": null,
         "encounter": null,
@@ -6498,260 +7385,82 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787019453459,
+        "settled_at": 1787270097031,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：35分钟\n获得：576若汁币，若汁之缘×1，经验+1"
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时35分钟\n获得：1582若汁币，若汁之缘×4，经验+3"
       },
-      "msy175i8-z4cd3h5n": {
-        "id": "msy175i8-z4cd3h5n",
+      "mt26gsfk-zquopfhz": {
+        "id": "mt26gsfk-zquopfhz",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
         "map_id": "four_regions_little_world",
         "map_name": "四州小天地",
-        "location_id": "cloud_sword_tomb",
-        "location_name": "云海剑冢",
-        "duration_ms": 2558379,
+        "location_id": "heaven_breaking_pass",
+        "location_name": "断天关",
+        "duration_ms": 8765226,
         "rewards": {
-          "coin": 711,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "encounter": {
-          "id": "encounter-msy175p0-ynql45w4",
-          "time": 1787019379092,
-          "map_id": "four_regions_little_world",
-          "map_name": "四州小天地",
-          "text": "突然下起小雨，两只小若汁挤在同一片叶子下面，谁也没有淋湿。",
-          "reward": {
-            "id": "pager",
-            "type": "item",
-            "item_id": "travel_pager",
-            "name": "寻呼机",
-            "amount": 1,
-            "reward_text": "寻呼机×1"
-          },
-          "status": "pending",
-          "partner_user_id": "2069743095",
-          "partner_display_name": "瀛",
-          "reward_text": "寻呼机×1"
-        },
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_travel_encounter_pager",
-            "name": "意外的联络方式",
-            "rarity": 3,
-            "time": 1787019381312,
-            "actor_name": "北游的主人",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「意外的联络方式」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019381312,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：云海剑冢（四州小天地）\n旅行时间：43分钟\n获得：711若汁币，若汁之缘×1，经验+1\n小若汁偶遇了瀛的小若汁，突然下起小雨，两只小若汁挤在同一片叶子下面，谁也没有淋湿。\n偶遇奖励：寻呼机×1\n达成旅行成就「意外的联络方式」 ★★★"
-      },
-      "msy140z6-zjxo06s6": {
-        "id": "msy140z6-zjxo06s6",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_silver_capital",
-        "location_name": "银冠王城",
-        "duration_ms": 1784347,
-        "rewards": {
-          "coin": 500,
-          "fate": 2,
-          "experience": 1
-        },
-        "event": {
-          "id": "eld_event_palace_feast",
-          "name": "宴会剩菜",
-          "text": "王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。",
-          "effects": {
-            "fate_flat": 1
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_palace_leaf_basket",
-              "name": "王宫菜叶篮",
-              "emoji": "🥗",
-              "description": "旅行纪念品「王宫菜叶篮」。"
-            }
-          ],
-          "items": [
-            {
-              "id": "food_dragon_stew",
-              "name": "龙息炖菜",
-              "emoji": "🍲",
-              "amount": 2
-            }
-          ],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_palace_leaf_basket",
-            "name": "王宫菜叶篮",
-            "emoji": "🥗",
-            "description": "旅行纪念品「王宫菜叶篮」。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_dragon_stew",
-            "name": "龙息炖菜",
-            "emoji": "🍲",
-            "description": "艾尔多兰大陆的热乎特色炖菜。",
-            "food": {
-              "satiety": 18,
-              "mood": 5,
-              "weight_gain": 6
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787019371756,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：30分钟\n获得：500若汁币，若汁之缘×2，经验+1\n旅行事件：宴会剩菜\n王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。\n食物：🍲龙息炖菜×2\n纪念品：🥗王宫菜叶篮×1"
-      },
-      "msww1qyu-dwp6q4h1": {
-        "id": "msww1qyu-dwp6q4h1",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_atomic_mall",
-        "location_name": "原子百货商场",
-        "duration_ms": 9245437,
-        "rewards": {
-          "coin": 2825,
+          "coin": 2435,
           "fate": 5,
           "experience": 5
         },
         "event": {
-          "id": "rtc_event_free_sample",
-          "name": "未来食品试吃",
-          "text": "小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。",
+          "id": "westbound_refugees",
+          "name": "西逃难民",
+          "text": "村民因交不起通行灵石被赶回东边。",
           "effects": {
-            "coin_percent": 10
+            "mood": -6
           },
-          "souvenirs": [],
-          "items": [
+          "souvenirs": [
             {
-              "id": "food_stardust_jelly",
-              "name": "星尘果冻",
-              "emoji": "🍮",
-              "amount": 2
+              "id": "souvenir_silent_bamboo_whistle",
+              "name": "无声苦竹哨",
+              "emoji": "🎋",
+              "description": "旅行纪念品「无声苦竹哨」。"
             }
           ],
+          "items": [],
           "record": false
         },
-        "encounter": {
-          "id": "encounter-mswzgrua-8mruygke",
-          "time": 1786956002290,
-          "map_id": "retro_tomorrow_city",
-          "map_name": "明日旧城",
-          "text": "它们捡到一张明天的日程表，发现上面写着“今天记得偶遇一只小若汁”。",
-          "reward": {
-            "id": "coin_jackpot",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 400,
-            "max_amount": 500,
-            "amount": 483,
-            "reward_text": "483若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "980711945",
-          "partner_display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
-          "reward_text": "483若汁币"
-        },
-        "souvenirs": [],
-        "item_rewards": [
+        "encounter": null,
+        "souvenirs": [
           {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_stardust_jelly",
-            "name": "星尘果冻",
-            "emoji": "🍮",
-            "description": "明日旧城流行的微光甜品。",
-            "food": {
-              "satiety": 13,
-              "mood": 4,
-              "weight_gain": 4
-            },
-            "amount": 2
+            "id": "souvenir_silent_bamboo_whistle",
+            "name": "无声苦竹哨",
+            "emoji": "🎋",
+            "description": "旅行纪念品「无声苦竹哨」。",
+            "amount": 1
           }
         ],
+        "item_rewards": [],
         "satiety_change": 0,
         "new_location": "",
         "health_change": 0,
         "achievements": [],
-        "mood_change": 0,
+        "mood_change": -6,
         "level_ups": [],
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786959507943,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时34分钟\n获得：2825若汁币，若汁之缘×5，经验+5\n小若汁偶遇了【IGN】《鸣潮》共鸣者「小若汁」实机演示的小若汁，它们捡到一张明天的日程表，发现上面写着“今天记得偶遇一只小若汁”。\n偶遇奖励：483若汁币\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。\n食物：🍮星尘果冻×2"
+        "settled_at": 1787270093463,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：断天关（四州小天地）\n旅行时间：2小时26分钟\n获得：2435若汁币，若汁之缘×5，经验+5\n旅行事件：西逃难民\n村民因交不起通行灵石被赶回东边。\n这段经历让小若汁有些不安，心情-6\n纪念品：🎋无声苦竹哨×1"
       },
-      "mswt66rt-ew767pm2": {
-        "id": "mswt66rt-ew767pm2",
+      "mt26gpb4-k0tcjwpl": {
+        "id": "mt26gpb4-k0tcjwpl",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "empty_amusement_park",
-        "location_name": "无人营业的儿童乐园",
-        "duration_ms": 4675294,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_old_battlefield",
+        "location_name": "无名古战场",
+        "duration_ms": 5101635,
         "rewards": {
-          "coin": 1299,
-          "fate": 2,
+          "coin": 1417,
+          "fate": 3,
           "experience": 3
         },
         "event": null,
@@ -6767,64 +7476,225 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786950106090,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：无人营业的儿童乐园（未登记城区）\n旅行时间：1小时18分钟\n获得：1299若汁币，若汁之缘×2，经验+3"
+        "settled_at": 1787270089418,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：1小时25分钟\n获得：1417若汁币，若汁之缘×3，经验+3"
       },
-      "mswidccl-a40ub7q0": {
-        "id": "mswidccl-a40ub7q0",
+      "mt26gmv0-zuiw6j4j": {
+        "id": "mt26gmv0-zuiw6j4j",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "changle_residential_quarter",
+        "location_name": "长乐坊",
+        "duration_ms": 8756238,
+        "rewards": {
+          "coin": 2432,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "changle_first_servant",
+          "name": "终于也买得起了",
+          "text": "巷子里一户小商人今天格外热闹，原来家里刚买下第一个奴隶。主人兴奋地向邻居介绍自己终于也算\"像个体面人家\"，周围人纷纷道喜。小若汁蹲在旁边听了一会儿，没有太弄明白究竟是谁值得恭喜。",
+          "effects": {
+            "mood": -1
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "长乐坊",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_changle_residential_quarter",
+            "name": "发现长乐坊",
+            "rarity": 3,
+            "time": 1787270085749,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现长乐坊」 ★★★"
+          }
+        ],
+        "mood_change": -1,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270085749,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：长乐坊（迦洛维安府）\n旅行时间：2小时26分钟\n获得：2432若汁币，若汁之缘×5，经验+5\n旅行事件：终于也买得起了\n巷子里一户小商人今天格外热闹，原来家里刚买下第一个奴隶。主人兴奋地向邻居介绍自己终于也算\"像个体面人家\"，周围人纷纷道喜。小若汁蹲在旁边听了一会儿，没有太弄明白究竟是谁值得恭喜。\n这段经历让小若汁有些不安，心情-1\n新地点已解锁：长乐坊\n达成旅行成就「发现长乐坊」 ★★★"
+      },
+      "mt26gklk-m1e01ppa": {
+        "id": "mt26gklk-m1e01ppa",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
         "map_id": "four_regions_little_world",
         "map_name": "四州小天地",
-        "location_id": "spirit_wheat_plain",
-        "location_name": "灵麦原",
-        "duration_ms": 1662171,
+        "location_id": "golden_cloud_temple",
+        "location_name": "金霞观",
+        "duration_ms": 8201129,
         "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
+          "coin": 2278,
+          "fate": 5,
+          "experience": 4
         },
         "event": {
-          "id": "tail_in_wheat",
-          "name": "麦浪里的大尾巴",
-          "text": "小若汁追了半天，只抓到一串麦穗。",
+          "id": "reversed_light_talisman",
+          "name": "贴反轻身符",
+          "text": "贴反的符箓让小若汁重得无法挪动。",
           "effects": {
-            "satiety": -3,
-            "mood": 3
+            "health": -3,
+            "mood": 6
           },
-          "souvenirs": [],
-          "items": [
+          "souvenirs": [
             {
-              "id": "food_spirit_pill",
-              "amount": 3
+              "id": "souvenir_reverse_talisman",
+              "name": "倒贴轻身符",
+              "emoji": "📜",
+              "description": "旅行纪念品「倒贴轻身符」。"
             }
           ],
+          "items": [],
           "record": false
         },
         "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [
+        "souvenirs": [
           {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_spirit_pill",
-            "name": "灵麦团子",
-            "emoji": "🍡",
-            "description": "四州小天地的灵麦小点。",
-            "food": {
-              "satiety": 15,
-              "mood": 4,
-              "weight_gain": 5
-            },
-            "amount": 3
+            "id": "souvenir_reverse_talisman",
+            "name": "倒贴轻身符",
+            "emoji": "📜",
+            "description": "旅行纪念品「倒贴轻身符」。",
+            "amount": 1
           }
         ],
-        "satiety_change": -3,
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": -3,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270082520,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：2小时17分钟\n获得：2278若汁币，若汁之缘×5，经验+4\n旅行事件：贴反轻身符\n贴反的符箓让小若汁重得无法挪动。\n本次状态变化：健康-3\n纪念品：📜倒贴轻身符×1"
+      },
+      "mt26gi6p-ul3w8oso": {
+        "id": "mt26gi6p-ul3w8oso",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "lanzan_restaurant",
+        "location_name": "兰馔楼",
+        "duration_ms": 7480296,
+        "rewards": {
+          "coin": 2078,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "兰馔楼",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_lanzan_restaurant",
+            "name": "发现兰馔楼",
+            "rarity": 3,
+            "time": 1787270079667,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现兰馔楼」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270079668,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：兰馔楼（迦洛维安府）\n旅行时间：2小时5分钟\n获得：2078若汁币，若汁之缘×4，经验+4\n新地点已解锁：兰馔楼\n达成旅行成就「发现兰馔楼」 ★★★"
+      },
+      "mt26gfkt-zbwkcz7m": {
+        "id": "mt26gfkt-zbwkcz7m",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_blue_harbor",
+        "location_name": "蓝海观光港",
+        "duration_ms": 4936145,
+        "rewards": {
+          "coin": 1371,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": {
+          "id": "rtc_event_glass_boat",
+          "name": "透明观光艇",
+          "text": "小若汁乘坐玻璃船看见海底亮着一块餐厅招牌。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_transparent_ticket_holder",
+              "name": "透明船票夹",
+              "emoji": "🐚",
+              "travel_tool": true,
+              "description": "蓝海观光港的透明船票夹，可作为寻找海底第七餐厅的旅行道具。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_transparent_ticket_holder",
+            "name": "透明船票夹",
+            "emoji": "🐚",
+            "travel_tool": true,
+            "description": "蓝海观光港的透明船票夹，可作为寻找海底第七餐厅的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
         "new_location": "",
         "health_change": 0,
         "achievements": [],
@@ -6833,24 +7703,84 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786928950981,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：灵麦原（四州小天地）\n旅行时间：28分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：麦浪里的大尾巴\n小若汁追了半天，只抓到一串麦穗。\n本次状态变化：饱食-3\n食物：🍡灵麦团子×3"
+        "settled_at": 1787270076255,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：1小时22分钟\n获得：1371若汁币，若汁之缘×3，经验+3\n旅行事件：透明观光艇\n小若汁乘坐玻璃船看见海底亮着一块餐厅招牌。\n纪念品：🐚透明船票夹×1"
       },
-      "mswgu0fx-wg8numm5": {
-        "id": "mswgu0fx-wg8numm5",
+      "mt26gd9g-xp8z2l3w": {
+        "id": "mt26gd9g-xp8z2l3w",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_silver_capital",
-        "location_name": "银冠王城",
-        "duration_ms": 2548399,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "parliament_new_palace",
+        "location_name": "议会与新王宫",
+        "duration_ms": 2257167,
         "rewards": {
-          "coin": 708,
-          "fate": 1,
+          "coin": 627,
+          "fate": 2,
+          "experience": 1
+        },
+        "event": {
+          "id": "portal_commuter_sleep",
+          "name": "跨星球通勤也能睡过站",
+          "text": "乘客惊醒后大喊今天不用去另一颗星球上班，然后匆匆下车坐反方向线路。",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "议会与新王宫",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_parliament_new_palace",
+            "name": "发现议会与新王宫",
+            "rarity": 3,
+            "time": 1787270073023,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现议会与新王宫」 ★★★"
+          }
+        ],
+        "mood_change": 2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270073024,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：38分钟\n获得：627若汁币，若汁之缘×2，经验+1\n旅行事件：跨星球通勤也能睡过站\n乘客惊醒后大喊今天不用去另一颗星球上班，然后匆匆下车坐反方向线路。\n本次状态变化：心情+2\n新地点已解锁：议会与新王宫\n达成旅行成就「发现议会与新王宫」 ★★★"
+      },
+      "mt26gayy-o6opxssl": {
+        "id": "mt26gayy-o6opxssl",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "school_gate_1743",
+        "location_name": "永远放学的校门",
+        "duration_ms": 2470098,
+        "rewards": {
+          "coin": 686,
+          "fate": 2,
           "experience": 2
         },
         "event": null,
@@ -6866,97 +7796,69 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786927255691,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：42分钟\n获得：708若汁币，若汁之缘×1，经验+2"
+        "settled_at": 1787270070127,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：41分钟\n获得：686若汁币，若汁之缘×2，经验+2"
       },
-      "msw1vtq7-6nji7zm0": {
-        "id": "msw1vtq7-6nji7zm0",
+      "mt26g8mo-21bhi083": {
+        "id": "mt26g8mo-21bhi083",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "yellow_underpass",
-        "location_name": "暖黄色地下通道",
-        "duration_ms": 7273812,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "old_town",
+        "location_name": "旧城区",
+        "duration_ms": 8182351,
         "rewards": {
-          "coin": 2021,
-          "fate": 6,
-          "experience": 4
+          "coin": 2273,
+          "fate": 4,
+          "experience": 5
         },
         "event": {
-          "id": "event_exit_to_yesterday",
-          "name": "通往昨日的出口",
-          "text": "楼梯口写着“昨日天气晴”。楼上传来昨天的自己经过的声音。",
-          "effects": {
-            "fate_flat": 1
-          },
-          "souvenirs": [
+          "id": "old_town_bakery",
+          "name": "老城区面包房",
+          "text": "没有机器人厨师、算法推荐或自动菜单。老板只是从烤箱里拿出一块刚烤好的面包。",
+          "effects": {},
+          "souvenirs": [],
+          "items": [
             {
-              "id": "souvenir_yesterday_calendar",
-              "name": "撕不下来的昨日历",
-              "emoji": "🗓️",
-              "description": "永远停在得到它的前一天。"
+              "id": "food_old_town_butter_bread",
+              "amount": 1
             }
           ],
-          "items": [],
           "record": false
         },
         "encounter": null,
-        "souvenirs": [
+        "souvenirs": [],
+        "item_rewards": [
           {
-            "id": "souvenir_yesterday_calendar",
-            "name": "撕不下来的昨日历",
-            "emoji": "🗓️",
-            "description": "永远停在得到它的前一天。",
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_old_town_butter_bread",
+            "name": "老城黄油面包",
+            "emoji": "🍞",
+            "description": "旧城区面包房刚出炉的朴素面包。",
+            "food": {
+              "satiety": 11,
+              "mood": 3,
+              "weight_gain": 3
+            },
             "amount": 1
           }
         ],
-        "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786906871485,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：2小时1分钟\n获得：2021若汁币，若汁之缘×6，经验+4\n旅行事件：通往昨日的出口\n楼梯口写着“昨日天气晴”。楼上传来昨天的自己经过的声音。\n纪念品：🗓️撕不下来的昨日历×1"
-      },
-      "msw1vq2i-7a04ss1k": {
-        "id": "msw1vq2i-7a04ss1k",
-        "user_id": "272950224",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "北游的主人",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "bitter_bamboo_village",
-        "location_name": "苦竹村",
-        "duration_ms": 3518544,
-        "rewards": {
-          "coin": 977,
-          "fate": 2,
-          "experience": 1
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "苦竹村",
+        "new_location": "旧城区",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_bitter_bamboo_village",
-            "name": "发现苦竹村",
+            "id": "ach_old_town",
+            "name": "发现旧城区",
             "rarity": 3,
-            "time": 1786899594522,
+            "time": 1787270067089,
             "actor_name": "北游的主人",
             "rewards": [
               {
@@ -6966,7 +7868,7 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现苦竹村」 ★★★"
+            "message": "达成旅行成就「发现旧城区」 ★★★"
           }
         ],
         "mood_change": 0,
@@ -6974,24 +7876,24 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786899594522,
+        "settled_at": 1787270067091,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：苦竹村（四州小天地）\n旅行时间：59分钟\n获得：977若汁币，若汁之缘×2，经验+1\n新地点已解锁：苦竹村\n达成旅行成就「发现苦竹村」 ★★★"
+        "report": "小若汁回来了！\n目的地：旧城区（阿尔维塔）\n旅行时间：2小时16分钟\n获得：2273若汁币，若汁之缘×4，经验+5\n旅行事件：老城区面包房\n没有机器人厨师、算法推荐或自动菜单。老板只是从烤箱里拿出一块刚烤好的面包。\n食物：🍞老城黄油面包×1\n新地点已解锁：旧城区\n达成旅行成就「发现旧城区」 ★★★"
       },
-      "msw1vmvn-0isdhg8a": {
-        "id": "msw1vmvn-0isdhg8a",
+      "mt26g5rp-k163380j": {
+        "id": "mt26g5rp-k163380j",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "candy_dreamland",
-        "map_name": "糖霜梦境",
-        "location_id": "popping_candy_beach",
-        "location_name": "跳跳糖海滩",
-        "duration_ms": 5175883,
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "southern_market",
+        "location_name": "南市",
+        "duration_ms": 6415725,
         "rewards": {
-          "coin": 1438,
-          "fate": 2,
+          "coin": 1782,
+          "fate": 4,
           "experience": 3
         },
         "event": null,
@@ -6999,316 +7901,410 @@
         "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "",
+        "new_location": "南市",
         "health_change": 0,
-        "achievements": [],
+        "achievements": [
+          {
+            "id": "ach_southern_market",
+            "name": "发现南市",
+            "rarity": 3,
+            "time": 1787270063923,
+            "actor_name": "北游的主人",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现南市」 ★★★"
+          }
+        ],
         "mood_change": 0,
         "level_ups": [],
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786899590319,
+        "settled_at": 1787270063924,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：1小时26分钟\n获得：1438若汁币，若汁之缘×2，经验+3"
+        "report": "小若汁回来了！\n目的地：南市（迦洛维安府）\n旅行时间：1小时47分钟\n获得：1782若汁币，若汁之缘×4，经验+3\n新地点已解锁：南市\n达成旅行成就「发现南市」 ★★★"
       },
-      "msw1vjqu-pqyxvrco": {
-        "id": "msw1vjqu-pqyxvrco",
+      "mt26g3bz-q4cp8rx4": {
+        "id": "mt26g3bz-q4cp8rx4",
         "user_id": "272950224",
         "group_id": "415462812",
         "self_id": "3874871823",
         "display_name": "北游的主人",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_atomic_plant",
-        "location_name": "一号原子电站",
-        "duration_ms": 2319933,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "rain_only_store",
+        "location_name": "只在雨中营业的便利店",
+        "duration_ms": 8519453,
         "rewards": {
-          "coin": 644,
-          "fate": 1,
-          "experience": 1
+          "coin": 2367,
+          "fate": 5,
+          "experience": 5
         },
-        "event": null,
+        "event": {
+          "id": "event_second_ruozhi_monitor",
+          "name": "监控里的第二只小若汁",
+          "text": "屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。",
+          "effects": {
+            "mood": -2
+          },
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_donut",
+              "amount": 1
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food"
+            ],
+            "id": "food_donut",
+            "name": "糖霜甜甜圈",
+            "emoji": "🍩",
+            "description": "甜得让龟壳都发亮。",
+            "usage": "投喂时优先使用，恢复饱食度。",
+            "food": {
+              "common": true,
+              "satiety": 12,
+              "mood": 4,
+              "weight_gain": 5
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787270060186,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时22分钟\n获得：2367若汁币，若汁之缘×5，经验+5\n旅行事件：监控里的第二只小若汁\n屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。\n这段经历让小若汁有些不安，心情-2\n食物：🍩糖霜甜甜圈×1"
+      },
+      "mt26g0lj-eqwko851": {
+        "id": "mt26g0lj-eqwko851",
+        "user_id": "272950224",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "北游的主人",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "caramel_volcano",
+        "location_name": "焦糖火山",
+        "duration_ms": 6602119,
+        "rewards": {
+          "coin": 1834,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": {
+          "id": "caramel_hot_spring",
+          "name": "焦糖温泉",
+          "text": "工作人员反复强调这里是温泉不是布丁，小若汁仍持保留意见。",
+          "effects": {
+            "health": 5,
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
         "encounter": null,
         "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
         "new_location": "",
-        "health_change": 0,
+        "health_change": 4,
         "achievements": [],
         "mood_change": 0,
         "level_ups": [],
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786899586286,
+        "settled_at": 1787270057074,
         "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：39分钟\n获得：644若汁币，若汁之缘×1，经验+1"
+        "report": "小若汁回来了！\n目的地：焦糖火山（糖霜梦境）\n旅行时间：1小时50分钟\n获得：1834若汁币，若汁之缘×4，经验+3\n旅行事件：焦糖温泉\n工作人员反复强调这里是温泉不是布丁，小若汁仍持保留意见。\n本次状态变化：健康+4"
       }
     },
     "notifications": [
       {
-        "travel_id": "msy1adf9-dne89aie",
+        "travel_id": "mt26hhb8-ldpcm9u9",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：29分钟\n获得：500若汁币，若汁之缘×1，经验+1\n小若汁偶遇了库洛4000+的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：433若汁币",
+        "report": "小若汁回来了！\n目的地：金阙大街（迦洛维安府）\n旅行时间：1小时43分钟\n获得：2124若汁币，若汁之缘×3，经验+4\n旅行事件：镇店之龟\n珠宝铺掌柜把一串宝石临时挂在小若汁身上展示，没想到围观的人越来越多，当天下午生意格外好。掌柜高兴地给了它一笔\"镇店费\"。\n本次状态变化：心情+1\n新地点已解锁：金阙大街\n达成旅行成就「发现金阙大街」 ★★★",
         "status": "sent",
         "attempts": 1,
-        "next_retry_at": 1787021277602,
-        "created_at": 1787021277602,
-        "sent_at": 1787021278066,
+        "next_retry_at": 1787276328582,
+        "created_at": 1787276328582,
+        "sent_at": 1787276329164,
         "last_error": ""
       },
       {
-        "travel_id": "msy1a5h1-uzxaoyij",
+        "travel_id": "mt26hev4-o5g71hq4",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：1小时10分钟\n获得：1162若汁币，若汁之缘×2，经验+3\n旅行事件：炼丹炉打嗝\n五彩烟雾把龟壳熏得闪闪发光。\n本次状态变化：健康+3\n纪念品：💊炼歪的霞光丹×1",
+        "report": "小若汁回来了！\n目的地：百艺坊（迦洛维安府）\n旅行时间：45分钟\n获得：744若汁币，若汁之缘×1，经验+2\n旅行事件：小若汁肖像\n一个年轻画师坚持认为小若汁的侧脸\"极有古意\"，拉着它坐了半天。最后画里山河壮阔、云气万千，小若汁本人只占角落里指甲盖那么大一点。\n本次状态变化：心情+6\n纪念品：🖼️《山河小若图》×1\n新地点已解锁：百艺坊\n达成旅行成就「发现百艺坊」 ★★★",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019520650,
-        "created_at": 1787019520650,
+        "next_retry_at": 1787270121811,
+        "created_at": 1787270121811,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy1a217-61s3fxo3",
+        "travel_id": "mt26hanu-xz899s6h",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：1小时41分钟\n获得：1684若汁币，若汁之缘×4，经验+4",
+        "report": "小若汁回来了！\n目的地：倒悬浮空岛（艾尔多兰大陆）\n旅行时间：2小时5分钟\n获得：2083若汁币，若汁之缘×5，经验+4\n旅行事件：云做的羊\n小若汁追着云羊走了很久，最后只抓到一小团雾。\n纪念品：☁️装过云的空瓶×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019516580,
-        "created_at": 1787019516580,
+        "next_retry_at": 1787270116436,
+        "created_at": 1787270116436,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy19z65-ew0bpoqv",
+        "travel_id": "mt26h7uz-uxk49qxw",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时25分钟\n获得：1423若汁币，若汁之缘×3，经验+2\n旅行事件：儿童套餐附赠回忆\n餐盘里是一段关于夏日下午的回忆。小若汁确信它很快乐，也确信它从未发生。\n食物：🍪午夜饼干×2\n纪念品：🍮记不起味道的布丁杯×1",
+        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：58分钟\n获得：965若汁币，若汁之缘×2，经验+2\n旅行事件：第九条泳道\n墙上只有八条泳道，倒影里却多出第九条，终点写着“家”。\n纪念品：🥽第九泳道护目镜×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019512075,
-        "created_at": 1787019512075,
+        "next_retry_at": 1787270112790,
+        "created_at": 1787270112790,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy19ts4-82je8izn",
+        "travel_id": "mt26h3df-r3or4rw5",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：2小时7分钟\n获得：2120若汁币，若汁之缘×4，经验+4",
+        "report": "小若汁回来了！\n目的地：铁砧矮人城（艾尔多兰大陆）\n旅行时间：1小时39分钟\n获得：1656若汁币，若汁之缘×4，经验+3\n旅行事件：矮人汤勺\n小若汁拿不起餐馆的汤勺，只好趴在桌边直接喝。\n纪念品：🥄超重矮人汤勺×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019508200,
-        "created_at": 1787019508200,
+        "next_retry_at": 1787270108422,
+        "created_at": 1787270108422,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy19oof-y8vmpy5v",
+        "travel_id": "mt26h0rt-fxdefhdo",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：回声游泳馆（未登记城区）\n旅行时间：1小时13分钟\n获得：1219若汁币，若汁之缘×2，经验+2",
+        "report": "小若汁回来了！\n目的地：旧港口（阿尔维塔）\n旅行时间：1小时21分钟\n获得：1351若汁币，若汁之缘×3，经验+3\n新地点已解锁：旧港口\n达成旅行成就「发现旧港口」 ★★★",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019498674,
-        "created_at": 1787019498674,
+        "next_retry_at": 1787270103815,
+        "created_at": 1787270103815,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy19kq5-ekg4kx9s",
+        "travel_id": "mt26gy63-8qo9bdku",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：万能垃圾处理厂（明日旧城）\n旅行时间：1小时27分钟\n获得：1541若汁币，若汁之缘×3，经验+3\n旅行事件：压缩方块\n小若汁带回一块无法判断原材料的完美方块。\n纪念品：📦未知压缩方块×1",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：26分钟\n获得：500若汁币，若汁之缘×1，经验+1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019494737,
-        "created_at": 1787019494737,
+        "next_retry_at": 1787270100312,
+        "created_at": 1787270100312,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy19h9h-wzpk1mgo",
+        "travel_id": "mt26gvcn-lelu5ot9",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：薄荷奶绿海（糖霜梦境）\n旅行时间：2小时22分钟\n获得：2369若汁币，若汁之缘×4，经验+5\n新地点已解锁：薄荷奶绿海\n达成旅行成就「发现薄荷奶绿海」 ★★★\n达成旅行成就「糖霜初游」 ★★★",
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时35分钟\n获得：1582若汁币，若汁之缘×4，经验+3",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019489255,
-        "created_at": 1787019489255,
+        "next_retry_at": 1787270097031,
+        "created_at": 1787270097031,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy18tyd-6s9tofdv",
+        "travel_id": "mt26gsfk-zquopfhz",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：哭泣沼泽（艾尔多兰大陆）\n旅行时间：40分钟\n获得：660若汁币，若汁之缘×2，经验+2\n旅行事件：沼泽旧靴\n小若汁从泥里拔出一只旧靴，靴子里还有一只更小的靴子。\n纪念品：🥾套娃旧靴×1",
+        "report": "小若汁回来了！\n目的地：断天关（四州小天地）\n旅行时间：2小时26分钟\n获得：2435若汁币，若汁之缘×5，经验+5\n旅行事件：西逃难民\n村民因交不起通行灵石被赶回东边。\n这段经历让小若汁有些不安，心情-6\n纪念品：🎋无声苦竹哨×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019485077,
-        "created_at": 1787019485077,
+        "next_retry_at": 1787270093464,
+        "created_at": 1787270093464,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy18pdt-bstztkmf",
+        "travel_id": "mt26gpb4-k0tcjwpl",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：35分钟\n获得：576若汁币，若汁之缘×1，经验+1",
+        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：1小时25分钟\n获得：1417若汁币，若汁之缘×3，经验+3",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019453460,
-        "created_at": 1787019453460,
+        "next_retry_at": 1787270089418,
+        "created_at": 1787270089418,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy175i8-z4cd3h5n",
+        "travel_id": "mt26gmv0-zuiw6j4j",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：云海剑冢（四州小天地）\n旅行时间：43分钟\n获得：711若汁币，若汁之缘×1，经验+1\n小若汁偶遇了瀛的小若汁，突然下起小雨，两只小若汁挤在同一片叶子下面，谁也没有淋湿。\n偶遇奖励：寻呼机×1\n达成旅行成就「意外的联络方式」 ★★★",
+        "report": "小若汁回来了！\n目的地：长乐坊（迦洛维安府）\n旅行时间：2小时26分钟\n获得：2432若汁币，若汁之缘×5，经验+5\n旅行事件：终于也买得起了\n巷子里一户小商人今天格外热闹，原来家里刚买下第一个奴隶。主人兴奋地向邻居介绍自己终于也算\"像个体面人家\"，周围人纷纷道喜。小若汁蹲在旁边听了一会儿，没有太弄明白究竟是谁值得恭喜。\n这段经历让小若汁有些不安，心情-1\n新地点已解锁：长乐坊\n达成旅行成就「发现长乐坊」 ★★★",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019381312,
-        "created_at": 1787019381312,
+        "next_retry_at": 1787270085749,
+        "created_at": 1787270085749,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msy140z6-zjxo06s6",
+        "travel_id": "mt26gklk-m1e01ppa",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：30分钟\n获得：500若汁币，若汁之缘×2，经验+1\n旅行事件：宴会剩菜\n王宫厨师把一篮菜叶当作贵宾礼物交给小若汁。\n食物：🍲龙息炖菜×2\n纪念品：🥗王宫菜叶篮×1",
+        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：2小时17分钟\n获得：2278若汁币，若汁之缘×5，经验+4\n旅行事件：贴反轻身符\n贴反的符箓让小若汁重得无法挪动。\n本次状态变化：健康-3\n纪念品：📜倒贴轻身符×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1787019371756,
-        "created_at": 1787019371756,
+        "next_retry_at": 1787270082520,
+        "created_at": 1787270082520,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msww1qyu-dwp6q4h1",
+        "travel_id": "mt26gi6p-ul3w8oso",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：原子百货商场（明日旧城）\n旅行时间：2小时34分钟\n获得：2825若汁币，若汁之缘×5，经验+5\n小若汁偶遇了【IGN】《鸣潮》共鸣者「小若汁」实机演示的小若汁，它们捡到一张明天的日程表，发现上面写着“今天记得偶遇一只小若汁”。\n偶遇奖励：483若汁币\n旅行事件：未来食品试吃\n小若汁试吃了一块号称能顶三顿饭的压缩菜叶，十分钟后又饿了。\n食物：🍮星尘果冻×2",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786959507944,
-        "created_at": 1786959507944,
-        "sent_at": 1786959508455,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mswt66rt-ew767pm2",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：无人营业的儿童乐园（未登记城区）\n旅行时间：1小时18分钟\n获得：1299若汁币，若汁之缘×2，经验+3",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786950106091,
-        "created_at": 1786950106091,
-        "sent_at": 1786950106539,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mswidccl-a40ub7q0",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：灵麦原（四州小天地）\n旅行时间：28分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：麦浪里的大尾巴\n小若汁追了半天，只抓到一串麦穗。\n本次状态变化：饱食-3\n食物：🍡灵麦团子×3",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786928950982,
-        "created_at": 1786928950982,
-        "sent_at": 1786928951437,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mswgu0fx-wg8numm5",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：银冠王城（艾尔多兰大陆）\n旅行时间：42分钟\n获得：708若汁币，若汁之缘×1，经验+2",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786927255691,
-        "created_at": 1786927255691,
-        "sent_at": 1786927256183,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msw1vtq7-6nji7zm0",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：2小时1分钟\n获得：2021若汁币，若汁之缘×6，经验+4\n旅行事件：通往昨日的出口\n楼梯口写着“昨日天气晴”。楼上传来昨天的自己经过的声音。\n纪念品：🗓️撕不下来的昨日历×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786906871486,
-        "created_at": 1786906871486,
-        "sent_at": 1786906872081,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msw1vq2i-7a04ss1k",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：苦竹村（四州小天地）\n旅行时间：59分钟\n获得：977若汁币，若汁之缘×2，经验+1\n新地点已解锁：苦竹村\n达成旅行成就「发现苦竹村」 ★★★",
+        "report": "小若汁回来了！\n目的地：兰馔楼（迦洛维安府）\n旅行时间：2小时5分钟\n获得：2078若汁币，若汁之缘×4，经验+4\n新地点已解锁：兰馔楼\n达成旅行成就「发现兰馔楼」 ★★★",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1786899594522,
-        "created_at": 1786899594522,
+        "next_retry_at": 1787270079668,
+        "created_at": 1787270079668,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msw1vmvn-0isdhg8a",
+        "travel_id": "mt26gfkt-zbwkcz7m",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：1小时26分钟\n获得：1438若汁币，若汁之缘×2，经验+3",
+        "report": "小若汁回来了！\n目的地：蓝海观光港（明日旧城）\n旅行时间：1小时22分钟\n获得：1371若汁币，若汁之缘×3，经验+3\n旅行事件：透明观光艇\n小若汁乘坐玻璃船看见海底亮着一块餐厅招牌。\n纪念品：🐚透明船票夹×1",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1786899590320,
-        "created_at": 1786899590320,
+        "next_retry_at": 1787270076255,
+        "created_at": 1787270076255,
         "sent_at": 0,
         "last_error": ""
       },
       {
-        "travel_id": "msw1vjqu-pqyxvrco",
+        "travel_id": "mt26gd9g-xp8z2l3w",
         "group_id": "415462812",
         "self_id": "3874871823",
         "user_id": "272950224",
-        "report": "小若汁回来了！\n目的地：一号原子电站（明日旧城）\n旅行时间：39分钟\n获得：644若汁币，若汁之缘×1，经验+1",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：38分钟\n获得：627若汁币，若汁之缘×2，经验+1\n旅行事件：跨星球通勤也能睡过站\n乘客惊醒后大喊今天不用去另一颗星球上班，然后匆匆下车坐反方向线路。\n本次状态变化：心情+2\n新地点已解锁：议会与新王宫\n达成旅行成就「发现议会与新王宫」 ★★★",
         "status": "skipped",
         "attempts": 0,
-        "next_retry_at": 1786899586286,
-        "created_at": 1786899586286,
+        "next_retry_at": 1787270073024,
+        "created_at": 1787270073024,
+        "sent_at": 0,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt26gayy-o6opxssl",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：41分钟\n获得：686若汁币，若汁之缘×2，经验+2",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1787270070127,
+        "created_at": 1787270070127,
+        "sent_at": 0,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt26g8mo-21bhi083",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：旧城区（阿尔维塔）\n旅行时间：2小时16分钟\n获得：2273若汁币，若汁之缘×4，经验+5\n旅行事件：老城区面包房\n没有机器人厨师、算法推荐或自动菜单。老板只是从烤箱里拿出一块刚烤好的面包。\n食物：🍞老城黄油面包×1\n新地点已解锁：旧城区\n达成旅行成就「发现旧城区」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1787270067091,
+        "created_at": 1787270067091,
+        "sent_at": 0,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt26g5rp-k163380j",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：南市（迦洛维安府）\n旅行时间：1小时47分钟\n获得：1782若汁币，若汁之缘×4，经验+3\n新地点已解锁：南市\n达成旅行成就「发现南市」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1787270063924,
+        "created_at": 1787270063924,
+        "sent_at": 0,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt26g3bz-q4cp8rx4",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时22分钟\n获得：2367若汁币，若汁之缘×5，经验+5\n旅行事件：监控里的第二只小若汁\n屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。\n这段经历让小若汁有些不安，心情-2\n食物：🍩糖霜甜甜圈×1",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1787270060186,
+        "created_at": 1787270060186,
+        "sent_at": 0,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt26g0lj-eqwko851",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "272950224",
+        "report": "小若汁回来了！\n目的地：焦糖火山（糖霜梦境）\n旅行时间：1小时50分钟\n获得：1834若汁币，若汁之缘×4，经验+3\n旅行事件：焦糖温泉\n工作人员反复强调这里是温泉不是布丁，小若汁仍持保留意见。\n本次状态变化：健康+4",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1787270057074,
+        "created_at": 1787270057074,
         "sent_at": 0,
         "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 338,
+      "total_trips": 382,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -7334,14 +8330,21 @@
           "item_id": "souvenir_sun_chart",
           "location_id": "eld_sunken_temple",
           "time": 1786667063881
+        },
+        "souvenir_missing_road_map": {
+          "item_id": "souvenir_missing_road_map",
+          "location_id": "rtc_yesterday_end",
+          "time": 1787121568351
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 16,
+        "retro_tomorrow_city": 17,
         "eldoran_continent": 16,
         "unregistered_district": 10,
         "four_regions_little_world": 12,
-        "candy_dreamland": 5
+        "candy_dreamland": 6,
+        "alvita": 4,
+        "galovian": 7
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -7376,7 +8379,8 @@
           "eld_event_moon_festival": 1,
           "eld_event_demon_queue": 1,
           "eld_event_sun_chart": 1,
-          "eld_event_lost_boot": 1
+          "eld_event_lost_boot": 1,
+          "eld_event_cloud_sheep": 1
         },
         "retro_tomorrow_city": {
           "rtc_event_lost_luggage": 1,
@@ -7415,7 +8419,8 @@
           "rtc_event_unknown_tracks": 1,
           "rtc_event_robot_conductor": 1,
           "rtc_event_safety_lecture": 1,
-          "rtc_event_mystery_box": 1
+          "rtc_event_mystery_box": 1,
+          "rtc_event_room_207": 1
         },
         "unregistered_district": {
           "event_change_is_rain": 1,
@@ -7433,7 +8438,10 @@
           "event_no_roll_call_today": 1,
           "event_bench_fell_asleep": 1,
           "event_exit_to_yesterday": 1,
-          "event_kids_meal_memory": 1
+          "event_kids_meal_memory": 1,
+          "event_missing_carousel_horse": 1,
+          "event_second_ruozhi_monitor": 1,
+          "event_ninth_lane": 1
         },
         "four_regions_little_world": {
           "extra_passenger": 1,
@@ -7449,13 +8457,31 @@
           "young_beast_snack": 1,
           "five_futures": 1,
           "endless_noodle": 1,
-          "tail_in_wheat": 1
+          "tail_in_wheat": 1,
+          "reversed_light_talisman": 1,
+          "westbound_refugees": 1
         },
         "candy_dreamland": {
           "popping_candy_bucket": 1,
           "behind_chocolate_falls": 1,
           "cotton_cloud_fall": 1,
-          "chocolate_rafting": 1
+          "chocolate_rafting": 1,
+          "chocolate_waterfall_drink": 1,
+          "caramel_eruption": 1,
+          "cotton_sugar_path": 1,
+          "pearl_diving": 1,
+          "caramel_hot_spring": 1
+        },
+        "galovian": {
+          "exotic_pet_house_ribbon": 1,
+          "changle_first_servant": 1,
+          "hundred_arts_portrait": 1,
+          "golden_gate_jewelry": 1
+        },
+        "alvita": {
+          "ugly_fruit": 1,
+          "old_town_bakery": 1,
+          "portal_commuter_sleep": 1
         }
       },
       "event_ids": {
@@ -7561,17 +8587,59 @@
         "tail_in_wheat": 1,
         "eld_event_lost_boot": 1,
         "rtc_event_mystery_box": 1,
-        "event_kids_meal_memory": 1
+        "event_kids_meal_memory": 1,
+        "rtc_event_room_207": 1,
+        "exotic_pet_house_ribbon": 1,
+        "chocolate_waterfall_drink": 1,
+        "caramel_eruption": 1,
+        "event_missing_carousel_horse": 1,
+        "cotton_sugar_path": 1,
+        "pearl_diving": 1,
+        "ugly_fruit": 1,
+        "caramel_hot_spring": 1,
+        "event_second_ruozhi_monitor": 1,
+        "old_town_bakery": 1,
+        "portal_commuter_sleep": 1,
+        "reversed_light_talisman": 1,
+        "changle_first_servant": 1,
+        "westbound_refugees": 1,
+        "event_ninth_lane": 1,
+        "eld_event_cloud_sheep": 1,
+        "hundred_arts_portrait": 1,
+        "golden_gate_jewelry": 1
       },
       "encounter_reward_types": {
         "currency": 1,
         "food_bread": 1,
         "food_cake": 1,
-        "travel_pager": 1
+        "travel_pager": 1,
+        "ruozhi_fate": 1
       },
-      "total_encounters": 12
+      "total_encounters": 20
     },
-    "active": null,
+    "active": {
+      "id": "mt2fyrd8-o1lmccw4",
+      "user_id": "272950224",
+      "display_name": "北游的主人",
+      "group_id": "415462812",
+      "self_id": "3874871823",
+      "started_at": 1787286046220,
+      "ends_at": 1787292373480,
+      "duration_ms": 6327260,
+      "map_id": "candy_dreamland",
+      "map_name": "糖霜梦境",
+      "location_id": "rainbow_jelly_bay",
+      "location_name": "彩虹果冻湾",
+      "was_unlocked": false,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": null,
+      "rewards": {
+        "coin": 1758,
+        "fate": 4,
+        "experience": 4
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mssqpccs-4269dle3": {
@@ -7809,6 +8877,172 @@
         "partner_user_id": "1256806998",
         "partner_display_name": "库洛4000+",
         "settled_at": 1787021277600
+      },
+      "encounter-mszdtr8o-k84ph82w": {
+        "id": "encounter-mszdtr8o-k84ph82w",
+        "time": 1787101055016,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "entry_id": "snack_break",
+        "text": "它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。",
+        "reward": {
+          "id": "coin_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 200,
+          "max_amount": 300,
+          "amount": 241,
+          "reward_text": "241若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "1256806998",
+        "partner_display_name": "库洛4000+",
+        "settled_at": 1787104356089
+      },
+      "encounter-mszfsu4f-7bzrz1ll": {
+        "id": "encounter-mszfsu4f-7bzrz1ll",
+        "time": 1787104371327,
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "entry_id": "echo_game",
+        "text": "它们对着空旷处喊对方的名字，回声听起来像又多出了一只小若汁。",
+        "reward": {
+          "id": "coin_jackpot",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 400,
+          "max_amount": 500,
+          "amount": 498,
+          "reward_text": "498若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "980711945",
+        "partner_display_name": "【IGN】《鸣潮》共鸣者「小若汁」实机演示",
+        "settled_at": 1787114051287
+      },
+      "encounter-mszllgri-iwfbee6b": {
+        "id": "encounter-mszllgri-iwfbee6b",
+        "time": 1787114105118,
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "entry_id": "shell_polish",
+        "text": "它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "settled",
+        "partner_user_id": "3546805220",
+        "partner_display_name": "购德帕瓦",
+        "settled_at": 1787121568352
+      },
+      "encounter-mszqckfi-9nwmky6h": {
+        "id": "encounter-mszqckfi-9nwmky6h",
+        "time": 1787122088046,
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "entry_id": "quiet_companion",
+        "text": "它们并排走了很长一段路，谁也没说话，却都觉得路没有那么远了。",
+        "reward": {
+          "id": "coin_small",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 1,
+          "max_amount": 100,
+          "amount": 26,
+          "reward_text": "26若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "2252351710",
+        "partner_display_name": "我就是我 108416290",
+        "settled_at": 1787122089728
+      },
+      "encounter-mszqctgl-jy0gh2e2": {
+        "id": "encounter-mszqctgl-jy0gh2e2",
+        "time": 1787122099749,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "entry_id": "same_song",
+        "text": "它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 332,
+          "reward_text": "332若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "1256806998",
+        "partner_display_name": "库洛4000+",
+        "settled_at": 1787122101324
+      },
+      "encounter-mszqcyze-x6vw04j9": {
+        "id": "encounter-mszqcyze-x6vw04j9",
+        "time": 1787122106906,
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "entry_id": "backpack_check",
+        "text": "它们互相检查旅行包，最后都在对方包里发现了一片忘记带走的菜叶。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 343,
+          "reward_text": "343若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "3353473843",
+        "partner_display_name": "Akuta",
+        "settled_at": 1787122108515
+      },
+      "encounter-mt01yxqz-4ngq8nz1": {
+        "id": "encounter-mt01yxqz-4ngq8nz1",
+        "time": 1787141607515,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "entry_id": "shared_leaf",
+        "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 392,
+          "reward_text": "392若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "1750348863",
+        "partner_display_name": "海之低语",
+        "settled_at": 1787147977370
+      },
+      "encounter-mt05tt8d-y9rry62k": {
+        "id": "encounter-mt05tt8d-y9rry62k",
+        "time": 1787148086845,
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "entry_id": "encounter_galovian_train",
+        "text": "远处传来轨道列车的声音，两只小若汁一起停下来，看着那条银亮的长影从古老的屋檐和田野之间穿过去。等列车消失以后，它们才想起来刚才准备往哪走。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "settled",
+        "partner_user_id": "1412874037",
+        "partner_display_name": "逝如秋霜",
+        "settled_at": 1787157415223
       }
     }
   }

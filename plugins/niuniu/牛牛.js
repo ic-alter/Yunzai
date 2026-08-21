@@ -254,7 +254,7 @@ export class example extends plugin {
   }
 
   // ====== 到了整数 nextLevel，看看是否能连续升级 ======
-  // 连续升级最多 5 级（含本次刚到的整数）
+  // 连续升级最多级（含本次刚到的整数）
   let levelsGained = 1  // 已从 baseLevel.X 升到 nextLevel（算 1 级）
   let curLevel = nextLevel  // 当前是整数
   let totalUseLen = useLen1
@@ -278,7 +278,7 @@ export class example extends plugin {
   }
 
   // ====== 情况 B：进入连续整级升级 ======
-  while (levelsGained < 20 && canPayFullLevel(curLevel)) {
+  while (levelsGained < 100 && canPayFullLevel(curLevel)) {
     const { needLen: nl, needRad: nr } = upgradeCost(curLevel)
 
     // 扣资源 & 预算
