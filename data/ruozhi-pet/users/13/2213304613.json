@@ -3,12 +3,12 @@
   "user_id": "2213304613",
   "pet": {
     "level": 2,
-    "experience": 113,
+    "experience": 116,
     "satiety": 5,
     "mood": 100,
     "health": 88,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787408837447,
+    "satiety_decay_at": 1787424452807,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -354,6 +354,21 @@
         "name": "发现智慧农庄",
         "rarity": 3,
         "time": 1787283736571,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1787414727829,
         "actor_name": "骛雍",
         "rewards": [
           {
@@ -711,7 +726,7 @@
     },
     "weight": 34,
     "weight_decay_at": 1787401929584,
-    "health_decay_at": 1787408837447
+    "health_decay_at": 1787424452807
   },
   "profile": {
     "favorability": 49,
@@ -719,20 +734,18 @@
     "total_contribution": 46,
     "last_display_name": "骛雍",
     "first_joined_at": 1785862100287,
-    "last_active_at": 1787408837447,
+    "last_active_at": 1787424452807,
     "daily": {
-      "date": "2026-08-22",
-      "event_count": 1,
-      "same_event_counts": {
-        "petting": 1
-      },
+      "date": "2026-08-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 21,
+      "ruozhi_fate": 28,
       "nameless_ruozhi": 1,
       "travel_suitcase": 0,
       "souvenir_border_quest_scroll": 1,
@@ -763,6 +776,31 @@
       "food_dumpling": 4
     },
     "item_ledger": [
+      {
+        "time": 1787414727829,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 25,
+        "after": 28,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_bixi_ferry"
+        }
+      },
+      {
+        "time": 1787414727825,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 21,
+        "after": 25,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4h2los-wy4eka1d",
+          "location_id": "bixi_ferry"
+        }
+      },
       {
         "time": 1787408832089,
         "type": "income",
@@ -962,28 +1000,6 @@
         "meta": {
           "count": 10
         }
-      },
-      {
-        "time": 1787274391819,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 60,
-        "after": 30,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1787274383565,
-        "type": "income",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 6,
-        "after": 7,
-        "reason": "daily_sign_food",
-        "meta": {}
       }
     ],
     "item_daily": {
@@ -1004,10 +1020,23 @@
       }
     },
     "currency": {
-      "balance": 153531,
-      "total_earned": 243531,
+      "balance": 155167,
+      "total_earned": 245167,
       "total_spent": 90000,
       "ledger": [
+        {
+          "time": 1787414727825,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1636,
+          "before": 153531,
+          "after": 155167,
+          "meta": {
+            "travel_id": "mt4h2los-wy4eka1d",
+            "location_id": "bixi_ferry",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787408832089,
           "type": "income",
@@ -1112,18 +1141,6 @@
           "after": 146231,
           "meta": {
             "skin_id": "kiss_marks_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787408825159,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 145631,
-          "after": 145931,
-          "meta": {
-            "skin_id": "birthday_turtle",
             "rarity": 3
           }
         }
@@ -1456,12 +1473,12 @@
     "migrated_at": 1785862100287
   },
   "created_at": 1785862100287,
-  "updated_at": 1787408837452,
+  "updated_at": 1787424452807,
   "production": {
     "started_at": 1785862100287,
-    "last_settled_at": 1787408837447,
-    "accumulated_ms": 5358,
-    "progress": 0.03292072073643645,
+    "last_settled_at": 1787424452807,
+    "accumulated_ms": 15620718,
+    "progress": 2.158844585793977,
     "total_produced": 201,
     "last_collected_at": 1787408832089
   },
@@ -1513,7 +1530,8 @@
       "qing_he_town",
       "huaixi_village",
       "galovian_government_office",
-      "smart_farm"
+      "smart_farm",
+      "bixi_ferry"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1578,6 +1596,14 @@
         "name": "智慧农庄",
         "travel_id": "mt291oxc-xbh0wsh6",
         "time": 1787283736568,
+        "carried_item_id": ""
+      },
+      "bixi_ferry": {
+        "id": "bixi_ferry",
+        "map_id": "four_regions_little_world",
+        "name": "碧溪渡",
+        "travel_id": "mt4h2los-wy4eka1d",
+        "time": 1787414727826,
         "carried_item_id": ""
       }
     },
@@ -1833,6 +1859,21 @@
         "name": "发现智慧农庄",
         "rarity": 3,
         "time": 1787283736571,
+        "actor_name": "骛雍",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_bixi_ferry": {
+        "id": "ach_bixi_ferry",
+        "name": "发现碧溪渡",
+        "rarity": 3,
+        "time": 1787414727829,
         "actor_name": "骛雍",
         "rewards": [
           {
@@ -2549,9 +2590,73 @@
         "settled_at": 1787283736572,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：智慧农庄（阿尔维塔）\n旅行时间：2小时35分钟\n获得：2586若汁币，若汁之缘×6，经验+5\n新地点已解锁：智慧农庄\n达成旅行成就「发现智慧农庄」 ★★★"
+      },
+      "mt4h2los-wy4eka1d": {
+        "id": "mt4h2los-wy4eka1d",
+        "user_id": "2213304613",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "骛雍",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "bixi_ferry",
+        "location_name": "碧溪渡",
+        "duration_ms": 5890352,
+        "rewards": {
+          "coin": 1636,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "碧溪渡",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_bixi_ferry",
+            "name": "发现碧溪渡",
+            "rarity": 3,
+            "time": 1787414727829,
+            "actor_name": "骛雍",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现碧溪渡」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787414727835,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：1小时38分钟\n获得：1636若汁币，若汁之缘×4，经验+3\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4h2los-wy4eka1d",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "2213304613",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：1小时38分钟\n获得：1636若汁币，若汁之缘×4，经验+3\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787414727835,
+        "created_at": 1787414727835,
+        "sent_at": 1787414728327,
+        "last_error": ""
+      },
       {
         "travel_id": "mt291oxc-xbh0wsh6",
         "group_id": "464519950",
@@ -2658,13 +2763,13 @@
       }
     ],
     "stats": {
-      "total_trips": 8,
+      "total_trips": 9,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
         "eldoran_continent": 2,
         "unregistered_district": 1,
-        "four_regions_little_world": 2,
+        "four_regions_little_world": 3,
         "candy_dreamland": 0,
         "alvita": 1,
         "galovian": 2
@@ -2762,29 +2867,7 @@
       }
     },
     "prepared_tool": null,
-    "active": {
-      "id": "mt4h2los-wy4eka1d",
-      "user_id": "2213304613",
-      "display_name": "骛雍",
-      "group_id": "464519950",
-      "self_id": "3964480831",
-      "started_at": 1787408837452,
-      "ends_at": 1787414727804,
-      "duration_ms": 5890352,
-      "map_id": "four_regions_little_world",
-      "map_name": "四州小天地",
-      "location_id": "bixi_ferry",
-      "location_name": "碧溪渡",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 1636,
-        "fate": 4,
-        "experience": 3
-      }
-    },
+    "active": null,
     "companions": {
       "heseranville_aster": {
         "affinity": 0,

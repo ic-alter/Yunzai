@@ -3,12 +3,12 @@
   "user_id": "523778199",
   "pet": {
     "level": 10,
-    "experience": 151,
-    "satiety": 98,
+    "experience": 181,
+    "satiety": 91,
     "mood": 100,
     "health": 97,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787404689934,
+    "satiety_decay_at": 1787424033155,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1471,6 +1471,36 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_galovian_interstellar_gateway": {
+        "id": "ach_galovian_interstellar_gateway",
+        "name": "发现迦洛维安星际门",
+        "rarity": 3,
+        "time": 1787410973368,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_mint_milk_sea": {
+        "id": "ach_mint_milk_sea",
+        "name": "发现薄荷奶绿海",
+        "rarity": 3,
+        "time": 1787415150439,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1802,33 +1832,56 @@
       "sei_shonagon_turtle": 0
     },
     "weight": 53,
-    "weight_decay_at": 1787405899844,
-    "health_decay_at": 1787405899844
+    "weight_decay_at": 1787424453277,
+    "health_decay_at": 1787424453277
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 117,
-    "total_contribution": 301,
+    "weekly_contribution": 120,
+    "total_contribution": 304,
     "last_display_name": "Koala",
     "first_joined_at": 1784794784420,
-    "last_active_at": 1787405899844,
+    "last_active_at": 1787424453277,
     "daily": {
-      "date": "2026-08-22",
-      "event_count": 6,
-      "same_event_counts": {
-        "feed": 5,
-        "petting": 1
-      },
+      "date": "2026-08-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 157470,
-      "total_earned": 300470,
+      "balance": 161663,
+      "total_earned": 304663,
       "total_spent": 143000,
       "ledger": [
+        {
+          "time": 1787415150432,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1266,
+          "before": 160397,
+          "after": 161663,
+          "meta": {
+            "travel_id": "mt4ieq45-bplb4vna",
+            "location_id": "mint_milk_sea",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787410973361,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2927,
+          "before": 157470,
+          "after": 160397,
+          "meta": {
+            "travel_id": "mt4cw7y9-zkme6j0k",
+            "location_id": "galovian_interstellar_gateway",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787401775206,
           "type": "income",
@@ -1928,31 +1981,6 @@
             "item_id": "travel_suitcase",
             "count": 10
           }
-        },
-        {
-          "time": 1787317676283,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 3179,
-          "before": 162756,
-          "after": 165935,
-          "meta": {
-            "travel_id": "mt2spp38-ne96cl2k",
-            "location_id": "eld_weeping_swamp",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787306988082,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 490,
-          "before": 162266,
-          "after": 162756,
-          "meta": {
-            "encounter_id": "encounter-mt2s15s4-g4f8ms6q",
-            "partner_user_id": "2831974530"
-          }
         }
       ],
       "sign": {
@@ -1964,12 +1992,12 @@
       "first_interaction_reward_date": "2026-08-22"
     },
     "items": {
-      "ruozhi_fate": 549,
+      "ruozhi_fate": 563,
       "nameless_ruozhi": 0,
       "souvenir_clockwork_leaf": 1,
       "souvenir_sea_future_coin": 2,
       "travel_pager": 3,
-      "travel_suitcase": 5,
+      "travel_suitcase": 4,
       "travel_checklist": 0,
       "souvenir_dome_giant_leaf": 1,
       "souvenir_two_smaller_screws": 1,
@@ -1988,7 +2016,7 @@
       "travel_ticket": 0,
       "souvenir_extra_corner_map": 1,
       "souvenir_signal_record": 1,
-      "food_bread": 1,
+      "food_bread": 0,
       "souvenir_rain_drop": 1,
       "food_immortal_peach": 0,
       "souvenir_returning_sword": 1,
@@ -2029,6 +2057,94 @@
       "food_dream_milk": 1
     },
     "item_ledger": [
+      {
+        "time": 1787415150439,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 560,
+        "after": 563,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_mint_milk_sea"
+        }
+      },
+      {
+        "time": 1787415150432,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 558,
+        "after": 560,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4ieq45-bplb4vna",
+          "location_id": "mint_milk_sea"
+        }
+      },
+      {
+        "time": 1787411082653,
+        "type": "expense",
+        "item_id": "travel_suitcase",
+        "amount": 1,
+        "before": 5,
+        "after": 4,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_suitcase"
+        }
+      },
+      {
+        "time": 1787411073155,
+        "type": "expense",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_bread",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787410973368,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 555,
+        "after": 558,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_galovian_interstellar_gateway"
+        }
+      },
+      {
+        "time": 1787410973362,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 554,
+        "after": 555,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mt4dwfoh-pths5dwa",
+          "partner_user_id": "2069743095"
+        }
+      },
+      {
+        "time": 1787410973361,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 549,
+        "after": 554,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4cw7y9-zkme6j0k",
+          "location_id": "galovian_interstellar_gateway"
+        }
+      },
       {
         "time": 1787401821199,
         "type": "expense",
@@ -2193,95 +2309,6 @@
           "travel_id": "mt44063f-ct19lpu4",
           "location_id": "valletta_society"
         }
-      },
-      {
-        "time": 1787386888905,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 8,
-        "after": 7,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1787386877654,
-        "type": "expense",
-        "item_id": "food_curry",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_curry",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1787364351958,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 520,
-        "after": 523,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_eld_demon_castle"
-        }
-      },
-      {
-        "time": 1787364351957,
-        "type": "income",
-        "item_id": "souvenir_demon_queue_ticket",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mt3ldq6k-aui4amh9",
-          "event_id": "eld_event_demon_queue",
-          "location_id": "eld_demon_castle"
-        }
-      },
-      {
-        "time": 1787364351956,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 515,
-        "after": 520,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt3ldq6k-aui4amh9",
-          "location_id": "eld_demon_castle"
-        }
-      },
-      {
-        "time": 1787355608760,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 9,
-        "after": 8,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1787355603019,
-        "type": "expense",
-        "item_id": "food_apple",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_apple",
-          "stage": "normal"
-        }
       }
     ],
     "item_daily": {
@@ -2315,6 +2342,52 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787411073155,
+      "user_id": "523778199",
+      "display_name": "Koala",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁吃完🍞松软面包后，舒服地眯起了眼睛。",
+      "effects_text": "饱食+10，心情+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 10,
+        "mood": 2,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787411068434,
+      "user_id": "523778199",
+      "display_name": "Koala",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向Koala，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1787401809935,
       "user_id": "523778199",
@@ -2501,58 +2574,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1787295921975,
-      "user_id": "523778199",
-      "display_name": "Koala",
-      "event_id": "feed",
-      "branch_id": "full",
-      "summary": "小若汁闻了闻就满足地眯起眼，决定这一口下次再吃。",
-      "effects_text": "",
-      "effects": {
-        "satiety": 0,
-        "mood": 0,
-        "health": 0,
-        "favorability": 0,
-        "contribution": 0,
-        "experience": 0
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787295913970,
-      "user_id": "523778199",
-      "display_name": "Koala",
-      "event_id": "feed",
-      "branch_id": "hide_food",
-      "summary": "它认真品尝完🍰奶油蛋糕，随后满足地蹭了蹭。",
-      "effects_text": "饱食+14，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 14,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
     "date": "2026-08-22",
-    "event_count": 6,
-    "bonus_event_count": 6
+    "event_count": 8,
+    "bonus_event_count": 8
   },
   "processed_messages": {
     "event:2093880454": 1785642621093,
@@ -2684,7 +2711,9 @@
     "event:1654855760": 1787386877653,
     "event:849744344": 1787391731907,
     "event:204183570": 1787391735297,
-    "event:167681134": 1787401809931
+    "event:167681134": 1787401809931,
+    "event:868007499": 1787411068432,
+    "event:1191205840": 1787411073153
   },
   "skin_sessions": {
     "active": null
@@ -2697,12 +2726,12 @@
     "migrated_at": 1784794784420
   },
   "created_at": 1784794784420,
-  "updated_at": 1787405899845,
+  "updated_at": 1787424453277,
   "production": {
     "started_at": 1785141760322,
-    "last_settled_at": 1787405899844,
-    "accumulated_ms": 14167934,
-    "progress": 2.6715398473957443,
+    "last_settled_at": 1787424453277,
+    "accumulated_ms": 32721367,
+    "progress": 6.068548295333516,
     "total_produced": 315,
     "last_collected_at": 1787391731910
   },
@@ -2770,7 +2799,9 @@
       "sunflower_tunnel",
       "eld_demon_castle",
       "valletta_society",
-      "empty_amusement_park"
+      "empty_amusement_park",
+      "galovian_interstellar_gateway",
+      "mint_milk_sea"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -3276,6 +3307,22 @@
         "travel_id": "mt46w636-vevg95bk",
         "time": 1787401775207,
         "carried_item_id": "travel_suitcase"
+      },
+      "galovian_interstellar_gateway": {
+        "id": "galovian_interstellar_gateway",
+        "map_id": "galovian",
+        "name": "迦洛维安星际门",
+        "travel_id": "mt4cw7y9-zkme6j0k",
+        "time": 1787410973362,
+        "carried_item_id": "travel_suitcase"
+      },
+      "mint_milk_sea": {
+        "id": "mint_milk_sea",
+        "map_id": "candy_dreamland",
+        "name": "薄荷奶绿海",
+        "travel_id": "mt4ieq45-bplb4vna",
+        "time": 1787415150435,
+        "carried_item_id": "travel_suitcase"
       }
     },
     "event_records": {
@@ -3663,6 +3710,13 @@
         "location_id": "empty_amusement_park",
         "travel_id": "mt46w636-vevg95bk",
         "time": 1787401775208
+      },
+      "gateway_luggage_scale": {
+        "id": "gateway_luggage_scale",
+        "map_id": "galovian",
+        "location_id": "galovian_interstellar_gateway",
+        "travel_id": "mt4cw7y9-zkme6j0k",
+        "time": 1787410973362
       }
     },
     "souvenir_records": {
@@ -5135,9 +5189,175 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_galovian_interstellar_gateway": {
+        "id": "ach_galovian_interstellar_gateway",
+        "name": "发现迦洛维安星际门",
+        "rarity": 3,
+        "time": 1787410973368,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_mint_milk_sea": {
+        "id": "ach_mint_milk_sea",
+        "name": "发现薄荷奶绿海",
+        "rarity": 3,
+        "time": 1787415150439,
+        "actor_name": "Koala",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mt4ieq45-bplb4vna": {
+        "id": "mt4ieq45-bplb4vna",
+        "user_id": "523778199",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "Koala",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "mint_milk_sea",
+        "location_name": "薄荷奶绿海",
+        "duration_ms": 4067739,
+        "rewards": {
+          "coin": 1266,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "薄荷奶绿海",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_mint_milk_sea",
+            "name": "发现薄荷奶绿海",
+            "rarity": 3,
+            "time": 1787415150439,
+            "actor_name": "Koala",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现薄荷奶绿海」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787415150446,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：薄荷奶绿海（糖霜梦境）\n旅行时间：1小时8分钟\n获得：1266若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n新地点已解锁：薄荷奶绿海\n达成旅行成就「发现薄荷奶绿海」 ★★★"
+      },
+      "mt4cw7y9-zkme6j0k": {
+        "id": "mt4cw7y9-zkme6j0k",
+        "user_id": "523778199",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "Koala",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "galovian_interstellar_gateway",
+        "location_name": "迦洛维安星际门",
+        "duration_ms": 9152086,
+        "rewards": {
+          "coin": 2927,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "gateway_luggage_scale",
+          "name": "超重的行李",
+          "text": "星际门旁的自助行李秤不停用两种语言提醒旅客超重。一位塞维兰商人把装满丝绸的箱子挪了又挪，最后发现是小若汁不知何时趴在了箱盖上。工作人员笑着免了它的\"随身龟\"费用。",
+          "effects": {
+            "mood": 5,
+            "coin_flat": 80
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": {
+          "id": "encounter-mt4dwfoh-pths5dwa",
+          "time": 1787403510881,
+          "map_id": "galovian",
+          "map_name": "迦洛维安府",
+          "entry_id": "encounter_galovian_big_family",
+          "text": "两只小若汁遇见一大家子出门，站在路边等了好久，孩子还在一个接一个地从门里出来。它们数到一半就放弃了，开始数旁边的灯笼。",
+          "reward": {
+            "id": "fate",
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "name": "若汁之缘",
+            "amount": 1,
+            "reward_text": "若汁之缘×1"
+          },
+          "status": "pending",
+          "partner_user_id": "2069743095",
+          "partner_display_name": "瀛",
+          "reward_text": "若汁之缘×1"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "迦洛维安星际门",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_galovian_interstellar_gateway",
+            "name": "发现迦洛维安星际门",
+            "rarity": 3,
+            "time": 1787410973368,
+            "actor_name": "Koala",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现迦洛维安星际门」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787410973374,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：迦洛维安星际门（迦洛维安府）\n旅行时间：2小时33分钟\n获得：2927若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n小若汁偶遇了瀛的小若汁，两只小若汁遇见一大家子出门，站在路边等了好久，孩子还在一个接一个地从门里出来。它们数到一半就放弃了，开始数旁边的灯笼。\n偶遇奖励：若汁之缘×1\n旅行事件：超重的行李\n星际门旁的自助行李秤不停用两种语言提醒旅客超重。一位塞维兰商人把装满丝绸的箱子挪了又挪，最后发现是小若汁不知何时趴在了箱盖上。工作人员笑着免了它的\"随身龟\"费用。\n新地点已解锁：迦洛维安星际门\n达成旅行成就「发现迦洛维安星际门」 ★★★"
+      },
       "mt46w636-vevg95bk": {
         "id": "mt46w636-vevg95bk",
         "user_id": "523778199",
@@ -6484,129 +6704,35 @@
         "settled_at": 1787117955285,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：白烬雪山（艾尔多兰大陆）\n旅行时间：20分钟\n获得：650若汁币，若汁之缘×1，经验+1\n携带道具：行李箱\n旅行事件：雪人龟壳\n小若汁堆了一个雪人，却把雪球全部做成了龟壳形状。\n纪念品：☃️龟壳雪人照片×1\n新地点已解锁：白烬雪山\n达成旅行成就「发现白烬雪山」 ★★★"
-      },
-      "mszks9kw-x22djcgv": {
-        "id": "mszks9kw-x22djcgv",
-        "user_id": "523778199",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "Koala",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_world_tree",
-        "location_name": "世界树之丘",
-        "duration_ms": 3897567,
-        "rewards": {
-          "coin": 1213,
-          "fate": 3,
-          "experience": 2
-        },
-        "event": null,
-        "encounter": {
-          "id": "encounter-mszks9t8-7exctfrv",
-          "time": 1787112743084,
-          "map_id": "eldoran_continent",
-          "map_name": "艾尔多兰大陆",
-          "entry_id": "eld_quest_party",
-          "text": "它们短暂组成冒险小队，郑重宣布本次任务是找到最适合午睡的树荫。",
-          "reward": {
-            "id": "coin_large",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 200,
-            "max_amount": 300,
-            "amount": 238,
-            "reward_text": "238若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "1256806998",
-          "partner_display_name": "库洛4000+",
-          "reward_text": "238若汁币"
-        },
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "世界树之丘",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_eld_world_tree",
-            "name": "发现世界树之丘",
-            "rarity": 3,
-            "time": 1787116640370,
-            "actor_name": "Koala",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现世界树之丘」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1787116640373,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：世界树之丘（艾尔多兰大陆）\n旅行时间：1小时5分钟\n获得：1213若汁币，若汁之缘×3，经验+2\n携带道具：行李箱\n小若汁偶遇了库洛4000+的小若汁，它们短暂组成冒险小队，郑重宣布本次任务是找到最适合午睡的树荫。\n偶遇奖励：238若汁币\n新地点已解锁：世界树之丘\n达成旅行成就「发现世界树之丘」 ★★★"
-      },
-      "mszif0sx-uzcnrqrh": {
-        "id": "mszif0sx-uzcnrqrh",
-        "user_id": "523778199",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "Koala",
-        "map_id": "candy_dreamland",
-        "map_name": "糖霜梦境",
-        "location_id": "postmodern_bread_district",
-        "location_name": "后现代面包建筑群",
-        "duration_ms": 3005530,
-        "rewards": {
-          "coin": 935,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "后现代面包建筑群",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_postmodern_bread_district",
-            "name": "发现后现代面包建筑群",
-            "rarity": 3,
-            "time": 1787111771201,
-            "actor_name": "Koala",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现后现代面包建筑群」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1787111771205,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：后现代面包建筑群（糖霜梦境）\n旅行时间：50分钟\n获得：935若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n新地点已解锁：后现代面包建筑群\n达成旅行成就「发现后现代面包建筑群」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4ieq45-bplb4vna",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "523778199",
+        "report": "小若汁回来了！\n目的地：薄荷奶绿海（糖霜梦境）\n旅行时间：1小时8分钟\n获得：1266若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n新地点已解锁：薄荷奶绿海\n达成旅行成就「发现薄荷奶绿海」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787415150447,
+        "created_at": 1787415150447,
+        "sent_at": 1787415151031,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt4cw7y9-zkme6j0k",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "523778199",
+        "report": "小若汁回来了！\n目的地：迦洛维安星际门（迦洛维安府）\n旅行时间：2小时33分钟\n获得：2927若汁币，若汁之缘×5，经验+5\n携带道具：行李箱\n小若汁偶遇了瀛的小若汁，两只小若汁遇见一大家子出门，站在路边等了好久，孩子还在一个接一个地从门里出来。它们数到一半就放弃了，开始数旁边的灯笼。\n偶遇奖励：若汁之缘×1\n旅行事件：超重的行李\n星际门旁的自助行李秤不停用两种语言提醒旅客超重。一位塞维兰商人把装满丝绸的箱子挪了又挪，最后发现是小若汁不知何时趴在了箱盖上。工作人员笑着免了它的\"随身龟\"费用。\n新地点已解锁：迦洛维安星际门\n达成旅行成就「发现迦洛维安星际门」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787410973374,
+        "created_at": 1787410973374,
+        "sent_at": 1787410973919,
+        "last_error": ""
+      },
       {
         "travel_id": "mt46w636-vevg95bk",
         "group_id": "1025424898",
@@ -6840,36 +6966,10 @@
         "created_at": 1787117955285,
         "sent_at": 1787117955800,
         "last_error": ""
-      },
-      {
-        "travel_id": "mszks9kw-x22djcgv",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "523778199",
-        "report": "小若汁回来了！\n目的地：世界树之丘（艾尔多兰大陆）\n旅行时间：1小时5分钟\n获得：1213若汁币，若汁之缘×3，经验+2\n携带道具：行李箱\n小若汁偶遇了库洛4000+的小若汁，它们短暂组成冒险小队，郑重宣布本次任务是找到最适合午睡的树荫。\n偶遇奖励：238若汁币\n新地点已解锁：世界树之丘\n达成旅行成就「发现世界树之丘」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787116640373,
-        "created_at": 1787116640373,
-        "sent_at": 1787116640871,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mszif0sx-uzcnrqrh",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "523778199",
-        "report": "小若汁回来了！\n目的地：后现代面包建筑群（糖霜梦境）\n旅行时间：50分钟\n获得：935若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n新地点已解锁：后现代面包建筑群\n达成旅行成就「发现后现代面包建筑群」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787111771205,
-        "created_at": 1787111771205,
-        "sent_at": 1787111771810,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 112,
+      "total_trips": 114,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -6897,9 +6997,9 @@
         "eldoran_continent": 16,
         "unregistered_district": 10,
         "four_regions_little_world": 8,
-        "candy_dreamland": 8,
+        "candy_dreamland": 9,
         "alvita": 4,
-        "galovian": 2
+        "galovian": 3
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -6969,7 +7069,8 @@
           "public_ai_argument": 1
         },
         "galovian": {
-          "southern_market_bargain": 1
+          "southern_market_bargain": 1,
+          "gateway_luggage_scale": 1
         }
       },
       "event_ids": {
@@ -7027,7 +7128,8 @@
         "eld_event_fog_guide": 1,
         "rtc_event_wrong_cruise": 1,
         "eld_event_demon_queue": 1,
-        "event_photo_count_error": 1
+        "event_photo_count_error": 1,
+        "gateway_luggage_scale": 1
       },
       "encounter_reward_types": {
         "currency": 1,
@@ -7035,65 +7137,9 @@
         "ruozhi_fate": 1,
         "travel_pager": 1
       },
-      "total_encounters": 13
+      "total_encounters": 14
     },
-    "active": {
-      "id": "mt4cw7y9-zkme6j0k",
-      "user_id": "523778199",
-      "display_name": "Koala",
-      "group_id": "1025424898",
-      "self_id": "3874871823",
-      "started_at": 1787401821249,
-      "ends_at": 1787410973335,
-      "duration_ms": 9152086,
-      "map_id": "galovian",
-      "map_name": "迦洛维安府",
-      "location_id": "galovian_interstellar_gateway",
-      "location_name": "迦洛维安星际门",
-      "was_unlocked": false,
-      "carried_item_id": "travel_suitcase",
-      "carried_item_name": "行李箱",
-      "event": {
-        "id": "gateway_luggage_scale",
-        "name": "超重的行李",
-        "text": "星际门旁的自助行李秤不停用两种语言提醒旅客超重。一位塞维兰商人把装满丝绸的箱子挪了又挪，最后发现是小若汁不知何时趴在了箱盖上。工作人员笑着免了它的\"随身龟\"费用。",
-        "effects": {
-          "mood": 5,
-          "coin_flat": 80
-        },
-        "souvenirs": [],
-        "items": [],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 2927,
-        "fate": 5,
-        "experience": 5
-      },
-      "encounter": {
-        "id": "encounter-mt4dwfoh-pths5dwa",
-        "time": 1787403510881,
-        "map_id": "galovian",
-        "map_name": "迦洛维安府",
-        "entry_id": "encounter_galovian_big_family",
-        "text": "两只小若汁遇见一大家子出门，站在路边等了好久，孩子还在一个接一个地从门里出来。它们数到一半就放弃了，开始数旁边的灯笼。",
-        "reward": {
-          "id": "fate",
-          "type": "item",
-          "item_id": "ruozhi_fate",
-          "name": "若汁之缘",
-          "amount": 1,
-          "reward_text": "若汁之缘×1"
-        },
-        "status": "pending",
-        "partner_user_id": "2069743095",
-        "partner_display_name": "瀛"
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-msuaj0dd-g6lwqcta": {
@@ -7371,9 +7417,10 @@
           "amount": 1,
           "reward_text": "若汁之缘×1"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "2069743095",
-        "partner_display_name": "瀛"
+        "partner_display_name": "瀛",
+        "settled_at": 1787410973362
       }
     },
     "companions": {

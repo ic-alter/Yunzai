@@ -3,12 +3,12 @@
   "user_id": "3126871739",
   "pet": {
     "level": 10,
-    "experience": 8,
-    "satiety": 6,
+    "experience": 25,
+    "satiety": 15,
     "mood": 100,
     "health": 100,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787388707291,
+    "satiety_decay_at": 1787423637403,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -831,31 +831,27 @@
       "shidai_turtle": 0
     },
     "weight": 47,
-    "weight_decay_at": 1787390142702,
-    "health_decay_at": 1787390142702
+    "weight_decay_at": 1787424452965,
+    "health_decay_at": 1787424452965
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 115,
-    "total_contribution": 329,
+    "weekly_contribution": 122,
+    "total_contribution": 336,
     "last_display_name": "magictobacco",
     "first_joined_at": 1785777940319,
-    "last_active_at": 1787390142702,
+    "last_active_at": 1787424452966,
     "daily": {
-      "date": "2026-08-22",
-      "event_count": 7,
-      "same_event_counts": {
-        "petting": 3,
-        "mention_only": 2,
-        "feed": 2
-      },
+      "date": "2026-08-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 130,
+      "ruozhi_fate": 137,
       "nameless_ruozhi": 0,
       "souvenir_vine_basket": 2,
       "souvenir_dome_giant_leaf": 1,
@@ -873,6 +869,18 @@
       "food_seabreeze_popping_candy": 0
     },
     "item_ledger": [
+      {
+        "time": 1787412117403,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 7,
+        "before": 130,
+        "after": 137,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 13.713
+        }
+      },
       {
         "time": 1787377253187,
         "type": "income",
@@ -1116,20 +1124,6 @@
           "event_id": "event_change_is_rain",
           "location_id": "rain_only_store"
         }
-      },
-      {
-        "time": 1787113868784,
-        "type": "income",
-        "item_id": "souvenir_rain_button",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mszkorbr-odyn0rr5",
-          "event_id": "event_change_is_rain",
-          "location_id": "rain_only_store"
-        }
       }
     ],
     "item_daily": {},
@@ -1276,6 +1270,29 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787412117405,
+      "user_id": "3126871739",
+      "display_name": "magictobacco",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，magictobacco及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 7
+    },
     {
       "time": 1787368568939,
       "user_id": "3126871739",
@@ -1499,35 +1516,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1787283465988,
-      "user_id": "3126871739",
-      "display_name": "magictobacco",
-      "event_id": "attack",
-      "branch_id": "heavy_counter",
-      "summary": "小若汁滚到一旁躲开攻击，随后气冲冲地撞了回来。",
-      "effects_text": "心情-2，好感-8，经验+10",
-      "effects": {
-        "satiety": 0,
-        "mood": -2,
-        "health": 0,
-        "favorability": -8,
-        "contribution": 0,
-        "experience": 10
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
     "date": "2026-08-22",
-    "event_count": 7,
-    "bonus_event_count": 7
+    "event_count": 8,
+    "bonus_event_count": 8
   },
   "processed_messages": {
     "event:1501387905": 1785838090928,
@@ -1657,7 +1651,8 @@
     "event:703855886": 1787362851405,
     "event:1515440202": 1787368547289,
     "event:1904047312": 1787368559168,
-    "event:385832805": 1787368568938
+    "event:385832805": 1787368568938,
+    "event:1456524437": 1787412117401
   },
   "skin_sessions": {
     "active": null
@@ -1670,14 +1665,14 @@
     "migrated_at": 1785777940319
   },
   "created_at": 1785777940319,
-  "updated_at": 1787390142702,
+  "updated_at": 1787424452966,
   "production": {
     "started_at": 1785777940319,
-    "last_settled_at": 1787390142702,
-    "accumulated_ms": 27390866,
-    "progress": 4.060405250528908,
-    "total_produced": 237,
-    "last_collected_at": 1787362751836
+    "last_settled_at": 1787424452965,
+    "accumulated_ms": 12335562,
+    "progress": 1.8839646894265651,
+    "total_produced": 244,
+    "last_collected_at": 1787412117403
   },
   "gacha": {
     "since_four_plus": 6,

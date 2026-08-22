@@ -3,12 +3,12 @@
   "user_id": "1256806998",
   "pet": {
     "level": 5,
-    "experience": 63,
+    "experience": 67,
     "satiety": 5,
-    "mood": 100,
+    "mood": 98,
     "health": 86,
     "current_skin_id": "xuanmo_turtle",
-    "satiety_decay_at": 1787407350181,
+    "satiety_decay_at": 1787424453246,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1354,6 +1354,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_white_fog_houses": {
+        "id": "ach_white_fog_houses",
+        "name": "发现白雾住宅区",
+        "rarity": 3,
+        "time": 1787414863077,
+        "actor_name": "库洛4000+",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1772,7 +1787,7 @@
     },
     "weight": 43,
     "weight_decay_at": 1787390142948,
-    "health_decay_at": 1787407350181
+    "health_decay_at": 1787424453246
   },
   "profile": {
     "favorability": 47,
@@ -1780,20 +1795,18 @@
     "total_contribution": 46,
     "last_display_name": "库洛4000+",
     "first_joined_at": 1784995755795,
-    "last_active_at": 1787407350182,
+    "last_active_at": 1787424453246,
     "daily": {
-      "date": "2026-08-22",
-      "event_count": 2,
-      "same_event_counts": {
-        "feed": 2
-      },
+      "date": "2026-08-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 33,
+      "ruozhi_fate": 41,
       "nameless_ruozhi": 2,
       "souvenir_paid_pirate_photo": 1,
       "souvenir_atomic_child_sunglasses": 1,
@@ -1860,9 +1873,49 @@
       "food_curry": 1,
       "food_honey_roast_duck": 1,
       "food_osmanthus_cake": 2,
-      "food_mooncake_talisman": 2
+      "food_mooncake_talisman": 2,
+      "souvenir_strangers_spare_key": 1
     },
     "item_ledger": [
+      {
+        "time": 1787414863076,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 38,
+        "after": 41,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_white_fog_houses"
+        }
+      },
+      {
+        "time": 1787414863074,
+        "type": "income",
+        "item_id": "souvenir_strangers_spare_key",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mt4g6q3v-8xkt54pf",
+          "event_id": "event_welcome_home",
+          "location_id": "white_fog_houses"
+        }
+      },
+      {
+        "time": 1787414863074,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 33,
+        "after": 38,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4g6q3v-8xkt54pf",
+          "location_id": "white_fog_houses"
+        }
+      },
       {
         "time": 1787407129198,
         "type": "income",
@@ -2081,43 +2134,6 @@
           "travel_id": "mt3nh56o-clx0haxi",
           "location_id": "eld_beyond_cottage"
         }
-      },
-      {
-        "time": 1787358303517,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 7,
-        "after": 9,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt3k7ydu-5kznm9u4",
-          "location_id": "lanzan_restaurant"
-        }
-      },
-      {
-        "time": 1787353669226,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 37,
-        "after": 7,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1787353665315,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 67,
-        "after": 37,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
       }
     ],
     "item_daily": {
@@ -2136,10 +2152,23 @@
       }
     },
     "currency": {
-      "balance": 305018,
-      "total_earned": 605018,
+      "balance": 307105,
+      "total_earned": 607105,
       "total_spent": 300000,
       "ledger": [
+        {
+          "time": 1787414863074,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2087,
+          "before": 305018,
+          "after": 307105,
+          "meta": {
+            "travel_id": "mt4g6q3v-8xkt54pf",
+            "location_id": "white_fog_houses",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787407129192,
           "type": "income",
@@ -2250,18 +2279,6 @@
           "after": 294270,
           "meta": {
             "skin_id": "rolling_laugh_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787374129756,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 293670,
-          "after": 293970,
-          "meta": {
-            "skin_id": "grasshopper_turtle",
             "rarity": 3
           }
         }
@@ -2588,12 +2605,12 @@
     "migrated_at": 1784995755795
   },
   "created_at": 1784995755795,
-  "updated_at": 1787407350187,
+  "updated_at": 1787424453246,
   "production": {
     "started_at": 1784995755795,
-    "last_settled_at": 1787407350181,
-    "accumulated_ms": 53716883,
-    "progress": 7.740363890657903,
+    "last_settled_at": 1787424453246,
+    "accumulated_ms": 70819948,
+    "progress": 10.155048271329408,
     "total_produced": 164,
     "last_collected_at": 1787353633298
   },
@@ -2739,7 +2756,8 @@
       "alvita_airport",
       "heseranville_front_estate",
       "golden_cloud_temple",
-      "mid_ring_residential"
+      "mid_ring_residential",
+      "white_fog_houses"
     ],
     "location_records": {
       "eld_free_port": {
@@ -3165,6 +3183,14 @@
         "travel_id": "mt47ny2g-gfjyxj8y",
         "time": 1787401803003,
         "carried_item_id": ""
+      },
+      "white_fog_houses": {
+        "id": "white_fog_houses",
+        "map_id": "unregistered_district",
+        "name": "白雾住宅区",
+        "travel_id": "mt4g6q3v-8xkt54pf",
+        "time": 1787414863074,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -3489,6 +3515,13 @@
         "location_id": "mid_ring_residential",
         "travel_id": "mt47ny2g-gfjyxj8y",
         "time": 1787401803003
+      },
+      "event_welcome_home": {
+        "id": "event_welcome_home",
+        "map_id": "unregistered_district",
+        "location_id": "white_fog_houses",
+        "travel_id": "mt4g6q3v-8xkt54pf",
+        "time": 1787414863074
       }
     },
     "souvenir_records": {
@@ -3745,6 +3778,14 @@
         "location_id": "eld_adventurer_guild",
         "map_id": "eldoran_continent",
         "time": 1787337604403
+      },
+      "souvenir_strangers_spare_key": {
+        "id": "souvenir_strangers_spare_key",
+        "name": "陌生家的备用钥匙",
+        "event_id": "event_welcome_home",
+        "location_id": "white_fog_houses",
+        "map_id": "unregistered_district",
+        "time": 1787414863074
       }
     },
     "achievement_records": {
@@ -4827,9 +4868,107 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_white_fog_houses": {
+        "id": "ach_white_fog_houses",
+        "name": "发现白雾住宅区",
+        "rarity": 3,
+        "time": 1787414863077,
+        "actor_name": "库洛4000+",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mt4g6q3v-8xkt54pf": {
+        "id": "mt4g6q3v-8xkt54pf",
+        "user_id": "1256806998",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "库洛4000+",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "white_fog_houses",
+        "location_name": "白雾住宅区",
+        "duration_ms": 7512866,
+        "rewards": {
+          "coin": 2087,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "event_welcome_home",
+          "name": "欢迎回家",
+          "text": "门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”",
+          "effects": {
+            "fate_flat": 1,
+            "mood": -2
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_strangers_spare_key",
+              "name": "陌生家的备用钥匙",
+              "emoji": "🏠",
+              "travel_tool": true,
+              "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。"
+            }
+          ],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_strangers_spare_key",
+            "name": "陌生家的备用钥匙",
+            "emoji": "🏠",
+            "travel_tool": true,
+            "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "白雾住宅区",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_white_fog_houses",
+            "name": "发现白雾住宅区",
+            "rarity": 3,
+            "time": 1787414863077,
+            "actor_name": "库洛4000+",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现白雾住宅区」 ★★★"
+          }
+        ],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787414863085,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：白雾住宅区（未登记城区）\n旅行时间：2小时5分钟\n获得：2087若汁币，若汁之缘×5，经验+4\n旅行事件：欢迎回家\n门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”\n这段经历让小若汁有些不安，心情-2\n纪念品：🏠陌生家的备用钥匙×1\n新地点已解锁：白雾住宅区\n达成旅行成就「发现白雾住宅区」 ★★★"
+      },
       "mt4cwew5-rdqf5kj6": {
         "id": "mt4cwew5-rdqf5kj6",
         "user_id": "1256806998",
@@ -5994,103 +6133,22 @@
         "settled_at": 1787246041748,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：曲奇王宫（糖霜梦境）\n旅行时间：1小时12分钟\n获得：1198若汁币，若汁之缘×2，经验+2\n小若汁偶遇了Najdorf Variation的小若汁，它们折了一艘菜叶小船放进水里，并追着它讨论谁折得更像船。\n偶遇奖励：奶油蛋糕×1\n新地点已解锁：曲奇王宫\n达成旅行成就「发现曲奇王宫」 ★★★"
-      },
-      "mt1mztp0-kld1t8lc": {
-        "id": "mt1mztp0-kld1t8lc",
-        "user_id": "1256806998",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "库洛4000+",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_robot_city",
-        "location_name": "废弃机器人城",
-        "duration_ms": 4090939,
-        "rewards": {
-          "coin": 1250,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": {
-          "id": "rtc_event_last_robot",
-          "name": "最后一台机器人",
-          "text": "一台旧机器人醒来后问今天是几号。",
-          "effects": {
-            "coin_percent": 10
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_rusted_identity_badge",
-              "name": "生锈身份牌",
-              "emoji": "🤖",
-              "description": "旅行纪念品「生锈身份牌」。"
-            }
-          ],
-          "items": [],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-mt1mztwd-asmafdy3",
-          "time": 1787237387293,
-          "map_id": "retro_tomorrow_city",
-          "map_name": "明日旧城",
-          "entry_id": "wrong_photo",
-          "text": "它们互相帮忙拍了旅行照，最后两张照片里都只有对方的龟壳。",
-          "reward": {
-            "id": "food_bread",
-            "type": "item",
-            "item_id": "food_bread",
-            "name": "松软面包",
-            "amount": 2,
-            "reward_text": "松软面包×2"
-          },
-          "status": "pending",
-          "partner_user_id": "844205633",
-          "partner_display_name": "鸣式·「椰和滑」",
-          "reward_text": "松软面包×2"
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_rusted_identity_badge",
-            "name": "生锈身份牌",
-            "emoji": "🤖",
-            "description": "旅行纪念品「生锈身份牌」。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "废弃机器人城",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_rtc_robot_city",
-            "name": "发现废弃机器人城",
-            "rarity": 3,
-            "time": 1787241477988,
-            "actor_name": "库洛4000+",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现废弃机器人城」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787241477991,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：废弃机器人城（明日旧城）\n旅行时间：1小时8分钟\n获得：1250若汁币，若汁之缘×2，经验+2\n小若汁偶遇了鸣式·「椰和滑」的小若汁，它们互相帮忙拍了旅行照，最后两张照片里都只有对方的龟壳。\n偶遇奖励：松软面包×2\n旅行事件：最后一台机器人\n一台旧机器人醒来后问今天是几号。\n纪念品：🤖生锈身份牌×1\n新地点已解锁：废弃机器人城\n达成旅行成就「发现废弃机器人城」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4g6q3v-8xkt54pf",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "1256806998",
+        "report": "小若汁回来了！\n目的地：白雾住宅区（未登记城区）\n旅行时间：2小时5分钟\n获得：2087若汁币，若汁之缘×5，经验+4\n旅行事件：欢迎回家\n门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”\n这段经历让小若汁有些不安，心情-2\n纪念品：🏠陌生家的备用钥匙×1\n新地点已解锁：白雾住宅区\n达成旅行成就「发现白雾住宅区」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787414863085,
+        "created_at": 1787414863085,
+        "sent_at": 1787414863615,
+        "last_error": ""
+      },
       {
         "travel_id": "mt4cwew5-rdqf5kj6",
         "group_id": "415462812",
@@ -6337,23 +6395,10 @@
         "created_at": 1787246041748,
         "sent_at": 1787246042239,
         "last_error": ""
-      },
-      {
-        "travel_id": "mt1mztp0-kld1t8lc",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "1256806998",
-        "report": "小若汁回来了！\n目的地：废弃机器人城（明日旧城）\n旅行时间：1小时8分钟\n获得：1250若汁币，若汁之缘×2，经验+2\n小若汁偶遇了鸣式·「椰和滑」的小若汁，它们互相帮忙拍了旅行照，最后两张照片里都只有对方的龟壳。\n偶遇奖励：松软面包×2\n旅行事件：最后一台机器人\n一台旧机器人醒来后问今天是几号。\n纪念品：🤖生锈身份牌×1\n新地点已解锁：废弃机器人城\n达成旅行成就「发现废弃机器人城」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787241477991,
-        "created_at": 1787241477991,
-        "sent_at": 1787241478487,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 104,
+      "total_trips": 105,
       "key_item_discoveries": {
         "souvenir_return_coin": {
           "item_id": "souvenir_return_coin",
@@ -6369,7 +6414,7 @@
       "map_location_counts": {
         "retro_tomorrow_city": 11,
         "eldoran_continent": 10,
-        "unregistered_district": 8,
+        "unregistered_district": 9,
         "four_regions_little_world": 7,
         "candy_dreamland": 8,
         "alvita": 4,
@@ -6419,7 +6464,8 @@
           "event_exit_to_yesterday": 1,
           "event_late_first_grader": 1,
           "event_thirteenth_marker": 1,
-          "event_zero_visitor": 1
+          "event_zero_visitor": 1,
+          "event_welcome_home": 1
         },
         "candy_dreamland": {
           "gingerbread_guest_card": 1,
@@ -6483,7 +6529,8 @@
         "extra_passenger": 1,
         "eld_event_border_quest": 1,
         "heseranville_front_banquet_leftovers": 1,
-        "floor_237": 1
+        "floor_237": 1,
+        "event_welcome_home": 1
       },
       "encounter_reward_types": {
         "ruozhi_fate": 1,
@@ -6494,52 +6541,7 @@
       },
       "total_encounters": 35
     },
-    "active": {
-      "id": "mt4g6q3v-8xkt54pf",
-      "user_id": "1256806998",
-      "display_name": "库洛4000+",
-      "group_id": "415462812",
-      "self_id": "3874871823",
-      "started_at": 1787407350187,
-      "ends_at": 1787414863053,
-      "duration_ms": 7512866,
-      "map_id": "unregistered_district",
-      "map_name": "未登记城区",
-      "location_id": "white_fog_houses",
-      "location_name": "白雾住宅区",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "event_welcome_home",
-        "name": "欢迎回家",
-        "text": "门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”",
-        "effects": {
-          "fate_flat": 1,
-          "mood": -2
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_strangers_spare_key",
-            "name": "陌生家的备用钥匙",
-            "emoji": "🏠",
-            "travel_tool": true,
-            "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。"
-          }
-        ],
-        "items": [],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 2087,
-        "fate": 5,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mst6lnai-f9qo9dv8": {

@@ -3,12 +3,12 @@
   "user_id": "2069743095",
   "pet": {
     "level": 13,
-    "experience": 33,
-    "satiety": 27,
+    "experience": 41,
+    "satiety": 17,
     "mood": 100,
-    "health": 97,
+    "health": 94,
     "current_skin_id": "snow_peak_turtle",
-    "satiety_decay_at": 1787408735972,
+    "satiety_decay_at": 1787423135972,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -2208,6 +2208,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_smart_farm": {
+        "id": "ach_smart_farm",
+        "name": "发现智慧农庄",
+        "rarity": 3,
+        "time": 1787423828992,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -2644,8 +2659,8 @@
       "quilt_turtle": 0
     },
     "weight": 86,
-    "weight_decay_at": 1787409540087,
-    "health_decay_at": 1787409540087
+    "weight_decay_at": 1787424453219,
+    "health_decay_at": 1787424453219
   },
   "profile": {
     "favorability": 100,
@@ -2653,21 +2668,18 @@
     "total_contribution": 446,
     "last_display_name": "瀛",
     "first_joined_at": 1785240777696,
-    "last_active_at": 1787409540087,
+    "last_active_at": 1787424453219,
     "daily": {
-      "date": "2026-08-22",
-      "event_count": 8,
-      "same_event_counts": {
-        "feed": 3,
-        "petting": 5
-      },
+      "date": "2026-08-23",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 260,
+      "ruozhi_fate": 271,
       "nameless_ruozhi": 0,
       "souvenir_wheat_old_coin": 4,
       "souvenir_single_song_radio": 1,
@@ -2691,7 +2703,7 @@
       "souvenir_vegetable_soup_potion": 2,
       "souvenir_shell_snowman_photo": 1,
       "souvenir_machine_certified_relic": 2,
-      "travel_suitcase": 6,
+      "travel_suitcase": 5,
       "travel_checklist": 6,
       "souvenir_root_waiting_sign": 1,
       "souvenir_return_coin": 1,
@@ -2775,9 +2787,74 @@
       "food_osmanthus_cake": 2,
       "souvenir_temporary_demon_crown": 1,
       "food_volcano_creme_brulee": 1,
-      "food_dwarf_bread": 1
+      "food_dwarf_bread": 1,
+      "souvenir_pine_needle": 1
     },
     "item_ledger": [
+      {
+        "time": 1787423828992,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 268,
+        "after": 271,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_smart_farm"
+        }
+      },
+      {
+        "time": 1787423828987,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 262,
+        "after": 268,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4jkn1t-qmki7qlv",
+          "location_id": "smart_farm"
+        }
+      },
+      {
+        "time": 1787413038228,
+        "type": "expense",
+        "item_id": "travel_suitcase",
+        "amount": 1,
+        "before": 6,
+        "after": 5,
+        "reason": "prepare_travel_tool",
+        "meta": {
+          "item_id": "travel_suitcase"
+        }
+      },
+      {
+        "time": 1787413025844,
+        "type": "income",
+        "item_id": "souvenir_pine_needle",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mt4hhnui-bytp73z0",
+          "event_id": "first_sword_flight",
+          "location_id": "mystic_sword_sect"
+        }
+      },
+      {
+        "time": 1787413025843,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 260,
+        "after": 262,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4hhnui-bytp73z0",
+          "location_id": "mystic_sword_sect"
+        }
+      },
       {
         "time": 1787409540071,
         "type": "expense",
@@ -2968,68 +3045,6 @@
         "meta": {
           "item_id": "travel_ticket"
         }
-      },
-      {
-        "time": 1787393582139,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 239,
-        "after": 242,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_changle_residential_quarter"
-        }
-      },
-      {
-        "time": 1787393582134,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 2,
-        "before": 237,
-        "after": 239,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt45xbpb-0uj0pstk",
-          "location_id": "changle_residential_quarter"
-        }
-      },
-      {
-        "time": 1787390115429,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1787388980231,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 234,
-        "after": 237,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_university_city"
-        }
-      },
-      {
-        "time": 1787388980228,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 233,
-        "after": 234,
-        "reason": "travel_encounter_reward",
-        "meta": {
-          "encounter_id": "encounter-mt40x9em-zp2hs3s4",
-          "partner_user_id": "1412874037"
-        }
       }
     ],
     "item_daily": {
@@ -3052,10 +3067,48 @@
       }
     },
     "currency": {
-      "balance": 446467,
-      "total_earned": 924467,
+      "balance": 451256,
+      "total_earned": 929256,
       "total_spent": 478000,
       "ledger": [
+        {
+          "time": 1787423828988,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 464,
+          "before": 450792,
+          "after": 451256,
+          "meta": {
+            "encounter_id": "encounter-mt4lnzdp-eq3zqqht",
+            "partner_user_id": "1412874037"
+          }
+        },
+        {
+          "time": 1787423828987,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 3357,
+          "before": 447435,
+          "after": 450792,
+          "meta": {
+            "travel_id": "mt4jkn1t-qmki7qlv",
+            "location_id": "smart_farm",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787413025843,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 968,
+          "before": 446467,
+          "after": 447435,
+          "meta": {
+            "travel_id": "mt4hhnui-bytp73z0",
+            "location_id": "mystic_sword_sect",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787409224902,
           "type": "income",
@@ -3142,42 +3195,6 @@
             "travel_id": "mt40x979-piu5mi86",
             "location_id": "university_city",
             "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787381679976,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 241,
-          "before": 436890,
-          "after": 437131,
-          "meta": {
-            "encounter_id": "encounter-mt3wisjj-2scviinr",
-            "partner_user_id": "1256806998"
-          }
-        },
-        {
-          "time": 1787381679975,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2044,
-          "before": 434846,
-          "after": 436890,
-          "meta": {
-            "travel_id": "mt3wis8s-gpizewi4",
-            "location_id": "ocean_amusement_park",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787374288445,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 434346,
-          "after": 434846,
-          "meta": {
-            "date": "2026-08-22"
           }
         }
       ],
@@ -3618,12 +3635,12 @@
     "migrated_at": 1785240777696
   },
   "created_at": 1785240777696,
-  "updated_at": 1787409540091,
+  "updated_at": 1787424453219,
   "production": {
     "started_at": 1785240777696,
-    "last_settled_at": 1787409540087,
-    "accumulated_ms": 35251643,
-    "progress": 5.85840427828786,
+    "last_settled_at": 1787424453219,
+    "accumulated_ms": 50164775,
+    "progress": 8.22392051103958,
     "total_produced": 340,
     "last_collected_at": 1787374288444
   },
@@ -3721,7 +3738,8 @@
       "huaixi_village",
       "caramel_volcano",
       "university_city",
-      "changle_residential_quarter"
+      "changle_residential_quarter",
+      "smart_farm"
     ],
     "location_records": {
       "rtc_galaxy_motel": {
@@ -4466,6 +4484,14 @@
         "name": "长乐坊",
         "travel_id": "mt45xbpb-0uj0pstk",
         "time": 1787393582135,
+        "carried_item_id": "travel_suitcase"
+      },
+      "smart_farm": {
+        "id": "smart_farm",
+        "map_id": "alvita",
+        "name": "智慧农庄",
+        "travel_id": "mt4jkn1t-qmki7qlv",
+        "time": 1787423828988,
         "carried_item_id": "travel_suitcase"
       }
     },
@@ -5358,6 +5384,13 @@
         "location_id": "hundred_arts_quarter",
         "travel_id": "mt4dwfg8-7ovo70zz",
         "time": 1787407283075
+      },
+      "first_sword_flight": {
+        "id": "first_sword_flight",
+        "map_id": "four_regions_little_world",
+        "location_id": "mystic_sword_sect",
+        "travel_id": "mt4hhnui-bytp73z0",
+        "time": 1787413025844
       }
     },
     "souvenir_records": {
@@ -5867,6 +5900,14 @@
         "location_id": "eld_demon_castle",
         "map_id": "eldoran_continent",
         "time": 1787322515204
+      },
+      "souvenir_pine_needle": {
+        "id": "souvenir_pine_needle",
+        "name": "迎客松松针",
+        "event_id": "first_sword_flight",
+        "location_id": "mystic_sword_sect",
+        "map_id": "four_regions_little_world",
+        "time": 1787413025844
       }
     },
     "achievement_records": {
@@ -7774,9 +7815,159 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_smart_farm": {
+        "id": "ach_smart_farm",
+        "name": "发现智慧农庄",
+        "rarity": 3,
+        "time": 1787423828992,
+        "actor_name": "瀛",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mt4jkn1t-qmki7qlv": {
+        "id": "mt4jkn1t-qmki7qlv",
+        "user_id": "2069743095",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "瀛",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "smart_farm",
+        "location_name": "智慧农庄",
+        "duration_ms": 10790702,
+        "rewards": {
+          "coin": 3357,
+          "fate": 6,
+          "experience": 6
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt4lnzdp-eq3zqqht",
+          "time": 1787416553438,
+          "map_id": "alvita",
+          "map_name": "阿尔维塔",
+          "entry_id": "slow_race",
+          "text": "它们举行了一场没有终点的慢跑比赛，最后一起宣布平局。",
+          "reward": {
+            "id": "coin_jackpot",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 400,
+            "max_amount": 500,
+            "amount": 464,
+            "reward_text": "464若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "1412874037",
+          "partner_display_name": "逝如秋霜",
+          "reward_text": "464若汁币"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "智慧农庄",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_smart_farm",
+            "name": "发现智慧农庄",
+            "rarity": 3,
+            "time": 1787423828992,
+            "actor_name": "瀛",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现智慧农庄」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787423828999,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：智慧农庄（阿尔维塔）\n旅行时间：3小时\n获得：3357若汁币，若汁之缘×6，经验+6\n携带道具：行李箱\n小若汁偶遇了逝如秋霜的小若汁，它们举行了一场没有终点的慢跑比赛，最后一起宣布平局。\n偶遇奖励：464若汁币\n新地点已解锁：智慧农庄\n达成旅行成就「发现智慧农庄」 ★★★"
+      },
+      "mt4hhnui-bytp73z0": {
+        "id": "mt4hhnui-bytp73z0",
+        "user_id": "2069743095",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "瀛",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "mystic_sword_sect",
+        "location_name": "玄剑宗",
+        "duration_ms": 3485725,
+        "rewards": {
+          "coin": 968,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "first_sword_flight",
+          "name": "御剑初体验",
+          "text": "落地时一人一龟挂在迎客松上。",
+          "effects": {
+            "health": -3,
+            "mood": 10
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_pine_needle",
+              "name": "迎客松松针",
+              "emoji": "🌲",
+              "description": "旅行纪念品「迎客松松针」。"
+            }
+          ],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_pine_needle",
+            "name": "迎客松松针",
+            "emoji": "🌲",
+            "description": "旅行纪念品「迎客松松针」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": -3,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787413025849,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：58分钟\n获得：968若汁币，若汁之缘×2，经验+2\n携带道具：旅行清单\n旅行事件：御剑初体验\n落地时一人一龟挂在迎客松上。\n本次状态变化：健康-3\n纪念品：🌲迎客松松针×1"
+      },
       "mt4g5t9n-5g6y01g5": {
         "id": "mt4g5t9n-5g6y01g5",
         "user_id": "2069743095",
@@ -9102,161 +9293,35 @@
         "settled_at": 1787259006297,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：中环住宅区（阿尔维塔）\n旅行时间：37分钟\n获得：621若汁币，若汁之缘×1，经验+1\n携带道具：景点门票\n旅行事件：一部电影，两种评价\n乘客一边夸 BlackKey 的镜头与配乐，一边质疑作品是否在替瓦莱塔洗白。广告亮起他的名字后，几个人安静了一秒，又继续争论。\n本次状态变化：心情+1\n新地点已解锁：中环住宅区\n达成旅行成就「发现中环住宅区」 ★★★\n达成旅行成就「天空国民」 ★★★"
-      },
-      "mt1u4pvh-p44k25ci": {
-        "id": "mt1u4pvh-p44k25ci",
-        "user_id": "2069743095",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "瀛",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "old_royal_palace",
-        "location_name": "旧王宫博物馆",
-        "duration_ms": 8751421,
-        "rewards": {
-          "coin": 2431,
-          "fate": 5,
-          "experience": 5
-        },
-        "event": {
-          "id": "royal_afternoon_tea",
-          "name": "王室下午茶",
-          "text": "旧王宫餐厅复原了两百年前的王室下午茶。小若汁觉得味道不错，看到价格以后又觉得历史非常沉重。",
-          "effects": {},
-          "souvenirs": [],
-          "items": [
-            {
-              "id": "food_royal_berry_tart",
-              "amount": 1
-            }
-          ],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-mt1u4q46-joi06d60",
-          "time": 1787249372982,
-          "map_id": "alvita",
-          "map_name": "阿尔维塔",
-          "entry_id": "tiny_treasure",
-          "text": "它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。",
-          "reward": {
-            "id": "coin_small",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 1,
-            "max_amount": 100,
-            "amount": 10,
-            "reward_text": "10若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "3536417662",
-          "partner_display_name": "冬至",
-          "reward_text": "10若汁币"
-        },
-        "souvenirs": [],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_royal_berry_tart",
-            "name": "王宫莓果塔",
-            "emoji": "🍰",
-            "description": "旧王宫餐厅按历史档案复原的甜点。",
-            "food": {
-              "satiety": 13,
-              "mood": 4,
-              "weight_gain": 5
-            },
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787258124127,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：旧王宫博物馆（阿尔维塔）\n旅行时间：2小时26分钟\n获得：2431若汁币，若汁之缘×5，经验+5\n携带道具：旅行清单\n小若汁偶遇了冬至的小若汁，它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。\n偶遇奖励：10若汁币\n旅行事件：王室下午茶\n旧王宫餐厅复原了两百年前的王室下午茶。小若汁觉得味道不错，看到价格以后又觉得历史非常沉重。\n食物：🍰王宫莓果塔×1"
-      },
-      "mt1t5gts-kmeag6i0": {
-        "id": "mt1t5gts-kmeag6i0",
-        "user_id": "2069743095",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "瀛",
-        "map_id": "galovian",
-        "map_name": "迦洛维安府",
-        "location_id": "golden_gate_avenue",
-        "location_name": "金阙大街",
-        "duration_ms": 1623098,
-        "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "encounter": {
-          "id": "encounter-mt1t5h16-h0r0pasr",
-          "time": 1787247728250,
-          "map_id": "galovian",
-          "map_name": "迦洛维安府",
-          "entry_id": "encounter_galovian_medical",
-          "text": "两只小若汁听见路人讨论阿尔维塔的新式医疗，说现在很多过去治不了的病都能治了。它们认真听了一会儿，又被旁边关于\"谁家今年又添了几个孩子\"的讨论吸引走了。",
-          "reward": {
-            "id": "fate",
-            "type": "item",
-            "item_id": "ruozhi_fate",
-            "name": "若汁之缘",
-            "amount": 1,
-            "reward_text": "若汁之缘×1"
-          },
-          "status": "pending",
-          "partner_user_id": "2683578371",
-          "partner_display_name": "宝宝我们不拯救世界了我们回家😭",
-          "reward_text": "若汁之缘×1"
-        },
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "金阙大街",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_golden_gate_avenue",
-            "name": "发现金阙大街",
-            "rarity": 3,
-            "time": 1787249351124,
-            "actor_name": "瀛",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现金阙大街」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_ticket",
-        "tool_name": "景点门票",
-        "settled_at": 1787249351125,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：金阙大街（迦洛维安府）\n旅行时间：27分钟\n获得：500若汁币，若汁之缘×1，经验+1\n携带道具：景点门票\n小若汁偶遇了宝宝我们不拯救世界了我们回家😭的小若汁，两只小若汁听见路人讨论阿尔维塔的新式医疗，说现在很多过去治不了的病都能治了。它们认真听了一会儿，又被旁边关于\"谁家今年又添了几个孩子\"的讨论吸引走了。\n偶遇奖励：若汁之缘×1\n新地点已解锁：金阙大街\n达成旅行成就「发现金阙大街」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4jkn1t-qmki7qlv",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2069743095",
+        "report": "小若汁回来了！\n目的地：智慧农庄（阿尔维塔）\n旅行时间：3小时\n获得：3357若汁币，若汁之缘×6，经验+6\n携带道具：行李箱\n小若汁偶遇了逝如秋霜的小若汁，它们举行了一场没有终点的慢跑比赛，最后一起宣布平局。\n偶遇奖励：464若汁币\n新地点已解锁：智慧农庄\n达成旅行成就「发现智慧农庄」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787423828999,
+        "created_at": 1787423828999,
+        "sent_at": 1787423829479,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt4hhnui-bytp73z0",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2069743095",
+        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：58分钟\n获得：968若汁币，若汁之缘×2，经验+2\n携带道具：旅行清单\n旅行事件：御剑初体验\n落地时一人一龟挂在迎客松上。\n本次状态变化：健康-3\n纪念品：🌲迎客松松针×1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787413025850,
+        "created_at": 1787413025850,
+        "sent_at": 1787413026388,
+        "last_error": ""
+      },
       {
         "travel_id": "mt4g5t9n-5g6y01g5",
         "group_id": "415462812",
@@ -9490,36 +9555,10 @@
         "created_at": 1787259006297,
         "sent_at": 0,
         "last_error": ""
-      },
-      {
-        "travel_id": "mt1u4pvh-p44k25ci",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "2069743095",
-        "report": "小若汁回来了！\n目的地：旧王宫博物馆（阿尔维塔）\n旅行时间：2小时26分钟\n获得：2431若汁币，若汁之缘×5，经验+5\n携带道具：旅行清单\n小若汁偶遇了冬至的小若汁，它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。\n偶遇奖励：10若汁币\n旅行事件：王室下午茶\n旧王宫餐厅复原了两百年前的王室下午茶。小若汁觉得味道不错，看到价格以后又觉得历史非常沉重。\n食物：🍰王宫莓果塔×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787258124127,
-        "created_at": 1787258124127,
-        "sent_at": 1787258124595,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mt1t5gts-kmeag6i0",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "user_id": "2069743095",
-        "report": "小若汁回来了！\n目的地：金阙大街（迦洛维安府）\n旅行时间：27分钟\n获得：500若汁币，若汁之缘×1，经验+1\n携带道具：景点门票\n小若汁偶遇了宝宝我们不拯救世界了我们回家😭的小若汁，两只小若汁听见路人讨论阿尔维塔的新式医疗，说现在很多过去治不了的病都能治了。它们认真听了一会儿，又被旁边关于\"谁家今年又添了几个孩子\"的讨论吸引走了。\n偶遇奖励：若汁之缘×1\n新地点已解锁：金阙大街\n达成旅行成就「发现金阙大街」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787249351125,
-        "created_at": 1787249351125,
-        "sent_at": 1787249351660,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 245,
+      "total_trips": 247,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -9573,8 +9612,9 @@
         "unregistered_district": 14,
         "four_regions_little_world": 11,
         "candy_dreamland": 12,
-        "alvita": 11,
-        "galovian": 11
+        "alvita": 12,
+        "galovian": 11,
+        "starnet": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -9682,7 +9722,8 @@
           "endless_noodle": 1,
           "missing_peak": 1,
           "star_on_roof": 1,
-          "thunder_shell": 1
+          "thunder_shell": 1,
+          "first_sword_flight": 1
         },
         "candy_dreamland": {
           "popping_beach_run": 1,
@@ -9846,7 +9887,8 @@
         "huaixi_borrowed_radio": 1,
         "volcano_brulee": 1,
         "valletta_agent_ad": 1,
-        "hundred_arts_synthesizer": 1
+        "hundred_arts_synthesizer": 1,
+        "first_sword_flight": 1
       },
       "encounter_reward_types": {
         "travel_pager": 1,
@@ -9855,53 +9897,9 @@
         "food_bread": 1,
         "food_cake": 1
       },
-      "total_encounters": 32
+      "total_encounters": 33
     },
-    "active": {
-      "id": "mt4hhnui-bytp73z0",
-      "user_id": "2069743095",
-      "display_name": "瀛",
-      "group_id": "415462812",
-      "self_id": "3874871823",
-      "started_at": 1787409540091,
-      "ends_at": 1787413025816,
-      "duration_ms": 3485725,
-      "map_id": "four_regions_little_world",
-      "map_name": "四州小天地",
-      "location_id": "mystic_sword_sect",
-      "location_name": "玄剑宗",
-      "was_unlocked": true,
-      "carried_item_id": "travel_checklist",
-      "carried_item_name": "旅行清单",
-      "event": {
-        "id": "first_sword_flight",
-        "name": "御剑初体验",
-        "text": "落地时一人一龟挂在迎客松上。",
-        "effects": {
-          "health": -3,
-          "mood": 10
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_pine_needle",
-            "name": "迎客松松针",
-            "emoji": "🌲",
-            "description": "旅行纪念品「迎客松松针」。"
-          }
-        ],
-        "items": [],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 968,
-        "fate": 2,
-        "experience": 2
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mssshlil-239dopmz": {
@@ -10541,6 +10539,27 @@
         "partner_user_id": "523778199",
         "partner_display_name": "Koala",
         "settled_at": 1787407283075
+      },
+      "encounter-mt4lnzdp-eq3zqqht": {
+        "id": "encounter-mt4lnzdp-eq3zqqht",
+        "time": 1787416553438,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "slow_race",
+        "text": "它们举行了一场没有终点的慢跑比赛，最后一起宣布平局。",
+        "reward": {
+          "id": "coin_jackpot",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 400,
+          "max_amount": 500,
+          "amount": 464,
+          "reward_text": "464若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "1412874037",
+        "partner_display_name": "逝如秋霜",
+        "settled_at": 1787423828988
       }
     },
     "companions": {
