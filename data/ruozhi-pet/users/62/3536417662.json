@@ -3,12 +3,12 @@
   "user_id": "3536417662",
   "pet": {
     "level": 12,
-    "experience": 54,
-    "satiety": 90,
+    "experience": 66,
+    "satiety": 100,
     "mood": 100,
     "health": 82,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787423640788,
+    "satiety_decay_at": 1787424897212,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1786,8 +1786,8 @@
       }
     ],
     "weight": 78,
-    "weight_decay_at": 1787424895334,
-    "health_decay_at": 1787424895334,
+    "weight_decay_at": 1787424899891,
+    "health_decay_at": 1787424899891,
     "five_skin_shadow_counts": {
       "qiqiu_turtle": 1,
       "roast_chicken_turtle": 0,
@@ -1796,18 +1796,18 @@
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 352,
-    "total_contribution": 634,
+    "weekly_contribution": 354,
+    "total_contribution": 636,
     "last_display_name": "冬至",
     "first_joined_at": 1784810360591,
-    "last_active_at": 1787424895335,
+    "last_active_at": 1787424899891,
     "daily": {
       "date": "2026-08-23",
-      "event_count": 5,
+      "event_count": 6,
       "same_event_counts": {
         "mention_only": 2,
         "petting": 2,
-        "feed": 1
+        "feed": 2
       },
       "negative_shared_impact": 0
     },
@@ -1991,7 +1991,7 @@
       "food_fish": 4,
       "food_carrot": 3,
       "food_leaf_salad": 6,
-      "food_bread": 9,
+      "food_bread": 8,
       "souvenir_beast_name_tag": 1,
       "travel_pager": 14,
       "food_grapes": 0,
@@ -2012,6 +2012,19 @@
       "souvenir_blank_guest_token": 1
     },
     "item_ledger": [
+      {
+        "time": 1787424897212,
+        "type": "expense",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 9,
+        "after": 8,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_bread",
+          "stage": "chubby"
+        }
+      },
       {
         "time": 1787424797255,
         "type": "income",
@@ -2257,19 +2270,6 @@
           "event_id": "eld_event_royal_parade",
           "location_id": "eld_silver_capital"
         }
-      },
-      {
-        "time": 1787381012778,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 626,
-        "after": 627,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt3z85xv-vbnpptjt",
-          "location_id": "eld_silver_capital"
-        }
       }
     ],
     "item_daily": {
@@ -2313,6 +2313,29 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787424897213,
+      "user_id": "3536417662",
+      "display_name": "冬至",
+      "event_id": "feed",
+      "branch_id": "small_bite",
+      "summary": "小若汁闻到香味就凑过来，把🍞松软面包吃得很认真。",
+      "effects_text": "饱食+10，心情+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 10,
+        "mood": 2,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
     {
       "time": 1787424895336,
       "user_id": "3536417662",
@@ -2536,35 +2559,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1787393823087,
-      "user_id": "3536417662",
-      "display_name": "冬至",
-      "event_id": "petting",
-      "branch_id": "head_trust",
-      "summary": "小若汁直接靠过来，把摸头当成了专属的安慰。\n它乖乖低着头，看起来比从前柔和些的脑袋被摸得轻轻摇晃。",
-      "effects_text": "心情+10，好感+6，贡献+5，经验+5",
-      "effects": {
-        "satiety": 0,
-        "mood": 10,
-        "health": 0,
-        "favorability": 6,
-        "contribution": 5,
-        "experience": 5
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
     "date": "2026-08-23",
-    "event_count": 5,
-    "bonus_event_count": 5
+    "event_count": 6,
+    "bonus_event_count": 6
   },
   "processed_messages": {
     "event:1180582073": 1786422097947,
@@ -2825,7 +2825,8 @@
     "event:377115998": 1787417225382,
     "event:1815384425": 1787417227866,
     "event:1176407883": 1787424892061,
-    "event:1286463266": 1787424895334
+    "event:1286463266": 1787424895334,
+    "event:781438712": 1787424897209
   },
   "skin_sessions": {
     "active": null
@@ -2838,7 +2839,7 @@
     "migrated_at": 1784810360591
   },
   "created_at": 1784810360591,
-  "updated_at": 1787424895336,
+  "updated_at": 1787424899891,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 38,
@@ -2880,9 +2881,9 @@
   },
   "production": {
     "started_at": 1785141760271,
-    "last_settled_at": 1787424895334,
-    "accumulated_ms": 15657714,
-    "progress": 3.807694578475993,
+    "last_settled_at": 1787424899891,
+    "accumulated_ms": 15662271,
+    "progress": 3.8085516254814444,
     "total_produced": 190,
     "last_collected_at": 1787409237620
   },
@@ -6812,7 +6813,62 @@
       },
       "total_encounters": 26
     },
-    "active": null,
+    "active": {
+      "id": "mt4qmve0-ybu2b7pe",
+      "user_id": "3536417662",
+      "display_name": "冬至",
+      "group_id": "1025424898",
+      "self_id": "3874871823",
+      "started_at": 1787424899688,
+      "ends_at": 1787433847819,
+      "duration_ms": 8948131,
+      "map_id": "unregistered_district",
+      "map_name": "未登记城区",
+      "location_id": "forgotten_family_restaurant",
+      "location_name": "被遗忘的家庭餐厅",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": {
+        "id": "event_birthday_song_for_whom",
+        "name": "生日歌唱给谁",
+        "text": "店内熄灯，生日歌唱到名字的位置时，只剩很长的电流杂音。",
+        "effects": {
+          "mood": -2
+        },
+        "souvenirs": [],
+        "items": [],
+        "record": false,
+        "companion_id": "",
+        "cooldown_hours": 0,
+        "once": false,
+        "rewards": {}
+      },
+      "rewards": {
+        "coin": 2486,
+        "fate": 5,
+        "experience": 5
+      },
+      "encounter": {
+        "id": "encounter-mt4qmvjc-wejppcgp",
+        "time": 1787424899880,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "entry_id": "rest_stop",
+        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+        "reward": {
+          "id": "food_cake",
+          "type": "item",
+          "item_id": "food_cake",
+          "name": "奶油蛋糕",
+          "amount": 1,
+          "reward_text": "奶油蛋糕×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "不愿看到优秀ic·alter被埋没"
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mst67cpe-a84amfa6": {
@@ -7329,6 +7385,25 @@
         "partner_user_id": "523778199",
         "partner_display_name": "Koala",
         "settled_at": 1787393654219
+      },
+      "encounter-mt4qmvjc-wejppcgp": {
+        "id": "encounter-mt4qmvjc-wejppcgp",
+        "time": 1787424899880,
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "entry_id": "rest_stop",
+        "text": "它们在路牌下休息了一会儿，并一致认为路牌上的箭头画得不够明确。",
+        "reward": {
+          "id": "food_cake",
+          "type": "item",
+          "item_id": "food_cake",
+          "name": "奶油蛋糕",
+          "amount": 1,
+          "reward_text": "奶油蛋糕×1"
+        },
+        "status": "pending",
+        "partner_user_id": "2818259462",
+        "partner_display_name": "不愿看到优秀ic·alter被埋没"
       }
     },
     "companions": {
