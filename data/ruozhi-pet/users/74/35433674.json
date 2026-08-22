@@ -3,12 +3,12 @@
   "user_id": "35433674",
   "pet": {
     "level": 1,
-    "experience": 49,
+    "experience": 51,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787275361837,
+    "satiety_decay_at": 1787390142867,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -320,6 +320,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_floating_island_factory": {
+        "id": "ach_floating_island_factory",
+        "name": "发现浮岛制造厂",
+        "rarity": 3,
+        "time": 1787313549426,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -475,9 +490,9 @@
       }
     ],
     "five_skin_shadow_counts": {},
-    "weight": 37,
-    "weight_decay_at": 1787272329902,
-    "health_decay_at": 1787275361837
+    "weight": 35,
+    "weight_decay_at": 1787358729902,
+    "health_decay_at": 1787390142867
   },
   "profile": {
     "favorability": 0,
@@ -485,9 +500,9 @@
     "total_contribution": 0,
     "last_display_name": "穗穗的星怒",
     "first_joined_at": 1785344070695,
-    "last_active_at": 1787275361837,
+    "last_active_at": 1787390142867,
     "daily": {
-      "date": "2026-08-21",
+      "date": "2026-08-22",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -496,7 +511,7 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 42,
+      "ruozhi_fate": 47,
       "nameless_ruozhi": 0,
       "travel_pager": 2,
       "souvenir_wheat_old_coin": 1,
@@ -506,6 +521,31 @@
       "souvenir_two_smaller_screws": 1
     },
     "item_ledger": [
+      {
+        "time": 1787313549426,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 44,
+        "after": 47,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_floating_island_factory"
+        }
+      },
+      {
+        "time": 1787313549424,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 42,
+        "after": 44,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt2u9zq2-mqoces26",
+          "location_id": "floating_island_factory"
+        }
+      },
       {
         "time": 1787221362539,
         "type": "income",
@@ -729,31 +769,6 @@
           "event_id": "event_exit_to_yesterday",
           "location_id": "yellow_underpass"
         }
-      },
-      {
-        "time": 1786585786438,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 2,
-        "after": 5,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msquzc0v-vwi45fus",
-          "location_id": "yellow_underpass"
-        }
-      },
-      {
-        "time": 1786585786432,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msquzc0v-vwi45fus"
-        }
       }
     ],
     "item_daily": {
@@ -776,10 +791,23 @@
       }
     },
     "currency": {
-      "balance": 10571,
-      "total_earned": 26571,
+      "balance": 11533,
+      "total_earned": 27533,
       "total_spent": 16000,
       "ledger": [
+        {
+          "time": 1787313549424,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 962,
+          "before": 10571,
+          "after": 11533,
+          "meta": {
+            "travel_id": "mt2u9zq2-mqoces26",
+            "location_id": "floating_island_factory",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787221362536,
           "type": "income",
@@ -892,18 +920,6 @@
             "skin_id": "starry_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1786585735615,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14635,
-          "after": 14935,
-          "meta": {
-            "skin_id": "sneaker_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -933,10 +949,10 @@
     "migrated_at": 1785344070695
   },
   "created_at": 1785344070695,
-  "updated_at": 1787275361837,
+  "updated_at": 1787390142867,
   "production": {
     "started_at": 1785344070695,
-    "last_settled_at": 1787275361837,
+    "last_settled_at": 1787390142867,
     "accumulated_ms": 259200000,
     "progress": 31.390061441417586,
     "total_produced": 34,
@@ -954,7 +970,8 @@
       "yellow_underpass",
       "rtc_atomic_plant",
       "rtc_robot_city",
-      "school_gate_1743"
+      "school_gate_1743",
+      "floating_island_factory"
     ],
     "location_records": {
       "eld_free_port": {
@@ -1043,6 +1060,14 @@
         "name": "永远放学的校门",
         "travel_id": "mt18ay2a-2s20ol0h",
         "time": 1787221362536,
+        "carried_item_id": ""
+      },
+      "floating_island_factory": {
+        "id": "floating_island_factory",
+        "map_id": "alvita",
+        "name": "浮岛制造厂",
+        "travel_id": "mt2u9zq2-mqoces26",
+        "time": 1787313549424,
         "carried_item_id": ""
       }
     },
@@ -1365,6 +1390,21 @@
         "name": "旅途中的同伴",
         "rarity": 3,
         "time": 1787221362539,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_floating_island_factory": {
+        "id": "ach_floating_island_factory",
+        "name": "发现浮岛制造厂",
+        "rarity": 3,
+        "time": 1787313549426,
         "actor_name": "穗穗的星怒",
         "rewards": [
           {
@@ -2186,9 +2226,73 @@
         "settled_at": 1787221362539,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：2小时24分钟\n获得：2403若汁币，若汁之缘×5，经验+5\n小若汁偶遇了【IGN】《原神》共鸣者「流浪者」演示的小若汁，它们互相检查旅行包，最后都在对方包里发现了一片忘记带走的菜叶。\n偶遇奖励：297若汁币\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★\n达成旅行成就「旅途中的同伴」 ★★★"
+      },
+      "mt2u9zq2-mqoces26": {
+        "id": "mt2u9zq2-mqoces26",
+        "user_id": "35433674",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "穗穗的星怒",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "floating_island_factory",
+        "location_name": "浮岛制造厂",
+        "duration_ms": 3464527,
+        "rewards": {
+          "coin": 962,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "浮岛制造厂",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_floating_island_factory",
+            "name": "发现浮岛制造厂",
+            "rarity": 3,
+            "time": 1787313549426,
+            "actor_name": "穗穗的星怒",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现浮岛制造厂」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787313549427,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：58分钟\n获得：962若汁币，若汁之缘×2，经验+2\n新地点已解锁：浮岛制造厂\n达成旅行成就「发现浮岛制造厂」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt2u9zq2-mqoces26",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "35433674",
+        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：58分钟\n获得：962若汁币，若汁之缘×2，经验+2\n新地点已解锁：浮岛制造厂\n达成旅行成就「发现浮岛制造厂」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787313549427,
+        "created_at": 1787313549427,
+        "sent_at": 1787313549821,
+        "last_error": ""
+      },
       {
         "travel_id": "mt18ay2a-2s20ol0h",
         "group_id": "415462812",
@@ -2360,7 +2464,7 @@
       }
     ],
     "stats": {
-      "total_trips": 13,
+      "total_trips": 14,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 6,
@@ -2368,7 +2472,7 @@
         "unregistered_district": 2,
         "four_regions_little_world": 0,
         "candy_dreamland": 0,
-        "alvita": 0,
+        "alvita": 1,
         "galovian": 0
       },
       "map_event_ids": {
@@ -2423,6 +2527,15 @@
         "partner_user_id": "2831974530",
         "partner_display_name": "【IGN】《原神》共鸣者「流浪者」演示",
         "settled_at": 1787221362536
+      }
+    },
+    "companions": {
+      "heseranville_aster": {
+        "affinity": 0,
+        "completed_events": {},
+        "legacy_memories": {},
+        "imported_legacy_event_ids": [],
+        "cooldowns": {}
       }
     }
   },

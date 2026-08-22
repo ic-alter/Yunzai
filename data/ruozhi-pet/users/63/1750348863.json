@@ -3,12 +3,12 @@
   "user_id": "1750348863",
   "pet": {
     "level": 8,
-    "experience": 114,
-    "satiety": 35,
+    "experience": 159,
+    "satiety": 34,
     "mood": 100,
-    "health": 88,
+    "health": 92,
     "current_skin_id": "shidai_turtle",
-    "satiety_decay_at": 1787280195790,
+    "satiety_decay_at": 1787401310499,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -980,6 +980,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_parliament_new_palace": {
+        "id": "ach_parliament_new_palace",
+        "name": "发现议会与新王宫",
+        "rarity": 3,
+        "time": 1787401302992,
+        "actor_name": "海之低语",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1308,22 +1323,22 @@
       "shidai_turtle": 1,
       "radical_foresight_turtle": 0
     },
-    "weight": 47,
-    "weight_decay_at": 1787280929921,
-    "health_decay_at": 1787280929921
+    "weight": 45,
+    "weight_decay_at": 1787401313455,
+    "health_decay_at": 1787401313455
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 47,
-    "total_contribution": 188,
+    "weekly_contribution": 60,
+    "total_contribution": 201,
     "last_display_name": "海之低语",
     "first_joined_at": 1784810523484,
-    "last_active_at": 1787280929921,
+    "last_active_at": 1787401313455,
     "daily": {
-      "date": "2026-08-21",
-      "event_count": 1,
+      "date": "2026-08-22",
+      "event_count": 3,
       "same_event_counts": {
-        "feed": 1
+        "feed": 3
       },
       "negative_shared_impact": 0
     },
@@ -1331,7 +1346,7 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 106,
+      "ruozhi_fate": 128,
       "nameless_ruozhi": 1,
       "souvenir_atomic_child_sunglasses": 1,
       "souvenir_border_quest_scroll": 2,
@@ -1365,6 +1380,56 @@
       "souvenir_yesterday_calendar": 1
     },
     "item_ledger": [
+      {
+        "time": 1787401302992,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 125,
+        "after": 128,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_parliament_new_palace"
+        }
+      },
+      {
+        "time": 1787401302984,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 124,
+        "after": 125,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4bi648-fan45xky",
+          "location_id": "parliament_new_palace"
+        }
+      },
+      {
+        "time": 1787399216583,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 123,
+        "after": 124,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt49qwd3-g513kzii",
+          "location_id": "chocolate_falls"
+        }
+      },
+      {
+        "time": 1787396525679,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 17,
+        "before": 106,
+        "after": 123,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 33.114
+        }
+      },
       {
         "time": 1787280929372,
         "type": "income",
@@ -1568,58 +1633,6 @@
           "event_id": "letter_from_sword_tomb",
           "location_id": "mystic_sword_sect"
         }
-      },
-      {
-        "time": 1787160188019,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 47,
-        "after": 50,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt0a1wqq-mkz28vb1",
-          "location_id": "mystic_sword_sect"
-        }
-      },
-      {
-        "time": 1787155173836,
-        "type": "expense",
-        "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_milk_tea",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1787147652974,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 44,
-        "after": 47,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rain_only_store"
-        }
-      },
-      {
-        "time": 1787147652972,
-        "type": "income",
-        "item_id": "food_milk_tea",
-        "amount": 2,
-        "before": 0,
-        "after": 2,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "mt00ps0i-hgcn9n73",
-          "event_id": "event_change_is_rain",
-          "location_id": "rain_only_store"
-        }
       }
     ],
     "item_daily": {
@@ -1640,10 +1653,47 @@
       }
     },
     "currency": {
-      "balance": 231827,
-      "total_earned": 235827,
+      "balance": 233577,
+      "total_earned": 237577,
       "total_spent": 4000,
       "ledger": [
+        {
+          "time": 1787401302984,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 505,
+          "before": 233072,
+          "after": 233577,
+          "meta": {
+            "travel_id": "mt4bi648-fan45xky",
+            "location_id": "parliament_new_palace",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787399216583,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 745,
+          "before": 232327,
+          "after": 233072,
+          "meta": {
+            "travel_id": "mt49qwd3-g513kzii",
+            "location_id": "chocolate_falls",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787396525680,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 231827,
+          "after": 232327,
+          "meta": {
+            "date": "2026-08-22"
+          }
+        },
         {
           "time": 1787280929373,
           "type": "income",
@@ -1730,42 +1780,6 @@
             "location_id": "eld_beyond_cottage",
             "forced_by": "timer"
           }
-        },
-        {
-          "time": 1787219453511,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2602,
-          "before": 224812,
-          "after": 227414,
-          "meta": {
-            "travel_id": "mt16qnhu-1liow6tr",
-            "location_id": "cloud_sword_tomb",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787210071015,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 224312,
-          "after": 224812,
-          "meta": {
-            "date": "2026-08-20"
-          }
-        },
-        {
-          "time": 1787160188020,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 459,
-          "before": 223853,
-          "after": 224312,
-          "meta": {
-            "encounter_id": "encounter-mt0ady1p-5nwgveu2",
-            "partner_user_id": "1256806998"
-          }
         }
       ],
       "sign": {
@@ -1774,7 +1788,7 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-21"
+      "first_interaction_reward_date": "2026-08-22"
     },
     "item_sign": {
       "month": "2026-08",
@@ -1784,6 +1798,78 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1787401310499,
+      "user_id": "1750348863",
+      "display_name": "海之低语",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787399478640,
+      "user_id": "1750348863",
+      "display_name": "海之低语",
+      "event_id": "feed",
+      "branch_id": "normal",
+      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
+      "effects_text": "饱食+7，心情+3，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 7,
+        "mood": 3,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787396525680,
+      "user_id": "1750348863",
+      "display_name": "海之低语",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，海之低语及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 232327
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 17
+    },
     {
       "time": 1787277315793,
       "user_id": "1750348863",
@@ -1950,95 +2036,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1787129695065,
-      "user_id": "1750348863",
-      "display_name": "海之低语",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁闻到香味就凑过来，把🥟小笼包吃得很认真。",
-      "effects_text": "饱食+13，心情+3，好感+2，贡献+2，经验+12，升级到 Lv.8",
-      "effects": {
-        "satiety": 13,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [
-        {
-          "level": 8,
-          "need": 220
-        }
-      ],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [
-        {
-          "level": 8,
-          "reward": 300,
-          "receiver": {
-            "user_id": "1750348863",
-            "display_name": "海之低语"
-          }
-        }
-      ],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787129652975,
-      "user_id": "1750348863",
-      "display_name": "海之低语",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它慢吞吞地解决了🍪午夜饼干，看起来心情很好。",
-      "effects_text": "饱食+12，心情+5，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 12,
-        "mood": 5,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787115948165,
-      "user_id": "1750348863",
-      "display_name": "海之低语",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "它认真品尝完🍮星尘果冻，随后满足地蹭了蹭。",
-      "effects_text": "饱食+13，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 13,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 8
     }
   ],
   "daily": {
-    "date": "2026-08-21",
-    "event_count": 1,
-    "bonus_event_count": 1
+    "date": "2026-08-22",
+    "event_count": 3,
+    "bonus_event_count": 3
   },
   "processed_messages": {
     "event:1877928168": 1784810523487,
@@ -2132,7 +2135,10 @@
     "event:2012856822": 1787231935279,
     "event:371096200": 1787233542457,
     "event:1715435221": 1787238497558,
-    "event:563492892": 1787277315786
+    "event:563492892": 1787277315786,
+    "event:407629129": 1787396525676,
+    "event:2083142096": 1787399478637,
+    "event:1129097064": 1787401310496
   },
   "skin_sessions": {
     "active": null
@@ -2145,14 +2151,14 @@
     "migrated_at": 1784810523484
   },
   "created_at": 1784810523484,
-  "updated_at": 1787280929922,
+  "updated_at": 1787401313455,
   "production": {
     "started_at": 1785141760273,
-    "last_settled_at": 1787280929921,
-    "accumulated_ms": 3614130,
-    "progress": 0.7651010696655602,
-    "total_produced": 263,
-    "last_collected_at": 1787277315791
+    "last_settled_at": 1787401313455,
+    "accumulated_ms": 4787777,
+    "progress": 0.9760126810857669,
+    "total_produced": 280,
+    "last_collected_at": 1787396525678
   },
   "travel": {
     "unlocked_location_ids": [
@@ -2192,7 +2198,8 @@
       "rain_only_store",
       "mystic_sword_sect",
       "cloud_sword_tomb",
-      "sugar_crystal_mine"
+      "sugar_crystal_mine",
+      "parliament_new_palace"
     ],
     "location_records": {
       "rtc_atomic_mall": {
@@ -2490,6 +2497,14 @@
         "travel_id": "mt1nnp0e-czmbzj7w",
         "time": 1787241423744,
         "carried_item_id": ""
+      },
+      "parliament_new_palace": {
+        "id": "parliament_new_palace",
+        "map_id": "alvita",
+        "name": "议会与新王宫",
+        "travel_id": "mt4bi648-fan45xky",
+        "time": 1787401302985,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -2688,6 +2703,13 @@
         "location_id": "sugar_crystal_mine",
         "travel_id": "mt1nnp0e-czmbzj7w",
         "time": 1787241423744
+      },
+      "royal_garden_robot": {
+        "id": "royal_garden_robot",
+        "map_id": "alvita",
+        "location_id": "parliament_new_palace",
+        "travel_id": "mt4bi648-fan45xky",
+        "time": 1787401302985
       }
     },
     "souvenir_records": {
@@ -3609,9 +3631,123 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_parliament_new_palace": {
+        "id": "ach_parliament_new_palace",
+        "name": "发现议会与新王宫",
+        "rarity": 3,
+        "time": 1787401302992,
+        "actor_name": "海之低语",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mt4bi648-fan45xky": {
+        "id": "mt4bi648-fan45xky",
+        "user_id": "1750348863",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "海之低语",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "parliament_new_palace",
+        "location_name": "议会与新王宫",
+        "duration_ms": 1816888,
+        "rewards": {
+          "coin": 505,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": {
+          "id": "royal_garden_robot",
+          "name": "王宫园丁",
+          "text": "园艺机器人花了十二秒判断小若汁是不是新型灌木，最终结论是：“未知植物，建议暂不修剪。”",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "议会与新王宫",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_parliament_new_palace",
+            "name": "发现议会与新王宫",
+            "rarity": 3,
+            "time": 1787401302992,
+            "actor_name": "海之低语",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现议会与新王宫」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787401302996,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：30分钟\n获得：505若汁币，若汁之缘×1，经验+1\n旅行事件：王宫园丁\n园艺机器人花了十二秒判断小若汁是不是新型灌木，最终结论是：“未知植物，建议暂不修剪。”\n新地点已解锁：议会与新王宫\n达成旅行成就「发现议会与新王宫」 ★★★"
+      },
+      "mt49qwd3-g513kzii": {
+        "id": "mt49qwd3-g513kzii",
+        "user_id": "1750348863",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "海之低语",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "chocolate_falls",
+        "location_name": "巧克力大瀑布",
+        "duration_ms": 2682461,
+        "rewards": {
+          "coin": 745,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787399216595,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：45分钟\n获得：745若汁币，若汁之缘×1，经验+1"
+      },
       "mt2arpvh-daz3gx4d": {
         "id": "mt2arpvh-daz3gx4d",
         "user_id": "1750348863",
@@ -4814,175 +4950,35 @@
         "settled_at": 1786962888416,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：灵兽宗（四州小天地）\n旅行时间：40分钟\n获得：673若汁币，若汁之缘×2，经验+1"
-      },
-      "mswzb38z-jlvr11rz": {
-        "id": "mswzb38z-jlvr11rz",
-        "user_id": "1750348863",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "海之低语",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "nap_park",
-        "location_name": "午睡公园",
-        "duration_ms": 4696917,
-        "rewards": {
-          "coin": 1305,
-          "fate": 3,
-          "experience": 3
-        },
-        "event": null,
-        "encounter": {
-          "id": "encounter-msx01032-1cs70c0f",
-          "time": 1786956946094,
-          "map_id": "unregistered_district",
-          "map_name": "未登记城区",
-          "text": "它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。",
-          "reward": {
-            "id": "fate",
-            "type": "item",
-            "item_id": "ruozhi_fate",
-            "name": "若汁之缘",
-            "amount": 1,
-            "reward_text": "若汁之缘×1"
-          },
-          "status": "pending",
-          "partner_user_id": "1539756040",
-          "partner_display_name": "菲八啾比",
-          "reward_text": "若汁之缘×1"
-        },
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "午睡公园",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_nap_park",
-            "name": "发现午睡公园",
-            "rarity": 3,
-            "time": 1786960434080,
-            "actor_name": "海之低语",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现午睡公园」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786960434082,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：1小时18分钟\n获得：1305若汁币，若汁之缘×3，经验+3\n小若汁偶遇了菲八啾比的小若汁，它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。\n偶遇奖励：若汁之缘×1\n新地点已解锁：午睡公园\n达成旅行成就「发现午睡公园」 ★★★"
-      },
-      "mswve2oo-2plwv27f": {
-        "id": "mswve2oo-2plwv27f",
-        "user_id": "1750348863",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "海之低语",
-        "map_id": "candy_dreamland",
-        "map_name": "糖霜梦境",
-        "location_id": "popping_candy_beach",
-        "location_name": "跳跳糖海滩",
-        "duration_ms": 5588186,
-        "rewards": {
-          "coin": 1552,
-          "fate": 3,
-          "experience": 3
-        },
-        "event": {
-          "id": "popping_candy_bucket",
-          "name": "海滩小桶",
-          "text": "工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。",
-          "effects": {},
-          "souvenirs": [],
-          "items": [
-            {
-              "id": "food_seabreeze_popping_candy",
-              "amount": 2
-            }
-          ],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-mswve30s-yn4tiebl",
-          "time": 1786949158348,
-          "map_id": "candy_dreamland",
-          "map_name": "糖霜梦境",
-          "text": "它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。",
-          "reward": {
-            "id": "food_cake",
-            "type": "item",
-            "item_id": "food_cake",
-            "name": "奶油蛋糕",
-            "amount": 1,
-            "reward_text": "奶油蛋糕×1"
-          },
-          "status": "pending",
-          "partner_user_id": "2683578371",
-          "partner_display_name": "宝宝我们不拯救世界了我们回家😭",
-          "reward_text": "奶油蛋糕×1"
-        },
-        "souvenirs": [],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_seabreeze_popping_candy",
-            "name": "海风跳跳糖",
-            "emoji": "🍬",
-            "description": "带着海盐气泡感的跳跳糖。",
-            "food": {
-              "satiety": 7,
-              "mood": 4,
-              "weight_gain": 3
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "跳跳糖海滩",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_popping_candy_beach",
-            "name": "发现跳跳糖海滩",
-            "rarity": 3,
-            "time": 1786954746128,
-            "actor_name": "海之低语",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现跳跳糖海滩」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786954746128,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：1小时33分钟\n获得：1552若汁币，若汁之缘×3，经验+3\n小若汁偶遇了宝宝我们不拯救世界了我们回家😭的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：奶油蛋糕×1\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4bi648-fan45xky",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：议会与新王宫（阿尔维塔）\n旅行时间：30分钟\n获得：505若汁币，若汁之缘×1，经验+1\n旅行事件：王宫园丁\n园艺机器人花了十二秒判断小若汁是不是新型灌木，最终结论是：“未知植物，建议暂不修剪。”\n新地点已解锁：议会与新王宫\n达成旅行成就「发现议会与新王宫」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787401302997,
+        "created_at": 1787401302997,
+        "sent_at": 1787401303784,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt49qwd3-g513kzii",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：45分钟\n获得：745若汁币，若汁之缘×1，经验+1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787399216595,
+        "created_at": 1787399216595,
+        "sent_at": 1787399217037,
+        "last_error": ""
+      },
       {
         "travel_id": "mt2arpvh-daz3gx4d",
         "group_id": "1025424898",
@@ -5216,36 +5212,10 @@
         "created_at": 1786962888416,
         "sent_at": 1786962888948,
         "last_error": ""
-      },
-      {
-        "travel_id": "mswzb38z-jlvr11rz",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "1750348863",
-        "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：1小时18分钟\n获得：1305若汁币，若汁之缘×3，经验+3\n小若汁偶遇了菲八啾比的小若汁，它们同时弯腰捡起一颗亮晶晶的小石子，于是决定各自收藏一颗。\n偶遇奖励：若汁之缘×1\n新地点已解锁：午睡公园\n达成旅行成就「发现午睡公园」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786960434082,
-        "created_at": 1786960434082,
-        "sent_at": 1786960434600,
-        "last_error": ""
-      },
-      {
-        "travel_id": "mswve2oo-2plwv27f",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "1750348863",
-        "report": "小若汁回来了！\n目的地：跳跳糖海滩（糖霜梦境）\n旅行时间：1小时33分钟\n获得：1552若汁币，若汁之缘×3，经验+3\n小若汁偶遇了宝宝我们不拯救世界了我们回家😭的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：奶油蛋糕×1\n旅行事件：海滩小桶\n工作人员不允许把海滩带走，最后只准小若汁带走一小瓶跳跳糖。\n食物：🍬海风跳跳糖×2\n新地点已解锁：跳跳糖海滩\n达成旅行成就「发现跳跳糖海滩」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786954746129,
-        "created_at": 1786954746129,
-        "sent_at": 1786954746666,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 64,
+      "total_trips": 66,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -5269,7 +5239,7 @@
         "unregistered_district": 4,
         "four_regions_little_world": 7,
         "candy_dreamland": 4,
-        "alvita": 1,
+        "alvita": 2,
         "galovian": 1
       },
       "map_event_ids": {
@@ -5310,6 +5280,9 @@
           "event_kids_meal_memory": 1,
           "event_change_is_rain": 1,
           "event_exit_to_yesterday": 1
+        },
+        "alvita": {
+          "royal_garden_robot": 1
         }
       },
       "event_ids": {
@@ -5340,7 +5313,8 @@
         "letter_from_sword_tomb": 1,
         "broken_sword_returns": 1,
         "event_exit_to_yesterday": 1,
-        "giant_sugar_crystal": 1
+        "giant_sugar_crystal": 1,
+        "royal_garden_robot": 1
       },
       "encounter_reward_types": {
         "currency": 1,
@@ -5350,7 +5324,49 @@
       },
       "total_encounters": 11
     },
-    "active": null,
+    "active": {
+      "id": "mt4clbu1-fxj0c1b2",
+      "user_id": "1750348863",
+      "display_name": "海之低语",
+      "group_id": "1025424898",
+      "self_id": "3874871823",
+      "started_at": 1787401313065,
+      "ends_at": 1787411357783,
+      "duration_ms": 10044718,
+      "map_id": "alvita",
+      "map_name": "阿尔维塔",
+      "location_id": "parliament_new_palace",
+      "location_name": "议会与新王宫",
+      "was_unlocked": true,
+      "carried_item_id": "",
+      "carried_item_name": "",
+      "event": null,
+      "rewards": {
+        "coin": 2790,
+        "fate": 6,
+        "experience": 6
+      },
+      "encounter": {
+        "id": "encounter-mt4clc4n-i65waa03",
+        "time": 1787401313447,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "encounter_autopilot",
+        "text": "两只小若汁搭上海陆空三用车，发现车里没有司机后又安心躺了回去。",
+        "reward": {
+          "id": "coin_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 200,
+          "max_amount": 300,
+          "amount": 274,
+          "reward_text": "274若汁币"
+        },
+        "status": "pending",
+        "partner_user_id": "1256806998",
+        "partner_display_name": "库洛4000+"
+      }
+    },
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mswhtegt-hd195uee": {
@@ -5574,6 +5590,35 @@
         "partner_user_id": "1256806998",
         "partner_display_name": "库洛4000+",
         "settled_at": 1787280929373
+      },
+      "encounter-mt4clc4n-i65waa03": {
+        "id": "encounter-mt4clc4n-i65waa03",
+        "time": 1787401313447,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "encounter_autopilot",
+        "text": "两只小若汁搭上海陆空三用车，发现车里没有司机后又安心躺了回去。",
+        "reward": {
+          "id": "coin_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 200,
+          "max_amount": 300,
+          "amount": 274,
+          "reward_text": "274若汁币"
+        },
+        "status": "pending",
+        "partner_user_id": "1256806998",
+        "partner_display_name": "库洛4000+"
+      }
+    },
+    "companions": {
+      "heseranville_aster": {
+        "affinity": 0,
+        "completed_events": {},
+        "legacy_memories": {},
+        "imported_legacy_event_ids": [],
+        "cooldowns": {}
       }
     }
   },

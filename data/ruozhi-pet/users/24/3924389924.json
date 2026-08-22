@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "3924389924",
   "pet": {
-    "level": 3,
-    "experience": 2,
-    "satiety": 40,
+    "level": 4,
+    "experience": 15,
+    "satiety": 83,
     "mood": 100,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787289548752,
+    "satiety_decay_at": 1787388759375,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -57,7 +57,11 @@
       "coffee_turtle",
       "ladybug_turtle",
       "puppy_turtle",
-      "spirit_pearl_turtle"
+      "spirit_pearl_turtle",
+      "tidal_wave_turtle",
+      "party_turtle",
+      "vomit_turtle",
+      "sweat_smile_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -73,11 +77,20 @@
         "level": 3,
         "time": 1787289548755,
         "applied": true
+      },
+      "4:unlock_skin:sweat_smile_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "sweat_smile_turtle",
+        "level": 4,
+        "time": 1787387319401,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 80,
-      "counter:gacha_five": 1
+      "counter:gacha_draws": 84,
+      "counter:gacha_five": 1,
+      "pet_stat_reach_count:satiety:98": 1,
+      "pet_stat_reach_count:satiety:98:last_at": 1787346242205
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -235,9 +248,69 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_cotton_candy_forest": {
+        "id": "ach_cotton_candy_forest",
+        "name": "发现棉花糖森林",
+        "rarity": 3,
+        "time": 1787325129616,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "overfed": {
+        "id": "overfed",
+        "name": "撑死了...",
+        "rarity": 2,
+        "time": 1787346242206,
+        "actor_name": "月卡买成改名卡了",
+        "stat_key": "pet_stat_reach_count:satiety:98",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "vomit_turtle",
+            "skin_name": "呕吐小若汁",
+            "message": "解锁二星皮肤「呕吐小若汁」。"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "sweat_smile_turtle",
+        "reason": "level_reward",
+        "time": 1787387319401,
+        "level": 4
+      },
+      {
+        "skin_id": "vomit_turtle",
+        "reason": "achievement",
+        "time": 1787346242206,
+        "achievement_id": "overfed"
+      },
+      {
+        "skin_id": "party_turtle",
+        "reason": "gacha",
+        "time": 1787315826004
+      },
+      {
+        "skin_id": "tidal_wave_turtle",
+        "reason": "gacha",
+        "time": 1787315826004
+      },
       {
         "skin_id": "spirit_pearl_turtle",
         "reason": "gacha",
@@ -482,24 +555,25 @@
       }
     ],
     "weight": 49,
-    "weight_decay_at": 1787289734397,
-    "health_decay_at": 1787289734397,
-    "five_skin_shadow_counts": {}
+    "weight_decay_at": 1787390142615,
+    "health_decay_at": 1787390142615,
+    "five_skin_shadow_counts": {
+      "spirit_pearl_turtle": 0
+    }
   },
   "profile": {
-    "favorability": 47,
-    "weekly_contribution": 46,
-    "total_contribution": 46,
+    "favorability": 100,
+    "weekly_contribution": 94,
+    "total_contribution": 94,
     "last_display_name": "月卡买成改名卡了",
     "first_joined_at": 1787035936084,
-    "last_active_at": 1787289734397,
+    "last_active_at": 1787390142615,
     "daily": {
-      "date": "2026-08-21",
-      "event_count": 5,
+      "date": "2026-08-22",
+      "event_count": 16,
       "same_event_counts": {
-        "mention_only": 1,
-        "petting": 3,
-        "feed": 1
+        "feed": 9,
+        "petting": 7
       },
       "negative_shared_impact": 0
     },
@@ -507,20 +581,20 @@
       "week": "2026-W34"
     },
     "items": {
-      "ruozhi_fate": 12,
+      "ruozhi_fate": 29,
       "nameless_ruozhi": 0,
       "food_grapes": 4,
       "food_ice_cream": 1,
       "food_donut": 2,
-      "food_dumpling": 3,
-      "food_carrot": 2,
-      "food_pancake": 2,
-      "food_cake": 6,
+      "food_dumpling": 2,
+      "food_carrot": 1,
+      "food_pancake": 1,
+      "food_cake": 5,
       "food_noodles": 3,
       "food_curry": 5,
-      "food_elven_tart": 2,
+      "food_elven_tart": 0,
       "food_burger": 1,
-      "food_apple": 1,
+      "food_apple": 0,
       "food_rice_ball": 1,
       "food_bread": 3,
       "food_pizza": 0,
@@ -530,11 +604,213 @@
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 1,
       "food_dwarf_bread": 0,
-      "food_sandwich": 2,
-      "food_fried_chicken": 1,
+      "food_sandwich": 1,
+      "food_fried_chicken": 0,
       "food_popcorn": 2
     },
     "item_ledger": [
+      {
+        "time": 1787387319388,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 26,
+        "after": 29,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 4
+        }
+      },
+      {
+        "time": 1787387319376,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 11,
+        "before": 15,
+        "after": 26,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 19.424
+        }
+      },
+      {
+        "time": 1787387319375,
+        "type": "expense",
+        "item_id": "food_pancake",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_pancake",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346242206,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 12,
+        "after": 15,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "overfed"
+        }
+      },
+      {
+        "time": 1787346242205,
+        "type": "expense",
+        "item_id": "food_sandwich",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_sandwich",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346237791,
+        "type": "expense",
+        "item_id": "food_elven_tart",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_elven_tart",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346219050,
+        "type": "expense",
+        "item_id": "food_cake",
+        "amount": 1,
+        "before": 6,
+        "after": 5,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_cake",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346214498,
+        "type": "expense",
+        "item_id": "food_dumpling",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_dumpling",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346210723,
+        "type": "expense",
+        "item_id": "food_apple",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_apple",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346207500,
+        "type": "expense",
+        "item_id": "food_fried_chicken",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_fried_chicken",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346203890,
+        "type": "expense",
+        "item_id": "food_elven_tart",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_elven_tart",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787346161295,
+        "type": "expense",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_carrot",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1787325129616,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 9,
+        "after": 12,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_cotton_candy_forest"
+        }
+      },
+      {
+        "time": 1787325129612,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 4,
+        "after": 9,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt2xogqi-p31kudfy",
+          "location_id": "cotton_candy_forest"
+        }
+      },
+      {
+        "time": 1787317394484,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 0,
+        "after": 4,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 7.743
+        }
+      },
+      {
+        "time": 1787315826003,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 12,
+        "before": 12,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 4
+        }
+      },
       {
         "time": 1787289734399,
         "type": "income",
@@ -580,188 +856,15 @@
         "after": 2,
         "reason": "daily_sign_food",
         "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_noodles",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_curry",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_fried_chicken",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557545,
-        "type": "income",
-        "item_id": "food_curry",
-        "amount": 1,
-        "before": 3,
-        "after": 4,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557544,
-        "type": "income",
-        "item_id": "food_bread",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557544,
-        "type": "income",
-        "item_id": "food_sandwich",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787289557544,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 26,
-        "before": 43,
-        "after": 69,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-21",
-          "month_count": 4,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
-      },
-      {
-        "time": 1787289548753,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 40,
-        "after": 43,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 3
-        }
-      },
-      {
-        "time": 1787289548752,
-        "type": "expense",
-        "item_id": "food_burger",
-        "amount": 1,
-        "before": 2,
-        "after": 1,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_burger",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1787289519020,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 14,
-        "before": 26,
-        "after": 40,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 25.388
-        }
-      },
-      {
-        "time": 1787230971454,
-        "type": "income",
-        "item_id": "food_curry",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "mt1dxws9-bzt205tf",
-          "event_id": "eld_event_missing_goat",
-          "location_id": "eld_moonbell_village"
-        }
-      },
-      {
-        "time": 1787230971450,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 21,
-        "after": 26,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt1dxws9-bzt205tf",
-          "location_id": "eld_moonbell_village"
-        }
       }
     ],
-    "item_daily": {},
+    "item_daily": {
+      "date": "2026-08-21",
+      "fate_exchange_count": 0,
+      "game_fate_reward_count": 0,
+      "shop_buy_counts": {},
+      "use_counts": {}
+    },
     "item_migrations": {
       "fate_v1": {
         "time": 1787035936085,
@@ -771,10 +874,81 @@
       }
     },
     "currency": {
-      "balance": 45227,
-      "total_earned": 45227,
+      "balance": 49564,
+      "total_earned": 49564,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787387319388,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 49264,
+          "after": 49564,
+          "meta": {
+            "level": 4
+          }
+        },
+        {
+          "time": 1787346161296,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 48764,
+          "after": 49264,
+          "meta": {
+            "date": "2026-08-22"
+          }
+        },
+        {
+          "time": 1787325129613,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 345,
+          "before": 48419,
+          "after": 48764,
+          "meta": {
+            "encounter_id": "encounter-mt2xogxj-yyef1g9y",
+            "partner_user_id": "3536417662"
+          }
+        },
+        {
+          "time": 1787325129612,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2592,
+          "before": 45827,
+          "after": 48419,
+          "meta": {
+            "travel_id": "mt2xogqi-p31kudfy",
+            "location_id": "cotton_candy_forest",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787315826004,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 45527,
+          "after": 45827,
+          "meta": {
+            "skin_id": "kiss_marks_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787315826003,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 45227,
+          "after": 45527,
+          "meta": {
+            "skin_id": "bell_turtle",
+            "rarity": 3
+          }
+        },
         {
           "time": 1787289734399,
           "type": "income",
@@ -822,78 +996,6 @@
             "skin_id": "kiss_marks_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787289734398,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 43727,
-          "after": 44027,
-          "meta": {
-            "skin_id": "grasshopper_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787289734398,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 43427,
-          "after": 43727,
-          "meta": {
-            "skin_id": "drooling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787289734398,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 43127,
-          "after": 43427,
-          "meta": {
-            "skin_id": "grasshopper_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787289734397,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 42827,
-          "after": 43127,
-          "meta": {
-            "skin_id": "volleyball_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787289723483,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 42527,
-          "after": 42827,
-          "meta": {
-            "skin_id": "biting_lip_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787289723483,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 42227,
-          "after": 42527,
-          "meta": {
-            "skin_id": "bell_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -902,7 +1004,7 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-21"
+      "first_interaction_reward_date": "2026-08-22"
     },
     "item_sign": {
       "month": "2026-08",
@@ -921,32 +1023,101 @@
   },
   "recent_events": [
     {
-      "time": 1787289548756,
+      "time": 1787387349375,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "petting",
+      "branch_id": "limb_trust",
+      "summary": "它熟练地把被摸到的部位留在掌心里，完全没有防备。",
+      "effects_text": "心情+10，好感+6，贡献+5，经验+5",
+      "effects": {
+        "satiety": 0,
+        "mood": 10,
+        "health": 0,
+        "favorability": 6,
+        "contribution": 5,
+        "experience": 5
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787387345549,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "petting",
+      "branch_id": "head_trust",
+      "summary": "小若汁开心地仰起脑袋，完全信赖地任由月卡买成改名卡了摸。",
+      "effects_text": "心情+10，好感+6，贡献+5，经验+5",
+      "effects": {
+        "satiety": 0,
+        "mood": 10,
+        "health": 0,
+        "favorability": 6,
+        "contribution": 5,
+        "experience": 5
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787387342712,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "petting",
+      "branch_id": "belly_close",
+      "summary": "它被摸肚子时有点害羞，却没有躲开。",
+      "effects_text": "心情+6，好感+5，贡献+4，经验+4",
+      "effects": {
+        "satiety": 0,
+        "mood": 6,
+        "health": 0,
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 4
+      },
+      "level_ups": [],
+      "bonus_experience": 0,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787387319402,
       "user_id": "3924389924",
       "display_name": "月卡买成改名卡了",
       "event_id": "feed",
       "branch_id": "normal",
-      "summary": "小若汁开心地收下🍔双层汉堡，连龟壳都像亮了一点。",
-      "effects_text": "饱食+17，心情+4，好感+2，贡献+2，经验+12，升级到 Lv.3",
+      "summary": "小若汁闻到香味就凑过来，把🥞蜂蜜松饼吃得很认真。",
+      "effects_text": "饱食+13，心情+4，好感+2，贡献+2，经验+2，升级到 Lv.4",
       "effects": {
-        "satiety": 17,
+        "satiety": 13,
         "mood": 4,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
-        "experience": 12
+        "experience": 2
       },
       "level_ups": [
         {
-          "level": 3,
-          "need": 120
+          "level": 4,
+          "need": 140
         }
       ],
-      "bonus_experience": 10,
+      "bonus_experience": 0,
       "first_interaction_reward": null,
       "level_rewards": [
         {
-          "level": 3,
+          "level": 4,
           "reward": 300,
           "receiver": {
             "user_id": "3924389924",
@@ -955,127 +1126,32 @@
           "special_rewards": [
             {
               "type": "unlock_skin",
-              "level": 3,
-              "skin_id": "beam_turtle",
-              "skin_name": "咧嘴小若汁",
+              "level": 4,
+              "skin_id": "sweat_smile_turtle",
+              "skin_name": "汗笑小若汁",
               "applied": true
             }
           ]
         }
       ],
       "achievements": [],
-      "auto_production_collect": 0
+      "auto_production_collect": 11
     },
     {
-      "time": 1787289536599,
+      "time": 1787346265697,
       "user_id": "3924389924",
       "display_name": "月卡买成改名卡了",
       "event_id": "petting",
-      "branch_id": "limb_hide",
-      "summary": "小若汁收回腿脚，悄悄缩到一旁。",
-      "effects_text": "心情-1，贡献+1，经验+11",
+      "branch_id": "normal_close",
+      "summary": "它追着月卡买成改名卡了的手蹭了蹭，显然还想继续。",
+      "effects_text": "心情+7，好感+5，贡献+4，经验+4",
       "effects": {
         "satiety": 0,
-        "mood": -1,
+        "mood": 7,
         "health": 0,
-        "favorability": 0,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787289530037,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "petting",
-      "branch_id": "belly_allow",
-      "summary": "小若汁小心地翻过身，只允许摸一小会儿。",
-      "effects_text": "心情+4，好感+4，贡献+3，经验+13",
-      "effects": {
-        "satiety": 0,
-        "mood": 4,
-        "health": 0,
-        "favorability": 4,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787289523927,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "petting",
-      "branch_id": "head_normal",
-      "summary": "小若汁犹豫了一下，还是让月卡买成改名卡了摸了摸脑袋。",
-      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 0,
-        "mood": 5,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787289519021,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "mention_only",
-      "branch_id": "look_over",
-      "summary": "小若汁抬头看向月卡买成改名卡了，轻轻晃了晃尾巴。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 11
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 39141
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 14
-    },
-    {
-      "time": 1787214529678,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "mention_only",
-      "branch_id": "look_over",
-      "summary": "小若汁抬头看向月卡买成改名卡了，轻轻晃了晃尾巴。",
-      "effects_text": "心情+1，好感+1，贡献+1，经验+1",
-      "effects": {
-        "satiety": 0,
-        "mood": 1,
-        "health": 0,
-        "favorability": 1,
-        "contribution": 1,
-        "experience": 1
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 4
       },
       "level_ups": [],
       "bonus_experience": 0,
@@ -1085,20 +1161,20 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1787212299121,
+      "time": 1787346261909,
       "user_id": "3924389924",
       "display_name": "月卡买成改名卡了",
       "event_id": "petting",
-      "branch_id": "head_normal",
-      "summary": "它安静地待在原地，接受了这次摸头。",
-      "effects_text": "心情+5，好感+3，贡献+3，经验+3",
+      "branch_id": "normal_close",
+      "summary": "小若汁开心地凑过来，让月卡买成改名卡了慢慢摸。",
+      "effects_text": "心情+7，好感+5，贡献+4，经验+4",
       "effects": {
         "satiety": 0,
-        "mood": 5,
+        "mood": 7,
         "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 3
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 4
       },
       "level_ups": [],
       "bonus_experience": 0,
@@ -1108,69 +1184,121 @@
       "auto_production_collect": 0
     },
     {
-      "time": 1787212285824,
+      "time": 1787346257221,
       "user_id": "3924389924",
       "display_name": "月卡买成改名卡了",
       "event_id": "petting",
-      "branch_id": "normal_comfortable",
-      "summary": "月卡买成改名卡了轻轻摸了摸小若汁，小若汁舒服地眯起了眼睛。",
-      "effects_text": "心情+5，好感+3，贡献+3，经验+3",
+      "branch_id": "normal_close",
+      "summary": "小若汁主动把脑袋贴到月卡买成改名卡了手边，示意还想再摸一会儿。",
+      "effects_text": "心情+7，好感+5，贡献+4，经验+14",
       "effects": {
         "satiety": 0,
-        "mood": 5,
+        "mood": 7,
         "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 3
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 14
       },
       "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
     },
     {
-      "time": 1787210981710,
+      "time": 1787346252273,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "petting",
+      "branch_id": "normal_close",
+      "summary": "它被摸得很舒服，主动贴近了一些。",
+      "effects_text": "心情+7，好感+5，贡献+4，经验+14",
+      "effects": {
+        "satiety": 0,
+        "mood": 7,
+        "health": 0,
+        "favorability": 5,
+        "contribution": 4,
+        "experience": 14
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787346242206,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "feed",
+      "branch_id": "hide_food",
+      "summary": "小若汁开心地收下🥪蔬菜三明治，连龟壳都像亮了一点。",
+      "effects_text": "饱食+11，心情+3，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 11,
+        "mood": 3,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [
+        {
+          "id": "overfed",
+          "name": "撑死了...",
+          "description": "让小若汁的饱食度达到 98 以上 1 次",
+          "unlocked": true,
+          "unlocked_at": 1787346242206,
+          "current_count": 1,
+          "target_count": 1,
+          "progress_text": "1 / 1",
+          "rarity": 2,
+          "rarity_stars": "⭐⭐",
+          "rarity_class": "rarity-2",
+          "rewards": [
+            {
+              "type": "item",
+              "item_id": "ruozhi_fate",
+              "amount": 3,
+              "message": "成就奖励：若汁之缘 ×3"
+            },
+            {
+              "type": "unlock_skin",
+              "skin_id": "vomit_turtle",
+              "skin_name": "呕吐小若汁",
+              "message": "解锁二星皮肤「呕吐小若汁」。"
+            }
+          ],
+          "message": "达成成就「撑死了...」 ⭐⭐"
+        }
+      ],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1787346237792,
       "user_id": "3924389924",
       "display_name": "月卡买成改名卡了",
       "event_id": "feed",
       "branch_id": "normal",
-      "summary": "它认真品尝完🥖矮人黑面包，随后满足地蹭了蹭。",
-      "effects_text": "饱食+16，心情+4，好感+2，贡献+2，经验+2",
+      "summary": "小若汁开心地收下🥧精灵莓果挞，连龟壳都像亮了一点。",
+      "effects_text": "饱食+14，心情+5，好感+2，贡献+2，经验+12",
       "effects": {
-        "satiety": 16,
-        "mood": 4,
+        "satiety": 14,
+        "mood": 5,
         "health": 0,
         "favorability": 2,
         "contribution": 2,
-        "experience": 2
+        "experience": 12
       },
       "level_ups": [],
-      "bonus_experience": 0,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1787208669479,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "petting",
-      "branch_id": "belly_allow",
-      "summary": "小若汁看了月卡买成改名卡了一会儿，才勉强没有护住肚子。",
-      "effects_text": "心情+4，好感+4，贡献+3，经验+3",
-      "effects": {
-        "satiety": 0,
-        "mood": 4,
-        "health": 0,
-        "favorability": 4,
-        "contribution": 3,
-        "experience": 3
-      },
-      "level_ups": [],
-      "bonus_experience": 0,
+      "bonus_experience": 10,
       "first_interaction_reward": null,
       "level_rewards": [],
       "achievements": [],
@@ -1178,9 +1306,9 @@
     }
   ],
   "daily": {
-    "date": "2026-08-21",
-    "event_count": 5,
-    "bonus_event_count": 5
+    "date": "2026-08-22",
+    "event_count": 16,
+    "bonus_event_count": 10
   },
   "processed_messages": {
     "event:1776361905": 1787129928810,
@@ -1204,7 +1332,23 @@
     "event:2139117185": 1787289523926,
     "event:604228974": 1787289530036,
     "event:900851781": 1787289536598,
-    "event:408037970": 1787289548750
+    "event:408037970": 1787289548750,
+    "event:2081359626": 1787346161293,
+    "event:739994851": 1787346203889,
+    "event:841949436": 1787346207500,
+    "event:1412888005": 1787346210723,
+    "event:1241200500": 1787346214497,
+    "event:328952429": 1787346219050,
+    "event:312094143": 1787346237790,
+    "event:1191892600": 1787346242205,
+    "event:1190326712": 1787346252273,
+    "event:1534638966": 1787346257220,
+    "event:98797685": 1787346261908,
+    "event:1124938614": 1787346265697,
+    "event:1908006647": 1787387319374,
+    "event:474030434": 1787387342711,
+    "event:895240484": 1787387345548,
+    "event:2030694735": 1787387349375
   },
   "skin_sessions": {
     "active": null
@@ -1217,21 +1361,22 @@
     "migrated_at": 1787035936084
   },
   "created_at": 1787035936084,
-  "updated_at": 1787289734400,
+  "updated_at": 1787390142615,
   "production": {
     "started_at": 1787035936084,
-    "last_settled_at": 1787289734397,
-    "accumulated_ms": 215377,
-    "progress": 0.43688457218210036,
-    "total_produced": 36,
-    "last_collected_at": 1787289519020
+    "last_settled_at": 1787390142615,
+    "accumulated_ms": 2823240,
+    "progress": 1.0032779737270987,
+    "total_produced": 51,
+    "last_collected_at": 1787387319375
   },
   "travel": {
     "unlocked_location_ids": [
       "eld_adventurer_guild",
       "eld_silver_capital",
       "eld_moonbell_village",
-      "southern_market"
+      "southern_market",
+      "cotton_candy_forest"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1264,6 +1409,14 @@
         "name": "南市",
         "travel_id": "mt0inea8-oze2b7k5",
         "time": 1787170997081,
+        "carried_item_id": ""
+      },
+      "cotton_candy_forest": {
+        "id": "cotton_candy_forest",
+        "map_id": "candy_dreamland",
+        "name": "棉花糖森林",
+        "travel_id": "mt2xogqi-p31kudfy",
+        "time": 1787325129613,
         "carried_item_id": ""
       }
     },
@@ -1317,6 +1470,27 @@
         "partner_user_id": "1256806998",
         "partner_display_name": "库洛4000+",
         "settled_at": 1787054996382
+      },
+      "encounter-mt2xogxj-yyef1g9y": {
+        "id": "encounter-mt2xogxj-yyef1g9y",
+        "time": 1787315799223,
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "entry_id": "quiet_companion",
+        "text": "它们并排走了很长一段路，谁也没说话，却都觉得路没有那么远了。",
+        "reward": {
+          "id": "coin_extra_large",
+          "type": "currency",
+          "name": "若汁币",
+          "min_amount": 300,
+          "max_amount": 400,
+          "amount": 345,
+          "reward_text": "345若汁币"
+        },
+        "status": "settled",
+        "partner_user_id": "3536417662",
+        "partner_display_name": "冬至",
+        "settled_at": 1787325129613
       }
     },
     "souvenir_records": {
@@ -1433,6 +1607,21 @@
         "name": "初到迦洛维安",
         "rarity": 3,
         "time": 1787170997084,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_cotton_candy_forest": {
+        "id": "ach_cotton_candy_forest",
+        "name": "发现棉花糖森林",
+        "rarity": 3,
+        "time": 1787325129616,
         "actor_name": "月卡买成改名卡了",
         "rewards": [
           {
@@ -1933,9 +2122,93 @@
         "settled_at": 1787230971461,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时27分钟\n获得：2808若汁币，若汁之缘×5，经验+5\n旅行事件：失踪山羊\n小若汁找到失踪山羊时，山羊正在精灵森林入口等它。\n食物：🍛香浓咖喱饭×1"
+      },
+      "mt2xogqi-p31kudfy": {
+        "id": "mt2xogqi-p31kudfy",
+        "user_id": "3924389924",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "月卡买成改名卡了",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "cotton_candy_forest",
+        "location_name": "棉花糖森林",
+        "duration_ms": 9330626,
+        "rewards": {
+          "coin": 2592,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt2xogxj-yyef1g9y",
+          "time": 1787315799223,
+          "map_id": "candy_dreamland",
+          "map_name": "糖霜梦境",
+          "entry_id": "quiet_companion",
+          "text": "它们并排走了很长一段路，谁也没说话，却都觉得路没有那么远了。",
+          "reward": {
+            "id": "coin_extra_large",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 300,
+            "max_amount": 400,
+            "amount": 345,
+            "reward_text": "345若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "3536417662",
+          "partner_display_name": "冬至",
+          "reward_text": "345若汁币"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "棉花糖森林",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_cotton_candy_forest",
+            "name": "发现棉花糖森林",
+            "rarity": 3,
+            "time": 1787325129616,
+            "actor_name": "月卡买成改名卡了",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现棉花糖森林」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787325129622,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：棉花糖森林（糖霜梦境）\n旅行时间：2小时36分钟\n获得：2592若汁币，若汁之缘×5，经验+5\n小若汁偶遇了冬至的小若汁，它们并排走了很长一段路，谁也没说话，却都觉得路没有那么远了。\n偶遇奖励：345若汁币\n新地点已解锁：棉花糖森林\n达成旅行成就「发现棉花糖森林」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt2xogqi-p31kudfy",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "3924389924",
+        "report": "小若汁回来了！\n目的地：棉花糖森林（糖霜梦境）\n旅行时间：2小时36分钟\n获得：2592若汁币，若汁之缘×5，经验+5\n小若汁偶遇了冬至的小若汁，它们并排走了很长一段路，谁也没说话，却都觉得路没有那么远了。\n偶遇奖励：345若汁币\n新地点已解锁：棉花糖森林\n达成旅行成就「发现棉花糖森林」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787325129622,
+        "created_at": 1787325129622,
+        "sent_at": 1787325130110,
+        "last_error": ""
+      },
       {
         "travel_id": "mt1dxws9-bzt205tf",
         "group_id": "1025424898",
@@ -2016,14 +2289,14 @@
       }
     ],
     "stats": {
-      "total_trips": 6,
+      "total_trips": 7,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
         "eldoran_continent": 3,
         "unregistered_district": 0,
         "four_regions_little_world": 0,
-        "candy_dreamland": 0,
+        "candy_dreamland": 1,
         "alvita": 0,
         "galovian": 1
       },
@@ -2041,19 +2314,29 @@
         "eld_event_border_quest": 1,
         "eld_event_missing_goat": 1
       },
-      "total_encounters": 1,
+      "total_encounters": 2,
       "encounter_reward_types": {
-        "food_cake": 1
+        "food_cake": 1,
+        "currency": 1
       }
     },
     "active": null,
-    "prepared_tool": null
+    "prepared_tool": null,
+    "companions": {
+      "heseranville_aster": {
+        "affinity": 0,
+        "completed_events": {},
+        "legacy_memories": {},
+        "imported_legacy_event_ids": [],
+        "cooldowns": {}
+      }
+    }
   },
   "gacha": {
-    "since_four_plus": 3,
-    "since_five": 3,
-    "total_draws": 80,
-    "total_four": 11,
+    "since_four_plus": 2,
+    "since_five": 7,
+    "total_draws": 84,
+    "total_four": 12,
     "total_five": 1,
     "five_history": [
       {

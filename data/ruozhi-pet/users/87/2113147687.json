@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2113147687",
   "pet": {
-    "level": 1,
-    "experience": 94,
+    "level": 2,
+    "experience": 0,
     "satiety": 5,
     "mood": 88,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787275361864,
+    "satiety_decay_at": 1787409890776,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -48,11 +48,21 @@
       "burger_turtle",
       "nerd_turtle",
       "paint_splash_turtle",
-      "grasshopper_turtle"
+      "grasshopper_turtle",
+      "drooling_turtle",
+      "cactus_turtle"
     ],
-    "level_reward_records": {},
+    "level_reward_records": {
+      "2:unlock_skin:cactus_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "cactus_turtle",
+        "level": 2,
+        "time": 1787409890235,
+        "applied": true
+      }
+    },
     "achievement_stats": {
-      "counter:gacha_draws": 63,
+      "counter:gacha_draws": 65,
       "counter:gacha_five": 1
     },
     "achievement_records": {
@@ -481,9 +491,35 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_floating_island_factory": {
+        "id": "ach_floating_island_factory",
+        "name": "发现浮岛制造厂",
+        "rarity": 3,
+        "time": 1787409890244,
+        "actor_name": "米哈游的锋刃",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "cactus_turtle",
+        "reason": "level_reward",
+        "time": 1787409890235,
+        "level": 2
+      },
+      {
+        "skin_id": "drooling_turtle",
+        "reason": "gacha",
+        "time": 1787332032614
+      },
       {
         "skin_id": "grasshopper_turtle",
         "reason": "gacha",
@@ -680,9 +716,9 @@
         "time": 1784793808338
       }
     ],
-    "weight": 38,
-    "weight_decay_at": 1787249627271,
-    "health_decay_at": 1787275361864,
+    "weight": 35,
+    "weight_decay_at": 1787379227271,
+    "health_decay_at": 1787409890776,
     "five_skin_shadow_counts": {
       "roast_chicken_turtle": 0
     }
@@ -693,9 +729,9 @@
     "total_contribution": 5,
     "last_display_name": "米哈游的锋刃",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1787275361864,
+    "last_active_at": 1787409890776,
     "daily": {
-      "date": "2026-08-21",
+      "date": "2026-08-22",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
@@ -704,10 +740,47 @@
       "week": "2026-W34"
     },
     "currency": {
-      "balance": 18377,
-      "total_earned": 48377,
+      "balance": 21735,
+      "total_earned": 51735,
       "total_spent": 30000,
       "ledger": [
+        {
+          "time": 1787409890234,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 21435,
+          "after": 21735,
+          "meta": {
+            "level": 2,
+            "source": "travel"
+          }
+        },
+        {
+          "time": 1787409890233,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2758,
+          "before": 18677,
+          "after": 21435,
+          "meta": {
+            "travel_id": "mt4bsdlg-ye8v0s20",
+            "location_id": "floating_island_factory",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787332032613,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 18377,
+          "after": 18677,
+          "meta": {
+            "skin_id": "tear_turtle",
+            "rarity": 3
+          }
+        },
         {
           "time": 1787263585918,
           "type": "income",
@@ -792,42 +865,6 @@
             "skin_id": "coffee_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14644,
-          "after": 14944,
-          "meta": {
-            "skin_id": "hearts_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14344,
-          "after": 14644,
-          "meta": {
-            "skin_id": "biting_lip_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14044,
-          "after": 14344,
-          "meta": {
-            "skin_id": "cheese_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -839,7 +876,7 @@
       "first_interaction_reward_date": "2026-08-18"
     },
     "items": {
-      "ruozhi_fate": 8,
+      "ruozhi_fate": 13,
       "nameless_ruozhi": 0,
       "souvenir_wheat_noodle": 1,
       "souvenir_water_sword_tassel": 1,
@@ -855,9 +892,73 @@
       "food_mooncake_talisman": 1,
       "travel_suitcase": 0,
       "souvenir_strangers_spare_key": 1,
-      "food_midnight_cookie": 3
+      "food_midnight_cookie": 3,
+      "food_bread": 2
     },
     "item_ledger": [
+      {
+        "time": 1787409890244,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 10,
+        "after": 13,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_floating_island_factory"
+        }
+      },
+      {
+        "time": 1787409890235,
+        "type": "income",
+        "item_id": "food_bread",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mt4bsdst-1g82fimz",
+          "partner_user_id": "1412874037"
+        }
+      },
+      {
+        "time": 1787409890234,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 7,
+        "after": 10,
+        "reason": "level_up_reward",
+        "meta": {
+          "level": 2,
+          "source": "travel"
+        }
+      },
+      {
+        "time": 1787409890233,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 2,
+        "after": 7,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4bsdlg-ye8v0s20",
+          "location_id": "floating_island_factory"
+        }
+      },
+      {
+        "time": 1787332032613,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 8,
+        "after": 2,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
       {
         "time": 1787263585922,
         "type": "income",
@@ -1044,67 +1145,6 @@
           "travel_id": "mt0y3697-53zvube2",
           "location_id": "white_fog_houses"
         }
-      },
-      {
-        "time": 1787195563221,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mt0y3697-53zvube2"
-        }
-      },
-      {
-        "time": 1787195559722,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 2000
-        }
-      },
-      {
-        "time": 1787195552865,
-        "type": "expense",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "prepare_travel_tool",
-        "meta": {
-          "item_id": "travel_suitcase"
-        }
-      },
-      {
-        "time": 1787173221526,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 77,
-        "after": 80,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_hundred_arts_quarter"
-        }
-      },
-      {
-        "time": 1787173221522,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 71,
-        "after": 77,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt0eemvq-3ncxnnc4",
-          "location_id": "hundred_arts_quarter"
-        }
       }
     ],
     "item_daily": {
@@ -1198,11 +1238,11 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1787275361864,
+  "updated_at": 1787409890776,
   "gacha": {
-    "since_four_plus": 4,
-    "since_five": 34,
-    "total_draws": 63,
+    "since_four_plus": 6,
+    "since_five": 36,
+    "total_draws": 65,
     "total_four": 6,
     "total_five": 1,
     "five_history": [
@@ -1219,9 +1259,9 @@
   },
   "production": {
     "started_at": 1784876695881,
-    "last_settled_at": 1787275361864,
-    "accumulated_ms": 214502704,
-    "progress": 26.32516477661909,
+    "last_settled_at": 1787409890776,
+    "accumulated_ms": 259200000,
+    "progress": 31.985916549668737,
     "total_produced": 28,
     "last_collected_at": 1787060859160
   },
@@ -1244,7 +1284,8 @@
       "hundred_arts_quarter",
       "white_fog_houses",
       "blue_corridor_hotel",
-      "gravity_well"
+      "gravity_well",
+      "floating_island_factory"
     ],
     "location_records": {
       "rain_only_store": {
@@ -1390,6 +1431,14 @@
         "travel_id": "mt1zdi8z-v8u4w199",
         "time": 1787263585918,
         "carried_item_id": "travel_suitcase"
+      },
+      "floating_island_factory": {
+        "id": "floating_island_factory",
+        "map_id": "alvita",
+        "name": "浮岛制造厂",
+        "travel_id": "mt4bsdlg-ye8v0s20",
+        "time": 1787409890235,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1906,6 +1955,21 @@
         "name": "发现重力井",
         "rarity": 3,
         "time": 1787263585922,
+        "actor_name": "米哈游的锋刃",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_floating_island_factory": {
+        "id": "ach_floating_island_factory",
+        "name": "发现浮岛制造厂",
+        "rarity": 3,
+        "time": 1787409890244,
         "actor_name": "米哈游的锋刃",
         "rewards": [
           {
@@ -3360,9 +3424,100 @@
         "settled_at": 1787263585923,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：重力井（阿尔维塔）\n旅行时间：1小时30分钟\n获得：1681若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。\n偶遇奖励：252若汁币\n新地点已解锁：重力井\n达成旅行成就「发现重力井」 ★★★"
+      },
+      "mt4bsdlg-ye8v0s20": {
+        "id": "mt4bsdlg-ye8v0s20",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "floating_island_factory",
+        "location_name": "浮岛制造厂",
+        "duration_ms": 9927890,
+        "rewards": {
+          "coin": 2758,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt4bsdst-1g82fimz",
+          "time": 1787399962589,
+          "map_id": "alvita",
+          "map_name": "阿尔维塔",
+          "entry_id": "lost_direction",
+          "text": "它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。",
+          "reward": {
+            "id": "food_bread",
+            "type": "item",
+            "item_id": "food_bread",
+            "name": "松软面包",
+            "amount": 2,
+            "reward_text": "松软面包×2"
+          },
+          "status": "pending",
+          "partner_user_id": "1412874037",
+          "partner_display_name": "逝如秋霜",
+          "reward_text": "松软面包×2"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "浮岛制造厂",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_floating_island_factory",
+            "name": "发现浮岛制造厂",
+            "rarity": 3,
+            "time": 1787409890244,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现浮岛制造厂」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [
+          {
+            "level": 2,
+            "need": 100
+          }
+        ],
+        "level_reward_messages": [
+          "升级奖励：300若汁币，若汁之缘×3",
+          "达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！"
+        ],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787409890246,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：2小时45分钟\n获得：2758若汁币，若汁之缘×5，经验+6\n小若汁偶遇了逝如秋霜的小若汁，它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。\n偶遇奖励：松软面包×2\n新地点已解锁：浮岛制造厂\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现浮岛制造厂」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4bsdlg-ye8v0s20",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：2小时45分钟\n获得：2758若汁币，若汁之缘×5，经验+6\n小若汁偶遇了逝如秋霜的小若汁，它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。\n偶遇奖励：松软面包×2\n新地点已解锁：浮岛制造厂\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现浮岛制造厂」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787409890246,
+        "created_at": 1787409890246,
+        "sent_at": 1787409890776,
+        "last_error": ""
+      },
       {
         "travel_id": "mt1zdi8z-v8u4w199",
         "group_id": "415462812",
@@ -3612,7 +3767,7 @@
       }
     ],
     "stats": {
-      "total_trips": 19,
+      "total_trips": 20,
       "key_item_discoveries": {
         "souvenir_return_coin": {
           "item_id": "souvenir_return_coin",
@@ -3631,7 +3786,7 @@
         "unregistered_district": 7,
         "four_regions_little_world": 4,
         "candy_dreamland": 0,
-        "alvita": 3,
+        "alvita": 4,
         "galovian": 2
       },
       "map_event_ids": {
@@ -3675,9 +3830,10 @@
         "event_do_not_disturb_inside": 1
       },
       "encounter_reward_types": {
-        "currency": 1
+        "currency": 1,
+        "food_bread": 1
       },
-      "total_encounters": 3
+      "total_encounters": 4
     },
     "active": null,
     "prepared_tool": null,
@@ -3743,6 +3899,35 @@
         "partner_user_id": "2818259462",
         "partner_display_name": "不愿看到优秀ic·alter被埋没",
         "settled_at": 1787263585918
+      },
+      "encounter-mt4bsdst-1g82fimz": {
+        "id": "encounter-mt4bsdst-1g82fimz",
+        "time": 1787399962589,
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "entry_id": "lost_direction",
+        "text": "它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。",
+        "reward": {
+          "id": "food_bread",
+          "type": "item",
+          "item_id": "food_bread",
+          "name": "松软面包",
+          "amount": 2,
+          "reward_text": "松软面包×2"
+        },
+        "status": "settled",
+        "partner_user_id": "1412874037",
+        "partner_display_name": "逝如秋霜",
+        "settled_at": 1787409890235
+      }
+    },
+    "companions": {
+      "heseranville_aster": {
+        "affinity": 0,
+        "completed_events": {},
+        "legacy_memories": {},
+        "imported_legacy_event_ids": [],
+        "cooldowns": {}
       }
     }
   }
