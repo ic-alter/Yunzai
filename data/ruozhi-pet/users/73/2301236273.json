@@ -8,16 +8,28 @@
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777296,
+    "satiety_decay_at": 1788146294597,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "crown_turtle",
+      "puppy_turtle",
+      "cheese_turtle",
+      "raised_eyebrow_turtle",
+      "headphones_turtle",
+      "ruozhilai_turtle",
+      "lying_turtle",
+      "volleyball_turtle",
+      "hearts_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 9,
+      "counter:gacha_five": 1
+    },
     "achievement_records": {
       "ach_wan_chun_valley": {
         "id": "ach_wan_chun_valley",
@@ -93,9 +105,88 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1787540278528,
+        "actor_name": "珊瑚宫榑芙（___）",
+        "stat_key": "counter:gacha_draws",
+        "count": 7,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_five_1": {
+        "id": "gacha_five_1",
+        "name": "金光初现",
+        "rarity": 3,
+        "time": 1787540278529,
+        "actor_name": "珊瑚宫榑芙（___）",
+        "stat_key": "counter:gacha_five",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "hearts_turtle",
+        "reason": "gacha",
+        "time": 1787540289861
+      },
+      {
+        "skin_id": "volleyball_turtle",
+        "reason": "gacha",
+        "time": 1787540289861
+      },
+      {
+        "skin_id": "lying_turtle",
+        "reason": "gacha",
+        "time": 1787540278528
+      },
+      {
+        "skin_id": "ruozhilai_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
+      {
+        "skin_id": "headphones_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
+      {
+        "skin_id": "raised_eyebrow_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
+      {
+        "skin_id": "cheese_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
+      {
+        "skin_id": "puppy_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
+      {
+        "skin_id": "crown_turtle",
+        "reason": "gacha",
+        "time": 1787540278527
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -122,9 +213,12 @@
         "time": 1785382158392
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787401929900,
-    "health_decay_at": 1787427777296
+    "weight": 17,
+    "weight_decay_at": 1788136329900,
+    "health_decay_at": 1788146294597,
+    "five_skin_shadow_counts": {
+      "ruozhilai_turtle": 0
+    }
   },
   "profile": {
     "favorability": 0,
@@ -132,15 +226,15 @@
     "total_contribution": 0,
     "last_display_name": "珊瑚宫榑芙（___）",
     "first_joined_at": 1785382158392,
-    "last_active_at": 1787427777296,
+    "last_active_at": 1788146294597,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
       "balance": 3722,
@@ -211,10 +305,58 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 21,
+      "ruozhi_fate": 0,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1787540289861,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 6,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 2
+        }
+      },
+      {
+        "time": 1787540278529,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 3,
+        "after": 6,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_1"
+        }
+      },
+      {
+        "time": 1787540278528,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 0,
+        "after": 3,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1787540278527,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 21,
+        "before": 21,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 7
+        }
+      },
       {
         "time": 1786080095482,
         "type": "income",
@@ -330,21 +472,29 @@
     "migrated_at": 1785382158392
   },
   "created_at": 1785382158392,
-  "updated_at": 1787427777296,
+  "updated_at": 1788146294597,
   "production": {
     "started_at": 1785382158392,
-    "last_settled_at": 1787427777296,
+    "last_settled_at": 1788146294597,
     "accumulated_ms": 259200000,
     "progress": 30.02668074701316,
     "total_produced": 0
   },
   "gacha": {
-    "since_four_plus": 0,
-    "since_five": 0,
-    "total_draws": 0,
+    "since_four_plus": 3,
+    "since_five": 3,
+    "total_draws": 9,
     "total_four": 0,
-    "total_five": 0,
-    "five_history": [],
+    "total_five": 1,
+    "five_history": [
+      {
+        "time": 1787540278527,
+        "skin_id": "ruozhilai_turtle",
+        "skin_name": "若汁来",
+        "pulls": 6,
+        "draw_index": 6
+      }
+    ],
     "route_misses": 0,
     "route_skin_id": ""
   },

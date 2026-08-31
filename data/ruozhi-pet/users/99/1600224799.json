@@ -3,12 +3,12 @@
   "user_id": "1600224799",
   "pet": {
     "level": 1,
-    "experience": 69,
-    "satiety": 16,
+    "experience": 73,
+    "satiety": 5,
     "mood": 100,
     "health": 81,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427122292,
+    "satiety_decay_at": 1788146294700,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -356,6 +356,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_spirit_beast_sect": {
+        "id": "ach_spirit_beast_sect",
+        "name": "发现灵兽宗",
+        "rarity": 3,
+        "time": 1787434056669,
+        "actor_name": "爆炸撕裂下坠",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -385,9 +400,9 @@
         "time": 1784723481074
       }
     ],
-    "weight": 35,
-    "weight_decay_at": 1787427809547,
-    "health_decay_at": 1787427809547
+    "weight": 19,
+    "weight_decay_at": 1788125257122,
+    "health_decay_at": 1788146294700
   },
   "profile": {
     "favorability": 6,
@@ -395,21 +410,46 @@
     "total_contribution": 6,
     "last_display_name": "爆炸撕裂下坠",
     "first_joined_at": 1784723481074,
-    "last_active_at": 1787427809547,
+    "last_active_at": 1788146294700,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
-      "balance": 24827,
-      "total_earned": 36827,
+      "balance": 26818,
+      "total_earned": 38818,
       "total_spent": 12000,
       "ledger": [
+        {
+          "time": 1787434056665,
+          "type": "income",
+          "reason": "travel_encounter_reward",
+          "amount": 86,
+          "before": 26732,
+          "after": 26818,
+          "meta": {
+            "encounter_id": "encounter-mt4sd8ne-y53s7vz3",
+            "partner_user_id": "2818259462"
+          }
+        },
+        {
+          "time": 1787434056665,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1905,
+          "before": 24827,
+          "after": 26732,
+          "meta": {
+            "travel_id": "mt4s05yo-5qtp05au",
+            "location_id": "spirit_beast_sect",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787427140522,
           "type": "income",
@@ -513,32 +553,6 @@
             "location_id": "bixi_ferry",
             "forced_by": "pager"
           }
-        },
-        {
-          "time": 1787427096292,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 660,
-          "before": 11368,
-          "after": 12028,
-          "meta": {
-            "travel_id": "mt4rxxfj-9tfprnok",
-            "location_id": "smart_farm",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1787427092358,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1843,
-          "before": 9525,
-          "after": 11368,
-          "meta": {
-            "travel_id": "mt4rxua1-hc79ilke",
-            "location_id": "rtc_galaxy_motel",
-            "forced_by": "pager"
-          }
         }
       ],
       "sign": {
@@ -550,7 +564,7 @@
       "first_interaction_reward_date": "2026-07-22"
     },
     "items": {
-      "ruozhi_fate": 221,
+      "ruozhi_fate": 227,
       "nameless_ruozhi": 0,
       "travel_checklist": 0,
       "travel_pager": 2,
@@ -565,6 +579,31 @@
       "food_spirit_pill": 1
     },
     "item_ledger": [
+      {
+        "time": 1787434056669,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 224,
+        "after": 227,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_spirit_beast_sect"
+        }
+      },
+      {
+        "time": 1787434056665,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 221,
+        "after": 224,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt4s05yo-5qtp05au",
+          "location_id": "spirit_beast_sect"
+        }
+      },
       {
         "time": 1787427140524,
         "type": "income",
@@ -786,31 +825,6 @@
         "meta": {
           "achievement_id": "ach_valletta_society"
         }
-      },
-      {
-        "time": 1787427117243,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 191,
-        "after": 195,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt4rydmh-cx0m9p8a",
-          "location_id": "valletta_society"
-        }
-      },
-      {
-        "time": 1787427117237,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 7,
-        "after": 6,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "mt4rydmh-cx0m9p8a"
-        }
       }
     ],
     "item_daily": {
@@ -907,10 +921,10 @@
     "migrated_at": 1784723481074
   },
   "created_at": 1784723481074,
-  "updated_at": 1787427809547,
+  "updated_at": 1788146294700,
   "production": {
     "started_at": 1785141760320,
-    "last_settled_at": 1787427809547,
+    "last_settled_at": 1788146294700,
     "accumulated_ms": 259200000,
     "progress": 28.317214700193425,
     "total_produced": 0
@@ -927,7 +941,8 @@
       "floating_words_plaza",
       "valletta_society",
       "spirit_wheat_plain",
-      "nap_park"
+      "nap_park",
+      "spirit_beast_sect"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -1016,6 +1031,14 @@
         "name": "午睡公园",
         "travel_id": "mt4rytlw-a7z7n3z6",
         "time": 1787427140522,
+        "carried_item_id": ""
+      },
+      "spirit_beast_sect": {
+        "id": "spirit_beast_sect",
+        "map_id": "four_regions_little_world",
+        "name": "灵兽宗",
+        "travel_id": "mt4s05yo-5qtp05au",
+        "time": 1787434056665,
         "carried_item_id": ""
       }
     },
@@ -1409,6 +1432,21 @@
         "name": "地图上不存在的地点",
         "rarity": 3,
         "time": 1787427140524,
+        "actor_name": "爆炸撕裂下坠",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_spirit_beast_sect": {
+        "id": "ach_spirit_beast_sect",
+        "name": "发现灵兽宗",
+        "rarity": 3,
+        "time": 1787434056669,
         "actor_name": "爆炸撕裂下坠",
         "rewards": [
           {
@@ -2589,9 +2627,93 @@
         "settled_at": 1787427140527,
         "forced_by": "pager",
         "report": "小若汁回来了！\n目的地：午睡公园（未登记城区）\n旅行时间：57分钟\n获得：950若汁币，若汁之缘×2，经验+2\n新地点已解锁：午睡公园\n达成旅行成就「发现午睡公园」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "mt4s05yo-5qtp05au": {
+        "id": "mt4s05yo-5qtp05au",
+        "user_id": "1600224799",
+        "group_id": "972405451",
+        "self_id": "3874871823",
+        "display_name": "爆炸撕裂下坠",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "spirit_beast_sect",
+        "location_name": "灵兽宗",
+        "duration_ms": 6857110,
+        "rewards": {
+          "coin": 1905,
+          "fate": 3,
+          "experience": 4
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt4sd8ne-y53s7vz3",
+          "time": 1787427809546,
+          "map_id": "four_regions_little_world",
+          "map_name": "四州小天地",
+          "entry_id": "same_song",
+          "text": "它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。",
+          "reward": {
+            "id": "coin_small",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 1,
+            "max_amount": 100,
+            "amount": 86,
+            "reward_text": "86若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "2818259462",
+          "partner_display_name": "不愿看到优秀ic·alter被埋没",
+          "reward_text": "86若汁币"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "灵兽宗",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_spirit_beast_sect",
+            "name": "发现灵兽宗",
+            "rarity": 3,
+            "time": 1787434056669,
+            "actor_name": "爆炸撕裂下坠",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现灵兽宗」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787434056679,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：灵兽宗（四州小天地）\n旅行时间：1小时54分钟\n获得：1905若汁币，若汁之缘×3，经验+4\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：86若汁币\n新地点已解锁：灵兽宗\n达成旅行成就「发现灵兽宗」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt4s05yo-5qtp05au",
+        "group_id": "972405451",
+        "self_id": "3874871823",
+        "user_id": "1600224799",
+        "report": "小若汁回来了！\n目的地：灵兽宗（四州小天地）\n旅行时间：1小时54分钟\n获得：1905若汁币，若汁之缘×3，经验+4\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。\n偶遇奖励：86若汁币\n新地点已解锁：灵兽宗\n达成旅行成就「发现灵兽宗」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787434056680,
+        "created_at": 1787434056680,
+        "sent_at": 1787434057122,
+        "last_error": ""
+      },
       {
         "travel_id": "mt4rytlw-a7z7n3z6",
         "group_id": "",
@@ -2763,13 +2885,13 @@
       }
     ],
     "stats": {
-      "total_trips": 13,
+      "total_trips": 14,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 1,
         "eldoran_continent": 1,
         "unregistered_district": 1,
-        "four_regions_little_world": 4,
+        "four_regions_little_world": 5,
         "candy_dreamland": 0,
         "alvita": 2,
         "galovian": 1,
@@ -2814,51 +2936,9 @@
       "encounter_reward_types": {
         "currency": 1
       },
-      "total_encounters": 1
+      "total_encounters": 2
     },
-    "active": {
-      "id": "mt4s05yo-5qtp05au",
-      "user_id": "1600224799",
-      "display_name": "爆炸撕裂下坠",
-      "group_id": "972405451",
-      "self_id": "3874871823",
-      "started_at": 1787427199536,
-      "ends_at": 1787434056646,
-      "duration_ms": 6857110,
-      "map_id": "four_regions_little_world",
-      "map_name": "四州小天地",
-      "location_id": "spirit_beast_sect",
-      "location_name": "灵兽宗",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": null,
-      "rewards": {
-        "coin": 1905,
-        "fate": 3,
-        "experience": 4
-      },
-      "encounter": {
-        "id": "encounter-mt4sd8ne-y53s7vz3",
-        "time": 1787427809546,
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "entry_id": "same_song",
-        "text": "它们哼起同一段不完整的旋律，谁也想不起是从哪里听来的。",
-        "reward": {
-          "id": "coin_small",
-          "type": "currency",
-          "name": "若汁币",
-          "min_amount": 1,
-          "max_amount": 100,
-          "amount": 86,
-          "reward_text": "86若汁币"
-        },
-        "status": "pending",
-        "partner_user_id": "2818259462",
-        "partner_display_name": "不愿看到优秀ic·alter被埋没"
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mt4rwgws-3qcup8d1": {
@@ -2898,9 +2978,10 @@
           "amount": 86,
           "reward_text": "86若汁币"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "2818259462",
-        "partner_display_name": "不愿看到优秀ic·alter被埋没"
+        "partner_display_name": "不愿看到优秀ic·alter被埋没",
+        "settled_at": 1787434056666
       }
     },
     "companions": {

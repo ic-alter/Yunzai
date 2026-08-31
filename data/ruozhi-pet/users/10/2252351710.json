@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2252351710",
   "pet": {
-    "level": 2,
-    "experience": 114,
+    "level": 3,
+    "experience": 2,
     "satiety": 5,
-    "mood": 70,
+    "mood": 75,
     "health": 80,
     "current_skin_id": "thunder_emperor_turtle",
-    "satiety_decay_at": 1787427776913,
+    "satiety_decay_at": 1788146294219,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -70,7 +70,10 @@
       "fox_turtle",
       "galaxy_turtle",
       "ufo_turtle",
-      "bee_turtle"
+      "bee_turtle",
+      "yaya_turtle",
+      "milk_frog_turtle",
+      "beam_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -79,11 +82,19 @@
         "level": 2,
         "time": 1786468293465,
         "applied": true
+      },
+      "3:unlock_skin:beam_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "beam_turtle",
+        "level": 3,
+        "time": 1787556273943,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 227,
-      "counter:gacha_five": 3
+      "counter:gacha_draws": 237,
+      "counter:gacha_five": 4,
+      "counter:gacha_unlucky_five": 1
     },
     "achievement_records": {
       "ach_eld_silver_capital": {
@@ -828,9 +839,109 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_unlucky_five": {
+        "id": "gacha_unlucky_five",
+        "name": "爽吃保底",
+        "rarity": 4,
+        "time": 1787543497073,
+        "actor_name": "我就是我 108416290",
+        "stat_key": "counter:gacha_unlucky_five",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "milk_frog_turtle",
+            "skin_name": "奶蛙小若汁",
+            "message": "解锁四星皮肤「奶蛙小若汁」。"
+          }
+        ]
+      },
+      "ach_starnet_mall": {
+        "id": "ach_starnet_mall",
+        "name": "发现星网商城",
+        "rarity": 3,
+        "time": 1787551224072,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "starnet_encounter": {
+        "id": "starnet_encounter",
+        "name": "匿名世界也能碰见",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "starnet_glitch_rumor": {
+        "id": "starnet_glitch_rumor",
+        "name": "都市传说交流群",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_event_30": {
+        "id": "ach_map_event_30",
+        "name": "旅行故事收藏家",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "beam_turtle",
+        "reason": "level_reward",
+        "time": 1787556273943,
+        "level": 3
+      },
+      {
+        "skin_id": "milk_frog_turtle",
+        "reason": "achievement",
+        "time": 1787543497073,
+        "achievement_id": "gacha_unlucky_five"
+      },
+      {
+        "skin_id": "yaya_turtle",
+        "reason": "gacha",
+        "time": 1787543497070
+      },
       {
         "skin_id": "bee_turtle",
         "reason": "gacha",
@@ -1143,163 +1254,165 @@
       "quilt_turtle": 0,
       "kokushibo_turtle": 0
     },
-    "weight": 35,
-    "weight_decay_at": 1787385600939,
-    "health_decay_at": 1787427776913
+    "weight": 18,
+    "weight_decay_at": 1788120000939,
+    "health_decay_at": 1788146294219
   },
   "profile": {
     "favorability": 2,
-    "weekly_contribution": 2,
+    "weekly_contribution": 0,
     "total_contribution": 2,
     "last_display_name": "我就是我 108416290",
     "first_joined_at": 1785811469190,
-    "last_active_at": 1787427776913,
+    "last_active_at": 1788146294219,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
-      "balance": 75937,
-      "total_earned": 225937,
+      "balance": 93832,
+      "total_earned": 243832,
       "total_spent": 150000,
       "ledger": [
         {
-          "time": 1787192568191,
+          "time": 1787558402912,
           "type": "income",
           "reason": "travel_reward",
-          "amount": 2585,
-          "before": 73352,
-          "after": 75937,
+          "amount": 582,
+          "before": 93250,
+          "after": 93832,
           "meta": {
-            "travel_id": "mt0qrr2m-ylfigb9l",
-            "location_id": "cotton_candy_forest",
+            "travel_id": "mt6wvfhh-ktv0xoku",
+            "location_id": "eld_floating_island",
             "forced_by": "timer"
           }
         },
         {
-          "time": 1787183253014,
+          "time": 1787556273942,
+          "type": "income",
+          "reason": "level_up_reward",
+          "amount": 300,
+          "before": 92950,
+          "after": 93250,
+          "meta": {
+            "level": 3,
+            "source": "travel"
+          }
+        },
+        {
+          "time": 1787556273941,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1399,
+          "before": 91551,
+          "after": 92950,
+          "meta": {
+            "travel_id": "mt6tup6s-jw28heoa",
+            "location_id": "rtc_botanical_dome",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787551224060,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2147,
+          "before": 89404,
+          "after": 91551,
+          "meta": {
+            "travel_id": "mt6p8r6n-wjurlis0",
+            "location_id": "starnet_mall",
+            "forced_by": "timer"
+          }
+        },
+        {
+          "time": 1787543497071,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 73052,
-          "after": 73352,
+          "before": 89104,
+          "after": 89404,
           "meta": {
-            "skin_id": "grasshopper_turtle",
+            "skin_id": "hearts_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1787183253014,
+          "time": 1787543497071,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 72752,
-          "after": 73052,
-          "meta": {
-            "skin_id": "bouquet_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787183253014,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 72452,
-          "after": 72752,
-          "meta": {
-            "skin_id": "lying_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787183253014,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 72152,
-          "after": 72452,
-          "meta": {
-            "skin_id": "crown_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787183253014,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 71852,
-          "after": 72152,
-          "meta": {
-            "skin_id": "drooling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787183253014,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 71552,
-          "after": 71852,
-          "meta": {
-            "skin_id": "goggles_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787183253014,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 71252,
-          "after": 71552,
+          "before": 88804,
+          "after": 89104,
           "meta": {
             "skin_id": "bell_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1787183253014,
+          "time": 1787543497070,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 70952,
-          "after": 71252,
+          "before": 88504,
+          "after": 88804,
           "meta": {
-            "skin_id": "starry_turtle",
+            "skin_id": "parachute_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1787183253013,
+          "time": 1787543497070,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 83504,
+          "after": 88504,
+          "meta": {
+            "skin_id": "burger_turtle",
+            "rarity": 4
+          }
+        },
+        {
+          "time": 1787543497070,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 78504,
+          "after": 83504,
+          "meta": {
+            "skin_id": "tidal_wave_turtle",
+            "rarity": 4
+          }
+        },
+        {
+          "time": 1787543497070,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 70652,
-          "after": 70952,
+          "before": 78204,
+          "after": 78504,
           "meta": {
-            "skin_id": "heart_shower_turtle",
+            "skin_id": "raised_eyebrow_turtle",
             "rarity": 3
           }
         }
       ],
       "sign": {
-        "last_date": "2026-08-20",
-        "total_count": 6,
+        "last_date": "2026-08-24",
+        "total_count": 7,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
       "first_interaction_reward_date": "2026-08-19"
     },
     "items": {
-      "ruozhi_fate": 17,
+      "ruozhi_fate": 41,
       "nameless_ruozhi": 0,
       "souvenir_dome_giant_leaf": 1,
       "souvenir_extra_place_napkin": 1,
@@ -1322,249 +1435,253 @@
       "travel_pager": 4,
       "souvenir_floating_stone": 1,
       "souvenir_shell_maintenance_card": 1,
-      "food_apple": 3,
+      "food_apple": 4,
       "food_curry": 2,
       "food_sandwich": 3,
       "food_leaf_salad": 6,
-      "food_rice_ball": 2,
+      "food_rice_ball": 3,
       "food_popcorn": 2,
-      "food_burger": 3,
+      "food_burger": 4,
       "food_ice_cream": 1,
       "food_pancake": 0,
       "food_noodles": 1,
-      "food_fish": 2,
-      "food_fried_chicken": 2,
+      "food_fish": 3,
+      "food_fried_chicken": 3,
       "food_donut": 3,
       "food_cake": 2,
-      "food_bread": 2,
-      "food_milk_tea": 1
+      "food_bread": 3,
+      "food_milk_tea": 3,
+      "food_pizza": 1,
+      "food_carrot": 2,
+      "food_dumpling": 1
     },
     "item_ledger": [
       {
-        "time": 1787192568194,
+        "time": 1787558402912,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 40,
+        "after": 41,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt6wvfhh-ktv0xoku",
+          "location_id": "eld_floating_island"
+        }
+      },
+      {
+        "time": 1787556273942,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 3,
-        "before": 14,
-        "after": 17,
-        "reason": "travel_achievement_unlock",
+        "before": 37,
+        "after": 40,
+        "reason": "level_up_reward",
         "meta": {
-          "achievement_id": "ach_cotton_candy_forest"
+          "level": 3,
+          "source": "travel"
         }
       },
       {
-        "time": 1787192568191,
+        "time": 1787556273941,
         "type": "income",
         "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 8,
-        "after": 14,
+        "amount": 3,
+        "before": 34,
+        "after": 37,
         "reason": "travel_reward",
         "meta": {
-          "travel_id": "mt0qrr2m-ylfigb9l",
-          "location_id": "cotton_candy_forest"
+          "travel_id": "mt6tup6s-jw28heoa",
+          "location_id": "rtc_botanical_dome"
         }
       },
       {
-        "time": 1787183253013,
+        "time": 1787551224074,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 31,
+        "after": 34,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_map_event_30"
+        }
+      },
+      {
+        "time": 1787551224074,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 28,
+        "after": 31,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "starnet_glitch_rumor"
+        }
+      },
+      {
+        "time": 1787551224074,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 25,
+        "after": 28,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "starnet_encounter"
+        }
+      },
+      {
+        "time": 1787551224072,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 22,
+        "after": 25,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_starnet_mall"
+        }
+      },
+      {
+        "time": 1787551224061,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 21,
+        "after": 22,
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mt6r479f-e3w12ius",
+          "partner_user_id": "1412874037"
+        }
+      },
+      {
+        "time": 1787551224060,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 16,
+        "after": 21,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt6p8r6n-wjurlis0",
+          "location_id": "starnet_mall"
+        }
+      },
+      {
+        "time": 1787543497073,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 13,
+        "after": 16,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_unlucky_five"
+        }
+      },
+      {
+        "time": 1787543497070,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 30,
-        "before": 38,
-        "after": 8,
+        "before": 43,
+        "after": 13,
         "reason": "gacha_draw",
         "meta": {
           "count": 10
         }
       },
       {
-        "time": 1787183246730,
+        "time": 1787543486807,
+        "type": "income",
+        "item_id": "food_apple",
+        "amount": 1,
+        "before": 3,
+        "after": 4,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787543486807,
+        "type": "income",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787543486807,
         "type": "income",
         "item_id": "food_milk_tea",
         "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787543486807,
+        "type": "income",
+        "item_id": "food_bread",
+        "amount": 1,
+        "before": 2,
+        "after": 3,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1787543486807,
+        "type": "income",
+        "item_id": "food_dumpling",
+        "amount": 1,
         "before": 0,
         "after": 1,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1787183246730,
+        "time": 1787543486807,
         "type": "income",
-        "item_id": "food_popcorn",
+        "item_id": "food_carrot",
         "amount": 1,
-        "before": 1,
-        "after": 2,
+        "before": 0,
+        "after": 1,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_fish",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
+        "time": 1787543486807,
         "type": "income",
         "item_id": "food_burger",
         "amount": 1,
-        "before": 2,
-        "after": 3,
+        "before": 3,
+        "after": 4,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_leaf_salad",
-        "amount": 1,
-        "before": 5,
-        "after": 6,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_cake",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_bread",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
-        "type": "income",
-        "item_id": "food_bread",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787183246730,
+        "time": 1787543486807,
         "type": "income",
         "item_id": "food_fried_chicken",
         "amount": 1,
-        "before": 1,
-        "after": 2,
+        "before": 2,
+        "after": 3,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1787183246728,
+        "time": 1787543486807,
         "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 26,
-        "before": 12,
-        "after": 38,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-20",
-          "month_count": 6,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
-      },
-      {
-        "time": 1787126400280,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 9,
-        "after": 12,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_all_36"
-        }
-      },
-      {
-        "time": 1787126400276,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 6,
-        "after": 9,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_flyover"
-        }
-      },
-      {
-        "time": 1787126400275,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 3,
-        "after": 6,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mszoywla-g19p2atg",
-          "location_id": "rtc_flyover"
-        }
-      },
-      {
-        "time": 1787119846730,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 33,
+        "item_id": "food_rice_ball",
+        "amount": 1,
+        "before": 2,
         "after": 3,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1787119840607,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 10,
-        "before": 23,
-        "after": 33,
-        "reason": "exchange_fate",
-        "meta": {
-          "count": 10,
-          "cost": 80000
-        }
-      },
-      {
-        "time": 1787119821976,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 53,
-        "after": 23,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
+        "reason": "daily_sign_food",
+        "meta": {}
       }
     ],
     "item_daily": {
@@ -1590,13 +1707,14 @@
         "2026-08-14",
         "2026-08-15",
         "2026-08-19",
-        "2026-08-20"
+        "2026-08-20",
+        "2026-08-24"
       ]
     },
     "food_sign_backfill": {
       "month": "2026-08",
-      "dates": 6,
-      "time": 1787183246730
+      "dates": 7,
+      "time": 1787543486807
     }
   },
   "recent_events": [
@@ -1646,10 +1764,10 @@
     "migrated_at": 1785811469190
   },
   "created_at": 1785811469190,
-  "updated_at": 1787427776913,
+  "updated_at": 1788146294219,
   "production": {
     "started_at": 1785811469190,
-    "last_settled_at": 1787427776913,
+    "last_settled_at": 1788146294219,
     "accumulated_ms": 259200000,
     "progress": 35.12107937578168,
     "total_produced": 96,
@@ -1693,7 +1811,8 @@
       "rtc_capsule_homes",
       "gingerbread_town",
       "rtc_flyover",
-      "cotton_candy_forest"
+      "cotton_candy_forest",
+      "starnet_mall"
     ],
     "location_records": {
       "eld_silver_capital": {
@@ -1991,6 +2110,14 @@
         "travel_id": "mt0qrr2m-ylfigb9l",
         "time": 1787192568191,
         "carried_item_id": ""
+      },
+      "starnet_mall": {
+        "id": "starnet_mall",
+        "map_id": "starnet",
+        "name": "星网商城",
+        "travel_id": "mt6p8r6n-wjurlis0",
+        "time": 1787551224060,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -2196,6 +2323,13 @@
         "location_id": "rtc_capsule_homes",
         "travel_id": "mstnqkh9-4zmf9xbf",
         "time": 1786754910834
+      },
+      "starnet_avatar_update": {
+        "id": "starnet_avatar_update",
+        "map_id": "starnet",
+        "location_id": "starnet_mall",
+        "travel_id": "mt6p8r6n-wjurlis0",
+        "time": 1787551224060
       }
     },
     "souvenir_records": {
@@ -3008,9 +3142,278 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_starnet_mall": {
+        "id": "ach_starnet_mall",
+        "name": "发现星网商城",
+        "rarity": 3,
+        "time": 1787551224072,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "starnet_encounter": {
+        "id": "starnet_encounter",
+        "name": "匿名世界也能碰见",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "starnet_glitch_rumor": {
+        "id": "starnet_glitch_rumor",
+        "name": "都市传说交流群",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_map_event_30": {
+        "id": "ach_map_event_30",
+        "name": "旅行故事收藏家",
+        "rarity": 3,
+        "time": 1787551224074,
+        "actor_name": "我就是我 108416290",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mt6wvfhh-ktv0xoku": {
+        "id": "mt6wvfhh-ktv0xoku",
+        "user_id": "2252351710",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "我就是我 108416290",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_floating_island",
+        "location_name": "倒悬浮空岛",
+        "duration_ms": 2093870,
+        "rewards": {
+          "coin": 582,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787558402926,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：倒悬浮空岛（艾尔多兰大陆）\n旅行时间：35分钟\n获得：582若汁币，若汁之缘×1，经验+1"
+      },
+      "mt6tup6s-jw28heoa": {
+        "id": "mt6tup6s-jw28heoa",
+        "user_id": "2252351710",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "我就是我 108416290",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_botanical_dome",
+        "location_name": "玻璃穹顶植物园",
+        "duration_ms": 5037819,
+        "rewards": {
+          "coin": 1399,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [
+          {
+            "level": 3,
+            "need": 120
+          }
+        ],
+        "level_reward_messages": [
+          "升级奖励：300若汁币，若汁之缘×3",
+          "达成 Lv.3，解锁三星皮肤「咧嘴小若汁」！"
+        ],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787556273958,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时24分钟\n获得：1399若汁币，若汁之缘×3，经验+3\n小若汁升到了Lv.3！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.3，解锁三星皮肤「咧嘴小若汁」！"
+      },
+      "mt6p8r6n-wjurlis0": {
+        "id": "mt6p8r6n-wjurlis0",
+        "user_id": "2252351710",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "我就是我 108416290",
+        "map_id": "starnet",
+        "map_name": "星网",
+        "location_id": "starnet_mall",
+        "location_name": "星网商城",
+        "duration_ms": 7730246,
+        "rewards": {
+          "coin": 2147,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "starnet_avatar_update",
+          "name": "今天大家长得有点像",
+          "kind": "",
+          "text": "一款新虚拟形象突然爆火。小若汁一路遇到几十个几乎一模一样的人，只能靠头顶名字判断谁是谁。",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": {
+          "id": "encounter-mt6r479f-e3w12ius",
+          "time": 1787546640579,
+          "map_id": "starnet",
+          "map_name": "星网",
+          "entry_id": "encounter_bug_rumor",
+          "text": "两只小若汁聊起星网里那些不存在的地方。一只说自己见过乱码地址，另一只坚称那只是网络卡顿。聊到最后谁也没说服谁。",
+          "reward": {
+            "id": "fate",
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "name": "若汁之缘",
+            "amount": 1,
+            "reward_text": "若汁之缘×1"
+          },
+          "status": "pending",
+          "partner_user_id": "1412874037",
+          "partner_display_name": "逝如秋霜",
+          "reward_text": "若汁之缘×1"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "星网商城",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_starnet_mall",
+            "name": "发现星网商城",
+            "rarity": 3,
+            "time": 1787551224072,
+            "actor_name": "我就是我 108416290",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现星网商城」 ★★★"
+          },
+          {
+            "id": "starnet_encounter",
+            "name": "匿名世界也能碰见",
+            "rarity": 3,
+            "time": 1787551224074,
+            "actor_name": "我就是我 108416290",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「匿名世界也能碰见」 ★★★"
+          },
+          {
+            "id": "starnet_glitch_rumor",
+            "name": "都市传说交流群",
+            "rarity": 3,
+            "time": 1787551224074,
+            "actor_name": "我就是我 108416290",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「都市传说交流群」 ★★★"
+          },
+          {
+            "id": "ach_map_event_30",
+            "name": "旅行故事收藏家",
+            "rarity": 3,
+            "time": 1787551224074,
+            "actor_name": "我就是我 108416290",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「旅行故事收藏家」 ★★★"
+          }
+        ],
+        "mood_change": 5,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787551224075,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：星网商城（星网）\n旅行时间：2小时9分钟\n获得：2147若汁币，若汁之缘×5，经验+4\n小若汁偶遇了逝如秋霜的小若汁，两只小若汁聊起星网里那些不存在的地方。一只说自己见过乱码地址，另一只坚称那只是网络卡顿。聊到最后谁也没说服谁。\n偶遇奖励：若汁之缘×1\n旅行事件：今天大家长得有点像\n一款新虚拟形象突然爆火。小若汁一路遇到几十个几乎一模一样的人，只能靠头顶名字判断谁是谁。\n本次状态变化：心情+5\n新地点已解锁：星网商城\n达成旅行成就「发现星网商城」 ★★★\n达成旅行成就「匿名世界也能碰见」 ★★★\n达成旅行成就「都市传说交流群」 ★★★\n达成旅行成就「旅行故事收藏家」 ★★★"
+      },
       "mt0qrr2m-ylfigb9l": {
         "id": "mt0qrr2m-ylfigb9l",
         "user_id": "2252351710",
@@ -3872,159 +4275,48 @@
         "settled_at": 1786642452567,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：苍蓝魔法学院（艾尔多兰大陆）\n旅行时间：2小时58分钟\n获得：2960若汁币，若汁之缘×6，经验+6"
-      },
-      "msr30wd0-x48iiqjv": {
-        "id": "msr30wd0-x48iiqjv",
-        "user_id": "2252351710",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "我就是我 108416290",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_windmill_plain",
-        "location_name": "风车草原",
-        "duration_ms": 8416493,
-        "rewards": {
-          "coin": 2221,
-          "fate": 5,
-          "experience": 5
-        },
-        "event": {
-          "id": "eld_event_windmill_chase",
-          "name": "追逐风车",
-          "text": "小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
-          "effects": {
-            "coin_percent": -5
-          },
-          "souvenirs": [],
-          "record": false
-        },
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786607599620,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时20分钟\n获得：2221若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。"
-      },
-      "msqzaf5i-9lk45dq5": {
-        "id": "msqzaf5i-9lk45dq5",
-        "user_id": "2252351710",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "我就是我 108416290",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_rocket_base",
-        "location_name": "红沙火箭基地",
-        "duration_ms": 6264738,
-        "rewards": {
-          "coin": 1914,
-          "fate": 3,
-          "experience": 3
-        },
-        "event": {
-          "id": "rtc_event_launch_countdown",
-          "name": "错过倒计时",
-          "text": "小若汁从十开始倒数，数到七时火箭已经飞走了。",
-          "effects": {
-            "coin_percent": 10
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_plastic_rocket_model",
-              "name": "塑料火箭模型",
-              "emoji": "🚀",
-              "description": "旅行纪念品「塑料火箭模型」。"
-            }
-          ],
-          "record": false
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_plastic_rocket_model",
-            "name": "塑料火箭模型",
-            "emoji": "🚀",
-            "description": "旅行纪念品「塑料火箭模型」。",
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786599173610,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：1小时44分钟\n获得：1914若汁币，若汁之缘×3，经验+3\n旅行事件：错过倒计时\n小若汁从十开始倒数，数到七时火箭已经飞走了。\n纪念品：🚀塑料火箭模型×1"
-      },
-      "msqurdp0-wufqo4wb": {
-        "id": "msqurdp0-wufqo4wb",
-        "user_id": "2252351710",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "我就是我 108416290",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_old_battlefield",
-        "location_name": "无名古战场",
-        "duration_ms": 7116842,
-        "rewards": {
-          "coin": 1977,
-          "fate": 6,
-          "experience": 4
-        },
-        "event": {
-          "id": "eld_event_ghost_badge",
-          "name": "幽灵赠礼",
-          "text": "一名看不清脸的士兵把旧徽章交给小若汁。",
-          "effects": {
-            "fate_flat": 2
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_nameless_soldier_badge",
-              "name": "无名士兵徽章",
-              "emoji": "🛡️",
-              "description": "旅行纪念品「无名士兵徽章」。"
-            }
-          ],
-          "record": false
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_nameless_soldier_badge",
-            "name": "无名士兵徽章",
-            "emoji": "🛡️",
-            "description": "旅行纪念品「无名士兵徽章」。",
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786592418907,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：1小时59分钟\n获得：1977若汁币，若汁之缘×6，经验+4\n旅行事件：幽灵赠礼\n一名看不清脸的士兵把旧徽章交给小若汁。\n纪念品：🛡️无名士兵徽章×1"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt6wvfhh-ktv0xoku",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2252351710",
+        "report": "小若汁回来了！\n目的地：倒悬浮空岛（艾尔多兰大陆）\n旅行时间：35分钟\n获得：582若汁币，若汁之缘×1，经验+1",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787558402927,
+        "created_at": 1787558402927,
+        "sent_at": 1787558403396,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt6tup6s-jw28heoa",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2252351710",
+        "report": "小若汁回来了！\n目的地：玻璃穹顶植物园（明日旧城）\n旅行时间：1小时24分钟\n获得：1399若汁币，若汁之缘×3，经验+3\n小若汁升到了Lv.3！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.3，解锁三星皮肤「咧嘴小若汁」！",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787556273959,
+        "created_at": 1787556273959,
+        "sent_at": 1787556274446,
+        "last_error": ""
+      },
+      {
+        "travel_id": "mt6p8r6n-wjurlis0",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2252351710",
+        "report": "小若汁回来了！\n目的地：星网商城（星网）\n旅行时间：2小时9分钟\n获得：2147若汁币，若汁之缘×5，经验+4\n小若汁偶遇了逝如秋霜的小若汁，两只小若汁聊起星网里那些不存在的地方。一只说自己见过乱码地址，另一只坚称那只是网络卡顿。聊到最后谁也没说服谁。\n偶遇奖励：若汁之缘×1\n旅行事件：今天大家长得有点像\n一款新虚拟形象突然爆火。小若汁一路遇到几十个几乎一模一样的人，只能靠头顶名字判断谁是谁。\n本次状态变化：心情+5\n新地点已解锁：星网商城\n达成旅行成就「发现星网商城」 ★★★\n达成旅行成就「匿名世界也能碰见」 ★★★\n达成旅行成就「都市传说交流群」 ★★★\n达成旅行成就「旅行故事收藏家」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787551224076,
+        "created_at": 1787551224076,
+        "sent_at": 1787551224575,
+        "last_error": ""
+      },
       {
         "travel_id": "mt0qrr2m-ylfigb9l",
         "group_id": "415462812",
@@ -4245,49 +4537,10 @@
         "created_at": 1786642452567,
         "sent_at": 1786642453210,
         "last_error": ""
-      },
-      {
-        "travel_id": "msr30wd0-x48iiqjv",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2252351710",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：2小时20分钟\n获得：2221若汁币，若汁之缘×5，经验+5\n旅行事件：追逐风车\n小若汁认为风车一直在向它挥手，追了很久才发现风车不会走。",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786607599620,
-        "created_at": 1786607599620,
-        "sent_at": 1786607600235,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msqzaf5i-9lk45dq5",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2252351710",
-        "report": "小若汁回来了！\n目的地：红沙火箭基地（明日旧城）\n旅行时间：1小时44分钟\n获得：1914若汁币，若汁之缘×3，经验+3\n旅行事件：错过倒计时\n小若汁从十开始倒数，数到七时火箭已经飞走了。\n纪念品：🚀塑料火箭模型×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786599173610,
-        "created_at": 1786599173610,
-        "sent_at": 1786599174213,
-        "last_error": ""
-      },
-      {
-        "travel_id": "msqurdp0-wufqo4wb",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2252351710",
-        "report": "小若汁回来了！\n目的地：无名古战场（艾尔多兰大陆）\n旅行时间：1小时59分钟\n获得：1977若汁币，若汁之缘×6，经验+4\n旅行事件：幽灵赠礼\n一名看不清脸的士兵把旧徽章交给小若汁。\n纪念品：🛡️无名士兵徽章×1",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786592418907,
-        "created_at": 1786592418907,
-        "sent_at": 1786592419453,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 58,
+      "total_trips": 61,
       "key_item_discoveries": {
         "souvenir_floating_compass": {
           "item_id": "souvenir_floating_compass",
@@ -4307,7 +4560,8 @@
         "four_regions_little_world": 5,
         "candy_dreamland": 2,
         "alvita": 0,
-        "galovian": 0
+        "galovian": 0,
+        "starnet": 1
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -4346,6 +4600,9 @@
         "four_regions_little_world": {
           "extra_passenger": 1,
           "beast_patrol": 1
+        },
+        "starnet": {
+          "starnet_avatar_update": 1
         }
       },
       "event_ids": {
@@ -4377,12 +4634,14 @@
         "eld_event_mine_cart": 1,
         "eld_event_floating_stone": 1,
         "rtc_event_low_gravity": 1,
-        "rtc_event_home_robot": 1
+        "rtc_event_home_robot": 1,
+        "starnet_avatar_update": 1
       },
       "encounter_reward_types": {
-        "currency": 1
+        "currency": 1,
+        "ruozhi_fate": 1
       },
-      "total_encounters": 2
+      "total_encounters": 3
     },
     "active": null,
     "prepared_tool": null,
@@ -4427,6 +4686,26 @@
         "partner_user_id": "272950224",
         "partner_display_name": "北游的主人",
         "settled_at": 1787126400276
+      },
+      "encounter-mt6r479f-e3w12ius": {
+        "id": "encounter-mt6r479f-e3w12ius",
+        "time": 1787546640579,
+        "map_id": "starnet",
+        "map_name": "星网",
+        "entry_id": "encounter_bug_rumor",
+        "text": "两只小若汁聊起星网里那些不存在的地方。一只说自己见过乱码地址，另一只坚称那只是网络卡顿。聊到最后谁也没说服谁。",
+        "reward": {
+          "id": "fate",
+          "type": "item",
+          "item_id": "ruozhi_fate",
+          "name": "若汁之缘",
+          "amount": 1,
+          "reward_text": "若汁之缘×1"
+        },
+        "status": "settled",
+        "partner_user_id": "1412874037",
+        "partner_display_name": "逝如秋霜",
+        "settled_at": 1787551224061
       }
     },
     "companions": {
@@ -4440,12 +4719,19 @@
     }
   },
   "gacha": {
-    "since_four_plus": 5,
-    "since_five": 72,
-    "total_draws": 227,
-    "total_four": 27,
-    "total_five": 3,
+    "since_four_plus": 2,
+    "since_five": 2,
+    "total_draws": 237,
+    "total_four": 29,
+    "total_five": 4,
     "five_history": [
+      {
+        "time": 1787543497071,
+        "skin_id": "yaya_turtle",
+        "skin_name": "娅娅小若汁",
+        "pulls": 80,
+        "draw_index": 235
+      },
       {
         "time": 1786665668306,
         "skin_id": "quilt_turtle",
@@ -4468,7 +4754,7 @@
         "draw_index": 77
       }
     ],
-    "route_misses": 2,
+    "route_misses": 0,
     "route_skin_id": "yaya_turtle"
   }
 }

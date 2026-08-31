@@ -3,23 +3,57 @@
   "user_id": "3212466758",
   "pet": {
     "level": 1,
-    "experience": 0,
+    "experience": 11,
     "satiety": 5,
-    "mood": 70,
+    "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777182,
+    "satiety_decay_at": 1788146294496,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "confused_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "event_branch_count:nickname:stranger": 1,
+      "event_branch_count:nickname:stranger:last_at": 1787975412237
+    },
+    "achievement_records": {
+      "nickname_stranger": {
+        "id": "nickname_stranger",
+        "name": "第一次叫宝",
+        "rarity": 3,
+        "time": 1787975412238,
+        "actor_name": "番茄烧肉丼",
+        "stat_key": "event_branch_count:nickname:stranger",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "confused_turtle",
+            "skin_name": "困惑小若汁",
+            "message": "解锁三星皮肤「困惑小若汁」。"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "confused_turtle",
+        "reason": "achievement",
+        "time": 1787975412238,
+        "achievement_id": "nickname_stranger"
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -46,31 +80,42 @@
         "time": 1785946600472
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787401929824,
-    "health_decay_at": 1787427777182
+    "weight": 17,
+    "weight_decay_at": 1788136329824,
+    "health_decay_at": 1788146294496
   },
   "profile": {
-    "favorability": 0,
+    "favorability": 2,
     "weekly_contribution": 0,
-    "total_contribution": 0,
+    "total_contribution": 1,
     "last_display_name": "番茄烧肉丼",
     "first_joined_at": 1785946600472,
-    "last_active_at": 1787427777182,
+    "last_active_at": 1788146294496,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
-      "balance": 556,
-      "total_earned": 556,
+      "balance": 1056,
+      "total_earned": 1056,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787975412239,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 556,
+          "after": 1056,
+          "meta": {
+            "date": "2026-08-29"
+          }
+        },
         {
           "time": 1785949503685,
           "type": "income",
@@ -106,13 +151,37 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-08-29"
     },
     "items": {
-      "ruozhi_fate": 4,
+      "ruozhi_fate": 37,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1787975412237,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 34,
+        "after": 37,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "nickname_stranger"
+        }
+      },
+      {
+        "time": 1787975412236,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 4,
+        "after": 34,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1785946600491,
         "type": "income",
@@ -145,13 +214,71 @@
       }
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1787975412239,
+      "user_id": "3212466758",
+      "display_name": "番茄烧肉丼",
+      "event_id": "nickname",
+      "branch_id": "stranger",
+      "summary": "小若汁歪着脑袋看向番茄烧肉丼，好像还不太习惯这个称呼。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1056
+      },
+      "level_rewards": [],
+      "achievements": [
+        {
+          "id": "nickname_stranger",
+          "name": "第一次叫宝",
+          "description": "触发 1 次叫昵称事件的陌生回应分支",
+          "unlocked": true,
+          "unlocked_at": 1787975412238,
+          "current_count": 1,
+          "target_count": 1,
+          "progress_text": "1 / 1",
+          "rarity": 3,
+          "rarity_stars": "⭐⭐⭐",
+          "rarity_class": "rarity-3",
+          "rewards": [
+            {
+              "type": "item",
+              "item_id": "ruozhi_fate",
+              "amount": 3,
+              "message": "成就奖励：若汁之缘 ×3"
+            },
+            {
+              "type": "unlock_skin",
+              "skin_id": "confused_turtle",
+              "skin_name": "困惑小若汁",
+              "message": "解锁三星皮肤「困惑小若汁」。"
+            }
+          ],
+          "message": "达成成就「第一次叫宝」 ⭐⭐⭐"
+        }
+      ],
+      "auto_production_collect": 30
+    }
+  ],
   "daily": {
-    "date": "2026-08-06",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-08-29",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:1433053023": 1787975412235
+  },
   "skin_sessions": {
     "active": null
   },
@@ -163,13 +290,14 @@
     "migrated_at": 1785946600472
   },
   "created_at": 1785946600472,
-  "updated_at": 1787427777182,
+  "updated_at": 1788146294496,
   "production": {
     "started_at": 1785946600472,
-    "last_settled_at": 1787427777182,
-    "accumulated_ms": 259200000,
-    "progress": 30.02668074701317,
-    "total_produced": 0
+    "last_settled_at": 1788146294496,
+    "accumulated_ms": 170882260,
+    "progress": 18.81161003779331,
+    "total_produced": 30,
+    "last_collected_at": 1787975412236
   },
   "travel": {
     "unlocked_location_ids": [],

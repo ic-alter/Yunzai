@@ -3,12 +3,12 @@
   "user_id": "824660754",
   "pet": {
     "level": 1,
-    "experience": 36,
+    "experience": 37,
     "satiety": 5,
     "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777169,
+    "satiety_decay_at": 1788146294485,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -243,6 +243,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_lunar_zone": {
+        "id": "ach_rtc_lunar_zone",
+        "name": "发现月面生活体验区",
+        "rarity": 3,
+        "time": 1787569112804,
+        "actor_name": "螺风华莺",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -387,29 +402,29 @@
         "time": 1785029953378
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787401929810,
-    "health_decay_at": 1787427777169,
+    "weight": 17,
+    "weight_decay_at": 1788136329810,
+    "health_decay_at": 1788146294485,
     "five_skin_shadow_counts": {}
   },
   "profile": {
     "favorability": 2,
     "weekly_contribution": 0,
     "total_contribution": 1,
-    "last_display_name": "色色小缇安",
+    "last_display_name": "螺风华莺",
     "first_joined_at": 1785029953378,
-    "last_active_at": 1787427777169,
+    "last_active_at": 1788146294485,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "items": {
-      "ruozhi_fate": 53,
+      "ruozhi_fate": 57,
       "nameless_ruozhi": 0,
       "souvenir_border_map": 0,
       "souvenir_water_sword_tassel": 1,
@@ -418,6 +433,31 @@
       "food_eighth_day_pudding": 1
     },
     "item_ledger": [
+      {
+        "time": 1787569112804,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 54,
+        "after": 57,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_lunar_zone"
+        }
+      },
+      {
+        "time": 1787569112802,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 53,
+        "after": 54,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mt73buks-7bm8gby6",
+          "location_id": "rtc_lunar_zone"
+        }
+      },
       {
         "time": 1786954063343,
         "type": "income",
@@ -660,32 +700,6 @@
         "meta": {
           "count": 3
         }
-      },
-      {
-        "time": 1786802287641,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 8,
-        "after": 11,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_bixi_ferry"
-        }
-      },
-      {
-        "time": 1786802287640,
-        "type": "income",
-        "item_id": "food_spirit_pill",
-        "amount": 3,
-        "before": 0,
-        "after": 3,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msuebe8k-8d57bgkq",
-          "event_id": "underwater_sword",
-          "location_id": "bixi_ferry"
-        }
       }
     ],
     "item_daily": {
@@ -704,10 +718,23 @@
       }
     },
     "currency": {
-      "balance": 31003,
-      "total_earned": 31003,
+      "balance": 31547,
+      "total_earned": 31547,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787569112801,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 544,
+          "before": 31003,
+          "after": 31547,
+          "meta": {
+            "travel_id": "mt73buks-7bm8gby6",
+            "location_id": "rtc_lunar_zone",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786954063339,
           "type": "income",
@@ -829,22 +856,6 @@
             "score": 276,
             "total_score": 546
           }
-        },
-        {
-          "time": 1786803142151,
-          "type": "income",
-          "reason": "mihoyo_skill_grid_settlement",
-          "amount": 260,
-          "before": 21500,
-          "after": 21760,
-          "meta": {
-            "size": 10,
-            "solved": 16,
-            "total": 16,
-            "hints": 5,
-            "score": 106,
-            "total_score": 816
-          }
         }
       ],
       "sign": {
@@ -903,10 +914,10 @@
     "migrated_at": 1785029953378
   },
   "created_at": 1785029953378,
-  "updated_at": 1787427777169,
+  "updated_at": 1788146294485,
   "production": {
     "started_at": 1785029953378,
-    "last_settled_at": 1787427777169,
+    "last_settled_at": 1788146294485,
     "accumulated_ms": 259200000,
     "progress": 29.31862406423868,
     "total_produced": 13,
@@ -931,7 +942,8 @@
       "cotton_candy_forest",
       "chocolate_falls",
       "eld_free_port",
-      "school_gate_1743"
+      "school_gate_1743",
+      "rtc_lunar_zone"
     ],
     "location_records": {
       "eld_windmill_plain": {
@@ -996,6 +1008,14 @@
         "name": "永远放学的校门",
         "travel_id": "msws7j7k-fz8apt6t",
         "time": 1786954063340,
+        "carried_item_id": ""
+      },
+      "rtc_lunar_zone": {
+        "id": "rtc_lunar_zone",
+        "map_id": "retro_tomorrow_city",
+        "name": "月面生活体验区",
+        "travel_id": "mt73buks-7bm8gby6",
+        "time": 1787569112802,
         "carried_item_id": ""
       }
     },
@@ -1209,6 +1229,21 @@
         "rarity": 3,
         "time": 1786954063343,
         "actor_name": "色色小缇安",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_lunar_zone": {
+        "id": "ach_rtc_lunar_zone",
+        "name": "发现月面生活体验区",
+        "rarity": 3,
+        "time": 1787569112804,
+        "actor_name": "螺风华莺",
         "rewards": [
           {
             "type": "item",
@@ -1815,9 +1850,73 @@
         "settled_at": 1786954063347,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：永远放学的校门（未登记城区）\n旅行时间：2小时51分钟\n获得：2847若汁币，若汁之缘×7，经验+6\n旅行事件：请在天黑前离校\n通知每播放一次，天空便亮一点。第七遍结束后，小若汁走出校门，影子却仍留在里面。\n食物：🍮星期八布丁×1\n纪念品：🔑值日生钥匙×1\n新地点已解锁：永远放学的校门\n达成旅行成就「发现永远放学的校门」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "mt73buks-7bm8gby6": {
+        "id": "mt73buks-7bm8gby6",
+        "user_id": "824660754",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "螺风华莺",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_lunar_zone",
+        "location_name": "月面生活体验区",
+        "duration_ms": 1960004,
+        "rewards": {
+          "coin": 544,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "月面生活体验区",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_rtc_lunar_zone",
+            "name": "发现月面生活体验区",
+            "rarity": 3,
+            "time": 1787569112804,
+            "actor_name": "螺风华莺",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月面生活体验区」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787569112812,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：月面生活体验区（明日旧城）\n旅行时间：33分钟\n获得：544若汁币，若汁之缘×1，经验+1\n新地点已解锁：月面生活体验区\n达成旅行成就「发现月面生活体验区」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mt73buks-7bm8gby6",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "824660754",
+        "report": "小若汁回来了！\n目的地：月面生活体验区（明日旧城）\n旅行时间：33分钟\n获得：544若汁币，若汁之缘×1，经验+1\n新地点已解锁：月面生活体验区\n达成旅行成就「发现月面生活体验区」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1787569112812,
+        "created_at": 1787569112812,
+        "sent_at": 1787569113325,
+        "last_error": ""
+      },
       {
         "travel_id": "msws7j7k-fz8apt6t",
         "group_id": "1058099613",
@@ -1924,7 +2023,7 @@
       }
     ],
     "stats": {
-      "total_trips": 8,
+      "total_trips": 9,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -1933,11 +2032,14 @@
         }
       },
       "map_location_counts": {
-        "retro_tomorrow_city": 2,
+        "retro_tomorrow_city": 3,
         "eldoran_continent": 2,
         "unregistered_district": 1,
         "four_regions_little_world": 1,
-        "candy_dreamland": 2
+        "candy_dreamland": 2,
+        "alvita": 0,
+        "galovian": 0,
+        "starnet": 0
       },
       "map_event_ids": {
         "eldoran_continent": {

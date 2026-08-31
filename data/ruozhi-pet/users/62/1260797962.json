@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 2,
-    "experience": 91,
+    "experience": 96,
     "satiety": 5,
     "mood": 87,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777195,
+    "satiety_decay_at": 1788146294509,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -622,6 +622,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_golden_cloud_temple": {
+        "id": "ach_golden_cloud_temple",
+        "name": "发现金霞观",
+        "rarity": 3,
+        "time": 1788095718716,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -912,9 +927,9 @@
       "faceless_turtle": 0,
       "prison_turtle": 0
     },
-    "weight": 34,
-    "weight_decay_at": 1787401929837,
-    "health_decay_at": 1787427777195
+    "weight": 17,
+    "weight_decay_at": 1788136329837,
+    "health_decay_at": 1788146294509
   },
   "profile": {
     "favorability": 19,
@@ -922,21 +937,34 @@
     "total_contribution": 18,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1787427777195,
+    "last_active_at": 1788146294509,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
-      "balance": 163846,
-      "total_earned": 163846,
+      "balance": 166027,
+      "total_earned": 166027,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1788095718711,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2181,
+          "before": 163846,
+          "after": 166027,
+          "meta": {
+            "travel_id": "mtfpcjft-m5t71w6a",
+            "location_id": "golden_cloud_temple",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787255638169,
           "type": "income",
@@ -1048,18 +1076,6 @@
             "skin_id": "birthday_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787168142149,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 155710,
-          "after": 156010,
-          "meta": {
-            "skin_id": "hearts_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1071,7 +1087,7 @@
       "first_interaction_reward_date": "2026-08-07"
     },
     "items": {
-      "ruozhi_fate": 18,
+      "ruozhi_fate": 26,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
       "souvenir_sun_chart": 3,
@@ -1092,6 +1108,31 @@
       "souvenir_extra_corner_map": 1
     },
     "item_ledger": [
+      {
+        "time": 1788095718716,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 23,
+        "after": 26,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_golden_cloud_temple"
+        }
+      },
+      {
+        "time": 1788095718711,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 18,
+        "after": 23,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mtfpcjft-m5t71w6a",
+          "location_id": "golden_cloud_temple"
+        }
+      },
       {
         "time": 1787255638169,
         "type": "income",
@@ -1322,33 +1363,6 @@
           "event_id": "eld_event_border_quest",
           "location_id": "eld_adventurer_guild"
         }
-      },
-      {
-        "time": 1786973594905,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 11,
-        "after": 15,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msx5lzab-p2adxd6e",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1786803414814,
-        "type": "income",
-        "item_id": "food_elven_tart",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_item",
-        "meta": {
-          "travel_id": "msud94gi-05lc0pcy",
-          "event_id": "eld_event_sun_chart",
-          "location_id": "eld_free_port"
-        }
       }
     ],
     "item_daily": {
@@ -1516,10 +1530,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1787427777195,
+  "updated_at": 1788146294509,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1787427777195,
+    "last_settled_at": 1788146294509,
     "accumulated_ms": 259200000,
     "progress": 35.08025954477688,
     "total_produced": 102,
@@ -1549,7 +1563,8 @@
       "rtc_yesterday_end",
       "eld_beyond_cottage",
       "automated_logistics_port",
-      "rtc_botanical_dome"
+      "rtc_botanical_dome",
+      "golden_cloud_temple"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -1734,6 +1749,14 @@
         "name": "玻璃穹顶植物园",
         "travel_id": "mt1s4rdf-7gndxhbq",
         "time": 1787251486526,
+        "carried_item_id": ""
+      },
+      "golden_cloud_temple": {
+        "id": "golden_cloud_temple",
+        "map_id": "four_regions_little_world",
+        "name": "金霞观",
+        "travel_id": "mtfpcjft-m5t71w6a",
+        "time": 1788095718713,
         "carried_item_id": ""
       }
     },
@@ -2437,9 +2460,75 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_golden_cloud_temple": {
+        "id": "ach_golden_cloud_temple",
+        "name": "发现金霞观",
+        "rarity": 3,
+        "time": 1788095718716,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mtfpcjft-m5t71w6a": {
+        "id": "mtfpcjft-m5t71w6a",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "golden_cloud_temple",
+        "location_name": "金霞观",
+        "duration_ms": 7852734,
+        "rewards": {
+          "coin": 2181,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "金霞观",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_golden_cloud_temple",
+            "name": "发现金霞观",
+            "rarity": 3,
+            "time": 1788095718716,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现金霞观」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788095718723,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：2小时11分钟\n获得：2181若汁币，若汁之缘×5，经验+5\n新地点已解锁：金霞观\n达成旅行成就「发现金霞观」 ★★★"
+      },
       "mt1vqy3n-4oee05dw": {
         "id": "mt1vqy3n-4oee05dw",
         "user_id": "1260797962",
@@ -3485,57 +3574,22 @@
         "settled_at": 1786044459258,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：1小时52分钟\n获得：1873若汁币，若汁之缘×5，经验+4\n旅行事件：停在最高点\n摩天轮在最高处停了半小时。"
-      },
-      "mshkvgwg-jcm75xi0": {
-        "id": "mshkvgwg-jcm75xi0",
-        "user_id": "1260797962",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "迈特斯妲",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "qing_he_town",
-        "location_name": "青禾镇",
-        "duration_ms": 2040469,
-        "rewards": {
-          "coin": 567,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "青禾镇",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_qing_he_town",
-            "name": "发现青禾镇",
-            "rarity": 3,
-            "time": 1786026541558,
-            "actor_name": "迈特斯妲",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现青禾镇」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786026541559,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：34分钟\n获得：567若汁币，若汁之缘×1，经验+1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtfpcjft-m5t71w6a",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：金霞观（四州小天地）\n旅行时间：2小时11分钟\n获得：2181若汁币，若汁之缘×5，经验+5\n新地点已解锁：金霞观\n达成旅行成就「发现金霞观」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788095718724,
+        "created_at": 1788095718724,
+        "sent_at": 1788095719191,
+        "last_error": ""
+      },
       {
         "travel_id": "mt1vqy3n-4oee05dw",
         "group_id": "415462812",
@@ -3782,23 +3836,10 @@
         "created_at": 1786044459258,
         "sent_at": 1786044459542,
         "last_error": ""
-      },
-      {
-        "travel_id": "mshkvgwg-jcm75xi0",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：34分钟\n获得：567若汁币，若汁之缘×1，经验+1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786026541559,
-        "created_at": 1786026541559,
-        "sent_at": 1786026542039,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 43,
+      "total_trips": 44,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -3820,10 +3861,11 @@
         "retro_tomorrow_city": 8,
         "eldoran_continent": 9,
         "unregistered_district": 4,
-        "four_regions_little_world": 1,
+        "four_regions_little_world": 2,
         "candy_dreamland": 0,
         "alvita": 1,
-        "galovian": 0
+        "galovian": 0,
+        "starnet": 0
       },
       "map_event_ids": {
         "eldoran_continent": {

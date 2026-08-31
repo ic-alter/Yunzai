@@ -8,7 +8,7 @@
     "mood": 88,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777331,
+    "satiety_decay_at": 1788146294625,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -50,7 +50,9 @@
       "paint_splash_turtle",
       "grasshopper_turtle",
       "drooling_turtle",
-      "cactus_turtle"
+      "cactus_turtle",
+      "raised_eyebrow_turtle",
+      "unicorn_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -62,7 +64,7 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 65,
+      "counter:gacha_draws": 69,
       "counter:gacha_five": 1
     },
     "achievement_records": {
@@ -510,6 +512,16 @@
     },
     "unlock_records": [
       {
+        "skin_id": "unicorn_turtle",
+        "reason": "gacha",
+        "time": 1787588322375
+      },
+      {
+        "skin_id": "raised_eyebrow_turtle",
+        "reason": "gacha",
+        "time": 1787588322375
+      },
+      {
         "skin_id": "cactus_turtle",
         "reason": "level_reward",
         "time": 1787409890235,
@@ -716,34 +728,58 @@
         "time": 1784793808338
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787422427271,
-    "health_decay_at": 1787427777331,
+    "weight": 18,
+    "weight_decay_at": 1788113627271,
+    "health_decay_at": 1788146294625,
     "five_skin_shadow_counts": {
       "roast_chicken_turtle": 0
     }
   },
   "profile": {
     "favorability": 5,
-    "weekly_contribution": 5,
+    "weekly_contribution": 0,
     "total_contribution": 5,
     "last_display_name": "米哈游的锋刃",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1787427777331,
+    "last_active_at": 1788146294625,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "currency": {
-      "balance": 21735,
-      "total_earned": 51735,
+      "balance": 22335,
+      "total_earned": 52335,
       "total_spent": 30000,
       "ledger": [
+        {
+          "time": 1787588322375,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 22035,
+          "after": 22335,
+          "meta": {
+            "skin_id": "raised_eyebrow_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787588322375,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 21735,
+          "after": 22035,
+          "meta": {
+            "skin_id": "biting_lip_turtle",
+            "rarity": 3
+          }
+        },
         {
           "time": 1787409890234,
           "type": "income",
@@ -841,30 +877,6 @@
             "skin_id": "cheese_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 15244,
-          "after": 15544,
-          "meta": {
-            "skin_id": "rolling_laugh_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 14944,
-          "after": 15244,
-          "meta": {
-            "skin_id": "coffee_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -876,7 +888,7 @@
       "first_interaction_reward_date": "2026-08-18"
     },
     "items": {
-      "ruozhi_fate": 13,
+      "ruozhi_fate": 32,
       "nameless_ruozhi": 0,
       "souvenir_wheat_noodle": 1,
       "souvenir_water_sword_tassel": 1,
@@ -896,6 +908,30 @@
       "food_bread": 2
     },
     "item_ledger": [
+      {
+        "time": 1787834024642,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 31,
+        "before": 1,
+        "after": 32,
+        "reason": "pet_production_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1787588322375,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 12,
+        "before": 13,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 4
+        }
+      },
       {
         "time": 1787409890244,
         "type": "income",
@@ -1118,44 +1154,13 @@
         "meta": {
           "achievement_id": "ach_white_fog_houses"
         }
-      },
-      {
-        "time": 1787195563230,
-        "type": "income",
-        "item_id": "souvenir_strangers_spare_key",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "mt0y3697-53zvube2",
-          "event_id": "event_welcome_home",
-          "location_id": "white_fog_houses"
-        }
-      },
-      {
-        "time": 1787195563230,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 80,
-        "after": 85,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt0y3697-53zvube2",
-          "location_id": "white_fog_houses"
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-08-20",
+      "date": "2026-08-27",
       "fate_exchange_count": 0,
       "game_fate_reward_count": 0,
-      "shop_buy_counts": {
-        "travel_pager": 7,
-        "travel_checklist": 1,
-        "travel_suitcase": 2
-      },
+      "shop_buy_counts": {},
       "use_counts": {}
     },
     "item_migrations": {
@@ -1238,12 +1243,12 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1787427777331,
+  "updated_at": 1788146294625,
   "gacha": {
-    "since_four_plus": 6,
-    "since_five": 36,
-    "total_draws": 65,
-    "total_four": 6,
+    "since_four_plus": 0,
+    "since_five": 40,
+    "total_draws": 69,
+    "total_four": 7,
     "total_five": 1,
     "five_history": [
       {
@@ -1259,11 +1264,11 @@
   },
   "production": {
     "started_at": 1784876695881,
-    "last_settled_at": 1787427777331,
+    "last_settled_at": 1788146294625,
     "accumulated_ms": 259200000,
-    "progress": 31.985916549668737,
-    "total_produced": 28,
-    "last_collected_at": 1787060859160
+    "progress": 34.35520786027057,
+    "total_produced": 59,
+    "last_collected_at": 1787834024642
   },
   "travel": {
     "unlocked_location_ids": [

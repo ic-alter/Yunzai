@@ -3,12 +3,12 @@
   "user_id": "1440624127",
   "pet": {
     "level": 2,
-    "experience": 9,
+    "experience": 26,
     "satiety": 5,
     "mood": 100,
-    "health": 94,
+    "health": 98,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1787427777010,
+    "satiety_decay_at": 1788146294342,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -28,7 +28,14 @@
       "ribbon_turtle",
       "shushing_turtle",
       "parachute_turtle",
-      "cactus_turtle"
+      "cactus_turtle",
+      "antler_turtle",
+      "tear_turtle",
+      "snake_turtle",
+      "raised_eyebrow_turtle",
+      "mushroom_shell_turtle",
+      "sparkling_turtle",
+      "party_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -40,7 +47,7 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 16,
+      "counter:gacha_draws": 26,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -141,6 +148,41 @@
     },
     "unlock_records": [
       {
+        "skin_id": "party_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "sparkling_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "mushroom_shell_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "raised_eyebrow_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "snake_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "tear_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
+        "skin_id": "antler_turtle",
+        "reason": "gacha",
+        "time": 1787707513726
+      },
+      {
         "skin_id": "cactus_turtle",
         "reason": "level_reward",
         "time": 1786446551292,
@@ -237,33 +279,58 @@
         "time": 1785644212468
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787401929647,
-    "health_decay_at": 1787427777010
+    "weight": 17,
+    "weight_decay_at": 1788139513726,
+    "health_decay_at": 1788146294342,
+    "five_skin_shadow_counts": {}
   },
   "profile": {
-    "favorability": 34,
+    "favorability": 42,
     "weekly_contribution": 0,
-    "total_contribution": 29,
+    "total_contribution": 36,
     "last_display_name": "H3YF6 3.2",
     "first_joined_at": 1785644212468,
-    "last_active_at": 1787427777010,
+    "last_active_at": 1788146294342,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "items": {
-      "ruozhi_fate": 34,
+      "ruozhi_fate": 35,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0
     },
     "item_ledger": [
+      {
+        "time": 1787707513726,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 65,
+        "after": 35,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1787706657612,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 31,
+        "before": 34,
+        "after": 65,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1786446551289,
         "type": "income",
@@ -486,30 +553,6 @@
         "meta": {
           "count": 2
         }
-      },
-      {
-        "time": 1785646764874,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 4,
-        "after": 7,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_map_first_discovery"
-        }
-      },
-      {
-        "time": 1785646764874,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 1,
-        "after": 4,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_atomic_mall"
-        }
       }
     ],
     "item_daily": {
@@ -528,10 +571,57 @@
       }
     },
     "currency": {
-      "balance": 7684,
-      "total_earned": 7684,
+      "balance": 9084,
+      "total_earned": 9084,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1787707513726,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8784,
+          "after": 9084,
+          "meta": {
+            "skin_id": "nerd_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787707513726,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8484,
+          "after": 8784,
+          "meta": {
+            "skin_id": "raised_eyebrow_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787707513726,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 8184,
+          "after": 8484,
+          "meta": {
+            "skin_id": "puppy_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1787706657613,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 7684,
+          "after": 8184,
+          "meta": {
+            "date": "2026-08-26"
+          }
+        },
         {
           "time": 1786446551289,
           "type": "income",
@@ -600,56 +690,6 @@
             "skin_id": "headphones_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1785749619614,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 4984,
-          "after": 5484,
-          "meta": {
-            "date": "2026-08-03"
-          }
-        },
-        {
-          "time": 1785723077870,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1837,
-          "before": 3147,
-          "after": 4984,
-          "meta": {
-            "travel_id": "mschzoo9-7d9oryfp",
-            "location_id": "eld_moonbell_village",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785671653028,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1152,
-          "before": 1995,
-          "after": 3147,
-          "meta": {
-            "travel_id": "msbobu5u-3edoefo3",
-            "location_id": "rtc_atomic_mall",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1785666560416,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1381,
-          "before": 614,
-          "after": 1995,
-          "meta": {
-            "travel_id": "msbkt0q8-n75d0moq",
-            "location_id": "eld_adventurer_guild",
-            "forced_by": "timer"
-          }
         }
       ],
       "sign": {
@@ -658,10 +698,36 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-08-11"
+      "first_interaction_reward_date": "2026-08-26"
     }
   },
   "recent_events": [
+    {
+      "time": 1787706657613,
+      "user_id": "1440624127",
+      "display_name": "H3YF6 3.2",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，H3YF6 3.2及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 8184
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 31
+    },
     {
       "time": 1786446551292,
       "user_id": "1440624127",
@@ -857,7 +923,7 @@
     }
   ],
   "daily": {
-    "date": "2026-08-11",
+    "date": "2026-08-26",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -868,7 +934,8 @@
     "event:2057587339": 1785804245348,
     "event:400526602": 1785844152466,
     "event:611081565": 1785844155955,
-    "event:426592234": 1786446551286
+    "event:426592234": 1786446551286,
+    "event:311571396": 1787706657610
   },
   "skin_sessions": {
     "active": null
@@ -881,20 +948,20 @@
     "migrated_at": 1785644212468
   },
   "created_at": 1785644212468,
-  "updated_at": 1787427777010,
+  "updated_at": 1788146294342,
   "production": {
     "started_at": 1785644212468,
-    "last_settled_at": 1787427777010,
+    "last_settled_at": 1788146294342,
     "accumulated_ms": 259200000,
-    "progress": 31.029864964149223,
-    "total_produced": 51,
-    "last_collected_at": 1786446551288
+    "progress": 31.707798960489555,
+    "total_produced": 82,
+    "last_collected_at": 1787706657612
   },
   "gacha": {
-    "since_four_plus": 6,
-    "since_five": 16,
-    "total_draws": 16,
-    "total_four": 1,
+    "since_four_plus": 4,
+    "since_five": 26,
+    "total_draws": 26,
+    "total_four": 3,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,

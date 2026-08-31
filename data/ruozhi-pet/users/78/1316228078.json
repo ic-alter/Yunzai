@@ -3,12 +3,12 @@
   "user_id": "1316228078",
   "pet": {
     "level": 1,
-    "experience": 79,
+    "experience": 80,
     "satiety": 5,
     "mood": 89,
     "health": 88,
     "current_skin_id": "snow_peak_turtle",
-    "satiety_decay_at": 1787427777309,
+    "satiety_decay_at": 1788146294607,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -221,6 +221,21 @@
         "name": "发现星尘广播塔",
         "rarity": 3,
         "time": 1785837782220,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_chocolate_falls": {
+        "id": "ach_chocolate_falls",
+        "name": "发现巧克力大瀑布",
+        "rarity": 3,
+        "time": 1788096807483,
         "actor_name": "释者",
         "rewards": [
           {
@@ -449,9 +464,9 @@
         "time": 1785060607224
       }
     ],
-    "weight": 34,
-    "weight_decay_at": 1787401929909,
-    "health_decay_at": 1787427777309
+    "weight": 17,
+    "weight_decay_at": 1788136329909,
+    "health_decay_at": 1788146294607
   },
   "profile": {
     "favorability": 19,
@@ -459,24 +474,64 @@
     "total_contribution": 17,
     "last_display_name": "释者",
     "first_joined_at": 1785060607224,
-    "last_active_at": 1787427777309,
+    "last_active_at": 1788146294607,
     "daily": {
-      "date": "2026-08-23",
+      "date": "2026-08-31",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W34"
+      "week": "2026-W36"
     },
     "items": {
-      "ruozhi_fate": 56,
+      "ruozhi_fate": 60,
       "nameless_ruozhi": 0,
       "souvenir_infinite_lottery_ticket": 1,
       "souvenir_paper_visitor_crown": 1,
-      "souvenir_burned_neon_tube": 1
+      "souvenir_burned_neon_tube": 1,
+      "souvenir_cocoa_rainbow_photo": 1
     },
     "item_ledger": [
+      {
+        "time": 1788096807483,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 57,
+        "after": 60,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_chocolate_falls"
+        }
+      },
+      {
+        "time": 1788096807480,
+        "type": "income",
+        "item_id": "souvenir_cocoa_rainbow_photo",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "mtftrxnd-t6imtee3",
+          "event_id": "cocoa_rainbow",
+          "location_id": "chocolate_falls"
+        }
+      },
+      {
+        "time": 1788096807479,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 56,
+        "after": 57,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mtftrxnd-t6imtee3",
+          "location_id": "chocolate_falls"
+        }
+      },
       {
         "time": 1785837782220,
         "type": "income",
@@ -689,46 +744,6 @@
         "meta": {
           "accumulated_hours": 49.105
         }
-      },
-      {
-        "time": 1785587952143,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 27,
-        "after": 32,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msa71zqp-4wmoor7f",
-          "location_id": "rtc_botanical_dome"
-        }
-      },
-      {
-        "time": 1785459908413,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 26,
-        "before": 1,
-        "after": 27,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-07-31",
-          "month_count": 2,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
-      },
-      {
-        "time": 1785459896229,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 7,
-        "after": 1,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 2
-        }
       }
     ],
     "item_daily": {
@@ -747,10 +762,23 @@
       }
     },
     "currency": {
-      "balance": 43660,
-      "total_earned": 43660,
+      "balance": 44160,
+      "total_earned": 44160,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1788096807479,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 500,
+          "before": 43660,
+          "after": 44160,
+          "meta": {
+            "travel_id": "mtftrxnd-t6imtee3",
+            "location_id": "chocolate_falls",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1785837782219,
           "type": "income",
@@ -860,18 +888,6 @@
           "after": 32675,
           "meta": {
             "skin_id": "puppy_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1785636661780,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 32075,
-          "after": 32375,
-          "meta": {
-            "skin_id": "sparkling_turtle",
             "rarity": 3
           }
         }
@@ -993,10 +1009,10 @@
     "migrated_at": 1785060607224
   },
   "created_at": 1785060607224,
-  "updated_at": 1787427777309,
+  "updated_at": 1788146294607,
   "production": {
     "started_at": 1785060607224,
-    "last_settled_at": 1787427777309,
+    "last_settled_at": 1788146294607,
     "accumulated_ms": 259200000,
     "progress": 34.31125033036386,
     "total_produced": 93,
@@ -1009,7 +1025,8 @@
       "eld_silver_capital",
       "rtc_galaxy_motel",
       "forgotten_family_restaurant",
-      "rtc_broadcast_tower"
+      "rtc_broadcast_tower",
+      "chocolate_falls"
     ],
     "location_records": {
       "rtc_botanical_dome": {
@@ -1059,6 +1076,14 @@
         "travel_id": "msecyjq5-ez62ajp4",
         "time": 1785837782219,
         "carried_item_id": ""
+      },
+      "chocolate_falls": {
+        "id": "chocolate_falls",
+        "map_id": "candy_dreamland",
+        "name": "巧克力大瀑布",
+        "travel_id": "mtftrxnd-t6imtee3",
+        "time": 1788096807479,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1096,6 +1121,13 @@
         "location_id": "rtc_broadcast_tower",
         "travel_id": "msecyjq5-ez62ajp4",
         "time": 1785837782219
+      },
+      "cocoa_rainbow": {
+        "id": "cocoa_rainbow",
+        "map_id": "candy_dreamland",
+        "location_id": "chocolate_falls",
+        "travel_id": "mtftrxnd-t6imtee3",
+        "time": 1788096807480
       }
     },
     "souvenir_records": {
@@ -1119,6 +1151,14 @@
         "event_id": "rtc_event_neon_sign",
         "location_id": "rtc_galaxy_motel",
         "time": 1785746817932
+      },
+      "souvenir_cocoa_rainbow_photo": {
+        "id": "souvenir_cocoa_rainbow_photo",
+        "name": "可可彩虹照片",
+        "event_id": "cocoa_rainbow",
+        "location_id": "chocolate_falls",
+        "map_id": "candy_dreamland",
+        "time": 1788096807480
       }
     },
     "achievement_records": {
@@ -1232,6 +1272,21 @@
         "name": "发现星尘广播塔",
         "rarity": 3,
         "time": 1785837782220,
+        "actor_name": "释者",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_chocolate_falls": {
+        "id": "ach_chocolate_falls",
+        "name": "发现巧克力大瀑布",
+        "rarity": 3,
+        "time": 1788096807483,
         "actor_name": "释者",
         "rewards": [
           {
@@ -1695,9 +1750,101 @@
         "settled_at": 1785837782220,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：星尘广播塔（明日旧城）\n旅行时间：2小时13分钟\n获得：2658若汁币，若汁之缘×4，经验+4\n旅行事件：明日新闻\n收音机播报小若汁明天会捡到若汁币，它决定今天先捡一点。\n新地点已解锁：星尘广播塔\n达成旅行成就「发现星尘广播塔」 ★★★"
+      },
+      "mtftrxnd-t6imtee3": {
+        "id": "mtftrxnd-t6imtee3",
+        "user_id": "1316228078",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "display_name": "释者",
+        "map_id": "candy_dreamland",
+        "map_name": "糖霜梦境",
+        "location_id": "chocolate_falls",
+        "location_name": "巧克力大瀑布",
+        "duration_ms": 1504783,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": {
+          "id": "cocoa_rainbow",
+          "name": "可可彩虹",
+          "kind": "",
+          "text": "可可雾在阳光里形成棕色彩虹，小若汁拍了一张怎么看都像相机坏掉了的照片。",
+          "effects": {},
+          "souvenirs": [
+            {
+              "id": "souvenir_cocoa_rainbow_photo",
+              "name": "可可彩虹照片",
+              "emoji": "🌈",
+              "description": "旅行纪念品「可可彩虹照片」。"
+            }
+          ],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_cocoa_rainbow_photo",
+            "name": "可可彩虹照片",
+            "emoji": "🌈",
+            "description": "旅行纪念品「可可彩虹照片」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "巧克力大瀑布",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_chocolate_falls",
+            "name": "发现巧克力大瀑布",
+            "rarity": 3,
+            "time": 1788096807483,
+            "actor_name": "释者",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现巧克力大瀑布」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788096807488,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：25分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：可可彩虹\n可可雾在阳光里形成棕色彩虹，小若汁拍了一张怎么看都像相机坏掉了的照片。\n纪念品：🌈可可彩虹照片×1\n新地点已解锁：巧克力大瀑布\n达成旅行成就「发现巧克力大瀑布」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtftrxnd-t6imtee3",
+        "group_id": "464519950",
+        "self_id": "3964480831",
+        "user_id": "1316228078",
+        "report": "小若汁回来了！\n目的地：巧克力大瀑布（糖霜梦境）\n旅行时间：25分钟\n获得：500若汁币，若汁之缘×1，经验+1\n旅行事件：可可彩虹\n可可雾在阳光里形成棕色彩虹，小若汁拍了一张怎么看都像相机坏掉了的照片。\n纪念品：🌈可可彩虹照片×1\n新地点已解锁：巧克力大瀑布\n达成旅行成就「发现巧克力大瀑布」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788096807489,
+        "created_at": 1788096807489,
+        "sent_at": 1788096807953,
+        "last_error": ""
+      },
       {
         "travel_id": "msecyjq5-ez62ajp4",
         "group_id": "415462812",
@@ -1804,12 +1951,17 @@
       }
     ],
     "stats": {
-      "total_trips": 8,
+      "total_trips": 9,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 4,
         "eldoran_continent": 1,
-        "unregistered_district": 1
+        "unregistered_district": 1,
+        "four_regions_little_world": 0,
+        "candy_dreamland": 1,
+        "alvita": 0,
+        "galovian": 0,
+        "starnet": 0
       },
       "map_event_ids": {
         "retro_tomorrow_city": {
@@ -1820,6 +1972,9 @@
         },
         "eldoran_continent": {
           "eld_event_royal_parade": 1
+        },
+        "candy_dreamland": {
+          "cocoa_rainbow": 1
         }
       },
       "event_ids": {
@@ -1827,7 +1982,8 @@
         "eld_event_royal_parade": 1,
         "rtc_event_neon_sign": 1,
         "rtc_event_escape_vine": 1,
-        "rtc_event_tomorrow_news": 1
+        "rtc_event_tomorrow_news": 1,
+        "cocoa_rainbow": 1
       },
       "encounter_reward_types": {},
       "total_encounters": 0
