@@ -3,12 +3,12 @@
   "user_id": "1627293137",
   "pet": {
     "level": 5,
-    "experience": 24,
+    "experience": 59,
     "satiety": 5,
     "mood": 93,
-    "health": 89,
+    "health": 85,
     "current_skin_id": "roast_chicken_turtle",
-    "satiety_decay_at": 1788146294417,
+    "satiety_decay_at": 1789099498017,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -72,7 +72,10 @@
       "galaxy_turtle",
       "fox_turtle",
       "octopus_turtle",
-      "neutral_turtle"
+      "neutral_turtle",
+      "volcano_turtle",
+      "qiqiu_turtle",
+      "puppy_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -105,8 +108,8 @@
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 190,
-      "counter:gacha_five": 4
+      "counter:gacha_draws": 233,
+      "counter:gacha_five": 5
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -746,9 +749,41 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_five_5": {
+        "id": "gacha_five_5",
+        "name": "五星眷顾",
+        "rarity": 4,
+        "time": 1788506627485,
+        "actor_name": "LOK_",
+        "stat_key": "counter:gacha_five",
+        "count": 5,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "puppy_turtle",
+        "reason": "gacha",
+        "time": 1788506637873
+      },
+      {
+        "skin_id": "qiqiu_turtle",
+        "reason": "gacha",
+        "time": 1788506627482
+      },
+      {
+        "skin_id": "volcano_turtle",
+        "reason": "gacha",
+        "time": 1788506620402
+      },
       {
         "skin_id": "neutral_turtle",
         "reason": "level_reward",
@@ -1073,149 +1108,150 @@
       "roast_chicken_turtle": 0,
       "rabbit_head_turtle": 0,
       "quilt_turtle": 0,
-      "sei_shonagon_turtle": 0
+      "sei_shonagon_turtle": 0,
+      "qiqiu_turtle": 0
     },
-    "weight": 18,
-    "weight_decay_at": 1788111860081,
-    "health_decay_at": 1788146294417
+    "weight": 0,
+    "weight_decay_at": 1789068478569,
+    "health_decay_at": 1789099498017
   },
   "profile": {
-    "favorability": 92,
-    "weekly_contribution": 0,
-    "total_contribution": 110,
+    "favorability": 88,
+    "weekly_contribution": 1,
+    "total_contribution": 115,
     "last_display_name": "LOK_",
     "first_joined_at": 1785846055612,
-    "last_active_at": 1788146294417,
+    "last_active_at": 1789099498017,
     "daily": {
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "currency": {
-      "balance": 88733,
-      "total_earned": 168733,
+      "balance": 130433,
+      "total_earned": 210433,
       "total_spent": 80000,
       "ledger": [
         {
-          "time": 1787676673495,
-          "type": "income",
-          "reason": "daily_sign",
-          "amount": 1325,
-          "before": 87408,
-          "after": 88733,
-          "meta": {
-            "date": "2026-08-26"
-          }
-        },
-        {
-          "time": 1787156809411,
+          "time": 1788767746975,
           "type": "income",
           "reason": "daily_first_interaction",
           "amount": 500,
-          "before": 86908,
-          "after": 87408,
+          "before": 129933,
+          "after": 130433,
           "meta": {
-            "date": "2026-08-20"
+            "date": "2026-09-07"
           }
         },
         {
-          "time": 1786729459531,
+          "time": 1788506875503,
           "type": "income",
-          "reason": "travel_reward",
-          "amount": 521,
-          "before": 86387,
-          "after": 86908,
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 124933,
+          "after": 129933,
           "meta": {
-            "travel_id": "mst7gzzs-bcsaxcds",
-            "location_id": "cream_swamp",
-            "forced_by": "timer"
+            "skin_id": "unicorn_turtle",
+            "rarity": 4
           }
         },
         {
-          "time": 1786727681025,
+          "time": 1788506875498,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 5000,
+          "before": 119933,
+          "after": 124933,
+          "meta": {
+            "skin_id": "diamond_turtle",
+            "rarity": 4
+          }
+        },
+        {
+          "time": 1788506875497,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 86087,
-          "after": 86387,
+          "before": 119633,
+          "after": 119933,
           "meta": {
             "skin_id": "heart_shower_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1786727681025,
+          "time": 1788506871339,
           "type": "income",
           "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 85787,
-          "after": 86087,
+          "amount": 5000,
+          "before": 114633,
+          "after": 119633,
           "meta": {
-            "skin_id": "rolling_laugh_turtle",
-            "rarity": 3
+            "skin_id": "bee_turtle",
+            "rarity": 4
           }
         },
         {
-          "time": 1786727681025,
+          "time": 1788506871339,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 85487,
-          "after": 85787,
-          "meta": {
-            "skin_id": "antler_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786727670727,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 85187,
-          "after": 85487,
-          "meta": {
-            "skin_id": "drooling_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786727670727,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 84887,
-          "after": 85187,
-          "meta": {
-            "skin_id": "cheese_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786727670727,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 84587,
-          "after": 84887,
-          "meta": {
-            "skin_id": "sneaker_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1786727670727,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 84287,
-          "after": 84587,
+          "before": 114333,
+          "after": 114633,
           "meta": {
             "skin_id": "party_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1788506871339,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 114033,
+          "after": 114333,
+          "meta": {
+            "skin_id": "grasshopper_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1788506871339,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 113733,
+          "after": 114033,
+          "meta": {
+            "skin_id": "parachute_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1788506871338,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 113433,
+          "after": 113733,
+          "meta": {
+            "skin_id": "hearts_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1788506871338,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 113133,
+          "after": 113433,
+          "meta": {
+            "skin_id": "nerd_turtle",
             "rarity": 3
           }
         }
@@ -1226,10 +1262,10 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-20"
+      "first_interaction_reward_date": "2026-09-07"
     },
     "items": {
-      "ruozhi_fate": 71,
+      "ruozhi_fate": 36,
       "nameless_ruozhi": 0,
       "travel_pager": 0,
       "souvenir_duty_student_key": 1,
@@ -1254,18 +1290,152 @@
       "food_dragon_stew": 1,
       "souvenir_still_round_ticket": 1,
       "food_cake": 1,
-      "food_donut": 2,
+      "food_donut": 1,
       "food_noodles": 2,
       "food_grapes": 1,
       "food_milk_tea": 1,
       "food_popcorn": 3,
-      "food_ice_cream": 1,
+      "food_ice_cream": 0,
       "food_bread": 2,
       "food_rice_ball": 1,
       "food_curry": 2,
       "food_pancake": 2
     },
     "item_ledger": [
+      {
+        "time": 1788767746974,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 36,
+        "before": 0,
+        "after": 36,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1788506875497,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 9,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 3
+        }
+      },
+      {
+        "time": 1788506871338,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 39,
+        "after": 9,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1788506637873,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 69,
+        "after": 39,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1788506627485,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 66,
+        "after": 69,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_5"
+        }
+      },
+      {
+        "time": 1788506627482,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 96,
+        "after": 66,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1788506620402,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 126,
+        "after": 96,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
+      {
+        "time": 1788506527427,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 20,
+        "before": 106,
+        "after": 126,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 39.951
+        }
+      },
+      {
+        "time": 1788506527426,
+        "type": "expense",
+        "item_id": "food_donut",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_donut",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1788362702152,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 35,
+        "before": 71,
+        "after": 106,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1788362702151,
+        "type": "expense",
+        "item_id": "food_ice_cream",
+        "amount": 1,
+        "before": 1,
+        "after": 0,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_ice_cream",
+          "stage": "normal"
+        }
+      },
       {
         "time": 1787676673496,
         "type": "income",
@@ -1355,123 +1525,6 @@
         "after": 3,
         "reason": "daily_sign_food",
         "meta": {}
-      },
-      {
-        "time": 1787676673496,
-        "type": "income",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673496,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 26,
-        "before": 45,
-        "after": 71,
-        "reason": "daily_sign",
-        "meta": {
-          "date": "2026-08-26",
-          "month_count": 5,
-          "first_sign_bonus": 0,
-          "monthly_sign_bonus": 0
-        }
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_ice_cream",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_noodles",
-        "amount": 1,
-        "before": 1,
-        "after": 2,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_grapes",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_noodles",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787676673495,
-        "type": "income",
-        "item_id": "food_cake",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1787156809410,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 36,
-        "before": 9,
-        "after": 45,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 72
-        }
       }
     ],
     "item_daily": {
@@ -1509,6 +1562,84 @@
     }
   },
   "recent_events": [
+    {
+      "time": 1788767746975,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "attack",
+      "branch_id": "light_hit",
+      "summary": "LOK_踢中了小若汁。小若汁滚了两圈，生气地瞪了回来。",
+      "effects_text": "心情-7，健康-4，好感-8，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": -7,
+        "health": -4,
+        "favorability": -8,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 130433
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 36
+    },
+    {
+      "time": 1788506527429,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁开心地收下🍩糖霜甜甜圈，连龟壳都像亮了一点。",
+      "effects_text": "饱食+12，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 12,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 89733
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 20
+    },
+    {
+      "time": 1788362702153,
+      "user_id": "1627293137",
+      "display_name": "LOK_",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "它高兴地接过🍦香草冰淇淋，一口一口享用了起来。",
+      "effects_text": "饱食+10，心情+4，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 10,
+        "mood": 4,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 89233
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 35
+    },
     {
       "time": 1787156809411,
       "user_id": "1627293137",
@@ -1675,79 +1806,10 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1786551257851,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "petting",
-      "branch_id": "head_normal",
-      "summary": "小若汁低下脑袋，安静地接受了摸头。",
-      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 0,
-        "mood": 5,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786551252144,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地接过食物，慢慢吃了起来。",
-      "effects_text": "饱食+12，心情+3，好感+3，贡献+3，经验+13",
-      "effects": {
-        "satiety": 12,
-        "mood": 3,
-        "health": 0,
-        "favorability": 3,
-        "contribution": 3,
-        "experience": 13
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1786551248245,
-      "user_id": "1627293137",
-      "display_name": "LOK_",
-      "event_id": "petting",
-      "branch_id": "head_close",
-      "summary": "小若汁追着LOK_的手蹭了蹭。",
-      "effects_text": "心情+8，好感+5，贡献+4，经验+14",
-      "effects": {
-        "satiety": 0,
-        "mood": 8,
-        "health": 0,
-        "favorability": 5,
-        "contribution": 4,
-        "experience": 14
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-08-20",
+    "date": "2026-09-07",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -1785,7 +1847,10 @@
     "event:614337360": 1786552033642,
     "event:732229650": 1786605501421,
     "event:986399665": 1786692127757,
-    "event:914483642": 1787156809409
+    "event:914483642": 1787156809409,
+    "event:1089700641": 1788362702150,
+    "event:502732014": 1788506527423,
+    "event:968396511": 1788767746973
   },
   "skin_sessions": {
     "active": null
@@ -1798,14 +1863,14 @@
     "migrated_at": 1785846055612
   },
   "created_at": 1785846055612,
-  "updated_at": 1788146294417,
+  "updated_at": 1789099498017,
   "production": {
     "started_at": 1785846055612,
-    "last_settled_at": 1788146294417,
+    "last_settled_at": 1789099498017,
     "accumulated_ms": 259200000,
-    "progress": 35.709013642742725,
-    "total_produced": 160,
-    "last_collected_at": 1787156809410
+    "progress": 36.01939528210411,
+    "total_produced": 251,
+    "last_collected_at": 1788767746974
   },
   "travel": {
     "unlocked_location_ids": [
@@ -4488,12 +4553,19 @@
     }
   },
   "gacha": {
-    "since_four_plus": 7,
-    "since_five": 47,
-    "total_draws": 190,
-    "total_four": 22,
-    "total_five": 4,
+    "since_four_plus": 0,
+    "since_five": 23,
+    "total_draws": 233,
+    "total_four": 29,
+    "total_five": 5,
     "five_history": [
+      {
+        "time": 1788506627482,
+        "skin_id": "qiqiu_turtle",
+        "skin_name": "七丘小若汁",
+        "pulls": 67,
+        "draw_index": 210
+      },
       {
         "time": 1786415782748,
         "skin_id": "roast_chicken_turtle",
@@ -4523,7 +4595,7 @@
         "draw_index": 12
       }
     ],
-    "route_misses": 0,
+    "route_misses": 1,
     "route_skin_id": "prison_turtle"
   }
 }

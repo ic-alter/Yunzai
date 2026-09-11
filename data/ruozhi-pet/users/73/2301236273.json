@@ -3,12 +3,12 @@
   "user_id": "2301236273",
   "pet": {
     "level": 1,
-    "experience": 7,
+    "experience": 9,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1788146294597,
+    "satiety_decay_at": 1789099498236,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -139,6 +139,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rain_only_store": {
+        "id": "ach_rain_only_store",
+        "name": "发现只在雨中营业的便利店",
+        "rarity": 3,
+        "time": 1788164224521,
+        "actor_name": "珊瑚宫榑芙（___）",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -213,9 +228,9 @@
         "time": 1785382158392
       }
     ],
-    "weight": 17,
-    "weight_decay_at": 1788136329900,
-    "health_decay_at": 1788146294597,
+    "weight": 0,
+    "weight_decay_at": 1789086729900,
+    "health_decay_at": 1789099498236,
     "five_skin_shadow_counts": {
       "ruozhilai_turtle": 0
     }
@@ -226,21 +241,34 @@
     "total_contribution": 0,
     "last_display_name": "珊瑚宫榑芙（___）",
     "first_joined_at": 1785382158392,
-    "last_active_at": 1788146294597,
+    "last_active_at": 1789099498236,
     "daily": {
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "currency": {
-      "balance": 3722,
-      "total_earned": 3722,
+      "balance": 4589,
+      "total_earned": 4589,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1788164224518,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 867,
+          "before": 3722,
+          "after": 4589,
+          "meta": {
+            "travel_id": "mtgwy9ez-yfdjlhon",
+            "location_id": "rain_only_store",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1786080095480,
           "type": "income",
@@ -305,10 +333,35 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 5,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1788164224521,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rain_only_store"
+        }
+      },
+      {
+        "time": 1788164224518,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mtgwy9ez-yfdjlhon",
+          "location_id": "rain_only_store"
+        }
+      },
       {
         "time": 1787540289861,
         "type": "expense",
@@ -472,10 +525,10 @@
     "migrated_at": 1785382158392
   },
   "created_at": 1785382158392,
-  "updated_at": 1788146294597,
+  "updated_at": 1789099498237,
   "production": {
     "started_at": 1785382158392,
-    "last_settled_at": 1788146294597,
+    "last_settled_at": 1789099498236,
     "accumulated_ms": 259200000,
     "progress": 30.02668074701316,
     "total_produced": 0
@@ -501,7 +554,8 @@
   "travel": {
     "unlocked_location_ids": [
       "wan_chun_valley",
-      "yellow_underpass"
+      "yellow_underpass",
+      "rain_only_store"
     ],
     "location_records": {
       "wan_chun_valley": {
@@ -518,6 +572,14 @@
         "name": "暖黄色地下通道",
         "travel_id": "msibns9j-tqpgk85m",
         "time": 1786080095481,
+        "carried_item_id": ""
+      },
+      "rain_only_store": {
+        "id": "rain_only_store",
+        "map_id": "unregistered_district",
+        "name": "只在雨中营业的便利店",
+        "travel_id": "mtgwy9ez-yfdjlhon",
+        "time": 1788164224518,
         "carried_item_id": ""
       }
     },
@@ -589,6 +651,21 @@
         "name": "地图上不存在的地点",
         "rarity": 3,
         "time": 1786080095482,
+        "actor_name": "珊瑚宫榑芙（___）",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rain_only_store": {
+        "id": "ach_rain_only_store",
+        "name": "发现只在雨中营业的便利店",
+        "rarity": 3,
+        "time": 1788164224521,
         "actor_name": "珊瑚宫榑芙（___）",
         "rewards": [
           {
@@ -744,9 +821,73 @@
         "settled_at": 1786080095482,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：2小时57分钟\n获得：2945若汁币，若汁之缘×5，经验+6\n新地点已解锁：暖黄色地下通道\n达成旅行成就「发现暖黄色地下通道」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★"
+      },
+      "mtgwy9ez-yfdjlhon": {
+        "id": "mtgwy9ez-yfdjlhon",
+        "user_id": "2301236273",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "珊瑚宫榑芙（___）",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "rain_only_store",
+        "location_name": "只在雨中营业的便利店",
+        "duration_ms": 3121609,
+        "rewards": {
+          "coin": 867,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "只在雨中营业的便利店",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_rain_only_store",
+            "name": "发现只在雨中营业的便利店",
+            "rarity": 3,
+            "time": 1788164224521,
+            "actor_name": "珊瑚宫榑芙（___）",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现只在雨中营业的便利店」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788164224528,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：52分钟\n获得：867若汁币，若汁之缘×2，经验+2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtgwy9ez-yfdjlhon",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "2301236273",
+        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：52分钟\n获得：867若汁币，若汁之缘×2，经验+2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788164224528,
+        "created_at": 1788164224528,
+        "sent_at": 1788164225015,
+        "last_error": ""
+      },
       {
         "travel_id": "msibns9j-tqpgk85m",
         "group_id": "1025424898",
@@ -775,13 +916,18 @@
       }
     ],
     "stats": {
-      "total_trips": 2,
+      "total_trips": 3,
       "key_item_discoveries": {},
       "map_location_counts": {
         "retro_tomorrow_city": 0,
         "eldoran_continent": 0,
-        "unregistered_district": 1,
-        "four_regions_little_world": 1
+        "unregistered_district": 2,
+        "four_regions_little_world": 1,
+        "candy_dreamland": 0,
+        "alvita": 0,
+        "galovian": 0,
+        "starnet": 0,
+        "severin": 0
       },
       "map_event_ids": {},
       "event_ids": {},

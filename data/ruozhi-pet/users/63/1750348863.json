@@ -3,12 +3,12 @@
   "user_id": "1750348863",
   "pet": {
     "level": 10,
-    "experience": 18,
-    "satiety": 30,
+    "experience": 23,
+    "satiety": 5,
     "mood": 100,
     "health": 100,
     "current_skin_id": "shidai_turtle",
-    "satiety_decay_at": 1788145630916,
+    "satiety_decay_at": 1789099498187,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -1136,6 +1136,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_empty_amusement_park": {
+        "id": "ach_empty_amusement_park",
+        "name": "发现无人营业的儿童乐园",
+        "rarity": 3,
+        "time": 1788155472405,
+        "actor_name": "海之低语",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1485,30 +1500,28 @@
       "radical_foresight_turtle": 0,
       "snow_peak_turtle": 1
     },
-    "weight": 34,
-    "weight_decay_at": 1788146294547,
-    "health_decay_at": 1788146294547
+    "weight": 13,
+    "weight_decay_at": 1789062672962,
+    "health_decay_at": 1789099498187
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 13,
+    "weekly_contribution": 0,
     "total_contribution": 285,
     "last_display_name": "海之低语",
     "first_joined_at": 1784810523484,
-    "last_active_at": 1788146294547,
+    "last_active_at": 1789099498187,
     "daily": {
-      "date": "2026-08-31",
-      "event_count": 3,
-      "same_event_counts": {
-        "feed": 3
-      },
+      "date": "2026-09-11",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "items": {
-      "ruozhi_fate": 152,
+      "ruozhi_fate": 160,
       "nameless_ruozhi": 2,
       "souvenir_atomic_child_sunglasses": 1,
       "souvenir_border_quest_scroll": 2,
@@ -1540,9 +1553,49 @@
       "souvenir_returning_sword": 1,
       "souvenir_sword_tomb_fragment": 1,
       "souvenir_yesterday_calendar": 1,
-      "food_donut": 0
+      "food_donut": 0,
+      "food_eighth_day_pudding": 2
     },
     "item_ledger": [
+      {
+        "time": 1788155472405,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 157,
+        "after": 160,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_empty_amusement_park"
+        }
+      },
+      {
+        "time": 1788155472403,
+        "type": "income",
+        "item_id": "food_eighth_day_pudding",
+        "amount": 2,
+        "before": 0,
+        "after": 2,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "mtgnqpph-erv61fm1",
+          "event_id": "event_height_exactly_right",
+          "location_id": "empty_amusement_park"
+        }
+      },
+      {
+        "time": 1788155472389,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 5,
+        "before": 152,
+        "after": 157,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mtgnqpph-erv61fm1",
+          "location_id": "empty_amusement_park"
+        }
+      },
       {
         "time": 1788142683278,
         "type": "income",
@@ -1755,44 +1808,6 @@
         "meta": {
           "accumulated_hours": 42.291
         }
-      },
-      {
-        "time": 1787565857756,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 33,
-        "after": 34,
-        "reason": "travel_encounter_reward",
-        "meta": {
-          "encounter_id": "encounter-mt6yb034-8js233f5",
-          "partner_user_id": "3048898698"
-        }
-      },
-      {
-        "time": 1787565857756,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 29,
-        "after": 33,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt6xfzi0-mxuhob82",
-          "location_id": "cloud_sword_tomb"
-        }
-      },
-      {
-        "time": 1787557341538,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 59,
-        "after": 29,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
       }
     ],
     "item_daily": {
@@ -1813,10 +1828,23 @@
       }
     },
     "currency": {
-      "balance": 303784,
-      "total_earned": 307784,
+      "balance": 306790,
+      "total_earned": 310790,
       "total_spent": 4000,
       "ledger": [
+        {
+          "time": 1788155472389,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 3006,
+          "before": 303784,
+          "after": 306790,
+          "meta": {
+            "travel_id": "mtgnqpph-erv61fm1",
+            "location_id": "empty_amusement_park",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1788142683271,
           "type": "income",
@@ -1925,17 +1953,6 @@
             "travel_id": "mtbiziqy-co8fgg2s",
             "location_id": "rtc_flyover",
             "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787835289231,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 292741,
-          "after": 293241,
-          "meta": {
-            "date": "2026-08-27"
           }
         }
       ],
@@ -2342,12 +2359,12 @@
     "migrated_at": 1784810523484
   },
   "created_at": 1784810523484,
-  "updated_at": 1788146294547,
+  "updated_at": 1789099498187,
   "production": {
     "started_at": 1785141760273,
-    "last_settled_at": 1788146294547,
-    "accumulated_ms": 11843363,
-    "progress": 2.743534543999054,
+    "last_settled_at": 1789099498187,
+    "accumulated_ms": 259200000,
+    "progress": 38.01315000003069,
     "total_produced": 387,
     "last_collected_at": 1788134451184
   },
@@ -2396,7 +2413,8 @@
       "school_gate_1743",
       "automated_logistics_port",
       "ocean_amusement_park",
-      "faceless_zone"
+      "faceless_zone",
+      "empty_amusement_park"
     ],
     "location_records": {
       "rtc_atomic_mall": {
@@ -2750,6 +2768,14 @@
         "travel_id": "mtgh376j-yrc3jqn0",
         "time": 1788142683270,
         "carried_item_id": ""
+      },
+      "empty_amusement_park": {
+        "id": "empty_amusement_park",
+        "map_id": "unregistered_district",
+        "name": "无人营业的儿童乐园",
+        "travel_id": "mtgnqpph-erv61fm1",
+        "time": 1788155472389,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -2990,6 +3016,13 @@
         "location_id": "ocean_amusement_park",
         "travel_id": "mtcbqdn6-m5k2fgme",
         "time": 1787885733214
+      },
+      "event_height_exactly_right": {
+        "id": "event_height_exactly_right",
+        "map_id": "unregistered_district",
+        "location_id": "empty_amusement_park",
+        "travel_id": "mtgnqpph-erv61fm1",
+        "time": 1788155472390
       }
     },
     "souvenir_records": {
@@ -4046,9 +4079,112 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_empty_amusement_park": {
+        "id": "ach_empty_amusement_park",
+        "name": "发现无人营业的儿童乐园",
+        "rarity": 3,
+        "time": 1788155472405,
+        "actor_name": "海之低语",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mtgnqpph-erv61fm1": {
+        "id": "mtgnqpph-erv61fm1",
+        "user_id": "1750348863",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "海之低语",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "empty_amusement_park",
+        "location_name": "无人营业的儿童乐园",
+        "duration_ms": 9838150,
+        "rewards": {
+          "coin": 3006,
+          "fate": 5,
+          "experience": 5
+        },
+        "event": {
+          "id": "event_height_exactly_right",
+          "name": "身高刚刚好",
+          "kind": "",
+          "text": "检票尺无论怎样移动，都正好停在小若汁头顶。扬声器建议它不要继续长大。",
+          "effects": {
+            "coin_percent": 10
+          },
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_eighth_day_pudding",
+              "amount": 2
+            }
+          ],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_eighth_day_pudding",
+            "name": "星期八布丁",
+            "emoji": "🍮",
+            "description": "未登记城区的奇怪甜品。",
+            "food": {
+              "satiety": 11,
+              "mood": 5,
+              "weight_gain": 4
+            },
+            "amount": 2
+          }
+        ],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "无人营业的儿童乐园",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_empty_amusement_park",
+            "name": "发现无人营业的儿童乐园",
+            "rarity": 3,
+            "time": 1788155472405,
+            "actor_name": "海之低语",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现无人营业的儿童乐园」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788155472420,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：无人营业的儿童乐园（未登记城区）\n旅行时间：2小时44分钟\n获得：3006若汁币，若汁之缘×5，经验+5\n旅行事件：身高刚刚好\n检票尺无论怎样移动，都正好停在小若汁头顶。扬声器建议它不要继续长大。\n食物：🍮星期八布丁×2\n新地点已解锁：无人营业的儿童乐园\n达成旅行成就「发现无人营业的儿童乐园」 ★★★"
+      },
       "mtgh376j-yrc3jqn0": {
         "id": "mtgh376j-yrc3jqn0",
         "user_id": "1750348863",
@@ -5279,127 +5415,22 @@
         "settled_at": 1787160188028,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：1小时23分钟\n获得：1390若汁币，若汁之缘×3，经验+3\n小若汁偶遇了库洛4000+的小若汁，它们望着云海讨论御剑飞行，最后决定龟壳还是更适合贴着地面赶路。\n偶遇奖励：459若汁币\n旅行事件：剑冢来信\n锈蚀断剑请小若汁把它带回剑冢。\n纪念品：⚔️归冢断剑×1\n新地点已解锁：玄剑宗\n达成旅行成就「发现玄剑宗」 ★★★"
-      },
-      "mt00ps0i-hgcn9n73": {
-        "id": "mt00ps0i-hgcn9n73",
-        "user_id": "1750348863",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "海之低语",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "rain_only_store",
-        "location_name": "只在雨中营业的便利店",
-        "duration_ms": 8152382,
-        "rewards": {
-          "coin": 2265,
-          "fate": 5,
-          "experience": 5
-        },
-        "event": {
-          "id": "event_change_is_rain",
-          "name": "找零是一场小雨",
-          "text": "收银机没有吐出硬币，而是在小若汁头顶下了三秒钟的雨。",
-          "effects": {
-            "fate_flat": 1
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_rain_button",
-              "name": "雨做的纽扣",
-              "emoji": "🔘",
-              "description": "握住后附近声音会变得很远。"
-            }
-          ],
-          "items": [
-            {
-              "id": "food_milk_tea",
-              "amount": 2
-            }
-          ],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-mt01yxqz-4ngq8nz1",
-          "time": 1787141607515,
-          "map_id": "unregistered_district",
-          "map_name": "未登记城区",
-          "entry_id": "shared_leaf",
-          "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
-          "reward": {
-            "id": "coin_extra_large",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 300,
-            "max_amount": 400,
-            "amount": 392,
-            "reward_text": "392若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "272950224",
-          "partner_display_name": "北游的主人",
-          "reward_text": "392若汁币"
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_rain_button",
-            "name": "雨做的纽扣",
-            "emoji": "🔘",
-            "description": "握住后附近声音会变得很远。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [
-          {
-            "tags": [
-              "food"
-            ],
-            "id": "food_milk_tea",
-            "name": "珍珠奶茶",
-            "emoji": "🧋",
-            "description": "甜甜的常规饮品。",
-            "usage": "投喂时优先使用，恢复饱食度。",
-            "food": {
-              "common": true,
-              "satiety": 9,
-              "mood": 4,
-              "weight_gain": 4
-            },
-            "amount": 2
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "只在雨中营业的便利店",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_rain_only_store",
-            "name": "发现只在雨中营业的便利店",
-            "rarity": 3,
-            "time": 1787147652974,
-            "actor_name": "海之低语",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现只在雨中营业的便利店」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787147652979,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时16分钟\n获得：2265若汁币，若汁之缘×5，经验+5\n小若汁偶遇了北游的主人的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：392若汁币\n旅行事件：找零是一场小雨\n收银机没有吐出硬币，而是在小若汁头顶下了三秒钟的雨。\n食物：🧋珍珠奶茶×2\n纪念品：🔘雨做的纽扣×1\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtgnqpph-erv61fm1",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "1750348863",
+        "report": "小若汁回来了！\n目的地：无人营业的儿童乐园（未登记城区）\n旅行时间：2小时44分钟\n获得：3006若汁币，若汁之缘×5，经验+5\n旅行事件：身高刚刚好\n检票尺无论怎样移动，都正好停在小若汁头顶。扬声器建议它不要继续长大。\n食物：🍮星期八布丁×2\n新地点已解锁：无人营业的儿童乐园\n达成旅行成就「发现无人营业的儿童乐园」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788155472420,
+        "created_at": 1788155472420,
+        "sent_at": 1788155472962,
+        "last_error": ""
+      },
       {
         "travel_id": "mtgh376j-yrc3jqn0",
         "group_id": "1025424898",
@@ -5646,23 +5677,10 @@
         "created_at": 1787160188028,
         "sent_at": 1787160188474,
         "last_error": ""
-      },
-      {
-        "travel_id": "mt00ps0i-hgcn9n73",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "1750348863",
-        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：2小时16分钟\n获得：2265若汁币，若汁之缘×5，经验+5\n小若汁偶遇了北游的主人的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：392若汁币\n旅行事件：找零是一场小雨\n收银机没有吐出硬币，而是在小若汁头顶下了三秒钟的雨。\n食物：🧋珍珠奶茶×2\n纪念品：🔘雨做的纽扣×1\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1787147652980,
-        "created_at": 1787147652980,
-        "sent_at": 1787147653496,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 77,
+      "total_trips": 78,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -5683,7 +5701,7 @@
       "map_location_counts": {
         "retro_tomorrow_city": 13,
         "eldoran_continent": 7,
-        "unregistered_district": 5,
+        "unregistered_district": 6,
         "four_regions_little_world": 7,
         "candy_dreamland": 4,
         "alvita": 5,
@@ -5730,7 +5748,8 @@
           "event_kids_meal_memory": 1,
           "event_change_is_rain": 1,
           "event_exit_to_yesterday": 1,
-          "event_dont_look_playground": 1
+          "event_dont_look_playground": 1,
+          "event_height_exactly_right": 1
         },
         "alvita": {
           "royal_garden_robot": 1,
@@ -5773,7 +5792,8 @@
         "event_dont_look_playground": 1,
         "robot_maintenance_delay": 1,
         "cotton_sugar_path": 1,
-        "dynamic_ticket_price": 1
+        "dynamic_ticket_price": 1,
+        "event_height_exactly_right": 1
       },
       "encounter_reward_types": {
         "currency": 1,
@@ -5783,49 +5803,7 @@
       },
       "total_encounters": 16
     },
-    "active": {
-      "id": "mtgnqpph-erv61fm1",
-      "user_id": "1750348863",
-      "display_name": "海之低语",
-      "group_id": "1025424898",
-      "self_id": "3874871823",
-      "started_at": 1788145634213,
-      "ends_at": 1788155472363,
-      "duration_ms": 9838150,
-      "map_id": "unregistered_district",
-      "map_name": "未登记城区",
-      "location_id": "empty_amusement_park",
-      "location_name": "无人营业的儿童乐园",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "event_height_exactly_right",
-        "name": "身高刚刚好",
-        "kind": "",
-        "text": "检票尺无论怎样移动，都正好停在小若汁头顶。扬声器建议它不要继续长大。",
-        "effects": {
-          "coin_percent": 10
-        },
-        "souvenirs": [],
-        "items": [
-          {
-            "id": "food_eighth_day_pudding",
-            "amount": 2
-          }
-        ],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 3006,
-        "fate": 5,
-        "experience": 5
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-mswhtegt-hd195uee": {

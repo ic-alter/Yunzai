@@ -8,18 +8,45 @@
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1788146294647,
+    "satiety_decay_at": 1789099498292,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "diamond_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "counter:gacha_draws": 1,
+      "counter:gacha_five": 0
+    },
+    "achievement_records": {
+      "gacha_draw_1": {
+        "id": "gacha_draw_1",
+        "name": "初次相遇",
+        "rarity": 2,
+        "time": 1788261746981,
+        "actor_name": "杀猪王子",
+        "stat_key": "counter:gacha_draws",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "diamond_turtle",
+        "reason": "gacha",
+        "time": 1788261746980
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -46,25 +73,26 @@
         "time": 1786783024246
       }
     ],
-    "weight": 21,
-    "weight_decay_at": 1788105885974,
-    "health_decay_at": 1788146294647
+    "weight": 0,
+    "weight_decay_at": 1789099485974,
+    "health_decay_at": 1789099498292,
+    "five_skin_shadow_counts": {}
   },
   "profile": {
     "favorability": 0,
     "weekly_contribution": 0,
     "total_contribution": 0,
-    "last_display_name": "最后的魔猪勇者（安卓）100,136,445,329",
+    "last_display_name": "杀猪王子",
     "first_joined_at": 1786783024246,
-    "last_active_at": 1788146294647,
+    "last_active_at": 1789099498292,
     "daily": {
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "currency": {
       "balance": 752,
@@ -128,6 +156,30 @@
     },
     "item_ledger": [
       {
+        "time": 1788261746981,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 1,
+        "after": 4,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_draw_1"
+        }
+      },
+      {
+        "time": 1788261746980,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 4,
+        "after": 1,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 1
+        }
+      },
+      {
         "time": 1786783571301,
         "type": "income",
         "item_id": "ruozhi_fate",
@@ -177,10 +229,10 @@
     "migrated_at": 1786783024246
   },
   "created_at": 1786783024246,
-  "updated_at": 1788146294647,
+  "updated_at": 1789099498292,
   "production": {
     "started_at": 1786783024246,
-    "last_settled_at": 1788146294647,
+    "last_settled_at": 1789099498292,
     "accumulated_ms": 259200000,
     "progress": 30.026680747013163,
     "total_produced": 0
@@ -212,5 +264,15 @@
         "cooldowns": {}
       }
     }
+  },
+  "gacha": {
+    "since_four_plus": 0,
+    "since_five": 1,
+    "total_draws": 1,
+    "total_four": 1,
+    "total_five": 0,
+    "five_history": [],
+    "route_misses": 0,
+    "route_skin_id": ""
   }
 }

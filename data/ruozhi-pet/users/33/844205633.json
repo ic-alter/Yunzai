@@ -3,12 +3,12 @@
   "user_id": "844205633",
   "pet": {
     "level": 2,
-    "experience": 57,
+    "experience": 58,
     "satiety": 5,
     "mood": 66,
     "health": 80,
     "current_skin_id": "yaya_turtle",
-    "satiety_decay_at": 1788146294385,
+    "satiety_decay_at": 1789099497983,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -717,6 +717,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_university_city": {
+        "id": "ach_university_city",
+        "name": "发现大学城",
+        "rarity": 3,
+        "time": 1788604997468,
+        "actor_name": "鸣式·「椰和滑」",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -1002,9 +1017,9 @@
       "maodie_turtle": 0,
       "yaya_turtle": 0
     },
-    "weight": 17,
-    "weight_decay_at": 1788136329688,
-    "health_decay_at": 1788146294385
+    "weight": 0,
+    "weight_decay_at": 1789086729688,
+    "health_decay_at": 1789099497983
   },
   "profile": {
     "favorability": 0,
@@ -1012,21 +1027,34 @@
     "total_contribution": 0,
     "last_display_name": "鸣式·「椰和滑」",
     "first_joined_at": 1784803173103,
-    "last_active_at": 1788146294385,
+    "last_active_at": 1789099497983,
     "daily": {
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "currency": {
-      "balance": 66887,
-      "total_earned": 146887,
+      "balance": 67387,
+      "total_earned": 147387,
       "total_spent": 80000,
       "ledger": [
+        {
+          "time": 1788604997462,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 500,
+          "before": 66887,
+          "after": 67387,
+          "meta": {
+            "travel_id": "mto8bws7-ic70q3ft",
+            "location_id": "university_city",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787238896214,
           "type": "income",
@@ -1140,18 +1168,6 @@
             "skin_id": "crown_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787019542709,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 56553,
-          "after": 56853,
-          "meta": {
-            "skin_id": "wide_eyed_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1163,7 +1179,7 @@
       "first_interaction_reward_date": ""
     },
     "items": {
-      "ruozhi_fate": 38,
+      "ruozhi_fate": 42,
       "nameless_ruozhi": 0,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
@@ -1187,6 +1203,31 @@
       "food_bread": 2
     },
     "item_ledger": [
+      {
+        "time": 1788604997468,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 39,
+        "after": 42,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_university_city"
+        }
+      },
+      {
+        "time": 1788604997462,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 1,
+        "before": 38,
+        "after": 39,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mto8bws7-ic70q3ft",
+          "location_id": "university_city"
+        }
+      },
       {
         "time": 1787238896215,
         "type": "income",
@@ -1418,31 +1459,6 @@
           "event_id": "eld_event_heavy_spoon",
           "location_id": "eld_dwarf_city"
         }
-      },
-      {
-        "time": 1787028768641,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 5,
-        "before": 0,
-        "after": 5,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msy1a8jr-vds3088z",
-          "location_id": "eld_dwarf_city"
-        }
-      },
-      {
-        "time": 1787019542709,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 9,
-        "before": 9,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 3
-        }
       }
     ],
     "item_daily": {
@@ -1479,7 +1495,7 @@
     "migrated_at": 1784803173103
   },
   "created_at": 1784803173103,
-  "updated_at": 1788146294385,
+  "updated_at": 1789099497983,
   "gacha": {
     "since_four_plus": 7,
     "since_five": 23,
@@ -1514,7 +1530,7 @@
   },
   "production": {
     "started_at": 1784876695884,
-    "last_settled_at": 1788146294385,
+    "last_settled_at": 1789099497983,
     "accumulated_ms": 259200000,
     "progress": 28.548758587470452,
     "total_produced": 0
@@ -1548,7 +1564,8 @@
       "rtc_capsule_homes",
       "empty_amusement_park",
       "exotic_pet_house",
-      "rtc_galaxy_motel"
+      "rtc_galaxy_motel",
+      "university_city"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1773,6 +1790,14 @@
         "name": "银河汽车旅馆",
         "travel_id": "mt1mk0ka-44hey4ot",
         "time": 1787238896214,
+        "carried_item_id": ""
+      },
+      "university_city": {
+        "id": "university_city",
+        "map_id": "alvita",
+        "name": "大学城",
+        "travel_id": "mto8bws7-ic70q3ft",
+        "time": 1788604997463,
         "carried_item_id": ""
       }
     },
@@ -2640,9 +2665,75 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_university_city": {
+        "id": "ach_university_city",
+        "name": "发现大学城",
+        "rarity": 3,
+        "time": 1788604997468,
+        "actor_name": "鸣式·「椰和滑」",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mto8bws7-ic70q3ft": {
+        "id": "mto8bws7-ic70q3ft",
+        "user_id": "844205633",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "鸣式·「椰和滑」",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "university_city",
+        "location_name": "大学城",
+        "duration_ms": 1518728,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "大学城",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_university_city",
+            "name": "发现大学城",
+            "rarity": 3,
+            "time": 1788604997468,
+            "actor_name": "鸣式·「椰和滑」",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现大学城」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788604997478,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：大学城（阿尔维塔）\n旅行时间：25分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：大学城\n达成旅行成就「发现大学城」 ★★★"
+      },
       "mt1mk0ka-44hey4ot": {
         "id": "mt1mk0ka-44hey4ot",
         "user_id": "844205633",
@@ -3781,57 +3872,22 @@
         "settled_at": 1786384997307,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时29分钟\n获得：1490若汁币，若汁之缘×3，经验+3\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n纪念品：🔔不响的月铃×1"
-      },
-      "msn22r4c-lv8pdd48": {
-        "id": "msn22r4c-lv8pdd48",
-        "user_id": "844205633",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "散樗",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "qing_he_town",
-        "location_name": "青禾镇",
-        "duration_ms": 9101001,
-        "rewards": {
-          "coin": 2528,
-          "fate": 5,
-          "experience": 5
-        },
-        "event": null,
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "青禾镇",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_qing_he_town",
-            "name": "发现青禾镇",
-            "rarity": 3,
-            "time": 1786364826278,
-            "actor_name": "散樗",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现青禾镇」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786364826279,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时32分钟\n获得：2528若汁币，若汁之缘×5，经验+5\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mto8bws7-ic70q3ft",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "844205633",
+        "report": "小若汁回来了！\n目的地：大学城（阿尔维塔）\n旅行时间：25分钟\n获得：500若汁币，若汁之缘×1，经验+1\n新地点已解锁：大学城\n达成旅行成就「发现大学城」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788604997479,
+        "created_at": 1788604997479,
+        "sent_at": 1788604997794,
+        "last_error": ""
+      },
       {
         "travel_id": "mt1mk0ka-44hey4ot",
         "group_id": "415462812",
@@ -4078,23 +4134,10 @@
         "created_at": 1786384997307,
         "sent_at": 1786384997771,
         "last_error": ""
-      },
-      {
-        "travel_id": "msn22r4c-lv8pdd48",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "844205633",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：2小时32分钟\n获得：2528若汁币，若汁之缘×5，经验+5\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786364826279,
-        "created_at": 1786364826279,
-        "sent_at": 1786364826758,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 43,
+      "total_trips": 44,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -4113,8 +4156,10 @@
         "unregistered_district": 6,
         "four_regions_little_world": 1,
         "candy_dreamland": 0,
-        "alvita": 0,
-        "galovian": 1
+        "alvita": 1,
+        "galovian": 1,
+        "starnet": 0,
+        "severin": 0
       },
       "map_event_ids": {
         "eldoran_continent": {

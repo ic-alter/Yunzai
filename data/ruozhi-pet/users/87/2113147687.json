@@ -3,12 +3,12 @@
   "user_id": "2113147687",
   "pet": {
     "level": 2,
-    "experience": 0,
+    "experience": 4,
     "satiety": 5,
     "mood": 88,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1788146294625,
+    "satiety_decay_at": 1789099498267,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -508,6 +508,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_exotic_pet_house": {
+        "id": "ach_exotic_pet_house",
+        "name": "发现珍宠阁",
+        "rarity": 3,
+        "time": 1788553101856,
+        "actor_name": "【IGN】《鸣潮》共鸣者「心」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -728,9 +743,9 @@
         "time": 1784793808338
       }
     ],
-    "weight": 18,
-    "weight_decay_at": 1788113627271,
-    "health_decay_at": 1788146294625,
+    "weight": 0,
+    "weight_decay_at": 1789064027271,
+    "health_decay_at": 1789099498267,
     "five_skin_shadow_counts": {
       "roast_chicken_turtle": 0
     }
@@ -739,23 +754,36 @@
     "favorability": 5,
     "weekly_contribution": 0,
     "total_contribution": 5,
-    "last_display_name": "米哈游的锋刃",
+    "last_display_name": "【IGN】《鸣潮》共鸣者「心」演示",
     "first_joined_at": 1784793808338,
-    "last_active_at": 1788146294625,
+    "last_active_at": 1789099498267,
     "daily": {
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "currency": {
-      "balance": 22335,
-      "total_earned": 52335,
+      "balance": 24045,
+      "total_earned": 54045,
       "total_spent": 30000,
       "ledger": [
+        {
+          "time": 1788553101843,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1710,
+          "before": 22335,
+          "after": 24045,
+          "meta": {
+            "travel_id": "mtnao6uk-z6g0fvoo",
+            "location_id": "exotic_pet_house",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1787588322375,
           "type": "income",
@@ -865,18 +893,6 @@
             "skin_id": "frog_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787195629016,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 15544,
-          "after": 15844,
-          "meta": {
-            "skin_id": "cheese_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -888,7 +904,7 @@
       "first_interaction_reward_date": "2026-08-18"
     },
     "items": {
-      "ruozhi_fate": 32,
+      "ruozhi_fate": 38,
       "nameless_ruozhi": 0,
       "souvenir_wheat_noodle": 1,
       "souvenir_water_sword_tassel": 1,
@@ -908,6 +924,31 @@
       "food_bread": 2
     },
     "item_ledger": [
+      {
+        "time": 1788553101855,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 35,
+        "after": 38,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_exotic_pet_house"
+        }
+      },
+      {
+        "time": 1788553101843,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 32,
+        "after": 35,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mtnao6uk-z6g0fvoo",
+          "location_id": "exotic_pet_house"
+        }
+      },
       {
         "time": 1787834024642,
         "type": "income",
@@ -1130,30 +1171,6 @@
         "meta": {
           "cost": 2000
         }
-      },
-      {
-        "time": 1787195572173,
-        "type": "income",
-        "item_id": "travel_suitcase",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 2000
-        }
-      },
-      {
-        "time": 1787195563232,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 85,
-        "after": 88,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_white_fog_houses"
-        }
       }
     ],
     "item_daily": {
@@ -1243,7 +1260,7 @@
     "migrated_at": 1784793808338
   },
   "created_at": 1784793808338,
-  "updated_at": 1788146294625,
+  "updated_at": 1789099498267,
   "gacha": {
     "since_four_plus": 0,
     "since_five": 40,
@@ -1264,7 +1281,7 @@
   },
   "production": {
     "started_at": 1784876695881,
-    "last_settled_at": 1788146294625,
+    "last_settled_at": 1789099498267,
     "accumulated_ms": 259200000,
     "progress": 34.35520786027057,
     "total_produced": 59,
@@ -1290,7 +1307,8 @@
       "white_fog_houses",
       "blue_corridor_hotel",
       "gravity_well",
-      "floating_island_factory"
+      "floating_island_factory",
+      "exotic_pet_house"
     ],
     "location_records": {
       "rain_only_store": {
@@ -1443,6 +1461,14 @@
         "name": "浮岛制造厂",
         "travel_id": "mt4bsdlg-ye8v0s20",
         "time": 1787409890235,
+        "carried_item_id": ""
+      },
+      "exotic_pet_house": {
+        "id": "exotic_pet_house",
+        "map_id": "galovian",
+        "name": "珍宠阁",
+        "travel_id": "mtnao6uk-z6g0fvoo",
+        "time": 1788553101844,
         "carried_item_id": ""
       }
     },
@@ -1984,150 +2010,55 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_exotic_pet_house": {
+        "id": "ach_exotic_pet_house",
+        "name": "发现珍宠阁",
+        "rarity": 3,
+        "time": 1788553101856,
+        "actor_name": "【IGN】《鸣潮》共鸣者「心」演示",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
-      "msq45oum-0jquog6g": {
-        "id": "msq45oum-0jquog6g",
+      "mtnao6uk-z6g0fvoo": {
+        "id": "mtnao6uk-z6g0fvoo",
         "user_id": "2113147687",
         "group_id": "415462812",
         "self_id": "3762153943",
-        "display_name": "兔女郎服务部",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "rain_only_store",
-        "location_name": "只在雨中营业的便利店",
-        "duration_ms": 3975009,
+        "display_name": "【IGN】《鸣潮》共鸣者「心」演示",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "exotic_pet_house",
+        "location_name": "珍宠阁",
+        "duration_ms": 6157127,
         "rewards": {
-          "coin": 1104,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": {
-          "id": "event_second_ruozhi_monitor",
-          "name": "监控里的第二只小若汁",
-          "text": "屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。",
-          "effects": {
-            "mood": -2
-          },
-          "souvenirs": [],
-          "record": false
-        },
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "只在雨中营业的便利店",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_rain_only_store",
-            "name": "发现只在雨中营业的便利店",
-            "rarity": 3,
-            "time": 1786544595063,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现只在雨中营业的便利店」 ★★★"
-          },
-          {
-            "id": "ach_first_unregistered_place",
-            "name": "地图上不存在的地点",
-            "rarity": 3,
-            "time": 1786544595063,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「地图上不存在的地点」 ★★★"
-          },
-          {
-            "id": "ach_map_first_discovery",
-            "name": "小若汁出门了",
-            "rarity": 3,
-            "time": 1786544595063,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「小若汁出门了」 ★★★"
-          }
-        ],
-        "mood_change": -2,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786544595063,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：1小时6分钟\n获得：1104若汁币，若汁之缘×2，经验+2\n旅行事件：监控里的第二只小若汁\n屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★\n达成旅行成就「小若汁出门了」 ★★★"
-      },
-      "msrdan7h-kkx3l8fg": {
-        "id": "msrdan7h-kkx3l8fg",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "兔女郎服务部",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "qing_he_town",
-        "location_name": "青禾镇",
-        "duration_ms": 6207381,
-        "rewards": {
-          "coin": 1724,
+          "coin": 1710,
           "fate": 3,
-          "experience": 3
+          "experience": 4
         },
-        "event": {
-          "id": "endless_noodle",
-          "name": "不肯见底的面",
-          "text": "碗里始终剩着最后一根灵麦面。",
-          "effects": {
-            "satiety": 6
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_wheat_noodle",
-              "name": "最后一根灵麦面",
-              "emoji": "🍜",
-              "description": "旅行纪念品「最后一根灵麦面」。"
-            }
-          ],
-          "record": false
-        },
-        "souvenirs": [
-          {
-            "id": "souvenir_wheat_noodle",
-            "name": "最后一根灵麦面",
-            "emoji": "🍜",
-            "description": "旅行纪念品「最后一根灵麦面」。",
-            "amount": 1
-          }
-        ],
-        "satiety_change": 6,
-        "new_location": "青禾镇",
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "珍宠阁",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_qing_he_town",
-            "name": "发现青禾镇",
+            "id": "ach_exotic_pet_house",
+            "name": "发现珍宠阁",
             "rarity": 3,
-            "time": 1786622641318,
-            "actor_name": "兔女郎服务部",
+            "time": 1788553101856,
+            "actor_name": "【IGN】《鸣潮》共鸣者「心」演示",
             "rewards": [
               {
                 "type": "item",
@@ -2136,7 +2067,7 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现青禾镇」 ★★★"
+            "message": "达成旅行成就「发现珍宠阁」 ★★★"
           }
         ],
         "mood_change": 0,
@@ -2144,40 +2075,348 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786622641318,
+        "settled_at": 1788553101865,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时43分钟\n获得：1724若汁币，若汁之缘×3，经验+3\n旅行事件：不肯见底的面\n碗里始终剩着最后一根灵麦面。\n本次状态变化：饱食+6\n纪念品：🍜最后一根灵麦面×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
+        "report": "小若汁回来了！\n目的地：珍宠阁（迦洛维安府）\n旅行时间：1小时43分钟\n获得：1710若汁币，若汁之缘×3，经验+4\n新地点已解锁：珍宠阁\n达成旅行成就「发现珍宠阁」 ★★★"
       },
-      "mst2h0bo-4a1zvfmw": {
-        "id": "mst2h0bo-4a1zvfmw",
+      "mt4bsdlg-ye8v0s20": {
+        "id": "mt4bsdlg-ye8v0s20",
         "user_id": "2113147687",
         "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "兔女郎服务部",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "forgotten_family_restaurant",
-        "location_name": "被遗忘的家庭餐厅",
-        "duration_ms": 4822665,
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "floating_island_factory",
+        "location_name": "浮岛制造厂",
+        "duration_ms": 9927890,
         "rewards": {
-          "coin": 1340,
+          "coin": 2758,
+          "fate": 5,
+          "experience": 6
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt4bsdst-1g82fimz",
+          "time": 1787399962589,
+          "map_id": "alvita",
+          "map_name": "阿尔维塔",
+          "entry_id": "lost_direction",
+          "text": "它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。",
+          "reward": {
+            "id": "food_bread",
+            "type": "item",
+            "item_id": "food_bread",
+            "name": "松软面包",
+            "amount": 2,
+            "reward_text": "松软面包×2"
+          },
+          "status": "pending",
+          "partner_user_id": "1412874037",
+          "partner_display_name": "逝如秋霜",
+          "reward_text": "松软面包×2"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "浮岛制造厂",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_floating_island_factory",
+            "name": "发现浮岛制造厂",
+            "rarity": 3,
+            "time": 1787409890244,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现浮岛制造厂」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [
+          {
+            "level": 2,
+            "need": 100
+          }
+        ],
+        "level_reward_messages": [
+          "升级奖励：300若汁币，若汁之缘×3",
+          "达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！"
+        ],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787409890246,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：2小时45分钟\n获得：2758若汁币，若汁之缘×5，经验+6\n小若汁偶遇了逝如秋霜的小若汁，它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。\n偶遇奖励：松软面包×2\n新地点已解锁：浮岛制造厂\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现浮岛制造厂」 ★★★"
+      },
+      "mt1zdi8z-v8u4w199": {
+        "id": "mt1zdi8z-v8u4w199",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "gravity_well",
+        "location_name": "重力井",
+        "duration_ms": 5405122,
+        "rewards": {
+          "coin": 1681,
           "fate": 3,
           "experience": 3
+        },
+        "event": null,
+        "encounter": {
+          "id": "encounter-mt204snx-ld0t7315",
+          "time": 1787259453981,
+          "map_id": "alvita",
+          "map_name": "阿尔维塔",
+          "entry_id": "snack_break",
+          "text": "它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。",
+          "reward": {
+            "id": "coin_large",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 200,
+            "max_amount": 300,
+            "amount": 252,
+            "reward_text": "252若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "2818259462",
+          "partner_display_name": "不愿看到优秀ic·alter被埋没",
+          "reward_text": "252若汁币"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "重力井",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_gravity_well",
+            "name": "发现重力井",
+            "rarity": 3,
+            "time": 1787263585922,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现重力井」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787263585923,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：重力井（阿尔维塔）\n旅行时间：1小时30分钟\n获得：1681若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。\n偶遇奖励：252若汁币\n新地点已解锁：重力井\n达成旅行成就「发现重力井」 ★★★"
+      },
+      "mt0y3pw7-67hclq90": {
+        "id": "mt0y3pw7-67hclq90",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "blue_corridor_hotel",
+        "location_name": "蓝色走廊旅馆",
+        "duration_ms": 1708730,
+        "rewards": {
+          "coin": 500,
+          "fate": 1,
+          "experience": 1
+        },
+        "event": {
+          "id": "event_do_not_disturb_inside",
+          "name": "请勿打扰里面的人",
+          "text": "404号房内传出小若汁自己的声音：“我已经睡了，你先回去吧。”",
+          "effects": {
+            "mood": -2
+          },
+          "souvenirs": [],
+          "items": [
+            {
+              "id": "food_midnight_cookie",
+              "amount": 3
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_midnight_cookie",
+            "name": "午夜饼干",
+            "emoji": "🍪",
+            "description": "未登记城区总在不该营业时出现的点心。",
+            "food": {
+              "satiety": 12,
+              "mood": 5,
+              "weight_gain": 4
+            },
+            "amount": 3
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "蓝色走廊旅馆",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_blue_corridor_hotel",
+            "name": "发现蓝色走廊旅馆",
+            "rarity": 3,
+            "time": 1787195588088,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现蓝色走廊旅馆」 ★★★"
+          }
+        ],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "souvenir_strangers_spare_key",
+        "tool_name": "陌生家的备用钥匙",
+        "settled_at": 1787195588091,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：蓝色走廊旅馆（未登记城区）\n旅行时间：28分钟\n获得：500若汁币，若汁之缘×1，经验+1\n携带道具：陌生家的备用钥匙\n旅行事件：请勿打扰里面的人\n404号房内传出小若汁自己的声音：“我已经睡了，你先回去吧。”\n这段经历让小若汁有些不安，心情-2\n食物：🍪午夜饼干×3\n新地点已解锁：蓝色走廊旅馆\n达成旅行成就「发现蓝色走廊旅馆」 ★★★"
+      },
+      "mt0y3697-53zvube2": {
+        "id": "mt0y3697-53zvube2",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "white_fog_houses",
+        "location_name": "白雾住宅区",
+        "duration_ms": 6248668,
+        "rewards": {
+          "coin": 1944,
+          "fate": 5,
+          "experience": 3
+        },
+        "event": {
+          "id": "event_welcome_home",
+          "name": "欢迎回家",
+          "text": "门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”",
+          "effects": {
+            "fate_flat": 1,
+            "mood": -2
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_strangers_spare_key",
+              "name": "陌生家的备用钥匙",
+              "emoji": "🏠",
+              "travel_tool": true,
+              "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_strangers_spare_key",
+            "name": "陌生家的备用钥匙",
+            "emoji": "🏠",
+            "travel_tool": true,
+            "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "白雾住宅区",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_white_fog_houses",
+            "name": "发现白雾住宅区",
+            "rarity": 3,
+            "time": 1787195563232,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现白雾住宅区」 ★★★"
+          }
+        ],
+        "mood_change": -2,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1787195563234,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：白雾住宅区（未登记城区）\n旅行时间：1小时44分钟\n获得：1944若汁币，若汁之缘×5，经验+3\n携带道具：行李箱\n旅行事件：欢迎回家\n门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”\n这段经历让小若汁有些不安，心情-2\n纪念品：🏠陌生家的备用钥匙×1\n新地点已解锁：白雾住宅区\n达成旅行成就「发现白雾住宅区」 ★★★"
+      },
+      "mt0eemvq-3ncxnnc4": {
+        "id": "mt0eemvq-3ncxnnc4",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "hundred_arts_quarter",
+        "location_name": "百艺坊",
+        "duration_ms": 10726181,
+        "rewards": {
+          "coin": 2979,
+          "fate": 6,
+          "experience": 6
         },
         "event": null,
         "encounter": null,
         "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "被遗忘的家庭餐厅",
+        "new_location": "百艺坊",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_forgotten_family_restaurant",
-            "name": "发现被遗忘的家庭餐厅",
+            "id": "ach_hundred_arts_quarter",
+            "name": "发现百艺坊",
             "rarity": 3,
-            "time": 1786724010111,
-            "actor_name": "兔女郎服务部",
+            "time": 1787173221526,
+            "actor_name": "米哈游的锋刃",
             "rewards": [
               {
                 "type": "item",
@@ -2186,7 +2425,7 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+            "message": "达成旅行成就「发现百艺坊」 ★★★"
           }
         ],
         "mood_change": 0,
@@ -2194,43 +2433,169 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786724010112,
+        "settled_at": 1787173221527,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×3，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
+        "report": "小若汁回来了！\n目的地：百艺坊（迦洛维安府）\n旅行时间：2小时59分钟\n获得：2979若汁币，若汁之缘×6，经验+6\n新地点已解锁：百艺坊\n达成旅行成就「发现百艺坊」 ★★★"
       },
-      "msuu62nx-j4sxvyjg": {
-        "id": "msuu62nx-j4sxvyjg",
+      "mt0bfcfo-fx7cck22": {
+        "id": "mt0bfcfo-fx7cck22",
         "user_id": "2113147687",
         "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "兔女郎服务部",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_windmill_plain",
+        "location_name": "风车草原",
+        "duration_ms": 4994089,
+        "rewards": {
+          "coin": 1387,
+          "fate": 3,
+          "experience": 2
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "风车草原",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_eld_windmill_plain",
+            "name": "发现风车草原",
+            "rarity": 3,
+            "time": 1787162483697,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现风车草原」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787162483700,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时23分钟\n获得：1387若汁币，若汁之缘×3，经验+2\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★"
+      },
+      "mt0beydk-29kw7xg4": {
+        "id": "mt0beydk-29kw7xg4",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "chongwen_academy",
+        "location_name": "崇文院",
+        "duration_ms": 6392814,
+        "rewards": {
+          "coin": 1776,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "chongwen_exam_notes",
+          "name": "抄错了",
+          "text": "一个学生趴在墙角偷偷抄同窗的笔记，抄到一半才发现对方写的是阿尔维塔机械说明书。两个人对着\"接口协议\"四个字沉默了很久。",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "崇文院",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_chongwen_academy",
+            "name": "发现崇文院",
+            "rarity": 3,
+            "time": 1787157481308,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现崇文院」 ★★★"
+          },
+          {
+            "id": "galovian_first_steps",
+            "name": "初到迦洛维安",
+            "rarity": 3,
+            "time": 1787157481309,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「初到迦洛维安」 ★★★"
+          }
+        ],
+        "mood_change": 5,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787157481310,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：崇文院（迦洛维安府）\n旅行时间：1小时47分钟\n获得：1776若汁币，若汁之缘×4，经验+4\n携带道具：旅行清单\n旅行事件：抄错了\n一个学生趴在墙角偷偷抄同窗的笔记，抄到一半才发现对方写的是阿尔维塔机械说明书。两个人对着\"接口协议\"四个字沉默了很久。\n本次状态变化：心情+5\n新地点已解锁：崇文院\n达成旅行成就「发现崇文院」 ★★★\n达成旅行成就「初到迦洛维安」 ★★★"
+      },
+      "mt0be85o-t674480k": {
+        "id": "mt0be85o-t674480k",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
         "map_id": "four_regions_little_world",
         "map_name": "四州小天地",
-        "location_id": "bixi_ferry",
-        "location_name": "碧溪渡",
-        "duration_ms": 10351733,
+        "location_id": "spirit_wheat_plain",
+        "location_name": "灵麦原",
+        "duration_ms": 10035920,
         "rewards": {
-          "coin": 2875,
+          "coin": 2788,
           "fate": 6,
           "experience": 6
         },
         "event": {
-          "id": "underwater_sword",
-          "name": "河底练剑声",
-          "text": "河中倒影练着陌生剑法，远处传来剑鸣。",
+          "id": "beast_patrol",
+          "name": "百兽巡田",
+          "text": "灵兽宗仙鹤把小若汁当成罕见灵兽观察。",
           "effects": {},
           "souvenirs": [
             {
-              "id": "souvenir_water_sword_tassel",
-              "name": "水影剑穗",
-              "emoji": "🗡️",
-              "description": "旅行纪念品「水影剑穗」。"
+              "id": "souvenir_patrol_crane_feather",
+              "name": "巡田鹤羽",
+              "emoji": "🪶",
+              "description": "旅行纪念品「巡田鹤羽」。"
             }
           ],
           "items": [
             {
-              "id": "food_spirit_pill",
-              "amount": 3
+              "id": "food_mooncake_talisman",
+              "amount": 1
             }
           ],
           "record": true
@@ -2238,10 +2603,10 @@
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_water_sword_tassel",
-            "name": "水影剑穗",
-            "emoji": "🗡️",
-            "description": "旅行纪念品「水影剑穗」。",
+            "id": "souvenir_patrol_crane_feather",
+            "name": "巡田鹤羽",
+            "emoji": "🪶",
+            "description": "旅行纪念品「巡田鹤羽」。",
             "amount": 1
           }
         ],
@@ -2251,27 +2616,326 @@
               "food",
               "travel_food"
             ],
-            "id": "food_spirit_pill",
-            "name": "灵麦团子",
-            "emoji": "🍡",
-            "description": "四州小天地的灵麦小点。",
+            "id": "food_mooncake_talisman",
+            "name": "符纹月饼",
+            "emoji": "🥮",
+            "description": "四州小天地的节令点心。",
             "food": {
-              "satiety": 15,
-              "mood": 4,
-              "weight_gain": 5
+              "satiety": 16,
+              "mood": 5,
+              "weight_gain": 6
+            },
+            "amount": 1
+          }
+        ],
+        "satiety_change": 0,
+        "new_location": "灵麦原",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_spirit_wheat_plain",
+            "name": "发现灵麦原",
+            "rarity": 3,
+            "time": 1787157445843,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现灵麦原」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787157445844,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：灵麦原（四州小天地）\n旅行时间：2小时47分钟\n获得：2788若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：百兽巡田\n灵兽宗仙鹤把小若汁当成罕见灵兽观察。\n食物：🥮符纹月饼×1\n纪念品：🪶巡田鹤羽×1\n新地点已解锁：灵麦原\n达成旅行成就「发现灵麦原」 ★★★"
+      },
+      "mt0abkic-jetuvfhp": {
+        "id": "mt0abkic-jetuvfhp",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "eldoran_continent",
+        "map_name": "艾尔多兰大陆",
+        "location_id": "eld_moonbell_village",
+        "location_name": "月铃村",
+        "duration_ms": 3678526,
+        "rewards": {
+          "coin": 1022,
+          "fate": 4,
+          "experience": 2
+        },
+        "event": {
+          "id": "eld_event_moon_festival",
+          "name": "月铃祭",
+          "text": "村民让小若汁负责敲开场铃。",
+          "effects": {
+            "fate_flat": 2
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_moonbell_festival_ribbon",
+              "name": "月铃祭缎带",
+              "emoji": "🎀",
+              "description": "旅行纪念品「月铃祭缎带」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_dragon_stew",
+              "amount": 3
+            }
+          ],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_moonbell_festival_ribbon",
+            "name": "月铃祭缎带",
+            "emoji": "🎀",
+            "description": "旅行纪念品「月铃祭缎带」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_dragon_stew",
+            "name": "龙息炖菜",
+            "emoji": "🍲",
+            "description": "艾尔多兰大陆的热乎特色炖菜。",
+            "food": {
+              "satiety": 18,
+              "mood": 5,
+              "weight_gain": 6
             },
             "amount": 3
           }
         ],
         "satiety_change": 0,
-        "new_location": "碧溪渡",
+        "new_location": "",
+        "health_change": 0,
+        "achievements": [],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787155641355,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时1分钟\n获得：1022若汁币，若汁之缘×4，经验+2\n携带道具：旅行清单\n旅行事件：月铃祭\n村民让小若汁负责敲开场铃。\n食物：🍲龙息炖菜×3\n纪念品：🎀月铃祭缎带×1"
+      },
+      "mt0ab03l-rzpx051c": {
+        "id": "mt0ab03l-rzpx051c",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "moon_platform",
+        "location_name": "月亮站台",
+        "duration_ms": 9872786,
+        "rewards": {
+          "coin": 2742,
+          "fate": 6,
+          "experience": 5
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "月亮站台",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_bixi_ferry",
-            "name": "发现碧溪渡",
+            "id": "ach_moon_platform",
+            "name": "发现月亮站台",
             "rarity": 3,
-            "time": 1786836524434,
+            "time": 1787155622650,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现月亮站台」 ★★★"
+          },
+          {
+            "id": "ach_return_coin_platform",
+            "name": "回去，还是继续",
+            "rarity": 3,
+            "time": 1787155622650,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「回去，还是继续」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "souvenir_return_coin",
+        "tool_name": "回程硬币",
+        "settled_at": 1787155622651,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：月亮站台（未登记城区）\n旅行时间：2小时45分钟\n获得：2742若汁币，若汁之缘×6，经验+5\n携带道具：回程硬币\n新地点已解锁：月亮站台\n达成旅行成就「发现月亮站台」 ★★★\n达成旅行成就「回去，还是继续」 ★★★"
+      },
+      "mt0aafiq-xbzb756p": {
+        "id": "mt0aafiq-xbzb756p",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "米哈游的锋刃",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "yellow_underpass",
+        "location_name": "暖黄色地下通道",
+        "duration_ms": 5709237,
+        "rewards": {
+          "coin": 1903,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": {
+          "id": "event_never_off_lamp",
+          "name": "永不熄灭的灯管",
+          "text": "灯管下放着一枚温热旧硬币。广播说：“这是你上次留下的。”",
+          "effects": {
+            "coin_percent": 20
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_return_coin",
+              "name": "回程硬币",
+              "emoji": "🪙",
+              "travel_tool": true,
+              "description": "无法付款，却会令无标记的检票机启动，可作为寻找月亮站台的旅行道具。"
+            }
+          ],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_return_coin",
+            "name": "回程硬币",
+            "emoji": "🪙",
+            "travel_tool": true,
+            "description": "无法付款，却会令无标记的检票机启动，可作为寻找月亮站台的旅行道具。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "暖黄色地下通道",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_yellow_underpass",
+            "name": "发现暖黄色地下通道",
+            "rarity": 3,
+            "time": 1787155599390,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现暖黄色地下通道」 ★★★"
+          },
+          {
+            "id": "ach_map_10_locations",
+            "name": "足迹渐远",
+            "rarity": 3,
+            "time": 1787155599391,
+            "actor_name": "米哈游的锋刃",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「足迹渐远」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787155599392,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：1小时35分钟\n获得：1903若汁币，若汁之缘×4，经验+3\n携带道具：旅行清单\n旅行事件：永不熄灭的灯管\n灯管下放着一枚温热旧硬币。广播说：“这是你上次留下的。”\n纪念品：🪙回程硬币×1\n新地点已解锁：暖黄色地下通道\n达成旅行成就「发现暖黄色地下通道」 ★★★\n达成旅行成就「足迹渐远」 ★★★"
+      },
+      "msyzegzu-7dsbsud3": {
+        "id": "msyzegzu-7dsbsud3",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "rainbow_kindergarten",
+        "location_name": "彩虹尽头幼儿园",
+        "duration_ms": 7196325,
+        "rewards": {
+          "coin": 1999,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "event_nap_not_over",
+          "name": "午睡还没结束",
+          "text": "枕头都轻轻凹陷。老师广播提醒：“醒来的小朋友请继续装睡。”",
+          "effects": {
+            "fate_flat": 1
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "彩虹尽头幼儿园",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_rainbow_kindergarten",
+            "name": "发现彩虹尽头幼儿园",
+            "rarity": 3,
+            "time": 1787084023620,
             "actor_name": "兔女郎服务部",
             "rewards": [
               {
@@ -2281,7 +2945,213 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现碧溪渡」 ★★★"
+            "message": "达成旅行成就「发现彩虹尽头幼儿园」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787084023623,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：彩虹尽头幼儿园（未登记城区）\n旅行时间：2小时\n获得：1999若汁币，若汁之缘×5，经验+4\n携带道具：旅行清单\n旅行事件：午睡还没结束\n枕头都轻轻凹陷。老师广播提醒：“醒来的小朋友请继续装睡。”\n新地点已解锁：彩虹尽头幼儿园\n达成旅行成就「发现彩虹尽头幼儿园」 ★★★"
+      },
+      "msyuwyf6-ssshu8br": {
+        "id": "msyuwyf6-ssshu8br",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "music_square",
+        "location_name": "音乐广场",
+        "duration_ms": 6369271,
+        "rewards": {
+          "coin": 1769,
+          "fate": 4,
+          "experience": 3
+        },
+        "event": {
+          "id": "hologram_singer",
+          "name": "今天本人没来",
+          "text": "超级明星唱得很卖力，演出结束小若汁才知道本人正在另一颗星球度假。",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": {
+          "id": "encounter-msyuz2jy-1z3dozre",
+          "time": 1787069390254,
+          "map_id": "alvita",
+          "map_name": "阿尔维塔",
+          "entry_id": "postcard",
+          "text": "它们一起写了张旅行明信片，寄出后才发现没有写收件人。",
+          "reward": {
+            "id": "coin_jackpot",
+            "type": "currency",
+            "name": "若汁币",
+            "min_amount": 400,
+            "max_amount": 500,
+            "amount": 430,
+            "reward_text": "430若汁币"
+          },
+          "status": "pending",
+          "partner_user_id": "1412874037",
+          "partner_display_name": "逝如秋霜",
+          "reward_text": "430若汁币"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "音乐广场",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_music_square",
+            "name": "发现音乐广场",
+            "rarity": 3,
+            "time": 1787075660879,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现音乐广场」 ★★★"
+          },
+          {
+            "id": "alvita_encounter",
+            "name": "空中偶遇",
+            "rarity": 3,
+            "time": 1787075660879,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「空中偶遇」 ★★★"
+          }
+        ],
+        "mood_change": 5,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_checklist",
+        "tool_name": "旅行清单",
+        "settled_at": 1787075660880,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：音乐广场（阿尔维塔）\n旅行时间：1小时46分钟\n获得：1769若汁币，若汁之缘×4，经验+3\n携带道具：旅行清单\n小若汁偶遇了逝如秋霜的小若汁，它们一起写了张旅行明信片，寄出后才发现没有写收件人。\n偶遇奖励：430若汁币\n旅行事件：今天本人没来\n超级明星唱得很卖力，演出结束小若汁才知道本人正在另一颗星球度假。\n本次状态变化：心情+5\n新地点已解锁：音乐广场\n达成旅行成就「发现音乐广场」 ★★★\n达成旅行成就「空中偶遇」 ★★★"
+      },
+      "msypwlt4-ssz3rw5t": {
+        "id": "msypwlt4-ssz3rw5t",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "alvita",
+        "map_name": "阿尔维塔",
+        "location_id": "central_noble_district",
+        "location_name": "中央贵族居住区",
+        "duration_ms": 8044695,
+        "rewards": {
+          "coin": 2235,
+          "fate": 5,
+          "experience": 4
+        },
+        "event": {
+          "id": "artificial_sunset",
+          "name": "私人夕阳",
+          "text": "别墅的光学系统让阳台每天都有完美夕阳，真正的太阳就在房子的另一边。",
+          "effects": {
+            "mood": 5
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "中央贵族居住区",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_central_noble_district",
+            "name": "发现中央贵族居住区",
+            "rarity": 3,
+            "time": 1787068921862,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现中央贵族居住区」 ★★★"
+          }
+        ],
+        "mood_change": 5,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1787068921863,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：中央贵族居住区（阿尔维塔）\n旅行时间：2小时14分钟\n获得：2235若汁币，若汁之缘×5，经验+4\n旅行事件：私人夕阳\n别墅的光学系统让阳台每天都有完美夕阳，真正的太阳就在房子的另一边。\n本次状态变化：心情+5\n新地点已解锁：中央贵族居住区\n达成旅行成就「发现中央贵族居住区」 ★★★"
+      },
+      "msxp03ug-ee8f31ex": {
+        "id": "msxp03ug-ee8f31ex",
+        "user_id": "2113147687",
+        "group_id": "415462812",
+        "self_id": "3874871823",
+        "display_name": "兔女郎服务部",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "mystic_sword_sect",
+        "location_name": "玄剑宗",
+        "duration_ms": 6201108,
+        "rewards": {
+          "coin": 1723,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "satiety_change": 0,
+        "new_location": "玄剑宗",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_mystic_sword_sect",
+            "name": "发现玄剑宗",
+            "rarity": 3,
+            "time": 1787005095840,
+            "actor_name": "兔女郎服务部",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现玄剑宗」 ★★★"
           }
         ],
         "mood_change": 0,
@@ -2289,9 +3159,9 @@
         "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1786836524435,
+        "settled_at": 1787005095841,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时53分钟\n获得：2875若汁币，若汁之缘×6，经验+6\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
+        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：1小时43分钟\n获得：1723若汁币，若汁之缘×4，经验+4\n新地点已解锁：玄剑宗\n达成旅行成就「发现玄剑宗」 ★★★"
       },
       "msx8v35t-9honxq39": {
         "id": "msx8v35t-9honxq39",
@@ -2424,544 +3294,39 @@
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：2小时30分钟\n获得：2506若汁币，若汁之缘×5，经验+5\n小若汁偶遇了冬至的小若汁，它们互相夸赞对方的龟壳很有光泽，并郑重交换了保养心得。\n偶遇奖励：356若汁币\n旅行事件：不响的铃铛\n村里最古老的铃只在没人看时响。\n食物：🍜热汤面×2\n纪念品：🔔不响的月铃×1\n新地点已解锁：月铃村\n达成旅行成就「发现月铃村」 ★★★\n达成旅行成就「旅途中的同伴」 ★★★"
       },
-      "msxp03ug-ee8f31ex": {
-        "id": "msxp03ug-ee8f31ex",
+      "msuu62nx-j4sxvyjg": {
+        "id": "msuu62nx-j4sxvyjg",
         "user_id": "2113147687",
         "group_id": "415462812",
-        "self_id": "3874871823",
+        "self_id": "3762153943",
         "display_name": "兔女郎服务部",
         "map_id": "four_regions_little_world",
         "map_name": "四州小天地",
-        "location_id": "mystic_sword_sect",
-        "location_name": "玄剑宗",
-        "duration_ms": 6201108,
+        "location_id": "bixi_ferry",
+        "location_name": "碧溪渡",
+        "duration_ms": 10351733,
         "rewards": {
-          "coin": 1723,
-          "fate": 4,
-          "experience": 4
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "玄剑宗",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_mystic_sword_sect",
-            "name": "发现玄剑宗",
-            "rarity": 3,
-            "time": 1787005095840,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现玄剑宗」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787005095841,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：玄剑宗（四州小天地）\n旅行时间：1小时43分钟\n获得：1723若汁币，若汁之缘×4，经验+4\n新地点已解锁：玄剑宗\n达成旅行成就「发现玄剑宗」 ★★★"
-      },
-      "msypwlt4-ssz3rw5t": {
-        "id": "msypwlt4-ssz3rw5t",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "兔女郎服务部",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "central_noble_district",
-        "location_name": "中央贵族居住区",
-        "duration_ms": 8044695,
-        "rewards": {
-          "coin": 2235,
-          "fate": 5,
-          "experience": 4
-        },
-        "event": {
-          "id": "artificial_sunset",
-          "name": "私人夕阳",
-          "text": "别墅的光学系统让阳台每天都有完美夕阳，真正的太阳就在房子的另一边。",
-          "effects": {
-            "mood": 5
-          },
-          "souvenirs": [],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "中央贵族居住区",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_central_noble_district",
-            "name": "发现中央贵族居住区",
-            "rarity": 3,
-            "time": 1787068921862,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现中央贵族居住区」 ★★★"
-          }
-        ],
-        "mood_change": 5,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787068921863,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：中央贵族居住区（阿尔维塔）\n旅行时间：2小时14分钟\n获得：2235若汁币，若汁之缘×5，经验+4\n旅行事件：私人夕阳\n别墅的光学系统让阳台每天都有完美夕阳，真正的太阳就在房子的另一边。\n本次状态变化：心情+5\n新地点已解锁：中央贵族居住区\n达成旅行成就「发现中央贵族居住区」 ★★★"
-      },
-      "msyuwyf6-ssshu8br": {
-        "id": "msyuwyf6-ssshu8br",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "兔女郎服务部",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "music_square",
-        "location_name": "音乐广场",
-        "duration_ms": 6369271,
-        "rewards": {
-          "coin": 1769,
-          "fate": 4,
-          "experience": 3
-        },
-        "event": {
-          "id": "hologram_singer",
-          "name": "今天本人没来",
-          "text": "超级明星唱得很卖力，演出结束小若汁才知道本人正在另一颗星球度假。",
-          "effects": {
-            "mood": 5
-          },
-          "souvenirs": [],
-          "items": [],
-          "record": false
-        },
-        "encounter": {
-          "id": "encounter-msyuz2jy-1z3dozre",
-          "time": 1787069390254,
-          "map_id": "alvita",
-          "map_name": "阿尔维塔",
-          "entry_id": "postcard",
-          "text": "它们一起写了张旅行明信片，寄出后才发现没有写收件人。",
-          "reward": {
-            "id": "coin_jackpot",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 400,
-            "max_amount": 500,
-            "amount": 430,
-            "reward_text": "430若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "1412874037",
-          "partner_display_name": "逝如秋霜",
-          "reward_text": "430若汁币"
-        },
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "音乐广场",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_music_square",
-            "name": "发现音乐广场",
-            "rarity": 3,
-            "time": 1787075660879,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现音乐广场」 ★★★"
-          },
-          {
-            "id": "alvita_encounter",
-            "name": "空中偶遇",
-            "rarity": 3,
-            "time": 1787075660879,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「空中偶遇」 ★★★"
-          }
-        ],
-        "mood_change": 5,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787075660880,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：音乐广场（阿尔维塔）\n旅行时间：1小时46分钟\n获得：1769若汁币，若汁之缘×4，经验+3\n携带道具：旅行清单\n小若汁偶遇了逝如秋霜的小若汁，它们一起写了张旅行明信片，寄出后才发现没有写收件人。\n偶遇奖励：430若汁币\n旅行事件：今天本人没来\n超级明星唱得很卖力，演出结束小若汁才知道本人正在另一颗星球度假。\n本次状态变化：心情+5\n新地点已解锁：音乐广场\n达成旅行成就「发现音乐广场」 ★★★\n达成旅行成就「空中偶遇」 ★★★"
-      },
-      "msyzegzu-7dsbsud3": {
-        "id": "msyzegzu-7dsbsud3",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "兔女郎服务部",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "rainbow_kindergarten",
-        "location_name": "彩虹尽头幼儿园",
-        "duration_ms": 7196325,
-        "rewards": {
-          "coin": 1999,
-          "fate": 5,
-          "experience": 4
-        },
-        "event": {
-          "id": "event_nap_not_over",
-          "name": "午睡还没结束",
-          "text": "枕头都轻轻凹陷。老师广播提醒：“醒来的小朋友请继续装睡。”",
-          "effects": {
-            "fate_flat": 1
-          },
-          "souvenirs": [],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "彩虹尽头幼儿园",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_rainbow_kindergarten",
-            "name": "发现彩虹尽头幼儿园",
-            "rarity": 3,
-            "time": 1787084023620,
-            "actor_name": "兔女郎服务部",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现彩虹尽头幼儿园」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787084023623,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：彩虹尽头幼儿园（未登记城区）\n旅行时间：2小时\n获得：1999若汁币，若汁之缘×5，经验+4\n携带道具：旅行清单\n旅行事件：午睡还没结束\n枕头都轻轻凹陷。老师广播提醒：“醒来的小朋友请继续装睡。”\n新地点已解锁：彩虹尽头幼儿园\n达成旅行成就「发现彩虹尽头幼儿园」 ★★★"
-      },
-      "mt0aafiq-xbzb756p": {
-        "id": "mt0aafiq-xbzb756p",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "yellow_underpass",
-        "location_name": "暖黄色地下通道",
-        "duration_ms": 5709237,
-        "rewards": {
-          "coin": 1903,
-          "fate": 4,
-          "experience": 3
-        },
-        "event": {
-          "id": "event_never_off_lamp",
-          "name": "永不熄灭的灯管",
-          "text": "灯管下放着一枚温热旧硬币。广播说：“这是你上次留下的。”",
-          "effects": {
-            "coin_percent": 20
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_return_coin",
-              "name": "回程硬币",
-              "emoji": "🪙",
-              "travel_tool": true,
-              "description": "无法付款，却会令无标记的检票机启动，可作为寻找月亮站台的旅行道具。"
-            }
-          ],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_return_coin",
-            "name": "回程硬币",
-            "emoji": "🪙",
-            "travel_tool": true,
-            "description": "无法付款，却会令无标记的检票机启动，可作为寻找月亮站台的旅行道具。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "暖黄色地下通道",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_yellow_underpass",
-            "name": "发现暖黄色地下通道",
-            "rarity": 3,
-            "time": 1787155599390,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现暖黄色地下通道」 ★★★"
-          },
-          {
-            "id": "ach_map_10_locations",
-            "name": "足迹渐远",
-            "rarity": 3,
-            "time": 1787155599391,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「足迹渐远」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787155599392,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：暖黄色地下通道（未登记城区）\n旅行时间：1小时35分钟\n获得：1903若汁币，若汁之缘×4，经验+3\n携带道具：旅行清单\n旅行事件：永不熄灭的灯管\n灯管下放着一枚温热旧硬币。广播说：“这是你上次留下的。”\n纪念品：🪙回程硬币×1\n新地点已解锁：暖黄色地下通道\n达成旅行成就「发现暖黄色地下通道」 ★★★\n达成旅行成就「足迹渐远」 ★★★"
-      },
-      "mt0ab03l-rzpx051c": {
-        "id": "mt0ab03l-rzpx051c",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "moon_platform",
-        "location_name": "月亮站台",
-        "duration_ms": 9872786,
-        "rewards": {
-          "coin": 2742,
-          "fate": 6,
-          "experience": 5
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "月亮站台",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_moon_platform",
-            "name": "发现月亮站台",
-            "rarity": 3,
-            "time": 1787155622650,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现月亮站台」 ★★★"
-          },
-          {
-            "id": "ach_return_coin_platform",
-            "name": "回去，还是继续",
-            "rarity": 3,
-            "time": 1787155622650,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「回去，还是继续」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "souvenir_return_coin",
-        "tool_name": "回程硬币",
-        "settled_at": 1787155622651,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：月亮站台（未登记城区）\n旅行时间：2小时45分钟\n获得：2742若汁币，若汁之缘×6，经验+5\n携带道具：回程硬币\n新地点已解锁：月亮站台\n达成旅行成就「发现月亮站台」 ★★★\n达成旅行成就「回去，还是继续」 ★★★"
-      },
-      "mt0abkic-jetuvfhp": {
-        "id": "mt0abkic-jetuvfhp",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_moonbell_village",
-        "location_name": "月铃村",
-        "duration_ms": 3678526,
-        "rewards": {
-          "coin": 1022,
-          "fate": 4,
-          "experience": 2
-        },
-        "event": {
-          "id": "eld_event_moon_festival",
-          "name": "月铃祭",
-          "text": "村民让小若汁负责敲开场铃。",
-          "effects": {
-            "fate_flat": 2
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_moonbell_festival_ribbon",
-              "name": "月铃祭缎带",
-              "emoji": "🎀",
-              "description": "旅行纪念品「月铃祭缎带」。"
-            }
-          ],
-          "items": [
-            {
-              "id": "food_dragon_stew",
-              "amount": 3
-            }
-          ],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_moonbell_festival_ribbon",
-            "name": "月铃祭缎带",
-            "emoji": "🎀",
-            "description": "旅行纪念品「月铃祭缎带」。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_dragon_stew",
-            "name": "龙息炖菜",
-            "emoji": "🍲",
-            "description": "艾尔多兰大陆的热乎特色炖菜。",
-            "food": {
-              "satiety": 18,
-              "mood": 5,
-              "weight_gain": 6
-            },
-            "amount": 3
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787155641355,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：月铃村（艾尔多兰大陆）\n旅行时间：1小时1分钟\n获得：1022若汁币，若汁之缘×4，经验+2\n携带道具：旅行清单\n旅行事件：月铃祭\n村民让小若汁负责敲开场铃。\n食物：🍲龙息炖菜×3\n纪念品：🎀月铃祭缎带×1"
-      },
-      "mt0be85o-t674480k": {
-        "id": "mt0be85o-t674480k",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "four_regions_little_world",
-        "map_name": "四州小天地",
-        "location_id": "spirit_wheat_plain",
-        "location_name": "灵麦原",
-        "duration_ms": 10035920,
-        "rewards": {
-          "coin": 2788,
+          "coin": 2875,
           "fate": 6,
           "experience": 6
         },
         "event": {
-          "id": "beast_patrol",
-          "name": "百兽巡田",
-          "text": "灵兽宗仙鹤把小若汁当成罕见灵兽观察。",
+          "id": "underwater_sword",
+          "name": "河底练剑声",
+          "text": "河中倒影练着陌生剑法，远处传来剑鸣。",
           "effects": {},
           "souvenirs": [
             {
-              "id": "souvenir_patrol_crane_feather",
-              "name": "巡田鹤羽",
-              "emoji": "🪶",
-              "description": "旅行纪念品「巡田鹤羽」。"
+              "id": "souvenir_water_sword_tassel",
+              "name": "水影剑穗",
+              "emoji": "🗡️",
+              "description": "旅行纪念品「水影剑穗」。"
             }
           ],
           "items": [
             {
-              "id": "food_mooncake_talisman",
-              "amount": 1
+              "id": "food_spirit_pill",
+              "amount": 3
             }
           ],
           "record": true
@@ -2969,10 +3334,10 @@
         "encounter": null,
         "souvenirs": [
           {
-            "id": "souvenir_patrol_crane_feather",
-            "name": "巡田鹤羽",
-            "emoji": "🪶",
-            "description": "旅行纪念品「巡田鹤羽」。",
+            "id": "souvenir_water_sword_tassel",
+            "name": "水影剑穗",
+            "emoji": "🗡️",
+            "description": "旅行纪念品「水影剑穗」。",
             "amount": 1
           }
         ],
@@ -2982,364 +3347,28 @@
               "food",
               "travel_food"
             ],
-            "id": "food_mooncake_talisman",
-            "name": "符纹月饼",
-            "emoji": "🥮",
-            "description": "四州小天地的节令点心。",
+            "id": "food_spirit_pill",
+            "name": "灵麦团子",
+            "emoji": "🍡",
+            "description": "四州小天地的灵麦小点。",
             "food": {
-              "satiety": 16,
-              "mood": 5,
-              "weight_gain": 6
-            },
-            "amount": 1
-          }
-        ],
-        "satiety_change": 0,
-        "new_location": "灵麦原",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_spirit_wheat_plain",
-            "name": "发现灵麦原",
-            "rarity": 3,
-            "time": 1787157445843,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现灵麦原」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787157445844,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：灵麦原（四州小天地）\n旅行时间：2小时47分钟\n获得：2788若汁币，若汁之缘×6，经验+6\n携带道具：旅行清单\n旅行事件：百兽巡田\n灵兽宗仙鹤把小若汁当成罕见灵兽观察。\n食物：🥮符纹月饼×1\n纪念品：🪶巡田鹤羽×1\n新地点已解锁：灵麦原\n达成旅行成就「发现灵麦原」 ★★★"
-      },
-      "mt0beydk-29kw7xg4": {
-        "id": "mt0beydk-29kw7xg4",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "galovian",
-        "map_name": "迦洛维安府",
-        "location_id": "chongwen_academy",
-        "location_name": "崇文院",
-        "duration_ms": 6392814,
-        "rewards": {
-          "coin": 1776,
-          "fate": 4,
-          "experience": 4
-        },
-        "event": {
-          "id": "chongwen_exam_notes",
-          "name": "抄错了",
-          "text": "一个学生趴在墙角偷偷抄同窗的笔记，抄到一半才发现对方写的是阿尔维塔机械说明书。两个人对着\"接口协议\"四个字沉默了很久。",
-          "effects": {
-            "mood": 5
-          },
-          "souvenirs": [],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "崇文院",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_chongwen_academy",
-            "name": "发现崇文院",
-            "rarity": 3,
-            "time": 1787157481308,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现崇文院」 ★★★"
-          },
-          {
-            "id": "galovian_first_steps",
-            "name": "初到迦洛维安",
-            "rarity": 3,
-            "time": 1787157481309,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「初到迦洛维安」 ★★★"
-          }
-        ],
-        "mood_change": 5,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_checklist",
-        "tool_name": "旅行清单",
-        "settled_at": 1787157481310,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：崇文院（迦洛维安府）\n旅行时间：1小时47分钟\n获得：1776若汁币，若汁之缘×4，经验+4\n携带道具：旅行清单\n旅行事件：抄错了\n一个学生趴在墙角偷偷抄同窗的笔记，抄到一半才发现对方写的是阿尔维塔机械说明书。两个人对着\"接口协议\"四个字沉默了很久。\n本次状态变化：心情+5\n新地点已解锁：崇文院\n达成旅行成就「发现崇文院」 ★★★\n达成旅行成就「初到迦洛维安」 ★★★"
-      },
-      "mt0bfcfo-fx7cck22": {
-        "id": "mt0bfcfo-fx7cck22",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "eldoran_continent",
-        "map_name": "艾尔多兰大陆",
-        "location_id": "eld_windmill_plain",
-        "location_name": "风车草原",
-        "duration_ms": 4994089,
-        "rewards": {
-          "coin": 1387,
-          "fate": 3,
-          "experience": 2
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "风车草原",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_eld_windmill_plain",
-            "name": "发现风车草原",
-            "rarity": 3,
-            "time": 1787162483697,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现风车草原」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787162483700,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：风车草原（艾尔多兰大陆）\n旅行时间：1小时23分钟\n获得：1387若汁币，若汁之缘×3，经验+2\n新地点已解锁：风车草原\n达成旅行成就「发现风车草原」 ★★★"
-      },
-      "mt0eemvq-3ncxnnc4": {
-        "id": "mt0eemvq-3ncxnnc4",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "galovian",
-        "map_name": "迦洛维安府",
-        "location_id": "hundred_arts_quarter",
-        "location_name": "百艺坊",
-        "duration_ms": 10726181,
-        "rewards": {
-          "coin": 2979,
-          "fate": 6,
-          "experience": 6
-        },
-        "event": null,
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "百艺坊",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_hundred_arts_quarter",
-            "name": "发现百艺坊",
-            "rarity": 3,
-            "time": 1787173221526,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现百艺坊」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1787173221527,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：百艺坊（迦洛维安府）\n旅行时间：2小时59分钟\n获得：2979若汁币，若汁之缘×6，经验+6\n新地点已解锁：百艺坊\n达成旅行成就「发现百艺坊」 ★★★"
-      },
-      "mt0y3697-53zvube2": {
-        "id": "mt0y3697-53zvube2",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "white_fog_houses",
-        "location_name": "白雾住宅区",
-        "duration_ms": 6248668,
-        "rewards": {
-          "coin": 1944,
-          "fate": 5,
-          "experience": 3
-        },
-        "event": {
-          "id": "event_welcome_home",
-          "name": "欢迎回家",
-          "text": "门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”",
-          "effects": {
-            "fate_flat": 1,
-            "mood": -2
-          },
-          "souvenirs": [
-            {
-              "id": "souvenir_strangers_spare_key",
-              "name": "陌生家的备用钥匙",
-              "emoji": "🏠",
-              "travel_tool": true,
-              "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。"
-            }
-          ],
-          "items": [],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_strangers_spare_key",
-            "name": "陌生家的备用钥匙",
-            "emoji": "🏠",
-            "travel_tool": true,
-            "description": "钥匙柄刻着小若汁不记得的住址，可作为寻找蓝色走廊旅馆的旅行道具。",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [],
-        "satiety_change": 0,
-        "new_location": "白雾住宅区",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_white_fog_houses",
-            "name": "发现白雾住宅区",
-            "rarity": 3,
-            "time": 1787195563232,
-            "actor_name": "米哈游的锋刃",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现白雾住宅区」 ★★★"
-          }
-        ],
-        "mood_change": -2,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1787195563234,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：白雾住宅区（未登记城区）\n旅行时间：1小时44分钟\n获得：1944若汁币，若汁之缘×5，经验+3\n携带道具：行李箱\n旅行事件：欢迎回家\n门锁自动打开。屋内有人说：“怎么今天回来得这么像你？”\n这段经历让小若汁有些不安，心情-2\n纪念品：🏠陌生家的备用钥匙×1\n新地点已解锁：白雾住宅区\n达成旅行成就「发现白雾住宅区」 ★★★"
-      },
-      "mt0y3pw7-67hclq90": {
-        "id": "mt0y3pw7-67hclq90",
-        "user_id": "2113147687",
-        "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "unregistered_district",
-        "map_name": "未登记城区",
-        "location_id": "blue_corridor_hotel",
-        "location_name": "蓝色走廊旅馆",
-        "duration_ms": 1708730,
-        "rewards": {
-          "coin": 500,
-          "fate": 1,
-          "experience": 1
-        },
-        "event": {
-          "id": "event_do_not_disturb_inside",
-          "name": "请勿打扰里面的人",
-          "text": "404号房内传出小若汁自己的声音：“我已经睡了，你先回去吧。”",
-          "effects": {
-            "mood": -2
-          },
-          "souvenirs": [],
-          "items": [
-            {
-              "id": "food_midnight_cookie",
-              "amount": 3
-            }
-          ],
-          "record": false
-        },
-        "encounter": null,
-        "souvenirs": [],
-        "item_rewards": [
-          {
-            "tags": [
-              "food",
-              "travel_food"
-            ],
-            "id": "food_midnight_cookie",
-            "name": "午夜饼干",
-            "emoji": "🍪",
-            "description": "未登记城区总在不该营业时出现的点心。",
-            "food": {
-              "satiety": 12,
-              "mood": 5,
-              "weight_gain": 4
+              "satiety": 15,
+              "mood": 4,
+              "weight_gain": 5
             },
             "amount": 3
           }
         ],
         "satiety_change": 0,
-        "new_location": "蓝色走廊旅馆",
+        "new_location": "碧溪渡",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_blue_corridor_hotel",
-            "name": "发现蓝色走廊旅馆",
+            "id": "ach_bixi_ferry",
+            "name": "发现碧溪渡",
             "rarity": 3,
-            "time": 1787195588088,
-            "actor_name": "米哈游的锋刃",
+            "time": 1786836524434,
+            "actor_name": "兔女郎服务部",
             "rewards": [
               {
                 "type": "item",
@@ -3348,68 +3377,48 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现蓝色走廊旅馆」 ★★★"
+            "message": "达成旅行成就「发现碧溪渡」 ★★★"
           }
         ],
-        "mood_change": -2,
+        "mood_change": 0,
         "level_ups": [],
         "level_reward_messages": [],
-        "tool_item_id": "souvenir_strangers_spare_key",
-        "tool_name": "陌生家的备用钥匙",
-        "settled_at": 1787195588091,
-        "forced_by": "pager",
-        "report": "小若汁回来了！\n目的地：蓝色走廊旅馆（未登记城区）\n旅行时间：28分钟\n获得：500若汁币，若汁之缘×1，经验+1\n携带道具：陌生家的备用钥匙\n旅行事件：请勿打扰里面的人\n404号房内传出小若汁自己的声音：“我已经睡了，你先回去吧。”\n这段经历让小若汁有些不安，心情-2\n食物：🍪午夜饼干×3\n新地点已解锁：蓝色走廊旅馆\n达成旅行成就「发现蓝色走廊旅馆」 ★★★"
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786836524435,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：碧溪渡（四州小天地）\n旅行时间：2小时53分钟\n获得：2875若汁币，若汁之缘×6，经验+6\n旅行事件：河底练剑声\n河中倒影练着陌生剑法，远处传来剑鸣。\n食物：🍡灵麦团子×3\n纪念品：🗡️水影剑穗×1\n新地点已解锁：碧溪渡\n达成旅行成就「发现碧溪渡」 ★★★"
       },
-      "mt1zdi8z-v8u4w199": {
-        "id": "mt1zdi8z-v8u4w199",
+      "mst2h0bo-4a1zvfmw": {
+        "id": "mst2h0bo-4a1zvfmw",
         "user_id": "2113147687",
         "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "gravity_well",
-        "location_name": "重力井",
-        "duration_ms": 5405122,
+        "self_id": "3762153943",
+        "display_name": "兔女郎服务部",
+        "map_id": "unregistered_district",
+        "map_name": "未登记城区",
+        "location_id": "forgotten_family_restaurant",
+        "location_name": "被遗忘的家庭餐厅",
+        "duration_ms": 4822665,
         "rewards": {
-          "coin": 1681,
+          "coin": 1340,
           "fate": 3,
           "experience": 3
         },
         "event": null,
-        "encounter": {
-          "id": "encounter-mt204snx-ld0t7315",
-          "time": 1787259453981,
-          "map_id": "alvita",
-          "map_name": "阿尔维塔",
-          "entry_id": "snack_break",
-          "text": "它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。",
-          "reward": {
-            "id": "coin_large",
-            "type": "currency",
-            "name": "若汁币",
-            "min_amount": 200,
-            "max_amount": 300,
-            "amount": 252,
-            "reward_text": "252若汁币"
-          },
-          "status": "pending",
-          "partner_user_id": "2818259462",
-          "partner_display_name": "不愿看到优秀ic·alter被埋没",
-          "reward_text": "252若汁币"
-        },
+        "encounter": null,
         "souvenirs": [],
         "item_rewards": [],
         "satiety_change": 0,
-        "new_location": "重力井",
+        "new_location": "被遗忘的家庭餐厅",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_gravity_well",
-            "name": "发现重力井",
+            "id": "ach_forgotten_family_restaurant",
+            "name": "发现被遗忘的家庭餐厅",
             "rarity": 3,
-            "time": 1787263585922,
-            "actor_name": "米哈游的锋刃",
+            "time": 1786724010111,
+            "actor_name": "兔女郎服务部",
             "rewards": [
               {
                 "type": "item",
@@ -3418,68 +3427,70 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现重力井」 ★★★"
+            "message": "达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
           }
         ],
         "mood_change": 0,
         "level_ups": [],
         "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1787263585923,
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1786724010112,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：重力井（阿尔维塔）\n旅行时间：1小时30分钟\n获得：1681若汁币，若汁之缘×3，经验+3\n携带道具：行李箱\n小若汁偶遇了不愿看到优秀ic·alter被埋没的小若汁，它们在中途休息时分享了零食，并认真讨论哪一片菜叶更脆。\n偶遇奖励：252若汁币\n新地点已解锁：重力井\n达成旅行成就「发现重力井」 ★★★"
+        "report": "小若汁回来了！\n目的地：被遗忘的家庭餐厅（未登记城区）\n旅行时间：1小时20分钟\n获得：1340若汁币，若汁之缘×3，经验+3\n新地点已解锁：被遗忘的家庭餐厅\n达成旅行成就「发现被遗忘的家庭餐厅」 ★★★"
       },
-      "mt4bsdlg-ye8v0s20": {
-        "id": "mt4bsdlg-ye8v0s20",
+      "msrdan7h-kkx3l8fg": {
+        "id": "msrdan7h-kkx3l8fg",
         "user_id": "2113147687",
         "group_id": "415462812",
-        "self_id": "3874871823",
-        "display_name": "米哈游的锋刃",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "floating_island_factory",
-        "location_name": "浮岛制造厂",
-        "duration_ms": 9927890,
+        "self_id": "3762153943",
+        "display_name": "兔女郎服务部",
+        "map_id": "four_regions_little_world",
+        "map_name": "四州小天地",
+        "location_id": "qing_he_town",
+        "location_name": "青禾镇",
+        "duration_ms": 6207381,
         "rewards": {
-          "coin": 2758,
-          "fate": 5,
-          "experience": 6
+          "coin": 1724,
+          "fate": 3,
+          "experience": 3
         },
-        "event": null,
-        "encounter": {
-          "id": "encounter-mt4bsdst-1g82fimz",
-          "time": 1787399962589,
-          "map_id": "alvita",
-          "map_name": "阿尔维塔",
-          "entry_id": "lost_direction",
-          "text": "它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。",
-          "reward": {
-            "id": "food_bread",
-            "type": "item",
-            "item_id": "food_bread",
-            "name": "松软面包",
-            "amount": 2,
-            "reward_text": "松软面包×2"
+        "event": {
+          "id": "endless_noodle",
+          "name": "不肯见底的面",
+          "text": "碗里始终剩着最后一根灵麦面。",
+          "effects": {
+            "satiety": 6
           },
-          "status": "pending",
-          "partner_user_id": "1412874037",
-          "partner_display_name": "逝如秋霜",
-          "reward_text": "松软面包×2"
+          "souvenirs": [
+            {
+              "id": "souvenir_wheat_noodle",
+              "name": "最后一根灵麦面",
+              "emoji": "🍜",
+              "description": "旅行纪念品「最后一根灵麦面」。"
+            }
+          ],
+          "record": false
         },
-        "souvenirs": [],
-        "item_rewards": [],
-        "companion_reward_fate": 0,
-        "satiety_change": 0,
-        "new_location": "浮岛制造厂",
+        "souvenirs": [
+          {
+            "id": "souvenir_wheat_noodle",
+            "name": "最后一根灵麦面",
+            "emoji": "🍜",
+            "description": "旅行纪念品「最后一根灵麦面」。",
+            "amount": 1
+          }
+        ],
+        "satiety_change": 6,
+        "new_location": "青禾镇",
         "health_change": 0,
         "achievements": [
           {
-            "id": "ach_floating_island_factory",
-            "name": "发现浮岛制造厂",
+            "id": "ach_qing_he_town",
+            "name": "发现青禾镇",
             "rarity": 3,
-            "time": 1787409890244,
-            "actor_name": "米哈游的锋刃",
+            "time": 1786622641318,
+            "actor_name": "兔女郎服务部",
             "rewards": [
               {
                 "type": "item",
@@ -3488,28 +3499,33 @@
                 "message": "成就奖励：若汁之缘 ×3"
               }
             ],
-            "message": "达成旅行成就「发现浮岛制造厂」 ★★★"
+            "message": "达成旅行成就「发现青禾镇」 ★★★"
           }
         ],
         "mood_change": 0,
-        "level_ups": [
-          {
-            "level": 2,
-            "need": 100
-          }
-        ],
-        "level_reward_messages": [
-          "升级奖励：300若汁币，若汁之缘×3",
-          "达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！"
-        ],
+        "level_ups": [],
+        "level_reward_messages": [],
         "tool_item_id": "",
         "tool_name": "",
-        "settled_at": 1787409890246,
+        "settled_at": 1786622641318,
         "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：2小时45分钟\n获得：2758若汁币，若汁之缘×5，经验+6\n小若汁偶遇了逝如秋霜的小若汁，它们各自指了一个方向，走出几步后发现两只都很有自信地带错了路。\n偶遇奖励：松软面包×2\n新地点已解锁：浮岛制造厂\n小若汁升到了Lv.2！\n升级奖励：300若汁币，若汁之缘×3\n达成 Lv.2，解锁四星皮肤「仙人掌小若汁」！\n达成旅行成就「发现浮岛制造厂」 ★★★"
+        "report": "小若汁回来了！\n目的地：青禾镇（四州小天地）\n旅行时间：1小时43分钟\n获得：1724若汁币，若汁之缘×3，经验+3\n旅行事件：不肯见底的面\n碗里始终剩着最后一根灵麦面。\n本次状态变化：饱食+6\n纪念品：🍜最后一根灵麦面×1\n新地点已解锁：青禾镇\n达成旅行成就「发现青禾镇」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtnao6uk-z6g0fvoo",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "2113147687",
+        "report": "小若汁回来了！\n目的地：珍宠阁（迦洛维安府）\n旅行时间：1小时43分钟\n获得：1710若汁币，若汁之缘×3，经验+4\n新地点已解锁：珍宠阁\n达成旅行成就「发现珍宠阁」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788553101865,
+        "created_at": 1788553101865,
+        "sent_at": 1788553102217,
+        "last_error": ""
+      },
       {
         "travel_id": "mt4bsdlg-ye8v0s20",
         "group_id": "415462812",
@@ -3756,23 +3772,10 @@
         "created_at": 1786622641318,
         "sent_at": 1786622641947,
         "last_error": ""
-      },
-      {
-        "travel_id": "msq45oum-0jquog6g",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "2113147687",
-        "report": "小若汁回来了！\n目的地：只在雨中营业的便利店（未登记城区）\n旅行时间：1小时6分钟\n获得：1104若汁币，若汁之缘×2，经验+2\n旅行事件：监控里的第二只小若汁\n屏幕中的小若汁仍停在刚进门的位置，并隔着屏幕缓慢摇头。\n这段经历让小若汁有些不安，心情-2\n新地点已解锁：只在雨中营业的便利店\n达成旅行成就「发现只在雨中营业的便利店」 ★★★\n达成旅行成就「地图上不存在的地点」 ★★★\n达成旅行成就「小若汁出门了」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786544595063,
-        "created_at": 1786544595063,
-        "sent_at": 1786544595557,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 20,
+      "total_trips": 21,
       "key_item_discoveries": {
         "souvenir_return_coin": {
           "item_id": "souvenir_return_coin",
@@ -3792,7 +3795,9 @@
         "four_regions_little_world": 4,
         "candy_dreamland": 0,
         "alvita": 4,
-        "galovian": 2
+        "galovian": 3,
+        "starnet": 0,
+        "severin": 0
       },
       "map_event_ids": {
         "unregistered_district": {

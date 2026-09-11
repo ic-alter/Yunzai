@@ -3,12 +3,12 @@
   "user_id": "3924389924",
   "pet": {
     "level": 7,
-    "experience": 82,
-    "satiety": 88,
+    "experience": 129,
+    "satiety": 5,
     "mood": 100,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1788145483201,
+    "satiety_decay_at": 1789099497927,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -479,6 +479,51 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_severin_ski_resort": {
+        "id": "ach_severin_ski_resort",
+        "name": "发现云麓雪场",
+        "rarity": 3,
+        "time": 1788147876921,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "severin_first_visit": {
+        "id": "severin_first_visit",
+        "name": "雪落龟头",
+        "rarity": 3,
+        "time": 1788147876922,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_five": {
+        "id": "ach_travel_encounter_five",
+        "name": "龟壳不再孤单",
+        "rarity": 3,
+        "time": 1788147876923,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -794,54 +839,50 @@
         "time": 1787035936084
       }
     ],
-    "weight": 44,
-    "weight_decay_at": 1788146294329,
-    "health_decay_at": 1788146294329,
+    "weight": 25,
+    "weight_decay_at": 1789085191079,
+    "health_decay_at": 1789099497927,
     "five_skin_shadow_counts": {
       "spirit_pearl_turtle": 0
     }
   },
   "profile": {
     "favorability": 100,
-    "weekly_contribution": 5,
-    "total_contribution": 223,
+    "weekly_contribution": 0,
+    "total_contribution": 228,
     "last_display_name": "月卡买成改名卡了",
     "first_joined_at": 1787035936084,
-    "last_active_at": 1788146294329,
+    "last_active_at": 1789099497927,
     "daily": {
-      "date": "2026-08-31",
-      "event_count": 16,
-      "same_event_counts": {
-        "mention_only": 2,
-        "petting": 2,
-        "feed": 12
-      },
+      "date": "2026-09-11",
+      "event_count": 0,
+      "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W36"
+      "week": "2026-W37"
     },
     "items": {
-      "ruozhi_fate": 300,
+      "ruozhi_fate": 393,
       "nameless_ruozhi": 0,
-      "food_grapes": 3,
+      "food_grapes": 2,
       "food_ice_cream": 5,
       "food_donut": 6,
       "food_dumpling": 5,
-      "food_carrot": 0,
+      "food_carrot": 2,
       "food_pancake": 1,
-      "food_cake": 5,
+      "food_cake": 6,
       "food_noodles": 5,
-      "food_curry": 9,
+      "food_curry": 11,
       "food_elven_tart": 0,
       "food_burger": 2,
-      "food_apple": 0,
-      "food_rice_ball": 6,
+      "food_apple": 1,
+      "food_rice_ball": 7,
       "food_bread": 8,
       "food_pizza": 0,
-      "food_milk_tea": 5,
+      "food_milk_tea": 9,
       "food_leaf_salad": 0,
-      "food_fish": 6,
+      "food_fish": 7,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 1,
       "food_dwarf_bread": 0,
@@ -856,154 +897,31 @@
     },
     "item_ledger": [
       {
-        "time": 1788144043201,
-        "type": "expense",
+        "time": 1788481785728,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 9,
+        "before": 384,
+        "after": 393,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 18.292
+        }
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_fish",
+        "amount": 1,
+        "before": 6,
+        "after": 7,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
         "item_id": "food_milk_tea",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_milk_tea",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788144040795,
-        "type": "expense",
-        "item_id": "food_apple",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_apple",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788114794010,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 297,
-        "after": 300,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_spirit_beast_sect"
-        }
-      },
-      {
-        "time": 1788114794005,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 294,
-        "after": 297,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mtg20uwi-12x4uqew",
-          "location_id": "spirit_beast_sect"
-        }
-      },
-      {
-        "time": 1788108668281,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 291,
-        "after": 294,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "feed_full_once"
-        }
-      },
-      {
-        "time": 1788108665905,
-        "type": "expense",
-        "item_id": "food_noodles",
-        "amount": 1,
-        "before": 6,
-        "after": 5,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_noodles",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788108657845,
-        "type": "expense",
-        "item_id": "food_carrot",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_carrot",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788108655217,
-        "type": "expense",
-        "item_id": "food_popcorn",
-        "amount": 1,
-        "before": 3,
-        "after": 2,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_popcorn",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788108651289,
-        "type": "expense",
-        "item_id": "food_pizza",
-        "amount": 1,
-        "before": 1,
-        "after": 0,
-        "reason": "feed_food",
-        "meta": {
-          "food_id": "food_pizza",
-          "stage": "normal"
-        }
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_bread",
-        "amount": 1,
-        "before": 7,
-        "after": 8,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_ice_cream",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_grapes",
-        "amount": 1,
-        "before": 2,
-        "after": 3,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_curry",
         "amount": 1,
         "before": 8,
         "after": 9,
@@ -1011,74 +929,195 @@
         "meta": {}
       },
       {
-        "time": 1788108629467,
+        "time": 1788415944774,
         "type": "income",
         "item_id": "food_rice_ball",
         "amount": 1,
+        "before": 6,
+        "after": 7,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 1,
+        "after": 2,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_carrot",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_curry",
+        "amount": 1,
+        "before": 10,
+        "after": 11,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_milk_tea",
+        "amount": 1,
+        "before": 7,
+        "after": 8,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_milk_tea",
+        "amount": 1,
+        "before": 6,
+        "after": 7,
+        "reason": "daily_sign_food",
+        "meta": {}
+      },
+      {
+        "time": 1788415944774,
+        "type": "income",
+        "item_id": "food_milk_tea",
+        "amount": 1,
         "before": 5,
         "after": 6,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1788108629467,
+        "time": 1788415944774,
         "type": "income",
-        "item_id": "food_dumpling",
+        "item_id": "food_apple",
         "amount": 1,
-        "before": 4,
-        "after": 5,
+        "before": 0,
+        "after": 1,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1788108629467,
+        "time": 1788415944774,
         "type": "income",
-        "item_id": "food_popcorn",
+        "item_id": "food_curry",
         "amount": 1,
-        "before": 2,
-        "after": 3,
+        "before": 9,
+        "after": 10,
         "reason": "daily_sign_food",
         "meta": {}
       },
       {
-        "time": 1788108629467,
+        "time": 1788415944771,
         "type": "income",
-        "item_id": "food_fish",
+        "item_id": "ruozhi_fate",
+        "amount": 26,
+        "before": 358,
+        "after": 384,
+        "reason": "daily_sign",
+        "meta": {
+          "date": "2026-09-03",
+          "month_count": 1,
+          "first_sign_bonus": 0,
+          "monthly_sign_bonus": 0
+        }
+      },
+      {
+        "time": 1788415935427,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 8,
+        "before": 350,
+        "after": 358,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 15.789
+        }
+      },
+      {
+        "time": 1788359110665,
+        "type": "expense",
+        "item_id": "food_grapes",
+        "amount": 1,
+        "before": 3,
+        "after": 2,
+        "reason": "feed_food",
+        "meta": {
+          "food_id": "food_grapes",
+          "stage": "normal"
+        }
+      },
+      {
+        "time": 1788359095159,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 39,
+        "before": 311,
+        "after": 350,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 69.6
+        }
+      },
+      {
+        "time": 1788147876923,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 308,
+        "after": 311,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_travel_encounter_five"
+        }
+      },
+      {
+        "time": 1788147876922,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 305,
+        "after": 308,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "severin_first_visit"
+        }
+      },
+      {
+        "time": 1788147876921,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 302,
+        "after": 305,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_severin_ski_resort"
+        }
+      },
+      {
+        "time": 1788147876909,
+        "type": "income",
+        "item_id": "food_cake",
         "amount": 1,
         "before": 5,
         "after": 6,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_fried_chicken",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_rice_ball",
-        "amount": 1,
-        "before": 4,
-        "after": 5,
-        "reason": "daily_sign_food",
-        "meta": {}
-      },
-      {
-        "time": 1788108629467,
-        "type": "income",
-        "item_id": "food_donut",
-        "amount": 1,
-        "before": 5,
-        "after": 6,
-        "reason": "daily_sign_food",
-        "meta": {}
+        "reason": "travel_encounter_reward",
+        "meta": {
+          "encounter_id": "encounter-mtgnj00f-c3zgty40",
+          "partner_user_id": "2069743095"
+        }
       }
     ],
     "item_daily": {
@@ -1097,10 +1136,67 @@
       }
     },
     "currency": {
-      "balance": 109457,
-      "total_earned": 109457,
+      "balance": 113109,
+      "total_earned": 113109,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1788481785729,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 112609,
+          "after": 113109,
+          "meta": {
+            "date": "2026-09-04"
+          }
+        },
+        {
+          "time": 1788415944771,
+          "type": "income",
+          "reason": "daily_sign",
+          "amount": 1089,
+          "before": 111520,
+          "after": 112609,
+          "meta": {
+            "date": "2026-09-03"
+          }
+        },
+        {
+          "time": 1788415935429,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 111020,
+          "after": 111520,
+          "meta": {
+            "date": "2026-09-03"
+          }
+        },
+        {
+          "time": 1788359095161,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 110520,
+          "after": 111020,
+          "meta": {
+            "date": "2026-09-02"
+          }
+        },
+        {
+          "time": 1788147876907,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1063,
+          "before": 109457,
+          "after": 110520,
+          "meta": {
+            "travel_id": "mtgmsqu7-dxakilvm",
+            "location_id": "severin_ski_resort",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1788114794005,
           "type": "income",
@@ -1157,101 +1253,130 @@
           "meta": {
             "date": "2026-08-30"
           }
-        },
-        {
-          "time": 1788029401982,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1868,
-          "before": 103620,
-          "after": 105488,
-          "meta": {
-            "travel_id": "mtemjas3-ubeawtt7",
-            "location_id": "bixi_ferry",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1788014313788,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1582,
-          "before": 102038,
-          "after": 103620,
-          "meta": {
-            "travel_id": "mtee60wk-ljzlllfz",
-            "location_id": "huaixi_village",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1788002396609,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 95,
-          "before": 101943,
-          "after": 102038,
-          "meta": {
-            "encounter_id": "encounter-mte75q5c-hc8gynow",
-            "partner_user_id": "3536417662"
-          }
-        },
-        {
-          "time": 1788002396607,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2803,
-          "before": 99140,
-          "after": 101943,
-          "meta": {
-            "travel_id": "mte4gdu3-zs7wq9zr",
-            "location_id": "cotton_candy_forest",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787965915682,
-          "type": "income",
-          "reason": "daily_sign",
-          "amount": 1170,
-          "before": 97970,
-          "after": 99140,
-          "meta": {
-            "date": "2026-08-29"
-          }
         }
       ],
       "sign": {
-        "last_date": "2026-08-31",
-        "total_count": 11,
+        "last_date": "2026-09-03",
+        "total_count": 12,
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-08-31"
+      "first_interaction_reward_date": "2026-09-04"
     },
     "item_sign": {
-      "month": "2026-08",
+      "month": "2026-09",
       "dates": [
-        "2026-08-18",
-        "2026-08-19",
-        "2026-08-20",
-        "2026-08-21",
-        "2026-08-23",
-        "2026-08-24",
-        "2026-08-25",
-        "2026-08-26",
-        "2026-08-28",
-        "2026-08-29",
-        "2026-08-31"
+        "2026-09-03"
       ]
     },
     "food_sign_backfill": {
-      "month": "2026-08",
-      "dates": 11,
-      "time": 1788108629467
+      "month": "2026-09",
+      "dates": 1,
+      "time": 1788415944774
     }
   },
   "recent_events": [
+    {
+      "time": 1788481785730,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向月卡买成改名卡了，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 113109
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 9
+    },
+    {
+      "time": 1788415935429,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "mention_only",
+      "branch_id": "look_over",
+      "summary": "小若汁抬头看向月卡买成改名卡了，轻轻晃了晃尾巴。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 111520
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 8
+    },
+    {
+      "time": 1788359110665,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁开心地收下🍇冰葡萄，连龟壳都像亮了一点。",
+      "effects_text": "饱食+7，心情+2，好感+2，贡献+2，经验+12",
+      "effects": {
+        "satiety": 7,
+        "mood": 2,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 2,
+        "experience": 12
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": null,
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 0
+    },
+    {
+      "time": 1788359095161,
+      "user_id": "3924389924",
+      "display_name": "月卡买成改名卡了",
+      "event_id": "mention_only",
+      "branch_id": "sleepy_response",
+      "summary": "小若汁听见月卡买成改名卡了叫它，困困地探出脑袋看了一眼。",
+      "effects_text": "心情+1，好感+1，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 1,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 111020
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 39
+    },
     {
       "time": 1788144043201,
       "user_id": "3924389924",
@@ -1418,104 +1543,12 @@
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 0
-    },
-    {
-      "time": 1788108655217,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁闻到香味就凑过来，把🍿奶油爆米花吃得很认真。",
-      "effects_text": "饱食+8，心情+3，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 8,
-        "mood": 3,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1788108651291,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁开心地收下🍕芝士披萨，连龟壳都像亮了一点。",
-      "effects_text": "饱食+16，心情+4，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 16,
-        "mood": 4,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1788108608329,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "petting",
-      "branch_id": "head_trust",
-      "summary": "小若汁熟练地把脑袋塞进月卡买成改名卡了掌心，催着再摸一会儿。",
-      "effects_text": "心情+10，好感+6，贡献+5，经验+15",
-      "effects": {
-        "satiety": 0,
-        "mood": 10,
-        "health": 0,
-        "favorability": 6,
-        "contribution": 5,
-        "experience": 15
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1788108604001,
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "event_id": "feed",
-      "branch_id": "normal",
-      "summary": "小若汁尝了一口🍇冰葡萄就露出满足的表情。",
-      "effects_text": "饱食+7，心情+2，好感+2，贡献+2，经验+12",
-      "effects": {
-        "satiety": 7,
-        "mood": 2,
-        "health": 0,
-        "favorability": 2,
-        "contribution": 2,
-        "experience": 12
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": null,
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
     }
   ],
   "daily": {
-    "date": "2026-08-31",
-    "event_count": 16,
-    "bonus_event_count": 10
+    "date": "2026-09-04",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
   "processed_messages": {
     "event:1776361905": 1787129928810,
@@ -1608,7 +1641,11 @@
     "event:618742954": 1788108668280,
     "event:78106858": 1788144036670,
     "event:516665947": 1788144040791,
-    "event:1978505840": 1788144043200
+    "event:1978505840": 1788144043200,
+    "event:80688076": 1788359095158,
+    "event:1027831821": 1788359110663,
+    "event:1281059025": 1788415935426,
+    "event:920163446": 1788481785726
   },
   "skin_sessions": {
     "active": null
@@ -1621,14 +1658,14 @@
     "migrated_at": 1787035936084
   },
   "created_at": 1787035936084,
-  "updated_at": 1788146294329,
+  "updated_at": 1789099497927,
   "production": {
     "started_at": 1787035936084,
-    "last_settled_at": 1788146294329,
-    "accumulated_ms": 37758868,
-    "progress": 6.910160351917275,
-    "total_produced": 161,
-    "last_collected_at": 1788108535461
+    "last_settled_at": 1789099497927,
+    "accumulated_ms": 259200000,
+    "progress": 36.07194236962519,
+    "total_produced": 217,
+    "last_collected_at": 1788481785728
   },
   "travel": {
     "unlocked_location_ids": [
@@ -1643,7 +1680,8 @@
       "mid_ring_residential",
       "huaixi_village",
       "bixi_ferry",
-      "spirit_beast_sect"
+      "spirit_beast_sect",
+      "severin_ski_resort"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -1741,6 +1779,14 @@
         "travel_id": "mtg20uwi-12x4uqew",
         "time": 1788114794006,
         "carried_item_id": ""
+      },
+      "severin_ski_resort": {
+        "id": "severin_ski_resort",
+        "map_id": "severin",
+        "name": "云麓雪场",
+        "travel_id": "mtgmsqu7-dxakilvm",
+        "time": 1788147876908,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1806,6 +1852,13 @@
         "location_id": "huaixi_village",
         "travel_id": "mtee60wk-ljzlllfz",
         "time": 1788014313789
+      },
+      "severin_public_aurora": {
+        "id": "severin_public_aurora",
+        "map_id": "severin",
+        "location_id": "severin_ski_resort",
+        "travel_id": "mtgmsqu7-dxakilvm",
+        "time": 1788147876909
       }
     },
     "encounter_records": {
@@ -1906,9 +1959,10 @@
           "amount": 1,
           "reward_text": "奶油蛋糕×1"
         },
-        "status": "pending",
+        "status": "settled",
         "partner_user_id": "2069743095",
-        "partner_display_name": "瀛"
+        "partner_display_name": "瀛",
+        "settled_at": 1788147876909
       }
     },
     "souvenir_records": {
@@ -2191,6 +2245,51 @@
         "name": "发现灵兽宗",
         "rarity": 3,
         "time": 1788114794010,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_severin_ski_resort": {
+        "id": "ach_severin_ski_resort",
+        "name": "发现云麓雪场",
+        "rarity": 3,
+        "time": 1788147876921,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "severin_first_visit": {
+        "id": "severin_first_visit",
+        "name": "雪落龟头",
+        "rarity": 3,
+        "time": 1788147876922,
+        "actor_name": "月卡买成改名卡了",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_travel_encounter_five": {
+        "id": "ach_travel_encounter_five",
+        "name": "龟壳不再孤单",
+        "rarity": 3,
+        "time": 1788147876923,
         "actor_name": "月卡买成改名卡了",
         "rewards": [
           {
@@ -3401,9 +3500,139 @@
         "settled_at": 1788114794021,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：灵兽宗（四州小天地）\n旅行时间：1小时34分钟\n获得：1566若汁币，若汁之缘×3，经验+4\n新地点已解锁：灵兽宗\n达成旅行成就「发现灵兽宗」 ★★★"
+      },
+      "mtgmsqu7-dxakilvm": {
+        "id": "mtgmsqu7-dxakilvm",
+        "user_id": "3924389924",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "display_name": "月卡买成改名卡了",
+        "map_id": "severin",
+        "map_name": "塞弗林",
+        "location_id": "severin_ski_resort",
+        "location_name": "云麓雪场",
+        "duration_ms": 3827466,
+        "rewards": {
+          "coin": 1063,
+          "fate": 2,
+          "experience": 2
+        },
+        "event": {
+          "id": "severin_public_aurora",
+          "name": "抬头正好",
+          "kind": "",
+          "text": "小若汁随便抬了一下头，恰好看见一条绿色极光从天空慢慢展开。",
+          "effects": {
+            "mood": 4
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": {
+          "id": "encounter-mtgnj00f-c3zgty40",
+          "time": 1788145274319,
+          "map_id": "severin",
+          "map_name": "塞弗林",
+          "entry_id": "shared_leaf",
+          "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
+          "reward": {
+            "id": "food_cake",
+            "type": "item",
+            "item_id": "food_cake",
+            "name": "奶油蛋糕",
+            "amount": 1,
+            "reward_text": "奶油蛋糕×1"
+          },
+          "status": "pending",
+          "partner_user_id": "2069743095",
+          "partner_display_name": "瀛",
+          "reward_text": "奶油蛋糕×1"
+        },
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "云麓雪场",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_severin_ski_resort",
+            "name": "发现云麓雪场",
+            "rarity": 3,
+            "time": 1788147876921,
+            "actor_name": "月卡买成改名卡了",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现云麓雪场」 ★★★"
+          },
+          {
+            "id": "severin_first_visit",
+            "name": "雪落龟头",
+            "rarity": 3,
+            "time": 1788147876922,
+            "actor_name": "月卡买成改名卡了",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「雪落龟头」 ★★★"
+          },
+          {
+            "id": "ach_travel_encounter_five",
+            "name": "龟壳不再孤单",
+            "rarity": 3,
+            "time": 1788147876923,
+            "actor_name": "月卡买成改名卡了",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「龟壳不再孤单」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1788147876925,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：云麓雪场（塞弗林）\n旅行时间：1小时4分钟\n获得：1063若汁币，若汁之缘×2，经验+2\n小若汁偶遇了瀛的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：奶油蛋糕×1\n旅行事件：抬头正好\n小若汁随便抬了一下头，恰好看见一条绿色极光从天空慢慢展开。\n新地点已解锁：云麓雪场\n达成旅行成就「发现云麓雪场」 ★★★\n达成旅行成就「雪落龟头」 ★★★\n达成旅行成就「龟壳不再孤单」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mtgmsqu7-dxakilvm",
+        "group_id": "1025424898",
+        "self_id": "3874871823",
+        "user_id": "3924389924",
+        "report": "小若汁回来了！\n目的地：云麓雪场（塞弗林）\n旅行时间：1小时4分钟\n获得：1063若汁币，若汁之缘×2，经验+2\n小若汁偶遇了瀛的小若汁，两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。\n偶遇奖励：奶油蛋糕×1\n旅行事件：抬头正好\n小若汁随便抬了一下头，恰好看见一条绿色极光从天空慢慢展开。\n新地点已解锁：云麓雪场\n达成旅行成就「发现云麓雪场」 ★★★\n达成旅行成就「雪落龟头」 ★★★\n达成旅行成就「龟壳不再孤单」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1788147876925,
+        "created_at": 1788147876925,
+        "sent_at": 1788147877500,
+        "last_error": ""
+      },
       {
         "travel_id": "mtg20uwi-12x4uqew",
         "group_id": "1025424898",
@@ -3614,7 +3843,7 @@
       }
     ],
     "stats": {
-      "total_trips": 16,
+      "total_trips": 17,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -3631,7 +3860,7 @@
         "alvita": 1,
         "galovian": 2,
         "starnet": 0,
-        "severin": 0
+        "severin": 1
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -3652,6 +3881,9 @@
         },
         "galovian": {
           "huaixi_old_well": 1
+        },
+        "severin": {
+          "severin_public_aurora": 1
         }
       },
       "event_ids": {
@@ -3663,72 +3895,17 @@
         "beast_patrol": 1,
         "eld_event_door_elsewhere": 1,
         "agent_fired_worker": 1,
-        "huaixi_old_well": 1
+        "huaixi_old_well": 1,
+        "severin_public_aurora": 1
       },
-      "total_encounters": 4,
+      "total_encounters": 5,
       "encounter_reward_types": {
         "food_cake": 1,
         "currency": 1,
         "travel_pager": 1
       }
     },
-    "active": {
-      "id": "mtgmsqu7-dxakilvm",
-      "user_id": "3924389924",
-      "display_name": "月卡买成改名卡了",
-      "group_id": "1025424898",
-      "self_id": "3874871823",
-      "started_at": 1788144049375,
-      "ends_at": 1788147876841,
-      "duration_ms": 3827466,
-      "map_id": "severin",
-      "map_name": "塞弗林",
-      "location_id": "severin_ski_resort",
-      "location_name": "云麓雪场",
-      "was_unlocked": false,
-      "carried_item_id": "",
-      "carried_item_name": "",
-      "event": {
-        "id": "severin_public_aurora",
-        "name": "抬头正好",
-        "kind": "",
-        "text": "小若汁随便抬了一下头，恰好看见一条绿色极光从天空慢慢展开。",
-        "effects": {
-          "mood": 4
-        },
-        "souvenirs": [],
-        "items": [],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 1063,
-        "fate": 2,
-        "experience": 2
-      },
-      "encounter": {
-        "id": "encounter-mtgnj00f-c3zgty40",
-        "time": 1788145274319,
-        "map_id": "severin",
-        "map_name": "塞弗林",
-        "entry_id": "shared_leaf",
-        "text": "两只小若汁在路边发现了一片特别大的菜叶，郑重地一龟一半分着带走。",
-        "reward": {
-          "id": "food_cake",
-          "type": "item",
-          "item_id": "food_cake",
-          "name": "奶油蛋糕",
-          "amount": 1,
-          "reward_text": "奶油蛋糕×1"
-        },
-        "status": "pending",
-        "partner_user_id": "2069743095",
-        "partner_display_name": "瀛"
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "companions": {
       "heseranville_aster": {
