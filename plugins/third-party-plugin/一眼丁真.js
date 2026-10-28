@@ -3,6 +3,14 @@ import fetch from 'node-fetch';
 
 const baseUrl = 'http://127.0.0.1:12315'
 
+async function imageFromApi(url) {
+  const response = await fetch(url)
+  if (!response.ok) throw new Error(`image API returned ${response.status}: ${url}`)
+  const contentType = response.headers.get('content-type') || 'image/jpeg'
+  const base64 = Buffer.from(await response.arrayBuffer()).toString('base64')
+  return `base64://${base64}`
+}
+
 export class example extends plugin {
     constructor() {
         super({
@@ -74,10 +82,10 @@ export class example extends plugin {
     }
 
     async yydz(e) {
-        e.reply(segment.image(baseUrl+'/yydz'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/yydz')))
     }
     async nailong(e) {
-        e.reply(segment.image(baseUrl+'/nailong'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/nailong')))
     }
     /*五个等级 极差 较差 一般 较强 极强，分别记01234.两个加起来，0是小杯，1是中杯下，2是中杯上，然后345是大杯上中下，678是超大杯上中下。8是命令所有玩家抽取，67是推荐所有玩家抽取，45是推荐有需要的玩家抽取，23是不推荐玩家抽取，1是不建议任何人以任何理由抽取*/
 
@@ -128,7 +136,7 @@ export class example extends plugin {
         e.reply([msg, segment.image(baseUrl+`/newshabei?score=${score}`)],1)
     }
     async linggan(e) {
-        e.reply(segment.image(baseUrl+'/linggan'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/linggan')))
     }
     async linggan_index(e) {
         const m = e.msg.match(/^#?(?:今日灵感|灵感|睡前故事)\s*(\d+)$/);
@@ -141,13 +149,13 @@ export class example extends plugin {
         return e.reply(segment.image(url));
     }
     async maodie(e) {
-        e.reply(segment.image(baseUrl+'/maodie'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/maodie')))
     }
     async doro(e) {
-        e.reply(segment.image(baseUrl+'/doro'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/doro')))
     }
     async pig(e) {
-        e.reply(segment.image(baseUrl+'/pig'))
+        e.reply(segment.image(await imageFromApi(baseUrl+'/pig')))
     }
 }
 

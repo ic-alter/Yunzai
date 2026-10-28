@@ -3,12 +3,12 @@
   "user_id": "1260797962",
   "pet": {
     "level": 2,
-    "experience": 96,
+    "experience": 99,
     "satiety": 5,
     "mood": 87,
     "health": 86,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1789099498147,
+    "satiety_decay_at": 1793155643055,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -637,6 +637,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_floating_words_plaza": {
+        "id": "ach_floating_words_plaza",
+        "name": "发现浮言广场",
+        "rarity": 3,
+        "time": 1791525285172,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -928,8 +943,8 @@
       "prison_turtle": 0
     },
     "weight": 0,
-    "weight_decay_at": 1789086729837,
-    "health_decay_at": 1789099498147
+    "weight_decay_at": 1793147529837,
+    "health_decay_at": 1793155643055
   },
   "profile": {
     "favorability": 19,
@@ -937,21 +952,34 @@
     "total_contribution": 18,
     "last_display_name": "迈特斯妲",
     "first_joined_at": 1784803173109,
-    "last_active_at": 1789099498147,
+    "last_active_at": 1793155643055,
     "daily": {
-      "date": "2026-09-11",
+      "date": "2026-10-28",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W37"
+      "week": "2026-W44"
     },
     "currency": {
-      "balance": 166027,
-      "total_earned": 166027,
+      "balance": 167377,
+      "total_earned": 167377,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1791525285165,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 1350,
+          "before": 166027,
+          "after": 167377,
+          "meta": {
+            "travel_id": "mv0h07s7-euh5x8vb",
+            "location_id": "floating_words_plaza",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1788095718711,
           "type": "income",
@@ -1064,18 +1092,6 @@
             "skin_id": "hearts_turtle",
             "rarity": 3
           }
-        },
-        {
-          "time": 1787168142149,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 156010,
-          "after": 156310,
-          "meta": {
-            "skin_id": "birthday_turtle",
-            "rarity": 3
-          }
         }
       ],
       "sign": {
@@ -1087,7 +1103,7 @@
       "first_interaction_reward_date": "2026-08-07"
     },
     "items": {
-      "ruozhi_fate": 26,
+      "ruozhi_fate": 32,
       "nameless_ruozhi": 0,
       "souvenir_temporary_summon_card": 1,
       "souvenir_sun_chart": 3,
@@ -1108,6 +1124,31 @@
       "souvenir_extra_corner_map": 1
     },
     "item_ledger": [
+      {
+        "time": 1791525285172,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 29,
+        "after": 32,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_floating_words_plaza"
+        }
+      },
+      {
+        "time": 1791525285165,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 26,
+        "after": 29,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mv0h07s7-euh5x8vb",
+          "location_id": "floating_words_plaza"
+        }
+      },
       {
         "time": 1788095718716,
         "type": "income",
@@ -1335,34 +1376,6 @@
           "event_id": "eld_event_border_quest",
           "location_id": "eld_adventurer_guild"
         }
-      },
-      {
-        "time": 1786973594907,
-        "type": "income",
-        "item_id": "souvenir_border_map",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msx5lzab-p2adxd6e",
-          "event_id": "eld_event_border_quest",
-          "location_id": "eld_adventurer_guild"
-        }
-      },
-      {
-        "time": 1786973594907,
-        "type": "income",
-        "item_id": "souvenir_border_quest_scroll",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msx5lzab-p2adxd6e",
-          "event_id": "eld_event_border_quest",
-          "location_id": "eld_adventurer_guild"
-        }
       }
     ],
     "item_daily": {
@@ -1530,10 +1543,10 @@
     "migrated_at": 1784803173109
   },
   "created_at": 1784803173109,
-  "updated_at": 1789099498147,
+  "updated_at": 1793155643055,
   "production": {
     "started_at": 1785079624441,
-    "last_settled_at": 1789099498147,
+    "last_settled_at": 1793155643055,
     "accumulated_ms": 259200000,
     "progress": 35.08025954477688,
     "total_produced": 102,
@@ -1564,7 +1577,8 @@
       "eld_beyond_cottage",
       "automated_logistics_port",
       "rtc_botanical_dome",
-      "golden_cloud_temple"
+      "golden_cloud_temple",
+      "floating_words_plaza"
     ],
     "location_records": {
       "eld_moonbell_village": {
@@ -1757,6 +1771,14 @@
         "name": "金霞观",
         "travel_id": "mtfpcjft-m5t71w6a",
         "time": 1788095718713,
+        "carried_item_id": ""
+      },
+      "floating_words_plaza": {
+        "id": "floating_words_plaza",
+        "map_id": "starnet",
+        "name": "浮言广场",
+        "travel_id": "mv0h07s7-euh5x8vb",
+        "time": 1791525285165,
         "carried_item_id": ""
       }
     },
@@ -2475,9 +2497,75 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_floating_words_plaza": {
+        "id": "ach_floating_words_plaza",
+        "name": "发现浮言广场",
+        "rarity": 3,
+        "time": 1791525285172,
+        "actor_name": "迈特斯妲",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mv0h07s7-euh5x8vb": {
+        "id": "mv0h07s7-euh5x8vb",
+        "user_id": "1260797962",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "迈特斯妲",
+        "map_id": "starnet",
+        "map_name": "星网",
+        "location_id": "floating_words_plaza",
+        "location_name": "浮言广场",
+        "duration_ms": 4859058,
+        "rewards": {
+          "coin": 1350,
+          "fate": 3,
+          "experience": 3
+        },
+        "event": null,
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "浮言广场",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_floating_words_plaza",
+            "name": "发现浮言广场",
+            "rarity": 3,
+            "time": 1791525285172,
+            "actor_name": "迈特斯妲",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现浮言广场」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1791525285177,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：浮言广场（星网）\n旅行时间：1小时21分钟\n获得：1350若汁币，若汁之缘×3，经验+3\n新地点已解锁：浮言广场\n达成旅行成就「发现浮言广场」 ★★★"
+      },
       "mtfpcjft-m5t71w6a": {
         "id": "mtfpcjft-m5t71w6a",
         "user_id": "1260797962",
@@ -3534,49 +3622,22 @@
         "settled_at": 1786078961484,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：潮汐自由港（艾尔多兰大陆）\n旅行时间：2小时40分钟\n获得：2670若汁币，若汁之缘×5，经验+5\n旅行事件：太阳航海图\n老船长送给小若汁一张只在阳光下显字的航海图。\n纪念品：☀️太阳航海图×1"
-      },
-      "mshsqpqv-3wms4ocw": {
-        "id": "mshsqpqv-3wms4ocw",
-        "user_id": "1260797962",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "display_name": "迈特斯妲",
-        "map_id": "retro_tomorrow_city",
-        "map_name": "明日旧城",
-        "location_id": "rtc_robot_park",
-        "location_name": "欢笑机器人乐园",
-        "duration_ms": 6743047,
-        "rewards": {
-          "coin": 1873,
-          "fate": 5,
-          "experience": 4
-        },
-        "event": {
-          "id": "rtc_event_ferris_stop",
-          "name": "停在最高点",
-          "text": "摩天轮在最高处停了半小时。",
-          "effects": {
-            "fate_flat": 1
-          },
-          "souvenirs": [],
-          "record": false
-        },
-        "souvenirs": [],
-        "satiety_change": 0,
-        "new_location": "",
-        "health_change": 0,
-        "achievements": [],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "",
-        "tool_name": "",
-        "settled_at": 1786044459258,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：1小时52分钟\n获得：1873若汁币，若汁之缘×5，经验+4\n旅行事件：停在最高点\n摩天轮在最高处停了半小时。"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mv0h07s7-euh5x8vb",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "1260797962",
+        "report": "小若汁回来了！\n目的地：浮言广场（星网）\n旅行时间：1小时21分钟\n获得：1350若汁币，若汁之缘×3，经验+3\n新地点已解锁：浮言广场\n达成旅行成就「发现浮言广场」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1791525285178,
+        "created_at": 1791525285178,
+        "sent_at": 1791525285670,
+        "last_error": ""
+      },
       {
         "travel_id": "mtfpcjft-m5t71w6a",
         "group_id": "415462812",
@@ -3823,23 +3884,10 @@
         "created_at": 1786078961484,
         "sent_at": 1786078961737,
         "last_error": ""
-      },
-      {
-        "travel_id": "mshsqpqv-3wms4ocw",
-        "group_id": "415462812",
-        "self_id": "3762153943",
-        "user_id": "1260797962",
-        "report": "小若汁回来了！\n目的地：欢笑机器人乐园（明日旧城）\n旅行时间：1小时52分钟\n获得：1873若汁币，若汁之缘×5，经验+4\n旅行事件：停在最高点\n摩天轮在最高处停了半小时。",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1786044459258,
-        "created_at": 1786044459258,
-        "sent_at": 1786044459542,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 44,
+      "total_trips": 45,
       "key_item_discoveries": {
         "souvenir_sun_chart": {
           "item_id": "souvenir_sun_chart",
@@ -3865,7 +3913,9 @@
         "candy_dreamland": 0,
         "alvita": 1,
         "galovian": 0,
-        "starnet": 0
+        "starnet": 1,
+        "severin": 0,
+        "farreach_freighter_407": 0
       },
       "map_event_ids": {
         "eldoran_continent": {

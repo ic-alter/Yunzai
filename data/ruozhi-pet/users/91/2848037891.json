@@ -2,13 +2,13 @@
   "version": 2,
   "user_id": "2848037891",
   "pet": {
-    "level": 4,
-    "experience": 127,
+    "level": 5,
+    "experience": 137,
     "satiety": 5,
     "mood": 100,
     "health": 100,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1789099498278,
+    "satiety_decay_at": 1793155643201,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -67,7 +67,14 @@
       "paint_splash_turtle",
       "mouse_turtle",
       "love_letter_turtle",
-      "mushroom_shell_turtle"
+      "mushroom_shell_turtle",
+      "neutral_turtle",
+      "spirit_pearl_turtle",
+      "gift_turtle",
+      "ruozhilai_turtle",
+      "crab_turtle",
+      "shidai_turtle",
+      "milk_frog_turtle"
     ],
     "level_reward_records": {
       "2:unlock_skin:cactus_turtle": {
@@ -90,11 +97,19 @@
         "level": 4,
         "time": 1787545295060,
         "applied": true
+      },
+      "5:unlock_skin:neutral_turtle": {
+        "type": "unlock_skin",
+        "skin_id": "neutral_turtle",
+        "level": 5,
+        "time": 1789351219194,
+        "applied": true
       }
     },
     "achievement_stats": {
-      "counter:gacha_draws": 163,
-      "counter:gacha_five": 2
+      "counter:gacha_draws": 299,
+      "counter:gacha_five": 5,
+      "counter:gacha_unlucky_five": 1
     },
     "achievement_records": {
       "gacha_draw_1": {
@@ -284,9 +299,86 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "gacha_five_5": {
+        "id": "gacha_five_5",
+        "name": "五星眷顾",
+        "rarity": 4,
+        "time": 1793016373360,
+        "actor_name": "6影画洛克茜·伊芙莉塔·普莱斯最强",
+        "stat_key": "counter:gacha_five",
+        "count": 5,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "gacha_unlucky_five": {
+        "id": "gacha_unlucky_five",
+        "name": "爽吃保底",
+        "rarity": 4,
+        "time": 1793016373361,
+        "actor_name": "6影画洛克茜·伊芙莉塔·普莱斯最强",
+        "stat_key": "counter:gacha_unlucky_five",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "milk_frog_turtle",
+            "skin_name": "奶蛙小若汁",
+            "message": "解锁四星皮肤「奶蛙小若汁」。"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "milk_frog_turtle",
+        "reason": "achievement",
+        "time": 1793016373361,
+        "achievement_id": "gacha_unlucky_five"
+      },
+      {
+        "skin_id": "shidai_turtle",
+        "reason": "gacha",
+        "time": 1793016373358
+      },
+      {
+        "skin_id": "crab_turtle",
+        "reason": "gacha",
+        "time": 1793016373356
+      },
+      {
+        "skin_id": "ruozhilai_turtle",
+        "reason": "gacha",
+        "time": 1790683586379
+      },
+      {
+        "skin_id": "gift_turtle",
+        "reason": "gacha",
+        "time": 1790683582213
+      },
+      {
+        "skin_id": "spirit_pearl_turtle",
+        "reason": "gacha",
+        "time": 1789615561962
+      },
+      {
+        "skin_id": "neutral_turtle",
+        "reason": "level_reward",
+        "time": 1789351219194,
+        "level": 5
+      },
       {
         "skin_id": "mushroom_shell_turtle",
         "reason": "gacha",
@@ -583,149 +675,152 @@
     ],
     "five_skin_shadow_counts": {
       "snow_peak_turtle": 0,
-      "magic_pill_turtle": 0
+      "magic_pill_turtle": 0,
+      "spirit_pearl_turtle": 0,
+      "ruozhilai_turtle": 0
     },
-    "weight": 2,
-    "weight_decay_at": 1789086239364,
-    "health_decay_at": 1789099498278
+    "weight": 0,
+    "weight_decay_at": 1793145973355,
+    "health_decay_at": 1793155643201
   },
   "profile": {
     "favorability": 100,
     "weekly_contribution": 7,
-    "total_contribution": 173,
-    "last_display_name": "Cissia最强",
+    "total_contribution": 243,
+    "last_display_name": "6影画洛克茜·伊芙莉塔·普莱斯最强",
     "first_joined_at": 1784809997772,
-    "last_active_at": 1789099498278,
+    "last_active_at": 1793155643201,
     "daily": {
-      "date": "2026-09-11",
+      "date": "2026-10-28",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W37"
+      "week": "2026-W44"
     },
     "currency": {
-      "balance": 91831,
-      "total_earned": 91831,
+      "balance": 215878,
+      "total_earned": 215878,
       "total_spent": 0,
       "ledger": [
         {
-          "time": 1788740230676,
-          "type": "income",
-          "reason": "daily_first_interaction",
-          "amount": 500,
-          "before": 91331,
-          "after": 91831,
-          "meta": {
-            "date": "2026-09-07"
-          }
-        },
-        {
-          "time": 1788697439364,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 91031,
-          "after": 91331,
-          "meta": {
-            "skin_id": "puppy_turtle",
-            "rarity": 3
-          }
-        },
-        {
-          "time": 1788697439364,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 300,
-          "before": 90731,
-          "after": 91031,
+          "before": 215578,
+          "after": 215878,
           "meta": {
             "skin_id": "headphones_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697439364,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 90431,
-          "after": 90731,
+          "before": 215278,
+          "after": 215578,
           "meta": {
-            "skin_id": "bell_turtle",
+            "skin_id": "wide_eyed_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697439364,
-          "type": "income",
-          "reason": "gacha_duplicate",
-          "amount": 5000,
-          "before": 85431,
-          "after": 90431,
-          "meta": {
-            "skin_id": "dragon_turtle",
-            "rarity": 4
-          }
-        },
-        {
-          "time": 1788697439364,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 85131,
-          "after": 85431,
+          "before": 214978,
+          "after": 215278,
           "meta": {
-            "skin_id": "kiss_marks_turtle",
+            "skin_id": "headphones_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697439364,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 84831,
-          "after": 85131,
+          "before": 214678,
+          "after": 214978,
           "meta": {
-            "skin_id": "goggles_turtle",
+            "skin_id": "birthday_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697414290,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 84531,
-          "after": 84831,
+          "before": 214378,
+          "after": 214678,
           "meta": {
-            "skin_id": "raised_eyebrow_turtle",
+            "skin_id": "headphones_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697414290,
+          "time": 1793016373359,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 84231,
-          "after": 84531,
+          "before": 214078,
+          "after": 214378,
           "meta": {
-            "skin_id": "shushing_turtle",
+            "skin_id": "biting_lip_turtle",
             "rarity": 3
           }
         },
         {
-          "time": 1788697414290,
+          "time": 1793016373358,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 83931,
-          "after": 84231,
+          "before": 213778,
+          "after": 214078,
           "meta": {
-            "skin_id": "frog_turtle",
+            "skin_id": "tear_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1793016373358,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 213478,
+          "after": 213778,
+          "meta": {
+            "skin_id": "grasshopper_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1793016373357,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 213178,
+          "after": 213478,
+          "meta": {
+            "skin_id": "wide_eyed_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1793016373357,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 212878,
+          "after": 213178,
+          "meta": {
+            "skin_id": "bouquet_turtle",
             "rarity": 3
           }
         }
@@ -736,75 +831,262 @@
         "first_reward_claimed": true,
         "first_fate_reward_claimed": true
       },
-      "first_interaction_reward_date": "2026-09-07"
+      "first_interaction_reward_date": "2026-10-26"
     },
     "items": {
-      "ruozhi_fate": 2,
+      "ruozhi_fate": 8,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
       {
-        "time": 1788697439364,
+        "time": 1793016373360,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 5,
+        "after": 8,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_unlucky_five"
+        }
+      },
+      {
+        "time": 1793016373360,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 2,
+        "after": 5,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "gacha_five_5"
+        }
+      },
+      {
+        "time": 1793016373355,
         "type": "expense",
         "item_id": "ruozhi_fate",
-        "amount": 18,
-        "before": 20,
+        "amount": 258,
+        "before": 260,
         "after": 2,
         "reason": "gacha_draw",
         "meta": {
-          "count": 6
+          "count": 86
         }
       },
       {
-        "time": 1788697414290,
-        "type": "expense",
+        "time": 1793016351606,
+        "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 30,
-        "before": 50,
-        "after": 20,
-        "reason": "gacha_draw",
+        "before": 230,
+        "after": 260,
+        "reason": "comeback_reward",
         "meta": {
-          "count": 10
+          "inactive_days": 8,
+          "last_engagement_date": "2026-10-18",
+          "date": "2026-10-26"
         }
       },
       {
-        "time": 1788697404475,
+        "time": 1793016351606,
         "type": "income",
         "item_id": "ruozhi_fate",
         "amount": 36,
-        "before": 14,
-        "after": 50,
+        "before": 194,
+        "after": 230,
         "reason": "pet_production_interaction_auto_collect",
         "meta": {
           "accumulated_hours": 72
         }
       },
       {
-        "time": 1788336328698,
+        "time": 1793016215783,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 192,
+        "after": 194,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1793015836457,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 190,
+        "after": 192,
+        "reason": "zzz_wordle_win_fate",
+        "meta": {
+          "guesses": 7,
+          "difficulty": "hard",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1793015717820,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 6,
+        "before": 184,
+        "after": 190,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "pixel",
+          "planned_amount": 6,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1793015517228,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 182,
+        "after": 184,
+        "reason": "zzz_wordle_win_fate",
+        "meta": {
+          "guesses": 10,
+          "difficulty": "hard",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1793013926035,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 2,
+        "before": 180,
+        "after": 182,
+        "reason": "mihoyo_guess_role_settlement_fate",
+        "meta": {
+          "rounds": 20,
+          "mode": "crop",
+          "planned_amount": 2,
+          "daily_limit": 60
+        }
+      },
+      {
+        "time": 1792301054965,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 35,
+        "before": 145,
+        "after": 180,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1792033427259,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 14,
+        "before": 131,
+        "after": 145,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 26.9
+        }
+      },
+      {
+        "time": 1791936587305,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 35,
+        "before": 96,
+        "after": 131,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1791524293858,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 36,
+        "before": 60,
+        "after": 96,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1791080384696,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 35,
+        "before": 25,
+        "after": 60,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1790683586379,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 30,
-        "before": 44,
-        "after": 14,
+        "before": 55,
+        "after": 25,
         "reason": "gacha_draw",
         "meta": {
           "count": 10
         }
       },
       {
-        "time": 1788332779706,
-        "type": "income",
+        "time": 1790683582212,
+        "type": "expense",
         "item_id": "ruozhi_fate",
-        "amount": 25,
-        "before": 19,
-        "after": 44,
-        "reason": "pet_production_interaction_auto_collect",
+        "amount": 30,
+        "before": 85,
+        "after": 55,
+        "reason": "gacha_draw",
         "meta": {
-          "accumulated_hours": 51.736
+          "count": 10
         }
       },
       {
-        "time": 1788146535370,
+        "time": 1790683576991,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 55,
+        "after": 85,
+        "reason": "comeback_reward",
+        "meta": {
+          "inactive_days": 12,
+          "last_engagement_date": "2026-09-17",
+          "date": "2026-09-29"
+        }
+      },
+      {
+        "time": 1790683576991,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 36,
+        "before": 19,
+        "after": 55,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
+      {
+        "time": 1789615561962,
         "type": "expense",
         "item_id": "ruozhi_fate",
         "amount": 30,
@@ -814,181 +1096,12 @@
         "meta": {
           "count": 10
         }
-      },
-      {
-        "time": 1788146530248,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 21,
-        "before": 28,
-        "after": 49,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 44.428
-        }
-      },
-      {
-        "time": 1787986598103,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 58,
-        "after": 28,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1787986591022,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 35,
-        "before": 23,
-        "after": 58,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 72
-        }
-      },
-      {
-        "time": 1787724093554,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 20,
-        "after": 23,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "galovian_first_steps"
-        }
-      },
-      {
-        "time": 1787724093553,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 17,
-        "after": 20,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_heseranville_front_estate"
-        }
-      },
-      {
-        "time": 1787724093548,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 4,
-        "before": 13,
-        "after": 17,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mt9kbkt4-up4ozpdh",
-          "location_id": "heseranville_front_estate"
-        }
-      },
-      {
-        "time": 1787716607989,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 30,
-        "before": 43,
-        "after": 13,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 10
-        }
-      },
-      {
-        "time": 1787707578953,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 37,
-        "after": 43,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 13.395
-        }
-      },
-      {
-        "time": 1787659355619,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 16,
-        "before": 21,
-        "after": 37,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 31.683
-        }
-      },
-      {
-        "time": 1787545295059,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 18,
-        "after": 21,
-        "reason": "level_up_reward",
-        "meta": {
-          "level": 4
-        }
-      },
-      {
-        "time": 1787545295057,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 12,
-        "before": 6,
-        "after": 18,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 25.549
-        }
-      },
-      {
-        "time": 1787453318191,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 6,
-        "before": 0,
-        "after": 6,
-        "reason": "pet_production_interaction_auto_collect",
-        "meta": {
-          "accumulated_hours": 12.247
-        }
-      },
-      {
-        "time": 1787409320747,
-        "type": "expense",
-        "item_id": "ruozhi_fate",
-        "amount": 9,
-        "before": 9,
-        "after": 0,
-        "reason": "gacha_draw",
-        "meta": {
-          "count": 3
-        }
-      },
-      {
-        "time": 1787409307015,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 6,
-        "after": 9,
-        "reason": "achievement_unlock",
-        "meta": {
-          "achievement_id": "gacha_draw_100"
-        }
       }
     ],
     "item_daily": {
-      "date": "2026-09-02",
+      "date": "2026-10-26",
       "fate_exchange_count": 0,
-      "game_fate_reward_count": 0,
+      "game_fate_reward_count": 14,
       "shop_buy_counts": {},
       "use_counts": {}
     },
@@ -999,16 +1112,19 @@
         "completed_levels": 0,
         "amount": 0
       }
+    },
+    "engagement": {
+      "last_date": "2026-10-26"
     }
   },
   "recent_events": [
     {
-      "time": 1788740230676,
+      "time": 1793016351606,
       "user_id": "2848037891",
-      "display_name": "Cissia最强",
+      "display_name": "6影画洛克茜·伊芙莉塔·普莱斯最强",
       "event_id": "feed",
       "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "summary": "小若汁已经饿得没力气了，6影画洛克茜·伊芙莉塔·普莱斯最强及时投喂后，它埋头吃了很久才缓过来。",
       "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
       "effects": {
         "satiety": 18,
@@ -1022,40 +1138,14 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 91831
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 0
-    },
-    {
-      "time": 1788697404475,
-      "user_id": "2848037891",
-      "display_name": "Cissia最强",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 18,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 82131
+        "balance": 143678
       },
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 36
     },
     {
-      "time": 1788332779706,
+      "time": 1792301054966,
       "user_id": "2848037891",
       "display_name": "Cissia最强",
       "event_id": "feed",
@@ -1074,66 +1164,14 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 79531
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 25
-    },
-    {
-      "time": 1788146530248,
-      "user_id": "2848037891",
-      "display_name": "Cissia最强",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 18,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 71331
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 21
-    },
-    {
-      "time": 1787986591023,
-      "user_id": "2848037891",
-      "display_name": "Cissia最强",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 18,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 68131
+        "balance": 139796
       },
       "level_rewards": [],
       "achievements": [],
       "auto_production_collect": 35
     },
     {
-      "time": 1787707578954,
+      "time": 1792033427260,
       "user_id": "2848037891",
       "display_name": "Cissia最强",
       "event_id": "feed",
@@ -1152,14 +1190,14 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 57857
+        "balance": 139296
       },
       "level_rewards": [],
       "achievements": [],
-      "auto_production_collect": 6
+      "auto_production_collect": 14
     },
     {
-      "time": 1787659355621,
+      "time": 1791936587305,
       "user_id": "2848037891",
       "display_name": "Cissia最强",
       "event_id": "feed",
@@ -1178,20 +1216,124 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 57357
+        "balance": 138796
       },
       "level_rewards": [],
       "achievements": [],
-      "auto_production_collect": 16
+      "auto_production_collect": 35
     },
     {
-      "time": 1787545295060,
+      "time": 1791524293859,
       "user_id": "2848037891",
       "display_name": "Cissia最强",
       "event_id": "feed",
       "branch_id": "starving",
       "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17，升级到 Lv.4",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 138296
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 36
+    },
+    {
+      "time": 1791080384697,
+      "user_id": "2848037891",
+      "display_name": "Cissia最强",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 137796
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 35
+    },
+    {
+      "time": 1790683576991,
+      "user_id": "2848037891",
+      "display_name": "Cissia最强",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 117631
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 36
+    },
+    {
+      "time": 1789615556713,
+      "user_id": "2848037891",
+      "display_name": "Cissia最强",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
+      "effects": {
+        "satiety": 18,
+        "mood": 8,
+        "health": 4,
+        "favorability": 8,
+        "contribution": 7,
+        "experience": 17
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 114431
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 35
+    },
+    {
+      "time": 1789351219195,
+      "user_id": "2848037891",
+      "display_name": "Cissia最强",
+      "event_id": "feed",
+      "branch_id": "starving",
+      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
+      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17，升级到 Lv.5",
       "effects": {
         "satiety": 18,
         "mood": 8,
@@ -1202,19 +1344,19 @@
       },
       "level_ups": [
         {
-          "level": 4,
-          "need": 140
+          "level": 5,
+          "need": 160
         }
       ],
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 56557
+        "balance": 105231
       },
       "level_rewards": [
         {
-          "level": 4,
-          "reward": 300,
+          "level": 5,
+          "reward": 1000,
           "receiver": {
             "user_id": "2848037891",
             "display_name": "Cissia最强"
@@ -1222,19 +1364,19 @@
           "special_rewards": [
             {
               "type": "unlock_skin",
-              "level": 4,
-              "skin_id": "sweat_smile_turtle",
-              "skin_name": "汗笑小若汁",
+              "level": 5,
+              "skin_id": "neutral_turtle",
+              "skin_name": "无语小若汁",
               "applied": true
             }
           ]
         }
       ],
       "achievements": [],
-      "auto_production_collect": 12
+      "auto_production_collect": 34
     },
     {
-      "time": 1787453318192,
+      "time": 1789100474699,
       "user_id": "2848037891",
       "display_name": "Cissia最强",
       "event_id": "feed",
@@ -1253,41 +1395,15 @@
       "bonus_experience": 10,
       "first_interaction_reward": {
         "reward": 500,
-        "balance": 56057
+        "balance": 92331
       },
       "level_rewards": [],
       "achievements": [],
-      "auto_production_collect": 6
-    },
-    {
-      "time": 1787409230265,
-      "user_id": "2848037891",
-      "display_name": "Cissia最强",
-      "event_id": "feed",
-      "branch_id": "starving",
-      "summary": "小若汁已经饿得没力气了，Cissia最强及时投喂后，它埋头吃了很久才缓过来。",
-      "effects_text": "饱食+18，心情+8，健康+4，好感+8，贡献+7，经验+17",
-      "effects": {
-        "satiety": 18,
-        "mood": 8,
-        "health": 4,
-        "favorability": 8,
-        "contribution": 7,
-        "experience": 17
-      },
-      "level_ups": [],
-      "bonus_experience": 10,
-      "first_interaction_reward": {
-        "reward": 500,
-        "balance": 52557
-      },
-      "level_rewards": [],
-      "achievements": [],
-      "auto_production_collect": 18
+      "auto_production_collect": 35
     }
   ],
   "daily": {
-    "date": "2026-09-07",
+    "date": "2026-10-26",
     "event_count": 1,
     "bonus_event_count": 1
   },
@@ -1319,7 +1435,17 @@
     "event:1699145309": 1788146530246,
     "event:1930412620": 1788332779704,
     "event:563331066": 1788697404474,
-    "event:2032451206": 1788740230674
+    "event:2032451206": 1788740230674,
+    "event:1754011398": 1789100474693,
+    "event:1219616669": 1789351219188,
+    "event:676475735": 1789615556711,
+    "event:957521983": 1790683576990,
+    "event:1511825617": 1791080384693,
+    "event:1012734501": 1791524293856,
+    "event:887392428": 1791936587303,
+    "event:1452191886": 1792033427256,
+    "event:1333398993": 1792301054963,
+    "event:1057200511": 1793016351605
   },
   "skin_sessions": {
     "active": null
@@ -1332,14 +1458,35 @@
     "migrated_at": 1784809997772
   },
   "created_at": 1784809997772,
-  "updated_at": 1789099498278,
+  "updated_at": 1793155643201,
   "gacha": {
-    "since_four_plus": 3,
-    "since_five": 58,
-    "total_draws": 163,
-    "total_four": 18,
-    "total_five": 2,
+    "since_four_plus": 8,
+    "since_five": 8,
+    "total_draws": 299,
+    "total_four": 36,
+    "total_five": 5,
     "five_history": [
+      {
+        "time": 1793016373358,
+        "skin_id": "shidai_turtle",
+        "skin_name": "什戴小若汁",
+        "pulls": 81,
+        "draw_index": 291
+      },
+      {
+        "time": 1790683586379,
+        "skin_id": "ruozhilai_turtle",
+        "skin_name": "若汁来",
+        "pulls": 26,
+        "draw_index": 210
+      },
+      {
+        "time": 1789615561963,
+        "skin_id": "spirit_pearl_turtle",
+        "skin_name": "灵珠小若汁",
+        "pulls": 79,
+        "draw_index": 184
+      },
       {
         "time": 1787409320747,
         "skin_id": "magic_pill_turtle",
@@ -1356,15 +1503,15 @@
       }
     ],
     "route_misses": 1,
-    "route_skin_id": "ruozhilai_turtle"
+    "route_skin_id": "qingshan_turtle"
   },
   "production": {
     "started_at": 1785141760301,
-    "last_settled_at": 1789099498278,
-    "accumulated_ms": 259200000,
-    "progress": 35.27780155632151,
-    "total_produced": 394,
-    "last_collected_at": 1788697404475
+    "last_settled_at": 1793155643201,
+    "accumulated_ms": 139291595,
+    "progress": 19.810142639901933,
+    "total_produced": 725,
+    "last_collected_at": 1793016351606
   },
   "travel": {
     "unlocked_location_ids": [

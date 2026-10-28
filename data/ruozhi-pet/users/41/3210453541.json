@@ -3,12 +3,12 @@
   "user_id": "3210453541",
   "pet": {
     "level": 1,
-    "experience": 0,
+    "experience": 13,
     "satiety": 5,
-    "mood": 70,
+    "mood": 75,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1789099498055,
+    "satiety_decay_at": 1793155642973,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -48,30 +48,43 @@
     ],
     "five_skin_shadow_counts": {},
     "weight": 0,
-    "weight_decay_at": 1789060068806,
-    "health_decay_at": 1789099498055
+    "weight_decay_at": 1793120868806,
+    "health_decay_at": 1793155642973
   },
   "profile": {
-    "favorability": 0,
+    "favorability": 3,
     "weekly_contribution": 0,
-    "total_contribution": 0,
-    "last_display_name": "新人米友",
+    "total_contribution": 3,
+    "last_display_name": 3210453541,
     "first_joined_at": 1786700092883,
-    "last_active_at": 1789099498055,
+    "last_active_at": 1793155642973,
     "daily": {
-      "date": "2026-09-11",
+      "date": "2026-10-28",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W37"
+      "week": "2026-W44"
     },
     "items": {
-      "ruozhi_fate": 0,
+      "ruozhi_fate": 30,
       "nameless_ruozhi": 0
     },
-    "item_ledger": [],
+    "item_ledger": [
+      {
+        "time": 1789316750724,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 0,
+        "after": 30,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      }
+    ],
     "item_daily": {},
     "item_migrations": {
       "fate_v1": {
@@ -82,26 +95,70 @@
       }
     },
     "currency": {
-      "balance": 0,
-      "total_earned": 0,
+      "balance": 500,
+      "total_earned": 500,
       "total_spent": 0,
-      "ledger": [],
+      "ledger": [
+        {
+          "time": 1789316750725,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 0,
+          "after": 500,
+          "meta": {
+            "date": "2026-09-14"
+          }
+        }
+      ],
       "sign": {
         "last_date": "",
         "total_count": 0,
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-09-14"
+    },
+    "engagement": {
+      "last_date": "2026-09-14"
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1789316750726,
+      "user_id": "3210453541",
+      "display_name": 3210453541,
+      "event_id": "praise",
+      "branch_id": "happy",
+      "summary": "小若汁被3210453541夸得很开心，尾巴轻轻晃了晃。",
+      "effects_text": "心情+5，好感+3，贡献+3，经验+13",
+      "effects": {
+        "satiety": 0,
+        "mood": 5,
+        "health": 0,
+        "favorability": 3,
+        "contribution": 3,
+        "experience": 13
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 500
+      },
+      "level_rewards": [],
+      "achievements": [],
+      "auto_production_collect": 30
+    }
+  ],
   "daily": {
-    "date": "2026-08-14",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-09-14",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:453205909": 1789316750723
+  },
   "skin_sessions": {
     "active": null
   },
@@ -113,13 +170,14 @@
     "migrated_at": 1786700092883
   },
   "created_at": 1786700092883,
-  "updated_at": 1789099498055,
+  "updated_at": 1793155642973,
   "production": {
     "started_at": 1786700092883,
-    "last_settled_at": 1789099498055,
+    "last_settled_at": 1793155642973,
     "accumulated_ms": 259200000,
-    "progress": 30.026680747013167,
-    "total_produced": 0
+    "progress": 28.343895447206588,
+    "total_produced": 30,
+    "last_collected_at": 1789316750724
   },
   "gacha": {
     "since_four_plus": 0,

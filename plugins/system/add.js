@@ -142,6 +142,15 @@ export class add extends plugin {
     if (!this.e.msg?.includes("#结束添加")) {
       /** 添加内容 */
       for (const i of this.e.message) {
+        if (i.type === "forward") {
+          try {
+            context.message.push(await this.expandForward(i, true))
+          } catch (err) {
+            logger.error(`读取聊天记录失败：${err}`)
+            return this.reply("读取聊天记录失败，请重新发送可访问的聊天记录")
+          }
+          continue
+        }
         if (i.url) {
           i.file = await this.saveFile(i)
           delete i.url
@@ -188,6 +197,43 @@ export class add extends plugin {
     return data.url
   }
 
+  /** 收到的聊天记录只有 ID，保存其中的消息才能再次发送 */
+  async expandForward(message, saveMedia = false) {
+    const contact = this.e.group || this.e.friend
+    if (!message.id || typeof contact?.getForwardMsg !== "function")
+      throw new Error("当前适配器不支持读取聊天记录")
+
+    const records = await contact.getForwardMsg(message.id)
+    if (!Array.isArray(records) || !records.length)
+      throw new Error("聊天记录为空或已失效")
+
+    const data = []
+    for (const record of records) {
+      const content = record.message || record.content
+      if (!content) continue
+      const message = Array.isArray(content) ? content.map(i => ({ ...i })) : content
+      if (saveMedia && Array.isArray(message))
+        for (const item of message)
+          if (item.url) {
+            item.file = await this.saveFile(item)
+            delete item.url
+            delete item.fid
+          }
+      data.push({
+        user_id: record.user_id || record.sender?.user_id,
+        nickname: record.nickname || record.sender?.nickname,
+        time: record.time,
+        message,
+      })
+    }
+    if (!data.length) throw new Error("聊天记录没有可发送的内容")
+
+    return {
+      type: "node",
+      data,
+    }
+  }
+
   getKeyWordMsg(keyWord) {
     return [
       ...(messageMap[this.group_id].get(keyWord) || []),
@@ -229,9 +275,31 @@ export class add extends plugin {
     if (lodash.isEmpty(msg)) return false
 
     msg = [...msg]
+    for (const i in msg) {
+      if (msg[i].type !== "forward") continue
+      try {
+        msg[i] = await this.expandForward(msg[i])
+      } catch (err) {
+        logger.error(`读取关键词聊天记录失败：${err}`)
+        return this.reply("聊天记录已失效，请重新添加此关键词")
+      }
+    }
     for (const i in msg)
       if (msg[i].file && (await Bot.fsStat(`${this.path}${msg[i].file}`)))
         msg[i] = { ...msg[i], file: `${this.path}${msg[i].file}` }
+
+    for (const item of msg) {
+      if (item.type !== "node") continue
+      item.data = await Promise.all(item.data.map(async record => ({
+        ...record,
+        message: Array.isArray(record.message)
+          ? await Promise.all(record.message.map(async part =>
+            part.file && (await Bot.fsStat(`${this.path}${part.file}`))
+              ? { ...part, file: `${this.path}${part.file}` }
+              : part))
+          : record.message,
+      })))
+    }
 
     logger.mark(`[发送消息]${this.e.logText}[${this.keyWord}]`)
     const groupCfg = cfg.getGroup(this.e.self_id, this.group_id)

@@ -3,12 +3,12 @@
   "user_id": "35433674",
   "pet": {
     "level": 1,
-    "experience": 51,
+    "experience": 55,
     "satiety": 5,
     "mood": 70,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1789099498239,
+    "satiety_decay_at": 1793155643155,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -39,11 +39,19 @@
       "bouquet_turtle",
       "ribbon_turtle",
       "bee_turtle",
-      "goggles_turtle"
+      "goggles_turtle",
+      "biting_lip_turtle",
+      "tidal_wave_turtle",
+      "tear_turtle",
+      "puppy_turtle",
+      "thumbs_up_turtle",
+      "birthday_turtle",
+      "shushing_turtle",
+      "volcano_turtle"
     ],
     "level_reward_records": {},
     "achievement_stats": {
-      "counter:gacha_draws": 32,
+      "counter:gacha_draws": 50,
       "counter:gacha_five": 0
     },
     "achievement_records": {
@@ -335,9 +343,64 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1790730465447,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
+      {
+        "skin_id": "volcano_turtle",
+        "reason": "gacha",
+        "time": 1790730506757
+      },
+      {
+        "skin_id": "shushing_turtle",
+        "reason": "gacha",
+        "time": 1790730506757
+      },
+      {
+        "skin_id": "birthday_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
+      {
+        "skin_id": "thumbs_up_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
+      {
+        "skin_id": "puppy_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
+      {
+        "skin_id": "tear_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
+      {
+        "skin_id": "tidal_wave_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
+      {
+        "skin_id": "biting_lip_turtle",
+        "reason": "gacha",
+        "time": 1790730438746
+      },
       {
         "skin_id": "goggles_turtle",
         "reason": "gacha",
@@ -491,8 +554,8 @@
     ],
     "five_skin_shadow_counts": {},
     "weight": 0,
-    "weight_decay_at": 1789086729902,
-    "health_decay_at": 1789099498239
+    "weight_decay_at": 1793147529902,
+    "health_decay_at": 1793155643155
   },
   "profile": {
     "favorability": 0,
@@ -500,27 +563,118 @@
     "total_contribution": 0,
     "last_display_name": "穗穗的星怒",
     "first_joined_at": 1785344070695,
-    "last_active_at": 1789099498239,
+    "last_active_at": 1793155643155,
     "daily": {
-      "date": "2026-09-11",
+      "date": "2026-10-28",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W37"
+      "week": "2026-W44"
     },
     "items": {
-      "ruozhi_fate": 47,
+      "ruozhi_fate": 0,
       "nameless_ruozhi": 0,
-      "travel_pager": 2,
+      "travel_pager": 1,
       "souvenir_wheat_old_coin": 1,
       "souvenir_paid_pirate_photo": 1,
       "souvenir_signal_record": 1,
       "souvenir_yesterday_calendar": 1,
-      "souvenir_two_smaller_screws": 1
+      "souvenir_two_smaller_screws": 1,
+      "souvenir_tomorrow_child_ticket": 1,
+      "food_atom_candy": 1
     },
     "item_ledger": [
+      {
+        "time": 1790730506757,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 24,
+        "before": 24,
+        "after": 0,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 8
+        }
+      },
+      {
+        "time": 1790730465447,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 21,
+        "after": 24,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_rtc_central_station"
+        }
+      },
+      {
+        "time": 1790730465446,
+        "type": "income",
+        "item_id": "food_atom_candy",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_item",
+        "meta": {
+          "travel_id": "muneodn0-14mz8kzx",
+          "event_id": "rtc_event_robot_conductor",
+          "location_id": "rtc_central_station"
+        }
+      },
+      {
+        "time": 1790730465443,
+        "type": "income",
+        "item_id": "souvenir_tomorrow_child_ticket",
+        "amount": 1,
+        "before": 0,
+        "after": 1,
+        "reason": "travel_event_souvenir",
+        "meta": {
+          "travel_id": "muneodn0-14mz8kzx",
+          "event_id": "rtc_event_robot_conductor",
+          "location_id": "rtc_central_station"
+        }
+      },
+      {
+        "time": 1790730465442,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 17,
+        "after": 21,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "muneodn0-14mz8kzx",
+          "location_id": "rtc_central_station"
+        }
+      },
+      {
+        "time": 1790730465436,
+        "type": "expense",
+        "item_id": "travel_pager",
+        "amount": 1,
+        "before": 2,
+        "after": 1,
+        "reason": "use_pager",
+        "meta": {
+          "travel_id": "muneodn0-14mz8kzx"
+        }
+      },
+      {
+        "time": 1790730438745,
+        "type": "expense",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 47,
+        "after": 17,
+        "reason": "gacha_draw",
+        "meta": {
+          "count": 10
+        }
+      },
       {
         "time": 1787313549426,
         "type": "income",
@@ -682,93 +836,6 @@
         "meta": {
           "achievement_id": "ach_rtc_5_locations"
         }
-      },
-      {
-        "time": 1786585816916,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 12,
-        "after": 15,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_rtc_atomic_plant"
-        }
-      },
-      {
-        "time": 1786585816915,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 11,
-        "after": 12,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "msqv26zo-dv12croi",
-          "location_id": "rtc_atomic_plant"
-        }
-      },
-      {
-        "time": 1786585816912,
-        "type": "expense",
-        "item_id": "travel_pager",
-        "amount": 1,
-        "before": 5,
-        "after": 4,
-        "reason": "use_pager",
-        "meta": {
-          "travel_id": "msqv26zo-dv12croi"
-        }
-      },
-      {
-        "time": 1786585799763,
-        "type": "income",
-        "item_id": "travel_pager",
-        "amount": 5,
-        "before": 0,
-        "after": 5,
-        "reason": "buy_item",
-        "meta": {
-          "cost": 10000
-        }
-      },
-      {
-        "time": 1786585786439,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 8,
-        "after": 11,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_first_unregistered_place"
-        }
-      },
-      {
-        "time": 1786585786439,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 5,
-        "after": 8,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_yellow_underpass"
-        }
-      },
-      {
-        "time": 1786585786439,
-        "type": "income",
-        "item_id": "souvenir_yesterday_calendar",
-        "amount": 1,
-        "before": 0,
-        "after": 1,
-        "reason": "travel_event_souvenir",
-        "meta": {
-          "travel_id": "msquzc0v-vwi45fus",
-          "event_id": "event_exit_to_yesterday",
-          "location_id": "yellow_underpass"
-        }
       }
     ],
     "item_daily": {
@@ -791,133 +858,128 @@
       }
     },
     "currency": {
-      "balance": 11533,
-      "total_earned": 27533,
+      "balance": 16541,
+      "total_earned": 32541,
       "total_spent": 16000,
       "ledger": [
         {
-          "time": 1787313549424,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 962,
-          "before": 10571,
-          "after": 11533,
-          "meta": {
-            "travel_id": "mt2u9zq2-mqoces26",
-            "location_id": "floating_island_factory",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1787221362536,
-          "type": "income",
-          "reason": "travel_encounter_reward",
-          "amount": 297,
-          "before": 10274,
-          "after": 10571,
-          "meta": {
-            "encounter_id": "encounter-mt1cpr3f-bc0z0goz",
-            "partner_user_id": "2831974530"
-          }
-        },
-        {
-          "time": 1787221362535,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 2403,
-          "before": 7871,
-          "after": 10274,
-          "meta": {
-            "travel_id": "mt18ay2a-2s20ol0h",
-            "location_id": "school_gate_1743",
-            "forced_by": "timer"
-          }
-        },
-        {
-          "time": 1786585874939,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1677,
-          "before": 6194,
-          "after": 7871,
-          "meta": {
-            "travel_id": "msqv2ttc-xhgmgzqw",
-            "location_id": "rtc_robot_city",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786585828613,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1538,
-          "before": 4656,
-          "after": 6194,
-          "meta": {
-            "travel_id": "msqv2khi-x1w3mb86",
-            "location_id": "rtc_botanical_dome",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786585816915,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 566,
-          "before": 4090,
-          "after": 4656,
-          "meta": {
-            "travel_id": "msqv26zo-dv12croi",
-            "location_id": "rtc_atomic_plant",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786585799763,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 10000,
-          "before": 14090,
-          "after": 4090,
-          "meta": {
-            "item_id": "travel_pager",
-            "count": 5
-          }
-        },
-        {
-          "time": 1786585786438,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 855,
-          "before": 13235,
-          "after": 14090,
-          "meta": {
-            "travel_id": "msquzc0v-vwi45fus",
-            "location_id": "yellow_underpass",
-            "forced_by": "pager"
-          }
-        },
-        {
-          "time": 1786585778204,
-          "type": "expense",
-          "reason": "buy_item",
-          "amount": 2000,
-          "before": 15235,
-          "after": 13235,
-          "meta": {
-            "item_id": "travel_pager",
-            "count": 1
-          }
-        },
-        {
-          "time": 1786585735615,
+          "time": 1790730506757,
           "type": "income",
           "reason": "gacha_duplicate",
           "amount": 300,
-          "before": 14935,
-          "after": 15235,
+          "before": 16241,
+          "after": 16541,
           "meta": {
-            "skin_id": "starry_turtle",
+            "skin_id": "headphones_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730506757,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 15941,
+          "after": 16241,
+          "meta": {
+            "skin_id": "antler_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730506757,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 15641,
+          "after": 15941,
+          "meta": {
+            "skin_id": "frog_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730506757,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 15341,
+          "after": 15641,
+          "meta": {
+            "skin_id": "headphones_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730506757,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 15041,
+          "after": 15341,
+          "meta": {
+            "skin_id": "nerd_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730506757,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 14741,
+          "after": 15041,
+          "meta": {
+            "skin_id": "parachute_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730465442,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2008,
+          "before": 12733,
+          "after": 14741,
+          "meta": {
+            "travel_id": "muneodn0-14mz8kzx",
+            "location_id": "rtc_central_station",
+            "forced_by": "pager"
+          }
+        },
+        {
+          "time": 1790730438746,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 12433,
+          "after": 12733,
+          "meta": {
+            "skin_id": "kiss_marks_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730438746,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 12133,
+          "after": 12433,
+          "meta": {
+            "skin_id": "coffee_turtle",
+            "rarity": 3
+          }
+        },
+        {
+          "time": 1790730438746,
+          "type": "income",
+          "reason": "gacha_duplicate",
+          "amount": 300,
+          "before": 11833,
+          "after": 12133,
+          "meta": {
+            "skin_id": "ribbon_turtle",
             "rarity": 3
           }
         }
@@ -949,10 +1011,10 @@
     "migrated_at": 1785344070695
   },
   "created_at": 1785344070695,
-  "updated_at": 1789099498239,
+  "updated_at": 1793155643155,
   "production": {
     "started_at": 1785344070695,
-    "last_settled_at": 1789099498239,
+    "last_settled_at": 1793155643155,
     "accumulated_ms": 259200000,
     "progress": 31.390061441417586,
     "total_produced": 34,
@@ -971,7 +1033,8 @@
       "rtc_atomic_plant",
       "rtc_robot_city",
       "school_gate_1743",
-      "floating_island_factory"
+      "floating_island_factory",
+      "rtc_central_station"
     ],
     "location_records": {
       "eld_free_port": {
@@ -1069,6 +1132,14 @@
         "travel_id": "mt2u9zq2-mqoces26",
         "time": 1787313549424,
         "carried_item_id": ""
+      },
+      "rtc_central_station": {
+        "id": "rtc_central_station",
+        "map_id": "retro_tomorrow_city",
+        "name": "明日中央车站",
+        "travel_id": "muneodn0-14mz8kzx",
+        "time": 1790730465442,
+        "carried_item_id": ""
       }
     },
     "event_records": {
@@ -1120,6 +1191,13 @@
         "location_id": "rtc_robot_city",
         "travel_id": "msqv2ttc-xhgmgzqw",
         "time": 1786585874940
+      },
+      "rtc_event_robot_conductor": {
+        "id": "rtc_event_robot_conductor",
+        "map_id": "retro_tomorrow_city",
+        "location_id": "rtc_central_station",
+        "travel_id": "muneodn0-14mz8kzx",
+        "time": 1790730465442
       }
     },
     "souvenir_records": {
@@ -1157,6 +1235,14 @@
         "event_id": "rtc_event_machine_market",
         "location_id": "rtc_robot_city",
         "time": 1786585874940
+      },
+      "souvenir_tomorrow_child_ticket": {
+        "id": "souvenir_tomorrow_child_ticket",
+        "name": "明日儿童票",
+        "event_id": "rtc_event_robot_conductor",
+        "location_id": "rtc_central_station",
+        "map_id": "retro_tomorrow_city",
+        "time": 1790730465443
       }
     },
     "achievement_records": {
@@ -1405,6 +1491,21 @@
         "name": "发现浮岛制造厂",
         "rarity": 3,
         "time": 1787313549426,
+        "actor_name": "穗穗的星怒",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
+      },
+      "ach_rtc_central_station": {
+        "id": "ach_rtc_central_station",
+        "name": "发现明日中央车站",
+        "rarity": 3,
+        "time": 1790730465447,
         "actor_name": "穗穗的星怒",
         "rewards": [
           {
@@ -2277,9 +2378,125 @@
         "settled_at": 1787313549427,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：浮岛制造厂（阿尔维塔）\n旅行时间：58分钟\n获得：962若汁币，若汁之缘×2，经验+2\n新地点已解锁：浮岛制造厂\n达成旅行成就「发现浮岛制造厂」 ★★★"
+      },
+      "muneodn0-14mz8kzx": {
+        "id": "muneodn0-14mz8kzx",
+        "user_id": "35433674",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "display_name": "穗穗的星怒",
+        "map_id": "retro_tomorrow_city",
+        "map_name": "明日旧城",
+        "location_id": "rtc_central_station",
+        "location_name": "明日中央车站",
+        "duration_ms": 6941892,
+        "rewards": {
+          "coin": 2008,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "rtc_event_robot_conductor",
+          "name": "机器人检票",
+          "kind": "",
+          "text": "检票机器人把龟壳当成超大行李，最后补发了一张儿童票。",
+          "effects": {
+            "coin_flat": 80
+          },
+          "souvenirs": [
+            {
+              "id": "souvenir_tomorrow_child_ticket",
+              "name": "明日儿童票",
+              "emoji": "🎫",
+              "description": "旅行纪念品「明日儿童票」。"
+            }
+          ],
+          "items": [
+            {
+              "id": "food_atom_candy",
+              "amount": 1
+            }
+          ],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [
+          {
+            "id": "souvenir_tomorrow_child_ticket",
+            "name": "明日儿童票",
+            "emoji": "🎫",
+            "description": "旅行纪念品「明日儿童票」。",
+            "amount": 1
+          }
+        ],
+        "item_rewards": [
+          {
+            "tags": [
+              "food",
+              "travel_food"
+            ],
+            "id": "food_atom_candy",
+            "name": "原子糖果",
+            "emoji": "🍬",
+            "description": "明日旧城的发光硬糖。",
+            "food": {
+              "satiety": 9,
+              "mood": 4,
+              "weight_gain": 3
+            },
+            "amount": 1
+          }
+        ],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "明日中央车站",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_rtc_central_station",
+            "name": "发现明日中央车站",
+            "rarity": 3,
+            "time": 1790730465447,
+            "actor_name": "穗穗的星怒",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现明日中央车站」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "",
+        "tool_name": "",
+        "settled_at": 1790730465457,
+        "forced_by": "pager",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：1小时56分钟\n获得：2008若汁币，若汁之缘×4，经验+4\n旅行事件：机器人检票\n检票机器人把龟壳当成超大行李，最后补发了一张儿童票。\n食物：🍬原子糖果×1\n纪念品：🎫明日儿童票×1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "muneodn0-14mz8kzx",
+        "group_id": "415462812",
+        "self_id": "3762153943",
+        "user_id": "35433674",
+        "report": "小若汁回来了！\n目的地：明日中央车站（明日旧城）\n旅行时间：1小时56分钟\n获得：2008若汁币，若汁之缘×4，经验+4\n旅行事件：机器人检票\n检票机器人把龟壳当成超大行李，最后补发了一张儿童票。\n食物：🍬原子糖果×1\n纪念品：🎫明日儿童票×1\n新地点已解锁：明日中央车站\n达成旅行成就「发现明日中央车站」 ★★★",
+        "status": "skipped",
+        "attempts": 0,
+        "next_retry_at": 1790730465458,
+        "created_at": 1790730465458,
+        "sent_at": 0,
+        "last_error": ""
+      },
       {
         "travel_id": "mt2u9zq2-mqoces26",
         "group_id": "415462812",
@@ -2464,16 +2681,19 @@
       }
     ],
     "stats": {
-      "total_trips": 14,
+      "total_trips": 15,
       "key_item_discoveries": {},
       "map_location_counts": {
-        "retro_tomorrow_city": 6,
+        "retro_tomorrow_city": 7,
         "eldoran_continent": 3,
         "unregistered_district": 2,
         "four_regions_little_world": 0,
         "candy_dreamland": 0,
         "alvita": 1,
-        "galovian": 0
+        "galovian": 0,
+        "starnet": 0,
+        "severin": 0,
+        "farreach_freighter_407": 0
       },
       "map_event_ids": {
         "eldoran_continent": {
@@ -2484,7 +2704,8 @@
         "retro_tomorrow_city": {
           "rtc_event_alien_vending": 1,
           "rtc_event_forbidden_frequency": 1,
-          "rtc_event_machine_market": 1
+          "rtc_event_machine_market": 1,
+          "rtc_event_robot_conductor": 1
         },
         "unregistered_district": {
           "event_exit_to_yesterday": 1
@@ -2497,7 +2718,8 @@
         "eld_event_missing_goat": 1,
         "rtc_event_forbidden_frequency": 1,
         "event_exit_to_yesterday": 1,
-        "rtc_event_machine_market": 1
+        "rtc_event_machine_market": 1,
+        "rtc_event_robot_conductor": 1
       },
       "encounter_reward_types": {
         "currency": 1
@@ -2540,10 +2762,10 @@
     }
   },
   "gacha": {
-    "since_four_plus": 3,
-    "since_five": 32,
-    "total_draws": 32,
-    "total_four": 4,
+    "since_four_plus": 4,
+    "since_five": 50,
+    "total_draws": 50,
+    "total_four": 6,
     "total_five": 0,
     "five_history": [],
     "route_misses": 0,
