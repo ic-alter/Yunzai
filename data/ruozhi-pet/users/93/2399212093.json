@@ -3,12 +3,12 @@
   "user_id": "2399212093",
   "pet": {
     "level": 17,
-    "experience": 183,
-    "satiety": 89,
+    "experience": 187,
+    "satiety": 76,
     "mood": 100,
     "health": 97,
     "current_skin_id": "rabbit_head_turtle",
-    "satiety_decay_at": 1793155421349,
+    "satiety_decay_at": 1793174141349,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
@@ -2791,6 +2791,21 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_jinhua_mansion_district": {
+        "id": "ach_jinhua_mansion_district",
+        "name": "发现锦华坊",
+        "rarity": 3,
+        "time": 1793162498821,
+        "actor_name": "Ignotus",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "unlock_records": [
@@ -3214,8 +3229,8 @@
       "shuiyue_turtle": 0
     },
     "weight": 0,
-    "weight_decay_at": 1793155643212,
-    "health_decay_at": 1793155643212
+    "weight_decay_at": 1793174467097,
+    "health_decay_at": 1793174467097
   },
   "profile": {
     "favorability": 100,
@@ -3223,7 +3238,7 @@
     "total_contribution": 634,
     "last_display_name": "Ignotus",
     "first_joined_at": 1784810181975,
-    "last_active_at": 1793155643212,
+    "last_active_at": 1793174467097,
     "daily": {
       "date": "2026-10-28",
       "event_count": 7,
@@ -3237,7 +3252,7 @@
       "week": "2026-W44"
     },
     "items": {
-      "ruozhi_fate": 285,
+      "ruozhi_fate": 292,
       "nameless_ruozhi": 3,
       "souvenir_border_quest_scroll": 1,
       "souvenir_border_map": 0,
@@ -3322,6 +3337,31 @@
       "souvenir_severin_spring_record": 1
     },
     "item_ledger": [
+      {
+        "time": 1793162498821,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 289,
+        "after": 292,
+        "reason": "travel_achievement_unlock",
+        "meta": {
+          "achievement_id": "ach_jinhua_mansion_district"
+        }
+      },
+      {
+        "time": 1793162498817,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 4,
+        "before": 285,
+        "after": 289,
+        "reason": "travel_reward",
+        "meta": {
+          "travel_id": "mvrig5y1-zksk94su",
+          "location_id": "jinhua_mansion_district"
+        }
+      },
       {
         "time": 1793155436530,
         "type": "expense",
@@ -3548,31 +3588,6 @@
         "meta": {
           "item_id": "travel_suitcase"
         }
-      },
-      {
-        "time": 1791517305685,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 3,
-        "before": 187,
-        "after": 190,
-        "reason": "travel_achievement_unlock",
-        "meta": {
-          "achievement_id": "ach_severin_snowforest_trail"
-        }
-      },
-      {
-        "time": 1791517305674,
-        "type": "income",
-        "item_id": "ruozhi_fate",
-        "amount": 1,
-        "before": 186,
-        "after": 187,
-        "reason": "travel_reward",
-        "meta": {
-          "travel_id": "mv0ec080-w6yejpgb",
-          "location_id": "severin_snowforest_trail"
-        }
       }
     ],
     "item_daily": {
@@ -3593,10 +3608,23 @@
       }
     },
     "currency": {
-      "balance": 360271,
-      "total_earned": 950271,
+      "balance": 362468,
+      "total_earned": 952468,
       "total_spent": 590000,
       "ledger": [
+        {
+          "time": 1793162498817,
+          "type": "income",
+          "reason": "travel_reward",
+          "amount": 2197,
+          "before": 360271,
+          "after": 362468,
+          "meta": {
+            "travel_id": "mvrig5y1-zksk94su",
+            "location_id": "jinhua_mansion_district",
+            "forced_by": "timer"
+          }
+        },
         {
           "time": 1793155415991,
           "type": "income",
@@ -3704,19 +3732,6 @@
           "after": 373688,
           "meta": {
             "date": "2026-10-09"
-          }
-        },
-        {
-          "time": 1790531554943,
-          "type": "income",
-          "reason": "travel_reward",
-          "amount": 1560,
-          "before": 371628,
-          "after": 373188,
-          "meta": {
-            "travel_id": "muk19sn7-nmejlqef",
-            "location_id": "phantom_court",
-            "forced_by": "timer"
           }
         }
       ],
@@ -4267,7 +4282,7 @@
     "migrated_at": 1784810181975
   },
   "created_at": 1784810181975,
-  "updated_at": 1793155643212,
+  "updated_at": 1793174467097,
   "gacha": {
     "since_four_plus": 6,
     "since_five": 31,
@@ -4365,9 +4380,9 @@
   },
   "production": {
     "started_at": 1785114566547,
-    "last_settled_at": 1793155643212,
-    "accumulated_ms": 227224,
-    "progress": 0.4905091564825029,
+    "last_settled_at": 1793174467097,
+    "accumulated_ms": 19051109,
+    "progress": 4.160013033508996,
     "total_produced": 955,
     "last_collected_at": 1793155415988
   },
@@ -4498,7 +4513,8 @@
       "severin_snowforest_trail",
       "central_noble_district",
       "eternal_continent",
-      "heseranville_farmland"
+      "heseranville_farmland",
+      "jinhua_mansion_district"
     ],
     "location_records": {
       "eld_adventurer_guild": {
@@ -5508,6 +5524,14 @@
         "travel_id": "mv0m2ad3-jt63kj71",
         "time": 1791535641589,
         "carried_item_id": ""
+      },
+      "jinhua_mansion_district": {
+        "id": "jinhua_mansion_district",
+        "map_id": "galovian",
+        "name": "锦华坊",
+        "travel_id": "mvrig5y1-zksk94su",
+        "time": 1793162498818,
+        "carried_item_id": "travel_suitcase"
       }
     },
     "event_records": {
@@ -6098,6 +6122,13 @@
         "location_id": "heseranville_farmland",
         "travel_id": "mv0m2ad3-jt63kj71",
         "time": 1791535641590
+      },
+      "jinhua_robot_servant": {
+        "id": "jinhua_robot_servant",
+        "map_id": "galovian",
+        "location_id": "jinhua_mansion_district",
+        "travel_id": "mvrig5y1-zksk94su",
+        "time": 1793162498818
       }
     },
     "souvenir_records": {
@@ -8920,9 +8951,90 @@
             "message": "成就奖励：若汁之缘 ×3"
           }
         ]
+      },
+      "ach_jinhua_mansion_district": {
+        "id": "ach_jinhua_mansion_district",
+        "name": "发现锦华坊",
+        "rarity": 3,
+        "time": 1793162498821,
+        "actor_name": "Ignotus",
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          }
+        ]
       }
     },
     "settlements": {
+      "mvrig5y1-zksk94su": {
+        "id": "mvrig5y1-zksk94su",
+        "user_id": "2399212093",
+        "group_id": "1025424898",
+        "self_id": "3468878117",
+        "display_name": "Ignotus",
+        "map_id": "galovian",
+        "map_name": "迦洛维安府",
+        "location_id": "jinhua_mansion_district",
+        "location_name": "锦华坊",
+        "duration_ms": 7062236,
+        "rewards": {
+          "coin": 2197,
+          "fate": 4,
+          "experience": 4
+        },
+        "event": {
+          "id": "jinhua_robot_servant",
+          "name": "绝不偷懒的新仆人",
+          "kind": "",
+          "text": "某位富商买了一台阿尔维塔家务机器人，逢人便炫耀它不用吃饭、不会偷懒。半个时辰后机器人因为主人拒绝阅读说明书，把庭院池塘里的荷叶全部识别成了\"待清理垃圾\"。",
+          "effects": {
+            "mood": 7
+          },
+          "souvenirs": [],
+          "items": [],
+          "record": false,
+          "companion_id": "",
+          "cooldown_hours": 0,
+          "once": false,
+          "rewards": {}
+        },
+        "encounter": null,
+        "souvenirs": [],
+        "item_rewards": [],
+        "companion_reward_fate": 0,
+        "satiety_change": 0,
+        "new_location": "锦华坊",
+        "health_change": 0,
+        "achievements": [
+          {
+            "id": "ach_jinhua_mansion_district",
+            "name": "发现锦华坊",
+            "rarity": 3,
+            "time": 1793162498821,
+            "actor_name": "Ignotus",
+            "rewards": [
+              {
+                "type": "item",
+                "item_id": "ruozhi_fate",
+                "amount": 3,
+                "message": "成就奖励：若汁之缘 ×3"
+              }
+            ],
+            "message": "达成旅行成就「发现锦华坊」 ★★★"
+          }
+        ],
+        "mood_change": 0,
+        "level_ups": [],
+        "level_reward_messages": [],
+        "tool_item_id": "travel_suitcase",
+        "tool_name": "行李箱",
+        "settled_at": 1793162498823,
+        "forced_by": "timer",
+        "report": "小若汁回来了！\n目的地：锦华坊（迦洛维安府）\n旅行时间：1小时58分钟\n获得：2197若汁币，若汁之缘×4，经验+4\n携带道具：行李箱\n旅行事件：绝不偷懒的新仆人\n某位富商买了一台阿尔维塔家务机器人，逢人便炫耀它不用吃饭、不会偷懒。半个时辰后机器人因为主人拒绝阅读说明书，把庭院池塘里的荷叶全部识别成了\"待清理垃圾\"。\n新地点已解锁：锦华坊\n达成旅行成就「发现锦华坊」 ★★★"
+      },
       "mv0m2ad3-jt63kj71": {
         "id": "mv0m2ad3-jt63kj71",
         "user_id": "2399212093",
@@ -10225,86 +10337,22 @@
         "settled_at": 1789826688485,
         "forced_by": "timer",
         "report": "小若汁回来了！\n目的地：万象原野（星网）\n旅行时间：2小时11分钟\n获得：2440若汁币，若汁之缘×5，经验+4\n携带道具：行李箱\n旅行事件：模拟野餐\n系统生成完美草地和刚刚好的微风。小若汁决定顺便吃点现实仓库同步配送来的零食。\n食物：🥪星网野餐三明治×1\n新地点已解锁：万象原野\n达成旅行成就「发现万象原野」 ★★★"
-      },
-      "mu89ren0-h3h3gz59": {
-        "id": "mu89ren0-h3h3gz59",
-        "user_id": "2399212093",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "display_name": "Ignotus",
-        "map_id": "alvita",
-        "map_name": "阿尔维塔",
-        "location_id": "smart_manufacturing",
-        "location_name": "智能制造区",
-        "duration_ms": 3383314,
-        "rewards": {
-          "coin": 1053,
-          "fate": 2,
-          "experience": 2
-        },
-        "event": {
-          "id": "custom_turtle",
-          "name": "个性化生产",
-          "kind": "",
-          "text": "生产线 AI 扫描小若汁，几分钟后生产出一个迷你小若汁模型。",
-          "effects": {},
-          "souvenirs": [
-            {
-              "id": "souvenir_assembly_line_ruozhi",
-              "name": "流水线小若汁模型",
-              "emoji": "🐢"
-            }
-          ],
-          "items": [],
-          "record": false,
-          "companion_id": "",
-          "cooldown_hours": 0,
-          "once": false,
-          "rewards": {}
-        },
-        "encounter": null,
-        "souvenirs": [
-          {
-            "id": "souvenir_assembly_line_ruozhi",
-            "name": "流水线小若汁模型",
-            "emoji": "🐢",
-            "amount": 1
-          }
-        ],
-        "item_rewards": [],
-        "companion_reward_fate": 0,
-        "satiety_change": 0,
-        "new_location": "智能制造区",
-        "health_change": 0,
-        "achievements": [
-          {
-            "id": "ach_smart_manufacturing",
-            "name": "发现智能制造区",
-            "rarity": 3,
-            "time": 1789818588181,
-            "actor_name": "Ignotus",
-            "rewards": [
-              {
-                "type": "item",
-                "item_id": "ruozhi_fate",
-                "amount": 3,
-                "message": "成就奖励：若汁之缘 ×3"
-              }
-            ],
-            "message": "达成旅行成就「发现智能制造区」 ★★★"
-          }
-        ],
-        "mood_change": 0,
-        "level_ups": [],
-        "level_reward_messages": [],
-        "tool_item_id": "travel_suitcase",
-        "tool_name": "行李箱",
-        "settled_at": 1789818588191,
-        "forced_by": "timer",
-        "report": "小若汁回来了！\n目的地：智能制造区（阿尔维塔）\n旅行时间：56分钟\n获得：1053若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n旅行事件：个性化生产\n生产线 AI 扫描小若汁，几分钟后生产出一个迷你小若汁模型。\n纪念品：🐢流水线小若汁模型×1\n新地点已解锁：智能制造区\n达成旅行成就「发现智能制造区」 ★★★"
       }
     },
     "notifications": [
+      {
+        "travel_id": "mvrig5y1-zksk94su",
+        "group_id": "1025424898",
+        "self_id": "3468878117",
+        "user_id": "2399212093",
+        "report": "小若汁回来了！\n目的地：锦华坊（迦洛维安府）\n旅行时间：1小时58分钟\n获得：2197若汁币，若汁之缘×4，经验+4\n携带道具：行李箱\n旅行事件：绝不偷懒的新仆人\n某位富商买了一台阿尔维塔家务机器人，逢人便炫耀它不用吃饭、不会偷懒。半个时辰后机器人因为主人拒绝阅读说明书，把庭院池塘里的荷叶全部识别成了\"待清理垃圾\"。\n新地点已解锁：锦华坊\n达成旅行成就「发现锦华坊」 ★★★",
+        "status": "sent",
+        "attempts": 1,
+        "next_retry_at": 1793162498824,
+        "created_at": 1793162498824,
+        "sent_at": 1793162499097,
+        "last_error": ""
+      },
       {
         "travel_id": "mv0m2ad3-jt63kj71",
         "group_id": "1025424898",
@@ -10551,23 +10599,10 @@
         "created_at": 1789826688486,
         "sent_at": 1789826689044,
         "last_error": ""
-      },
-      {
-        "travel_id": "mu89ren0-h3h3gz59",
-        "group_id": "1025424898",
-        "self_id": "3874871823",
-        "user_id": "2399212093",
-        "report": "小若汁回来了！\n目的地：智能制造区（阿尔维塔）\n旅行时间：56分钟\n获得：1053若汁币，若汁之缘×2，经验+2\n携带道具：行李箱\n旅行事件：个性化生产\n生产线 AI 扫描小若汁，几分钟后生产出一个迷你小若汁模型。\n纪念品：🐢流水线小若汁模型×1\n新地点已解锁：智能制造区\n达成旅行成就「发现智能制造区」 ★★★",
-        "status": "sent",
-        "attempts": 1,
-        "next_retry_at": 1789818588192,
-        "created_at": 1789818588192,
-        "sent_at": 1789818588800,
-        "last_error": ""
       }
     ],
     "stats": {
-      "total_trips": 162,
+      "total_trips": 163,
       "key_item_discoveries": {
         "souvenir_border_map": {
           "item_id": "souvenir_border_map",
@@ -10612,7 +10647,7 @@
         "four_regions_little_world": 10,
         "candy_dreamland": 12,
         "alvita": 18,
-        "galovian": 13,
+        "galovian": 14,
         "starnet": 14,
         "severin": 15,
         "farreach_freighter_407": 1
@@ -10702,7 +10737,8 @@
           "hundred_arts_synthesizer": 1,
           "south_gate_station_ticket": 1,
           "heseranville_front_banquet_leftovers": 1,
-          "farmland_train_shadow": 1
+          "farmland_train_shadow": 1,
+          "jinhua_robot_servant": 1
         },
         "starnet": {
           "creator_sells_weather": 1,
@@ -10807,7 +10843,8 @@
         "service_luggage_dimension": 1,
         "valletta_agent_ad": 1,
         "tiny_mansion": 1,
-        "farmland_train_shadow": 1
+        "farmland_train_shadow": 1,
+        "jinhua_robot_servant": 1
       },
       "encounter_reward_types": {
         "currency": 1,
@@ -10817,44 +10854,7 @@
       },
       "total_encounters": 22
     },
-    "active": {
-      "id": "mvrig5y1-zksk94su",
-      "user_id": "2399212093",
-      "display_name": "Ignotus",
-      "group_id": "1025424898",
-      "self_id": "3468878117",
-      "started_at": 1793155436569,
-      "ends_at": 1793162498805,
-      "duration_ms": 7062236,
-      "map_id": "galovian",
-      "map_name": "迦洛维安府",
-      "location_id": "jinhua_mansion_district",
-      "location_name": "锦华坊",
-      "was_unlocked": false,
-      "carried_item_id": "travel_suitcase",
-      "carried_item_name": "行李箱",
-      "event": {
-        "id": "jinhua_robot_servant",
-        "name": "绝不偷懒的新仆人",
-        "kind": "",
-        "text": "某位富商买了一台阿尔维塔家务机器人，逢人便炫耀它不用吃饭、不会偷懒。半个时辰后机器人因为主人拒绝阅读说明书，把庭院池塘里的荷叶全部识别成了\"待清理垃圾\"。",
-        "effects": {
-          "mood": 7
-        },
-        "souvenirs": [],
-        "items": [],
-        "record": false,
-        "companion_id": "",
-        "cooldown_hours": 0,
-        "once": false,
-        "rewards": {}
-      },
-      "rewards": {
-        "coin": 2197,
-        "fate": 4,
-        "experience": 4
-      }
-    },
+    "active": null,
     "prepared_tool": null,
     "encounter_records": {
       "encounter-msvog7ff-9q5ce6e7": {
