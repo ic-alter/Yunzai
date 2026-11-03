@@ -3,23 +3,57 @@
   "user_id": "1165461511",
   "pet": {
     "level": 1,
-    "experience": 0,
+    "experience": 11,
     "satiety": 5,
-    "mood": 70,
+    "mood": 71,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1793174466642,
+    "satiety_decay_at": 1793632957956,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "confused_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "event_branch_count:nickname:stranger": 1,
+      "event_branch_count:nickname:stranger:last_at": 1793632957958
+    },
+    "achievement_records": {
+      "nickname_stranger": {
+        "id": "nickname_stranger",
+        "name": "第一次叫宝",
+        "rarity": 3,
+        "time": 1793632957960,
+        "actor_name": "哦耶耶酷酷的🐶",
+        "stat_key": "event_branch_count:nickname:stranger",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "confused_turtle",
+            "skin_name": "困惑小若汁",
+            "message": "解锁三星皮肤「困惑小若汁」。"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "confused_turtle",
+        "reason": "achievement",
+        "time": 1793632957960,
+        "achievement_id": "nickname_stranger"
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -47,30 +81,43 @@
       }
     ],
     "weight": 0,
-    "weight_decay_at": 1793147529581,
-    "health_decay_at": 1793174466642
+    "weight_decay_at": 1793622729581,
+    "health_decay_at": 1793632957956
   },
   "profile": {
-    "favorability": 0,
-    "weekly_contribution": 0,
-    "total_contribution": 0,
-    "last_display_name": "我说一个聚落八套声骸是傻逼你👂🐉🐴",
+    "favorability": 2,
+    "weekly_contribution": 1,
+    "total_contribution": 1,
+    "last_display_name": "哦耶耶酷酷的🐶",
     "first_joined_at": 1784796191833,
-    "last_active_at": 1793174466642,
+    "last_active_at": 1793632957956,
     "daily": {
-      "date": "2026-10-28",
-      "event_count": 0,
-      "same_event_counts": {},
+      "date": "2026-11-02",
+      "event_count": 1,
+      "same_event_counts": {
+        "nickname": 1
+      },
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W44"
+      "week": "2026-W45"
     },
     "currency": {
-      "balance": 1127,
-      "total_earned": 1127,
+      "balance": 1627,
+      "total_earned": 1627,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1793632957960,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 1127,
+          "after": 1627,
+          "meta": {
+            "date": "2026-11-02"
+          }
+        },
         {
           "time": 1785814490364,
           "type": "income",
@@ -134,13 +181,37 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": ""
+      "first_interaction_reward_date": "2026-11-02"
     },
     "items": {
-      "ruozhi_fate": 5,
+      "ruozhi_fate": 36,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1793632957958,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 33,
+        "after": 36,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "nickname_stranger"
+        }
+      },
+      {
+        "time": 1793632957957,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 28,
+        "before": 5,
+        "after": 33,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1785814490390,
         "type": "income",
@@ -199,15 +270,76 @@
         "completed_levels": 0,
         "amount": 0
       }
+    },
+    "engagement": {
+      "last_date": "2026-11-02"
     }
   },
-  "recent_events": [],
+  "recent_events": [
+    {
+      "time": 1793632957960,
+      "user_id": "1165461511",
+      "display_name": "哦耶耶酷酷的🐶",
+      "event_id": "nickname",
+      "branch_id": "stranger",
+      "summary": "小若汁歪着脑袋看向哦耶耶酷酷的🐶，好像还不太习惯这个称呼。",
+      "effects_text": "心情+1，好感+2，贡献+1，经验+11",
+      "effects": {
+        "satiety": 0,
+        "mood": 1,
+        "health": 0,
+        "favorability": 2,
+        "contribution": 1,
+        "experience": 11
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1627
+      },
+      "level_rewards": [],
+      "achievements": [
+        {
+          "id": "nickname_stranger",
+          "name": "第一次叫宝",
+          "description": "触发 1 次叫昵称事件的陌生回应分支",
+          "unlocked": true,
+          "unlocked_at": 1793632957960,
+          "current_count": 1,
+          "target_count": 1,
+          "progress_text": "1 / 1",
+          "rarity": 3,
+          "rarity_stars": "⭐⭐⭐",
+          "rarity_class": "rarity-3",
+          "rewards": [
+            {
+              "type": "item",
+              "item_id": "ruozhi_fate",
+              "amount": 3,
+              "message": "成就奖励：若汁之缘 ×3"
+            },
+            {
+              "type": "unlock_skin",
+              "skin_id": "confused_turtle",
+              "skin_name": "困惑小若汁",
+              "message": "解锁三星皮肤「困惑小若汁」。"
+            }
+          ],
+          "message": "达成成就「第一次叫宝」 ⭐⭐⭐"
+        }
+      ],
+      "auto_production_collect": 28
+    }
+  ],
   "daily": {
-    "date": "2026-07-23",
-    "event_count": 0,
-    "bonus_event_count": 0
+    "date": "2026-11-02",
+    "event_count": 1,
+    "bonus_event_count": 1
   },
-  "processed_messages": {},
+  "processed_messages": {
+    "event:-1256848223": 1793632957956
+  },
   "skin_sessions": {
     "active": null
   },
@@ -219,13 +351,14 @@
     "migrated_at": 1784796191833
   },
   "created_at": 1784796191833,
-  "updated_at": 1793174466642,
+  "updated_at": 1793632957960,
   "production": {
     "started_at": 1785141760202,
-    "last_settled_at": 1793174466642,
-    "accumulated_ms": 259200000,
-    "progress": 28.31721470019343,
-    "total_produced": 0
+    "last_settled_at": 1793632957957,
+    "accumulated_ms": 0,
+    "progress": 0.31721470019342846,
+    "total_produced": 28,
+    "last_collected_at": 1793632957957
   },
   "travel": {
     "unlocked_location_ids": [],
