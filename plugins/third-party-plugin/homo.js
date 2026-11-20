@@ -2,6 +2,78 @@ import plugin from '../../lib/plugins/plugin.js'
 //import './homo/homo.js'
 //来自https://gitee.com/HDTianRu/TianRu-plugin/blob/master/apps/homo.js
 
+const sequenceNumber = '[+-]?(?:\\d+(?:\\.\\d+)?|\\.\\d+)'
+const sequenceReg = new RegExp(`^\\s*#?[Hh]omo\\s*(${sequenceNumber}(?:\\s*[,，]\\s*${sequenceNumber}){1,9})\\s*$`)
+
+// All interpolation arithmetic uses reduced BigInt fractions, including decimals.
+function fraction (numerator, denominator = 1n) {
+  if (denominator < 0n) {
+    numerator = -numerator
+    denominator = -denominator
+  }
+  let a = numerator < 0n ? -numerator : numerator
+  let b = denominator
+  while (b !== 0n) [a, b] = [b, a % b]
+  return { n: numerator / a, d: denominator / a }
+}
+
+function add (a, b) {
+  return fraction(a.n * b.d + b.n * a.d, a.d * b.d)
+}
+
+function subtract (a, b) {
+  return fraction(a.n * b.d - b.n * a.d, a.d * b.d)
+}
+
+function multiply (a, b) {
+  return fraction(a.n * b.n, a.d * b.d)
+}
+
+function parseSequenceNumber (text) {
+  const negative = text.startsWith('-')
+  const unsigned = text.replace(/^[+-]/, '')
+  const [whole, decimal = ''] = unsigned.split('.')
+  const numerator = BigInt((whole || '0') + decimal)
+  return fraction(negative ? -numerator : numerator, 10n ** BigInt(decimal.length))
+}
+
+// Newton forward differences, expanded into ascending powers of x.
+function interpolateSequence (values) {
+  let differences = [...values, fraction(114514n)]
+  const coefficients = differences.map(() => fraction(0n))
+  let basis = [fraction(1n)]
+  for (let order = 0; order < coefficients.length; order++) {
+    for (let power = 0; power < basis.length; power++) {
+      coefficients[power] = add(coefficients[power], multiply(differences[0], basis[power]))
+    }
+    if (order === coefficients.length - 1) break
+    differences = differences.slice(1).map((value, i) => subtract(value, differences[i]))
+    // B_(k+1)(x) = B_k(x) * (x - (k+1)) / (k+1).
+    const nextBasis = Array.from({ length: basis.length + 1 }, () => fraction(0n))
+    for (let power = 0; power < basis.length; power++) {
+      nextBasis[power] = subtract(nextBasis[power], basis[power])
+      nextBasis[power + 1] = add(nextBasis[power + 1], multiply(basis[power], fraction(1n, BigInt(order + 1))))
+    }
+    basis = nextBasis
+  }
+  return coefficients
+}
+
+function formatPolynomial (coefficients) {
+  const superscript = '⁰¹²³⁴⁵⁶⁷⁸⁹'
+  let result = ''
+  for (let power = coefficients.length - 1; power >= 0; power--) {
+    const { n, d } = coefficients[power]
+    if (n === 0n) continue
+    const magnitude = n < 0n ? -n : n
+    const coefficient = d === 1n ? String(magnitude) : `(${magnitude}/${d})`
+    const variable = power === 0 ? '' : power === 1 ? 'x' : `x${String(power).replace(/\d/g, digit => superscript[Number(digit)])}`
+    const term = (power > 0 && magnitude === 1n && d === 1n ? '' : coefficient) + variable
+    result += (n < 0n ? '-' : result ? '+' : '') + term
+  }
+  return result || '0'
+}
+
 export class Homo extends plugin {
   constructor () {
     super({
@@ -15,6 +87,10 @@ export class Homo extends plugin {
       priority: 5000,
       rule: [
         {
+          reg: sequenceReg.source,
+          fnc: 'getSequence'
+        },
+        {
           /** 命令正则匹配 */
           reg: '#?(H|h)omo ?[0-9]+',
           /** 执行方法 */
@@ -22,6 +98,16 @@ export class Homo extends plugin {
         }
       ]
     })
+  }
+
+  async getSequence (e) {
+    const match = sequenceReg.exec(e.msg)
+    if (!match) return false
+    const numbers = match[1].split(/[,，]/).map(value => value.trim())
+    const polynomial = formatPolynomial(interpolateSequence(numbers.map(parseSequenceNumber)))
+    const knownValues = numbers.map((value, i) => `f(${i + 1})=${value}`).join(', ')
+    await this.reply(`注意到：\n当 f(x)=${polynomial} 时，有：\n${knownValues}\n易得 f(${numbers.length + 1})=114514\n所以下一项是114514`)
+    return true
   }
 
 

@@ -3,23 +3,57 @@
   "user_id": "1145640200",
   "pet": {
     "level": 1,
-    "experience": 20,
+    "experience": 30,
     "satiety": 5,
-    "mood": 50,
+    "mood": 40,
     "health": 80,
     "current_skin_id": "default_smile_turtle",
-    "satiety_decay_at": 1793350885527,
+    "satiety_decay_at": 1795189227189,
     "unlocked_skin_ids": [
       "default_smile_turtle",
       "grin_turtle",
       "angel_turtle",
       "wink_turtle",
-      "nervous_turtle"
+      "nervous_turtle",
+      "angry_turtle"
     ],
     "level_reward_records": {},
-    "achievement_stats": {},
-    "achievement_records": {},
+    "achievement_stats": {
+      "pet_stat_drop_count:mood:40": 1,
+      "pet_stat_drop_count:mood:40:last_at": 1794992898520
+    },
+    "achievement_records": {
+      "mood_low_once": {
+        "id": "mood_low_once",
+        "name": "气鼓鼓",
+        "rarity": 2,
+        "time": 1794992898522,
+        "actor_name": "武",
+        "stat_key": "pet_stat_drop_count:mood:40",
+        "count": 1,
+        "rewards": [
+          {
+            "type": "item",
+            "item_id": "ruozhi_fate",
+            "amount": 3,
+            "message": "成就奖励：若汁之缘 ×3"
+          },
+          {
+            "type": "unlock_skin",
+            "skin_id": "angry_turtle",
+            "skin_name": "生气小若汁",
+            "message": "解锁二星皮肤「生气小若汁」。"
+          }
+        ]
+      }
+    },
     "unlock_records": [
+      {
+        "skin_id": "angry_turtle",
+        "reason": "achievement",
+        "time": 1794992898522,
+        "achievement_id": "mood_low_once"
+      },
       {
         "skin_id": "default_smile_turtle",
         "type": "starter",
@@ -47,30 +81,68 @@
       }
     ],
     "weight": 0,
-    "weight_decay_at": 1793337967362,
-    "health_decay_at": 1793350885527
+    "weight_decay_at": 1795152367362,
+    "health_decay_at": 1795189227189
   },
   "profile": {
-    "favorability": -24,
+    "favorability": -36,
     "weekly_contribution": 0,
     "total_contribution": 0,
     "last_display_name": "武",
     "first_joined_at": 1788629167358,
-    "last_active_at": 1793350885527,
+    "last_active_at": 1795189227189,
     "daily": {
-      "date": "2026-10-30",
+      "date": "2026-11-20",
       "event_count": 0,
       "same_event_counts": {},
       "negative_shared_impact": 0
     },
     "weekly": {
-      "week": "2026-W44"
+      "week": "2026-W47"
     },
     "items": {
-      "ruozhi_fate": 30,
+      "ruozhi_fate": 90,
       "nameless_ruozhi": 0
     },
     "item_ledger": [
+      {
+        "time": 1794992898524,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 30,
+        "before": 60,
+        "after": 90,
+        "reason": "comeback_reward",
+        "meta": {
+          "inactive_days": 67,
+          "last_engagement_date": "2026-09-12",
+          "date": "2026-11-18"
+        }
+      },
+      {
+        "time": 1794992898520,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 3,
+        "before": 57,
+        "after": 60,
+        "reason": "achievement_unlock",
+        "meta": {
+          "achievement_id": "mood_low_once"
+        }
+      },
+      {
+        "time": 1794992898518,
+        "type": "income",
+        "item_id": "ruozhi_fate",
+        "amount": 27,
+        "before": 30,
+        "after": 57,
+        "reason": "pet_production_interaction_auto_collect",
+        "meta": {
+          "accumulated_hours": 72
+        }
+      },
       {
         "time": 1789224772095,
         "type": "income",
@@ -94,10 +166,21 @@
       }
     },
     "currency": {
-      "balance": 1000,
-      "total_earned": 1000,
+      "balance": 1500,
+      "total_earned": 1500,
       "total_spent": 0,
       "ledger": [
+        {
+          "time": 1794992898523,
+          "type": "income",
+          "reason": "daily_first_interaction",
+          "amount": 500,
+          "before": 1000,
+          "after": 1500,
+          "meta": {
+            "date": "2026-11-18"
+          }
+        },
         {
           "time": 1789224772096,
           "type": "income",
@@ -127,13 +210,68 @@
         "first_reward_claimed": false,
         "first_fate_reward_claimed": false
       },
-      "first_interaction_reward_date": "2026-09-12"
+      "first_interaction_reward_date": "2026-11-18"
     },
     "engagement": {
-      "last_date": "2026-09-12"
+      "last_date": "2026-11-18"
     }
   },
   "recent_events": [
+    {
+      "time": 1794992898525,
+      "user_id": "1145640200",
+      "display_name": "武",
+      "event_id": "insult",
+      "branch_id": "severe_normal",
+      "summary": "小若汁被吓得缩进了龟壳，暂时不想理会武。",
+      "effects_text": "心情-10，好感-12，经验+10",
+      "effects": {
+        "satiety": 0,
+        "mood": -10,
+        "health": 0,
+        "favorability": -12,
+        "contribution": 0,
+        "experience": 10
+      },
+      "level_ups": [],
+      "bonus_experience": 10,
+      "first_interaction_reward": {
+        "reward": 500,
+        "balance": 1500
+      },
+      "level_rewards": [],
+      "achievements": [
+        {
+          "id": "mood_low_once",
+          "name": "气鼓鼓",
+          "description": "让小若汁的心情降到 40 以下 1 次",
+          "unlocked": true,
+          "unlocked_at": 1794992898522,
+          "current_count": 1,
+          "target_count": 1,
+          "progress_text": "1 / 1",
+          "rarity": 2,
+          "rarity_stars": "⭐⭐",
+          "rarity_class": "rarity-2",
+          "rewards": [
+            {
+              "type": "item",
+              "item_id": "ruozhi_fate",
+              "amount": 3,
+              "message": "成就奖励：若汁之缘 ×3"
+            },
+            {
+              "type": "unlock_skin",
+              "skin_id": "angry_turtle",
+              "skin_name": "生气小若汁",
+              "message": "解锁二星皮肤「生气小若汁」。"
+            }
+          ],
+          "message": "达成成就「气鼓鼓」 ⭐⭐"
+        }
+      ],
+      "auto_production_collect": 27
+    },
     {
       "time": 1789224772097,
       "user_id": "1145640200",
@@ -188,13 +326,14 @@
     }
   ],
   "daily": {
-    "date": "2026-09-12",
+    "date": "2026-11-18",
     "event_count": 1,
     "bonus_event_count": 1
   },
   "processed_messages": {
     "event:1977433745": 1788629167361,
-    "event:2093009902": 1789224772094
+    "event:2093009902": 1789224772094,
+    "event:1037376313": 1794992898513
   },
   "skin_sessions": {
     "active": null
@@ -207,14 +346,14 @@
     "migrated_at": 1788629167358
   },
   "created_at": 1788629167358,
-  "updated_at": 1793350885528,
+  "updated_at": 1795189227189,
   "production": {
     "started_at": 1788629167358,
-    "last_settled_at": 1793350885527,
-    "accumulated_ms": 259200000,
-    "progress": 27.18809076556605,
-    "total_produced": 30,
-    "last_collected_at": 1789224772095
+    "last_settled_at": 1795189227189,
+    "accumulated_ms": 196328671,
+    "progress": 20.077596651186965,
+    "total_produced": 57,
+    "last_collected_at": 1794992898518
   },
   "travel": {
     "unlocked_location_ids": [],
